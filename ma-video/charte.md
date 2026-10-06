@@ -13,7 +13,7 @@ Source : charte graphique Michelin Digital (artifact fourni par l'utilisateur) e
 
 ## Polices (fichiers dans assets/fonts)
 
-- Titres : Bib, en Bold et en Light. Police propriétaire : fichiers à fournir. **[À CONFIRMER]**
+- Titres : Bib, en Bold et en Light : `assets/fonts/BIB-Bold.woff2`, `assets/fonts/BIB-Light.woff2`.
 - Texte courant : Noto Sans, en Regular et en Bold (Google Fonts, licence OFL).
 - Toujours en casse de phrase (majuscule initiale seulement), jamais tout en capitales.
 
@@ -23,16 +23,16 @@ Source : charte graphique Michelin Digital (artifact fourni par l'utilisateur) e
 - `assets/logos/truckfly-blanc.png` : tout en blanc, fond transparent. À utiliser sur fond Michelin Blue.
 - `assets/logos/truckfly-gris.png` : tout en gris `#53565A`, fond transparent. Pour un usage neutre ou noir et blanc.
 - Ne jamais changer la couleur, la composition ni la typographie du logo. Taille minimale : 50 px.
-- Selon la charte, le logo s'accompagne du Michelin Man « Sprinter », sans jamais avoir le même poids visuel que lui. Fichier non fourni. **[À CONFIRMER]**
+- Selon la charte, le logo s'accompagne du Michelin Man « Sprinter », sans jamais avoir le même poids visuel que lui. Fichier non fourni : la vidéo se fait sans lui.
 - Motif « M-pattern » : 3 à 5 colonnes, jamais coupé par les bords de l'image.
 
 ## Ton
 
-- Premium, précis, sobre (« Michelin is in the details »).
+- Direct, simple, convivial, avec la précision Michelin (« Michelin is in the details »).
 - À ne jamais voir : texte tout en capitales, logo recoloré, accent jaune sur fond clair, effets gratuits (glitch, néon, confettis).
 
 ## Mots
 
 - Formules de la charte : « Née de la matière, construite pour le digital » · « Michelin is in the details »
-- Mots interdits : **[À CONFIRMER]**
-- Tutoiement ou vouvoiement : **[À CONFIRMER]**
+- Mots interdits : aucun pour l'instant.
+- Tutoiement : la vidéo parle directement aux conducteurs routiers sur Instagram.
