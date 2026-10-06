@@ -8,10 +8,10 @@ Animation : un seul style sur toute la vidéo. Les textes montent de 40 px avec 
 
 | # | Minutage | Fond | Texte exact à l'écran | Ce qui bouge |
 |---|---|---|---|---|
-| 1 | 0,0 → 2,7 s | Michelin Blue `#061866` | **Nouveau : le Profil Trucker** | Le titre monte. Un trait jaune `#FFFF1A` souligne « Profil Trucker ». Le téléphone entre par le bas, écran d'accueil de l'app. |
-| 2 | 2,7 → 5,4 s | Off White `#F5F3F1` | **1** · Accède à ton profil | Le chiffre « 1 » apparaît, puis la phrase. Sur le téléphone, l'écran 1 : un repère circulaire pulse une fois sur l'onglet Profil. |
-| 3 | 5,4 → 8,4 s | Off White `#F5F3F1` | **2** · Crée et personnalise ton profil | L'écran glisse vers l'écran 2. Le chiffre « 2 » remplace le « 1 ». |
-| 4 | 8,4 → 11,7 s | Off White `#F5F3F1` | **3** · Ajoute tes infos et rejoins la communauté | L'écran glisse vers l'écran 3. Le chiffre « 3 » remplace le « 2 ». |
+| 1 | 0,0 → 2,7 s | Michelin Blue `#061866` | **Nouveau : le Profil Trucker** | Le titre monte. Un trait jaune `#FFFF1A` souligne « Profil Trucker ». |
+| 2 | 2,7 → 5,4 s | Off White `#F5F3F1` | **1** · Accède à ton profil | Le chiffre « 1 » apparaît, puis la phrase. Le téléphone entre par le bas, sur l'écran du profil (`etape1-profil.png`). |
+| 3 | 5,4 → 8,4 s | Off White `#F5F3F1` | **2** · Crée et personnalise ton profil | L'écran du profil personnalisé (`etape2-profil-perso.png`) arrive par la droite. Le chiffre « 2 » remplace le « 1 ». |
+| 4 | 8,4 → 11,7 s | Off White `#F5F3F1` | **3** · Ajoute tes infos, rejoins la communauté | L'écran d'activité communautaire (`etape3-communaute.png`) arrive par la droite. Le chiffre « 3 » remplace le « 2 ». |
 | 5 | 11,7 → 15,0 s | Michelin Blue `#061866` | **Télécharge Michelin Truckfly** | Le fond repasse au bleu. Le logo blanc se pose au centre, et le titre monte en dessous. Rien ne bouge pendant la dernière seconde. |
 
 ## Temps de lecture (1,5 s + 0,3 s par mot)
@@ -21,10 +21,10 @@ Animation : un seul style sur toute la vidéo. Les textes montent de 40 px avec 
 | 1 | 4 | 2,7 s | 2,7 s |
 | 2 | 4 | 2,7 s | 2,7 s |
 | 3 | 5 | 3,0 s | 3,0 s |
-| 4 | 7 | 3,6 s | 3,3 s ⚠ |
+| 4 | 6 | 3,3 s | 3,3 s |
 | 5 | 3 | 2,4 s | 3,3 s |
 
-Tout le texte tient dans les 15 s, sauf à la scène 4, qui manque de 0,3 s. Deux corrections possibles : raccourcir en « Ajoute tes infos, rejoins la communauté » (6 mots, 3,3 s), ou passer la vidéo à 16 s.
+Le texte de la scène 4 a été raccourci pour tenir dans son temps de lecture.
 
 ## Ce qui reste hors de la vidéo
 
