@@ -2,17 +2,17 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920, height=1080" />
-    <script src="assets/vendor/gsap.min.js"></script>
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="../assets/vendor/gsap.min.js"></script>
     <style>
       @font-face {
         font-family: "Bib";
-        src: url("assets/fonts/BIB-Bold.woff2") format("woff2");
+        src: url("../assets/fonts/BIB-Bold.woff2") format("woff2");
         font-weight: 700;
       }
       @font-face {
         font-family: "Bib";
-        src: url("assets/fonts/BIB-Light.woff2") format("woff2");
+        src: url("../assets/fonts/BIB-Light.woff2") format("woff2");
         font-weight: 300;
       }
       * {
@@ -22,8 +22,8 @@
       }
       html,
       body {
-        width: 1920px;
-        height: 1080px;
+        width: 1080px;
+        height: 1920px;
         overflow: hidden;
         background: #061866;
       }
@@ -92,7 +92,7 @@
         left: 160px;
         top: 0;
         bottom: 0;
-        width: 1000px;
+        width: 900px;
       }
       .etape {
         position: absolute;
@@ -154,16 +154,64 @@
         height: auto;
         margin-bottom: 90px;
       }
+
+      /* Version verticale : texte en haut, téléphone en dessous */
+      .centre {
+        padding: 0 60px;
+      }
+      .leger {
+        font-size: 88px;
+      }
+      .fort {
+        font-size: 104px;
+        white-space: nowrap;
+      }
+      #etapes-textes {
+        left: 50px;
+        right: 50px;
+        top: 260px;
+        bottom: auto;
+        width: auto;
+        height: 470px;
+      }
+      .etape {
+        align-items: center;
+        text-align: center;
+      }
+      .numero {
+        width: 120px;
+        height: 120px;
+        font-size: 72px;
+        margin-bottom: 36px;
+      }
+      .etape-texte {
+        font-size: 80px;
+      }
+      #telephone {
+        left: 0;
+        right: 0;
+        top: 750px;
+        width: auto;
+        height: 920px;
+      }
+      #s5-titre {
+        font-size: 96px;
+        line-height: 1.15;
+      }
+      #logo-fin {
+        width: 860px;
+        margin-bottom: 120px;
+      }
     </style>
   </head>
   <body>
     <div
       id="root"
-      data-composition-id="main"
+      data-composition-id="vertical"
       data-start="0"
       data-duration="15"
-      data-width="1920"
-      data-height="1080"
+      data-width="1080"
+      data-height="1920"
     >
       <div id="fond" class="clip" data-start="0" data-duration="15" data-track-index="0">
         <div id="fond-couleur"></div>
@@ -194,17 +242,17 @@
           </div>
         </div>
         <div id="telephone">
-          <div id="e1" class="ecran"><img src="assets/ecrans/etape1-profil.png" alt="" /></div>
-          <div id="e2" class="ecran"><img src="assets/ecrans/etape2-profil-perso.png" alt="" /></div>
-          <div id="e3" class="ecran"><img src="assets/ecrans/etape3-communaute.png" alt="" /></div>
+          <div id="e1" class="ecran"><img src="../assets/ecrans/etape1-profil.png" alt="" /></div>
+          <div id="e2" class="ecran"><img src="../assets/ecrans/etape2-profil-perso.png" alt="" /></div>
+          <div id="e3" class="ecran"><img src="../assets/ecrans/etape3-communaute.png" alt="" /></div>
         </div>
       </div>
 
       <div id="s5" class="scene clip" data-start="11.7" data-duration="3.3" data-track-index="3">
         <div class="centre">
-          <img id="logo-fin" src="assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" />
+          <img id="logo-fin" src="../assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" />
           <span id="s5-titre" class="ligne fort"
-            ><span class="souligne">Télécharge Michelin Truckfly<span id="s5-trait" class="trait"></span></span
+            ><span class="souligne"><span class="ligne">Télécharge</span><span class="ligne">Michelin Truckfly</span><span id="s5-trait" class="trait"></span></span
           ></span>
         </div>
       </div>
@@ -248,7 +296,7 @@
       tl.fromTo("#s5-titre", { opacity: 0, y: 40 }, entre, 12.3);
       tl.fromTo("#s5-trait", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 12.75);
 
-      window.__timelines["main"] = tl;
+      window.__timelines["vertical"] = tl;
       tl.seek(0);
     </script>
   </body>
