@@ -1,33 +1,33 @@
-# Storyboard : Profil Trucker (15 s)
+# Storyboard : Profil Trucker, version 2 (16 s)
 
-Format : mini onboarding en trois étapes, adapté du format « trois points ».
-Diffusion : Instagram en priorité. La version verticale 9:16 (1080 × 1920) est la version principale, la version 16:9 (1920 × 1080) se fait en plus.
-Charte : `charte.md`. Titres en Bib Bold, texte en Bib Light, casse de phrase, on tutoie.
+Angle : le bénéfice communautaire d'abord (« je crée mon profil, mes amis me retrouvent »).
+Diffusion : Instagram en priorité. Version verticale 9:16 (1080 × 1920) en principal, plus une version 16:9 (1920 × 1080).
+Charte : `charte.md`. Bib Bold pour les titres, Bib Light pour la phrase d'accroche, casse de phrase, tutoiement.
 
-Animation : un seul style sur toute la vidéo. Les textes montent de 40 px avec un fondu (0,4 s, sortie douce). L'écran du téléphone glisse latéralement d'une étape à l'autre. Pas d'autre effet.
+Animation : un seul style. Les lignes montent de 40 px avec un fondu (0,4 s). Les écrans glissent de la droite pendant que l'écran précédent s'efface. Le logo Michelin Truckfly reste discret en bas au centre sur toute la vidéo : version couleur sur le fond clair, version blanche sur le fond bleu final.
 
-| # | Minutage | Fond | Texte exact à l'écran | Ce qui bouge |
+| # | Minutage | Fond | Texte exact à l'écran | Écran et mouvement |
 |---|---|---|---|---|
-| 1 | 0,0 → 2,7 s | Michelin Blue `#061866` | **Nouveau : le Profil Trucker** | Le titre monte. Un trait jaune `#FFFF1A` souligne « Profil Trucker ». |
-| 2 | 2,7 → 5,4 s | Off White `#F5F3F1` | **1** · Accède à ton profil | Le chiffre « 1 » apparaît, puis la phrase. Le téléphone entre par le bas, sur l'écran du profil (`etape1-profil.png`). |
-| 3 | 5,4 → 8,4 s | Off White `#F5F3F1` | **2** · Crée et personnalise ton profil | L'écran du profil personnalisé (`etape2-profil-perso.png`) arrive par la droite. Le chiffre « 2 » remplace le « 1 ». |
-| 4 | 8,4 → 11,7 s | Off White `#F5F3F1` | **3** · Ajoute tes infos, rejoins la communauté | L'écran d'activité communautaire (`etape3-communaute.png`) arrive par la droite. Le chiffre « 3 » remplace le « 2 ». |
-| 5 | 11,7 → 15,0 s | Michelin Blue `#061866` | **Télécharge Michelin Truckfly** | Le fond repasse au bleu. Le logo blanc se pose au centre, et le titre monte en dessous. Rien ne bouge pendant la dernière seconde. |
+| 1 | 0,0 → 4,2 s | Off White | **Crée ton Profil Trucker** / pour que tes amis te retrouvent 👋 | Le profil de Louna (`v2-profil.png`) monte et apparaît progressivement. |
+| 2 | 4,2 → 7,2 s | Off White | **Personnalise** / **et partage ton profil** | Même écran. Un cadre Michelin Blue entoure les boutons « Modifier le profil » et « Partager ». |
+| 3 | 7,2 → 9,6 s | Off White | **Retrouve tes amis** | L'écran « Trouver des routiers » (`v2-trouver-routiers.png`) arrive. |
+| 4 | 9,6 → 13,2 s | Off White | **Suis l'activité de** / **tes proches au quotidien** | Le fil d'activité (`v2-fil-activite.png`) arrive. |
+| 5 | 13,2 → 16,0 s | Michelin Blue | **Ne roule plus seul 🚛** | Le téléphone sort, le fond passe au bleu, le logo passe en blanc. L'image reste fixe pendant les 2,2 dernières secondes. |
 
 ## Temps de lecture (1,5 s + 0,3 s par mot)
 
 | Scène | Mots | Minimum | Prévu |
 |---|---|---|---|
-| 1 | 4 | 2,7 s | 2,7 s |
-| 2 | 4 | 2,7 s | 2,7 s |
-| 3 | 5 | 3,0 s | 3,0 s |
-| 4 | 6 | 3,3 s | 3,3 s |
-| 5 | 3 | 2,4 s | 3,3 s |
+| 1 | 9 | 4,2 s | 4,2 s |
+| 2 | 5 | 3,0 s | 3,0 s |
+| 3 | 3 | 2,4 s | 2,4 s |
+| 4 | 7 | 3,6 s | 3,6 s |
+| 5 | 4 | 2,7 s | 2,8 s |
 
-Le texte de la scène 4 a été raccourci pour tenir dans son temps de lecture.
+Avec le minutage de 3 s par scène, les scènes 1 et 4 n'auraient pas eu le temps d'être lues. La vidéo passe donc de 15 à 16 s.
 
-## Ce qui reste hors de la vidéo
+## Hors vidéo
 
-- **Le lien vers le blog.** Un lien ne se clique pas dans une vidéo Instagram. Il va dans la légende du post ou dans le lien en bio, avec par exemple « Tout sur le Profil Trucker : lien en bio ».
-- **Le Michelin Man « Sprinter ».** Fichier non fourni : la vidéo se fait sans lui.
-- **La musique.** Il n'y en a pas d'office, à cause des droits. Tu peux en ajouter une sur Instagram, ou me demander d'en intégrer une dont tu as les droits.
+- Lien vers le blog : dans la légende du post ou le lien en bio.
+- Captures `v2-profil-amis.png` et `v2-activite-ami.png` : préparées, non utilisées.
+- Pas de musique (droits), pas de Michelin Man « Sprinter » (fichier non fourni).

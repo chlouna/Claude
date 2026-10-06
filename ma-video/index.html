@@ -25,7 +25,7 @@
         width: 1920px;
         height: 1080px;
         overflow: hidden;
-        background: #061866;
+        background: #f5f3f1;
       }
       #root {
         position: relative;
@@ -34,102 +34,72 @@
         overflow: hidden;
         font-family: "Bib", sans-serif;
       }
-      #fond {
+      .plein {
         position: absolute;
         inset: 0;
       }
       #fond-couleur {
         position: absolute;
         inset: 0;
-        background: #061866;
-      }
-      .scene {
-        position: absolute;
-        inset: 0;
+        background: #f5f3f1;
       }
 
-      /* Scène 1 et 5 : titre centré sur fond bleu */
-      .centre {
+      /* Textes */
+      #textes {
         position: absolute;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: #ffffff;
-        text-align: center;
-      }
-      .ligne {
-        display: block;
-      }
-      .leger {
-        font-weight: 300;
-        font-size: 80px;
-        line-height: 1.15;
-      }
-      .fort {
-        font-weight: 700;
-        font-size: 128px;
-        line-height: 1.1;
-      }
-      .souligne {
-        position: relative;
-        display: inline-block;
-      }
-      .trait {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -14px;
-        height: 12px;
-        background: #ffff1a;
-        transform-origin: left center;
-      }
-
-      /* Étapes : texte à gauche, téléphone à droite */
-      #etapes-textes {
-        position: absolute;
-        left: 160px;
+        left: 130px;
         top: 0;
         bottom: 0;
-        width: 1000px;
+        width: 1120px;
       }
       .etape {
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
+        inset: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
-      }
-      .numero {
-        width: 128px;
-        height: 128px;
-        border-radius: 50%;
-        background: #061866;
-        color: #ffffff;
-        font-weight: 700;
-        font-size: 76px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 44px;
-      }
-      .etape-texte {
         color: #000000;
-        font-weight: 700;
-        font-size: 92px;
-        line-height: 1.1;
-        text-wrap: balance;
       }
+      .ligne {
+        display: block;
+        white-space: nowrap;
+      }
+      .titre {
+        font-weight: 700;
+        font-size: 88px;
+        line-height: 1.12;
+      }
+      .sous {
+        font-weight: 300;
+        font-size: 56px;
+        line-height: 1.2;
+        margin-top: 16px;
+      }
+      .emoji {
+        display: inline-block;
+        height: 0.95em;
+        width: auto;
+        vertical-align: -0.12em;
+        margin-left: 0.15em;
+      }
+      #t5 {
+        left: -130px;
+        width: 1920px;
+        align-items: center;
+        text-align: center;
+        color: #ffffff;
+      }
+      #t5 .titre {
+        font-size: 128px;
+      }
+
+      /* Téléphone */
       #telephone {
         position: absolute;
-        right: 220px;
-        top: 70px;
+        right: 110px;
+        top: 60px;
         width: 520px;
-        height: 940px;
+        height: 880px;
       }
       .ecran {
         position: absolute;
@@ -138,21 +108,40 @@
         align-items: center;
         justify-content: center;
       }
-      .ecran img {
-        display: block;
+      .cadre {
+        position: relative;
         height: 100%;
-        width: auto;
+        aspect-ratio: 460 / 911;
+      }
+      .cadre img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      #repere {
+        position: absolute;
+        left: 12.6%;
+        top: 31.6%;
+        width: 74.8%;
+        height: 7%;
+        border: 6px solid #061866;
+        border-radius: 18px;
       }
 
-      /* Fin */
-      #s5-titre {
-        font-size: 100px;
+      /* Logo discret, en bas au centre */
+      #logos {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 66px;
+        height: 56px;
       }
-      #logo-fin {
-        display: block;
-        width: 820px;
-        height: auto;
-        margin-bottom: 90px;
+      .logo {
+        position: absolute;
+        left: 50%;
+        margin-left: -111px;
+        width: 222px;
+        height: 56px;
       }
     </style>
   </head>
@@ -161,92 +150,101 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="15"
+      data-duration="16"
       data-width="1920"
       data-height="1080"
     >
-      <div id="fond" class="clip" data-start="0" data-duration="15" data-track-index="0">
+      <div id="fond" class="plein clip" data-start="0" data-duration="16" data-track-index="0">
         <div id="fond-couleur"></div>
       </div>
 
-      <div id="s1" class="scene clip" data-start="0" data-duration="2.7" data-track-index="1">
-        <div class="centre">
-          <span id="s1-l1" class="ligne leger">Nouveau :</span>
-          <span id="s1-l2" class="ligne fort"
-            >le <span class="souligne">Profil Trucker<span id="s1-trait" class="trait"></span></span
-          ></span>
+      <div id="ecrans" class="plein clip" data-start="0" data-duration="13.2" data-track-index="1">
+        <div id="telephone">
+          <div id="e1" class="ecran">
+            <div class="cadre">
+              <img src="assets/ecrans/v2-profil.png" alt="" />
+              <div id="repere"></div>
+            </div>
+          </div>
+          <div id="e2" class="ecran">
+            <div class="cadre"><img src="assets/ecrans/v2-trouver-routiers.png" alt="" /></div>
+          </div>
+          <div id="e3" class="ecran">
+            <div class="cadre"><img src="assets/ecrans/v2-fil-activite.png" alt="" /></div>
+          </div>
         </div>
       </div>
 
-      <div id="etapes" class="scene clip" data-start="2.7" data-duration="9" data-track-index="2">
-        <div id="etapes-textes">
+      <div id="textes-clip" class="plein clip" data-start="0" data-duration="16" data-track-index="2">
+        <div id="textes">
           <div id="t1" class="etape">
-            <div class="numero">1</div>
-            <div class="etape-texte">Accède à ton profil</div>
+            <span class="ligne titre">Crée ton Profil Trucker</span>
+            <span class="ligne sous"
+              >pour que tes amis te retrouvent<img class="emoji" src="assets/emoji/main.png" alt="👋"
+            /></span>
           </div>
           <div id="t2" class="etape">
-            <div class="numero">2</div>
-            <div class="etape-texte">Crée et personnalise ton profil</div>
+            <span class="ligne titre">Personnalise</span>
+            <span class="ligne titre">et partage ton profil</span>
           </div>
           <div id="t3" class="etape">
-            <div class="numero">3</div>
-            <div class="etape-texte">Ajoute tes infos, rejoins la communauté</div>
+            <span class="ligne titre">Retrouve tes amis</span>
           </div>
-        </div>
-        <div id="telephone">
-          <div id="e1" class="ecran"><img src="assets/ecrans/etape1-profil.png" alt="" /></div>
-          <div id="e2" class="ecran"><img src="assets/ecrans/etape2-profil-perso.png" alt="" /></div>
-          <div id="e3" class="ecran"><img src="assets/ecrans/etape3-communaute.png" alt="" /></div>
+          <div id="t4" class="etape">
+            <span class="ligne titre">Suis l'activité de</span>
+            <span class="ligne titre">tes proches au quotidien</span>
+          </div>
+          <div id="t5" class="etape" data-layout-allow-overflow>
+            <span class="ligne titre"
+              >Ne roule plus seul<img class="emoji" src="assets/emoji/camion.png" alt="🚛"
+            /></span>
+          </div>
         </div>
       </div>
 
-      <div id="s5" class="scene clip" data-start="11.7" data-duration="3.3" data-track-index="3">
-        <div class="centre">
-          <img id="logo-fin" src="assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" />
-          <span id="s5-titre" class="ligne fort"
-            ><span class="souligne">Télécharge Michelin Truckfly<span id="s5-trait" class="trait"></span></span
-          ></span>
+      <div id="logos-clip" class="plein clip" data-start="0" data-duration="16" data-track-index="3">
+        <div id="logos">
+          <img id="logo-c" class="logo" src="assets/logos/truckfly-couleur-rogne.png" alt="Michelin Truckfly" />
+          <img id="logo-b" class="logo" src="assets/logos/truckfly-blanc-rogne.png" alt="" />
         </div>
       </div>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      const entre = { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" };
-      const sort = { opacity: 0, y: -24, duration: 0.25, ease: "power2.in" };
-      const entreAlpha = { autoAlpha: 1, y: 0, duration: 0.4, ease: "power2.out" };
-      const sortAlpha = { autoAlpha: 0, y: -24, duration: 0.25, ease: "power2.in" };
-      const glisse = { duration: 0.5, ease: "power2.inOut" };
+      const entre = { autoAlpha: 1, y: 0, duration: 0.4, ease: "power2.out", stagger: 0.12 };
+      const sort = { autoAlpha: 0, y: -24, duration: 0.25, ease: "power2.in" };
+      const arrive = { xPercent: 0, autoAlpha: 1, duration: 0.5, ease: "power2.inOut" };
+      const part = { xPercent: -30, autoAlpha: 0, duration: 0.5, ease: "power2.inOut", immediateRender: false };
 
-      // Fond : bleu → off white → bleu
-      tl.to("#fond-couleur", { backgroundColor: "#F5F3F1", duration: 0.4, ease: "power1.inOut" }, 2.4);
-      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.4, ease: "power1.inOut" }, 11.4);
+      function texte(id, debut, fin) {
+        tl.fromTo(`${id} .ligne`, { autoAlpha: 0, y: 40 }, entre, debut);
+        if (fin !== undefined) tl.to(id, sort, fin);
+      }
 
-      // Scène 1
-      tl.fromTo("#s1-l1", { opacity: 0, y: 40 }, entre, 0.2);
-      tl.fromTo("#s1-l2", { opacity: 0, y: 40 }, entre, 0.35);
-      tl.fromTo("#s1-trait", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 0.9);
-      tl.to(["#s1-l1", "#s1-l2"], sort, 2.4);
+      // Textes (minutage : 0–4,2 · 4,2–7,2 · 7,2–9,6 · 9,6–13,2 · 13,2–16)
+      texte("#t1", 0.3, 3.95);
+      texte("#t2", 4.3, 6.95);
+      texte("#t3", 7.3, 9.35);
+      texte("#t4", 9.7, 12.9);
+      texte("#t5", 13.35);
 
-      // Étapes : textes
-      tl.fromTo("#t1", { autoAlpha: 0, y: 40 }, entreAlpha, 2.9);
-      tl.to("#t1", sortAlpha, 5.1);
-      tl.fromTo("#t2", { autoAlpha: 0, y: 40 }, entreAlpha, 5.45);
-      tl.to("#t2", sortAlpha, 8.1);
-      tl.fromTo("#t3", { autoAlpha: 0, y: 40 }, entreAlpha, 8.45);
-      tl.to("#t3", sortAlpha, 11.35);
+      // Téléphone : le profil apparaît progressivement
+      tl.fromTo("#telephone", { autoAlpha: 0, y: 160 }, { autoAlpha: 1, y: 0, duration: 0.8, ease: "power2.out" }, 0.15);
+      // Personnalise et partage : repère sur les deux boutons
+      tl.fromTo("#repere", { autoAlpha: 0, scale: 1.08 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 4.7);
+      tl.to("#repere", { autoAlpha: 0, duration: 0.25 }, 6.95);
+      // Retrouve tes amis
+      tl.fromTo("#e2", { xPercent: 60, autoAlpha: 0 }, arrive, 7.0);
+      tl.fromTo("#e1", { xPercent: 0, autoAlpha: 1 }, part, 7.0);
+      // Activité des proches
+      tl.fromTo("#e3", { xPercent: 60, autoAlpha: 0 }, arrive, 9.4);
+      tl.fromTo("#e2", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 9.4);
+      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 12.9);
 
-      // Étapes : téléphone
-      tl.fromTo("#telephone", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 2.8);
-      tl.fromTo("#e2", { xPercent: 60, autoAlpha: 0 }, { xPercent: 0, autoAlpha: 1, ...glisse }, 5.2);
-      tl.fromTo("#e1", { xPercent: 0, autoAlpha: 1 }, { xPercent: -30, autoAlpha: 0, ...glisse }, 5.2);
-      tl.fromTo("#e3", { xPercent: 60, autoAlpha: 0 }, { xPercent: 0, autoAlpha: 1, ...glisse }, 8.2);
-      tl.fromTo("#e2", { xPercent: 0, autoAlpha: 1 }, { xPercent: -30, autoAlpha: 0, ...glisse, immediateRender: false }, 8.2);
-      tl.to("#telephone", { opacity: 0, duration: 0.3, ease: "power2.in" }, 11.35);
-
-      // Scène 5
-      tl.fromTo("#logo-fin", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }, 11.9);
-      tl.fromTo("#s5-titre", { opacity: 0, y: 40 }, entre, 12.3);
-      tl.fromTo("#s5-trait", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 12.75);
+      // Fin : fond bleu, logo blanc
+      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.4, ease: "power1.inOut" }, 12.95);
+      tl.fromTo("#logo-b", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, 12.95);
+      tl.fromTo("#logo-c", { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.4 }, 12.95);
 
       window.__timelines["main"] = tl;
       tl.seek(0);
