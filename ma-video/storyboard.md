@@ -1,40 +1,35 @@
-# Storyboard : Profil Trucker, version 3 (24 s)
+# Storyboard : Profil Trucker, version 4 (23,2 s)
 
 Message : crée ton Profil Trucker, retrouve tes amis et rejoins la communauté des conducteurs sur Michelin Truckfly.
-Diffusion : Instagram en priorité. Version verticale 9:16 (1080 × 1920) en principal, plus une version 16:9 (1920 × 1080).
-Charte : `charte.md`. Bib Bold et Bib Light, casse de phrase, tutoiement. Pas de logo ni d'emoji dans la vidéo.
-Source : les deux compositions sont générées par `scripts/generer.py`.
+Diffusion : Instagram en priorité (9:16, 1080 × 1920), plus une version 16:9 (1920 × 1080).
+Source : `scripts/generer.py` produit `index.html` et `compositions/vertical.html`.
 
-Animation : un seul style. Dans l'intro, chaque routier apparaît avec un léger rebond, puis sa notification glisse vers le haut. Ensuite, les lignes de texte montent de 40 px avec un fondu, et les écrans glissent de la droite.
+## Style
 
-| # | Minutage | Fond | Texte exact à l'écran | Visuel |
-|---|---|---|---|---|
-| Intro | 0,0 → 6,0 s | Michelin Blue | Notifications « Truckfly · maintenant » : **Louna** vous a envoyé une invitation · **David** s'est arrêté ici / Restaurant Chez Marcel, Lyon · **Nordin** a déposé un avis | Trois routiers (avatars dessinés dans le style de l'app, avec une casquette) reçoivent chacun une notification, à 0,3 s, 1,3 s et 2,3 s. |
-| 1 | 6,0 → 10,2 s | Off White | **Crée ton Profil Trucker** / pour que tes amis te retrouvent ! | Le profil de Louna monte et apparaît progressivement. |
-| 2 | 10,2 → 13,2 s | Off White | **Personnalise** / **et partage ton profil** | Même écran, avec un cadre autour de « Modifier le profil » et « Partager ». |
-| 3 | 13,2 → 15,6 s | Off White | **Retrouve tes amis** | Écran « Trouver des routiers ». |
-| 4 | 15,6 → 19,2 s | Off White | **Suis l'activité de** / **tes proches au quotidien** | Fil d'activité. |
-| 5 | 19,2 → 24,0 s | Michelin Blue | **Ne roule plus seul !** / Rejoins la communauté sur Michelin Truckfly | Texte seul. L'image reste fixe pendant les 4,3 dernières secondes. |
+- **Titres** en Bib (charte). **Éléments de l'app** (notifications, cartes, bouton « Invité ») en Inter, l'équivalent libre de la police système de l'iPhone, qu'on ne peut pas embarquer.
+- **Notifications** au style des cartes du fil d'activité (référence : « Nicolas J. a visité : »). On y trouve l'avatar avec sa pastille, une ligne grise, le lieu en gras, l'heure et une épingle avec la ville.
+- **Avatars** au style par défaut de l'app (référence : Abdelatif) : visage de couleur, anneau épais, yeux et initiale. Je n'utilise aucune photo de vrais utilisateurs.
+- **Interactions** :
+  - un tap = un rond qui se pose, puis une onde ;
+  - des flèches courbes qui se dessinent ;
+  - un cadre autour des boutons ;
+  - le bouton qui passe à « Invité » ;
+  - une nouvelle carte qui arrive dans le fil ;
+  - un zoom léger.
+- Pas de logo, pas d'emoji, pas de musique.
 
-## Temps de lecture (1,5 s + 0,3 s par mot)
+## Déroulé
 
-| Élément | Mots | Minimum | À l'écran |
+| # | Minutage | Texte | Ce qui se passe sur le téléphone |
 |---|---|---|---|
-| Notification Louna | 6 | 3,3 s | 5,0 s |
-| Notification David | 8 | 3,9 s | 4,0 s |
-| Notification Nordin | 5 | 3,0 s | 3,0 s |
-| Scène 1 | 9 | 4,2 s | 4,2 s |
-| Scène 2 | 5 | 3,0 s | 3,0 s |
-| Scène 3 | 3 | 2,4 s | 2,4 s |
-| Scène 4 | 7 | 3,6 s | 3,6 s |
-| Scène 5 | 10 | 4,5 s | 4,8 s |
+| Intro | 0 → 5,5 s | Notifications : **Louna vous a envoyé une invitation** · David a visité : **Restaurant Chez Marcel**, Lyon · **Nordin a déposé un avis** | Le fil d'activité est affiché. Les notifications arrivent à 0,3 s, 0,9 s et 1,5 s. Tap sur celle de Louna à 3 s. |
+| 1 | 5,5 → 9,7 s | **Crée ton Profil Trucker** / pour que tes amis te retrouvent ! | Le profil de Louna arrive. Tap sur l'avatar à 7,3 s. |
+| 2 | 9,7 → 12,7 s | **Personnalise / et partage ton profil** | Cadre et flèche vers les boutons. Tap sur « Modifier le profil » à 10,7 s, puis sur « Partager » à 11,6 s. |
+| 3 | 12,7 → 15,1 s | **Retrouve tes amis** | Écran « Trouver des routiers ». Flèche, tap sur « Ajouter » à 13,6 s, le bouton passe à « ✓ Invité ». |
+| 4 | 15,1 → 18,7 s | **Suis l'activité de / tes proches au quotidien** | Fil d'activité. Une nouvelle carte arrive (Louna a visité : **AS 24 Calais Eurotunnel**, Coquelles), puis le téléphone zoome légèrement. |
+| 5 | 18,7 → 23,2 s | **Ne roule plus seul !** / Rejoins la communauté sur Michelin Truckfly | Fond bleu, texte seul. |
 
-## Choix à valider
+## Écarts par rapport à l'app
 
-- La notification de Nordin reprend un avis réel visible dans le fil d'activité de l'app.
-- Il n'y a plus de logo. La marque passe par la dernière phrase (« sur Michelin Truckfly ») et par le nom de l'app dans les notifications.
-
-## Hors vidéo
-
-- Lien vers le blog : dans la légende du post ou le lien en bio.
-- Pas de musique (droits).
+- Le gris des textes secondaires est un peu plus foncé que dans l'app (`#6E6E73` au lieu de `#8E8E93`), pour rester lisible en vidéo.
+- Le bouton « ✓ Invité » et la carte « Louna a visité : AS 24 Calais Eurotunnel » sont recréés pour la vidéo. Ils ne viennent pas d'une capture.

@@ -16,6 +16,21 @@
         src: url("assets/fonts/BIB-Light.woff2") format("woff2");
         font-weight: 300;
       }
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/fonts/Inter-Regular.otf") format("opentype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/fonts/Inter-SemiBold.otf") format("opentype");
+        font-weight: 600;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/fonts/Inter-Bold.otf") format("opentype");
+        font-weight: 700;
+      }
       * {
         margin: 0;
         padding: 0;
@@ -45,66 +60,66 @@
         background: #061866;
       }
 
-      /* Intro : des routiers reçoivent des notifications */
-      .routier {
-        position: absolute;
+      /* Cartes au style de l'app (Inter) */
+      .carte-app {
         display: flex;
         align-items: center;
-        gap: 28px;
-      }
-      .avatar {
-        display: block;
-        flex: none;
-        width: var(--avatar);
-        height: var(--avatar);
-      }
-      .notif {
-        width: var(--notif);
+        gap: var(--c-gap);
         background: #ffffff;
-        border-radius: 32px;
-        padding: 24px 30px 28px;
-        color: #000000;
+        border-radius: var(--c-rayon);
+        padding: var(--c-pad);
+        font-family: "Inter", sans-serif;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
       }
-      .notif-tete {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        margin-bottom: 10px;
+      .carte-app .avatar {
+        flex: none;
+        width: var(--c-avatar);
+        height: var(--c-avatar);
       }
-      .cloche {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: var(--cloche);
-        height: var(--cloche);
-        border-radius: 10px;
-        background: #061866;
-      }
-      .cloche svg {
-        width: 64%;
-        height: 64%;
-      }
-      .notif-app {
-        font-weight: 300;
-        font-size: var(--app);
-        color: #53565a;
-      }
-      .notif-texte {
+      .c-textes {
+        flex: 1;
+        min-width: 0;
         display: flex;
         flex-direction: column;
-        font-weight: 300;
-        font-size: var(--message);
+        gap: var(--c-interligne);
+      }
+      .c-gris {
+        color: #6e6e73;
+        font-weight: 400;
+        font-size: var(--c-petit);
+      }
+      .c-fort {
+        color: #000000;
+        font-weight: 700;
+        font-size: var(--c-grand);
         line-height: 1.2;
       }
-      .notif-texte b {
-        font-weight: 700;
+      .c-bas {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
-      .notif-detail {
-        font-weight: 700;
-        color: #061866;
+      .c-lieu {
+        display: flex;
+        align-items: center;
+        gap: 0.2em;
+        color: #6e6e73;
+        font-size: var(--c-petit);
+      }
+      .pin {
+        width: 1em;
+        height: 1em;
       }
 
-      /* Étapes */
+      /* Intro : notifications */
+      .notif {
+        position: absolute;
+      }
+      .notif .tap {
+        position: absolute;
+      }
+
+      /* Textes */
       #textes {
         position: absolute;
       }
@@ -139,6 +154,8 @@
         text-wrap: balance;
         margin-top: 28px;
       }
+
+      /* Téléphone et interactions */
       #telephone {
         position: absolute;
       }
@@ -153,8 +170,9 @@
         position: relative;
         height: 100%;
         aspect-ratio: 460 / 911;
+        container-type: size;
       }
-      .cadre img {
+      .cadre > img {
         display: block;
         width: 100%;
         height: 100%;
@@ -168,27 +186,98 @@
         border: 6px solid #061866;
         border-radius: 18px;
       }
+      .tap {
+        position: absolute;
+        width: 76px;
+        height: 76px;
+        margin: -38px 0 0 -38px;
+      }
+      .tap > div {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        visibility: hidden;
+        opacity: 0;
+      }
+      .doigt {
+        background: rgba(255, 255, 255, 0.55);
+        border: 5px solid #061866;
+      }
+      .onde {
+        border: 5px solid #061866;
+      }
+      .fleche {
+        position: absolute;
+        width: 200px;
+        height: 120px;
+        overflow: visible;
+      }
+      .fleche path {
+        fill: none;
+        stroke: #061866;
+        stroke-width: 7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .fleche .trait {
+        stroke-dasharray: 1;
+      }
+      #invite {
+        position: absolute;
+        left: 61.9%;
+        top: 33.4%;
+        width: 27.6%;
+        height: 4.1%;
+        border-radius: 1cqh;
+        background: #e4edfb;
+        color: #061866;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 1.75cqh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #nouvelle-carte {
+        position: absolute;
+        left: 9.2%;
+        top: 45.6%;
+        width: 81.8%;
+        height: 10.7%;
+        --c-gap: 1.2cqh;
+        --c-rayon: 1.4cqh;
+        --c-pad: 1cqh 1.4cqh;
+        --c-avatar: 6.4cqh;
+        --c-interligne: 0.3cqh;
+        --c-petit: 1.45cqh;
+        --c-grand: 1.6cqh;
+        box-shadow: 0 0 0 0.35cqh #061866;
+      }
 
-      /* 16:9 : routiers en quinconce, texte à gauche, téléphone à droite */
+      /* 16:9 : texte à gauche, téléphone à droite */
       #root {
-        --avatar: 200px;
-        --notif: 700px;
-        --cloche: 44px;
-        --app: 28px;
-        --message: 46px;
+        --c-gap: 26px;
+        --c-rayon: 28px;
+        --c-pad: 24px 32px;
+        --c-avatar: 112px;
+        --c-interligne: 6px;
+        --c-petit: 30px;
+        --c-grand: 36px;
       }
-      #r1 {
-        left: 140px;
-        top: 110px;
+      .notif {
+        width: 760px;
       }
-      #r2 {
-        right: 140px;
-        top: 400px;
-        flex-direction: row-reverse;
+      #n1 {
+        left: 150px;
+        top: 150px;
       }
-      #r3 {
-        left: 360px;
-        top: 720px;
+      #n2 {
+        left: 560px;
+        top: 410px;
+      }
+      #n3 {
+        left: 260px;
+        top: 700px;
       }
       #textes {
         left: 130px;
@@ -226,104 +315,111 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="24"
+      data-duration="23.2"
       data-width="1920"
       data-height="1080"
     >
-      <div id="fond" class="plein clip" data-start="0" data-duration="24" data-track-index="0">
+      <div id="fond" class="plein clip" data-start="0" data-duration="23.2" data-track-index="0">
         <div id="fond-couleur"></div>
       </div>
 
-      <div id="intro" class="plein clip" data-start="0" data-duration="6" data-track-index="1">
-        <div id="routiers" class="plein">
-          <div id="r1" class="routier">
-            <svg class="avatar" viewBox="0 0 200 200" aria-hidden="true">
-              <circle cx="100" cy="100" r="96" fill="#FFFFFF" />
-              <circle cx="100" cy="112" r="70" fill="#C9C3F5" stroke="#061866" stroke-width="5" />
-              <path d="M34 92 Q38 34 100 32 Q162 34 166 92 Z" fill="#BFD3F2" stroke="#061866" stroke-width="5" stroke-linejoin="round" />
-              <path d="M30 92 L182 92 Q186 104 172 104 L30 104 Z" fill="#061866" />
-              <ellipse cx="80" cy="120" rx="6" ry="9" fill="#061866" />
-              <ellipse cx="120" cy="120" rx="6" ry="9" fill="#061866" />
-              <path d="M86 128 Q100 140 114 128" fill="none" stroke="#061866" stroke-width="5" stroke-linecap="round" />
-            </svg>
-            <div class="notif">
-              <div class="notif-tete">
-                <span class="cloche">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6zm-2 15a2 2 0 0 0 4 0z" fill="#FFFFFF" /></svg>
-                </span>
-                <span class="notif-app">Truckfly · maintenant</span>
-              </div>
-              <div class="notif-texte">
-                <span><b>Louna</b> vous a envoyé une invitation</span>
-              </div>
-            </div>
-          </div>
-          <div id="r2" class="routier">
-            <svg class="avatar" viewBox="0 0 200 200" aria-hidden="true">
-              <circle cx="100" cy="100" r="96" fill="#FFFFFF" />
-              <circle cx="100" cy="112" r="70" fill="#9FE3D8" stroke="#061866" stroke-width="5" />
-              <path d="M34 92 Q38 34 100 32 Q162 34 166 92 Z" fill="#FFFF1A" stroke="#061866" stroke-width="5" stroke-linejoin="round" />
-              <path d="M30 92 L182 92 Q186 104 172 104 L30 104 Z" fill="#061866" />
-              <ellipse cx="80" cy="120" rx="6" ry="9" fill="#061866" />
-              <ellipse cx="120" cy="120" rx="6" ry="9" fill="#061866" />
-              <path d="M88 130 L112 130" fill="none" stroke="#061866" stroke-width="5" stroke-linecap="round" />
-            </svg>
-            <div class="notif">
-              <div class="notif-tete">
-                <span class="cloche">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6zm-2 15a2 2 0 0 0 4 0z" fill="#FFFFFF" /></svg>
-                </span>
-                <span class="notif-app">Truckfly · maintenant</span>
-              </div>
-              <div class="notif-texte">
-                <span><b>David</b> s'est arrêté ici</span>
-                <span class="notif-detail">Restaurant Chez Marcel, Lyon</span>
-              </div>
-            </div>
-          </div>
-          <div id="r3" class="routier">
-            <svg class="avatar" viewBox="0 0 200 200" aria-hidden="true">
-              <circle cx="100" cy="100" r="96" fill="#FFFFFF" />
-              <circle cx="100" cy="112" r="70" fill="#F6D38B" stroke="#061866" stroke-width="5" />
-              <path d="M34 92 Q38 34 100 32 Q162 34 166 92 Z" fill="#FFFFFF" stroke="#061866" stroke-width="5" stroke-linejoin="round" />
-              <path d="M30 92 L182 92 Q186 104 172 104 L30 104 Z" fill="#061866" />
-              <ellipse cx="80" cy="120" rx="6" ry="9" fill="#061866" />
-              <ellipse cx="120" cy="120" rx="6" ry="9" fill="#061866" />
-              <path d="M86 128 Q100 140 114 128" fill="none" stroke="#061866" stroke-width="5" stroke-linecap="round" />
-            </svg>
-            <div class="notif">
-              <div class="notif-tete">
-                <span class="cloche">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6zm-2 15a2 2 0 0 0 4 0z" fill="#FFFFFF" /></svg>
-                </span>
-                <span class="notif-app">Truckfly · maintenant</span>
-              </div>
-              <div class="notif-texte">
-                <span><b>Nordin</b> a déposé un avis</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="ecrans" class="plein clip" data-start="6" data-duration="13.2" data-track-index="2">
+      <div id="ecrans" class="plein clip" data-start="0" data-duration="18.75" data-track-index="1">
         <div id="telephone">
+          <div id="e0" class="ecran">
+            <div class="cadre">
+              <img src="assets/ecrans/v2-fil-activite.png" alt="" />
+              <div id="nouvelle-carte" class="carte-app">
+              <svg class="avatar" viewBox="0 0 112 112" aria-hidden="true">
+                <circle cx="50" cy="50" r="44" fill="#C9C3F5" stroke="#FFFF1A" stroke-width="8" />
+                <ellipse cx="40" cy="44" rx="4.5" ry="7" fill="#061866" /><ellipse cx="60" cy="44" rx="4.5" ry="7" fill="#061866" />
+                <text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">L</text>
+                <circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" />
+                <svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><rect x="2" y="7" width="13" height="10" rx="2" fill="#061866" /><path d="M15 10 H20 L23 14 V17 H15 Z" fill="#061866" /><circle cx="7" cy="19" r="2.4" fill="#061866" /><circle cx="19" cy="19" r="2.4" fill="#061866" /></svg>
+              </svg>
+              <div class="c-textes">
+                <span class="c-gris">Louna a visité :</span>
+                <span class="c-fort">AS 24 Calais Eurotunnel</span>
+                <span class="c-bas"><span class="c-gris">à l'instant</span><span class="c-lieu"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="#6E6E73" /></svg>Coquelles</span></span>
+              </div>
+            </div>
+            </div>
+          </div>
           <div id="e1" class="ecran">
             <div class="cadre">
               <img src="assets/ecrans/v2-profil.png" alt="" />
               <div id="repere"></div>
+              <svg id="fleche-boutons" class="fleche" viewBox="0 0 200 120" style="left: calc(13% + -186px); top: calc(33% - 112px)" aria-hidden="true">
+                <path class="trait" d="M8 10 C 80 6, 150 40, 178 104" pathLength="1" />
+                <path class="tete" d="M160 98 L180 108 L182 86" />
+              </svg>
+              <div id="tap-crayon" class="tap" style="left: 36.5%; top: 24.5%"><div class="onde"></div><div class="doigt"></div></div>
+              <div id="tap-modifier" class="tap" style="left: 31%; top: 35.2%"><div class="onde"></div><div class="doigt"></div></div>
+              <div id="tap-partager" class="tap" style="left: 68%; top: 35.2%"><div class="onde"></div><div class="doigt"></div></div>
             </div>
           </div>
           <div id="e2" class="ecran">
-            <div class="cadre"><img src="assets/ecrans/v2-trouver-routiers.png" alt="" /></div>
-          </div>
-          <div id="e3" class="ecran">
-            <div class="cadre"><img src="assets/ecrans/v2-fil-activite.png" alt="" /></div>
+            <div class="cadre">
+              <img src="assets/ecrans/v2-trouver-routiers.png" alt="" />
+              <div id="invite">✓ Invité</div>
+              <svg id="fleche-ajouter" class="fleche" viewBox="0 0 200 120" style="left: calc(89% + -14px); top: calc(33.5% - 112px)" aria-hidden="true">
+                <path class="trait" d="M192 10 C 120 6, 50 40, 22 104" pathLength="1" />
+                <path class="tete" d="M40 98 L20 108 L18 86" />
+              </svg>
+              <div id="tap-ajouter" class="tap" style="left: 75.5%; top: 35.4%"><div class="onde"></div><div class="doigt"></div></div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div id="textes-clip" class="plein clip" data-start="6" data-duration="18" data-track-index="3">
+      <div id="intro" class="plein clip" data-start="0" data-duration="5.5" data-track-index="2">
+        <div class="plein">
+          <div id="n1" class="carte-app notif">
+              <svg class="avatar" viewBox="0 0 112 112" aria-hidden="true">
+                <circle cx="50" cy="50" r="44" fill="#C9C3F5" stroke="#FFFF1A" stroke-width="8" />
+                <ellipse cx="40" cy="44" rx="4.5" ry="7" fill="#061866" /><ellipse cx="60" cy="44" rx="4.5" ry="7" fill="#061866" />
+                <text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">L</text>
+                <circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" />
+                <svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><circle cx="10" cy="9" r="4" fill="#061866" /><path d="M3 21 Q3 14 10 14 Q17 14 17 21 Z" fill="#061866" /><path d="M20 8 V16 M16 12 H24" stroke="#061866" stroke-width="2.6" stroke-linecap="round" /></svg>
+              </svg>
+              <div class="c-textes">
+                
+                <span class="c-fort">Louna vous a envoyé une invitation</span>
+                <span class="c-bas"><span class="c-gris">à l'instant</span></span>
+              </div>
+              <div id="tap-n1" class="tap" style="left: 78%; top: 50%"><div class="onde"></div><div class="doigt"></div></div>
+            </div>
+          <div id="n2" class="carte-app notif">
+              <svg class="avatar" viewBox="0 0 112 112" aria-hidden="true">
+                <circle cx="50" cy="50" r="44" fill="#A6E8B8" stroke="#061866" stroke-width="8" />
+                <ellipse cx="40" cy="44" rx="4.5" ry="7" fill="#061866" /><ellipse cx="60" cy="44" rx="4.5" ry="7" fill="#061866" />
+                <text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">D</text>
+                <circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" />
+                <svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><rect x="2" y="7" width="13" height="10" rx="2" fill="#061866" /><path d="M15 10 H20 L23 14 V17 H15 Z" fill="#061866" /><circle cx="7" cy="19" r="2.4" fill="#061866" /><circle cx="19" cy="19" r="2.4" fill="#061866" /></svg>
+              </svg>
+              <div class="c-textes">
+                <span class="c-gris">David a visité :</span>
+                <span class="c-fort">Restaurant Chez Marcel</span>
+                <span class="c-bas"><span class="c-gris">à l'instant</span><span class="c-lieu"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="#6E6E73" /></svg>Lyon</span></span>
+              </div>
+            </div>
+          <div id="n3" class="carte-app notif">
+              <svg class="avatar" viewBox="0 0 112 112" aria-hidden="true">
+                <circle cx="50" cy="50" r="44" fill="#F6D38B" stroke="#FFFF1A" stroke-width="8" />
+                <path d="M33 38 L42 44 L33 50 M67 38 L58 44 L67 50" fill="none" stroke="#061866" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                <text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">N</text>
+                <circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" />
+                <svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><path d="M3 5 H21 Q23 5 23 7 V16 Q23 18 21 18 H11 L6 22 V18 H5 Q3 18 3 16 V7 Q3 5 5 5 Z" fill="#061866" /></svg>
+              </svg>
+              <div class="c-textes">
+                
+                <span class="c-fort">Nordin a déposé un avis</span>
+                <span class="c-bas"><span class="c-gris">à l'instant</span></span>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div id="textes-clip" class="plein clip" data-start="5.5" data-duration="17.7" data-track-index="3">
         <div id="textes">
           <div id="t1" class="etape">
             <span class="ligne titre">Crée ton Profil Trucker</span>
@@ -358,37 +454,62 @@
         tl.fromTo(`${id} .ligne`, { autoAlpha: 0, y: 40 }, entre, debut);
         if (fin !== undefined) tl.to(id, sort, fin);
       }
+      // Tap : le doigt se pose, une onde part, le doigt se lève
+      function tape(id, t) {
+        tl.fromTo(`${id} .doigt`, { autoAlpha: 0, scale: 1.5 }, { autoAlpha: 1, scale: 1, duration: 0.18, ease: "power2.out" }, t);
+        tl.fromTo(`${id} .onde`, { autoAlpha: 0.9, scale: 0.7 }, { autoAlpha: 0, scale: 2.3, duration: 0.55, ease: "power2.out", immediateRender: false }, t + 0.15);
+        tl.to(`${id} .doigt`, { autoAlpha: 0, scale: 0.8, duration: 0.2, ease: "power2.in", immediateRender: false }, t + 0.45);
+      }
+      // Flèche : le trait se dessine, puis la pointe apparaît
+      function fleche(id, t, fin) {
+        tl.fromTo(`${id} .trait`, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out" }, t);
+        tl.fromTo(`${id} .tete`, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.15 }, t + 0.38);
+        tl.to(id, { autoAlpha: 0, duration: 0.25 }, fin);
+      }
 
-      // Intro (0–6 s) : chaque routier apparaît, puis sa notification glisse
-      [["#r1", 0.3], ["#r2", 1.3], ["#r3", 2.3]].forEach(([id, t]) => {
-        tl.fromTo(`${id} .avatar`, { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, t);
-        tl.fromTo(`${id} .notif`, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: "power2.out" }, t + 0.25);
+      // Intro (0–5,5 s) : le fil d'activité, puis les notifications arrivent une à une
+      tl.fromTo("#telephone", { autoAlpha: 0, y: 60 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0);
+      [["#n1", 0.3], ["#n2", 0.9], ["#n3", 1.5]].forEach(([id, t]) => {
+        tl.fromTo(id, { autoAlpha: 0, y: -50, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, t);
       });
-      tl.to(".routier", { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in", stagger: 0.06 }, 5.5);
-      tl.to("#fond-couleur", { backgroundColor: "#F5F3F1", duration: 0.4, ease: "power1.inOut" }, 5.75);
+      tape("#tap-n1", 3.0);
+      tl.to("#n1", { scale: 0.97, duration: 0.12, yoyo: true, repeat: 1, ease: "power1.inOut" }, 3.1);
+      tl.to(".notif", { autoAlpha: 0, y: -40, duration: 0.3, ease: "power2.in", stagger: 0.07 }, 5.0);
+      tl.to("#fond-couleur", { backgroundColor: "#F5F3F1", duration: 0.4, ease: "power1.inOut" }, 5.2);
+      tl.fromTo("#e1", { xPercent: 60, autoAlpha: 0 }, arrive, 5.25);
+      tl.fromTo("#e0", { xPercent: 0, autoAlpha: 1 }, part, 5.25);
 
-      // Étapes (6–10,2 · 10,2–13,2 · 13,2–15,6 · 15,6–19,2) puis fin (19,2–24)
-      texte("#t1", 6.3, 9.95);
-      texte("#t2", 10.3, 12.95);
-      texte("#t3", 13.3, 15.35);
-      texte("#t4", 15.7, 18.9);
-      texte("#t5", 19.35);
+      // 1 · Crée ton Profil Trucker (5,5–9,7 s) : tap sur le crayon de l'avatar
+      texte("#t1", 5.8, 9.45);
+      tape("#tap-crayon", 7.3);
 
-      // Téléphone : le profil apparaît progressivement
-      tl.fromTo("#telephone", { autoAlpha: 0, y: 160 }, { autoAlpha: 1, y: 0, duration: 0.8, ease: "power2.out" }, 6.15);
-      // Personnalise et partage : repère sur les deux boutons
-      tl.fromTo("#repere", { autoAlpha: 0, scale: 1.08 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 10.7);
-      tl.to("#repere", { autoAlpha: 0, duration: 0.25 }, 12.95);
-      // Retrouve tes amis
-      tl.fromTo("#e2", { xPercent: 60, autoAlpha: 0 }, arrive, 13.0);
-      tl.fromTo("#e1", { xPercent: 0, autoAlpha: 1 }, part, 13.0);
-      // Activité des proches
-      tl.fromTo("#e3", { xPercent: 60, autoAlpha: 0 }, arrive, 15.4);
-      tl.fromTo("#e2", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 15.4);
-      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 18.9);
+      // 2 · Personnalise et partage (9,7–12,7 s) : cadre, flèche, deux taps
+      texte("#t2", 9.8, 12.45);
+      tl.fromTo("#repere", { autoAlpha: 0, scale: 1.08 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 10.0);
+      fleche("#fleche-boutons", 10.1, 12.45);
+      tl.to("#repere", { autoAlpha: 0, duration: 0.25 }, 12.45);
+      tape("#tap-modifier", 10.7);
+      tape("#tap-partager", 11.6);
 
-      // Fin : retour au fond bleu
-      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.4, ease: "power1.inOut" }, 18.95);
+      // 3 · Retrouve tes amis (12,7–15,1 s) : tap sur Ajouter, le bouton passe à « Invité »
+      tl.fromTo("#e2", { xPercent: 60, autoAlpha: 0 }, arrive, 12.5);
+      tl.fromTo("#e1", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 12.5);
+      texte("#t3", 12.8, 14.85);
+      fleche("#fleche-ajouter", 13.0, 14.85);
+      tape("#tap-ajouter", 13.6);
+      tl.fromTo("#invite", { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 13.85);
+
+      // 4 · Suis l'activité (15,1–18,7 s) : une nouvelle carte arrive dans le fil, zoom léger
+      tl.fromTo("#e0", { xPercent: 60, autoAlpha: 0 }, { ...arrive, immediateRender: false }, 14.9);
+      tl.fromTo("#e2", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 14.9);
+      texte("#t4", 15.2, 18.45);
+      tl.fromTo("#nouvelle-carte", { autoAlpha: 0, y: -30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, 15.8);
+      tl.fromTo("#telephone", { scale: 1 }, { scale: 1.06, duration: 0.8, ease: "power2.inOut", immediateRender: false }, 16.2);
+      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 18.45);
+
+      // 5 · Fin (18,7–23,2 s)
+      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.4, ease: "power1.inOut" }, 18.5);
+      texte("#t5", 18.85);
 
       window.__timelines["main"] = tl;
       tl.seek(0);
