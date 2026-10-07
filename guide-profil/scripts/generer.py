@@ -136,8 +136,7 @@ E_INVITE = ecran(
 E_CONNEXION = ecran(
     "e-connexion",
     "connexion",
-    f"""{fleche("fleche-email", 18, 58.6, "gauche")}
-              {fleche("fleche-mobile", 18, 64.5, "gauche")}
+    f"""{fleche("fleche-mobile", 18, 64.5, "gauche")}
               {tap("tap-mobile", 50, 66.7)}
               <div {ZONE}>
                 <div id="feuille-tel" class="feuille" data-layout-allow-overlap data-layout-allow-occlusion>
@@ -157,39 +156,25 @@ DIMS_TEXTE = " · ".join(f"{nom} {valeur} m" for nom, valeur in DIMENSIONS)
 E_PROFIL = ecran(
     "e-profil",
     "profil-vide",
-    f"""<div id="p-carte" class="p-carte">
-                <div class="p-photo">{PORTRAIT}</div>
-                <div class="p-nom">Charlie G.</div>
-                <div class="p-membre">Membre depuis 2026</div>
-                <div id="bio-vide" class="p-bio-vide">+ Ajoute ta bio</div>
-                <div id="p-bio" class="p-bio">{BIO_AVANT}{EMOJI_CAMION}{BIO_APRES}</div>
-              </div>
+    f"""<div id="p-photo" class="p-photo-seul">{PORTRAIT}</div>
+              <div id="p-bio" class="p-bio-sous"><span>{BIO_AVANT}{EMOJI_CAMION}{BIO_APRES}</span></div>
               <div id="p-camion" class="p-camion">
                 <div class="p-camion-carte">
                   <div class="p-vignette">{CAMION}</div>
                   <div class="p-camion-textes"><b>Camion · « {SURNOM} »</b><span>{DIMS_TEXTE}</span></div>
                 </div>
               </div>
-              <div class="coche" id="coche-photo" style="left: 27%; top: 15.6%">{COCHE}</div>
-              <div class="coche" id="coche-nom" style="left: 84.5%; top: 17.6%">{COCHE}</div>
-              <div class="coche" id="coche-bio" style="left: 84.5%; top: 26.6%">{COCHE}</div>
+              <div class="coche" id="coche-photo" style="left: 33%; top: 15.6%">{COCHE}</div>
+              <div class="coche" id="coche-nom" style="left: 84.5%; top: 18.4%">{COCHE}</div>
+              <div class="coche" id="coche-bio" style="left: 84.5%; top: 27.6%">{COCHE}</div>
               <div class="coche" id="coche-camion" style="left: 82%; top: 67.4%">{COCHE}</div>
               {fleche("fleche-nom", 40, 19.5, "gauche")}
               {tap("tap-modifier", 31.7, 33.2)}
-              {fleche("fleche-photo", 22, 22, "gauche")}
-              {tap("tap-avatar", 33, 25.5)}
+              {fleche("fleche-bio", 12, 28.8, "gauche")}
+              {fleche("fleche-photo", 16, 20, "gauche")}
+              {tap("tap-avatar", 26, 22)}
               {selecteur("p", PORTRAIT)}
               {tap("tap-tuile-p", 22, 66)}
-              {tap("tap-bio-ajout", 30, 27.6)}
-              <div {ZONE}>
-                <div id="feuille-bio" class="feuille" data-layout-allow-overlap data-layout-allow-occlusion>
-                  <div class="f-titre">Bio</div>
-                  <div class="f-champ haut">{lettres("t-bio", BIO_AVANT, BIO_APRES)}</div>
-                  <div class="f-bouton">Enregistrer</div>
-                </div>
-              </div>
-              {tap("tap-enregistrer-bio", 50, 84)}
-              {fleche("fleche-bio", 18, 27.5, "gauche")}
               {fleche("fleche-ajout-camion", 34, 81.5, "gauche")}
               {tap("tap-ajout-camion", 55.4, 82.5)}""",
 )
@@ -199,8 +184,13 @@ E_INFOS = ecran(
     "infos",
     f"""<div class="valeur" style="top: 17.6%">{lettres("t-prenom", "Charlie")}</div>
               <div class="valeur" style="top: 25.7%">{lettres("t-nom", "Giraud")}</div>
+              <div id="bio-champ" class="bio-champ" data-layout-allow-overlap data-layout-allow-occlusion>
+                <span class="bio-label">Bio</span>
+                <div class="bio-saisie">{lettres("t-bio", BIO_AVANT, BIO_APRES)}</div>
+              </div>
               {tap("tap-prenom", 50, 18.2)}
-              {tap("tap-nom", 50, 26.2)}""",
+              {tap("tap-nom", 50, 26.2)}
+              {tap("tap-bio", 50, 44.9)}""",
 )
 
 E_VEHICULE = ecran(
@@ -449,6 +439,58 @@ CSS_COMMUN = """
         display: flex;
         align-items: center;
       }
+      .p-photo-seul {
+        left: 15.2%;
+        top: 16.5%;
+        width: 10.98cqh;
+        height: 10.98cqh;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 0.45cqh solid #061866;
+      }
+      .p-bio-sous {
+        left: 11.6%;
+        top: 27.6%;
+        width: 70%;
+        padding-left: 2.5%;
+        height: 3.6%;
+        background: #ffffff;
+        font-family: "Inter", sans-serif;
+        font-size: 1.2cqh;
+        line-height: 1.3;
+        color: #3a3a3c;
+        display: flex;
+        align-items: center;
+      }
+      .bio-champ {
+        left: 9.8%;
+        top: 42.2%;
+        width: 80.4%;
+        height: 11.6%;
+        background: #ffffff;
+        font-family: "Inter", sans-serif;
+      }
+      .bio-label {
+        position: absolute;
+        left: 3%;
+        top: 4%;
+        font-weight: 700;
+        font-size: 2cqh;
+        color: #000000;
+      }
+      .bio-saisie {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 34%;
+        bottom: 4%;
+        border: 0.25cqh solid #061866;
+        border-radius: 1cqh;
+        padding: 0.8cqh 3%;
+        font-size: 1.55cqh;
+        line-height: 1.35;
+        color: #000000;
+      }
       .valeur.surnom {
         left: 11.5%;
         width: 76%;
@@ -456,55 +498,6 @@ CSS_COMMUN = """
         background: transparent;
         color: #000000;
         font-size: 2.1cqh;
-      }
-      .p-carte {
-        left: 11.5%;
-        top: 15%;
-        width: 77%;
-        height: 16.2%;
-        background: #ffffff;
-        font-family: "Inter", sans-serif;
-      }
-      .p-carte > * {
-        position: absolute;
-      }
-      .p-photo {
-        left: 5%;
-        top: 4%;
-        width: 9.4cqh;
-        height: 9.4cqh;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 0.45cqh solid #ffff1a;
-      }
-      .p-nom {
-        left: 42%;
-        top: 10%;
-        font-weight: 700;
-        font-size: 2.5cqh;
-        color: #000000;
-      }
-      .p-membre {
-        left: 42%;
-        top: 34%;
-        font-size: 1.45cqh;
-        color: #6e6e73;
-      }
-      .p-bio-vide,
-      .p-bio {
-        left: 5%;
-        top: 70%;
-        width: 88%;
-        font-size: 1.35cqh;
-        line-height: 1.3;
-      }
-      .p-bio-vide {
-        font-weight: 700;
-        color: #061866;
-        font-size: 1.5cqh;
-      }
-      .p-bio {
-        color: #3a3a3c;
       }
       .p-camion {
         left: 11%;
@@ -768,9 +761,6 @@ CSS_9x16 = """
         top: 660px;
         height: 1000px;
       }
-      #t2 .sous {
-        font-size: 44px;
-      }
 """
 
 SCRIPT = """
@@ -820,7 +810,6 @@ SCRIPT = """
 
       // 1 · Connecte-toi (3–7,2 s) : e-mail ou mobile, numéro, validation
       texte("#t1", 3.1, 6.95);
-      fleche("#fleche-email", 3.2, 4.15);
       fleche("#fleche-mobile", 3.5, 4.15);
       tape("#tap-mobile", 3.9);
       feuilleMonte("#feuille-tel", 4.1);
@@ -832,7 +821,7 @@ SCRIPT = """
       tl.fromTo("#e-connexion", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 6.15);
       fleche("#fleche-nom", 6.55, 6.95);
 
-      // 2 · Complète ton profil (7,2–14,6 s) : prénom, nom, photo, bio sous la photo
+      // 2 · Complète ton profil (7,2–14,6 s) : prénom, nom et bio sur la même page, puis photo
       texte("#t2", 7.3, 14.35);
       tape("#tap-modifier", 7.45);
       tl.fromTo("#e-infos", { xPercent: 60, autoAlpha: 0 }, arrive, 7.65);
@@ -841,26 +830,22 @@ SCRIPT = """
       saisie("#t-prenom", 8.2, 0.05, 7);
       tape("#tap-nom", 8.65);
       saisie("#t-nom", 8.8, 0.05, 6);
-      tl.fromTo("#e-profil", { xPercent: -30, autoAlpha: 0 }, { ...arrive, immediateRender: false }, 9.35);
-      tl.to("#e-infos", { xPercent: 60, autoAlpha: 0, duration: 0.45, ease: "power2.inOut" }, 9.35);
-      fleche("#fleche-photo", 9.7, 10.3);
-      tape("#tap-avatar", 10.0);
-      tl.fromTo("#p-voile", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.25 }, 10.2);
-      feuilleMonte("#p-selecteur", 10.2);
-      tape("#tap-tuile-p", 10.65);
-      tl.fromTo("#p-tuile-0", { outlineWidth: 0 }, { outlineWidth: "0.6cqh", duration: 0.12 }, 10.75);
-      feuilleDescend("#p-selecteur", 10.9);
-      tl.to("#p-voile", { autoAlpha: 0, duration: 0.25 }, 10.9);
-      apparait("#p-carte", 11.1);
-      tl.fromTo("#p-carte .p-photo", { scale: 0.5 }, { scale: 1, duration: 0.4, ease: "back.out(2)" }, 11.1);
-      tape("#tap-bio-ajout", 11.55);
-      feuilleMonte("#feuille-bio", 11.7);
-      saisie("#t-bio", 11.95, 0.013, __N_BIO__);
-      tape("#tap-enregistrer-bio", 13.2);
-      feuilleDescend("#feuille-bio", 13.4);
-      tl.fromTo("#bio-vide", { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.15, immediateRender: false }, 13.5);
-      apparait("#p-bio", 13.55);
-      fleche("#fleche-bio", 13.75, 14.35);
+      tape("#tap-bio", 9.25);
+      apparait("#bio-champ", 9.4);
+      saisie("#t-bio", 9.55, 0.015, __N_BIO__);
+      apparait("#p-bio", 10.9);
+      tl.fromTo("#e-profil", { xPercent: -30, autoAlpha: 0 }, { ...arrive, immediateRender: false }, 11.0);
+      tl.to("#e-infos", { xPercent: 60, autoAlpha: 0, duration: 0.45, ease: "power2.inOut" }, 11.0);
+      fleche("#fleche-bio", 11.4, 12.05);
+      fleche("#fleche-photo", 12.05, 12.65);
+      tape("#tap-avatar", 12.35);
+      tl.fromTo("#p-voile", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.25 }, 12.55);
+      feuilleMonte("#p-selecteur", 12.55);
+      tape("#tap-tuile-p", 12.95);
+      tl.fromTo("#p-tuile-0", { outlineWidth: 0 }, { outlineWidth: "0.6cqh", duration: 0.12 }, 13.05);
+      feuilleDescend("#p-selecteur", 13.2);
+      tl.to("#p-voile", { autoAlpha: 0, duration: 0.25 }, 13.2);
+      tl.fromTo("#p-photo", { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 13.4);
 
       // 3 · Ajoute ton camion (14,6–20,4 s) : photo, surnom, type, dimensions
       texte("#t3", 14.7, 20.15);
@@ -952,7 +937,7 @@ def page(cid, w, h, css_format):
         <div id="textes">
           <div id="t0" class="etape blanc">
             <span class="ligne titre">Crée ton Profil Trucker</span>
-            <span class="ligne titre leger">en 3 étapes et le tour est joué&nbsp;!</span>
+            <span class="ligne titre leger">en 3 étapes</span>
           </div>
           <div id="t1" class="etape">
             <div class="num">1</div>
@@ -961,7 +946,6 @@ def page(cid, w, h, css_format):
           <div id="t2" class="etape">
             <div class="num">2</div>
             <span class="ligne titre">Complète ton profil</span>
-            <span class="ligne sous">Plus ton profil est complet, plus tes amis pourront te retrouver facilement&nbsp;!</span>
           </div>
           <div id="t3" class="etape">
             <div class="num">3</div>
