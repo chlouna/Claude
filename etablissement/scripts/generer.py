@@ -13,7 +13,7 @@ placés dans l'élément qu'ils désignent, ils suivent donc la mise en page des
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
-DUREE = 62.6
+DUREE = 64.6
 
 B, S, W, O = "#061866", "#000E38", "#FFFFFF", "#F5F3F1"
 T1, T2 = "#DCE3F5", "#AEBBE3"  # teintes de Michelin Blue, pour le volume des illustrations
@@ -120,47 +120,6 @@ RESTAURANT = f"""
     <circle cx="635" cy="405" r="7" fill="{B}" />
     {enseigne(600, 110, "couverts")}
 """
-
-STATION = f"""
-    {NUAGES}
-    <rect x="200" y="150" width="800" height="56" rx="10" fill="{B}" />
-    <rect x="200" y="206" width="800" height="14" fill="{S}" />
-    <rect x="240" y="220" width="26" height="250" fill="{B}" />
-    <rect x="934" y="220" width="26" height="250" fill="{B}" />
-    {enseigne(600, 90, "pompe")}
-    <g transform="translate(330 470)"><rect x="-55" y="-190" width="110" height="190" rx="12" fill="{W}" stroke="{B}" stroke-width="8" /><rect x="-35" y="-165" width="70" height="44" rx="6" fill="{T1}" /><rect x="-35" y="-100" width="70" height="14" rx="7" fill="{T2}" /><path d="M55 -130 Q95 -130 95 -80 V-40" fill="none" stroke="{S}" stroke-width="9" stroke-linecap="round" /></g>
-    {camion(430, 470, 0.95)}
-"""
-
-LAVAGE = f"""
-    {NUAGES}{arbre(150)}{arbre(1060)}
-    <rect x="240" y="210" width="44" height="260" fill="{B}" />
-    <rect x="916" y="210" width="44" height="260" fill="{B}" />
-    <rect x="220" y="150" width="760" height="64" rx="10" fill="{B}" />
-    {enseigne(600, 92, "goutte")}
-    <g><rect x="306" y="232" width="62" height="238" rx="31" fill="{T2}" />{''.join(f'<path d="M314 {y} H360" stroke="{W}" stroke-width="6" stroke-linecap="round" />' for y in range(262, 460, 30))}</g>
-    {camion(380, 470, 0.95)}
-    <g><rect x="832" y="232" width="62" height="238" rx="31" fill="{T2}" />{''.join(f'<path d="M840 {y} H886" stroke="{W}" stroke-width="6" stroke-linecap="round" />' for y in range(262, 460, 30))}</g>
-    {''.join(f'<path d="M{x} 240 Q{x - 9} 256 {x} 262 Q{x + 9} 256 {x} 240 Z" fill="{T2}" />' for x in (450, 560, 670, 780))}
-"""
-
-GARAGE = f"""
-    {NUAGES}{arbre(170)}
-    <rect x="260" y="190" width="680" height="280" fill="{W}" stroke="{B}" stroke-width="8" />
-    <path d="M230 200 L600 110 L970 200 Z" fill="{B}" />
-    <rect x="360" y="270" width="480" height="200" fill="{T1}" stroke="{B}" stroke-width="8" />
-    {''.join(f'<path d="M364 {y} H836" stroke="{T2}" stroke-width="7" />' for y in range(300, 470, 32))}
-    <rect x="360" y="270" width="480" height="62" fill="{S}" />
-    {enseigne(600, 40, "cle")}
-    {camion(590, 470, 0.95)}
-"""
-
-ILLUS = [("restaurant", "Restaurant", RESTAURANT), ("station", "Station-service", STATION), ("lavage", "Station de lavage", LAVAGE), ("garage", "Garage", GARAGE)]
-
-
-def illustration(contenu, classe="illus", ratio="xMidYMax meet"):
-    return f'<svg class="{classe}" viewBox="0 0 1200 560" preserveAspectRatio="{ratio}" aria-hidden="true">{contenu}</svg>'
-
 
 # Photo de façade pour « Ma photo » : ciel Off White, sol bleu
 FACADE = f'<svg class="facade" viewBox="150 60 900 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="0" y="0" width="1200" height="600" fill="{O}" />{RESTAURANT}<rect x="0" y="470" width="1200" height="130" fill="{B}" /></svg>'
@@ -333,10 +292,17 @@ STATS = [
 ]
 
 # Icônes du téléphone illustré (scène 2) : une grille, celle de Truckfly au centre
-GRILLE_APPS = "".join(
-    f'<span class="app{" app-truckfly" if i == 4 else ""}">{"<svg viewBox=\"0 0 24 32\"><path d=\"M12 3 A9 9 0 0 0 3 12 C3 18.5 12 29 12 29 S21 18.5 21 12 A9 9 0 0 0 12 3 Z\" fill=\"#FFFFFF\" /><circle cx=\"12\" cy=\"12\" r=\"3.6\" fill=\"#061866\" /></svg>" + CLIC if i == 4 else ""}</span>'
-    for i in range(12)
-)
+# Repères posés sur la carte de l'app (positions en % de la capture rognée, pointe du repère)
+REPERES = [
+    ("restaurant", "couverts", "Restaurant", 22, 45, "droite"),
+    ("station", "pompe", "Station-service", 62, 31, "gauche"),
+    ("lavage", "goutte", "Station de lavage", 27, 64, "droite"),
+    ("garage", "cle", "Garage", 56, 84, "gauche"),
+]
+
+
+def repere(cle, ic, nom, x, y, cote):
+    return f'<div id="pin-{cle}" class="pin {cote}" style="left: {x}%; top: {y}%"><span class="pin-marque">{icone(ic, W)}</span><span class="pin-nom">{nom}</span></div>'
 
 
 def corps(racine):
@@ -353,16 +319,26 @@ def corps(racine):
         </div>
       </div>
 
-      <div id="s2a" class="plein clip scene" data-start="3.4" data-duration="2.3" data-track-index="1">
-        <div id="telephone">
-          <div class="ecran-tel">
-            <div class="grille-apps">{GRILLE_APPS}</div>
-            <div id="app-ouverte"><img src="{racine}assets/logos/truckfly-blanc-rogne.png" alt="" /></div>
-          </div>
+      <div id="s2" class="plein clip" data-start="3.4" data-duration="14.9" data-track-index="2">
+        <div id="types">
+          {''.join(f'<div id="type-{cle}" class="type"><span class="type-marque">{icone(ic, B)}</span><span class="titre">{nom}</span></div>' for cle, ic, nom, *_ in REPERES)}
+        </div>
+        <div id="tel">
+          <img class="tel-img" src="{racine}assets/ecrans/app-ouverture.png" alt="Écran d'ouverture de Michelin Truckfly" />
+          <img id="tel-carte" class="tel-img" src="{racine}assets/ecrans/app-carte.png" alt="Carte de Michelin Truckfly" />
+          <div id="voile"></div>
+          {''.join(repere(*r) for r in REPERES)}
         </div>
       </div>
 
-      <div id="s2b" class="plein clip scene" data-start="5.5" data-duration="6.2" data-track-index="1">
+      <div id="s3" class="plein clip scene" data-start="5.8" data-duration="5.7" data-track-index="3">
+        <div class="bloc-texte">
+          <span class="ligne sous">{mots("Saviez-vous que Michelin Truckfly existe aussi")}</span>
+          <span class="ligne titre">{mots("pour les propriétaires d'établissements&nbsp;?")}</span>
+        </div>
+      </div>
+
+      <div id="s2b" class="plein clip scene" data-start="18.2" data-duration="6.2" data-track-index="1">
         <div class="bloc-stats">
           <div class="titre-stats"><span class="titre">{mots("La communauté en chiffres")}</span><span id="s2-trait" class="trait-jaune"></span></div>
           <div class="stats">
@@ -371,42 +347,30 @@ def corps(racine):
         </div>
       </div>
 
-      <div id="s3" class="plein clip scene" data-start="11.5" data-duration="5.6" data-track-index="1">
+      <div id="s5" class="plein clip scene" data-start="24.2" data-duration="5.5" data-track-index="1">
         <div class="bloc-texte">
-          <span class="ligne sous">{mots("Saviez-vous que Truckfly existe aussi")}</span>
-          <span class="ligne titre">{mots("pour les propriétaires d'établissements&nbsp;?")}</span>
-        </div>
-      </div>
-
-      <div id="s4" class="plein clip scene" data-start="16.9" data-duration="6.3" data-track-index="1">
-        <div id="sol"></div>
-        {''.join(f'<div id="i-{cle}" class="illu-bloc">{illustration(svg)}<span class="nom-lieu titre">{nom}</span></div>' for cle, nom, svg in ILLUS)}
-      </div>
-
-      <div id="s5" class="plein clip scene" data-start="22.9" data-duration="5.1" data-track-index="1">
-        <div class="bloc-texte">
-          <span class="ligne sous">{mots("J'ai un établissement sur Truckfly,")}</span>
-          <span class="ligne titre">{mots("je mets à jour mes informations&nbsp;!")}</span>
+          <span class="ligne sous">{mots("Vous avez un établissement sur Michelin Truckfly&nbsp;?")}</span>
+          <span class="ligne titre">{mots("Mettez à jour vos informations&nbsp;!")}</span>
           <span id="s5-url" class="barre-url"><span class="url">{lettres("www.truckfly.com")}<span class="curseur"></span></span>{LOUPE}</span>
         </div>
       </div>
 
-      <div id="s6" class="plein clip scene clair" data-start="27.7" data-duration="6.3" data-track-index="1">
+      <div id="s6" class="plein clip scene clair" data-start="29.5" data-duration="6.4" data-track-index="1">
         <div class="bloc-texte">
-          <span class="ligne sous">{mots("Mon établissement n'est pas encore sur Truckfly&nbsp;?")}</span>
-          <span class="ligne titre">{mots("Je crée mon compte et j'ajoute mon établissement&nbsp;!")}</span>
+          <span class="ligne sous">{mots("Pas encore présent sur Michelin Truckfly&nbsp;?")}</span>
+          <span class="ligne titre">{mots("Créez votre compte et ajoutez votre établissement&nbsp;!")}</span>
           <span id="s6-url" class="barre-url"><span class="url">{lettres("www.truckfly.com")}<span class="curseur"></span></span><span id="s6-loupe" class="zone-loupe">{LOUPE}{CLIC}</span></span>
         </div>
       </div>
 
-      <div id="s7" class="plein clip scene" data-start="33.7" data-duration="23.6" data-track-index="1">
+      <div id="s7" class="plein clip scene" data-start="35.7" data-duration="23.6" data-track-index="1">
         <div class="etiquettes">
           {''.join(f'<div id="{eid}" class="etiquette"><span class="titre">{mots(txt)}</span><span class="trait-jaune"></span></div>' for eid, txt in ETIQUETTES)}
         </div>
         {FENETRE.replace("{racine}", racine)}
       </div>
 
-      <div id="s9" class="plein clip scene" data-start="57.0" data-duration="{round(DUREE - 57.0, 2)}" data-track-index="1">
+      <div id="s9" class="plein clip scene" data-start="59.0" data-duration="{round(DUREE - 59.0, 2)}" data-track-index="1">
         <div class="bloc-fin">
           <img id="s9-logo" src="{racine}assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" />
           <span class="ligne sous">Pour promouvoir mon établissement,</span>
@@ -460,73 +424,7 @@ SCRIPT = """
         tl.to(`${apres}`, { backgroundColor: "#061866", color: "#FFFFFF", duration: 0.25 }, t);
       }
 
-      // 1 · Connaissez-vous Truckfly ? (0–3,5 s)
-      tl.fromTo("#s1 .mot", { autoAlpha: 0, y: 40 }, entre, 0.25);
-      tl.fromTo("#s1-logo", { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.5, ease: "power2.out" }, 0.8);
-      tl.fromTo("#s1-q", { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: "back.out(2.2)" }, 1.3);
-      tl.fromTo("#s1-trait", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 1.5);
-      cache("#s1 .bloc-intro", 3.15);
-      fond("#F5F3F1", 3.35);
-
-      // 2a · Le téléphone : tap sur l'app Truckfly, elle s'ouvre (3,5–5,6 s)
-      tl.fromTo("#telephone", { autoAlpha: 0, y: 160 }, { autoAlpha: 1, y: 0, duration: 0.55, ease: "power2.out" }, 3.45);
-      clic(".app-truckfly", 4.35);
-      tl.fromTo("#app-ouverte", { autoAlpha: 0, scale: 0.25 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: "power2.out" }, 4.5);
-      tl.to("#telephone", { autoAlpha: 0, scale: 1.08, duration: 0.3, ease: "power2.in" }, 5.3);
-      fond("#061866", 5.35);
-
-      // 2b · La communauté en chiffres (5,6–11,6 s)
-      tl.fromTo("#s2b .titre .mot", { autoAlpha: 0, y: 40 }, { ...entre, stagger: 0.08 }, 5.65);
-      tl.fromTo("#s2-trait", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.out" }, 5.95);
-      gsap.utils.toArray("#s2b .stat").forEach((stat, i) => {
-        const t = 6.15 + i * 0.35;
-        tl.fromTo(stat, { autoAlpha: 0, y: 40 }, entre, t);
-        stat.querySelectorAll(".chiffre").forEach((c, j) => {
-          const v = Number(c.dataset.v);
-          tl.fromTo(c.querySelector(".bande"), { xPercent: -50, yPercent: 0 }, { xPercent: -50, yPercent: -(10 + v) * 5, duration: 1.1 + j * 0.08, ease: "power3.out" }, t);
-        });
-      });
-      cache("#s2b .bloc-stats", 11.3);
-
-      // 3 · Truckfly existe aussi pour les propriétaires d'établissements (11,6–17 s)
-      montre("#s3 .sous .mot", 11.65);
-      montre("#s3 .titre .mot", 12.35);
-      cache("#s3 .bloc-texte", 16.7);
-      fond("#F5F3F1", 16.85);
-
-      // 4 · Les établissements : restaurant, station-service, station de lavage, garage (17–23 s)
-      tl.fromTo("#sol", { yPercent: 100 }, { yPercent: 0, duration: 0.45, ease: "power2.out" }, 16.95);
-      ["#i-restaurant", "#i-station", "#i-lavage", "#i-garage"].forEach((id, i) => {
-        const t = 17.05 + i * 1.5;
-        tl.fromTo(`${id} .illus`, { autoAlpha: 0, xPercent: 35 }, { autoAlpha: 1, xPercent: 0, duration: 0.45, ease: "power2.out" }, t);
-        tl.fromTo(`${id} .nom-lieu`, { autoAlpha: 0, y: 30 }, entre, t + 0.15);
-        if (i < 3) {
-          tl.to(`${id} .illus`, { autoAlpha: 0, xPercent: -35, duration: 0.35, ease: "power2.in", immediateRender: false }, t + 1.3);
-          tl.to(`${id} .nom-lieu`, { autoAlpha: 0, duration: 0.2, immediateRender: false }, t + 1.3);
-        }
-      });
-      tl.to("#i-garage", { autoAlpha: 0, duration: 0.3 }, 22.45);
-      tl.to("#sol", { height: "100%", duration: 0.45, ease: "power2.inOut" }, 22.55);
-      fond("#061866", 22.95);
-
-      // 5 · J'ai un établissement : je mets à jour mes infos (23–27,8 s)
-      montre("#s5 .sous .mot", 23.05);
-      montre("#s5 .titre .mot", 23.8);
-      tl.fromTo("#s5-url", { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 24.6);
-      frappe("#s5-url", 24.9);
-      cache("#s5 .bloc-texte", 27.45);
-      fond("#F5F3F1", 27.6);
-
-      // 6 · Pas encore sur Truckfly : je crée mon compte (27,8–33,8 s)
-      montre("#s6 .sous .mot", 27.9);
-      montre("#s6 .titre .mot", 28.85);
-      tl.fromTo("#s6-url", { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 29.9);
-      frappe("#s6-url", 30.2);
-      clic("#s6-loupe", 31.6);
-      cache("#s6 .bloc-texte", 33.35);
-      fond("#061866", 33.5);
-
-      // 7 · L'espace pro (33,8–57 s)
+      // 8 · L'espace pro : minutage d'origine (33,8–57 s), décalé de 2 s juste après
       tl.fromTo("#fenetre", { autoAlpha: 0, y: 120 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out" }, 33.75);
       tl.set(["#p2", "#p3", "#p4", "#p5", "#p6"], { autoAlpha: 0 }, 0);
 
@@ -591,6 +489,71 @@ SCRIPT = """
       tl.fromTo("#s9 .cta", { autoAlpha: 0, scale: 0.85 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: "back.out(1.8)" }, 58.4);
       tl.to("#s9 .cta", { scale: 1.05, duration: 0.35, yoyo: true, repeat: 3, ease: "sine.inOut" }, 59.3);
 
+      // Tout ce qui précède commence 2 s plus tard (35,8–64,6 s)
+      tl.shiftChildren(2, false, 0);
+
+      // 1 · Connaissez-vous Michelin Truckfly ? (0–3,5 s)
+      tl.fromTo("#s1 .mot", { autoAlpha: 0, y: 40 }, entre, 0.25);
+      tl.fromTo("#s1-logo", { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.5, ease: "power2.out" }, 0.8);
+      tl.fromTo("#s1-q", { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: "back.out(2.2)" }, 1.3);
+      tl.fromTo("#s1-trait", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 1.5);
+      cache("#s1 .bloc-intro", 3.15);
+
+      // 2 · Ouverture de l'app : logo et Bibendum (3,5–5,8 s)
+      const dx = parseFloat(getComputedStyle(document.getElementById("root")).getPropertyValue("--tel-dx")) || 0;
+      tl.fromTo("#tel", { autoAlpha: 0, y: 220 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out" }, 3.45);
+      // l'écran d'ouverture passe en arrière-plan pendant l'interstitiel
+      tl.to("#tel", { autoAlpha: 0.14, scale: 0.86, duration: 0.5, ease: "power2.inOut" }, 5.55);
+
+      // 3 · Interstitiel (5,8–11,3 s)
+      montre("#s3 .sous .mot", 5.95);
+      montre("#s3 .titre .mot", 6.75);
+      cache("#s3 .bloc-texte", 11.0);
+
+      // Transition vers la carte : le téléphone revient, l'écran d'ouverture laisse place à la carte
+      tl.to("#tel", { autoAlpha: 1, scale: 1, x: dx, duration: 0.6, ease: "power2.inOut" }, 11.2);
+      tl.fromTo("#tel-carte", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.45, ease: "power1.inOut" }, 11.55);
+      tl.fromTo("#voile", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, 12.1);
+
+      // 4 · Les établissements apparaissent sur la carte (12,3–18 s)
+      ["restaurant", "station", "lavage", "garage"].forEach((cle, i) => {
+        const t = 12.35 + i * 1.15;
+        tl.fromTo(`#pin-${cle} .pin-marque`, { autoAlpha: 0, scale: 0.3, y: -30 }, { autoAlpha: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2.4)" }, t);
+        tl.fromTo(`#pin-${cle} .pin-nom`, { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "power2.out" }, t + 0.2);
+        tl.fromTo(`#type-${cle}`, { autoAlpha: 0, x: -40 }, { autoAlpha: 1, x: 0, duration: 0.4, ease: "power2.out" }, t + 0.1);
+      });
+      tl.to(["#tel", "#types"], { autoAlpha: 0, y: 60, duration: 0.35, ease: "power2.in" }, 17.85);
+
+      // 5 · La communauté en chiffres (18,3–24,3 s)
+      tl.fromTo("#s2b .titre .mot", { autoAlpha: 0, y: 40 }, { ...entre, stagger: 0.08 }, 18.35);
+      tl.fromTo("#s2-trait", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.out" }, 18.65);
+      gsap.utils.toArray("#s2b .stat").forEach((stat, i) => {
+        const t = 18.85 + i * 0.35;
+        tl.fromTo(stat, { autoAlpha: 0, y: 40 }, entre, t);
+        stat.querySelectorAll(".chiffre").forEach((c, j) => {
+          const v = Number(c.dataset.v);
+          tl.fromTo(c.querySelector(".bande"), { xPercent: -50, yPercent: 0 }, { xPercent: -50, yPercent: -(10 + v) * 5, duration: 1.1 + j * 0.08, ease: "power3.out" }, t);
+        });
+      });
+      cache("#s2b .bloc-stats", 23.95);
+
+      // 6 · Vous avez un établissement : mettez à jour vos informations (24,3–29,6 s)
+      montre("#s5 .sous .mot", 24.35);
+      montre("#s5 .titre .mot", 25.2);
+      tl.fromTo("#s5-url", { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 26.0);
+      frappe("#s5-url", 26.3);
+      cache("#s5 .bloc-texte", 29.2);
+      fond("#F5F3F1", 29.35);
+
+      // 7 · Pas encore présent : créez votre compte (29,6–35,8 s)
+      montre("#s6 .sous .mot", 29.65);
+      montre("#s6 .titre .mot", 30.5);
+      tl.fromTo("#s6-url", { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 31.7);
+      frappe("#s6-url", 32.0);
+      clic("#s6-loupe", 33.45);
+      cache("#s6 .bloc-texte", 35.35);
+      fond("#061866", 35.5);
+
       window.__timelines = window.__timelines || {};
       window.__timelines["{cid}"] = tl;
       tl.seek(0);
@@ -623,15 +586,21 @@ CSS_COMMUN = """
       #s1-q { font-size: var(--t-q); }
       #s1-trait { position: absolute; left: 50%; bottom: calc(var(--trait) * -5); margin-left: calc(var(--trait-l) / -2); }
 
-      /* 2a · Téléphone illustré */
-      #telephone { width: var(--tel-l); aspect-ratio: 9 / 18.5; background: #061866; border-radius: calc(var(--tel-l) * 0.14); padding: calc(var(--tel-l) * 0.045); box-shadow: 0 30px 80px rgba(6, 24, 102, 0.25); }
-      .ecran-tel { position: relative; width: 100%; height: 100%; background: #FFFFFF; border-radius: calc(var(--tel-l) * 0.1); overflow: hidden; display: flex; align-items: center; justify-content: center; }
-      .grille-apps { display: grid; grid-template-columns: repeat(3, 1fr); gap: calc(var(--tel-l) * 0.07); width: 78%; }
-      .app { position: relative; aspect-ratio: 1; border-radius: 26%; background: #DCE3F5; display: flex; align-items: center; justify-content: center; }
-      .app-truckfly { background: #061866; }
-      .app-truckfly svg { width: 46%; height: 60%; }
-      #app-ouverte { position: absolute; inset: 0; background: #061866; display: flex; align-items: center; justify-content: center; transform-origin: 50% 46%; }
-      #app-ouverte img { width: 74%; height: auto; }
+      /* 2 · Téléphone : écran d'ouverture puis carte (captures de l'app) */
+      #tel { position: absolute; width: var(--tel-l); aspect-ratio: 462 / 911; left: calc(var(--tel-cx) - var(--tel-l) / 2); top: calc(50% - var(--tel-l) * 0.986); font-size: calc(var(--tel-l) / 17); visibility: hidden; opacity: 0; }
+      .tel-img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      #tel-carte { visibility: hidden; opacity: 0; }
+      #voile { position: absolute; left: 7.4%; right: 7.1%; top: 21%; bottom: 13.3%; background: rgba(255, 255, 255, 0.5); visibility: hidden; opacity: 0; }
+      .pin { position: absolute; display: flex; align-items: center; gap: 0.25em; transform: translate(-1.1em, -2.55em); }
+      .pin.gauche { flex-direction: row-reverse; transform: translate(calc(-100% + 1.1em), -2.55em); }
+      .pin-marque { position: relative; flex: none; width: 2.2em; height: 2.2em; border-radius: 0.55em; background: #061866; border: 0.12em solid #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.3); transform-origin: 50% 120%; visibility: hidden; opacity: 0; }
+      .pin-marque::after { content: ""; position: absolute; left: 50%; bottom: -0.42em; margin-left: -0.32em; border: 0.32em solid transparent; border-top: 0.36em solid #061866; border-bottom: 0; }
+      .pin-marque .icone { width: 1.3em; height: 1.3em; }
+      .pin-nom { background: #FFFFFF; color: #061866; font-family: "Bib", sans-serif; font-weight: 700; font-size: 0.82em; padding: 0.3em 0.75em; border-radius: 99px; white-space: nowrap; box-shadow: 0 0.2em 0.6em rgba(0, 0, 0, 0.25); visibility: hidden; opacity: 0; }
+      #types { position: absolute; left: var(--types-x); top: 0; bottom: 0; display: var(--types-aff); flex-direction: column; justify-content: center; gap: 40px; }
+      .type { display: flex; align-items: center; gap: 28px; font-size: var(--t-type); visibility: hidden; opacity: 0; }
+      .type-marque { flex: none; width: 1.1em; height: 1.1em; border-radius: 0.28em; background: #FFFFFF; display: flex; align-items: center; justify-content: center; }
+      .type-marque .icone { width: 70%; height: 70%; }
 
       /* Repères de clic : posés au centre de l'élément visé */
       .clic { position: absolute; left: 50%; top: 50%; width: 0; height: 0; pointer-events: none; }
@@ -662,12 +631,6 @@ CSS_COMMUN = """
       .loupe { width: 1.1em; height: 1.1em; }
       .zone-loupe { position: relative; display: flex; --clic: 2.2em; }
       .curseur { display: inline-block; width: 0.07em; height: 1em; margin-left: 0.04em; vertical-align: -0.12em; background: currentColor; visibility: hidden; opacity: 0; }
-
-      /* 4 · Établissements */
-      #sol { position: absolute; left: 0; right: 0; bottom: 0; height: var(--sol); background: #061866; }
-      .illu-bloc { position: absolute; inset: 0; }
-      .illus { position: absolute; left: 50%; bottom: var(--sol); transform: translateX(-50%); width: var(--illu-l); height: var(--illu-h); visibility: hidden; opacity: 0; overflow: visible; }
-      .nom-lieu { position: absolute; left: 0; right: 0; bottom: 0; height: var(--sol); display: flex; align-items: center; justify-content: center; font-size: var(--t-lieu); visibility: hidden; opacity: 0; }
 
       /* 7 · Espace pro recréé (Noto Sans, tailles en em) */
       .etiquettes { position: absolute; left: var(--etq-x); top: var(--etq-y); width: var(--etq-l); height: var(--etq-h); }
@@ -762,16 +725,14 @@ CSS_16x9 = """
       #root {
         --trait: 10px; --trait-l: 200px;
         --intro-sens: row; --intro-gap: 40px; --q-gap: 36px; --t-intro: 120px; --logo-intro: 150px; --t-q: 150px;
-        --tel-l: 380px; --clic: 64px;
+        --tel-l: 470px; --tel-cx: 960px; --tel-dx: 320; --types-x: 200px; --types-aff: flex; --t-type: 76px; --clic: 64px;
         --stats-gap: 70px; --stats-gap-in: 60px 90px; --stats-cols: repeat(3, auto); --t-stats: 96px; --t-nombre: 150px; --t-legende: 44px;
-        --txt-gap: 28px; --txt-l: 1760px; --t-sous: 76px; --t-titre: 104px; --t-url: 52px;
-        --sol: 300px; --illu-l: 1500px; --illu-h: 700px; --t-lieu: 110px;
+        --txt-gap: 28px; --txt-l: 1760px; --t-sous: 68px; --t-titre: 104px; --t-url: 52px;
         --etq-x: 100px; --etq-y: 140px; --etq-l: 480px; --etq-h: 800px; --etq-align: flex-start; --etq-texte: left; --t-etq: 72px; --t-etq5: 62px;
         --f-x: 630px; --f-y: 100px; --f-l: 1220px; --f-h: 880px; --ui: 24px; --menu-l: 13em; --menu-aff: flex; --pane-pad: 1.5em 1.8em;
         --champs-cols: 1.15fr 1fr; --plan-h: 8.8em; --services-cols: 1fr 1fr; --depot-h: 18em;
         --logo-fin: 720px; --fin-gap: 56px; --t-fin: 72px; --t-cta: 72px;
       }
-      #s6 .sous { font-size: 68px; }
       .stats .stat:nth-child(4) { grid-column: 1; }
       .stats .stat:nth-child(5) { grid-column: 2 / span 2; }
 """
@@ -780,10 +741,9 @@ CSS_9x16 = """
       #root {
         --trait: 12px; --trait-l: 220px;
         --intro-sens: column; --intro-gap: 60px; --q-gap: 40px; --t-intro: 116px; --logo-intro: 200px; --t-q: 200px;
-        --tel-l: 560px; --clic: 96px;
+        --tel-l: 715px; --tel-cx: 540px; --tel-dx: 0; --types-x: 0; --types-aff: none; --t-type: 80px; --clic: 96px;
         --stats-gap: 56px; --stats-gap-in: 26px; --stats-cols: 1fr; --t-stats: 96px; --t-nombre: 124px; --t-legende: 50px;
         --txt-gap: 36px; --txt-l: 940px; --t-sous: 80px; --t-titre: 104px; --t-url: 60px;
-        --sol: 560px; --illu-l: 1680px; --illu-h: 784px; --t-lieu: 100px;
         --etq-x: 70px; --etq-y: 230px; --etq-l: 940px; --etq-h: 360px; --etq-align: center; --etq-texte: center; --t-etq: 104px; --t-etq5: 80px;
         --f-x: 50px; --f-y: 610px; --f-l: 980px; --f-h: 1060px; --ui: 31px; --menu-l: 0; --menu-aff: none; --pane-pad: 1.1em 1.1em;
         --champs-cols: 1fr; --plan-h: 4.2em; --services-cols: 1fr; --depot-h: 13em;
