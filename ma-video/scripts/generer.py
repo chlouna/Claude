@@ -25,7 +25,7 @@ YEUX = {
 BADGES = {
     "invitation": '<circle cx="10" cy="9" r="4" fill="#061866" /><path d="M3 21 Q3 14 10 14 Q17 14 17 21 Z" fill="#061866" /><path d="M20 8 V16 M16 12 H24" stroke="#061866" stroke-width="2.6" stroke-linecap="round" />',
     "visite": '<rect x="2" y="7" width="13" height="10" rx="2" fill="#061866" /><path d="M15 10 H20 L23 14 V17 H15 Z" fill="#061866" /><circle cx="7" cy="19" r="2.4" fill="#061866" /><circle cx="19" cy="19" r="2.4" fill="#061866" />',
-    "profil": '<path d="M1 13 Q13 2 25 13 Q13 24 1 13 Z" fill="#061866" /><circle cx="13" cy="13" r="4" fill="#DCE6F7" />',
+    "avis": '<path d="M3 5 H21 Q23 5 23 7 V16 Q23 18 21 18 H11 L6 22 V18 H5 Q3 18 3 16 V7 Q3 5 5 5 Z" fill="#061866" />',
     "ami": '<circle cx="13" cy="8" r="5" fill="#061866" /><path d="M3 24 Q3 15 13 15 Q23 15 23 24 Z" fill="#061866" />',
 }
 
@@ -66,36 +66,15 @@ def carte(cid, av, haut, fort, bas, lieu=None, extra="", classe=""):
             </div>"""
 
 
-# --- Personnages : conducteurs en buste, casquette, téléphone en main, pastille « en ligne » ---
-
-TENUES = {"louna": ("#FFFF1A", "#BFD3F2"), "nicolas": ("#BFD3F2", "#FFFFFF"), "david": ("#FFFFFF", "#DCE6F7")}
-
-
-def personnage(qui, nom):
-    _, visage, _, yeux = PERSONNES[qui]
-    casquette, maillot = TENUES[qui]
-    regard = (
-        '<path d="M88 126 L100 134 L88 142 M152 126 L140 134 L152 142" fill="none" stroke="#061866" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />'
-        if yeux == "plisses"
-        else '<ellipse cx="100" cy="134" rx="6" ry="9" fill="#061866" /><ellipse cx="140" cy="134" rx="6" ry="9" fill="#061866" />'
-    )
-    return f"""<div id="p-{qui}" class="perso">
-            <svg class="perso-svg" viewBox="0 0 240 300" aria-hidden="true">
-              <path d="M28 300 Q28 206 120 202 Q212 206 212 300 Z" fill="{maillot}" stroke="#061866" stroke-width="6" />
-              <path d="M100 196 L140 196 L136 214 L104 214 Z" fill="{visage}" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
-              <circle cx="120" cy="128" r="68" fill="{visage}" stroke="#061866" stroke-width="6" />
-              {regard}
-              <path d="M102 160 Q120 174 138 160" fill="none" stroke="#061866" stroke-width="6" stroke-linecap="round" />
-              <path d="M54 98 Q58 38 120 36 Q182 38 186 98 Z" fill="{casquette}" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
-              <path d="M48 96 L204 96 Q212 110 194 112 L48 112 Z" fill="#061866" />
-              <g id="tel-{qui}" class="perso-tel">
-                <rect x="144" y="208" width="54" height="90" rx="10" fill="#061866" />
-                <rect x="150" y="218" width="42" height="68" rx="5" fill="#BFD3F2" />
-                <circle cx="171" cy="292" r="16" fill="{visage}" stroke="#061866" stroke-width="5" />
-              </g>
-              <circle class="en-ligne" cx="178" cy="60" r="15" fill="#34C759" stroke="#FFFFFF" stroke-width="6" />
-            </svg>
-            <span class="perso-nom">{nom}</span>
+def rangee(rid, qui, badge, carte_html, inverse=False):
+    """Intro : grand avatar façon app à côté de sa notification, en quinconce."""
+    grand = avatar(qui, badge).replace('class="avatar"', 'class="avatar-grand"', 1)
+    # halo blanc derrière l'anneau, pour qu'il se détache du fond bleu
+    grand = grand.replace('<circle cx="50" cy="50" r="44"', '<circle cx="50" cy="50" r="53" fill="#FFFFFF" />\n                <circle cx="50" cy="50" r="44"', 1)
+    sens = " inverse" if inverse else ""
+    return f"""<div id="{rid}" class="rangee{sens}">
+            {grand}
+            {carte_html}
           </div>"""
 
 
@@ -108,9 +87,9 @@ BOUTON_ACCEPTER = """
 
 NOTIFS_INTRO = "\n          ".join(
     [
-        carte("n1", avatar("louna", "invitation"), None, "Louna vous a envoyé une invitation", "à l'instant", extra=BOUTON_ACCEPTER, classe="notif"),
-        carte("n2", avatar("nicolas", "profil"), None, "Nicolas J. a visité votre profil", "à l'instant", classe="notif"),
-        carte("n3", avatar("david", "visite"), "David s'est arrêté ici :", "Restaurant Chez Marcel", "à l'instant", "Lyon", classe="notif"),
+        rangee("r1", "nicolas", "visite", carte("n1", "", "Nicolas J. a visité :", "AS 24", "à l'instant", classe="notif")),
+        rangee("r2", "david", "avis", carte("n2", "", "David a déposé un avis chez :", "Le Relais des Cigales", "à l'instant", classe="notif"), inverse=True),
+        rangee("r3", "louna", "invitation", carte("n3", "", None, "Louna vous a envoyé une invitation", "à l'instant", extra=BOUTON_ACCEPTER, classe="notif")),
     ]
 )
 
@@ -132,13 +111,6 @@ def fleche(fid, x, y, cote):
                 <path class="trait" d="{trace}" pathLength="1" />
                 <path class="tete" d="{tete}" />
               </svg>"""
-
-
-def liens(arcs):
-    chemins = "\n            ".join(f'<path id="{i}" class="lien" d="{d}" pathLength="1" />' for i, d in arcs)
-    return f"""<svg id="reseau" class="plein" viewBox="0 0 __W__ __H__" aria-hidden="true">
-            {chemins}
-          </svg>"""
 
 
 CSS_COMMUN = """
@@ -270,39 +242,28 @@ CSS_COMMUN = """
         color: #061866;
       }
 
-      /* Intro : personnages, réseau, notifications */
-      .perso {
+      /* Intro : avatars et notifications en quinconce */
+      .rangee {
         position: absolute;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        width: var(--p-largeur);
+        gap: var(--r-gap);
       }
-      .perso-svg {
+      .rangee.inverse {
+        flex-direction: row-reverse;
+      }
+      .avatar-grand {
         display: block;
-        width: 100%;
-        height: auto;
         overflow: visible;
+        flex: none;
+        width: var(--a-grand);
+        height: var(--a-grand);
       }
-      .perso-nom {
-        margin-top: 10px;
-        font-family: "Inter", sans-serif;
-        font-weight: 600;
-        font-size: var(--p-nom);
-        color: #ffffff;
+      .notif {
+        position: relative;
+        flex: 1;
       }
-      .lien {
-        fill: none;
-        stroke: #bfd3f2;
-        stroke-width: 6;
-        stroke-linecap: round;
-        stroke-dasharray: 1;
-      }
-      .notif,
       .notif-tel {
-        position: absolute;
-      }
-      .notif .tap {
         position: absolute;
       }
 
@@ -443,7 +404,7 @@ CSS_COMMUN = """
 """
 
 CSS_16x9 = """
-      /* 16:9 : personnages à gauche, notifications à droite ; puis texte à gauche, téléphone à droite */
+      /* 16:9 : notifications en quinconce ; puis texte à gauche, téléphone à droite */
       #root {
         --c-gap: 26px;
         --c-rayon: 28px;
@@ -452,33 +413,25 @@ CSS_16x9 = """
         --c-interligne: 6px;
         --c-petit: 30px;
         --c-grand: 36px;
-        --p-largeur: 250px;
-        --p-nom: 32px;
       }
-      #p-louna {
-        left: 95px;
-        top: 300px;
+      #root {
+        --a-grand: 170px;
+        --r-gap: 28px;
       }
-      #p-nicolas {
-        left: 395px;
-        top: 300px;
+      .rangee {
+        width: 1040px;
       }
-      #p-david {
-        left: 695px;
-        top: 300px;
+      #r1 {
+        left: 150px;
+        top: 150px;
       }
-      .notif {
-        left: 1040px;
-        width: 780px;
+      #r2 {
+        right: 150px;
+        top: 410px;
       }
-      #n1 {
-        top: 140px;
-      }
-      #n2 {
-        top: 420px;
-      }
-      #n3 {
-        top: 660px;
+      #r3 {
+        left: 330px;
+        top: 680px;
       }
       .notif-tel {
         right: 50px;
@@ -514,7 +467,7 @@ CSS_16x9 = """
 """
 
 CSS_9x16 = """
-      /* 9:16 : personnages en haut, notifications en dessous ; puis texte en haut, téléphone en dessous */
+      /* 9:16 : notifications en quinconce ; puis texte en haut, téléphone en dessous */
       #root {
         --c-gap: 30px;
         --c-rayon: 32px;
@@ -523,34 +476,24 @@ CSS_9x16 = """
         --c-interligne: 8px;
         --c-petit: 40px;
         --c-grand: 48px;
-        --p-largeur: 280px;
-        --p-nom: 40px;
       }
-      #p-louna {
-        left: 60px;
-        top: 300px;
+      #root {
+        --a-grand: 190px;
+        --r-gap: 26px;
       }
-      #p-nicolas {
-        left: 400px;
-        top: 300px;
-      }
-      #p-david {
-        left: 740px;
-        top: 300px;
-      }
-      .notif,
+      .rangee,
       .notif-tel {
         left: 50px;
         right: 50px;
       }
-      #n1 {
-        top: 770px;
+      #r1 {
+        top: 380px;
       }
-      #n2 {
-        top: 1130px;
+      #r2 {
+        top: 830px;
       }
-      #n3 {
-        top: 1390px;
+      #r3 {
+        top: 1280px;
       }
       .notif-tel {
         top: 640px;
@@ -590,18 +533,6 @@ CSS_9x16 = """
       }
 """
 
-# Arcs du réseau entre les têtes des personnages (coordonnées en pixels de l'image)
-ARCS_16x9 = [
-    ("lien-ln", "M220 330 Q370 210 520 330"),
-    ("lien-nd", "M520 330 Q670 210 820 330"),
-    ("lien-dl", "M820 330 Q520 120 220 330"),
-]
-ARCS_9x16 = [
-    ("lien-ln", "M200 330 Q370 200 540 330"),
-    ("lien-nd", "M540 330 Q710 200 880 330"),
-    ("lien-dl", "M880 330 Q540 110 200 330"),
-]
-
 SCRIPT = """
       const tl = gsap.timeline({ paused: true });
       const entre = { autoAlpha: 1, y: 0, duration: 0.4, ease: "power2.out", stagger: 0.12 };
@@ -625,25 +556,19 @@ SCRIPT = """
         tl.fromTo(`${id} .tete`, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.15 }, t + 0.38);
         tl.to(id, { autoAlpha: 0, duration: 0.25 }, fin);
       }
-      // Le téléphone d'un personnage vibre quand une notification arrive
-      function vibre(qui, t) {
-        tl.fromTo(`#tel-${qui}`, { rotation: 0 }, { rotation: 9, duration: 0.07, yoyo: true, repeat: 5, ease: "sine.inOut", svgOrigin: "171 250", immediateRender: false }, t);
-      }
 
-      // Intro (0–6 s) : trois conducteurs en ligne, reliés au fil des notifications
-      tl.fromTo(".perso", { autoAlpha: 0, y: 40, scale: 0.9 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.5)", stagger: 0.15 }, 0);
-      tl.fromTo(".en-ligne", { scale: 0, svgOrigin: "178 60" }, { scale: 1, svgOrigin: "178 60", duration: 0.3, ease: "back.out(2.5)", stagger: 0.15 }, 0.45);
-      [["#lien-ln", "#n1", "nicolas", 0.5], ["#lien-nd", "#n2", "david", 1.2], ["#lien-dl", "#n3", "louna", 1.9]].forEach(([lien, notif, qui, t]) => {
-        tl.fromTo(lien, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, t - 0.1);
-        vibre(qui, t + 0.05);
-        tl.fromTo(notif, { autoAlpha: 0, y: -40, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, t + 0.15);
+
+      // Intro (0–6 s) : les notifications des amis arrivent une à une
+      [["#r1", 0.3], ["#r2", 0.9], ["#r3", 1.5]].forEach(([id, t]) => {
+        tl.fromTo(`${id} .avatar-grand`, { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, t);
+        tl.fromTo(`${id} .notif`, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: "power2.out" }, t + 0.2);
       });
-      // La demande d'ami est acceptée : Louna et Nicolas sautent de joie
+      // L'invitation de Louna est acceptée
       tape("#tap-accepter", 3.3);
       tl.fromTo("#btn-amis", { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 3.5);
       tl.to("#btn-accepter", { autoAlpha: 0, duration: 0.15 }, 3.5);
-      tl.to(["#p-louna", "#p-nicolas"], { y: -18, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", stagger: 0.08 }, 3.6);
-      tl.to(["#reseau", ".perso", ".notif"], { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in", stagger: 0.04 }, 5.6);
+      tl.to("#r3 .avatar-grand", { y: -16, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out" }, 3.6);
+      tl.to(".rangee", { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in", stagger: 0.06 }, 5.6);
       tl.to("#fond-couleur", { backgroundColor: "#F5F3F1", duration: 0.4, ease: "power1.inOut" }, 5.75);
 
       // 1 · Crée et personnalise ton profil (6–9,8 s)
@@ -691,12 +616,8 @@ SCRIPT = """
 """
 
 
-def page(cid, w, h, css_format, arcs):
+def page(cid, w, h, css_format):
     css = (CSS_COMMUN + css_format).replace("__W__", str(w)).replace("__H__", str(h))
-    reseau = liens(arcs).replace("__W__", str(w)).replace("__H__", str(h))
-    persos = "\n          ".join(
-        [personnage("louna", "Louna"), personnage("nicolas", "Nicolas J."), personnage("david", "David")]
-    )
     return f"""<!doctype html>
 <html lang="fr">
   <head>
@@ -721,8 +642,6 @@ def page(cid, w, h, css_format, arcs):
 
       <div id="intro" class="plein clip" data-start="0" data-duration="6" data-track-index="1">
         <div class="plein">
-          {reseau}
-          {persos}
           {NOTIFS_INTRO}
         </div>
       </div>
@@ -795,6 +714,6 @@ def page(cid, w, h, css_format, arcs):
 """
 
 
-(RACINE / "index.html").write_text(page("main", 1920, 1080, CSS_16x9, ARCS_16x9))
-(RACINE / "compositions" / "vertical.html").write_text(page("vertical", 1080, 1920, CSS_9x16, ARCS_9x16))
+(RACINE / "index.html").write_text(page("main", 1920, 1080, CSS_16x9))
+(RACINE / "compositions" / "vertical.html").write_text(page("vertical", 1080, 1920, CSS_9x16))
 print("index.html et compositions/vertical.html générés")
