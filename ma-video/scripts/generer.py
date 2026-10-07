@@ -7,13 +7,13 @@ Le minutage, les textes et les interactions sont communs ; seule la mise en page
 
 Polices : Bib (charte) pour les titres, Inter pour tout ce qui imite l'app (notifications,
 cartes, boutons). Inter remplace la police système de l'iPhone, qu'on ne peut pas embarquer.
-Les positions sur les écrans sont en % de la capture rognée (460 × 911 px).
+Les positions sur les écrans sont en % de la capture rognée.
 """
 
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
-DUREE = 23.2
+DUREE = 25.3
 
 # --- Avatars façon app (référence : Abdelatif) : visage de couleur, anneau, yeux, initiale ---
 
@@ -23,14 +23,23 @@ YEUX = {
 }
 
 BADGES = {
-    # petit pictogramme dans une pastille bleu clair, en bas à droite, comme dans l'app
     "invitation": '<circle cx="10" cy="9" r="4" fill="#061866" /><path d="M3 21 Q3 14 10 14 Q17 14 17 21 Z" fill="#061866" /><path d="M20 8 V16 M16 12 H24" stroke="#061866" stroke-width="2.6" stroke-linecap="round" />',
     "visite": '<rect x="2" y="7" width="13" height="10" rx="2" fill="#061866" /><path d="M15 10 H20 L23 14 V17 H15 Z" fill="#061866" /><circle cx="7" cy="19" r="2.4" fill="#061866" /><circle cx="19" cy="19" r="2.4" fill="#061866" />',
-    "avis": '<path d="M3 5 H21 Q23 5 23 7 V16 Q23 18 21 18 H11 L6 22 V18 H5 Q3 18 3 16 V7 Q3 5 5 5 Z" fill="#061866" />',
+    "profil": '<path d="M1 13 Q13 2 25 13 Q13 24 1 13 Z" fill="#061866" /><circle cx="13" cy="13" r="4" fill="#DCE6F7" />',
+    "ami": '<circle cx="13" cy="8" r="5" fill="#061866" /><path d="M3 24 Q3 15 13 15 Q23 15 23 24 Z" fill="#061866" />',
+}
+
+PERSONNES = {
+    # initiale, visage, anneau, yeux
+    "louna": ("L", "#C9C3F5", "#FFFF1A", "points"),
+    "nicolas": ("N", "#A6E8B8", "#061866", "points"),
+    "david": ("D", "#F6D38B", "#FFFF1A", "plisses"),
+    "maxime": ("M", "#F9C6C0", "#FFFF1A", "points"),
 }
 
 
-def avatar(lettre, visage, anneau, yeux, badge):
+def avatar(qui, badge):
+    lettre, visage, anneau, yeux = PERSONNES[qui]
     return f"""<svg class="avatar" viewBox="0 0 112 112" aria-hidden="true">
                 <circle cx="50" cy="50" r="44" fill="{visage}" stroke="{anneau}" stroke-width="8" />
                 {YEUX[yeux]}
@@ -43,11 +52,11 @@ def avatar(lettre, visage, anneau, yeux, badge):
 PIN = '<svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="#6E6E73" /></svg>'
 
 
-def carte(cid, av, haut, fort, bas, lieu=None, extra=""):
+def carte(cid, av, haut, fort, bas, lieu=None, extra="", classe=""):
     """Carte au style du fil d'activité (référence : « Nicolas J. a visité : »)."""
     ligne_haut = f'<span class="c-gris">{haut}</span>' if haut else ""
     ligne_lieu = f'<span class="c-lieu">{PIN}{lieu}</span>' if lieu else ""
-    return f"""<div id="{cid}" class="carte-app">
+    return f"""<div id="{cid}" class="carte-app {classe}">
               {av}
               <div class="c-textes">
                 {ligne_haut}
@@ -57,24 +66,56 @@ def carte(cid, av, haut, fort, bas, lieu=None, extra=""):
             </div>"""
 
 
-AV_LOUNA = avatar("L", "#C9C3F5", "#FFFF1A", "points", "invitation")
-AV_DAVID = avatar("D", "#A6E8B8", "#061866", "points", "visite")
-AV_NORDIN = avatar("N", "#F6D38B", "#FFFF1A", "plisses", "avis")
-AV_LOUNA_VISITE = avatar("L", "#C9C3F5", "#FFFF1A", "points", "visite")
+# --- Personnages : conducteurs en buste, casquette, téléphone en main, pastille « en ligne » ---
 
-TAP_N1 = '\n              <div id="tap-n1" class="tap" style="left: 78%; top: 50%"><div class="onde"></div><div class="doigt"></div></div>'
+TENUES = {"louna": ("#FFFF1A", "#BFD3F2"), "nicolas": ("#BFD3F2", "#FFFFFF"), "david": ("#FFFFFF", "#DCE6F7")}
 
-NOTIFS = "\n          ".join(
+
+def personnage(qui, nom):
+    _, visage, _, yeux = PERSONNES[qui]
+    casquette, maillot = TENUES[qui]
+    regard = (
+        '<path d="M88 126 L100 134 L88 142 M152 126 L140 134 L152 142" fill="none" stroke="#061866" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />'
+        if yeux == "plisses"
+        else '<ellipse cx="100" cy="134" rx="6" ry="9" fill="#061866" /><ellipse cx="140" cy="134" rx="6" ry="9" fill="#061866" />'
+    )
+    return f"""<div id="p-{qui}" class="perso">
+            <svg class="perso-svg" viewBox="0 0 240 300" aria-hidden="true">
+              <path d="M28 300 Q28 206 120 202 Q212 206 212 300 Z" fill="{maillot}" stroke="#061866" stroke-width="6" />
+              <path d="M100 196 L140 196 L136 214 L104 214 Z" fill="{visage}" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
+              <circle cx="120" cy="128" r="68" fill="{visage}" stroke="#061866" stroke-width="6" />
+              {regard}
+              <path d="M102 160 Q120 174 138 160" fill="none" stroke="#061866" stroke-width="6" stroke-linecap="round" />
+              <path d="M54 98 Q58 38 120 36 Q182 38 186 98 Z" fill="{casquette}" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
+              <path d="M48 96 L204 96 Q212 110 194 112 L48 112 Z" fill="#061866" />
+              <g id="tel-{qui}" class="perso-tel">
+                <rect x="144" y="208" width="54" height="90" rx="10" fill="#061866" />
+                <rect x="150" y="218" width="42" height="68" rx="5" fill="#BFD3F2" />
+                <circle cx="171" cy="292" r="16" fill="{visage}" stroke="#061866" stroke-width="5" />
+              </g>
+              <circle class="en-ligne" cx="178" cy="60" r="15" fill="#34C759" stroke="#FFFFFF" stroke-width="6" />
+            </svg>
+            <span class="perso-nom">{nom}</span>
+          </div>"""
+
+
+BOUTON_ACCEPTER = """
+              <div class="c-bouton">
+                <span id="btn-accepter">Accepter</span>
+                <span id="btn-amis">✓ Amis</span>
+                <div id="tap-accepter" class="tap" style="left: 50%; top: 50%"><div class="onde"></div><div class="doigt"></div></div>
+              </div>"""
+
+NOTIFS_INTRO = "\n          ".join(
     [
-        carte("n1", AV_LOUNA, None, "Louna vous a envoyé une invitation", "à l'instant", extra=TAP_N1),
-        carte("n2", AV_DAVID, "David a visité :", "Restaurant Chez Marcel", "à l'instant", "Lyon"),
-        carte("n3", AV_NORDIN, None, "Nordin a déposé un avis", "à l'instant"),
+        carte("n1", avatar("louna", "invitation"), None, "Louna vous a envoyé une invitation", "à l'instant", extra=BOUTON_ACCEPTER, classe="notif"),
+        carte("n2", avatar("nicolas", "profil"), None, "Nicolas J. a visité votre profil", "à l'instant", classe="notif"),
+        carte("n3", avatar("david", "visite"), "David s'est arrêté ici :", "Restaurant Chez Marcel", "à l'instant", "Lyon", classe="notif"),
     ]
 )
 
-NOUVELLE_CARTE = carte(
-    "nouvelle-carte", AV_LOUNA_VISITE, "Louna a visité :", "AS 24 Calais Eurotunnel", "à l'instant", "Coquelles"
-)
+NOTIF_ACCEPTEE = carte("n4", avatar("david", "ami"), None, "David a accepté votre invitation", "à l'instant", classe="notif-tel")
+NOUVELLE_CARTE = carte("nouvelle-carte", avatar("maxime", "visite"), "Maxime V. a visité :", "Cournon", "à l'instant", "Cournon-d'Auvergne")
 
 
 def tap(tid, x, y):
@@ -91,6 +132,13 @@ def fleche(fid, x, y, cote):
                 <path class="trait" d="{trace}" pathLength="1" />
                 <path class="tete" d="{tete}" />
               </svg>"""
+
+
+def liens(arcs):
+    chemins = "\n            ".join(f'<path id="{i}" class="lien" d="{d}" pathLength="1" />' for i, d in arcs)
+    return f"""<svg id="reseau" class="plein" viewBox="0 0 __W__ __H__" aria-hidden="true">
+            {chemins}
+          </svg>"""
 
 
 CSS_COMMUN = """
@@ -186,6 +234,7 @@ CSS_COMMUN = """
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 0.6em;
       }
       .c-lieu {
         display: flex;
@@ -193,14 +242,64 @@ CSS_COMMUN = """
         gap: 0.2em;
         color: #6e6e73;
         font-size: var(--c-petit);
+        white-space: nowrap;
       }
       .pin {
         width: 1em;
         height: 1em;
       }
+      .c-bouton {
+        position: relative;
+        flex: none;
+        display: grid;
+        font-weight: 700;
+        font-size: var(--c-petit);
+      }
+      .c-bouton > span {
+        grid-area: 1 / 1;
+        padding: 0.45em 0.9em;
+        border-radius: 0.5em;
+        text-align: center;
+      }
+      #btn-accepter {
+        background: #061866;
+        color: #ffffff;
+      }
+      #btn-amis {
+        background: #e4edfb;
+        color: #061866;
+      }
 
-      /* Intro : notifications */
-      .notif {
+      /* Intro : personnages, réseau, notifications */
+      .perso {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: var(--p-largeur);
+      }
+      .perso-svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+      .perso-nom {
+        margin-top: 10px;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: var(--p-nom);
+        color: #ffffff;
+      }
+      .lien {
+        fill: none;
+        stroke: #bfd3f2;
+        stroke-width: 6;
+        stroke-linecap: round;
+        stroke-dasharray: 1;
+      }
+      .notif,
+      .notif-tel {
         position: absolute;
       }
       .notif .tap {
@@ -344,7 +443,7 @@ CSS_COMMUN = """
 """
 
 CSS_16x9 = """
-      /* 16:9 : texte à gauche, téléphone à droite */
+      /* 16:9 : personnages à gauche, notifications à droite ; puis texte à gauche, téléphone à droite */
       #root {
         --c-gap: 26px;
         --c-rayon: 28px;
@@ -353,33 +452,47 @@ CSS_16x9 = """
         --c-interligne: 6px;
         --c-petit: 30px;
         --c-grand: 36px;
+        --p-largeur: 250px;
+        --p-nom: 32px;
+      }
+      #p-louna {
+        left: 95px;
+        top: 300px;
+      }
+      #p-nicolas {
+        left: 395px;
+        top: 300px;
+      }
+      #p-david {
+        left: 695px;
+        top: 300px;
       }
       .notif {
-        width: 760px;
+        left: 1040px;
+        width: 780px;
       }
       #n1 {
-        left: 150px;
-        top: 150px;
+        top: 140px;
       }
       #n2 {
-        left: 560px;
-        top: 410px;
+        top: 420px;
       }
       #n3 {
-        left: 260px;
-        top: 700px;
+        top: 660px;
+      }
+      .notif-tel {
+        right: 50px;
+        top: 150px;
+        width: 720px;
       }
       #textes {
         left: 130px;
         top: 0;
         bottom: 0;
-        width: 1120px;
+        width: 1000px;
       }
       .titre {
         font-size: 88px;
-      }
-      .sous {
-        font-size: 56px;
       }
       #t5 {
         left: -130px;
@@ -393,7 +506,7 @@ CSS_16x9 = """
         max-width: 1500px;
       }
       #telephone {
-        right: 110px;
+        right: 210px;
         top: 60px;
         width: 520px;
         height: 880px;
@@ -401,7 +514,7 @@ CSS_16x9 = """
 """
 
 CSS_9x16 = """
-      /* 9:16 : texte en haut, téléphone en dessous ; notifications en grand par-dessus */
+      /* 9:16 : personnages en haut, notifications en dessous ; puis texte en haut, téléphone en dessous */
       #root {
         --c-gap: 30px;
         --c-rayon: 32px;
@@ -410,19 +523,37 @@ CSS_9x16 = """
         --c-interligne: 8px;
         --c-petit: 40px;
         --c-grand: 48px;
+        --p-largeur: 280px;
+        --p-nom: 40px;
       }
-      .notif {
+      #p-louna {
+        left: 60px;
+        top: 300px;
+      }
+      #p-nicolas {
+        left: 400px;
+        top: 300px;
+      }
+      #p-david {
+        left: 740px;
+        top: 300px;
+      }
+      .notif,
+      .notif-tel {
         left: 50px;
         right: 50px;
       }
       #n1 {
-        top: 330px;
+        top: 770px;
       }
       #n2 {
-        top: 800px;
+        top: 1130px;
       }
       #n3 {
-        top: 1300px;
+        top: 1390px;
+      }
+      .notif-tel {
+        top: 640px;
       }
       #textes {
         left: 30px;
@@ -436,9 +567,6 @@ CSS_9x16 = """
       }
       .titre {
         font-size: 80px;
-      }
-      .sous {
-        font-size: 52px;
       }
       #t5 {
         left: -30px;
@@ -461,6 +589,18 @@ CSS_9x16 = """
         height: 860px;
       }
 """
+
+# Arcs du réseau entre les têtes des personnages (coordonnées en pixels de l'image)
+ARCS_16x9 = [
+    ("lien-ln", "M220 330 Q370 210 520 330"),
+    ("lien-nd", "M520 330 Q670 210 820 330"),
+    ("lien-dl", "M820 330 Q520 120 220 330"),
+]
+ARCS_9x16 = [
+    ("lien-ln", "M200 330 Q370 200 540 330"),
+    ("lien-nd", "M540 330 Q710 200 880 330"),
+    ("lien-dl", "M880 330 Q540 110 200 330"),
+]
 
 SCRIPT = """
       const tl = gsap.timeline({ paused: true });
@@ -485,58 +625,78 @@ SCRIPT = """
         tl.fromTo(`${id} .tete`, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.15 }, t + 0.38);
         tl.to(id, { autoAlpha: 0, duration: 0.25 }, fin);
       }
+      // Le téléphone d'un personnage vibre quand une notification arrive
+      function vibre(qui, t) {
+        tl.fromTo(`#tel-${qui}`, { rotation: 0 }, { rotation: 9, duration: 0.07, yoyo: true, repeat: 5, ease: "sine.inOut", svgOrigin: "171 250", immediateRender: false }, t);
+      }
 
-      // Intro (0–5,5 s) : le fil d'activité, puis les notifications arrivent une à une
-      tl.fromTo("#telephone", { autoAlpha: 0, y: 60 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0);
-      [["#n1", 0.3], ["#n2", 0.9], ["#n3", 1.5]].forEach(([id, t]) => {
-        tl.fromTo(id, { autoAlpha: 0, y: -50, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, t);
+      // Intro (0–6 s) : trois conducteurs en ligne, reliés au fil des notifications
+      tl.fromTo(".perso", { autoAlpha: 0, y: 40, scale: 0.9 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.5)", stagger: 0.15 }, 0);
+      tl.fromTo(".en-ligne", { scale: 0, svgOrigin: "178 60" }, { scale: 1, svgOrigin: "178 60", duration: 0.3, ease: "back.out(2.5)", stagger: 0.15 }, 0.45);
+      [["#lien-ln", "#n1", "nicolas", 0.5], ["#lien-nd", "#n2", "david", 1.2], ["#lien-dl", "#n3", "louna", 1.9]].forEach(([lien, notif, qui, t]) => {
+        tl.fromTo(lien, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, t - 0.1);
+        vibre(qui, t + 0.05);
+        tl.fromTo(notif, { autoAlpha: 0, y: -40, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, t + 0.15);
       });
-      tape("#tap-n1", 3.0);
-      tl.to("#n1", { scale: 0.97, duration: 0.12, yoyo: true, repeat: 1, ease: "power1.inOut" }, 3.1);
-      tl.to(".notif", { autoAlpha: 0, y: -40, duration: 0.3, ease: "power2.in", stagger: 0.07 }, 5.0);
-      tl.to("#fond-couleur", { backgroundColor: "#F5F3F1", duration: 0.4, ease: "power1.inOut" }, 5.2);
-      tl.fromTo("#e1", { xPercent: 60, autoAlpha: 0 }, arrive, 5.25);
-      tl.fromTo("#e0", { xPercent: 0, autoAlpha: 1 }, part, 5.25);
+      // La demande d'ami est acceptée : Louna et Nicolas sautent de joie
+      tape("#tap-accepter", 3.3);
+      tl.fromTo("#btn-amis", { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 3.5);
+      tl.to("#btn-accepter", { autoAlpha: 0, duration: 0.15 }, 3.5);
+      tl.to(["#p-louna", "#p-nicolas"], { y: -18, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", stagger: 0.08 }, 3.6);
+      tl.to(["#reseau", ".perso", ".notif"], { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in", stagger: 0.04 }, 5.6);
+      tl.to("#fond-couleur", { backgroundColor: "#F5F3F1", duration: 0.4, ease: "power1.inOut" }, 5.75);
 
-      // 1 · Crée ton Profil Trucker (5,5–9,7 s) : tap sur le crayon de l'avatar
-      texte("#t1", 5.8, 9.45);
-      tape("#tap-crayon", 7.3);
+      // 1 · Crée et personnalise ton profil (6–9,8 s)
+      tl.fromTo("#telephone", { autoAlpha: 0, y: 160 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: "power2.out" }, 5.85);
+      texte("#t1", 6.2, 9.55);
+      tl.fromTo("#repere", { autoAlpha: 0, scale: 1.08 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 6.5);
+      tape("#tap-modifier", 6.9);
+      fleche("#fleche-camion", 7.6, 9.5);
+      tape("#tap-camion", 8.1);
+      tape("#tap-partager", 8.85);
+      tl.to("#repere", { autoAlpha: 0, duration: 0.25 }, 9.5);
 
-      // 2 · Personnalise et partage (9,7–12,7 s) : cadre, flèche, deux taps
-      texte("#t2", 9.8, 12.45);
-      tl.fromTo("#repere", { autoAlpha: 0, scale: 1.08 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 10.0);
-      fleche("#fleche-boutons", 10.1, 12.45);
-      tl.to("#repere", { autoAlpha: 0, duration: 0.25 }, 12.45);
-      tape("#tap-modifier", 10.7);
-      tape("#tap-partager", 11.6);
+      // 2 · Ajoute tes amis (9,8–14,2 s) : invitation envoyée, puis acceptée
+      tl.fromTo("#e2", { xPercent: 60, autoAlpha: 0 }, arrive, 9.6);
+      tl.fromTo("#e1", { xPercent: 0, autoAlpha: 1 }, part, 9.6);
+      texte("#t2", 10.0, 13.95);
+      fleche("#fleche-ajouter", 10.2, 13.95);
+      tape("#tap-ajouter", 10.75);
+      tl.fromTo("#invite", { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.0);
+      tl.fromTo("#n4", { autoAlpha: 0, y: -40, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, 11.0);
+      tl.to("#n4", { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in" }, 13.95);
 
-      // 3 · Retrouve tes amis (12,7–15,1 s) : tap sur Ajouter, le bouton passe à « Invité »
-      tl.fromTo("#e2", { xPercent: 60, autoAlpha: 0 }, arrive, 12.5);
-      tl.fromTo("#e1", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 12.5);
-      texte("#t3", 12.8, 14.85);
-      fleche("#fleche-ajouter", 13.0, 14.85);
-      tape("#tap-ajouter", 13.6);
-      tl.fromTo("#invite", { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 13.85);
+      // 3 · Découvre leur activité au quotidien (14,2–17,8 s) : une nouvelle carte arrive, tap dessus
+      tl.fromTo("#e0", { xPercent: 60, autoAlpha: 0 }, arrive, 14.0);
+      tl.fromTo("#e2", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 14.0);
+      texte("#t3", 14.4, 17.55);
+      tl.fromTo("#nouvelle-carte", { autoAlpha: 0, y: -30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, 14.8);
+      fleche("#fleche-lieu", 15.4, 17.55);
+      tape("#tap-carte", 17.0);
 
-      // 4 · Suis l'activité (15,1–18,7 s) : une nouvelle carte arrive dans le fil, zoom léger
-      tl.fromTo("#e0", { xPercent: 60, autoAlpha: 0 }, { ...arrive, immediateRender: false }, 14.9);
-      tl.fromTo("#e2", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 14.9);
-      texte("#t4", 15.2, 18.45);
-      tl.fromTo("#nouvelle-carte", { autoAlpha: 0, y: -30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, 15.8);
-      tl.fromTo("#telephone", { scale: 1 }, { scale: __ZOOM__, duration: 0.8, ease: "power2.inOut", immediateRender: false }, 16.2);
-      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 18.45);
+      // 4 · Visite leurs profils (17,8–20,6 s) : le profil de Maxime s'ouvre depuis la carte
+      tl.fromTo("#e4", { autoAlpha: 0, scale: 0.35 }, { autoAlpha: 1, scale: 1, duration: 0.5, ease: "power3.out", transformOrigin: "50% 51%" }, 17.55);
+      tl.to("#e0", { autoAlpha: 0, duration: 0.3, immediateRender: false }, 17.7);
+      texte("#t4", 18.0, 20.35);
+      fleche("#fleche-stats", 18.3, 20.35);
+      fleche("#fleche-arret", 19.1, 20.35);
+      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 20.35);
 
-      // 5 · Fin (18,7–23,2 s)
-      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.4, ease: "power1.inOut" }, 18.5);
-      texte("#t5", 18.85);
+      // 5 · Fin (20,6–25,3 s)
+      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.4, ease: "power1.inOut" }, 20.4);
+      texte("#t5", 20.8);
 
       window.__timelines["__ID__"] = tl;
       tl.seek(0);
 """
 
 
-def page(cid, w, h, css_format, zoom):
+def page(cid, w, h, css_format, arcs):
     css = (CSS_COMMUN + css_format).replace("__W__", str(w)).replace("__H__", str(h))
+    reseau = liens(arcs).replace("__W__", str(w)).replace("__H__", str(h))
+    persos = "\n          ".join(
+        [personnage("louna", "Louna"), personnage("nicolas", "Nicolas J."), personnage("david", "David")]
+    )
     return f"""<!doctype html>
 <html lang="fr">
   <head>
@@ -559,21 +719,23 @@ def page(cid, w, h, css_format, zoom):
         <div id="fond-couleur"></div>
       </div>
 
-      <div id="ecrans" class="plein clip" data-start="0" data-duration="18.75" data-track-index="1">
+      <div id="intro" class="plein clip" data-start="0" data-duration="6" data-track-index="1">
+        <div class="plein">
+          {reseau}
+          {persos}
+          {NOTIFS_INTRO}
+        </div>
+      </div>
+
+      <div id="ecrans" class="plein clip" data-start="5.8" data-duration="14.9" data-track-index="2">
         <div id="telephone">
-          <div id="e0" class="ecran">
-            <div class="cadre">
-              <img src="assets/ecrans/v2-fil-activite.png" alt="" />
-              {NOUVELLE_CARTE}
-            </div>
-          </div>
           <div id="e1" class="ecran">
             <div class="cadre">
               <img src="assets/ecrans/v2-profil.png" alt="" />
               <div id="repere"></div>
-              {fleche("fleche-boutons", 13, 33, "gauche")}
-              {tap("tap-crayon", 36.5, 24.5)}
+              {fleche("fleche-camion", 14, 70, "gauche")}
               {tap("tap-modifier", 31, 35.2)}
+              {tap("tap-camion", 50, 72.4)}
               {tap("tap-partager", 68, 35.2)}
             </div>
           </div>
@@ -585,45 +747,54 @@ def page(cid, w, h, css_format, zoom):
               {tap("tap-ajouter", 75.5, 35.4)}
             </div>
           </div>
+          <div id="e0" class="ecran">
+            <div class="cadre">
+              <img src="assets/ecrans/v2-fil-activite.png" alt="" />
+              {NOUVELLE_CARTE}
+              {fleche("fleche-lieu", 88, 52, "droite")}
+              {tap("tap-carte", 45, 50.5)}
+            </div>
+          </div>
+          <div id="e4" class="ecran">
+            <div class="cadre" style="aspect-ratio: 470 / 929">
+              <img src="assets/ecrans/v2-activite-ami.png" alt="" />
+              {fleche("fleche-stats", 23, 20.5, "gauche")}
+              {fleche("fleche-arret", 86, 45.5, "droite")}
+            </div>
+          </div>
         </div>
+        {NOTIF_ACCEPTEE}
       </div>
 
-      <div id="intro" class="plein clip" data-start="0" data-duration="5.5" data-track-index="2">
-        <div class="plein">
-          {NOTIFS.replace('class="carte-app"', 'class="carte-app notif"')}
-        </div>
-      </div>
-
-      <div id="textes-clip" class="plein clip" data-start="5.5" data-duration="{round(DUREE - 5.5, 2)}" data-track-index="3">
+      <div id="textes-clip" class="plein clip" data-start="6" data-duration="{round(DUREE - 6, 2)}" data-track-index="3">
         <div id="textes">
           <div id="t1" class="etape">
-            <span class="ligne titre">Crée ton Profil Trucker</span>
-            <span class="ligne sous">pour que tes amis te retrouvent&nbsp;!</span>
+            <span class="ligne titre">Crée et personnalise</span>
+            <span class="ligne titre">ton profil</span>
           </div>
           <div id="t2" class="etape">
-            <span class="ligne titre">Personnalise</span>
-            <span class="ligne titre">et partage ton profil</span>
+            <span class="ligne titre">Ajoute tes amis</span>
           </div>
           <div id="t3" class="etape">
-            <span class="ligne titre">Retrouve tes amis</span>
+            <span class="ligne titre">Découvre leur activité</span>
+            <span class="ligne titre">au quotidien</span>
           </div>
           <div id="t4" class="etape">
-            <span class="ligne titre">Suis l'activité de</span>
-            <span class="ligne titre">tes proches au quotidien</span>
+            <span class="ligne titre">Visite leurs profils</span>
           </div>
           <div id="t5" class="etape" data-layout-allow-overflow>
             <span class="ligne titre">Ne roule plus seul&nbsp;!</span>
-            <span class="ligne sous">Rejoins la communauté sur Michelin Truckfly</span>
+            <span class="ligne sous">Crée ton réseau sur Michelin Truckfly</span>
           </div>
         </div>
       </div>
     </div>
-    <script>{SCRIPT.replace("__ID__", cid).replace("__ZOOM__", zoom)}    </script>
+    <script>{SCRIPT.replace("__ID__", cid)}    </script>
   </body>
 </html>
 """
 
 
-(RACINE / "index.html").write_text(page("main", 1920, 1080, CSS_16x9, "1.06"))
-(RACINE / "compositions" / "vertical.html").write_text(page("vertical", 1080, 1920, CSS_9x16, "1.14"))
+(RACINE / "index.html").write_text(page("main", 1920, 1080, CSS_16x9, ARCS_16x9))
+(RACINE / "compositions" / "vertical.html").write_text(page("vertical", 1080, 1920, CSS_9x16, ARCS_9x16))
 print("index.html et compositions/vertical.html générés")

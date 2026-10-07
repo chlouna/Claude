@@ -1,35 +1,48 @@
-# Storyboard : Profil Trucker, version 4 (23,2 s)
+# Storyboard : Profil Trucker, version 5 (25,3 s)
 
-Message : crée ton Profil Trucker, retrouve tes amis et rejoins la communauté des conducteurs sur Michelin Truckfly.
+Message : crée ton Profil Trucker, ajoute tes amis et découvre leur activité au quotidien. Le Profil Trucker est un espace social pour les conducteurs.
 Diffusion : Instagram en priorité (9:16, 1080 × 1920), plus une version 16:9 (1920 × 1080).
 Source : `scripts/generer.py` produit `index.html` et `compositions/vertical.html`.
 
 ## Style
 
-- **Titres** en Bib (charte). **Éléments de l'app** (notifications, cartes, bouton « Invité ») en Inter, l'équivalent libre de la police système de l'iPhone, qu'on ne peut pas embarquer.
-- **Notifications** au style des cartes du fil d'activité (référence : « Nicolas J. a visité : »). On y trouve l'avatar avec sa pastille, une ligne grise, le lieu en gras, l'heure et une épingle avec la ville.
-- **Avatars** au style par défaut de l'app (référence : Abdelatif) : visage de couleur, anneau épais, yeux et initiale. Je n'utilise aucune photo de vrais utilisateurs.
-- **Interactions** :
-  - un tap = un rond qui se pose, puis une onde ;
-  - des flèches courbes qui se dessinent ;
-  - un cadre autour des boutons ;
-  - le bouton qui passe à « Invité » ;
-  - une nouvelle carte qui arrive dans le fil ;
-  - un zoom léger.
+- **Titres** en Bib (charte). **Éléments de l'app** en Inter, l'équivalent libre de la police système de l'iPhone.
+- **Notifications et cartes** au style du fil d'activité (référence : « Nicolas J. a visité : »).
+- **Avatars** au style par défaut de l'app (référence : Abdelatif). Je n'utilise aucune photo de vrais utilisateurs.
+- **Personnages** : trois conducteurs en buste, avec une casquette, un téléphone en main et une pastille verte « en ligne ».
 - Pas de logo, pas d'emoji, pas de musique.
 
 ## Déroulé
 
-| # | Minutage | Texte | Ce qui se passe sur le téléphone |
+| # | Minutage | Texte | Animation |
 |---|---|---|---|
-| Intro | 0 → 5,5 s | Notifications : **Louna vous a envoyé une invitation** · David a visité : **Restaurant Chez Marcel**, Lyon · **Nordin a déposé un avis** | Le fil d'activité est affiché. Les notifications arrivent à 0,3 s, 0,9 s et 1,5 s. Tap sur celle de Louna à 3 s. |
-| 1 | 5,5 → 9,7 s | **Crée ton Profil Trucker** / pour que tes amis te retrouvent ! | Le profil de Louna arrive. Tap sur l'avatar à 7,3 s. |
-| 2 | 9,7 → 12,7 s | **Personnalise / et partage ton profil** | Cadre et flèche vers les boutons. Tap sur « Modifier le profil » à 10,7 s, puis sur « Partager » à 11,6 s. |
-| 3 | 12,7 → 15,1 s | **Retrouve tes amis** | Écran « Trouver des routiers ». Flèche, tap sur « Ajouter » à 13,6 s, le bouton passe à « ✓ Invité ». |
-| 4 | 15,1 → 18,7 s | **Suis l'activité de / tes proches au quotidien** | Fil d'activité. Une nouvelle carte arrive (Louna a visité : **AS 24 Calais Eurotunnel**, Coquelles), puis le téléphone zoome légèrement. |
-| 5 | 18,7 → 23,2 s | **Ne roule plus seul !** / Rejoins la communauté sur Michelin Truckfly | Fond bleu, texte seul. |
+| Intro | 0 → 6 s | Notifications : **Louna vous a envoyé une invitation** · **Nicolas J. a visité votre profil** · David s'est arrêté ici : **Restaurant Chez Marcel**, Lyon | Louna, Nicolas J. et David apparaissent, en ligne. À chaque notification, un lien se trace entre deux d'entre eux et le téléphone du destinataire vibre. Tap sur « Accepter », qui devient « ✓ Amis », et Louna et Nicolas sautent de joie. Aucun téléphone en arrière-plan. |
+| 1 | 6 → 9,8 s | **Crée et personnalise / ton profil** | Profil de Louna. Un cadre entoure les boutons, puis tap sur « Modifier le profil ». Flèche et tap sur le camion (« Poids lourds / Semi »), puis tap sur « Partager ». |
+| 2 | 9,8 → 14,2 s | **Ajoute tes amis** | « Trouver des routiers ». Flèche et tap sur « Ajouter », le bouton passe à « ✓ Invité », puis la notification « David a accepté votre invitation » arrive. |
+| 3 | 14,2 → 17,8 s | **Découvre leur activité / au quotidien** | Fil d'activité. Une nouvelle carte arrive (Maxime V. a visité : **Cournon**, Cournon-d'Auvergne), une flèche montre où il s'est arrêté, puis tap sur la carte. |
+| 4 | 17,8 → 20,6 s | **Visite leurs profils** | Le profil de Maxime V. s'ouvre depuis la carte. Une flèche vise ses statistiques, une autre son dernier arrêt. |
+| 5 | 20,6 → 25,3 s | **Ne roule plus seul !** / Crée ton réseau sur Michelin Truckfly | Fond bleu, texte seul. |
 
-## Écarts par rapport à l'app
+## Fonctionnalités sociales montrées
 
-- Le gris des textes secondaires est un peu plus foncé que dans l'app (`#6E6E73` au lieu de `#8E8E93`), pour rester lisible en vidéo.
-- Le bouton « ✓ Invité » et la carte « Louna a visité : AS 24 Calais Eurotunnel » sont recréés pour la vidéo. Ils ne viennent pas d'une capture.
+| Fonctionnalité | Où |
+|---|---|
+| Envoyer et recevoir des invitations, demandes acceptées | Intro, étape 2 |
+| Visiter le profil de ses amis | Intro (« a visité votre profil »), étape 4 |
+| Voir qui est en ligne | Intro (pastilles vertes) |
+| Voir où ses amis se sont arrêtés | Intro (David), étapes 3 et 4 |
+| Personnaliser son profil, ajouter son camion, partager son profil | Étape 1 |
+| Ajouter ses amis | Étape 2 |
+| Suivre l'activité de ses proches | Étape 3 |
+| Créer son réseau | Liens entre les personnages dans l'intro, phrase de fin |
+
+## Recréé pour la vidéo, à valider
+
+Ces éléments ne viennent pas d'une capture :
+- le bouton « Accepter » / « ✓ Amis » ;
+- le bouton « ✓ Invité » ;
+- les notifications de l'intro ;
+- « David a accepté votre invitation » ;
+- la carte « Maxime V. a visité : Cournon » en haut du fil.
+
+Le gris des textes secondaires est un peu plus foncé que dans l'app (`#6E6E73`), pour rester lisible.

@@ -98,6 +98,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 0.6em;
       }
       .c-lieu {
         display: flex;
@@ -105,14 +106,64 @@
         gap: 0.2em;
         color: #6e6e73;
         font-size: var(--c-petit);
+        white-space: nowrap;
       }
       .pin {
         width: 1em;
         height: 1em;
       }
+      .c-bouton {
+        position: relative;
+        flex: none;
+        display: grid;
+        font-weight: 700;
+        font-size: var(--c-petit);
+      }
+      .c-bouton > span {
+        grid-area: 1 / 1;
+        padding: 0.45em 0.9em;
+        border-radius: 0.5em;
+        text-align: center;
+      }
+      #btn-accepter {
+        background: #061866;
+        color: #ffffff;
+      }
+      #btn-amis {
+        background: #e4edfb;
+        color: #061866;
+      }
 
-      /* Intro : notifications */
-      .notif {
+      /* Intro : personnages, réseau, notifications */
+      .perso {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: var(--p-largeur);
+      }
+      .perso-svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+      .perso-nom {
+        margin-top: 10px;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: var(--p-nom);
+        color: #ffffff;
+      }
+      .lien {
+        fill: none;
+        stroke: #bfd3f2;
+        stroke-width: 6;
+        stroke-linecap: round;
+        stroke-dasharray: 1;
+      }
+      .notif,
+      .notif-tel {
         position: absolute;
       }
       .notif .tap {
@@ -254,7 +305,7 @@
         box-shadow: 0 0 0 0.35cqh #061866;
       }
 
-      /* 16:9 : texte à gauche, téléphone à droite */
+      /* 16:9 : personnages à gauche, notifications à droite ; puis texte à gauche, téléphone à droite */
       #root {
         --c-gap: 26px;
         --c-rayon: 28px;
@@ -263,33 +314,47 @@
         --c-interligne: 6px;
         --c-petit: 30px;
         --c-grand: 36px;
+        --p-largeur: 250px;
+        --p-nom: 32px;
+      }
+      #p-louna {
+        left: 95px;
+        top: 300px;
+      }
+      #p-nicolas {
+        left: 395px;
+        top: 300px;
+      }
+      #p-david {
+        left: 695px;
+        top: 300px;
       }
       .notif {
-        width: 760px;
+        left: 1040px;
+        width: 780px;
       }
       #n1 {
-        left: 150px;
-        top: 150px;
+        top: 140px;
       }
       #n2 {
-        left: 560px;
-        top: 410px;
+        top: 420px;
       }
       #n3 {
-        left: 260px;
-        top: 700px;
+        top: 660px;
+      }
+      .notif-tel {
+        right: 50px;
+        top: 150px;
+        width: 720px;
       }
       #textes {
         left: 130px;
         top: 0;
         bottom: 0;
-        width: 1120px;
+        width: 1000px;
       }
       .titre {
         font-size: 88px;
-      }
-      .sous {
-        font-size: 56px;
       }
       #t5 {
         left: -130px;
@@ -303,7 +368,7 @@
         max-width: 1500px;
       }
       #telephone {
-        right: 110px;
+        right: 210px;
         top: 60px;
         width: 520px;
         height: 880px;
@@ -315,45 +380,137 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="23.2"
+      data-duration="25.3"
       data-width="1920"
       data-height="1080"
     >
-      <div id="fond" class="plein clip" data-start="0" data-duration="23.2" data-track-index="0">
+      <div id="fond" class="plein clip" data-start="0" data-duration="25.3" data-track-index="0">
         <div id="fond-couleur"></div>
       </div>
 
-      <div id="ecrans" class="plein clip" data-start="0" data-duration="18.75" data-track-index="1">
-        <div id="telephone">
-          <div id="e0" class="ecran">
-            <div class="cadre">
-              <img src="assets/ecrans/v2-fil-activite.png" alt="" />
-              <div id="nouvelle-carte" class="carte-app">
+      <div id="intro" class="plein clip" data-start="0" data-duration="6" data-track-index="1">
+        <div class="plein">
+          <svg id="reseau" class="plein" viewBox="0 0 1920 1080" aria-hidden="true">
+            <path id="lien-ln" class="lien" d="M220 330 Q370 210 520 330" pathLength="1" />
+            <path id="lien-nd" class="lien" d="M520 330 Q670 210 820 330" pathLength="1" />
+            <path id="lien-dl" class="lien" d="M820 330 Q520 120 220 330" pathLength="1" />
+          </svg>
+          <div id="p-louna" class="perso">
+            <svg class="perso-svg" viewBox="0 0 240 300" aria-hidden="true">
+              <path d="M28 300 Q28 206 120 202 Q212 206 212 300 Z" fill="#BFD3F2" stroke="#061866" stroke-width="6" />
+              <path d="M100 196 L140 196 L136 214 L104 214 Z" fill="#C9C3F5" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
+              <circle cx="120" cy="128" r="68" fill="#C9C3F5" stroke="#061866" stroke-width="6" />
+              <ellipse cx="100" cy="134" rx="6" ry="9" fill="#061866" /><ellipse cx="140" cy="134" rx="6" ry="9" fill="#061866" />
+              <path d="M102 160 Q120 174 138 160" fill="none" stroke="#061866" stroke-width="6" stroke-linecap="round" />
+              <path d="M54 98 Q58 38 120 36 Q182 38 186 98 Z" fill="#FFFF1A" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
+              <path d="M48 96 L204 96 Q212 110 194 112 L48 112 Z" fill="#061866" />
+              <g id="tel-louna" class="perso-tel">
+                <rect x="144" y="208" width="54" height="90" rx="10" fill="#061866" />
+                <rect x="150" y="218" width="42" height="68" rx="5" fill="#BFD3F2" />
+                <circle cx="171" cy="292" r="16" fill="#C9C3F5" stroke="#061866" stroke-width="5" />
+              </g>
+              <circle class="en-ligne" cx="178" cy="60" r="15" fill="#34C759" stroke="#FFFFFF" stroke-width="6" />
+            </svg>
+            <span class="perso-nom">Louna</span>
+          </div>
+          <div id="p-nicolas" class="perso">
+            <svg class="perso-svg" viewBox="0 0 240 300" aria-hidden="true">
+              <path d="M28 300 Q28 206 120 202 Q212 206 212 300 Z" fill="#FFFFFF" stroke="#061866" stroke-width="6" />
+              <path d="M100 196 L140 196 L136 214 L104 214 Z" fill="#A6E8B8" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
+              <circle cx="120" cy="128" r="68" fill="#A6E8B8" stroke="#061866" stroke-width="6" />
+              <ellipse cx="100" cy="134" rx="6" ry="9" fill="#061866" /><ellipse cx="140" cy="134" rx="6" ry="9" fill="#061866" />
+              <path d="M102 160 Q120 174 138 160" fill="none" stroke="#061866" stroke-width="6" stroke-linecap="round" />
+              <path d="M54 98 Q58 38 120 36 Q182 38 186 98 Z" fill="#BFD3F2" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
+              <path d="M48 96 L204 96 Q212 110 194 112 L48 112 Z" fill="#061866" />
+              <g id="tel-nicolas" class="perso-tel">
+                <rect x="144" y="208" width="54" height="90" rx="10" fill="#061866" />
+                <rect x="150" y="218" width="42" height="68" rx="5" fill="#BFD3F2" />
+                <circle cx="171" cy="292" r="16" fill="#A6E8B8" stroke="#061866" stroke-width="5" />
+              </g>
+              <circle class="en-ligne" cx="178" cy="60" r="15" fill="#34C759" stroke="#FFFFFF" stroke-width="6" />
+            </svg>
+            <span class="perso-nom">Nicolas J.</span>
+          </div>
+          <div id="p-david" class="perso">
+            <svg class="perso-svg" viewBox="0 0 240 300" aria-hidden="true">
+              <path d="M28 300 Q28 206 120 202 Q212 206 212 300 Z" fill="#DCE6F7" stroke="#061866" stroke-width="6" />
+              <path d="M100 196 L140 196 L136 214 L104 214 Z" fill="#F6D38B" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
+              <circle cx="120" cy="128" r="68" fill="#F6D38B" stroke="#061866" stroke-width="6" />
+              <path d="M88 126 L100 134 L88 142 M152 126 L140 134 L152 142" fill="none" stroke="#061866" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M102 160 Q120 174 138 160" fill="none" stroke="#061866" stroke-width="6" stroke-linecap="round" />
+              <path d="M54 98 Q58 38 120 36 Q182 38 186 98 Z" fill="#FFFFFF" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
+              <path d="M48 96 L204 96 Q212 110 194 112 L48 112 Z" fill="#061866" />
+              <g id="tel-david" class="perso-tel">
+                <rect x="144" y="208" width="54" height="90" rx="10" fill="#061866" />
+                <rect x="150" y="218" width="42" height="68" rx="5" fill="#BFD3F2" />
+                <circle cx="171" cy="292" r="16" fill="#F6D38B" stroke="#061866" stroke-width="5" />
+              </g>
+              <circle class="en-ligne" cx="178" cy="60" r="15" fill="#34C759" stroke="#FFFFFF" stroke-width="6" />
+            </svg>
+            <span class="perso-nom">David</span>
+          </div>
+          <div id="n1" class="carte-app notif">
               <svg class="avatar" viewBox="0 0 112 112" aria-hidden="true">
                 <circle cx="50" cy="50" r="44" fill="#C9C3F5" stroke="#FFFF1A" stroke-width="8" />
                 <ellipse cx="40" cy="44" rx="4.5" ry="7" fill="#061866" /><ellipse cx="60" cy="44" rx="4.5" ry="7" fill="#061866" />
                 <text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">L</text>
                 <circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" />
+                <svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><circle cx="10" cy="9" r="4" fill="#061866" /><path d="M3 21 Q3 14 10 14 Q17 14 17 21 Z" fill="#061866" /><path d="M20 8 V16 M16 12 H24" stroke="#061866" stroke-width="2.6" stroke-linecap="round" /></svg>
+              </svg>
+              <div class="c-textes">
+                
+                <span class="c-fort">Louna vous a envoyé une invitation</span>
+                <span class="c-bas"><span class="c-gris">à l'instant</span></span>
+              </div>
+              <div class="c-bouton">
+                <span id="btn-accepter">Accepter</span>
+                <span id="btn-amis">✓ Amis</span>
+                <div id="tap-accepter" class="tap" style="left: 50%; top: 50%"><div class="onde"></div><div class="doigt"></div></div>
+              </div>
+            </div>
+          <div id="n2" class="carte-app notif">
+              <svg class="avatar" viewBox="0 0 112 112" aria-hidden="true">
+                <circle cx="50" cy="50" r="44" fill="#A6E8B8" stroke="#061866" stroke-width="8" />
+                <ellipse cx="40" cy="44" rx="4.5" ry="7" fill="#061866" /><ellipse cx="60" cy="44" rx="4.5" ry="7" fill="#061866" />
+                <text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">N</text>
+                <circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" />
+                <svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><path d="M1 13 Q13 2 25 13 Q13 24 1 13 Z" fill="#061866" /><circle cx="13" cy="13" r="4" fill="#DCE6F7" /></svg>
+              </svg>
+              <div class="c-textes">
+                
+                <span class="c-fort">Nicolas J. a visité votre profil</span>
+                <span class="c-bas"><span class="c-gris">à l'instant</span></span>
+              </div>
+            </div>
+          <div id="n3" class="carte-app notif">
+              <svg class="avatar" viewBox="0 0 112 112" aria-hidden="true">
+                <circle cx="50" cy="50" r="44" fill="#F6D38B" stroke="#FFFF1A" stroke-width="8" />
+                <path d="M33 38 L42 44 L33 50 M67 38 L58 44 L67 50" fill="none" stroke="#061866" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                <text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">D</text>
+                <circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" />
                 <svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><rect x="2" y="7" width="13" height="10" rx="2" fill="#061866" /><path d="M15 10 H20 L23 14 V17 H15 Z" fill="#061866" /><circle cx="7" cy="19" r="2.4" fill="#061866" /><circle cx="19" cy="19" r="2.4" fill="#061866" /></svg>
               </svg>
               <div class="c-textes">
-                <span class="c-gris">Louna a visité :</span>
-                <span class="c-fort">AS 24 Calais Eurotunnel</span>
-                <span class="c-bas"><span class="c-gris">à l'instant</span><span class="c-lieu"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="#6E6E73" /></svg>Coquelles</span></span>
+                <span class="c-gris">David s'est arrêté ici :</span>
+                <span class="c-fort">Restaurant Chez Marcel</span>
+                <span class="c-bas"><span class="c-gris">à l'instant</span><span class="c-lieu"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="#6E6E73" /></svg>Lyon</span></span>
               </div>
             </div>
-            </div>
-          </div>
+        </div>
+      </div>
+
+      <div id="ecrans" class="plein clip" data-start="5.8" data-duration="14.9" data-track-index="2">
+        <div id="telephone">
           <div id="e1" class="ecran">
             <div class="cadre">
               <img src="assets/ecrans/v2-profil.png" alt="" />
               <div id="repere"></div>
-              <svg id="fleche-boutons" class="fleche" viewBox="0 0 200 120" style="left: calc(13% + -186px); top: calc(33% - 112px)" aria-hidden="true">
+              <svg id="fleche-camion" class="fleche" viewBox="0 0 200 120" style="left: calc(14% + -186px); top: calc(70% - 112px)" aria-hidden="true">
                 <path class="trait" d="M8 10 C 80 6, 150 40, 178 104" pathLength="1" />
                 <path class="tete" d="M160 98 L180 108 L182 86" />
               </svg>
-              <div id="tap-crayon" class="tap" style="left: 36.5%; top: 24.5%"><div class="onde"></div><div class="doigt"></div></div>
               <div id="tap-modifier" class="tap" style="left: 31%; top: 35.2%"><div class="onde"></div><div class="doigt"></div></div>
+              <div id="tap-camion" class="tap" style="left: 50%; top: 72.4%"><div class="onde"></div><div class="doigt"></div></div>
               <div id="tap-partager" class="tap" style="left: 68%; top: 35.2%"><div class="onde"></div><div class="doigt"></div></div>
             </div>
           </div>
@@ -368,77 +525,79 @@
               <div id="tap-ajouter" class="tap" style="left: 75.5%; top: 35.4%"><div class="onde"></div><div class="doigt"></div></div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div id="intro" class="plein clip" data-start="0" data-duration="5.5" data-track-index="2">
-        <div class="plein">
-          <div id="n1" class="carte-app notif">
+          <div id="e0" class="ecran">
+            <div class="cadre">
+              <img src="assets/ecrans/v2-fil-activite.png" alt="" />
+              <div id="nouvelle-carte" class="carte-app ">
               <svg class="avatar" viewBox="0 0 112 112" aria-hidden="true">
-                <circle cx="50" cy="50" r="44" fill="#C9C3F5" stroke="#FFFF1A" stroke-width="8" />
+                <circle cx="50" cy="50" r="44" fill="#F9C6C0" stroke="#FFFF1A" stroke-width="8" />
                 <ellipse cx="40" cy="44" rx="4.5" ry="7" fill="#061866" /><ellipse cx="60" cy="44" rx="4.5" ry="7" fill="#061866" />
-                <text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">L</text>
-                <circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" />
-                <svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><circle cx="10" cy="9" r="4" fill="#061866" /><path d="M3 21 Q3 14 10 14 Q17 14 17 21 Z" fill="#061866" /><path d="M20 8 V16 M16 12 H24" stroke="#061866" stroke-width="2.6" stroke-linecap="round" /></svg>
-              </svg>
-              <div class="c-textes">
-                
-                <span class="c-fort">Louna vous a envoyé une invitation</span>
-                <span class="c-bas"><span class="c-gris">à l'instant</span></span>
-              </div>
-              <div id="tap-n1" class="tap" style="left: 78%; top: 50%"><div class="onde"></div><div class="doigt"></div></div>
-            </div>
-          <div id="n2" class="carte-app notif">
-              <svg class="avatar" viewBox="0 0 112 112" aria-hidden="true">
-                <circle cx="50" cy="50" r="44" fill="#A6E8B8" stroke="#061866" stroke-width="8" />
-                <ellipse cx="40" cy="44" rx="4.5" ry="7" fill="#061866" /><ellipse cx="60" cy="44" rx="4.5" ry="7" fill="#061866" />
-                <text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">D</text>
+                <text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">M</text>
                 <circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" />
                 <svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><rect x="2" y="7" width="13" height="10" rx="2" fill="#061866" /><path d="M15 10 H20 L23 14 V17 H15 Z" fill="#061866" /><circle cx="7" cy="19" r="2.4" fill="#061866" /><circle cx="19" cy="19" r="2.4" fill="#061866" /></svg>
               </svg>
               <div class="c-textes">
-                <span class="c-gris">David a visité :</span>
-                <span class="c-fort">Restaurant Chez Marcel</span>
-                <span class="c-bas"><span class="c-gris">à l'instant</span><span class="c-lieu"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="#6E6E73" /></svg>Lyon</span></span>
+                <span class="c-gris">Maxime V. a visité :</span>
+                <span class="c-fort">Cournon</span>
+                <span class="c-bas"><span class="c-gris">à l'instant</span><span class="c-lieu"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="#6E6E73" /></svg>Cournon-d'Auvergne</span></span>
               </div>
             </div>
-          <div id="n3" class="carte-app notif">
+              <svg id="fleche-lieu" class="fleche" viewBox="0 0 200 120" style="left: calc(88% + -14px); top: calc(52% - 112px)" aria-hidden="true">
+                <path class="trait" d="M192 10 C 120 6, 50 40, 22 104" pathLength="1" />
+                <path class="tete" d="M40 98 L20 108 L18 86" />
+              </svg>
+              <div id="tap-carte" class="tap" style="left: 45%; top: 50.5%"><div class="onde"></div><div class="doigt"></div></div>
+            </div>
+          </div>
+          <div id="e4" class="ecran">
+            <div class="cadre" style="aspect-ratio: 470 / 929">
+              <img src="assets/ecrans/v2-activite-ami.png" alt="" />
+              <svg id="fleche-stats" class="fleche" viewBox="0 0 200 120" style="left: calc(23% + -186px); top: calc(20.5% - 112px)" aria-hidden="true">
+                <path class="trait" d="M8 10 C 80 6, 150 40, 178 104" pathLength="1" />
+                <path class="tete" d="M160 98 L180 108 L182 86" />
+              </svg>
+              <svg id="fleche-arret" class="fleche" viewBox="0 0 200 120" style="left: calc(86% + -14px); top: calc(45.5% - 112px)" aria-hidden="true">
+                <path class="trait" d="M192 10 C 120 6, 50 40, 22 104" pathLength="1" />
+                <path class="tete" d="M40 98 L20 108 L18 86" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div id="n4" class="carte-app notif-tel">
               <svg class="avatar" viewBox="0 0 112 112" aria-hidden="true">
                 <circle cx="50" cy="50" r="44" fill="#F6D38B" stroke="#FFFF1A" stroke-width="8" />
                 <path d="M33 38 L42 44 L33 50 M67 38 L58 44 L67 50" fill="none" stroke="#061866" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-                <text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">N</text>
+                <text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">D</text>
                 <circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" />
-                <svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><path d="M3 5 H21 Q23 5 23 7 V16 Q23 18 21 18 H11 L6 22 V18 H5 Q3 18 3 16 V7 Q3 5 5 5 Z" fill="#061866" /></svg>
+                <svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="8" r="5" fill="#061866" /><path d="M3 24 Q3 15 13 15 Q23 15 23 24 Z" fill="#061866" /></svg>
               </svg>
               <div class="c-textes">
                 
-                <span class="c-fort">Nordin a déposé un avis</span>
+                <span class="c-fort">David a accepté votre invitation</span>
                 <span class="c-bas"><span class="c-gris">à l'instant</span></span>
               </div>
             </div>
-        </div>
       </div>
 
-      <div id="textes-clip" class="plein clip" data-start="5.5" data-duration="17.7" data-track-index="3">
+      <div id="textes-clip" class="plein clip" data-start="6" data-duration="19.3" data-track-index="3">
         <div id="textes">
           <div id="t1" class="etape">
-            <span class="ligne titre">Crée ton Profil Trucker</span>
-            <span class="ligne sous">pour que tes amis te retrouvent&nbsp;!</span>
+            <span class="ligne titre">Crée et personnalise</span>
+            <span class="ligne titre">ton profil</span>
           </div>
           <div id="t2" class="etape">
-            <span class="ligne titre">Personnalise</span>
-            <span class="ligne titre">et partage ton profil</span>
+            <span class="ligne titre">Ajoute tes amis</span>
           </div>
           <div id="t3" class="etape">
-            <span class="ligne titre">Retrouve tes amis</span>
+            <span class="ligne titre">Découvre leur activité</span>
+            <span class="ligne titre">au quotidien</span>
           </div>
           <div id="t4" class="etape">
-            <span class="ligne titre">Suis l'activité de</span>
-            <span class="ligne titre">tes proches au quotidien</span>
+            <span class="ligne titre">Visite leurs profils</span>
           </div>
           <div id="t5" class="etape" data-layout-allow-overflow>
             <span class="ligne titre">Ne roule plus seul&nbsp;!</span>
-            <span class="ligne sous">Rejoins la communauté sur Michelin Truckfly</span>
+            <span class="ligne sous">Crée ton réseau sur Michelin Truckfly</span>
           </div>
         </div>
       </div>
@@ -466,50 +625,66 @@
         tl.fromTo(`${id} .tete`, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.15 }, t + 0.38);
         tl.to(id, { autoAlpha: 0, duration: 0.25 }, fin);
       }
+      // Le téléphone d'un personnage vibre quand une notification arrive
+      function vibre(qui, t) {
+        tl.fromTo(`#tel-${qui}`, { rotation: 0 }, { rotation: 9, duration: 0.07, yoyo: true, repeat: 5, ease: "sine.inOut", svgOrigin: "171 250", immediateRender: false }, t);
+      }
 
-      // Intro (0–5,5 s) : le fil d'activité, puis les notifications arrivent une à une
-      tl.fromTo("#telephone", { autoAlpha: 0, y: 60 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0);
-      [["#n1", 0.3], ["#n2", 0.9], ["#n3", 1.5]].forEach(([id, t]) => {
-        tl.fromTo(id, { autoAlpha: 0, y: -50, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, t);
+      // Intro (0–6 s) : trois conducteurs en ligne, reliés au fil des notifications
+      tl.fromTo(".perso", { autoAlpha: 0, y: 40, scale: 0.9 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.5)", stagger: 0.15 }, 0);
+      tl.fromTo(".en-ligne", { scale: 0, svgOrigin: "178 60" }, { scale: 1, svgOrigin: "178 60", duration: 0.3, ease: "back.out(2.5)", stagger: 0.15 }, 0.45);
+      [["#lien-ln", "#n1", "nicolas", 0.5], ["#lien-nd", "#n2", "david", 1.2], ["#lien-dl", "#n3", "louna", 1.9]].forEach(([lien, notif, qui, t]) => {
+        tl.fromTo(lien, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, t - 0.1);
+        vibre(qui, t + 0.05);
+        tl.fromTo(notif, { autoAlpha: 0, y: -40, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, t + 0.15);
       });
-      tape("#tap-n1", 3.0);
-      tl.to("#n1", { scale: 0.97, duration: 0.12, yoyo: true, repeat: 1, ease: "power1.inOut" }, 3.1);
-      tl.to(".notif", { autoAlpha: 0, y: -40, duration: 0.3, ease: "power2.in", stagger: 0.07 }, 5.0);
-      tl.to("#fond-couleur", { backgroundColor: "#F5F3F1", duration: 0.4, ease: "power1.inOut" }, 5.2);
-      tl.fromTo("#e1", { xPercent: 60, autoAlpha: 0 }, arrive, 5.25);
-      tl.fromTo("#e0", { xPercent: 0, autoAlpha: 1 }, part, 5.25);
+      // La demande d'ami est acceptée : Louna et Nicolas sautent de joie
+      tape("#tap-accepter", 3.3);
+      tl.fromTo("#btn-amis", { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 3.5);
+      tl.to("#btn-accepter", { autoAlpha: 0, duration: 0.15 }, 3.5);
+      tl.to(["#p-louna", "#p-nicolas"], { y: -18, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", stagger: 0.08 }, 3.6);
+      tl.to(["#reseau", ".perso", ".notif"], { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in", stagger: 0.04 }, 5.6);
+      tl.to("#fond-couleur", { backgroundColor: "#F5F3F1", duration: 0.4, ease: "power1.inOut" }, 5.75);
 
-      // 1 · Crée ton Profil Trucker (5,5–9,7 s) : tap sur le crayon de l'avatar
-      texte("#t1", 5.8, 9.45);
-      tape("#tap-crayon", 7.3);
+      // 1 · Crée et personnalise ton profil (6–9,8 s)
+      tl.fromTo("#telephone", { autoAlpha: 0, y: 160 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: "power2.out" }, 5.85);
+      texte("#t1", 6.2, 9.55);
+      tl.fromTo("#repere", { autoAlpha: 0, scale: 1.08 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 6.5);
+      tape("#tap-modifier", 6.9);
+      fleche("#fleche-camion", 7.6, 9.5);
+      tape("#tap-camion", 8.1);
+      tape("#tap-partager", 8.85);
+      tl.to("#repere", { autoAlpha: 0, duration: 0.25 }, 9.5);
 
-      // 2 · Personnalise et partage (9,7–12,7 s) : cadre, flèche, deux taps
-      texte("#t2", 9.8, 12.45);
-      tl.fromTo("#repere", { autoAlpha: 0, scale: 1.08 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 10.0);
-      fleche("#fleche-boutons", 10.1, 12.45);
-      tl.to("#repere", { autoAlpha: 0, duration: 0.25 }, 12.45);
-      tape("#tap-modifier", 10.7);
-      tape("#tap-partager", 11.6);
+      // 2 · Ajoute tes amis (9,8–14,2 s) : invitation envoyée, puis acceptée
+      tl.fromTo("#e2", { xPercent: 60, autoAlpha: 0 }, arrive, 9.6);
+      tl.fromTo("#e1", { xPercent: 0, autoAlpha: 1 }, part, 9.6);
+      texte("#t2", 10.0, 13.95);
+      fleche("#fleche-ajouter", 10.2, 13.95);
+      tape("#tap-ajouter", 10.75);
+      tl.fromTo("#invite", { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.0);
+      tl.fromTo("#n4", { autoAlpha: 0, y: -40, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, 11.0);
+      tl.to("#n4", { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in" }, 13.95);
 
-      // 3 · Retrouve tes amis (12,7–15,1 s) : tap sur Ajouter, le bouton passe à « Invité »
-      tl.fromTo("#e2", { xPercent: 60, autoAlpha: 0 }, arrive, 12.5);
-      tl.fromTo("#e1", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 12.5);
-      texte("#t3", 12.8, 14.85);
-      fleche("#fleche-ajouter", 13.0, 14.85);
-      tape("#tap-ajouter", 13.6);
-      tl.fromTo("#invite", { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 13.85);
+      // 3 · Découvre leur activité au quotidien (14,2–17,8 s) : une nouvelle carte arrive, tap dessus
+      tl.fromTo("#e0", { xPercent: 60, autoAlpha: 0 }, arrive, 14.0);
+      tl.fromTo("#e2", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 14.0);
+      texte("#t3", 14.4, 17.55);
+      tl.fromTo("#nouvelle-carte", { autoAlpha: 0, y: -30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, 14.8);
+      fleche("#fleche-lieu", 15.4, 17.55);
+      tape("#tap-carte", 17.0);
 
-      // 4 · Suis l'activité (15,1–18,7 s) : une nouvelle carte arrive dans le fil, zoom léger
-      tl.fromTo("#e0", { xPercent: 60, autoAlpha: 0 }, { ...arrive, immediateRender: false }, 14.9);
-      tl.fromTo("#e2", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 14.9);
-      texte("#t4", 15.2, 18.45);
-      tl.fromTo("#nouvelle-carte", { autoAlpha: 0, y: -30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, 15.8);
-      tl.fromTo("#telephone", { scale: 1 }, { scale: 1.06, duration: 0.8, ease: "power2.inOut", immediateRender: false }, 16.2);
-      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 18.45);
+      // 4 · Visite leurs profils (17,8–20,6 s) : le profil de Maxime s'ouvre depuis la carte
+      tl.fromTo("#e4", { autoAlpha: 0, scale: 0.35 }, { autoAlpha: 1, scale: 1, duration: 0.5, ease: "power3.out", transformOrigin: "50% 51%" }, 17.55);
+      tl.to("#e0", { autoAlpha: 0, duration: 0.3, immediateRender: false }, 17.7);
+      texte("#t4", 18.0, 20.35);
+      fleche("#fleche-stats", 18.3, 20.35);
+      fleche("#fleche-arret", 19.1, 20.35);
+      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 20.35);
 
-      // 5 · Fin (18,7–23,2 s)
-      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.4, ease: "power1.inOut" }, 18.5);
-      texte("#t5", 18.85);
+      // 5 · Fin (20,6–25,3 s)
+      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.4, ease: "power1.inOut" }, 20.4);
+      texte("#t5", 20.8);
 
       window.__timelines["main"] = tl;
       tl.seek(0);
