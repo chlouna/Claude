@@ -13,7 +13,7 @@ Les positions sur les écrans sont en % de la capture rognée.
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
-DUREE = 25.3
+DUREE = 37.3
 
 # --- Avatars façon app (référence : Abdelatif) : visage de couleur, anneau, yeux, initiale ---
 
@@ -34,7 +34,7 @@ PERSONNES = {
     "louna": ("L", "#C9C3F5", "#FFFF1A", "points"),
     "nicolas": ("N", "#A6E8B8", "#061866", "points"),
     "david": ("D", "#F6D38B", "#FFFF1A", "plisses"),
-    "maxime": ("M", "#F9C6C0", "#FFFF1A", "points"),
+    "vanessa": ("V", "#BFD3F2", "#061866", "points"),
 }
 
 
@@ -93,8 +93,21 @@ NOTIFS_INTRO = "\n          ".join(
     ]
 )
 
-NOTIF_ACCEPTEE = carte("n4", avatar("david", "ami"), None, "David a accepté votre invitation", "à l'instant", classe="notif-tel")
-NOUVELLE_CARTE = carte("nouvelle-carte", avatar("maxime", "visite"), "Maxime V. a visité :", "Cournon", "à l'instant", "Cournon-d'Auvergne")
+NOTIF_ENVOYEE = carte("n-env", avatar("vanessa", "invitation"), None, "Invitation envoyée", "à Vanessa Y. · à l'instant", classe="notif-tel")
+NOTIF_ACCEPTEE = carte("n-acc", avatar("louna", "ami"), None, "Invitation acceptée", "Louna C. · à l'instant", classe="notif-tel")
+
+HORLOGE = '<svg class="horloge" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="#061866" stroke-width="2.6" /><path class="aiguille" d="M12 12 V6.5" stroke="#061866" stroke-width="2.6" stroke-linecap="round" /><path d="M12 12 L15.5 14" stroke="#061866" stroke-width="2.6" stroke-linecap="round" /></svg>'
+
+# Ligne « Louna C. » recréée par-dessus la première invitation en attente (capture v3-invitations)
+LIGNE_LOUNA = f"""<div id="ligne-louna">
+                {avatar("louna", "invitation").replace('class="avatar"', 'class="avatar-ligne"', 1)}
+                <span>Louna C.</span>
+              </div>"""
+
+# Anneaux verts autour des amis « On the road » (capture v3-accueil-en-ligne)
+ANNEAUX = "\n              ".join(
+    f'<div class="anneau" style="left: {x}%; top: 27.2%"></div>' for x in (16.7, 35.7, 54.3, 73.3)
+)
 
 
 def tap(tid, x, y):
@@ -292,12 +305,12 @@ CSS_COMMUN = """
         line-height: 1.2;
         margin-top: 16px;
       }
-      #t5 {
+      .final {
         align-items: center;
         text-align: center;
         color: #ffffff;
       }
-      #t5 .sous {
+      .final .sous {
         white-space: normal;
         text-wrap: balance;
         margin-top: 28px;
@@ -370,36 +383,85 @@ CSS_COMMUN = """
       .fleche .trait {
         stroke-dasharray: 1;
       }
-      #invite {
+      #attente {
         position: absolute;
         left: 61.9%;
         top: 33.4%;
         width: 27.6%;
         height: 4.1%;
         border-radius: 1cqh;
-        background: #e4edfb;
+        background: #ffffff;
+        border: 0.25cqh solid #061866;
         color: #061866;
         font-family: "Inter", sans-serif;
         font-weight: 700;
-        font-size: 1.75cqh;
+        font-size: 1.6cqh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6cqh;
+      }
+      .horloge {
+        width: 1.9cqh;
+        height: 1.9cqh;
+      }
+      #ligne-louna {
+        position: absolute;
+        left: 7.2%;
+        top: 27.7%;
+        width: 44%;
+        height: 7.7%;
+        background: #d4e7fa;
+        display: flex;
+        align-items: center;
+        gap: 1.4cqh;
+        padding-left: 3.5cqh;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 2.1cqh;
+        color: #000000;
+      }
+      .avatar-ligne {
+        width: 5.6cqh;
+        height: 5.6cqh;
+        flex: none;
+      }
+      #ami-ok {
+        position: absolute;
+        left: 51.5%;
+        top: 28.4%;
+        width: 39%;
+        height: 6.4%;
+        background: #d4e7fa;
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      #nouvelle-carte {
+      #ami-ok span {
+        padding: 0.7cqh 2cqh;
+        border-radius: 1cqh;
+        background: #061866;
+        color: #ffffff;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 1.9cqh;
+      }
+      #cadre-en-ligne {
         position: absolute;
-        left: 9.2%;
-        top: 45.6%;
-        width: 81.8%;
-        height: 10.7%;
-        --c-gap: 1.2cqh;
-        --c-rayon: 1.4cqh;
-        --c-pad: 1cqh 1.4cqh;
-        --c-avatar: 6.4cqh;
-        --c-interligne: 0.3cqh;
-        --c-petit: 1.45cqh;
-        --c-grand: 1.6cqh;
-        box-shadow: 0 0 0 0.35cqh #061866;
+        left: 23.5%;
+        top: 13.3%;
+        width: 31.5%;
+        height: 4.6%;
+        border-radius: 2.3cqh;
+        border: 0.45cqh solid #34c759;
+      }
+      .anneau {
+        position: absolute;
+        width: 16.5%;
+        aspect-ratio: 1;
+        margin: -8.25% 0 0 -8.25%;
+        border-radius: 50%;
+        border: 0.55cqh solid #34c759;
       }
 """
 
@@ -435,7 +497,7 @@ CSS_16x9 = """
       }
       .notif-tel {
         right: 50px;
-        top: 150px;
+        top: 790px;
         width: 720px;
       }
       #textes {
@@ -447,14 +509,14 @@ CSS_16x9 = """
       .titre {
         font-size: 88px;
       }
-      #t5 {
+      .final {
         left: -130px;
         width: 1920px;
       }
-      #t5 .titre {
+      .final .titre {
         font-size: 128px;
       }
-      #t5 .sous {
+      .final .sous {
         font-size: 60px;
         max-width: 1500px;
       }
@@ -463,6 +525,9 @@ CSS_16x9 = """
         top: 60px;
         width: 520px;
         height: 880px;
+      }
+      .final .titre-rappel {
+        font-size: 96px;
       }
 """
 
@@ -496,7 +561,7 @@ CSS_9x16 = """
         top: 1280px;
       }
       .notif-tel {
-        top: 640px;
+        top: 1390px;
       }
       #textes {
         left: 30px;
@@ -511,7 +576,7 @@ CSS_9x16 = """
       .titre {
         font-size: 80px;
       }
-      #t5 {
+      .final {
         left: -30px;
         right: -30px;
         top: -250px;
@@ -519,10 +584,10 @@ CSS_9x16 = """
         height: 1920px;
         padding: 0 60px;
       }
-      #t5 .titre {
+      .final .titre {
         font-size: 96px;
       }
-      #t5 .sous {
+      .final .sous {
         font-size: 56px;
       }
       #telephone {
@@ -530,6 +595,11 @@ CSS_9x16 = """
         right: 0;
         top: 680px;
         height: 860px;
+      }
+      .final .titre-rappel {
+        font-size: 88px;
+        white-space: normal;
+        text-wrap: balance;
       }
 """
 
@@ -581,35 +651,53 @@ SCRIPT = """
       tape("#tap-partager", 8.85);
       tl.to("#repere", { autoAlpha: 0, duration: 0.25 }, 9.5);
 
-      // 2 · Ajoute tes amis (9,8–14,2 s) : invitation envoyée, puis acceptée
+      // 2 · Ajoute tes amis (9,8–13,8 s) : tap sur Ajouter, invitation envoyée
       tl.fromTo("#e2", { xPercent: 60, autoAlpha: 0 }, arrive, 9.6);
       tl.fromTo("#e1", { xPercent: 0, autoAlpha: 1 }, part, 9.6);
-      texte("#t2", 10.0, 13.95);
-      fleche("#fleche-ajouter", 10.2, 13.95);
+      texte("#t2", 10.0, 13.55);
+      fleche("#fleche-ajouter", 10.2, 13.55);
       tape("#tap-ajouter", 10.75);
-      tl.fromTo("#invite", { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 11.0);
-      tl.fromTo("#n4", { autoAlpha: 0, y: -40, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, 11.0);
-      tl.to("#n4", { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in" }, 13.95);
+      tl.fromTo("#n-env", { autoAlpha: 0, y: -40, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, 10.95);
+      tl.to("#n-env", { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in" }, 13.55);
 
-      // 3 · Découvre leur activité au quotidien (14,2–17,8 s) : une nouvelle carte arrive, tap dessus
-      tl.fromTo("#e0", { xPercent: 60, autoAlpha: 0 }, arrive, 14.0);
-      tl.fromTo("#e2", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 14.0);
-      texte("#t3", 14.4, 17.55);
-      tl.fromTo("#nouvelle-carte", { autoAlpha: 0, y: -30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, 14.8);
-      fleche("#fleche-lieu", 15.4, 17.55);
-      tape("#tap-carte", 17.0);
+      // 3 · Invitation en attente (13,8–16,8 s) : le bouton passe à « En attente »
+      texte("#t3", 13.95, 16.55);
+      tl.fromTo("#attente", { autoAlpha: 0, scale: 0.85 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 14.1);
+      tl.fromTo("#attente .aiguille", { rotation: 0 }, { rotation: 360, svgOrigin: "12 12", duration: 2.2, ease: "none" }, 14.2);
+      tl.to("#attente", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, 14.6);
+      fleche("#fleche-attente", 14.4, 16.55);
 
-      // 4 · Visite leurs profils (17,8–20,6 s) : le profil de Maxime s'ouvre depuis la carte
-      tl.fromTo("#e4", { autoAlpha: 0, scale: 0.35 }, { autoAlpha: 1, scale: 1, duration: 0.5, ease: "power3.out", transformOrigin: "50% 51%" }, 17.55);
-      tl.to("#e0", { autoAlpha: 0, duration: 0.3, immediateRender: false }, 17.7);
-      texte("#t4", 18.0, 20.35);
-      fleche("#fleche-stats", 18.3, 20.35);
-      fleche("#fleche-arret", 19.1, 20.35);
-      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 20.35);
+      // 4 · Invitation acceptée (16,8–21,2 s) : côté ami, la demande de Louna est acceptée
+      tl.fromTo("#e5", { xPercent: 60, autoAlpha: 0 }, arrive, 16.6);
+      tl.fromTo("#e2", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 16.6);
+      texte("#t4", 17.0, 20.95);
+      fleche("#fleche-accepter", 17.3, 20.95);
+      tape("#tap-accepter-tel", 17.95);
+      tl.fromTo("#ami-ok", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2 }, 18.15);
+      tl.fromTo("#ami-ok span", { scale: 0.7 }, { scale: 1, duration: 0.35, ease: "back.out(2.5)" }, 18.15);
+      tl.fromTo("#n-acc", { autoAlpha: 0, y: -40, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" }, 18.3);
+      tl.to("#n-acc", { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in" }, 20.95);
 
-      // 5 · Fin (20,6–25,3 s)
-      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.4, ease: "power1.inOut" }, 20.4);
-      texte("#t5", 20.8);
+      // 5 · Découvre leur activité au quotidien (21,2–24,6 s) : accueil, carte de Nicolas J.
+      tl.fromTo("#e6", { xPercent: 60, autoAlpha: 0 }, arrive, 21.0);
+      tl.fromTo("#e5", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 21.0);
+      texte("#t5", 21.4, 24.35);
+      fleche("#fleche-activite", 21.8, 24.35);
+      tape("#tap-activite", 22.7);
+
+      // 6 · Regarde qui est en ligne (24,6–27,8 s) : anneaux verts et flèche sur « 5 amis en ligne »
+      texte("#t6", 24.8, 27.55);
+      tl.fromTo(".anneau", { autoAlpha: 0, scale: 1.35 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(2)", stagger: 0.15 }, 25.0);
+      tl.to(".anneau", { scale: 1.1, duration: 0.3, yoyo: true, repeat: 3, ease: "sine.inOut" }, 25.8);
+      tl.fromTo("#cadre-en-ligne", { autoAlpha: 0, scale: 1.15 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 25.0);
+      tl.to([".anneau", "#cadre-en-ligne"], { autoAlpha: 0, duration: 0.25 }, 27.55);
+      fleche("#fleche-en-ligne", 25.5, 27.55);
+      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 27.55);
+
+      // Fin (27,8–37,3 s) : rappel sur les invitations, puis appel à l'action
+      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.4, ease: "power1.inOut" }, 27.6);
+      texte("#t7", 27.95, 33.05);
+      texte("#t8", 33.4);
 
       window.__timelines["__ID__"] = tl;
       tl.seek(0);
@@ -646,7 +734,7 @@ def page(cid, w, h, css_format):
         </div>
       </div>
 
-      <div id="ecrans" class="plein clip" data-start="5.8" data-duration="14.9" data-track-index="2">
+      <div id="ecrans" class="plein clip" data-start="5.8" data-duration="22.1" data-track-index="2">
         <div id="telephone">
           <div id="e1" class="ecran">
             <div class="cadre">
@@ -661,27 +749,33 @@ def page(cid, w, h, css_format):
           <div id="e2" class="ecran">
             <div class="cadre">
               <img src="assets/ecrans/v2-trouver-routiers.png" alt="" />
-              <div id="invite">✓ Invité</div>
+              <div id="attente">{HORLOGE}En attente</div>
               {fleche("fleche-ajouter", 89, 33.5, "droite")}
+              {fleche("fleche-attente", 89, 33.5, "droite")}
               {tap("tap-ajouter", 75.5, 35.4)}
             </div>
           </div>
-          <div id="e0" class="ecran">
+          <div id="e5" class="ecran">
             <div class="cadre">
-              <img src="assets/ecrans/v2-fil-activite.png" alt="" />
-              {NOUVELLE_CARTE}
-              {fleche("fleche-lieu", 88, 52, "droite")}
-              {tap("tap-carte", 45, 50.5)}
+              <img src="assets/ecrans/v3-invitations.png" alt="" />
+              {LIGNE_LOUNA}
+              <div id="ami-ok"><span>✓ Amis</span></div>
+              {fleche("fleche-accepter", 66, 29.8, "droite")}
+              {tap("tap-accepter-tel", 60.8, 31.6)}
             </div>
           </div>
-          <div id="e4" class="ecran">
-            <div class="cadre" style="aspect-ratio: 470 / 929">
-              <img src="assets/ecrans/v2-activite-ami.png" alt="" />
-              {fleche("fleche-stats", 23, 20.5, "gauche")}
-              {fleche("fleche-arret", 86, 45.5, "droite")}
+          <div id="e6" class="ecran">
+            <div class="cadre">
+              <img src="assets/ecrans/v3-accueil-en-ligne.png" alt="" />
+              {ANNEAUX}
+              {fleche("fleche-activite", 13, 46, "gauche")}
+              <div id="cadre-en-ligne"></div>
+              {fleche("fleche-en-ligne", 8.5, 25.5, "gauche")}
+              {tap("tap-activite", 50, 48)}
             </div>
           </div>
         </div>
+        {NOTIF_ENVOYEE}
         {NOTIF_ACCEPTEE}
       </div>
 
@@ -695,15 +789,25 @@ def page(cid, w, h, css_format):
             <span class="ligne titre">Ajoute tes amis</span>
           </div>
           <div id="t3" class="etape">
+            <span class="ligne titre">Invitation en attente</span>
+          </div>
+          <div id="t4" class="etape">
+            <span class="ligne titre">Invitation acceptée</span>
+          </div>
+          <div id="t5" class="etape">
             <span class="ligne titre">Découvre leur activité</span>
             <span class="ligne titre">au quotidien</span>
           </div>
-          <div id="t4" class="etape">
-            <span class="ligne titre">Visite leurs profils</span>
+          <div id="t6" class="etape">
+            <span class="ligne titre">Regarde qui est en ligne</span>
           </div>
-          <div id="t5" class="etape" data-layout-allow-overflow>
-            <span class="ligne titre">Ne roule plus seul&nbsp;!</span>
-            <span class="ligne sous">Crée ton réseau sur Michelin Truckfly</span>
+          <div id="t7" class="etape final" data-layout-allow-overflow>
+            <span class="ligne titre titre-rappel">Pense à regarder tes invitations</span>
+            <span class="ligne sous">pour ne pas manquer une demande d'ami&nbsp;!</span>
+          </div>
+          <div id="t8" class="etape final" data-layout-allow-overflow>
+            <span class="ligne titre">Accepte tes amis</span>
+            <span class="ligne sous">et retrouve-les sur Michelin Truckfly&nbsp;!</span>
           </div>
         </div>
       </div>
