@@ -13,7 +13,7 @@ Les positions sur les écrans sont en % de la capture rognée.
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
-DUREE = 34.5
+DUREE = 25
 
 # --- Avatars façon app (référence : Abdelatif) : visage de couleur, anneau, yeux, initiale ---
 
@@ -648,71 +648,70 @@ SCRIPT = """
       }
 
 
-      // Intro (0–6 s) : les notifications des amis arrivent une à une
-      [["#r1", 0.3], ["#r2", 0.9], ["#r3", 1.5]].forEach(([id, t]) => {
-        tl.fromTo(`${id} .avatar-grand`, { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, t);
-        tl.fromTo(`${id} .notif`, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: "power2.out" }, t + 0.2);
+      // Intro (0–4,6 s) : les notifications des amis arrivent une à une
+      [["#r1", 0.2], ["#r2", 0.6], ["#r3", 1.0]].forEach(([id, t]) => {
+        tl.fromTo(`${id} .avatar-grand`, { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: "back.out(1.8)" }, t);
+        tl.fromTo(`${id} .notif`, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: "power2.out" }, t + 0.15);
       });
       // L'invitation de Louna est acceptée
-      tape("#tap-accepter", 3.3);
-      tl.fromTo("#btn-amis", { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 3.5);
-      tl.to("#btn-accepter", { autoAlpha: 0, duration: 0.15 }, 3.5);
-      tl.to("#r3 .avatar-grand", { y: -16, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out" }, 3.6);
-      tl.to(".rangee", { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in", stagger: 0.06 }, 5.6);
-      tl.to("#fond-couleur", { backgroundColor: "#F5F3F1", duration: 0.4, ease: "power1.inOut" }, 5.75);
+      tape("#tap-accepter", 2.4);
+      tl.fromTo("#btn-amis", { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 2.6);
+      tl.to("#btn-accepter", { autoAlpha: 0, duration: 0.15 }, 2.6);
+      tl.to("#r3 .avatar-grand", { y: -16, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out" }, 2.7);
+      tl.to(".rangee", { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in", stagger: 0.05 }, 4.2);
+      tl.to("#fond-couleur", { backgroundColor: "#F5F3F1", duration: 0.35, ease: "power1.inOut" }, 4.35);
 
-      // 1 · Crée et personnalise ton profil (6–9,8 s)
-      tl.fromTo("#telephone", { autoAlpha: 0, y: 160 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: "power2.out" }, 5.85);
-      texte("#t1", 6.2, 9.55);
-      tl.fromTo("#repere", { autoAlpha: 0, scale: 1.08 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "power2.out" }, 6.5);
-      tape("#tap-modifier", 6.9);
-      fleche("#fleche-camion", 7.6, 9.5);
-      tape("#tap-camion", 8.1);
-      tape("#tap-partager", 8.85);
-      tl.to("#repere", { autoAlpha: 0, duration: 0.25 }, 9.5);
+      // 1 · Crée et personnalise ton profil (4,6–7,6 s)
+      tl.fromTo("#telephone", { autoAlpha: 0, y: 160 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out" }, 4.45);
+      texte("#t1", 4.7, 7.35);
+      tl.fromTo("#repere", { autoAlpha: 0, scale: 1.08 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 4.95);
+      tape("#tap-modifier", 5.25);
+      fleche("#fleche-camion", 5.7, 7.35);
+      tape("#tap-camion", 6.1);
+      tape("#tap-partager", 6.7);
+      tl.to("#repere", { autoAlpha: 0, duration: 0.25 }, 7.35);
 
-      // 2 · Ajoute tes amis (9,8–13,4 s) : Ajouter → tap → En attente
-      tl.fromTo("#e2", { xPercent: 60, autoAlpha: 0 }, arrive, 9.6);
-      tl.fromTo("#e1", { xPercent: 0, autoAlpha: 1 }, part, 9.6);
-      texte("#t2", 10.0, 13.15);
-      fleche("#fleche-ajouter", 10.2, 13.15);
-      tape("#tap-ajouter", 10.75);
-      tl.fromTo("#attente", { autoAlpha: 0, scale: 0.85 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 10.95);
-      tl.fromTo("#attente .aiguille", { rotation: 0 }, { rotation: 360, svgOrigin: "12 12", duration: 2, ease: "none" }, 11.05);
-      tl.to("#attente", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, 11.4);
+      // 2 · Ajoute tes amis (7,6–10,4 s) : Ajouter → tap → En attente
+      tl.fromTo("#e2", { xPercent: 60, autoAlpha: 0 }, arrive, 7.4);
+      tl.fromTo("#e1", { xPercent: 0, autoAlpha: 1 }, part, 7.4);
+      texte("#t2", 7.7, 10.15);
+      fleche("#fleche-ajouter", 7.85, 10.15);
+      tape("#tap-ajouter", 8.3);
+      tl.fromTo("#attente", { autoAlpha: 0, scale: 0.85 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 8.5);
+      tl.fromTo("#attente .aiguille", { rotation: 0 }, { rotation: 360, svgOrigin: "12 12", duration: 1.6, ease: "none" }, 8.6);
+      tl.to("#attente", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, 8.9);
 
-      // 3 · Téléphone de l'ami (13,4–18,4 s) : invitation reçue → tap sur Accepter → invitation acceptée
-      tl.fromTo("#e5", { xPercent: 60, autoAlpha: 0 }, arrive, 13.2);
-      tl.fromTo("#e2", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 13.2);
-      tl.fromTo("#ligne-louna", { autoAlpha: 0, x: -30 }, { autoAlpha: 1, x: 0, duration: 0.4, ease: "back.out(1.6)" }, 13.75);
-      texte("#t3", 13.6, 15.75);
-      fleche("#fleche-accepter", 14.4, 18.15);
-      tape("#tap-accepter-tel", 15.55);
-      tl.fromTo("#ami-ok", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2 }, 15.75);
-      tl.fromTo("#ami-ok span", { scale: 0.7 }, { scale: 1, duration: 0.35, ease: "back.out(2.5)" }, 15.75);
-      texte("#t4", 16.0, 18.15);
+      // 3 · Invitation acceptée (10,4–13,4 s) : sur le téléphone de l'ami, tap sur Accepter
+      tl.fromTo("#e5", { xPercent: 60, autoAlpha: 0 }, arrive, 10.2);
+      tl.fromTo("#e2", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 10.2);
+      tl.fromTo("#ligne-louna", { autoAlpha: 0, x: -30 }, { autoAlpha: 1, x: 0, duration: 0.35, ease: "back.out(1.6)" }, 10.55);
+      texte("#t4", 10.5, 13.15);
+      fleche("#fleche-accepter", 10.8, 13.15);
+      tape("#tap-accepter-tel", 11.3);
+      tl.fromTo("#ami-ok", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2 }, 11.5);
+      tl.fromTo("#ami-ok span", { scale: 0.7 }, { scale: 1, duration: 0.35, ease: "back.out(2.5)" }, 11.5);
 
-      // 4 · Découvre leur activité au quotidien (18,4–21,8 s) : accueil, carte de Nicolas J.
-      tl.fromTo("#e6", { xPercent: 60, autoAlpha: 0 }, arrive, 18.2);
-      tl.fromTo("#e5", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 18.2);
-      texte("#t5", 18.6, 21.55);
-      fleche("#fleche-activite", 19.0, 21.55);
-      tape("#tap-activite", 19.9);
+      // 4 · Découvre leur activité au quotidien (13,4–16 s) : accueil, carte de Nicolas J.
+      tl.fromTo("#e6", { xPercent: 60, autoAlpha: 0 }, arrive, 13.2);
+      tl.fromTo("#e5", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 13.2);
+      texte("#t5", 13.55, 15.75);
+      fleche("#fleche-activite", 13.9, 15.75);
+      tape("#tap-activite", 14.6);
 
-      // 5 · Regarde qui est en ligne (21,8–25 s) : anneaux verts, « 5 amis en ligne » entouré
-      texte("#t6", 22.0, 24.75);
-      tl.fromTo(".anneau", { autoAlpha: 0, scale: 1.35 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(2)", stagger: 0.15 }, 22.2);
-      tl.fromTo("#cadre-en-ligne", { autoAlpha: 0, scale: 1.15 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 22.2);
-      tl.to(".anneau", { scale: 1.1, duration: 0.3, yoyo: true, repeat: 3, ease: "sine.inOut" }, 23.0);
-      fleche("#fleche-en-ligne", 22.7, 24.75);
-      tl.to([".anneau", "#cadre-en-ligne"], { autoAlpha: 0, duration: 0.25 }, 24.75);
-      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 24.75);
+      // 5 · Regarde qui est en ligne (16–18,6 s) : anneaux verts, « 5 amis en ligne » entouré
+      texte("#t6", 16.1, 18.35);
+      tl.fromTo(".anneau", { autoAlpha: 0, scale: 1.35 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.12 }, 16.25);
+      tl.fromTo("#cadre-en-ligne", { autoAlpha: 0, scale: 1.15 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 16.25);
+      tl.to(".anneau", { scale: 1.1, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, 16.9);
+      fleche("#fleche-en-ligne", 16.55, 18.35);
+      tl.to([".anneau", "#cadre-en-ligne"], { autoAlpha: 0, duration: 0.25 }, 18.35);
+      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 18.35);
 
-      // Rappel (25–30,5 s), puis fin (30,5–34,5 s) avec le bouton de téléchargement
-      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.4, ease: "power1.inOut" }, 24.8);
-      texte("#t7", 25.15, 30.25);
-      texte("#t8", 30.6);
-      tl.to("#t8 .cta", { scale: 1.06, duration: 0.35, yoyo: true, repeat: 3, ease: "sine.inOut" }, 31.6);
+      // Rappel (18,6–21,4 s), puis fin (21,4–25 s) avec le bouton de téléchargement
+      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.35, ease: "power1.inOut" }, 18.4);
+      texte("#t7", 18.75, 21.15);
+      texte("#t8", 21.5);
+      tl.to("#t8 .cta", { scale: 1.06, duration: 0.35, yoyo: true, repeat: 3, ease: "sine.inOut" }, 22.4);
 
       window.__timelines["__ID__"] = tl;
       tl.seek(0);
@@ -743,13 +742,13 @@ def page(cid, w, h, css_format):
         <div id="fond-couleur"></div>
       </div>
 
-      <div id="intro" class="plein clip" data-start="0" data-duration="6" data-track-index="1">
+      <div id="intro" class="plein clip" data-start="0" data-duration="4.6" data-track-index="1">
         <div class="plein">
           {NOTIFS_INTRO}
         </div>
       </div>
 
-      <div id="ecrans" class="plein clip" data-start="5.8" data-duration="19.2" data-track-index="2">
+      <div id="ecrans" class="plein clip" data-start="4.4" data-duration="14.3" data-track-index="2">
         <div id="telephone">
           <div id="e1" class="ecran">
             <div class="cadre">
@@ -792,7 +791,7 @@ def page(cid, w, h, css_format):
         </div>
       </div>
 
-      <div id="textes-clip" class="plein clip" data-start="6" data-duration="{round(DUREE - 6, 2)}" data-track-index="3">
+      <div id="textes-clip" class="plein clip" data-start="4.6" data-duration="{round(DUREE - 4.6, 2)}" data-track-index="3">
         <div id="textes">
           <div id="t1" class="etape">
             <span class="ligne titre">Crée et personnalise</span>
@@ -800,9 +799,6 @@ def page(cid, w, h, css_format):
           </div>
           <div id="t2" class="etape">
             <span class="ligne titre">Ajoute tes amis</span>
-          </div>
-          <div id="t3" class="etape">
-            <span class="ligne titre">Invitation reçue</span>
           </div>
           <div id="t4" class="etape">
             <span class="ligne titre">Invitation acceptée</span>

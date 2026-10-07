@@ -1,4 +1,4 @@
-# Storyboard : Profil Trucker, version 8 (34,5 s)
+# Storyboard : Profil Trucker, version 9 (25 s)
 
 Message : crée ton Profil Trucker, ajoute tes amis et découvre leur activité au quotidien. Le Profil Trucker est un espace social pour les conducteurs.
 Diffusion : Instagram en priorité (9:16, 1080 × 1920), plus une version 16:9 (1920 × 1080).
@@ -16,14 +16,16 @@ Source : `scripts/generer.py` produit `index.html` et `compositions/vertical.htm
 
 | # | Minutage | Texte | Animation |
 |---|---|---|---|
-| Intro | 0 → 6 s | Notifications : Nicolas J. a visité : **AS 24** · David a déposé un avis chez : **Le Relais des Cigales** · **Louna vous a envoyé une invitation** | Les rangées arrivent à 0,3 s, 0,9 s et 1,5 s : l'avatar apparaît avec un rebond, puis la notification monte. Tap sur « Accepter », le bouton devient « ✓ Amis » et l'avatar de Louna saute. |
-| 1 | 6 → 9,8 s | **Crée et personnalise / ton profil** | Profil de Louna. Un cadre entoure les boutons, puis tap sur « Modifier le profil ». Flèche et tap sur le camion (« Poids lourds / Semi »), puis tap sur « Partager ». |
-| 2 | 9,8 → 13,4 s | **Ajoute tes amis** | « Trouver des routiers ». Flèche et tap sur « Ajouter » (Vanessa Y.), le bouton devient aussitôt « En attente », avec une horloge qui tourne. |
-| 3 | 13,4 → 18,4 s | **Invitation reçue**, puis **Invitation acceptée** | Le téléphone de l'ami (onglet Invitations) : la demande de Louna C. arrive dans « En attente ». Flèche et tap sur « Accepter », la ligne passe à « ✓ Amis » et le titre change. |
-| 4 | 18,4 → 21,8 s | **Découvre leur activité / au quotidien** | Accueil « Salut louna ! » avec « On the road ». Flèche et tap sur la carte « Nicolas J. a visité : AS 24 Calais Eurotunnel ». |
-| 5 | 21,8 → 25 s | **Regarde qui est en ligne** | Même écran. Des anneaux verts pulsent autour des amis « On the road », « 5 amis en ligne » est entouré de vert et une flèche montre la rangée. |
-| Rappel | 25 → 30,5 s | **Pense à regarder tes invitations** / pour ne pas manquer une demande d'ami ! | Fond bleu, texte seul. |
-| Fin | 30,5 → 34,5 s | **Ne roule plus seul !** / bouton « Télécharge Michelin Truckfly » | Fond bleu. Le bouton blanc, avec une icône de téléchargement, pulse doucement. |
+| Intro | 0 → 4,6 s | Notifications : Nicolas J. a visité : **AS 24** · David a déposé un avis chez : **Le Relais des Cigales** · **Louna vous a envoyé une invitation** | Les rangées arrivent à 0,2 s, 0,6 s et 1 s. Tap sur « Accepter », le bouton devient « ✓ Amis » et l'avatar de Louna saute. |
+| 1 | 4,6 → 7,6 s | **Crée et personnalise / ton profil** | Profil de Louna. Cadre autour des boutons et tap sur « Modifier le profil ». Flèche et tap sur le camion, puis tap sur « Partager ». |
+| 2 | 7,6 → 10,4 s | **Ajoute tes amis** | « Trouver des routiers ». Flèche et tap sur « Ajouter » (Vanessa Y.), le bouton devient « En attente », avec une horloge qui tourne. |
+| 3 | 10,4 → 13,4 s | **Invitation acceptée** | Le téléphone de l'ami (onglet Invitations) : la demande de Louna C. arrive. Flèche et tap sur « Accepter », la ligne passe à « ✓ Amis ». |
+| 4 | 13,4 → 16 s | **Découvre leur activité / au quotidien** | Accueil « Salut louna ! ». Flèche et tap sur la carte « Nicolas J. a visité : AS 24 Calais Eurotunnel ». |
+| 5 | 16 → 18,6 s | **Regarde qui est en ligne** | Même écran. Anneaux verts autour des amis « On the road », « 5 amis en ligne » entouré, flèche vers la rangée. |
+| Rappel | 18,6 → 21,4 s | **Pense à regarder tes invitations** / pour ne pas manquer une demande d'ami ! | Fond bleu, texte seul. |
+| Fin | 21,4 → 25 s | **Ne roule plus seul !** / bouton « Télécharge Michelin Truckfly » | Fond bleu. Le bouton pulse doucement. |
+
+Durée imposée : 25 s au maximum. Pour la tenir, plusieurs textes restent à l'écran moins longtemps que la règle de lecture (1,5 s + 0,3 s par mot), en particulier la notification de David (3,4 s au lieu de 4,5 s) et le rappel (2,4 s au lieu de 5,1 s).
 
 ## Fonctionnalités sociales montrées
 
@@ -31,7 +33,7 @@ Source : `scripts/generer.py` produit `index.html` et `compositions/vertical.htm
 |---|---|
 | Établissements fréquentés et recommandations des proches | Intro, étape 4 |
 | Personnaliser son profil, ajouter son camion, partager son profil | Étape 1 |
-| Envoyer une invitation, demande en attente, demande reçue puis acceptée | Intro, étapes 2 et 3, rappel |
+| Envoyer une invitation, demande en attente, demande acceptée | Intro, étapes 2 et 3, rappel |
 | Suivre l'activité de ses proches | Étape 4 |
 | Voir qui est en ligne | Étape 5 |
 
