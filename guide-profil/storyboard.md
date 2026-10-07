@@ -1,4 +1,4 @@
-# Storyboard : Guide, crée ton Profil Trucker, version 5 (30 s)
+# Storyboard : Guide, crée ton Profil Trucker, version 6 (30 s)
 
 Objectif : montrer en 3 étapes comment rendre son Profil Trucker complet et identifiable.
 Diffusion : Instagram (9:16, 1080 × 1920, version principale), plus une version 16:9 (1920 × 1080).
@@ -29,4 +29,5 @@ Source : `scripts/generer.py` produit `index.html` et `compositions/vertical.htm
 - **Champ « Bio »** : il recouvre la ligne « Email » de la capture pendant la saisie.
 - **Bio sous la photo** : elle remplace la ligne « - Ami · - Contribution » de la capture. Le bas de la capture du profil (boutons, raccourcis, camion) est décalé de 3,5 % vers le bas pour aérer photo, bio et « Modifier le profil ».
 - **Photo du camion** : au format carré, sur « Mes véhicules » comme sur la carte « Camion actuel ».
+- **Numéro de téléphone** : sur « Informations personnelles », le numéro de la capture est remplacé par le numéro fictif de la connexion (+33 6 78 90 00 70).
 - **Durée** : 30 s. Le minutage est étiré de 20 %, la vitesse des animations ne change pas.

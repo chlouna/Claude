@@ -15,6 +15,7 @@ DUREE = 30
 LENT = 1.2  # tout le minutage est étiré de 20 % (25 s → 30 s)
 
 NUMERO = "06 78 90 00 70"
+NUMERO_INTL = "+33 " + NUMERO[1:]  # même numéro, au format affiché par l'app
 BIO_AVANT = "Conducteur routier "
 BIO_APRES = " | Toujours sur la route | À la recherche des meilleurs spots !"
 SURNOM = "Le Bolide"
@@ -187,6 +188,7 @@ E_INFOS = ecran(
     "infos",
     f"""<div class="valeur" style="top: 17.6%">{lettres("t-prenom", "Charlie")}</div>
               <div class="valeur" style="top: 25.7%">{lettres("t-nom", "Giraud")}</div>
+              <div class="valeur" style="top: 57.8%; font-size: 1.7cqh">{NUMERO_INTL}</div>
               <div id="bio-champ" class="bio-champ" data-layout-allow-overlap data-layout-allow-occlusion>
                 <span class="bio-label">Bio</span>
                 <div class="bio-saisie">{lettres("t-bio", BIO_AVANT, BIO_APRES)}</div>
