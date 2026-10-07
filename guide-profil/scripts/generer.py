@@ -3,9 +3,9 @@
     python3 scripts/generer.py
 
 Écrit index.html (16:9, 1920 × 1080) et compositions/vertical.html (9:16, 1080 × 1920).
-Le téléphone et ses écrans (profil, modification, camion) sont recréés en HTML au style de
-l'app : bandeau Michelin Blue, Inter, cartes blanches. Les positions dans le téléphone sont
-en % de l'écran (cqw en largeur, cqh en hauteur).
+Les écrans sont les captures de l'app (rognées à 460 × 911 px). Seuls les éléments absents
+des captures sont recréés par-dessus, au style de l'app : saisie du numéro, bio, photo et
+carte du camion. Les positions sur les écrans sont en % de la capture.
 """
 
 from pathlib import Path
@@ -13,19 +13,12 @@ from pathlib import Path
 RACINE = Path(__file__).resolve().parent.parent
 DUREE = 25
 
-# --- Illustrations (pas de vraies photos) ---
+NUMERO = "06 17 83 13 72"
+BIO_AVANT = "Conducteur routier "
+BIO_APRES = " | Toujours sur la route | À la recherche des meilleurs spots !"
+SURNOM = "Le Bolide"
 
-PORTRAIT = """<svg class="illu" data-layout-allow-overflow viewBox="0 0 240 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-  <rect width="240" height="240" fill="#BFD3F2" />
-  <path d="M26 250 Q26 170 120 166 Q214 170 214 250 Z" fill="#FFFF1A" stroke="#061866" stroke-width="6" />
-  <path d="M98 160 L142 160 L138 178 L102 178 Z" fill="#E8B48C" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
-  <circle cx="120" cy="104" r="58" fill="#E8B48C" stroke="#061866" stroke-width="6" />
-  <ellipse cx="102" cy="112" rx="6" ry="8" fill="#061866" />
-  <ellipse cx="138" cy="112" rx="6" ry="8" fill="#061866" />
-  <path d="M104 134 Q120 146 136 134" fill="none" stroke="#061866" stroke-width="6" stroke-linecap="round" />
-  <path d="M62 90 Q66 40 120 38 Q174 40 178 90 Z" fill="#061866" />
-  <path d="M56 88 L196 88 Q202 100 186 102 L56 102 Z" fill="#061866" />
-</svg>"""
+# --- Illustrations (pas de vraies photos) ---
 
 CAMION = """<svg class="illu" data-layout-allow-overflow viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
   <rect width="320" height="200" fill="#DCE6F7" />
@@ -47,14 +40,23 @@ PAYSAGE = """<svg class="illu" data-layout-allow-overflow viewBox="0 0 100 100" 
   <path d="M0 78 L30 46 L52 66 L70 50 L100 76 V100 H0 Z" fill="{sol}" />
 </svg>"""
 
-APPAREIL = '<svg class="pictro" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8 H8 L9.5 5.5 H14.5 L16 8 H20 V19 H4 Z" fill="none" stroke="#061866" stroke-width="2" stroke-linejoin="round" /><circle cx="12" cy="13" r="3.5" fill="none" stroke="#061866" stroke-width="2" /></svg>'
 COCHE = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759" /><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></svg>'
+EMOJI_CAMION = '<span class="emoji" role="img" aria-label="camion"></span>'
 
 
-def lettres(cid, texte):
-    """Texte tapé lettre par lettre : chaque caractère est un span révélé par la timeline."""
-    spans = "".join(f'<span class="l">{c}</span>' for c in texte)
-    return f'<span id="{cid}" class="saisie">{spans}<span class="curseur"></span></span>'
+def lettres(cid, texte, emoji_apres=None):
+    """Texte tapé lettre par lettre ; un emoji peut être inséré comme une « lettre »."""
+    def spans(t):
+        return "".join(f'<span class="l">{c}</span>' for c in t)
+
+    corps = spans(texte)
+    if emoji_apres is not None:
+        corps += f'<span class="l">{EMOJI_CAMION}</span>' + spans(emoji_apres)
+    return f'<span id="{cid}" class="saisie">{corps}<span class="curseur"></span></span>'
+
+
+def nb_lettres(texte, emoji_apres=None):
+    return len(texte) + (1 + len(emoji_apres) if emoji_apres is not None else 0)
 
 
 def tap(tid, x, y):
@@ -68,94 +70,122 @@ def fleche(fid, x, y, cote):
     else:
         trace, tete, decal = "M192 10 C 120 6, 50 40, 22 104", "M40 98 L20 108 L18 86", -14
     return f"""<svg id="{fid}" class="fleche" viewBox="0 0 200 120" style="left: calc({x}% + {decal}px); top: calc({y}% - 112px)" aria-hidden="true">
-            <path class="trait" d="{trace}" pathLength="1" />
-            <path class="tete" d="{tete}" />
-          </svg>"""
+                <path class="trait" d="{trace}" pathLength="1" />
+                <path class="tete" d="{tete}" />
+              </svg>"""
 
 
-def statut():
-    return '<div class="statut"><span>10:10</span><span class="reseau">●●● 4G</span></div>'
+def ecran(eid, image, contenu=""):
+    return f"""<div id="{eid}" class="ecran">
+            <div class="cadre">
+              <img src="assets/ecrans/{image}.png" alt="" />
+              {contenu}
+            </div>
+          </div>"""
 
 
-BARRE_ONGLETS = '<div class="onglets">' + "".join(f"<span>{o}</span>" for o in ("Carte", "GPS", "Communauté", "Amis", "Job")) + "</div>"
+# Zone intérieure de l'écran (hors coque), pour découper les feuilles qui montent du bas
+ZONE = 'class="zone-ecran" data-layout-allow-overflow'
 
-BIO = "Routière depuis 12 ans, toujours partante pour un café !"
+E_INVITE = ecran(
+    "e-invite",
+    "invite",
+    f"""{fleche("fleche-connexion", 18, 82, "gauche")}
+              {tap("tap-connexion", 50, 84.3)}""",
+)
 
-ECRAN_PROFIL = f"""<div id="ecran-profil" class="ecran-app" data-layout-allow-overflow>
-          {statut()}
-          <div class="entete">Mon profil</div>
-          <div class="carte-blanche" style="left: 4cqw; top: 14cqh; width: 92cqw; height: 24cqh"></div>
-          <div class="avatar vide" style="left: 8cqw; top: 17cqh">{APPAREIL}</div>
-          <div id="p-photo" class="avatar plein-p" style="left: 8cqw; top: 17cqh">{PORTRAIT}</div>
-          <div class="barre vide" style="left: 38cqw; top: 18.6cqh; width: 36cqw; height: 2.4cqh"></div>
-          <div class="barre vide" style="left: 38cqw; top: 23cqh; width: 50cqw; height: 1.4cqh"></div>
-          <div class="barre vide" style="left: 38cqw; top: 25.6cqh; width: 40cqw; height: 1.4cqh"></div>
-          <div id="p-nom" class="nom plein-p" style="left: 38cqw; top: 18.2cqh">Louna Moreau</div>
-          <div id="p-bio" class="bio plein-p" style="left: 38cqw; top: 22.4cqh; width: 48cqw">{BIO}</div>
-          <div class="bouton plein" style="left: 8cqw; top: 31cqh; width: 40cqw">Modifier le profil</div>
-          <div class="bouton creux" style="left: 52cqw; top: 31cqh; width: 40cqw">Partager</div>
-          <div class="rubrique" style="left: 5cqw; top: 41cqh">Camion actuel</div>
-          <div id="camion-vide" class="carte-pointillee" style="left: 4cqw; top: 45cqh; width: 92cqw; height: 17cqh">
-            <span class="cp-titre">Mets ton camion en valeur !</span>
-            <span class="cp-texte">Ajoute ton camion pour montrer aux autres chauffeurs avec quoi tu roules.</span>
-            <span class="bouton plein cp-bouton">+ Ajouter mon camion</span>
-          </div>
-          <div id="camion-plein" class="carte-blanche camion-carte" style="left: 4cqw; top: 45cqh; width: 92cqw; height: 11cqh">
-            <div class="vignette">{CAMION}</div>
-            <span class="nom-camion">Bobby</span>
-            <span class="sous-camion">Mon camion</span>
-          </div>
-          <div class="coche" id="coche-photo" style="left: calc(8cqw + 8.6cqh); top: 25.2cqh">{COCHE}</div>
-          <div class="coche" id="coche-nom" style="right: 6cqw; top: 18.4cqh">{COCHE}</div>
-          <div class="coche" id="coche-bio" style="right: 6cqw; top: 23.4cqh">{COCHE}</div>
-          <div class="coche" id="coche-camion" style="right: 7cqw; top: 48.6cqh">{COCHE}</div>
-          {BARRE_ONGLETS}
-        </div>"""
+E_CONNEXION = ecran(
+    "e-connexion",
+    "connexion",
+    f"""{fleche("fleche-mobile", 18, 64.5, "gauche")}
+              {tap("tap-mobile", 50, 66.7)}
+              <div {ZONE}>
+                <div id="feuille-tel" class="feuille" data-layout-allow-overlap data-layout-allow-occlusion>
+                  <div class="f-titre">Continuer avec mon mobile</div>
+                  <div class="f-etiquette">Numéro de mobile</div>
+                  <div class="f-champ">{lettres("t-numero", NUMERO)}</div>
+                  <div class="f-bouton">Continuer</div>
+                  <div id="connecte" class="f-bouton ok" data-layout-allow-overlap data-layout-allow-occlusion>✓ Connecté</div>
+                </div>
+              </div>
+              {tap("tap-champ-tel", 50, 72)}
+              {tap("tap-continuer", 50, 84)}""",
+)
+
+E_PROFIL = ecran(
+    "e-profil",
+    "profil-vide",
+    f"""<div id="p-bio" class="p-bio">{BIO_AVANT}{EMOJI_CAMION}{BIO_APRES}</div>
+              <div id="p-camion" class="p-camion">
+                <div class="p-camion-carte">
+                  <div class="p-vignette">{CAMION}</div>
+                  <div class="p-camion-textes"><b>Camion</b><span>Surnom : « {SURNOM} »</span></div>
+                </div>
+              </div>
+              <div class="coche" id="coche-photo" style="left: 30%; top: 26.5%">{COCHE}</div>
+              <div class="coche" id="coche-nom" style="left: 84.5%; top: 18.4%">{COCHE}</div>
+              <div class="coche" id="coche-bio" style="left: 84.5%; top: 23.6%">{COCHE}</div>
+              <div class="coche" id="coche-camion" style="left: 80%; top: 67.6%">{COCHE}</div>
+              {fleche("fleche-nom", 40, 19.5, "gauche")}
+              {tap("tap-modifier", 31.7, 33.2)}
+              {fleche("fleche-bio", 40, 23.5, "gauche")}
+              {fleche("fleche-ajout-camion", 34, 81.5, "gauche")}
+              {tap("tap-ajout-camion", 55.4, 82.5)}""",
+)
+
+E_INFOS = ecran(
+    "e-infos",
+    "infos",
+    f"""<div class="valeur" style="top: 17.6%">{lettres("t-prenom", "Charlie")}</div>
+              <div class="valeur" style="top: 25.7%">{lettres("t-nom", "Giraud")}</div>
+              <div id="bio-ligne" class="bio-ligne">{BIO_AVANT}{EMOJI_CAMION} | Toujours sur la route…</div>
+              {tap("tap-prenom", 50, 18.2)}
+              {tap("tap-nom", 50, 26.2)}
+              {tap("tap-bio", 50, 45)}
+              <div {ZONE}>
+                <div id="feuille-bio" class="feuille" data-layout-allow-overlap data-layout-allow-occlusion>
+                  <div class="f-titre">Bio</div>
+                  <div class="f-champ haut">{lettres("t-bio", BIO_AVANT, BIO_APRES)}</div>
+                  <div class="f-bouton">Enregistrer</div>
+                </div>
+              </div>
+              {tap("tap-enregistrer-bio", 50, 84)}""",
+)
 
 TUILES = "".join(
-    f'<div id="tuile-{i}" class="tuile" style="left: {7 + (i % 3) * 30}cqw; top: {62 + (i // 3) * 15}cqh">{contenu}</div>'
+    f'<div id="tuile-{i}" class="tuile" style="left: {6 + (i % 3) * 31}%; top: {24 + (i // 3) * 28}%">{contenu}</div>'
     for i, contenu in enumerate(
         [
-            PORTRAIT,
             CAMION,
             PAYSAGE.format(ciel="#DCE6F7", sol="#A6E8B8"),
             PAYSAGE.format(ciel="#F6D38B", sol="#E8B48C"),
             PAYSAGE.format(ciel="#C9C3F5", sol="#53565A"),
             PAYSAGE.format(ciel="#BFD3F2", sol="#061866"),
+            PAYSAGE.format(ciel="#FFFFFF", sol="#BFD3F2"),
         ]
     )
 )
 
-ECRAN_MODIF = f"""<div id="ecran-modif" class="ecran-app" data-layout-allow-overflow>
-          {statut()}
-          <div class="entete"><span class="retour">‹</span>Modifier le profil</div>
-          <div class="avatar grand vide-m" style="left: calc(50cqw - 7cqh); top: 14.5cqh">{APPAREIL}</div>
-          <div id="m-photo" class="avatar grand" style="left: calc(50cqw - 7cqh); top: 14.5cqh">{PORTRAIT}</div>
-          <div class="lien-photo" style="top: 29.4cqh">Ajouter une photo</div>
-          <div class="etiquette" style="top: 34cqh">Prénom</div>
-          <div id="champ-prenom" class="champ" style="top: 36.4cqh">{lettres("t-prenom", "Louna")}</div>
-          <div class="etiquette" style="top: 43.6cqh">Nom</div>
-          <div id="champ-nom" class="champ" style="top: 46cqh">{lettres("t-nom", "Moreau")}</div>
-          <div class="etiquette" style="top: 53.2cqh">Biographie</div>
-          <div id="champ-bio" class="champ haut" style="top: 55.6cqh">{lettres("t-bio", BIO)}</div>
-          <div class="bouton plein large" style="top: 86cqh">Enregistrer</div>
-          <div id="voile" class="voile" data-layout-allow-overlap data-layout-allow-occlusion></div>
-          <div id="selecteur" class="selecteur" data-layout-allow-overlap data-layout-allow-occlusion>
-            <div class="sel-titre" data-layout-allow-overlap data-layout-allow-occlusion>Choisir une photo</div>
-            {TUILES}
-          </div>
-        </div>"""
-
-ECRAN_CAMION = f"""<div id="ecran-camion" class="ecran-app" data-layout-allow-overflow>
-          {statut()}
-          <div class="entete"><span class="retour">‹</span>Ajouter mon camion</div>
-          <div class="etiquette" style="top: 15cqh">Nom du camion</div>
-          <div id="champ-camion" class="champ" style="top: 17.4cqh">{lettres("t-camion", "Bobby")}</div>
-          <div class="etiquette" style="top: 26cqh">Photo du camion</div>
-          <div class="boite-photo" style="top: 28.4cqh">{APPAREIL}<span>Ajouter une photo</span></div>
-          <div id="c-photo" class="boite-photo pleine" style="top: 28.4cqh">{CAMION}</div>
-          <div class="bouton plein large" style="top: 86cqh">Enregistrer</div>
-        </div>"""
+E_VEHICULE = ecran(
+    "e-vehicule",
+    "vehicule",
+    f"""<div id="photo-camion" class="photo-camion">{CAMION.replace('xMidYMid slice', 'xMidYMid meet')}</div>
+              <div class="valeur surnom" style="top: 52.3%">{lettres("t-surnom", SURNOM)}</div>
+              <div id="type-camion" class="type-camion"></div>
+              <div id="enregistrer-actif" class="enregistrer-actif">Enregistrer</div>
+              {tap("tap-photo-camion", 50, 40.6)}
+              <div {ZONE}>
+                <div id="voile" class="voile" data-layout-allow-overlap data-layout-allow-occlusion></div>
+                <div id="selecteur" class="feuille selecteur" data-layout-allow-overlap data-layout-allow-occlusion>
+                  <div class="f-titre">Choisir une photo</div>
+                  {TUILES}
+                </div>
+              </div>
+              {tap("tap-tuile", 22, 66)}
+              {tap("tap-surnom", 50, 53.8)}
+              {tap("tap-type", 23.5, 68.4)}
+              {tap("tap-enregistrer-camion", 50, 90.2)}""",
+)
 
 
 CSS_COMMUN = """
@@ -245,341 +275,275 @@ CSS_COMMUN = """
         color: #ffffff;
       }
 
-      /* Téléphone recréé */
+      /* Téléphone : captures de l'app */
       #telephone {
         position: absolute;
-        aspect-ratio: 0.49;
-        background: #111111;
-        border-radius: 7% / 3.5%;
-        padding: 2.4%;
       }
-      .tel-int {
+      .ecran {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cadre {
         position: relative;
-        width: 100%;
         height: 100%;
+        aspect-ratio: 460 / 911;
         container-type: size;
       }
-      .tel-ecran {
+      .cadre > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .cadre > * {
         position: absolute;
-        inset: 0;
-        border-radius: 6% / 3%;
+      }
+      .cadre > img {
+        position: static;
+      }
+      .zone-ecran {
+        left: 7.2%;
+        top: 2.7%;
+        width: 85.6%;
+        height: 94.5%;
+        border-radius: 5.5cqh;
         overflow: hidden;
-        background: #f5f3f1;
-      }
-      .calque {
-        position: absolute;
-        inset: 0;
-      }
-      .encoche {
-        position: absolute;
-        left: 33%;
-        top: 0;
-        width: 34%;
-        height: 3.2cqh;
-        background: #111111;
-        border-radius: 0 0 2cqh 2cqh;
-        z-index: 5;
-      }
-      .ecran-app {
-        position: absolute;
-        inset: 0;
-        background: #f5f3f1;
-        font-family: "Inter", sans-serif;
-        color: #000000;
-      }
-      .ecran-app > * {
-        position: absolute;
-      }
-      .statut {
-        left: 0;
-        right: 0;
-        top: 0;
-        height: 5cqh;
-        background: #061866;
-        color: #ffffff;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        padding: 0 7cqw 0.6cqh;
-        font-weight: 600;
-        font-size: 1.6cqh;
-      }
-      .reseau {
-        font-size: 1.2cqh;
-      }
-      .entete {
-        left: 0;
-        right: 0;
-        top: 5cqh;
-        height: 7cqh;
-        background: #061866;
-        color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 2.3cqh;
-      }
-      .retour {
-        position: absolute;
-        left: 5cqw;
-        font-size: 3.4cqh;
-        font-weight: 400;
-      }
-      .carte-blanche {
-        background: #ffffff;
-        border-radius: 1.6cqh;
-      }
-      .avatar {
-        width: 11cqh;
-        height: 11cqh;
-        border-radius: 50%;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .avatar.vide,
-      .avatar.vide-m {
-        background: #e9eef6;
-        border: 0.35cqh dashed #8e9bb8;
-      }
-      .avatar.grand {
-        width: 14cqh;
-        height: 14cqh;
-      }
-      #p-photo,
-      #m-photo {
-        border: 0.45cqh solid #ffff1a;
+        pointer-events: none;
       }
       .illu {
         display: block;
         width: 100%;
         height: 100%;
       }
-      .pictro {
-        width: 42%;
-        height: 42%;
+      .emoji {
+        display: inline-block;
+        height: 1.1em;
+        width: 1.48em;
+        vertical-align: -0.2em;
+        background: url("assets/emoji/camion.png") center / contain no-repeat;
       }
-      .barre {
-        background: #e3e6ec;
-        border-radius: 0.8cqh;
+
+      /* Éléments recréés au style de l'app (Inter) */
+      .feuille {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 50%;
+        background: #ffffff;
+        border-radius: 2.4cqh 2.4cqh 0 0;
+        box-shadow: 0 -1cqh 3cqh rgba(0, 0, 0, 0.18);
+        font-family: "Inter", sans-serif;
       }
-      .nom {
+      .feuille > * {
+        position: absolute;
+        left: 7%;
+        right: 7%;
+      }
+      .f-titre {
+        top: 6%;
+        text-align: center;
         font-weight: 700;
-        font-size: 2.5cqh;
+        font-size: 2.1cqh;
+        color: #000000;
       }
-      .bio {
-        font-size: 1.5cqh;
-        line-height: 1.3;
-        color: #3a3a3c;
+      .f-etiquette {
+        top: 21%;
+        font-size: 1.6cqh;
+        color: #6e6e73;
       }
-      .bouton {
-        height: 4.4cqh;
+      .f-champ {
+        top: 29%;
+        height: 12%;
+        border: 0.25cqh solid #061866;
         border-radius: 1cqh;
+        padding: 0 4%;
+        display: flex;
+        align-items: center;
+        font-size: 2.2cqh;
+        color: #000000;
+      }
+      .f-champ.haut {
+        top: 20%;
+        height: 42%;
+        display: block;
+        padding: 1.6cqh 4%;
+        font-size: 1.9cqh;
+        line-height: 1.4;
+      }
+      .f-bouton {
+        top: 72%;
+        height: 13%;
+        border-radius: 1.2cqh;
+        background: #061866;
+        color: #ffffff;
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: 700;
-        font-size: 1.6cqh;
-      }
-      .bouton.plein {
-        background: #061866;
-        color: #ffffff;
-      }
-      .bouton.creux {
-        border: 0.25cqh solid #061866;
-        color: #061866;
-        background: #ffffff;
-      }
-      .bouton.large {
-        left: 6cqw;
-        width: 88cqw;
-        height: 5.4cqh;
-        font-size: 1.9cqh;
-      }
-      .rubrique {
-        font-weight: 700;
-        font-size: 1.9cqh;
-      }
-      .carte-pointillee {
-        background: #e4edfb;
-        border: 0.3cqh dashed #8e9bb8;
-        border-radius: 1.6cqh;
-        padding: 1.6cqh 5cqw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 0.8cqh;
-      }
-      .cp-titre {
-        font-weight: 700;
-        font-size: 1.9cqh;
-      }
-      .cp-texte {
-        font-size: 1.35cqh;
-        color: #3a3a3c;
-      }
-      .cp-bouton {
-        position: static;
-        width: 62cqw;
-        height: 4.2cqh;
-        margin-top: 0.4cqh;
-      }
-      .camion-carte {
-        display: flex;
-        align-items: center;
-      }
-      .vignette {
-        position: absolute;
-        left: 3cqw;
-        top: 1.5cqh;
-        width: 11cqh;
-        height: 8cqh;
-        border-radius: 1cqh;
-        overflow: hidden;
-      }
-      .nom-camion {
-        position: absolute;
-        left: 34cqw;
-        top: 2.6cqh;
-        font-weight: 700;
-        font-size: 2.2cqh;
-      }
-      .sous-camion {
-        position: absolute;
-        left: 34cqw;
-        top: 6cqh;
-        font-size: 1.5cqh;
-        color: #6e6e73;
-      }
-      .coche {
-        width: 3.4cqh;
-        height: 3.4cqh;
-      }
-      .coche svg {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-      .onglets {
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 8cqh;
-        background: #ffffff;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 1.2cqh;
-        color: #6e6e73;
-      }
-      .lien-photo {
-        left: 0;
-        right: 0;
-        text-align: center;
-        font-weight: 700;
-        font-size: 1.8cqh;
-        color: #061866;
-      }
-      .etiquette {
-        left: 6cqw;
-        font-size: 1.5cqh;
-        color: #6e6e73;
-      }
-      .champ {
-        left: 6cqw;
-        width: 88cqw;
-        height: 5.2cqh;
-        background: #ffffff;
-        border: 0.2cqh solid #d6dae2;
-        border-radius: 1cqh;
-        padding: 0 3.5cqw;
-        display: flex;
-        align-items: center;
         font-size: 2cqh;
       }
-      .champ.haut {
-        display: block;
-        height: 12cqh;
-        align-items: flex-start;
-        padding-top: 1.2cqh;
-        line-height: 1.35;
+      .f-bouton.ok {
+        background: #34c759;
       }
-      .saisie {
-        display: inline;
-      }
+      .saisie,
       .l {
         display: inline;
       }
       .curseur {
         display: inline-block;
         width: 0.25cqh;
-        height: 2.4cqh;
+        height: 2.2cqh;
         margin-left: 0.2cqh;
         vertical-align: -0.4cqh;
         background: #061866;
         opacity: 0;
       }
-      .voile {
+      .valeur {
+        left: 11.5%;
+        width: 60%;
+        height: 2.8%;
+        background: #ffffff;
+        font-family: "Inter", sans-serif;
+        font-size: 1.85cqh;
+        color: #6e6e73;
+        display: flex;
+        align-items: center;
+      }
+      .valeur.surnom {
+        left: 11.5%;
+        width: 76%;
+        height: 4%;
+        background: transparent;
+        color: #000000;
+        font-size: 2.1cqh;
+      }
+      .bio-ligne {
+        left: 30%;
+        top: 43.6%;
+        width: 57%;
+        height: 2.8%;
+        background: #ffffff;
+        font-family: "Inter", sans-serif;
+        font-size: 1.6cqh;
+        color: #6e6e73;
+        white-space: nowrap;
+        overflow: hidden;
+        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      .p-bio {
+        left: 39.4%;
+        top: 21.4%;
+        width: 44%;
+        height: 8.4%;
+        background: #ffffff;
+        font-family: "Inter", sans-serif;
+        font-size: 1.32cqh;
+        line-height: 1.3;
+        color: #3a3a3c;
+      }
+      .p-camion {
+        left: 11%;
+        top: 65.6%;
+        width: 78.5%;
+        height: 20.8%;
+        background: #f5f3f1;
+      }
+      .p-camion-carte {
+        position: absolute;
         left: 0;
         right: 0;
         top: 0;
-        bottom: 0;
+        height: 9cqh;
+        background: #ffffff;
+        border-radius: 1.4cqh;
+        display: flex;
+        align-items: center;
+        gap: 2.4cqh;
+        padding: 0 1.4cqh;
+        font-family: "Inter", sans-serif;
+      }
+      .p-vignette {
+        width: 9.6cqh;
+        height: 6.6cqh;
+        border-radius: 1cqh;
+        overflow: hidden;
+        flex: none;
+      }
+      .p-camion-textes {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4cqh;
+        font-size: 1.5cqh;
+        color: #6e6e73;
+      }
+      .p-camion-textes b {
+        font-size: 2cqh;
+        color: #000000;
+      }
+      .photo-camion {
+        background: #dce6f7;
+        left: 9.1%;
+        top: 35.3%;
+        width: 81.5%;
+        height: 10.6%;
+        border-radius: 1.4cqh;
+        overflow: hidden;
+      }
+      .type-camion {
+        left: 9.4%;
+        top: 64.6%;
+        width: 26.5%;
+        height: 7.6%;
+        border: 0.35cqh solid #061866;
+        border-radius: 1.2cqh;
+        background: rgba(6, 24, 102, 0.08);
+      }
+      .enregistrer-actif {
+        left: 9.1%;
+        top: 87.3%;
+        width: 81.6%;
+        height: 6.1%;
+        border-radius: 1.2cqh;
+        background: #061866;
+        color: #ffffff;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 2.1cqh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .voile {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        visibility: hidden;
         background: rgba(6, 24, 102, 0.35);
       }
-      .selecteur {
-        left: 0;
-        right: 0;
-        top: 52cqh;
-        bottom: 0;
-        background: #ffffff;
-        border-radius: 2.4cqh 2.4cqh 0 0;
-      }
-      .sel-titre {
+      .selecteur .tuile {
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 3cqh;
-        text-align: center;
-        font-weight: 700;
-        font-size: 2cqh;
-      }
-      .tuile {
-        position: absolute;
-        width: 26cqw;
-        height: 12cqh;
+        width: 27%;
+        height: 24%;
         border-radius: 1.2cqh;
         overflow: hidden;
-        margin-top: -52cqh;
       }
       #tuile-0 {
         outline: 0 solid #061866;
       }
-      .boite-photo {
-        left: 6cqw;
-        width: 88cqw;
-        height: 24cqh;
-        border-radius: 1.6cqh;
-        border: 0.3cqh dashed #8e9bb8;
-        background: #e9eef6;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1cqh;
-        font-weight: 700;
-        font-size: 1.7cqh;
-        color: #061866;
+      .coche {
+        width: 3.6cqh;
+        height: 3.6cqh;
       }
-      .boite-photo .pictro {
-        width: 7cqh;
-        height: 7cqh;
-      }
-      .boite-photo.pleine {
-        border: none;
-        overflow: hidden;
+      .coche svg {
+        display: block;
+        width: 100%;
+        height: 100%;
       }
 
       /* Interactions */
@@ -630,17 +594,18 @@ CSS_16x9 = """
         left: 130px;
         top: 0;
         bottom: 0;
-        width: 1020px;
+        width: 1040px;
       }
       .titre {
         font-size: 88px;
       }
       .leger {
-        font-size: 64px;
+        font-size: 56px;
+        margin-top: 12px;
       }
       .sous {
         font-size: 48px;
-        max-width: 980px;
+        max-width: 1000px;
       }
       .final {
         left: -130px;
@@ -650,9 +615,10 @@ CSS_16x9 = """
         font-size: 120px;
       }
       #telephone {
-        right: 230px;
-        top: 70px;
-        height: 940px;
+        right: 200px;
+        top: 50px;
+        width: 520px;
+        height: 980px;
       }
 """
 
@@ -675,7 +641,8 @@ CSS_9x16 = """
         font-size: 80px;
       }
       .leger {
-        font-size: 60px;
+        font-size: 52px;
+        margin-top: 10px;
       }
       .sous {
         font-size: 50px;
@@ -695,7 +662,8 @@ CSS_9x16 = """
         font-size: 104px;
       }
       #telephone {
-        left: calc(50% - 245px);
+        left: 0;
+        right: 0;
         top: 660px;
         height: 1000px;
       }
@@ -705,7 +673,8 @@ SCRIPT = """
       const tl = gsap.timeline({ paused: true });
       const entre = { autoAlpha: 1, y: 0, duration: 0.4, ease: "power2.out", stagger: 0.1 };
       const sort = { autoAlpha: 0, y: -24, duration: 0.25, ease: "power2.in" };
-      const glisse = { duration: 0.4, ease: "power2.inOut" };
+      const arrive = { xPercent: 0, autoAlpha: 1, duration: 0.45, ease: "power2.inOut" };
+      const part = { xPercent: -30, autoAlpha: 0, duration: 0.45, ease: "power2.inOut" };
 
       function texte(id, debut, fin) {
         tl.fromTo(`${id} > *`, { autoAlpha: 0, y: 40 }, entre, debut);
@@ -721,90 +690,110 @@ SCRIPT = """
         tl.fromTo(`${id} .tete`, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.12 }, t + 0.34);
         tl.to(id, { autoAlpha: 0, duration: 0.2 }, fin);
       }
-      // Saisie lettre par lettre, avec le curseur qui clignote pendant la frappe
       function saisie(id, t, parLettre, n) {
         tl.fromTo(`${id} .curseur`, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t - 0.15);
         tl.fromTo(`${id} .l`, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.01, stagger: parLettre }, t);
         tl.to(`${id} .curseur`, { opacity: 0, duration: 0.01, immediateRender: false }, t + n * parLettre + 0.25);
       }
-      const ecranEntre = (id, t) => tl.fromTo(id, { xPercent: 100, autoAlpha: 0 }, { xPercent: 0, autoAlpha: 1, ...glisse }, t);
-      const ecranSort = (id, t) => tl.to(id, { xPercent: 100, autoAlpha: 0, ...glisse }, t);
-      // L'écran profil glisse à gauche (et s'efface) quand un autre écran le recouvre
-      const profilPart = (t, premier) => tl.fromTo("#ecran-profil", { xPercent: 0, autoAlpha: 1 }, { xPercent: -100, autoAlpha: 0, ...glisse, immediateRender: premier }, t);
-      const profilRevient = (t) => tl.fromTo("#ecran-profil", { xPercent: -100, autoAlpha: 0 }, { xPercent: 0, autoAlpha: 1, ...glisse, immediateRender: false }, t);
+      function feuilleMonte(id, t) {
+        tl.fromTo(id, { yPercent: 105 }, { yPercent: 0, duration: 0.4, ease: "power3.out" }, t);
+      }
+      function feuilleDescend(id, t) {
+        tl.to(id, { yPercent: 105, duration: 0.35, ease: "power2.in" }, t);
+      }
+      function apparait(id, t) {
+        tl.fromTo(id, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2 }, t);
+      }
 
-      // Intro (0–4,2 s) : profil vide, puis « 3 étapes »
-      texte("#t0", 0.2, 2.25);
-      tl.fromTo("#telephone", { autoAlpha: 0, y: 180 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.5);
-      texte("#t0b", 2.4, 3.95);
-      tl.to("#fond-couleur", { backgroundColor: "#F5F3F1", duration: 0.35, ease: "power1.inOut" }, 3.95);
+      // Intro (0–3,4 s) : l'app en mode invité, puis l'écran de connexion
+      texte("#t0", 0.2, 3.15);
+      tl.fromTo("#telephone", { autoAlpha: 0, y: 180 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.3);
+      fleche("#fleche-connexion", 1.5, 2.55);
+      tape("#tap-connexion", 2.15);
+      tl.fromTo("#e-connexion", { xPercent: 60, autoAlpha: 0 }, arrive, 2.55);
+      tl.fromTo("#e-invite", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 2.55);
+      tl.to("#fond-couleur", { backgroundColor: "#F5F3F1", duration: 0.35, ease: "power1.inOut" }, 3.15);
 
-      // 1 · Complète ton profil (4,2–9,2 s) : prénom, nom, biographie
-      texte("#t1", 4.3, 8.95);
-      tape("#tap-modifier", 4.55);
-      ecranEntre("#ecran-modif", 4.8);
-      profilPart(4.8, false);
-      tl.fromTo("#telephone", { scale: 1 }, { scale: __ZOOM__, duration: 0.6, ease: "power2.inOut", transformOrigin: "50% 55%", immediateRender: false }, 5.0);
-      tape("#tap-prenom", 5.25);
-      saisie("#t-prenom", 5.45, 0.07, __N_PRENOM__);
-      tape("#tap-nom", 6.0);
-      saisie("#t-nom", 6.2, 0.07, __N_NOM__);
-      tape("#tap-bio", 6.85);
-      saisie("#t-bio", 7.05, 0.022, __N_BIO__);
-      tl.to("#telephone", { scale: 1, duration: 0.5, ease: "power2.inOut" }, 8.7);
+      // 1 · Connecte-toi (3,4–8,2 s) : numéro de mobile, validation, accès au profil
+      texte("#t1", 3.5, 7.95);
+      fleche("#fleche-mobile", 3.6, 4.2);
+      tape("#tap-mobile", 3.95);
+      feuilleMonte("#feuille-tel", 4.2);
+      tape("#tap-champ-tel", 4.6);
+      saisie("#t-numero", 4.75, 0.055, __N_NUMERO__);
+      tape("#tap-continuer", 5.75);
+      apparait("#connecte", 5.95);
+      tl.fromTo("#e-profil", { xPercent: 60, autoAlpha: 0 }, arrive, 6.5);
+      tl.fromTo("#e-connexion", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 6.5);
+      fleche("#fleche-nom", 7.0, 7.95);
 
-      // 2 · Ajoute ta photo de profil (9,2–13,4 s) : sélecteur, photo choisie, enregistrer
-      texte("#t2", 9.25, 13.15);
-      fleche("#fleche-photo", 9.35, 10.0);
-      tape("#tap-photo", 9.75);
-      tl.fromTo("#voile", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 }, 10.0);
-      tl.fromTo("#selecteur", { yPercent: 100 }, { yPercent: 0, duration: 0.4, ease: "power3.out" }, 10.0);
-      tape("#tap-tuile", 10.75);
-      tl.fromTo("#tuile-0", { outlineWidth: 0 }, { outlineWidth: "0.6cqh", duration: 0.15 }, 10.9);
-      tl.to("#selecteur", { yPercent: 100, duration: 0.35, ease: "power2.in" }, 11.15);
-      tl.to("#voile", { autoAlpha: 0, duration: 0.3 }, 11.15);
-      tl.fromTo("#m-photo", { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 11.4);
-      fleche("#fleche-photo-ok", 11.6, 12.4);
-      tape("#tap-enregistrer", 12.35);
-      // Retour au profil, désormais rempli (nom, bio, photo)
-      tl.fromTo(".plein-p", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.01 }, 12.55);
-      tl.fromTo("#ecran-profil .vide, #ecran-profil .barre", { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.01, immediateRender: false }, 12.55);
-      profilRevient(12.6);
-      ecranSort("#ecran-modif", 12.6);
+      // 2 · Complète ton profil (8,2–14 s) : prénom, nom, bio, puis retour au profil
+      texte("#t2", 8.3, 13.75);
+      tape("#tap-modifier", 8.45);
+      tl.fromTo("#e-infos", { xPercent: 60, autoAlpha: 0 }, arrive, 8.7);
+      tl.fromTo("#e-profil", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 8.7);
+      tape("#tap-prenom", 9.15);
+      saisie("#t-prenom", 9.3, 0.06, 7);
+      tape("#tap-nom", 9.85);
+      saisie("#t-nom", 10.0, 0.06, 6);
+      tape("#tap-bio", 10.5);
+      feuilleMonte("#feuille-bio", 10.65);
+      saisie("#t-bio", 10.95, 0.016, __N_BIO__);
+      tape("#tap-enregistrer-bio", 12.4);
+      feuilleDescend("#feuille-bio", 12.6);
+      apparait("#bio-ligne", 12.7);
+      apparait("#p-bio", 12.9);
+      tl.fromTo("#e-profil", { xPercent: -30, autoAlpha: 0 }, { ...arrive, immediateRender: false }, 13.0);
+      tl.to("#e-infos", { xPercent: 60, autoAlpha: 0, duration: 0.45, ease: "power2.inOut" }, 13.0);
+      fleche("#fleche-bio", 13.3, 13.75);
 
-      // 3 · Ajoute ton camion (13,4–18 s) : nom du camion, photo, carte sur le profil
-      texte("#t3", 13.45, 17.75);
-      fleche("#fleche-camion", 13.55, 14.15);
-      tape("#tap-ajout-camion", 14.0);
-      ecranEntre("#ecran-camion", 14.25);
-      profilPart(14.25, false);
-      tape("#tap-nom-camion", 14.75);
-      saisie("#t-camion", 14.95, 0.08, __N_CAMION__);
-      tape("#tap-photo-camion", 15.6);
-      tl.fromTo("#c-photo", { autoAlpha: 0, scale: 0.85 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 15.85);
-      tape("#tap-enregistrer-camion", 16.45);
-      tl.fromTo("#camion-plein", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.01 }, 16.65);
-      tl.fromTo("#camion-vide", { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.01, immediateRender: false }, 16.65);
-      profilRevient(16.7);
-      ecranSort("#ecran-camion", 16.7);
-      tl.fromTo("#camion-plein", { scale: 0.9 }, { scale: 1, duration: 0.4, ease: "back.out(2)", immediateRender: false }, 17.0);
+      // 3 · Ajoute ton camion (14–19,2 s) : photo, surnom, type, enregistrer
+      texte("#t3", 14.1, 18.95);
+      fleche("#fleche-ajout-camion", 14.2, 14.85);
+      tape("#tap-ajout-camion", 14.55);
+      tl.fromTo("#e-vehicule", { xPercent: 60, autoAlpha: 0 }, arrive, 14.8);
+      tl.fromTo("#e-profil", { xPercent: 0, autoAlpha: 1 }, { ...part, immediateRender: false }, 14.8);
+      tape("#tap-photo-camion", 15.2);
+      tl.fromTo("#voile", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 }, 15.35);
+      feuilleMonte("#selecteur", 15.35);
+      tape("#tap-tuile", 15.9);
+      tl.fromTo("#tuile-0", { outlineWidth: 0 }, { outlineWidth: "0.6cqh", duration: 0.12 }, 16.0);
+      feuilleDescend("#selecteur", 16.15);
+      tl.to("#voile", { autoAlpha: 0, duration: 0.3 }, 16.15);
+      tl.fromTo("#photo-camion", { autoAlpha: 0, scale: 0.85 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 16.35);
+      tape("#tap-surnom", 16.75);
+      saisie("#t-surnom", 16.9, 0.06, __N_SURNOM__);
+      tape("#tap-type", 17.55);
+      apparait("#type-camion", 17.7);
+      apparait("#enregistrer-actif", 17.8);
+      tape("#tap-enregistrer-camion", 18.05);
+      apparait("#p-camion", 18.25);
+      tl.fromTo("#e-profil", { xPercent: -30, autoAlpha: 0 }, { ...arrive, immediateRender: false }, 18.3);
+      tl.to("#e-vehicule", { xPercent: 60, autoAlpha: 0, duration: 0.45, ease: "power2.inOut" }, 18.3);
+      tl.fromTo("#p-camion .p-camion-carte", { scale: 0.85 }, { scale: 1, duration: 0.4, ease: "back.out(2)" }, 18.6);
 
-      // Fin A (18–21,6 s) : profil complet, coché point par point
-      texte("#t4", 18.0, 21.45);
-      tl.fromTo(".coche", { autoAlpha: 0, scale: 0.3 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(2.5)", stagger: 0.2 }, 18.25);
-      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 21.45);
+      // Fin A (19,2–22,4 s) : le profil de Charlie, coché point par point
+      texte("#t4", 19.3, 22.15);
+      tl.fromTo(".coche", { autoAlpha: 0, scale: 0.3 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(2.5)", stagger: 0.18 }, 19.5);
+      tl.to("#telephone", { autoAlpha: 0, y: 80, duration: 0.3, ease: "power2.in" }, 22.15);
 
-      // Fin B (21,6–25 s)
-      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.35, ease: "power1.inOut" }, 21.5);
-      texte("#t5", 21.75);
+      // Fin B (22,4–25 s)
+      tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.35, ease: "power1.inOut" }, 22.2);
+      texte("#t5", 22.5);
 
       window.__timelines["__ID__"] = tl;
       tl.seek(0);
 """
 
 
-def page(cid, w, h, css_format, zoom):
+def page(cid, w, h, css_format):
     css = (CSS_COMMUN + css_format).replace("__W__", str(w)).replace("__H__", str(h))
+    script = (
+        SCRIPT.replace("__ID__", cid)
+        .replace("__N_NUMERO__", str(len(NUMERO)))
+        .replace("__N_BIO__", str(nb_lettres(BIO_AVANT, BIO_APRES)))
+        .replace("__N_SURNOM__", str(len(SURNOM)))
+    )
     return f"""<!doctype html>
 <html lang="fr">
   <head>
@@ -827,54 +816,29 @@ def page(cid, w, h, css_format, zoom):
         <div id="fond-couleur"></div>
       </div>
 
-      <div id="ecrans" class="plein-cadre clip" data-start="0" data-duration="21.8" data-track-index="1">
+      <div id="ecrans" class="plein-cadre clip" data-start="0" data-duration="22.5" data-track-index="1">
         <div id="telephone">
-          <div class="tel-int">
-            <div class="tel-ecran">
-              {ECRAN_PROFIL}
-              {ECRAN_MODIF}
-              {ECRAN_CAMION}
-              <div class="encoche"></div>
-            </div>
-            <div class="calque">
-              {tap("tap-modifier", 28, 33.2)}
-              {tap("tap-prenom", 40, 39)}
-              {tap("tap-nom", 40, 48.6)}
-              {tap("tap-bio", 40, 61.6)}
-              {fleche("fleche-photo", 40, 18, "gauche")}
-              {tap("tap-photo", 50, 21.5)}
-              {tap("tap-tuile", 20, 68)}
-              {fleche("fleche-photo-ok", 40, 18, "gauche")}
-              {tap("tap-enregistrer", 50, 88.7)}
-              {fleche("fleche-camion", 22, 57, "gauche")}
-              {tap("tap-ajout-camion", 50, 58.6)}
-              {tap("tap-nom-camion", 40, 20)}
-              {tap("tap-photo-camion", 50, 40.4)}
-              {tap("tap-enregistrer-camion", 50, 88.7)}
-            </div>
-          </div>
+          {E_INVITE}
+          {E_CONNEXION}
+          {E_PROFIL}
+          {E_INFOS}
+          {E_VEHICULE}
         </div>
       </div>
 
       <div id="textes-clip" class="plein-cadre clip" data-start="0" data-duration="{DUREE}" data-track-index="2">
         <div id="textes">
           <div id="t0" class="etape blanc">
-            <span class="ligne titre leger">Guide&nbsp;:</span>
-            <span class="ligne titre">crée ton</span>
-            <span class="ligne titre">Profil Trucker&nbsp;!</span>
-          </div>
-          <div id="t0b" class="etape blanc">
-            <span class="ligne titre">3 étapes</span>
-            <span class="ligne titre">et le tour est joué&nbsp;!</span>
+            <span class="ligne titre">Crée ton Profil Trucker</span>
+            <span class="ligne titre leger">en 3 étapes et le tour est joué&nbsp;!</span>
           </div>
           <div id="t1" class="etape">
             <div class="num">1</div>
-            <span class="ligne titre">Complète ton profil</span>
+            <span class="ligne titre">Connecte-toi</span>
           </div>
           <div id="t2" class="etape">
             <div class="num">2</div>
-            <span class="ligne titre">Ajoute ta photo</span>
-            <span class="ligne titre">de profil</span>
+            <span class="ligne titre">Complète ton profil</span>
           </div>
           <div id="t3" class="etape">
             <div class="num">3</div>
@@ -891,12 +855,12 @@ def page(cid, w, h, css_format, zoom):
         </div>
       </div>
     </div>
-    <script>{SCRIPT.replace("__ID__", cid).replace("__ZOOM__", zoom).replace("__N_PRENOM__", "5").replace("__N_NOM__", "6").replace("__N_BIO__", str(len(BIO))).replace("__N_CAMION__", "5")}    </script>
+    <script>{script}    </script>
   </body>
 </html>
 """
 
 
-(RACINE / "index.html").write_text(page("main", 1920, 1080, CSS_16x9, "1.06"))
-(RACINE / "compositions" / "vertical.html").write_text(page("vertical", 1080, 1920, CSS_9x16, "1.12"))
+(RACINE / "index.html").write_text(page("main", 1920, 1080, CSS_16x9))
+(RACINE / "compositions" / "vertical.html").write_text(page("vertical", 1080, 1920, CSS_9x16))
 print("index.html et compositions/vertical.html générés")
