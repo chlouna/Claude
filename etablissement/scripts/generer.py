@@ -10,7 +10,28 @@ L'interface est dimensionnée en em à partir de --ui : les repères de clic et 
 placés dans l'élément qu'ils désignent, ils suivent donc la mise en page des deux formats.
 """
 
+import os
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from traductions import T as TRADUCTIONS  # noqa: E402
+
+LANGUE = os.environ.get("LANGUE", "fr")
+FR = {
+    "AVIS_DENIS": "Super accueil, repas copieux, douche propre, petit déj le matin, rien à redire. Je vous le recommande&nbsp;! Merci à toute l'équipe&nbsp;!",
+    "AVIS_PASCAL": "Restaurant ouvert, menu varié et pas cher. Merci&nbsp;!",
+    "AVIS_EMILIE": "Accueil chaleureux et repas très copieux, c'était parfait&nbsp;!",
+    "REPONSE": "Merci beaucoup pour ce commentaire Denis ! À très vite !",
+}
+
+
+def t(texte):
+    """Texte à l'écran dans la langue demandée (variable d'environnement LANGUE)."""
+    if LANGUE == "fr":
+        return FR.get(texte, texte)
+    return TRADUCTIONS[LANGUE][texte]
+
 
 RACINE = Path(__file__).resolve().parent.parent
 DUREE = 64.6
@@ -151,20 +172,20 @@ def visage(peau, cheveux, forme):
 
 
 AVIS = [
-    ("denis", "Denis", "3 mai", 5, "Super accueil, repas copieux, douche propre, petit déj le matin, rien à redire. Je vous le recommande&nbsp;! Merci à toute l'équipe&nbsp;!", visage("#F2C9A8", S, "chauve")),
-    ("pascal", "Pascal", "24 avril", 4, "Restaurant ouvert, menu varié et pas cher. Merci&nbsp;!", visage("#D9A47E", "#3B2A20", "court")),
-    ("emilie", "Emilie", "18 avril", 5, "Accueil chaleureux et repas très copieux, c'était parfait&nbsp;!", visage("#F5D5BC", "#7A4A2A", "long")),
+    ("denis", "Denis", t("3 mai"), 5, t("AVIS_DENIS"), visage("#F2C9A8", S, "chauve")),
+    ("pascal", "Pascal", t("24 avril"), 4, t("AVIS_PASCAL"), visage("#D9A47E", "#3B2A20", "court")),
+    ("emilie", "Emilie", t("18 avril"), 5, t("AVIS_EMILIE"), visage("#F5D5BC", "#7A4A2A", "long")),
 ]
 
-REPONSE = "Merci beaucoup pour ce commentaire Denis ! À très vite !"
+REPONSE = t("REPONSE")
 
 
 def carte_avis(cle, nom, date, note, texte, av):
     etoiles = "".join(ETOILE if i < note else ETOILE_VIDE for i in range(5))
     reponse = ""
     if cle == "denis":
-        reponse = f'<div id="reponse"><span class="rep-titre">Ma réponse</span><span class="rep-texte">{lettres(REPONSE)}<span class="curseur"></span></span></div>'
-    bouton = f'<span id="btn-repondre-{cle}" class="btn-ligne">Répondre{CLIC if cle == "denis" else ""}</span>'
+        reponse = f'<div id="reponse"><span class="rep-titre">{t("Ma réponse")}</span><span class="rep-texte">{lettres(REPONSE)}<span class="curseur"></span></span></div>'
+    bouton = f'<span id="btn-repondre-{cle}" class="btn-ligne">{t("Répondre")}{CLIC if cle == "denis" else ""}</span>'
     return f"""<div id="avis-{cle}" class="avis">
               {av}
               <div class="avis-corps">
@@ -172,7 +193,7 @@ def carte_avis(cle, nom, date, note, texte, av):
                 <p>{texte}</p>
                 {reponse}
               </div>
-              <div class="avis-actions">{bouton}<span class="lien">Signaler</span></div>
+              <div class="avis-actions">{bouton}<span class="lien">{t("Signaler")}</span></div>
             </div>"""
 
 
@@ -184,12 +205,12 @@ def champ(cid, libelle, valeur, frappe=False, classe=""):
 
 
 def enregistrer(bid):
-    return f'<div class="actions"><span id="{bid}" class="btn"><span class="btn-txt">Enregistrer</span><span class="btn-ok">✓ Enregistré</span>{CLIC}</span></div>'
+    return f'<div class="actions"><span id="{bid}" class="btn"><span class="btn-txt">{t("Enregistrer")}</span><span class="btn-ok">{t("✓ Enregistré")}</span>{CLIC}</span></div>'
 
 
-SERVICES = [("couverts", "Restaurant routier", True), ("douche", "Douches", True), ("parking", "Parking poids lourds", True), ("wifi", "Wifi", True), ("toilettes", "Toilettes", False), ("camera", "Parking surveillé", False)]
+SERVICES = [("couverts", t("Restaurant routier"), True), ("douche", t("Douches"), True), ("parking", t("Parking poids lourds"), True), ("wifi", t("Wifi"), True), ("toilettes", t("Toilettes"), False), ("camera", t("Parking surveillé"), False)]
 
-JOURS = ["Lundi", "Mardi", "Mercredi"]
+JOURS = [t("Lundi"), t("Mardi"), t("Mercredi")]
 
 CARTE_PLAN = f"""<div class="plan">
                 <svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -202,67 +223,67 @@ CARTE_PLAN = f"""<div class="plan">
 
 PANES = f"""
             <div id="p1" class="pane">
-              <h2>Mon établissement</h2>
+              <h2>{t("Mon établissement")}</h2>
               <div class="grille-champs">
                 <div class="col">
-                  {champ("v-nom", "Nom de l'établissement", "Resto Routier", frappe=True)}
-                  {champ("v-adresse", "Adresse", "16 rue de Paris")}
-                  <div class="duo">{champ("v-cp", "Code postal", "63130")}{champ("v-ville", "Ville", "Royat")}</div>
+                  {champ("v-nom", t("Nom de l'établissement"), "Resto Routier", frappe=True)}
+                  {champ("v-adresse", t("Adresse"), "16 rue de Paris")}
+                  <div class="duo">{champ("v-cp", t("Code postal"), "63130")}{champ("v-ville", t("Ville"), "Royat")}</div>
                 </div>
                 <div class="col col-plan">
                   {CARTE_PLAN}
-                  {champ("v-tel", "Téléphone", "04 70 00 00 00")}
+                  {champ("v-tel", t("Téléphone"), "04 70 00 00 00")}
                 </div>
               </div>
               {enregistrer("btn-p1")}
             </div>
             <div id="p2" class="pane">
-              <h2>Mes services</h2>
+              <h2>{t("Mes services")}</h2>
               <div class="services">
                 {''.join(f'<div class="service"><span class="case{" a-cocher" if oui else ""}">{COCHE}</span>{icone(nom, B, "icone-service")}<span>{lib}</span></div>' for nom, lib, oui in SERVICES)}
               </div>
               {enregistrer("btn-p2")}
             </div>
             <div id="p3" class="pane">
-              <h2>Ma photo</h2>
+              <h2>{t("Ma photo")}</h2>
               <div id="depot">
-                <div class="depot-vide">{icone("image", B, "icone-depot")}<span>Glissez votre photo ici</span></div>
+                <div class="depot-vide">{icone("image", B, "icone-depot")}<span>{t("Glissez votre photo ici")}</span></div>
                 <div id="photo">{FACADE}{CLIC.replace('class="clic"', 'class="clic clic-photo"')}</div>
               </div>
               {enregistrer("btn-p3")}
             </div>
             <div id="p4" class="pane">
-              <h2>Mes horaires d'ouverture</h2>
+              <h2>{t("Mes horaires d'ouverture")}</h2>
               <div class="horaires">
                 {''.join(f'''<div id="j{i}" class="jour">
                   <b>{j}</b>
-                  <span class="heure"><span class="libelle">Début</span><span class="saisie"><span class="val">07:00</span></span></span>
-                  <span class="heure"><span class="libelle">Fin</span><span class="saisie"><span class="val">23:55</span></span></span>
-                  <span class="continue"><span class="case">{COCHE}</span>Journée continue</span>
-                  {f'<span id="btn-dupliquer" class="btn-ligne">Dupliquer{CLIC}</span>' if i == 0 else ''}
+                  <span class="heure"><span class="libelle">{t("Début")}</span><span class="saisie"><span class="val">07:00</span></span></span>
+                  <span class="heure"><span class="libelle">{t("Fin")}</span><span class="saisie"><span class="val">23:55</span></span></span>
+                  <span class="continue"><span class="case">{COCHE}</span>{t("Journée continue")}</span>
+                  {f'<span id="btn-dupliquer" class="btn-ligne">{t("Dupliquer")}{CLIC}</span>' if i == 0 else ''}
                 </div>''' for i, j in enumerate(JOURS))}
               </div>
             </div>
             <div id="p5" class="pane">
-              <h2>Mes commentaires</h2>
+              <h2>{t("Mes commentaires")}</h2>
               <div class="liste-avis">
                 {''.join(carte_avis(*a) for a in AVIS)}
               </div>
             </div>
             <div id="p6" class="pane">
-              <h2>Photos de la communauté</h2>
+              <h2>{t("Photos de la communauté")}</h2>
               <div class="galerie">
-                {''.join(f'<figure class="vignette">{svg}<figcaption>{icone("camera", B, "icone-legende")}Ajoutée par {qui}</figcaption></figure>' for qui, svg in VIGNETTES)}
+                {''.join(f'<figure class="vignette">{svg}<figcaption>{icone("camera", B, "icone-legende")}{t("Ajoutée par {qui}").format(qui=qui)}</figcaption></figure>' for qui, svg in VIGNETTES)}
               </div>
             </div>"""
 
-MENU = ["Mon établissement", "Mes services et photos", "Mes horaires d'ouverture", "Mes commentaires"]
+MENU = [t("Mon établissement"), t("Mes services et photos"), t("Mes horaires d'ouverture"), t("Mes commentaires")]
 
 FENETRE = f"""<div id="fenetre">
           <div class="barre-nav"><i></i><i></i><i></i><span class="adresse">www.truckfly.com</span></div>
           <div class="entete">
             <img src="{{racine}}assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" />
-            <span class="onglet actif">Mon lieu</span><span class="onglet">Mon compte</span>
+            <span class="onglet actif">{t("Mon lieu")}</span><span class="onglet">{t("Mon compte")}</span>
             <span class="compte"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="{W}" /><circle cx="12" cy="9.5" r="3.8" fill="{B}" /><path d="M5 19 Q6.5 14.5 12 14.5 Q17.5 14.5 19 19" fill="{B}" /></svg></span>
           </div>
           <div class="corps">
@@ -276,33 +297,46 @@ FENETRE = f"""<div id="fenetre">
         </div>"""
 
 ETIQUETTES = [
-    ("l1", "Nom et coordonnées"),
-    ("l2", "Services proposés"),
-    ("l3", "Photos"),
-    ("l4", "Horaires"),
-    ("l5", "Retrouvez les commentaires et les photos de la communauté"),
+    ("l1", t("Nom et coordonnées")),
+    ("l2", t("Services proposés")),
+    ("l3", t("Photos")),
+    ("l4", t("Horaires")),
+    ("l5", t("Retrouvez les commentaires et les photos de la communauté")),
 ]
 
 STATS = [
-    ("st1", "2,3 M", "téléchargements"),
-    ("st2", "44", "pays européens"),
-    ("st3", "21", "langues disponibles"),
-    ("st4", "702 000", "utilisateurs"),
-    ("st5", "135 000", "établissements référencés"),
+    ("st1", t("2,3 M"), t("téléchargements")),
+    ("st2", "44", t("pays européens")),
+    ("st3", "21", t("langues disponibles")),
+    ("st4", t("702 000"), t("utilisateurs")),
+    ("st5", t("135 000"), t("établissements référencés")),
 ]
 
 # Icônes du téléphone illustré (scène 2) : une grille, celle de Truckfly au centre
 # Repères posés sur la carte de l'app (positions en % de la capture rognée, pointe du repère)
 REPERES = [
-    ("restaurant", "couverts", "Restaurant", 22, 45, "droite"),
-    ("station", "pompe", "Station-service", 62, 31, "gauche"),
-    ("lavage", "goutte", "Station de lavage", 27, 64, "droite"),
-    ("garage", "cle", "Garage", 56, 84, "gauche"),
+    ("restaurant", "couverts", t("Restaurant"), 22, 45, "droite"),
+    ("parking", "parking", t("Parking"), 80, 56, "gauche"),
+    ("station", "pompe", t("Station-service"), 66, 31, "gauche"),
+    ("lavage", "goutte", t("Station de lavage"), 27, 64, "droite"),
+    ("garage", "cle", t("Garage"), 56, 84, "gauche"),
 ]
 
 
 def repere(cle, ic, nom, x, y, cote):
     return f'<div id="pin-{cle}" class="pin {cote}" style="left: {x}%; top: {y}%"><span class="pin-marque">{icone(ic, W)}</span><span class="pin-nom">{nom}</span></div>'
+
+
+def taille_etiquette(eid, texte):
+    """Réduit l'étiquette quand son mot le plus long ne tiendrait pas dans la colonne (allemand…).
+    Le facteur 0,62 em est la chasse moyenne d'une lettre en Bib Bold ; la colonne fait 480 px en 16:9."""
+    base = "var(--t-etq5)" if eid == "l5" else "var(--t-etq)"
+    mot = max(len(m) for m in texte.split(" "))
+    return f"font-size: min({base}, var(--etq-l) / {round(mot * 0.62, 2)})"
+
+
+# Liste des types (16:9) : environ 720 px de large entre la marge et le téléphone ; 0,58 em par lettre en Bib Bold
+TAILLE_TYPES = round(min(76, 720 / (0.58 * max(len(r[2]) for r in REPERES))))
 
 
 def corps(racine):
@@ -313,7 +347,7 @@ def corps(racine):
 
       <div id="s1" class="plein clip scene" data-start="0" data-duration="3.6" data-track-index="1">
         <div class="bloc-intro">
-          <span class="titre mot">Connaissez-vous</span>
+          <span class="titre mot">{t("Connaissez-vous")}</span>
           <span class="logo-ligne"><img id="s1-logo" src="{racine}assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span id="s1-q" class="titre">?</span></span>
           <span id="s1-trait" class="trait-jaune"></span>
         </div>
@@ -321,7 +355,7 @@ def corps(racine):
 
       <div id="s2" class="plein clip" data-start="3.4" data-duration="14.9" data-track-index="2">
         <div id="types">
-          {''.join(f'<div id="type-{cle}" class="type"><span class="type-marque">{icone(ic, B)}</span><span class="titre">{nom}</span></div>' for cle, ic, nom, *_ in REPERES)}
+          {''.join(f'<div id="type-{cle}" class="type" style="font-size: {TAILLE_TYPES}px"><span class="type-marque">{icone(ic, B)}</span><span class="titre">{nom}</span></div>' for cle, ic, nom, *_ in REPERES)}
         </div>
         <div id="tel">
           <img class="tel-img" src="{racine}assets/ecrans/app-ouverture.png" alt="Écran d'ouverture de Michelin Truckfly" />
@@ -333,14 +367,14 @@ def corps(racine):
 
       <div id="s3" class="plein clip scene" data-start="5.8" data-duration="5.7" data-track-index="3">
         <div class="bloc-texte">
-          <span class="ligne sous">{mots("Saviez-vous que Michelin Truckfly existe aussi")}</span>
-          <span class="ligne titre">{mots("pour les propriétaires d'établissements&nbsp;?")}</span>
+          <span class="ligne sous">{mots(t("Saviez-vous que Michelin Truckfly existe aussi"))}</span>
+          <span class="ligne titre">{mots(t("pour les propriétaires d'établissements&nbsp;?"))}</span>
         </div>
       </div>
 
       <div id="s2b" class="plein clip scene" data-start="18.2" data-duration="6.2" data-track-index="1">
         <div class="bloc-stats">
-          <div class="titre-stats"><span class="titre">{mots("La communauté en chiffres")}</span><span id="s2-trait" class="trait-jaune"></span></div>
+          <div class="titre-stats"><span class="titre">{mots(t("La communauté en chiffres"))}</span><span id="s2-trait" class="trait-jaune"></span></div>
           <div class="stats">
             {''.join(f'<div id="{sid}" class="stat"><span class="nombre">{compteur(v)}</span><span class="legende">{lib}</span></div>' for sid, v, lib in STATS)}
           </div>
@@ -349,23 +383,23 @@ def corps(racine):
 
       <div id="s5" class="plein clip scene" data-start="24.2" data-duration="5.5" data-track-index="1">
         <div class="bloc-texte">
-          <span class="ligne sous">{mots("Vous avez un établissement sur Michelin Truckfly&nbsp;?")}</span>
-          <span class="ligne titre">{mots("Mettez à jour vos informations&nbsp;!")}</span>
+          <span class="ligne sous">{mots(t("Vous avez un établissement sur Michelin Truckfly&nbsp;?"))}</span>
+          <span class="ligne titre">{mots(t("Mettez à jour vos informations&nbsp;!"))}</span>
           <span id="s5-url" class="barre-url"><span class="url">{lettres("www.truckfly.com")}<span class="curseur"></span></span>{LOUPE}</span>
         </div>
       </div>
 
       <div id="s6" class="plein clip scene clair" data-start="29.5" data-duration="6.4" data-track-index="1">
         <div class="bloc-texte">
-          <span class="ligne sous">{mots("Pas encore présent sur Michelin Truckfly&nbsp;?")}</span>
-          <span class="ligne titre">{mots("Créez votre compte et ajoutez votre établissement&nbsp;!")}</span>
+          <span class="ligne sous">{mots(t("Pas encore présent sur Michelin Truckfly&nbsp;?"))}</span>
+          <span class="ligne titre">{mots(t("Créez votre compte et ajoutez votre établissement&nbsp;!"))}</span>
           <span id="s6-url" class="barre-url"><span class="url">{lettres("www.truckfly.com")}<span class="curseur"></span></span><span id="s6-loupe" class="zone-loupe">{LOUPE}{CLIC}</span></span>
         </div>
       </div>
 
       <div id="s7" class="plein clip scene" data-start="35.7" data-duration="23.6" data-track-index="1">
         <div class="etiquettes">
-          {''.join(f'<div id="{eid}" class="etiquette"><span class="titre">{mots(txt)}</span><span class="trait-jaune"></span></div>' for eid, txt in ETIQUETTES)}
+          {''.join(f'<div id="{eid}" class="etiquette"><span class="titre" style="{taille_etiquette(eid, txt)}">{mots(txt)}</span><span class="trait-jaune"></span></div>' for eid, txt in ETIQUETTES)}
         </div>
         {FENETRE.replace("{racine}", racine)}
       </div>
@@ -373,8 +407,8 @@ def corps(racine):
       <div id="s9" class="plein clip scene" data-start="59.0" data-duration="{round(DUREE - 59.0, 2)}" data-track-index="1">
         <div class="bloc-fin">
           <img id="s9-logo" src="{racine}assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" />
-          <span class="ligne sous">Pour promouvoir mon établissement,</span>
-          <span class="ligne sous">connectez-vous sur le site internet.</span>
+          <span class="ligne sous">{t("Pour promouvoir mon établissement,")}</span>
+          <span class="ligne sous">{t("connectez-vous sur le site internet.")}</span>
           <span class="ligne cta">www.truckfly.com</span>
         </div>
       </div>"""
@@ -478,7 +512,7 @@ SCRIPT = """
       tl.fromTo(".avis", { autoAlpha: 0, y: 30 }, { ...entre, stagger: 0.2 }, 49.6);
       clic("#btn-repondre-denis", 50.85);
       tl.fromTo("#reponse", { maxHeight: "0em", autoAlpha: 0 }, { maxHeight: "8em", autoAlpha: 1, duration: 0.35, ease: "power2.out" }, 51.0);
-      frappe("#reponse", 51.35, 0.038);
+      frappe("#reponse", 51.35, {pas_reponse});
       changePane("#p5", "#p6", 54.0);
       tl.fromTo(".vignette", { autoAlpha: 0, scale: 0.85 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(1.6)", stagger: 0.18 }, 54.3);
       tl.to("#fenetre", { autoAlpha: 0, y: 80, duration: 0.35, ease: "power2.in" }, 56.7);
@@ -516,8 +550,8 @@ SCRIPT = """
       tl.fromTo("#voile", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, 12.1);
 
       // 4 · Les établissements apparaissent sur la carte (12,3–18 s)
-      ["restaurant", "station", "lavage", "garage"].forEach((cle, i) => {
-        const t = 12.35 + i * 1.15;
+      {cles_reperes}.forEach((cle, i) => {
+        const t = 12.35 + i * 0.95;
         tl.fromTo(`#pin-${cle} .pin-marque`, { autoAlpha: 0, scale: 0.3, y: -30 }, { autoAlpha: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2.4)" }, t);
         tl.fromTo(`#pin-${cle} .pin-nom`, { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "power2.out" }, t + 0.2);
         tl.fromTo(`#type-${cle}`, { autoAlpha: 0, x: -40 }, { autoAlpha: 1, x: 0, duration: 0.4, ease: "power2.out" }, t + 0.1);
@@ -565,6 +599,9 @@ CSS_COMMUN = """
       @font-face { font-family: "Noto Sans"; src: url("{racine}assets/fonts/noto-sans-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
       @font-face { font-family: "Noto Sans"; src: url("{racine}assets/fonts/noto-sans-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
       @font-face { font-family: "Noto Sans"; src: url("{racine}assets/fonts/noto-sans-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Noto Sans"; src: url("{racine}assets/fonts/noto-sans-latin-ext-400-normal.woff2") format("woff2"); font-weight: 400; unicode-range: U+0100-024F, U+1E00-1EFF; }
+      @font-face { font-family: "Noto Sans"; src: url("{racine}assets/fonts/noto-sans-latin-ext-600-normal.woff2") format("woff2"); font-weight: 600; unicode-range: U+0100-024F, U+1E00-1EFF; }
+      @font-face { font-family: "Noto Sans"; src: url("{racine}assets/fonts/noto-sans-latin-ext-700-normal.woff2") format("woff2"); font-weight: 700; unicode-range: U+0100-024F, U+1E00-1EFF; }
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body { width: {w}px; height: {h}px; overflow: hidden; background: #061866; }
       #root { position: relative; width: 100%; height: 100%; overflow: hidden; font-family: "Bib", sans-serif; color: #FFFFFF; }
@@ -766,7 +803,7 @@ CSS_9x16 = """
 def page(cid, w, h, css_format, racine):
     css = CSS_COMMUN.replace("{racine}", racine).replace("{w}", str(w)).replace("{h}", str(h))
     return f"""<!doctype html>
-<html lang="fr">
+<html lang="{LANGUE}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width={w}, height={h}" />
@@ -778,13 +815,18 @@ def page(cid, w, h, css_format, racine):
   <body>
     <div id="root" data-composition-id="{cid}" data-start="0" data-duration="{DUREE}" data-width="{w}" data-height="{h}">{corps(racine)}
     </div>
-    <script>{SCRIPT.replace("{cid}", cid)}
+    <script>{SCRIPT.replace("{cid}", cid).replace("{cles_reperes}", str([r[0] for r in REPERES])).replace("{pas_reponse}", str(round(min(0.038, 2.15 / len(REPONSE)), 4)))}
     </script>
   </body>
 </html>
 """
 
 
-(RACINE / "index.html").write_text(page("main", 1920, 1080, CSS_16x9, ""))
-(RACINE / "compositions" / "vertical.html").write_text(page("vertical", 1080, 1920, CSS_9x16, ""))
-print("index.html et compositions/vertical.html générés")
+if LANGUE == "fr":
+    (RACINE / "index.html").write_text(page("main", 1920, 1080, CSS_16x9, ""))
+    (RACINE / "compositions" / "vertical.html").write_text(page("vertical", 1080, 1920, CSS_9x16, ""))
+    print("index.html et compositions/vertical.html générés")
+else:
+    # Versions traduites : paysage seulement
+    (RACINE / "compositions" / f"paysage-{LANGUE}.html").write_text(page(f"paysage-{LANGUE}", 1920, 1080, CSS_16x9, ""))
+    print(f"compositions/paysage-{LANGUE}.html générée")

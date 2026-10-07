@@ -22,7 +22,7 @@ Vouvoiement : la vidéo s'adresse à des professionnels (l'original vouvoie).
 | 1 | 0 → 3,5 s | **Connaissez-vous** [logo Michelin Truckfly] **?** | Fond bleu. Les mots arrivent un par un, puis le logo blanc et le point d'interrogation, avec un soulignement jaune. |
 | 2 | 3,5 → 5,8 s | Écran d'ouverture de l'app : logo et Bibendum | Capture fournie (`assets/ecrans/app-ouverture.png`). Le téléphone monte, puis passe en arrière-plan, atténué. |
 | 3 | 5,8 → 11,3 s | **Saviez-vous que Michelin Truckfly existe aussi / pour les propriétaires d'établissements ?** | Interstitiel lisible, par-dessus le téléphone atténué. Mots un par un. |
-| 4 | 11,3 → 18 s | Repères **Restaurant** · **Station-service** · **Station de lavage** · **Garage** | Le téléphone revient au premier plan, l'écran d'ouverture laisse place à la carte de l'app (`assets/ecrans/app-carte.png`). La carte s'éclaircit, puis les quatre repères tombent l'un après l'autre avec leur étiquette. En 16:9, la liste des types se construit à gauche en même temps. |
+| 4 | 11,3 → 18 s | Repères **Restaurant** · **Parking** · **Station-service** · **Station de lavage** · **Garage** | Le téléphone revient au premier plan, l'écran d'ouverture laisse place à la carte de l'app (`assets/ecrans/app-carte.png`). La carte s'éclaircit, puis les cinq repères tombent l'un après l'autre avec leur étiquette. En 16:9, la liste des types se construit à gauche en même temps. |
 | 5 | 18,3 → 24,3 s | **La communauté en chiffres** · **2,3 M** téléchargements · **44** pays européens · **21** langues disponibles · **702 000** utilisateurs · **135 000** établissements référencés | Fond bleu, les chiffres défilent jusqu'à leur valeur. |
 | 6 | 24,3 → 29,6 s | **Vous avez un établissement sur Michelin Truckfly ?** → **Mettez à jour vos informations !** | Fond bleu, puis « www.truckfly.com » se tape dans une barre d'adresse. |
 | 7 | 29,6 → 35,8 s | **Pas encore présent sur Michelin Truckfly ?** → **Créez votre compte et ajoutez votre établissement !** | Fond Off White, même barre d'adresse, clic sur la loupe. |
@@ -39,3 +39,12 @@ Vouvoiement : la vidéo s'adresse à des professionnels (l'original vouvoie).
 - Les noms, avis et horaires de démonstration (Resto Routier, Denis, Pascal, Emilie…) reprennent ceux de l'original.
 - Chiffres : les cinq de l'encart « La communauté en chiffres » fourni par l'utilisateur.
 - Adresse affichée : www.truckfly.com, comme dans l'original.
+
+## Versions traduites (16:9 seulement)
+
+Anglais, allemand, espagnol, italien, néerlandais et polonais : `LANGUE=xx python3 scripts/generer.py` écrit `compositions/paysage-xx.html`, rendue dans `renders/truckfly-etablissements-xx-16x9.mp4`. Les textes sont dans `scripts/traductions.py`.
+
+- Registre : vouvoiement en allemand (Sie), espagnol (usted), italien (Lei) et néerlandais (u) ; « you » en anglais ; tutoiement en polonais, l'usage courant des applications.
+- Nombres au format de chaque langue (2.3M / 702,000 en anglais, 2,3 Mio. / 702.000 en allemand…).
+- Les captures de l'app (écran d'ouverture, carte) restent en français : à remplacer par les captures de chaque langue si disponibles.
+- Traductions à faire relire par une personne de langue maternelle avant diffusion.
