@@ -11,7 +11,8 @@ bio sous la photo, dimensions et carte du camion. Les positions sur les écrans 
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
-DUREE = 25
+DUREE = 30
+LENT = 1.2  # tout le minutage est étiré de 20 % (25 s → 30 s)
 
 NUMERO = "06 78 90 00 70"
 BIO_AVANT = "Conducteur routier "
@@ -156,27 +157,29 @@ DIMS_TEXTE = " · ".join(f"{nom} {valeur} m" for nom, valeur in DIMENSIONS)
 E_PROFIL = ecran(
     "e-profil",
     "profil-vide",
-    f"""<div id="p-photo" class="p-photo-seul">{PORTRAIT}</div>
+    f"""<div class="p-masque" data-layout-allow-overlap data-layout-allow-occlusion></div>
+              <div class="p-decale" data-layout-allow-overflow></div>
+              <div id="p-photo" class="p-photo-seul">{PORTRAIT}</div>
               <div id="p-bio" class="p-bio-sous"><span>{BIO_AVANT}{EMOJI_CAMION}{BIO_APRES}</span></div>
               <div id="p-camion" class="p-camion">
                 <div class="p-camion-carte">
-                  <div class="p-vignette">{CAMION}</div>
+                  <div class="p-vignette">{CAMION.replace('xMidYMid slice', 'xMidYMid meet')}</div>
                   <div class="p-camion-textes"><b>Camion · « {SURNOM} »</b><span>{DIMS_TEXTE}</span></div>
                 </div>
               </div>
               <div class="coche" id="coche-photo" style="left: 33%; top: 15.6%">{COCHE}</div>
               <div class="coche" id="coche-nom" style="left: 84.5%; top: 18.4%">{COCHE}</div>
-              <div class="coche" id="coche-bio" style="left: 84.5%; top: 27.6%">{COCHE}</div>
-              <div class="coche" id="coche-camion" style="left: 82%; top: 67.4%">{COCHE}</div>
+              <div class="coche" id="coche-bio" style="left: 85%; top: 28.6%">{COCHE}</div>
+              <div class="coche" id="coche-camion" style="left: 82%; top: 70.9%">{COCHE}</div>
               {fleche("fleche-nom", 40, 19.5, "gauche")}
-              {tap("tap-modifier", 31.7, 33.2)}
-              {fleche("fleche-bio", 12, 28.8, "gauche")}
+              {tap("tap-modifier", 31.7, 36.7)}
+              {fleche("fleche-bio", 12, 30.2, "gauche")}
               {fleche("fleche-photo", 16, 20, "gauche")}
               {tap("tap-avatar", 26, 22)}
               {selecteur("p", PORTRAIT)}
               {tap("tap-tuile-p", 22, 66)}
-              {fleche("fleche-ajout-camion", 34, 81.5, "gauche")}
-              {tap("tap-ajout-camion", 55.4, 82.5)}""",
+              {fleche("fleche-ajout-camion", 34, 85, "gauche")}
+              {tap("tap-ajout-camion", 55.4, 86)}""",
 )
 
 E_INFOS = ecran(
@@ -196,7 +199,7 @@ E_INFOS = ecran(
 E_VEHICULE = ecran(
     "e-vehicule",
     "vehicule",
-    f"""<div id="photo-camion" class="photo-camion">{CAMION.replace('xMidYMid slice', 'xMidYMid meet')}</div>
+    f"""<div id="photo-camion" class="photo-camion"><div class="photo-carre">{CAMION.replace('xMidYMid slice', 'xMidYMid meet')}</div></div>
               <div class="valeur surnom" style="top: 52.3%">{lettres("t-surnom", SURNOM)}</div>
               <div id="type-camion" class="type-camion"></div>
               <div id="dims" class="dims">
@@ -448,12 +451,25 @@ CSS_COMMUN = """
         overflow: hidden;
         border: 0.45cqh solid #061866;
       }
+      .p-masque {
+        left: 11.5%;
+        top: 27.45%;
+        width: 77%;
+        height: 5.2%;
+        background: #ffffff;
+      }
+      .p-decale {
+        inset: 0;
+        background: url("assets/ecrans/profil-vide.png") 0 0 / 100% 100% no-repeat;
+        clip-path: inset(29% 7.2% 6.3% 7.2% round 0 0 5.5cqh 5.5cqh);
+        transform: translateY(3.5%);
+      }
       .p-bio-sous {
         left: 11.6%;
-        top: 27.6%;
+        top: 28.5%;
         width: 70%;
         padding-left: 2.5%;
-        height: 3.6%;
+        height: 3.4%;
         background: #ffffff;
         font-family: "Inter", sans-serif;
         font-size: 1.2cqh;
@@ -501,7 +517,7 @@ CSS_COMMUN = """
       }
       .p-camion {
         left: 11%;
-        top: 65.6%;
+        top: 69.1%;
         width: 78.5%;
         height: 20.8%;
         background: #f5f3f1;
@@ -516,13 +532,14 @@ CSS_COMMUN = """
         border-radius: 1.4cqh;
         display: flex;
         align-items: center;
-        gap: 2.4cqh;
-        padding: 0 1.4cqh;
+        gap: 2cqh;
+        padding: 0 5.2cqh 0 1.4cqh;
         font-family: "Inter", sans-serif;
       }
       .p-vignette {
-        width: 9.6cqh;
-        height: 6.6cqh;
+        width: 7cqh;
+        height: 7cqh;
+        background: #dce6f7;
         border-radius: 1cqh;
         overflow: hidden;
         flex: none;
@@ -544,8 +561,19 @@ CSS_COMMUN = """
         top: 35.3%;
         width: 81.5%;
         height: 10.6%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: 1.4cqh;
         overflow: hidden;
+      }
+      .photo-carre {
+        width: 8.6cqh;
+        height: 8.6cqh;
+        border-radius: 1.2cqh;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 0.4cqh 1.2cqh rgba(6, 24, 102, 0.18);
       }
       .type-camion {
         left: 9.4%;
@@ -764,7 +792,12 @@ CSS_9x16 = """
 """
 
 SCRIPT = """
-      const tl = gsap.timeline({ paused: true });
+      const tlRacine = gsap.timeline({ paused: true });
+      const K = __LENT__;
+      const tl = {
+        fromTo: (cible, de, vers, t) => tlRacine.fromTo(cible, de, vers, t * K),
+        to: (cible, vers, t) => tlRacine.to(cible, vers, t * K),
+      };
       const entre = { autoAlpha: 1, y: 0, duration: 0.4, ease: "power2.out", stagger: 0.1 };
       const sort = { autoAlpha: 0, y: -24, duration: 0.25, ease: "power2.in" };
       const arrive = { xPercent: 0, autoAlpha: 1, duration: 0.45, ease: "power2.inOut" };
@@ -786,8 +819,8 @@ SCRIPT = """
       }
       function saisie(id, t, parLettre, n) {
         tl.fromTo(`${id} .curseur`, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t - 0.15);
-        tl.fromTo(`${id} .l`, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.01, stagger: parLettre }, t);
-        tl.to(`${id} .curseur`, { opacity: 0, duration: 0.01, immediateRender: false }, t + n * parLettre + 0.25);
+        tl.fromTo(`${id} .l`, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.01, stagger: parLettre * K }, t);
+        tl.to(`${id} .curseur`, { opacity: 0, duration: 0.01, immediateRender: false }, t + n * parLettre + 0.25 / K);
       }
       function feuilleMonte(id, t) {
         tl.fromTo(id, { yPercent: 105 }, { yPercent: 0, duration: 0.4, ease: "power3.out" }, t);
@@ -888,15 +921,15 @@ SCRIPT = """
       tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.35, ease: "power1.inOut" }, 22.8);
       texte("#t5", 23.05);
 
-      window.__timelines["__ID__"] = tl;
-      tl.seek(0);
+      window.__timelines["__ID__"] = tlRacine;
+      tlRacine.seek(0);
 """
 
 
 def page(cid, w, h, css_format):
     css = (CSS_COMMUN + css_format).replace("__W__", str(w)).replace("__H__", str(h))
     script = (
-        SCRIPT.replace("__ID__", cid)
+        SCRIPT.replace("__ID__", cid).replace("__LENT__", str(LENT))
         .replace("__N_NUMERO__", str(len(NUMERO)))
         .replace("__N_BIO__", str(nb_lettres(BIO_AVANT, BIO_APRES)))
         .replace("__N_SURNOM__", str(len(SURNOM)))
@@ -923,7 +956,7 @@ def page(cid, w, h, css_format):
         <div id="fond-couleur"></div>
       </div>
 
-      <div id="ecrans" class="plein-cadre clip" data-start="0" data-duration="23.1" data-track-index="1">
+      <div id="ecrans" class="plein-cadre clip" data-start="0" data-duration="27.72" data-track-index="1">
         <div id="telephone">
           {E_INVITE}
           {E_CONNEXION}

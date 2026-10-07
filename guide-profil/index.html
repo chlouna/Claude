@@ -238,12 +238,25 @@
         overflow: hidden;
         border: 0.45cqh solid #061866;
       }
+      .p-masque {
+        left: 11.5%;
+        top: 27.45%;
+        width: 77%;
+        height: 5.2%;
+        background: #ffffff;
+      }
+      .p-decale {
+        inset: 0;
+        background: url("assets/ecrans/profil-vide.png") 0 0 / 100% 100% no-repeat;
+        clip-path: inset(29% 7.2% 6.3% 7.2% round 0 0 5.5cqh 5.5cqh);
+        transform: translateY(3.5%);
+      }
       .p-bio-sous {
         left: 11.6%;
-        top: 27.6%;
+        top: 28.5%;
         width: 70%;
         padding-left: 2.5%;
-        height: 3.6%;
+        height: 3.4%;
         background: #ffffff;
         font-family: "Inter", sans-serif;
         font-size: 1.2cqh;
@@ -291,7 +304,7 @@
       }
       .p-camion {
         left: 11%;
-        top: 65.6%;
+        top: 69.1%;
         width: 78.5%;
         height: 20.8%;
         background: #f5f3f1;
@@ -306,13 +319,14 @@
         border-radius: 1.4cqh;
         display: flex;
         align-items: center;
-        gap: 2.4cqh;
-        padding: 0 1.4cqh;
+        gap: 2cqh;
+        padding: 0 5.2cqh 0 1.4cqh;
         font-family: "Inter", sans-serif;
       }
       .p-vignette {
-        width: 9.6cqh;
-        height: 6.6cqh;
+        width: 7cqh;
+        height: 7cqh;
+        background: #dce6f7;
         border-radius: 1cqh;
         overflow: hidden;
         flex: none;
@@ -334,8 +348,19 @@
         top: 35.3%;
         width: 81.5%;
         height: 10.6%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: 1.4cqh;
         overflow: hidden;
+      }
+      .photo-carre {
+        width: 8.6cqh;
+        height: 8.6cqh;
+        border-radius: 1.2cqh;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 0.4cqh 1.2cqh rgba(6, 24, 102, 0.18);
       }
       .type-camion {
         left: 9.4%;
@@ -509,15 +534,15 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="25"
+      data-duration="30"
       data-width="1920"
       data-height="1080"
     >
-      <div id="fond" class="plein-cadre clip" data-start="0" data-duration="25" data-track-index="0">
+      <div id="fond" class="plein-cadre clip" data-start="0" data-duration="30" data-track-index="0">
         <div id="fond-couleur"></div>
       </div>
 
-      <div id="ecrans" class="plein-cadre clip" data-start="0" data-duration="23.1" data-track-index="1">
+      <div id="ecrans" class="plein-cadre clip" data-start="0" data-duration="27.72" data-track-index="1">
         <div id="telephone">
           <div id="e-invite" class="ecran">
             <div class="cadre">
@@ -553,6 +578,8 @@
           <div id="e-profil" class="ecran">
             <div class="cadre">
               <img src="assets/ecrans/profil-vide.png" alt="" />
+              <div class="p-masque" data-layout-allow-overlap data-layout-allow-occlusion></div>
+              <div class="p-decale" data-layout-allow-overflow></div>
               <div id="p-photo" class="p-photo-seul"><svg class="illu" data-layout-allow-overflow viewBox="0 0 240 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
   <rect width="240" height="240" fill="#BFD3F2" />
   <path d="M26 250 Q26 170 120 166 Q214 170 214 250 Z" fill="#FFFF1A" stroke="#061866" stroke-width="6" />
@@ -567,7 +594,7 @@
               <div id="p-bio" class="p-bio-sous"><span>Conducteur routier <span class="emoji" role="img" aria-label="camion"></span> | Toujours sur la route | À la recherche des meilleurs spots !</span></div>
               <div id="p-camion" class="p-camion">
                 <div class="p-camion-carte">
-                  <div class="p-vignette"><svg class="illu" data-layout-allow-overflow viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <div class="p-vignette"><svg class="illu" data-layout-allow-overflow viewBox="0 0 320 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
   <rect width="320" height="200" fill="#DCE6F7" />
   <circle cx="270" cy="42" r="18" fill="#FFFF1A" />
   <rect y="158" width="320" height="42" fill="#53565A" />
@@ -586,14 +613,14 @@
               </div>
               <div class="coche" id="coche-photo" style="left: 33%; top: 15.6%"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759" /><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
               <div class="coche" id="coche-nom" style="left: 84.5%; top: 18.4%"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759" /><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
-              <div class="coche" id="coche-bio" style="left: 84.5%; top: 27.6%"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759" /><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
-              <div class="coche" id="coche-camion" style="left: 82%; top: 67.4%"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759" /><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+              <div class="coche" id="coche-bio" style="left: 85%; top: 28.6%"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759" /><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+              <div class="coche" id="coche-camion" style="left: 82%; top: 70.9%"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759" /><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
               <svg id="fleche-nom" class="fleche" viewBox="0 0 200 120" style="left: calc(40% + -186px); top: calc(19.5% - 112px)" aria-hidden="true">
                 <path class="trait" d="M8 10 C 80 6, 150 40, 178 104" pathLength="1" />
                 <path class="tete" d="M160 98 L180 108 L182 86" />
               </svg>
-              <div id="tap-modifier" class="tap" style="left: 31.7%; top: 33.2%"><div class="onde"></div><div class="doigt"></div></div>
-              <svg id="fleche-bio" class="fleche" viewBox="0 0 200 120" style="left: calc(12% + -186px); top: calc(28.8% - 112px)" aria-hidden="true">
+              <div id="tap-modifier" class="tap" style="left: 31.7%; top: 36.7%"><div class="onde"></div><div class="doigt"></div></div>
+              <svg id="fleche-bio" class="fleche" viewBox="0 0 200 120" style="left: calc(12% + -186px); top: calc(30.2% - 112px)" aria-hidden="true">
                 <path class="trait" d="M8 10 C 80 6, 150 40, 178 104" pathLength="1" />
                 <path class="tete" d="M160 98 L180 108 L182 86" />
               </svg>
@@ -635,11 +662,11 @@
                 </div>
               </div>
               <div id="tap-tuile-p" class="tap" style="left: 22%; top: 66%"><div class="onde"></div><div class="doigt"></div></div>
-              <svg id="fleche-ajout-camion" class="fleche" viewBox="0 0 200 120" style="left: calc(34% + -186px); top: calc(81.5% - 112px)" aria-hidden="true">
+              <svg id="fleche-ajout-camion" class="fleche" viewBox="0 0 200 120" style="left: calc(34% + -186px); top: calc(85% - 112px)" aria-hidden="true">
                 <path class="trait" d="M8 10 C 80 6, 150 40, 178 104" pathLength="1" />
                 <path class="tete" d="M160 98 L180 108 L182 86" />
               </svg>
-              <div id="tap-ajout-camion" class="tap" style="left: 55.4%; top: 82.5%"><div class="onde"></div><div class="doigt"></div></div>
+              <div id="tap-ajout-camion" class="tap" style="left: 55.4%; top: 86%"><div class="onde"></div><div class="doigt"></div></div>
             </div>
           </div>
           <div id="e-infos" class="ecran">
@@ -659,7 +686,7 @@
           <div id="e-vehicule" class="ecran">
             <div class="cadre">
               <img src="assets/ecrans/vehicule.png" alt="" />
-              <div id="photo-camion" class="photo-camion"><svg class="illu" data-layout-allow-overflow viewBox="0 0 320 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <div id="photo-camion" class="photo-camion"><div class="photo-carre"><svg class="illu" data-layout-allow-overflow viewBox="0 0 320 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
   <rect width="320" height="200" fill="#DCE6F7" />
   <circle cx="270" cy="42" r="18" fill="#FFFF1A" />
   <rect y="158" width="320" height="42" fill="#53565A" />
@@ -672,7 +699,7 @@
   <circle cx="96" cy="154" r="15" fill="#111111" /><circle cx="96" cy="154" r="6" fill="#BFD3F2" />
   <circle cx="180" cy="154" r="15" fill="#111111" /><circle cx="180" cy="154" r="6" fill="#BFD3F2" />
   <circle cx="266" cy="154" r="15" fill="#111111" /><circle cx="266" cy="154" r="6" fill="#BFD3F2" />
-</svg></div>
+</svg></div></div>
               <div class="valeur surnom" style="top: 52.3%"><span id="t-surnom" class="saisie"><span class="l">L</span><span class="l">e</span><span class="l"> </span><span class="l">B</span><span class="l">o</span><span class="l">l</span><span class="l">i</span><span class="l">d</span><span class="l">e</span><span class="curseur"></span></span></div>
               <div id="type-camion" class="type-camion"></div>
               <div id="dims" class="dims">
@@ -727,7 +754,7 @@
         </div>
       </div>
 
-      <div id="textes-clip" class="plein-cadre clip" data-start="0" data-duration="25" data-track-index="2">
+      <div id="textes-clip" class="plein-cadre clip" data-start="0" data-duration="30" data-track-index="2">
         <div id="textes">
           <div id="t0" class="etape blanc">
             <span class="ligne titre">Crée ton Profil Trucker</span>
@@ -757,7 +784,12 @@
       </div>
     </div>
     <script>
-      const tl = gsap.timeline({ paused: true });
+      const tlRacine = gsap.timeline({ paused: true });
+      const K = 1.2;
+      const tl = {
+        fromTo: (cible, de, vers, t) => tlRacine.fromTo(cible, de, vers, t * K),
+        to: (cible, vers, t) => tlRacine.to(cible, vers, t * K),
+      };
       const entre = { autoAlpha: 1, y: 0, duration: 0.4, ease: "power2.out", stagger: 0.1 };
       const sort = { autoAlpha: 0, y: -24, duration: 0.25, ease: "power2.in" };
       const arrive = { xPercent: 0, autoAlpha: 1, duration: 0.45, ease: "power2.inOut" };
@@ -779,8 +811,8 @@
       }
       function saisie(id, t, parLettre, n) {
         tl.fromTo(`${id} .curseur`, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t - 0.15);
-        tl.fromTo(`${id} .l`, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.01, stagger: parLettre }, t);
-        tl.to(`${id} .curseur`, { opacity: 0, duration: 0.01, immediateRender: false }, t + n * parLettre + 0.25);
+        tl.fromTo(`${id} .l`, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.01, stagger: parLettre * K }, t);
+        tl.to(`${id} .curseur`, { opacity: 0, duration: 0.01, immediateRender: false }, t + n * parLettre + 0.25 / K);
       }
       function feuilleMonte(id, t) {
         tl.fromTo(id, { yPercent: 105 }, { yPercent: 0, duration: 0.4, ease: "power3.out" }, t);
@@ -881,8 +913,8 @@
       tl.to("#fond-couleur", { backgroundColor: "#061866", duration: 0.35, ease: "power1.inOut" }, 22.8);
       texte("#t5", 23.05);
 
-      window.__timelines["main"] = tl;
-      tl.seek(0);
+      window.__timelines["main"] = tlRacine;
+      tlRacine.seek(0);
     </script>
   </body>
 </html>
