@@ -205,7 +205,7 @@ def section_truckfly(e, langue):
               <td align="center" valign="middle" width="26" height="26" style="width:26px;height:26px;border-radius:13px;background-color:#061866;{FONT}font-size:13px;line-height:26px;font-weight:bold;color:#FFFFFF;">{i}</td>
             </tr></table>
           </td>
-          <td class="texte-fonce" valign="top" style="padding:2px 0 16px 0;{FONT}font-size:15px;line-height:23px;color:#000000;"><strong>{t(titre)}</strong><br>{t(texte)}</td>
+          <td class="texte-fonce" valign="top" style="padding:2px 0 10px 0;{FONT}font-size:15px;line-height:23px;color:#000000;"><strong>{t(titre)}</strong> {t(texte)}</td>
         </tr>""")
     contenu.append('      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 6px 0;">\n'
                    + "\n".join(lignes) + "\n      </table>")
@@ -373,10 +373,9 @@ EDITIONS = {
             ),
             titre_fonctions="Comment ça marche",
             fonctions=[
-                ("Ajouter ses amis", "Le conducteur invite ses collègues, accepte leurs invitations et retrouve en un geste ceux qu'il croise sur la route."),
-                ("Suivre leur activité", "Au fil de la journée, il voit où ses amis se sont arrêtés : une station, un relais routier, un parking."),
-                ("Profiter de leurs recommandations", "Quand un ami dépose un avis, il est mis en avant. Une adresse conseillée par un collègue de confiance, ça compte."),
-                ("Être reconnu", "Photo, bio et camion avec ses dimensions : plus le profil est complet, plus ses amis le retrouvent facilement."),
+                ("Ajouter ses amis", "et accepter leurs invitations en un geste."),
+                ("Voir où ils s'arrêtent", "au fil de la journée : station, relais, parking."),
+                ("Profiter de leurs recommandations,", "mises en avant dans l'app."),
             ],
             titre_pour_vous="Ce que ça vous apporte",
             pour_vous=[
