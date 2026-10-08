@@ -352,6 +352,7 @@ EDITIONS = {
             dict(date="3-5 nov.", nom="TransLogistica Poland", lieu="Varsovie", url="https://translogistica.pl"),
             dict(date="4-5 nov.", nom="Expertrans", lieu="Chartres", url="https://www.salon-expertrans.fr"),
             dict(date="11-12 nov.", nom="Logistics & Automation", lieu="Madrid", url="https://www.esmadrid.com/agenda/logistics-automation-madrid-ifema-madrid"),
+            dict(date="18-19 nov.", nom="RTX Scotland (Road Transport Expo)", lieu="Glasgow", url="https://roadtransportexpo.co.uk"),
             dict(date="1-2 déc.", nom="Supply Chain Event", lieu="Paris", url="https://parisjetaime.com/convention/evenement/supply-chain-e591"),
         ],
         note_evenements="Dates communiquées par les organisateurs, à vérifier sur leur site avant de vous déplacer.",
