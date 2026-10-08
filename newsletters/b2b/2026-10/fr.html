@@ -21,11 +21,13 @@
   a{color:#061866;}
   a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !important;}
   .btn:hover{background-color:#FFFFFF !important;}
+  .btn2:hover{background-color:#2A3A85 !important;}
   @media screen and (max-width:620px){
     .conteneur{width:100% !important;}
     .pad{padding-left:20px !important;padding-right:20px !important;}
     .titre{font-size:24px !important;line-height:30px !important;}
     .btn-table{width:100% !important;}
+    .btn2-cell, .btn2{display:block !important;width:100% !important;box-sizing:border-box !important;text-align:center !important;}
     .btn-cell, .btn{display:block !important;width:100% !important;box-sizing:border-box !important;text-align:center !important;}
     .date-col{width:64px !important;}
   }
@@ -36,6 +38,7 @@
     .texte-fonce{color:#FFFFFF !important;}
     .texte-doux{color:#C9CEDF !important;}
     .lien{color:#FFFF1A !important;}
+    .btn2-cell, .btn2{background-color:#FFFF1A !important;color:#061866 !important;}
   }
 </style>
 </head>
@@ -74,7 +77,7 @@
       <p style="margin:0 0 8px 0;font-size:13px;line-height:18px;font-weight:bold;color:#53565A;" class="texte-doux">L'édito du mois</p>
       <h1 class="titre texte-fonce" style="margin:0 0 20px 0;font-size:28px;line-height:34px;font-weight:bold;color:#061866;">Électrique, communauté et gazole : un mois chargé</h1>
       <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Ce mois-ci, la recharge des poids lourds électriques passe un cap. Nous étions à Vierzon pour l'inauguration de la première station Voltix, et nous serons le 22 octobre à Lyon pour les Rencontres de la Filière.</p>
-      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Côté Michelin Truckfly, zoom sur le Profil Trucker et tout ce qu'il change pour la communauté des conducteurs.</p>
+      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Côté Michelin Truckfly, zoom sur le côté communauté du Profil Trucker : amis, activité, recommandations, et ce que ça change pour vous.</p>
       <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Côté marché, le gazole reste au cœur de l'actu : baisse de taxe en Allemagne, aides prolongées aux Pays-Bas, document de contrôle électronique en Espagne, et un vote européen sur les péages des camions propres.</p>
       <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Pour finir, vous découvrirez ce qui compte le plus pour les routiers lors d'un événement comme les 24 Heures Camions.</p>
       <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Bonne lecture.</p>
@@ -89,27 +92,27 @@
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
             <tr>
               <td width="34" valign="top" style="padding:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;font-weight:bold;color:#061866;" class="texte-fonce">I.</td>
-              <td valign="top" class="texte-fonce" style="padding:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#000000;"><strong>Événements</strong> · Retour sur l'inauguration Voltix à Vierzon, et rendez-vous le 22 octobre à Lyon.</td>
+              <td valign="top" class="texte-fonce" style="padding:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#000000;"><a class="lien" href="#section-1" style="color:#061866;font-weight:bold;text-decoration:underline;">Événements</a> · Retour sur l'inauguration Voltix à Vierzon, et rendez-vous le 22 octobre à Lyon.</td>
             </tr>
             <tr>
               <td width="34" valign="top" style="padding:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;font-weight:bold;color:#061866;" class="texte-fonce">II.</td>
-              <td valign="top" class="texte-fonce" style="padding:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#000000;"><strong>Infos Michelin Truckfly</strong> · Le Profil Trucker en détail : profil, amis, activité, recommandations.</td>
+              <td valign="top" class="texte-fonce" style="padding:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#000000;"><a class="lien" href="#section-2" style="color:#061866;font-weight:bold;text-decoration:underline;">Infos Michelin Truckfly</a> · Le Profil Trucker côté communauté : amis, activité, recommandations.</td>
             </tr>
             <tr>
               <td width="34" valign="top" style="padding:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;font-weight:bold;color:#061866;" class="texte-fonce">III.</td>
-              <td valign="top" class="texte-fonce" style="padding:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#000000;"><strong>Infos Marché/Légal</strong> · UE, France, Allemagne, Pays-Bas, Italie, Espagne : ce qui change ce mois-ci.</td>
+              <td valign="top" class="texte-fonce" style="padding:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#000000;"><a class="lien" href="#section-3" style="color:#061866;font-weight:bold;text-decoration:underline;">Infos Marché/Légal</a> · UE, France, Allemagne, Pays-Bas, Italie, Espagne : ce qui change ce mois-ci.</td>
             </tr>
             <tr>
               <td width="34" valign="top" style="padding:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;font-weight:bold;color:#061866;" class="texte-fonce">IV.</td>
-              <td valign="top" class="texte-fonce" style="padding:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#000000;"><strong>La question des Truckers</strong> · Les résultats du sondage sur les 24 Heures Camions.</td>
+              <td valign="top" class="texte-fonce" style="padding:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#000000;"><a class="lien" href="#section-4" style="color:#061866;font-weight:bold;text-decoration:underline;">La question des Truckers</a> · Les résultats du sondage sur les 24 Heures Camions.</td>
             </tr>
           </table>
         </td></tr>
       </table>
     </td></tr>
 
-    <tr><td class="pad carte" style="background-color:#FFFFFF;padding:36px 40px 8px 40px;border-top:6px solid #F5F3F1;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
-      <p style="margin:0 0 4px 0;font-size:13px;line-height:18px;font-weight:bold;color:#061866;" class="texte-doux">I.</p>
+    <tr><td id="section-1" class="pad carte" style="background-color:#FFFFFF;padding:36px 40px 8px 40px;border-top:6px solid #F5F3F1;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
+      <a name="section-1"></a><p style="margin:0 0 4px 0;font-size:13px;line-height:18px;font-weight:bold;color:#061866;" class="texte-doux">I.</p>
       <h2 class="titre texte-fonce" style="margin:0 0 6px 0;font-size:26px;line-height:32px;font-weight:bold;color:#061866;">Événements</h2>
       <p class="texte-doux" style="margin:0 0 20px 0;font-size:15px;line-height:22px;color:#53565A;">Les prochains rendez-vous à ne pas manquer</p>
     </td></tr>
@@ -142,6 +145,19 @@
       <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">À mesure du déploiement du réseau, les 50 stations Voltix prévues d'ici 2028 seront intégrées dans Michelin Truckfly, afin que les conducteurs puissent facilement les identifier et les retrouver lors de leurs trajets.</p>
       <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Cette collaboration avec VINCI Autoroutes illustre une ambition commune : accompagner les évolutions du transport routier et les professionnels qui les vivent au quotidien.</p>
       <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;font-style:italic;">GPS poids lourd, établissements adaptés, services communautaires, emploi et demain recharge électrique : Michelin Truckfly continue d'accompagner les transformations du transport routier, au plus près des conducteurs.</p>
+      <table role="presentation" class="btn-table" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 8px 0;">
+        <tr><td class="btn2-cell" align="center" style="border-radius:24px;background-color:#061866;">
+          <!--[if mso]>
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://LIEN-VOLTIX-A-REMPLACER?utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=b2b-2026-10-fr&amp;utm_content=voltix" style="height:48px;v-text-anchor:middle;width:330px;" arcsize="50%" stroke="f" fillcolor="#061866">
+            <w:anchorlock/>
+            <center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Voir les stations Voltix dans l'app</center>
+          </v:roundrect>
+          <![endif]-->
+          <!--[if !mso]><!-- -->
+          <a class="btn2" href="https://LIEN-VOLTIX-A-REMPLACER?utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=b2b-2026-10-fr&amp;utm_content=voltix" target="_blank" style="display:inline-block;padding:14px 28px;border-radius:24px;background-color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:20px;font-weight:bold;color:#FFFFFF;text-decoration:none;">Voir les stations Voltix dans l'app&nbsp;&rarr;</a>
+          <!--<![endif]-->
+        </td></tr>
+      </table>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:10px 0 24px 0;">
         <tr><td class="bref" style="background-color:#F5F3F1;border-radius:12px;padding:22px 22px 8px 22px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
           <p style="margin:0 0 12px 0;font-size:12px;line-height:16px;font-weight:bold;color:#53565A;" class="texte-doux">On y sera</p>
@@ -161,8 +177,21 @@
           </tr></table>
       <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;">Organisée par la Fédération française de carrosserie avant Solutrans 2027, cette journée fait le point sur les grands enjeux du véhicule industriel et urbain.</p>
       <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;">Au programme, des tables rondes avec des professionnels, des experts et des représentants européens, notamment sur le financement de la transition énergétique et le reconditionnement des véhicules industriels.</p>
-      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;">Les équipes Michelin Truckfly y assisteront. Vous y serez aussi ? <span style="background-color:#FFF3A0;color:#000000;">[Écrivez-nous pour nous y retrouver.]</span></p>
+      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;">Les équipes Michelin Truckfly y assisteront. Vous y serez aussi ? Prenons rendez-vous sur place.</p>
           <p style="margin:0 0 14px 0;font-size:14px;line-height:20px;"><a class="lien" href="https://www.solutrans.fr/en/solutrans-show/industry-meeting" target="_blank" style="color:#061866;font-weight:bold;text-decoration:underline;">Programme et inscription&nbsp;&rarr;</a></p>
+      <table role="presentation" class="btn-table" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;">
+        <tr><td class="btn2-cell" align="center" style="border-radius:24px;background-color:#061866;">
+          <!--[if mso]>
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://LIEN-RDV-A-REMPLACER?utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=b2b-2026-10-fr&amp;utm_content=rencontres-filiere" style="height:48px;v-text-anchor:middle;width:330px;" arcsize="50%" stroke="f" fillcolor="#061866">
+            <w:anchorlock/>
+            <center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Rencontrer notre équipe à Lyon</center>
+          </v:roundrect>
+          <![endif]-->
+          <!--[if !mso]><!-- -->
+          <a class="btn2" href="https://LIEN-RDV-A-REMPLACER?utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=b2b-2026-10-fr&amp;utm_content=rencontres-filiere" target="_blank" style="display:inline-block;padding:14px 28px;border-radius:24px;background-color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:20px;font-weight:bold;color:#FFFFFF;text-decoration:none;">Rencontrer notre équipe à Lyon&nbsp;&rarr;</a>
+          <!--<![endif]-->
+        </td></tr>
+      </table>
         </td></tr>
       </table>
       <h4 class="texte-fonce" style="margin:0 0 10px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:17px;line-height:24px;font-weight:bold;color:#061866;">À l'agenda</h4>
@@ -186,24 +215,56 @@
       </table>
       <p class="texte-doux" style="margin:4px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#53565A;">Dates communiquées par les organisateurs, à vérifier sur leur site avant de vous déplacer.</p>
     </td></tr>
-    <tr><td class="pad carte" style="background-color:#FFFFFF;padding:36px 40px 8px 40px;border-top:6px solid #F5F3F1;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
-      <p style="margin:0 0 4px 0;font-size:13px;line-height:18px;font-weight:bold;color:#061866;" class="texte-doux">II.</p>
+    <tr><td id="section-2" class="pad carte" style="background-color:#FFFFFF;padding:36px 40px 8px 40px;border-top:6px solid #F5F3F1;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
+      <a name="section-2"></a><p style="margin:0 0 4px 0;font-size:13px;line-height:18px;font-weight:bold;color:#061866;" class="texte-doux">II.</p>
       <h2 class="titre texte-fonce" style="margin:0 0 6px 0;font-size:26px;line-height:32px;font-weight:bold;color:#061866;">Infos Michelin Truckfly</h2>
       <p class="texte-doux" style="margin:0 0 20px 0;font-size:15px;line-height:22px;color:#53565A;">Nos actualités, nouveautés et temps forts</p>
     </td></tr>
     <tr><td class="pad carte" style="background-color:#FFFFFF;padding:0 40px 36px 40px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
-      <p style="margin:0 0 8px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;font-weight:bold;color:#53565A;" class="texte-doux">Nouveauté</p>
-      <h3 class="texte-fonce" style="margin:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:21px;line-height:28px;font-weight:bold;color:#000000;">Profil Trucker : la communauté des conducteurs prend vie</h3>
-      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Michelin Truckfly devient plus communautaire. Avec le Profil Trucker, chaque conducteur a désormais sa propre page dans l'app, et peut retrouver les collègues qu'il croise sur la route.</p>
-      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Le message aux conducteurs est simple : « Ne roule plus seul ! »</p>
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 8px 0;">
+      <p style="margin:0 0 8px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;font-weight:bold;color:#53565A;" class="texte-doux">Zoom communauté</p>
+      <h3 class="texte-fonce" style="margin:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:21px;line-height:28px;font-weight:bold;color:#000000;">Profil Trucker : vos conducteurs ne roulent plus seuls</h3>
+      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Le mois dernier, nous vous présentions le Profil Trucker : un profil personnalisé, des avis sur les établissements, des arrêts favoris et les profils des autres conducteurs.</p>
+      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Ce mois-ci, place à ce qui en fait le cœur : la communauté. Avec ses fonctions sociales, Michelin Truckfly devient un vrai réseau entre conducteurs. Même seuls dans leur cabine, ils restent connectés à leurs collègues.</p>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 22px 0;">
+        <tr><td style="background-color:#061866;border-radius:14px;padding:16px;">
+          <p style="margin:0 0 10px 4px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:bold;color:#FFFF1A;">Dans l'app : le fil d'activité des amis</p>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#FFFFFF;border-radius:10px;padding:2px 14px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr><td style="padding:10px 0;border-bottom:1px solid #E4E6EE;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td width="36" valign="middle"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="32" height="32" style="width:32px;height:32px;border-radius:16px;background-color:#DCE6F7;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#061866;">L</td></tr></table></td>
+                  <td valign="middle" style="padding-left:10px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#000000;"><strong>Louna</strong> t'a envoyé une invitation</td>
+                  <td align="right" valign="middle" style="padding-left:8px;"><span style="display:inline-block;background-color:#061866;color:#FFFFFF;border-radius:14px;padding:4px 12px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;">Accepter</span></td>
+                </tr></table>
+              </td></tr>
+              <tr><td style="padding:10px 0;border-bottom:1px solid #E4E6EE;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td width="36" valign="middle"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="32" height="32" style="width:32px;height:32px;border-radius:16px;background-color:#DCE6F7;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#061866;">N</td></tr></table></td>
+                  <td valign="middle" style="padding-left:10px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#000000;"><strong>Nicolas J.</strong> a visité :<br><strong style="color:#061866;">AS 24</strong></td>
+                  
+                </tr></table>
+              </td></tr>
+              <tr><td style="padding:10px 0;border-bottom:1px solid #E4E6EE;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td width="36" valign="middle"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="32" height="32" style="width:32px;height:32px;border-radius:16px;background-color:#DCE6F7;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#061866;">D</td></tr></table></td>
+                  <td valign="middle" style="padding-left:10px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#000000;"><strong>David</strong> s'est arrêté ici :<br><strong style="color:#061866;">Le Relais des Cigales</strong></td>
+                  
+                </tr></table>
+              </td></tr>
+            </table>
+          </td></tr></table>
+          <p style="margin:10px 0 0 4px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;color:#C9CEDF;">Exemple d'écran, noms fictifs.</p>
+        </td></tr>
+      </table>
+      <h4 class="texte-fonce" style="margin:0 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:17px;line-height:24px;font-weight:bold;color:#061866;">Comment ça marche</h4>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 6px 0;">
         <tr>
           <td width="38" valign="top" style="padding:0 0 16px 0;">
             <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
               <td align="center" valign="middle" width="26" height="26" style="width:26px;height:26px;border-radius:13px;background-color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:26px;font-weight:bold;color:#FFFFFF;">1</td>
             </tr></table>
           </td>
-          <td class="texte-fonce" valign="top" style="padding:2px 0 16px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;"><strong>Un profil à son image</strong><br>Photo, nom, bio et drapeau. Le conducteur se présente en quelques secondes, et les autres le reconnaissent facilement.</td>
+          <td class="texte-fonce" valign="top" style="padding:2px 0 16px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;"><strong>Ajouter ses amis</strong><br>Le conducteur invite ses collègues, accepte leurs invitations et retrouve en un geste ceux qu'il croise sur la route.</td>
         </tr>
         <tr>
           <td width="38" valign="top" style="padding:0 0 16px 0;">
@@ -211,7 +272,7 @@
               <td align="center" valign="middle" width="26" height="26" style="width:26px;height:26px;border-radius:13px;background-color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:26px;font-weight:bold;color:#FFFFFF;">2</td>
             </tr></table>
           </td>
-          <td class="texte-fonce" valign="top" style="padding:2px 0 16px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;"><strong>Son camion, en détail</strong><br>Photo, surnom, type de véhicule et dimensions : hauteur, largeur et longueur. Le camion fait partie de l'identité du routier.</td>
+          <td class="texte-fonce" valign="top" style="padding:2px 0 16px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;"><strong>Suivre leur activité</strong><br>Au fil de la journée, il voit où ses amis se sont arrêtés : une station, un relais routier, un parking.</td>
         </tr>
         <tr>
           <td width="38" valign="top" style="padding:0 0 16px 0;">
@@ -219,7 +280,7 @@
               <td align="center" valign="middle" width="26" height="26" style="width:26px;height:26px;border-radius:13px;background-color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:26px;font-weight:bold;color:#FFFFFF;">3</td>
             </tr></table>
           </td>
-          <td class="texte-fonce" valign="top" style="padding:2px 0 16px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;"><strong>Ses amis</strong><br>Il invite ses collègues, accepte leurs invitations et retrouve en un geste ceux avec qui il roule.</td>
+          <td class="texte-fonce" valign="top" style="padding:2px 0 16px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;"><strong>Profiter de leurs recommandations</strong><br>Quand un ami dépose un avis, il est mis en avant. Une adresse conseillée par un collègue de confiance, ça compte.</td>
         </tr>
         <tr>
           <td width="38" valign="top" style="padding:0 0 16px 0;">
@@ -227,28 +288,46 @@
               <td align="center" valign="middle" width="26" height="26" style="width:26px;height:26px;border-radius:13px;background-color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:26px;font-weight:bold;color:#FFFFFF;">4</td>
             </tr></table>
           </td>
-          <td class="texte-fonce" valign="top" style="padding:2px 0 16px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;"><strong>L'activité de ses amis</strong><br>Au fil de la journée, il voit où ses amis se sont arrêtés : une station, un relais routier, un parking.</td>
-        </tr>
-        <tr>
-          <td width="38" valign="top" style="padding:0 0 16px 0;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-              <td align="center" valign="middle" width="26" height="26" style="width:26px;height:26px;border-radius:13px;background-color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:26px;font-weight:bold;color:#FFFFFF;">5</td>
-            </tr></table>
-          </td>
-          <td class="texte-fonce" valign="top" style="padding:2px 0 16px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;"><strong>Les recommandations</strong><br>Quand un ami dépose un avis, il est mis en avant. Les bonnes adresses circulent de conducteur à conducteur.</td>
+          <td class="texte-fonce" valign="top" style="padding:2px 0 16px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;"><strong>Être reconnu</strong><br>Photo, bio et camion avec ses dimensions : plus le profil est complet, plus ses amis le retrouvent facilement.</td>
         </tr>
       </table>
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px 0;">
-        <tr><td class="bref" style="background-color:#F5F3F1;border-radius:12px;padding:20px 22px 6px 22px;">
-      <h4 class="texte-fonce" style="margin:0 0 8px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:17px;line-height:24px;font-weight:bold;color:#061866;">Ce que ça change pour vous</h4>
-      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;">Pour les établissements : chaque visite et chaque avis peut être vu par les amis du conducteur. C'est le bouche-à-oreille des routiers, en version numérique.</p>
-      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;">Pour les partenaires : une communauté plus engagée, qui revient dans l'app chaque jour. <span style="background-color:#FFF3A0;color:#000000;">[Chiffre clé à ajouter : profils créés, amis ajoutés, avis déposés…]</span></p>
+      <h4 class="texte-fonce" style="margin:4px 0 12px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:17px;line-height:24px;font-weight:bold;color:#061866;">Ce que ça vous apporte</h4>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 10px 0;">
+        <tr><td class="bref" style="background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
+          <p class="texte-fonce" style="margin:0 0 4px 0;font-size:15px;line-height:22px;font-weight:bold;color:#061866;">Transporteurs et gestionnaires de flotte</p>
+          <p class="texte-fonce" style="margin:0;font-size:15px;line-height:23px;color:#000000;">Des conducteurs moins isolés, qui s'entraident et partagent les bons plans de la route : parkings, douches, restaurants. Un outil gratuit qui crée du lien entre vos équipes.</p>
         </td></tr>
       </table>
-      <p style="margin:0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;"><a class="lien" href="https://LIEN-B2B-A-REMPLACER?utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=b2b-2026-10-fr&amp;utm_content=profil-trucker" target="_blank" style="color:#061866;font-weight:bold;text-decoration:underline;">Voir la vidéo de présentation du Profil Trucker&nbsp;&rarr;</a></p>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 10px 0;">
+        <tr><td class="bref" style="background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
+          <p class="texte-fonce" style="margin:0 0 4px 0;font-size:15px;line-height:22px;font-weight:bold;color:#061866;">Établissements</p>
+          <p class="texte-fonce" style="margin:0;font-size:15px;line-height:23px;color:#000000;">Le bouche-à-oreille des routiers passe désormais par l'app. Chaque visite et chaque avis peut être vu par les amis du conducteur : une recommandation vaut toutes les publicités.</p>
+        </td></tr>
+      </table>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 10px 0;">
+        <tr><td class="bref" style="background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
+          <p class="texte-fonce" style="margin:0 0 4px 0;font-size:15px;line-height:22px;font-weight:bold;color:#061866;">Partenaires et marques</p>
+          <p class="texte-fonce" style="margin:0;font-size:15px;line-height:23px;color:#000000;">Une communauté engagée, qui revient dans l'app chaque jour. Vos messages touchent les conducteurs là où ils sont : sur la route.</p>
+        </td></tr>
+      </table>
+      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;"><span style="background-color:#FFF3A0;color:#000000;">[Chiffre clé à ajouter : profils créés, amis ajoutés, avis déposés depuis le lancement…]</span></p>
+      <table role="presentation" class="btn-table" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 14px 0;">
+        <tr><td class="btn2-cell" align="center" style="border-radius:24px;background-color:#061866;">
+          <!--[if mso]>
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://LIEN-VIDEO-PROFIL-A-REMPLACER?utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=b2b-2026-10-fr&amp;utm_content=profil-video" style="height:48px;v-text-anchor:middle;width:330px;" arcsize="50%" stroke="f" fillcolor="#061866">
+            <w:anchorlock/>
+            <center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Voir le Profil Trucker en vidéo</center>
+          </v:roundrect>
+          <![endif]-->
+          <!--[if !mso]><!-- -->
+          <a class="btn2" href="https://LIEN-VIDEO-PROFIL-A-REMPLACER?utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=b2b-2026-10-fr&amp;utm_content=profil-video" target="_blank" style="display:inline-block;padding:14px 28px;border-radius:24px;background-color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:20px;font-weight:bold;color:#FFFFFF;text-decoration:none;">Voir le Profil Trucker en vidéo&nbsp;&rarr;</a>
+          <!--<![endif]-->
+        </td></tr>
+      </table>
+      <p style="margin:0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;"><a class="lien" href="https://LIEN-APP-A-REMPLACER?utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=b2b-2026-10-fr&amp;utm_content=profil-app" target="_blank" style="color:#061866;font-weight:bold;text-decoration:underline;">Faire découvrir l'app à vos conducteurs&nbsp;&rarr;</a></p>
     </td></tr>
-    <tr><td class="pad carte" style="background-color:#FFFFFF;padding:36px 40px 8px 40px;border-top:6px solid #F5F3F1;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
-      <p style="margin:0 0 4px 0;font-size:13px;line-height:18px;font-weight:bold;color:#061866;" class="texte-doux">III.</p>
+    <tr><td id="section-3" class="pad carte" style="background-color:#FFFFFF;padding:36px 40px 8px 40px;border-top:6px solid #F5F3F1;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
+      <a name="section-3"></a><p style="margin:0 0 4px 0;font-size:13px;line-height:18px;font-weight:bold;color:#061866;" class="texte-doux">III.</p>
       <h2 class="titre texte-fonce" style="margin:0 0 6px 0;font-size:26px;line-height:32px;font-weight:bold;color:#061866;">Infos Marché/Légal</h2>
       <p class="texte-doux" style="margin:0 0 20px 0;font-size:15px;line-height:22px;color:#53565A;">Les évolutions et informations à connaître dans le secteur</p>
     </td></tr>
@@ -320,9 +399,23 @@
         </td></tr>
       </table>
       <p class="texte-doux" style="margin:6px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#53565A;">Informations vérifiées au 8 octobre 2026. Les mesures en discussion peuvent encore évoluer. Elles ne remplacent pas les textes officiels.</p>
+      <p class="texte-fonce" style="margin:22px 0 4px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;">Chaque semaine, nous partageons l'essentiel de l'actu transport sur LinkedIn.</p>
+      <table role="presentation" class="btn-table" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 0 0;">
+        <tr><td class="btn2-cell" align="center" style="border-radius:24px;background-color:#061866;">
+          <!--[if mso]>
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://LIEN-LINKEDIN-A-REMPLACER?utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=b2b-2026-10-fr&amp;utm_content=linkedin" style="height:48px;v-text-anchor:middle;width:330px;" arcsize="50%" stroke="f" fillcolor="#061866">
+            <w:anchorlock/>
+            <center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Suivre Michelin Truckfly sur LinkedIn</center>
+          </v:roundrect>
+          <![endif]-->
+          <!--[if !mso]><!-- -->
+          <a class="btn2" href="https://LIEN-LINKEDIN-A-REMPLACER?utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=b2b-2026-10-fr&amp;utm_content=linkedin" target="_blank" style="display:inline-block;padding:14px 28px;border-radius:24px;background-color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:20px;font-weight:bold;color:#FFFFFF;text-decoration:none;">Suivre Michelin Truckfly sur LinkedIn&nbsp;&rarr;</a>
+          <!--<![endif]-->
+        </td></tr>
+      </table>
     </td></tr>
-    <tr><td class="pad carte" style="background-color:#FFFFFF;padding:36px 40px 8px 40px;border-top:6px solid #F5F3F1;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
-      <p style="margin:0 0 4px 0;font-size:13px;line-height:18px;font-weight:bold;color:#061866;" class="texte-doux">IV.</p>
+    <tr><td id="section-4" class="pad carte" style="background-color:#FFFFFF;padding:36px 40px 8px 40px;border-top:6px solid #F5F3F1;font-family:'Noto Sans',Arial,Helvetica,sans-serif;">
+      <a name="section-4"></a><p style="margin:0 0 4px 0;font-size:13px;line-height:18px;font-weight:bold;color:#061866;" class="texte-doux">IV.</p>
       <h2 class="titre texte-fonce" style="margin:0 0 6px 0;font-size:26px;line-height:32px;font-weight:bold;color:#061866;">La question des Truckers</h2>
       <p class="texte-doux" style="margin:0 0 20px 0;font-size:15px;line-height:22px;color:#53565A;">Une question, une réponse et les conseils de notre communauté</p>
     </td></tr>
@@ -351,7 +444,20 @@
       <h4 class="texte-fonce" style="margin:22px 0 8px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:17px;line-height:24px;font-weight:bold;color:#061866;">Ce qu'on en retient</h4>
       <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Profiter du spectacle et des courses arrive en tête avec 40 % des votes. Partager autour de la passion du camion suit de près avec 38 % des réponses. Enfin, découvrir les nouveautés du secteur représente 21 % des votes.</p>
       <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#000000;">Pour les routiers, un événement camion est d'abord un moment de passion et de partage. Pour les marques et les exposants, l'expérience et la rencontre comptent autant que la vitrine produit.</p>
-      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;"><span style="background-color:#FFF3A0;color:#000000;">[Le prochain sondage : votre question ici, et où voter.]</span></p>
+      <p class="texte-fonce" style="margin:0 0 14px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#000000;">Ce mois-ci, à vous de jouer : <span style="background-color:#FFF3A0;color:#000000;">[question du prochain sondage]</span>.</p>
+      <table role="presentation" class="btn-table" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 0 0;">
+        <tr><td class="btn2-cell" align="center" style="border-radius:24px;background-color:#061866;">
+          <!--[if mso]>
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://LIEN-SONDAGE-A-REMPLACER?utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=b2b-2026-10-fr&amp;utm_content=sondage" style="height:48px;v-text-anchor:middle;width:330px;" arcsize="50%" stroke="f" fillcolor="#061866">
+            <w:anchorlock/>
+            <center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Je donne mon avis</center>
+          </v:roundrect>
+          <![endif]-->
+          <!--[if !mso]><!-- -->
+          <a class="btn2" href="https://LIEN-SONDAGE-A-REMPLACER?utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=b2b-2026-10-fr&amp;utm_content=sondage" target="_blank" style="display:inline-block;padding:14px 28px;border-radius:24px;background-color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:20px;font-weight:bold;color:#FFFFFF;text-decoration:none;">Je donne mon avis&nbsp;&rarr;</a>
+          <!--<![endif]-->
+        </td></tr>
+      </table>
     </td></tr>
 
     <!-- Appel à l'action -->

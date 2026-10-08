@@ -40,7 +40,7 @@ Les rappels hiver diffèrent par pays : Loi Montagne au 1er novembre en France, 
 
 ## Avant l'envoi
 
-1. **Liens** : remplacer `LIEN_APP` dans `scripts/generer.py` et `LIEN_B2B` dans `scripts/generer_b2b.py` par le lien (idéalement un lien profond qui ouvre la carte), puis relancer le script.
+1. **Liens** : remplacer `LIEN_APP` dans `scripts/generer.py`, puis `LIEN_B2B` et les liens de `LIENS` dans `scripts/generer_b2b.py` (un bouton par partie : Voltix, rendez-vous à Lyon, vidéo, app, LinkedIn, sondage). Les UTM s'ajoutent tout seuls. Relancer ensuite les scripts.
 2. **Images** : charger `assets/logo-truckfly-blanc.png` dans Brevo, puis remplacer `../../assets` par l'URL Brevo (variable `ASSETS`).
 3. **Adresse postale** : compléter `ADRESSE` (obligatoire dans le pied de page).
 4. **Prénom** : le mail utilise `{{ contact.PRENOM }}`. Si l'attribut s'appelle `FIRSTNAME` dans votre compte, le changer dans `salutation`.

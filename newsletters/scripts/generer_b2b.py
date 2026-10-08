@@ -14,7 +14,15 @@ RACINE = Path(__file__).resolve().parent.parent
 GABARIT = Template((RACINE / "template" / "b2b.html").read_text(encoding="utf-8"))
 
 # À remplacer avant l'envoi (voir LISEZMOI.md).
-LIEN_B2B = "https://LIEN-B2B-A-REMPLACER"
+LIEN_B2B = "https://LIEN-B2B-A-REMPLACER"            # bouton final et logo
+LIENS = {
+    "voltix": "https://LIEN-VOLTIX-A-REMPLACER",           # stations Voltix dans l'app ou page partenariat
+    "rdv": "https://LIEN-RDV-A-REMPLACER",                 # prise de rendez-vous ou e-mail de l'équipe
+    "video": "https://LIEN-VIDEO-PROFIL-A-REMPLACER",      # vidéo du Profil Trucker
+    "app": "https://LIEN-APP-A-REMPLACER",                 # page de téléchargement de l'app
+    "linkedin": "https://LIEN-LINKEDIN-A-REMPLACER",       # page LinkedIn Michelin Truckfly
+    "sondage": "https://LIEN-SONDAGE-A-REMPLACER",         # sondage du mois prochain
+}
 ASSETS = "../../assets"
 ADRESSE = "Michelin Truckfly · [adresse postale à compléter]"
 
@@ -30,9 +38,9 @@ def t(texte):
 
 
 def utm(url, campagne, langue, contenu):
-    if "LIEN-" not in url:  # sources externes : pas d'UTM
-        return escape(url)
-    return (f"{url}?utm_source=brevo&amp;utm_medium=email"
+    """Lien Michelin Truckfly suivi. Les sources externes passent par escape() sans UTM."""
+    sep = "&amp;" if "?" in url else "?"
+    return (f"{escape(url)}{sep}utm_source=brevo&amp;utm_medium=email"
             f"&amp;utm_campaign={campagne}-{langue}&amp;utm_content={contenu}")
 
 
@@ -46,9 +54,25 @@ def lien_texte(libelle, href):
             f'text-decoration:underline;">{t(libelle)}&nbsp;&rarr;</a>')
 
 
-def entete_section(numero, titre, sous_titre):
-    return f"""    <tr><td class="pad carte" style="background-color:#FFFFFF;padding:36px 40px 8px 40px;border-top:6px solid #F5F3F1;{FONT}">
-      <p style="margin:0 0 4px 0;font-size:13px;line-height:18px;font-weight:bold;color:#061866;" class="texte-doux">{numero}</p>
+def bouton(libelle, href, marge="8px 0 0 0"):
+    return f"""      <table role="presentation" class="btn-table" cellpadding="0" cellspacing="0" border="0" style="margin:{marge};">
+        <tr><td class="btn2-cell" align="center" style="border-radius:24px;background-color:#061866;">
+          <!--[if mso]>
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{href}" style="height:48px;v-text-anchor:middle;width:330px;" arcsize="50%" stroke="f" fillcolor="#061866">
+            <w:anchorlock/>
+            <center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">{t(libelle)}</center>
+          </v:roundrect>
+          <![endif]-->
+          <!--[if !mso]><!-- -->
+          <a class="btn2" href="{href}" target="_blank" style="display:inline-block;padding:14px 28px;border-radius:24px;background-color:#061866;{FONT}font-size:16px;line-height:20px;font-weight:bold;color:#FFFFFF;text-decoration:none;">{t(libelle)}&nbsp;&rarr;</a>
+          <!--<![endif]-->
+        </td></tr>
+      </table>"""
+
+
+def entete_section(numero, titre, sous_titre, ancre=""):
+    return f"""    <tr><td id="{ancre}" class="pad carte" style="background-color:#FFFFFF;padding:36px 40px 8px 40px;border-top:6px solid #F5F3F1;{FONT}">
+      <a name="{ancre}"></a><p style="margin:0 0 4px 0;font-size:13px;line-height:18px;font-weight:bold;color:#061866;" class="texte-doux">{numero}</p>
       <h2 class="titre texte-fonce" style="margin:0 0 6px 0;font-size:26px;line-height:32px;font-weight:bold;color:#061866;">{t(titre)}</h2>
       <p class="texte-doux" style="margin:0 0 20px 0;font-size:15px;line-height:22px;color:#53565A;">{t(sous_titre)}</p>
     </td></tr>"""
@@ -109,6 +133,7 @@ def section_evenements(e, langue):
         article.append(sous_titre(st, "4px 0 8px 0"))
         article += [paragraphe(p) for p in paras]
     article.append(paragraphe(a["conclusion"], 15).replace('color:#000000;">', 'color:#000000;font-style:italic;">', 1))
+    article.append(bouton(a["bouton"], utm(LIENS["voltix"], e["campagne"], langue, "voltix"), "4px 0 8px 0"))
 
     r = e["rendez_vous"]
     rdv = f"""      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:10px 0 24px 0;">
@@ -125,6 +150,7 @@ def section_evenements(e, langue):
           </tr></table>
 {chr(10).join(paragraphe(p, 15) for p in r['textes'])}
           <p style="margin:0 0 14px 0;font-size:14px;line-height:20px;">{lien_texte(r['lien'], escape(r['url']))}</p>
+{bouton(r['bouton'], utm(LIENS["rdv"], e["campagne"], langue, "rencontres-filiere"), "0 0 16px 0")}
         </td></tr>
       </table>"""
 
@@ -138,13 +164,39 @@ def section_evenements(e, langue):
               + '\n      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">\n'
               + "\n".join(lignes) + "\n      </table>"
               + f'\n      <p class="texte-doux" style="margin:4px 0 0 0;{FONT}font-size:12px;line-height:18px;color:#53565A;">{t(e["note_evenements"])}</p>')
-    return entete_section(*e["sections"][0]) + "\n" + bloc("\n".join(article) + "\n" + rdv + "\n" + agenda)
+    return entete_section(*e["sections"][0], ancre="section-1") + "\n" + bloc("\n".join(article) + "\n" + rdv + "\n" + agenda)
 
 
 def section_truckfly(e, langue):
     p = e["profil"]
     contenu = [etiquette(p["etiquette"]), titre_article(p["titre"])]
     contenu += [paragraphe(x) for x in p["intro"]]
+
+    # Aperçu du fil d'activité, au style de l'app
+    fil = []
+    for nom, action, lieu, bouton_app in p["exemple_fil"]["lignes"]:
+        detail = (f'<br><strong style="color:#061866;">{t(lieu)}</strong>' if lieu else "")
+        badge = (f'<td align="right" valign="middle" style="padding-left:8px;"><span style="display:inline-block;background-color:#061866;color:#FFFFFF;border-radius:14px;padding:4px 12px;{FONT}font-size:12px;font-weight:bold;">{t(bouton_app)}</span></td>' if bouton_app else "")
+        fil.append(f"""              <tr><td style="padding:10px 0;border-bottom:1px solid #E4E6EE;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td width="36" valign="middle"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="32" height="32" style="width:32px;height:32px;border-radius:16px;background-color:#DCE6F7;{FONT}font-size:13px;font-weight:bold;color:#061866;">{t(nom[0])}</td></tr></table></td>
+                  <td valign="middle" style="padding-left:10px;{FONT}font-size:14px;line-height:20px;color:#000000;"><strong>{t(nom)}</strong> {t(action)}{detail}</td>
+                  {badge}
+                </tr></table>
+              </td></tr>""")
+    contenu.append(f"""      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 22px 0;">
+        <tr><td style="background-color:#061866;border-radius:14px;padding:16px;">
+          <p style="margin:0 0 10px 4px;{FONT}font-size:13px;line-height:18px;font-weight:bold;color:#FFFF1A;">{t(p['exemple_fil']['titre'])}</p>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#FFFFFF;border-radius:10px;padding:2px 14px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+{chr(10).join(fil)}
+            </table>
+          </td></tr></table>
+          <p style="margin:10px 0 0 4px;{FONT}font-size:11px;line-height:16px;color:#C9CEDF;">{t(p['exemple_fil']['legende'])}</p>
+        </td></tr>
+      </table>""")
+
+    contenu.append(sous_titre(p["titre_fonctions"], "0 0 12px 0"))
     lignes = []
     for i, (titre, texte) in enumerate(p["fonctions"], 1):
         lignes.append(f"""        <tr>
@@ -155,18 +207,22 @@ def section_truckfly(e, langue):
           </td>
           <td class="texte-fonce" valign="top" style="padding:2px 0 16px 0;{FONT}font-size:15px;line-height:23px;color:#000000;"><strong>{t(titre)}</strong><br>{t(texte)}</td>
         </tr>""")
-    contenu.append('      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 8px 0;">\n'
+    contenu.append('      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 6px 0;">\n'
                    + "\n".join(lignes) + "\n      </table>")
-    pour_vous = "\n".join(paragraphe(x, 15) for x in p["pour_vous"])
-    contenu.append(f"""      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px 0;">
-        <tr><td class="bref" style="background-color:#F5F3F1;border-radius:12px;padding:20px 22px 6px 22px;">
-{sous_titre(p['titre_pour_vous'], '0 0 8px 0')}
-{pour_vous}
+
+    contenu.append(sous_titre(p["titre_pour_vous"], "4px 0 12px 0"))
+    for public, texte in p["pour_vous"]:
+        contenu.append(f"""      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 10px 0;">
+        <tr><td class="bref" style="background-color:#F5F3F1;border-radius:12px;padding:16px 20px;{FONT}">
+          <p class="texte-fonce" style="margin:0 0 4px 0;font-size:15px;line-height:22px;font-weight:bold;color:#061866;">{t(public)}</p>
+          <p class="texte-fonce" style="margin:0;font-size:15px;line-height:23px;color:#000000;">{t(texte)}</p>
         </td></tr>
       </table>""")
+    contenu.append(paragraphe(p["chiffre"], 15))
+    contenu.append(bouton(p["bouton"], utm(LIENS["video"], e["campagne"], langue, "profil-video"), "6px 0 14px 0"))
     contenu.append(f'      <p style="margin:0;{FONT}font-size:15px;line-height:22px;">'
-                   f'{lien_texte(p["lien"], utm(LIEN_B2B, e["campagne"], langue, "profil-trucker"))}</p>')
-    return entete_section(*e["sections"][1]) + "\n" + bloc("\n".join(contenu))
+                   f'{lien_texte(p["lien"], utm(LIENS["app"], e["campagne"], langue, "profil-app"))}</p>')
+    return entete_section(*e["sections"][1], ancre="section-2") + "\n" + bloc("\n".join(contenu))
 
 
 def section_marche(e, langue):
@@ -187,8 +243,10 @@ def section_marche(e, langue):
           <p style="margin:0;font-size:13px;line-height:18px;color:#53565A;" class="texte-doux">{t(e['libelle_source'])} : {sources}</p>
         </td></tr>
       </table>""")
-    note = f'      <p class="texte-doux" style="margin:6px 0 0 0;{FONT}font-size:12px;line-height:18px;color:#53565A;">{t(e["note_marche"])}</p>'
-    return entete_section(*e["sections"][2]) + "\n" + bloc("\n".join(cartes) + "\n" + note)
+    note = (f'      <p class="texte-doux" style="margin:6px 0 0 0;{FONT}font-size:12px;line-height:18px;color:#53565A;">{t(e["note_marche"])}</p>\n'
+            + paragraphe(e["intro_bouton_marche"], 15).replace("margin:0 0 14px 0", "margin:22px 0 4px 0")
+            + "\n" + bouton(e["bouton_marche"], utm(LIENS["linkedin"], e["campagne"], langue, "linkedin")))
+    return entete_section(*e["sections"][2], ancre="section-3") + "\n" + bloc("\n".join(cartes) + "\n" + note)
 
 
 def section_question(e, langue):
@@ -209,8 +267,9 @@ def section_question(e, langue):
       </table>
 {sous_titre(q['titre_retenir'])}
 {chr(10).join(paragraphe(p) for p in q['retenir'])}
-{paragraphe(q['prochaine'], 15)}"""
-    return entete_section(*e["sections"][3]) + "\n" + bloc(contenu)
+{paragraphe(q['prochaine'], 15)}
+{bouton(q['bouton'], utm(LIENS["sondage"], e["campagne"], langue, "sondage"), "0 0 0 0")}"""
+    return entete_section(*e["sections"][3], ancre="section-4") + "\n" + bloc(contenu)
 
 
 def recap(e):
@@ -218,7 +277,7 @@ def recap(e):
     for i, (num, texte) in enumerate(zip(["I", "II", "III", "IV"], e["recap"])):
         lignes.append(f"""            <tr>
               <td width="34" valign="top" style="padding:0 0 12px 0;{FONT}font-size:14px;line-height:22px;font-weight:bold;color:#061866;" class="texte-fonce">{num}.</td>
-              <td valign="top" class="texte-fonce" style="padding:0 0 12px 0;{FONT}font-size:15px;line-height:22px;color:#000000;"><strong>{t(e['sections'][i][1])}</strong> · {t(texte)}</td>
+              <td valign="top" class="texte-fonce" style="padding:0 0 12px 0;{FONT}font-size:15px;line-height:22px;color:#000000;"><a class="lien" href="#section-{i + 1}" style="color:#061866;font-weight:bold;text-decoration:underline;">{t(e['sections'][i][1])}</a> · {t(texte)}</td>
             </tr>""")
     return "\n".join(lignes)
 
@@ -234,7 +293,7 @@ EDITIONS = {
         titre_edito="Électrique, communauté et gazole : un mois chargé",
         edito=[
             "Ce mois-ci, la recharge des poids lourds électriques passe un cap. Nous étions à Vierzon pour l'inauguration de la première station Voltix, et nous serons le 22 octobre à Lyon pour les Rencontres de la Filière.",
-            "Côté Michelin Truckfly, zoom sur le Profil Trucker et tout ce qu'il change pour la communauté des conducteurs.",
+            "Côté Michelin Truckfly, zoom sur le côté communauté du Profil Trucker : amis, activité, recommandations, et ce que ça change pour vous.",
             "Côté marché, le gazole reste au cœur de l'actu : baisse de taxe en Allemagne, aides prolongées aux Pays-Bas, document de contrôle électronique en Espagne, et un vote européen sur les péages des camions propres.",
             "Pour finir, vous découvrirez ce qui compte le plus pour les routiers lors d'un événement comme les 24 Heures Camions.",
             "Bonne lecture.",
@@ -243,7 +302,7 @@ EDITIONS = {
         titre_recap="Le récap du mois",
         recap=[
             "Retour sur l'inauguration Voltix à Vierzon, et rendez-vous le 22 octobre à Lyon.",
-            "Le Profil Trucker en détail : profil, amis, activité, recommandations.",
+            "Le Profil Trucker côté communauté : amis, activité, recommandations.",
             "UE, France, Allemagne, Pays-Bas, Italie, Espagne : ce qui change ce mois-ci.",
             "Les résultats du sondage sur les 24 Heures Camions.",
         ],
@@ -271,6 +330,7 @@ EDITIONS = {
                     "Cette collaboration avec VINCI Autoroutes illustre une ambition commune : accompagner les évolutions du transport routier et les professionnels qui les vivent au quotidien.",
                 ]),
             ],
+            bouton="Voir les stations Voltix dans l'app",
             conclusion="GPS poids lourd, établissements adaptés, services communautaires, emploi et demain recharge électrique : Michelin Truckfly continue d'accompagner les transformations du transport routier, au plus près des conducteurs.",
         ),
         rendez_vous=dict(
@@ -281,9 +341,10 @@ EDITIONS = {
             textes=[
                 "Organisée par la Fédération française de carrosserie avant Solutrans 2027, cette journée fait le point sur les grands enjeux du véhicule industriel et urbain.",
                 "Au programme, des tables rondes avec des professionnels, des experts et des représentants européens, notamment sur le financement de la transition énergétique et le reconditionnement des véhicules industriels.",
-                "Les équipes Michelin Truckfly y assisteront. Vous y serez aussi ? [Écrivez-nous pour nous y retrouver.]",
+                "Les équipes Michelin Truckfly y assisteront. Vous y serez aussi ? Prenons rendez-vous sur place.",
             ],
             lien="Programme et inscription",
+            bouton="Rencontrer notre équipe à Lyon",
             url="https://www.solutrans.fr/en/solutrans-show/industry-meeting",
         ),
         titre_agenda="À l'agenda",
@@ -295,27 +356,41 @@ EDITIONS = {
         ],
         note_evenements="Dates communiquées par les organisateurs, à vérifier sur leur site avant de vous déplacer.",
         profil=dict(
-            etiquette="Nouveauté",
-            titre="Profil Trucker : la communauté des conducteurs prend vie",
+            etiquette="Zoom communauté",
+            titre="Profil Trucker : vos conducteurs ne roulent plus seuls",
             intro=[
-                "Michelin Truckfly devient plus communautaire. Avec le Profil Trucker, chaque conducteur a désormais sa propre page dans l'app, et peut retrouver les collègues qu'il croise sur la route.",
-                "Le message aux conducteurs est simple : « Ne roule plus seul ! »",
+                "Le mois dernier, nous vous présentions le Profil Trucker : un profil personnalisé, des avis sur les établissements, des arrêts favoris et les profils des autres conducteurs.",
+                "Ce mois-ci, place à ce qui en fait le cœur : la communauté. Avec ses fonctions sociales, Michelin Truckfly devient un vrai réseau entre conducteurs. Même seuls dans leur cabine, ils restent connectés à leurs collègues.",
             ],
+            exemple_fil=dict(
+                titre="Dans l'app : le fil d'activité des amis",
+                lignes=[
+                    ("Louna", "t'a envoyé une invitation", "", "Accepter"),
+                    ("Nicolas J.", "a visité :", "AS 24", ""),
+                    ("David", "s'est arrêté ici :", "Le Relais des Cigales", ""),
+                ],
+                legende="Exemple d'écran, noms fictifs.",
+            ),
+            titre_fonctions="Comment ça marche",
             fonctions=[
-                ("Un profil à son image", "Photo, nom, bio et drapeau. Le conducteur se présente en quelques secondes, et les autres le reconnaissent facilement."),
-                ("Son camion, en détail", "Photo, surnom, type de véhicule et dimensions : hauteur, largeur et longueur. Le camion fait partie de l'identité du routier."),
-                ("Ses amis", "Il invite ses collègues, accepte leurs invitations et retrouve en un geste ceux avec qui il roule."),
-                ("L'activité de ses amis", "Au fil de la journée, il voit où ses amis se sont arrêtés : une station, un relais routier, un parking."),
-                ("Les recommandations", "Quand un ami dépose un avis, il est mis en avant. Les bonnes adresses circulent de conducteur à conducteur."),
+                ("Ajouter ses amis", "Le conducteur invite ses collègues, accepte leurs invitations et retrouve en un geste ceux qu'il croise sur la route."),
+                ("Suivre leur activité", "Au fil de la journée, il voit où ses amis se sont arrêtés : une station, un relais routier, un parking."),
+                ("Profiter de leurs recommandations", "Quand un ami dépose un avis, il est mis en avant. Une adresse conseillée par un collègue de confiance, ça compte."),
+                ("Être reconnu", "Photo, bio et camion avec ses dimensions : plus le profil est complet, plus ses amis le retrouvent facilement."),
             ],
-            titre_pour_vous="Ce que ça change pour vous",
+            titre_pour_vous="Ce que ça vous apporte",
             pour_vous=[
-                "Pour les établissements : chaque visite et chaque avis peut être vu par les amis du conducteur. C'est le bouche-à-oreille des routiers, en version numérique.",
-                "Pour les partenaires : une communauté plus engagée, qui revient dans l'app chaque jour. [Chiffre clé à ajouter : profils créés, amis ajoutés, avis déposés…]",
+                ("Transporteurs et gestionnaires de flotte", "Des conducteurs moins isolés, qui s'entraident et partagent les bons plans de la route : parkings, douches, restaurants. Un outil gratuit qui crée du lien entre vos équipes."),
+                ("Établissements", "Le bouche-à-oreille des routiers passe désormais par l'app. Chaque visite et chaque avis peut être vu par les amis du conducteur : une recommandation vaut toutes les publicités."),
+                ("Partenaires et marques", "Une communauté engagée, qui revient dans l'app chaque jour. Vos messages touchent les conducteurs là où ils sont : sur la route."),
             ],
-            lien="Voir la vidéo de présentation du Profil Trucker",
+            chiffre="[Chiffre clé à ajouter : profils créés, amis ajoutés, avis déposés depuis le lancement…]",
+            bouton="Voir le Profil Trucker en vidéo",
+            lien="Faire découvrir l'app à vos conducteurs",
         ),
         libelle_source="Sources",
+        intro_bouton_marche="Chaque semaine, nous partageons l'essentiel de l'actu transport sur LinkedIn.",
+        bouton_marche="Suivre Michelin Truckfly sur LinkedIn",
         note_marche="Informations vérifiées au 8 octobre 2026. Les mesures en discussion peuvent encore évoluer. Elles ne remplacent pas les textes officiels.",
         marche=[
             dict(pays="UE", nom_pays="Union européenne", titre="Eurovignette : jusqu'à -75 % de péage pour les camions à faibles émissions",
@@ -360,7 +435,8 @@ EDITIONS = {
                 "Profiter du spectacle et des courses arrive en tête avec 40 % des votes. Partager autour de la passion du camion suit de près avec 38 % des réponses. Enfin, découvrir les nouveautés du secteur représente 21 % des votes.",
                 "Pour les routiers, un événement camion est d'abord un moment de passion et de partage. Pour les marques et les exposants, l'expérience et la rencontre comptent autant que la vitrine produit.",
             ],
-            prochaine="[Le prochain sondage : votre question ici, et où voter.]",
+            prochaine="Ce mois-ci, à vous de jouer : [question du prochain sondage].",
+            bouton="Je donne mon avis",
         ),
         cta_intro="Vous voulez apparaître sur la carte des routiers ?",
         cta="Découvrir Michelin Truckfly",
