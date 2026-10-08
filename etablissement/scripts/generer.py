@@ -339,6 +339,10 @@ def taille_etiquette(eid, texte):
 TAILLE_TYPES = round(min(76, 720 / (0.58 * max(len(r[2]) for r in REPERES))))
 
 
+# Carte de l'app : capture française pour la version française, capture anglaise pour toutes les traductions
+CARTE = "app-carte.png" if LANGUE == "fr" else "app-carte-en.png"
+
+
 def corps(racine):
     return f"""
       <div id="fond" class="plein clip" data-start="0" data-duration="{DUREE}" data-track-index="0">
@@ -359,7 +363,7 @@ def corps(racine):
         </div>
         <div id="tel">
           <img class="tel-img" src="{racine}assets/ecrans/app-ouverture.png" alt="Écran d'ouverture de Michelin Truckfly" />
-          <img id="tel-carte" class="tel-img" src="{racine}assets/ecrans/app-carte.png" alt="Carte de Michelin Truckfly" />
+          <img id="tel-carte" class="tel-img" src="{racine}assets/ecrans/{CARTE}" alt="Carte de Michelin Truckfly" />
           <div id="voile"></div>
           {''.join(repere(*r) for r in REPERES)}
         </div>

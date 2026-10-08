@@ -46,5 +46,5 @@ Anglais, allemand, espagnol, italien, néerlandais et polonais : `LANGUE=xx pyth
 
 - Registre : vouvoiement en allemand (Sie), espagnol (usted), italien (Lei) et néerlandais (u) ; « you » en anglais ; tutoiement en polonais, l'usage courant des applications.
 - Nombres au format de chaque langue (2.3M / 702,000 en anglais, 2,3 Mio. / 702.000 en allemand…).
-- Les captures de l'app (écran d'ouverture, carte) restent en français : à remplacer par les captures de chaque langue si disponibles.
+- Carte de l'app : capture anglaise (`assets/ecrans/app-carte-en.png`) dans toutes les versions traduites, capture française dans la version française. L'écran d'ouverture (logo et Bibendum) ne contient pas de texte, il est commun.
 - Traductions à faire relire par une personne de langue maternelle avant diffusion.
