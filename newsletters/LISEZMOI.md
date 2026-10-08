@@ -20,6 +20,8 @@ Le calendrier éditorial complet (octobre 2026 à décembre 2027) est dans `cale
 - `template/base.html` : le template commun, à importer dans Brevo (« Coller votre code »).
 - `scripts/generer.py` : le contenu de chaque édition, par langue. `python3 newsletters/scripts/generer.py` produit les fichiers HTML.
 - `trucker/2026-10/fr.html` et `it.html` : l'édition Trucker d'octobre 2026, prête à coller dans Brevo.
+- `template/b2b.html` et `scripts/generer_b2b.py` : le template B2B (Édito, Récap du mois, I. Événements, II. Infos Michelin Truckfly, III. Infos Marché/Légal, IV. La question des Truckers). Dans la partie III, l'UE vient en premier, puis le pays du lecteur.
+- `b2b/2026-10/fr.html` : l'édition B2B d'octobre 2026 en français. Les passages surlignés en jaune entre [crochets] sont à compléter. Les autres langues viendront après validation du français.
 - `assets/` : les images à charger dans Brevo.
 - `calendrier-editorial.xlsx` : dates d'envoi, sujets, statuts et échéances. `python3 newsletters/scripts/calendrier.py` le régénère (attention : cela efface ce qui a été saisi dedans).
 
@@ -38,7 +40,7 @@ Les rappels hiver diffèrent par pays : Loi Montagne au 1er novembre en France, 
 
 ## Avant l'envoi
 
-1. **Lien de l'app** : remplacer `LIEN_APP` dans `scripts/generer.py` par le lien (idéalement un lien profond qui ouvre la carte), puis relancer le script.
+1. **Liens** : remplacer `LIEN_APP` dans `scripts/generer.py` et `LIEN_B2B` dans `scripts/generer_b2b.py` par le lien (idéalement un lien profond qui ouvre la carte), puis relancer le script.
 2. **Images** : charger `assets/logo-truckfly-blanc.png` dans Brevo, puis remplacer `../../assets` par l'URL Brevo (variable `ASSETS`).
 3. **Adresse postale** : compléter `ADRESSE` (obligatoire dans le pied de page).
 4. **Prénom** : le mail utilise `{{ contact.PRENOM }}`. Si l'attribut s'appelle `FIRSTNAME` dans votre compte, le changer dans `salutation`.
