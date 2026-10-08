@@ -4,7 +4,8 @@ Objectif : j'ouvre l'app → je comprends la nouveauté → j'ai envie de créer
 
 - `index.html` : les 12 écrans au format téléphone (390 × 844), avec de petites animations d'entrée.
 - `png/` : un PNG par écran en 1170 × 2532 (iPhone, ×3), plus `planche.png`.
-- Régénérer : `python3 scripts/generer.py`, puis `node scripts/capturer.mjs`.
+- `mp4/` : un MP4 animé par écran (1080 × 2338, 30 i/s, 4 s), plus `montage-12-interstitiels.mp4` (48 s).
+- Régénérer : `python3 scripts/generer.py`, puis `node scripts/capturer.mjs` (PNG) et `node scripts/animer.mjs` (MP4 ; `node scripts/animer.mjs 4 i04` pour un seul écran).
 
 | # | Fichier | Quand l'afficher | CTA |
 |---|---|---|---|

@@ -217,9 +217,9 @@ ECRANS = [
         "Ajouter mes amis",
         f"""<div class="etats">
           {ETAT_BTN("plein", AJOUT + "Ajouter", "Tu ajoutes", 0)}
-          {FLECHE_BAS}
+          {FLECHE_BAS.replace('class="fl-bas"', 'class="fl-bas entre" style="--d: 0.3s"')}
           {ETAT_BTN("attente", HORLOGE + "En attente", "Ton invitation attend", 0.5)}
-          {FLECHE_BAS}
+          {FLECHE_BAS.replace('class="fl-bas"', 'class="fl-bas entre" style="--d: 0.8s"')}
           {ETAT_BTN("ami", "✓ Amis", "Invitation acceptée", 1.0)}
         </div>""",
         "ajouter-amis",
