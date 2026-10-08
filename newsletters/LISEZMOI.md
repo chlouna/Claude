@@ -9,13 +9,11 @@
 | Owner | Établissements présents sur Truckfly | Dernier vendredi du mois | FR (pour l'instant) |
 | Nouveautés Trucker | Conducteurs qui utilisent l'app | Le lundi qui suit le dernier vendredi, quand il y a une nouveauté | FR, IT |
 
-Prochaines dates :
+Le calendrier éditorial complet (octobre 2026 à décembre 2027) est dans `calendrier-editorial.xlsx`. Quand une date tombe mal :
 
-| Mois | B2B | Trucker et Owner | Nouveautés Trucker |
-|---|---|---|---|
-| Octobre 2026 | jeudi 15 | vendredi 30 | lundi 2 novembre |
-| Novembre 2026 | dimanche 15 : avancer au vendredi 13 ou décaler au lundi 16 | vendredi 27 | lundi 30 |
-| Décembre 2026 | mardi 15 | vendredi 25 (Noël) : à avancer, par exemple au vendredi 18 | lundi 28 |
+- **B2B** : le 15 tombe un samedi → vendredi 14 ; un dimanche → lundi 16 ; un jour férié → jour ouvré suivant.
+- **Trucker et Owner** : jour férié, 24 ou 31 décembre → vendredi précédent (18 décembre 2026, 17 décembre 2027).
+- **Nouveautés Trucker** : le lundi qui suit l'envoi Trucker ; s'il est férié → mardi (30 mars 2027, 2 novembre 2027).
 
 ## Fichiers
 
@@ -23,6 +21,7 @@ Prochaines dates :
 - `scripts/generer.py` : le contenu de chaque édition, par langue. `python3 newsletters/scripts/generer.py` produit les fichiers HTML.
 - `trucker/2026-10/fr.html` et `it.html` : l'édition Trucker d'octobre 2026, prête à coller dans Brevo.
 - `assets/` : les images à charger dans Brevo.
+- `calendrier-editorial.xlsx` : dates d'envoi, sujets, statuts et échéances. `python3 newsletters/scripts/calendrier.py` le régénère (attention : cela efface ce qui a été saisi dedans).
 
 ## Édition Trucker, octobre 2026
 
