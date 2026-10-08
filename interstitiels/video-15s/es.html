@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="fr">
+<html lang="es">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=390, height=844" />
-<title>Interstitielle Profil Trucker 10 s (fr)</title>
+<title>Interstitielle Profil Trucker 15 s (es)</title>
 <style>
 @font-face { font-family: "Bib"; src: url("../assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
 @font-face { font-family: "Bib"; src: url("../assets/fonts/BIB-Light.woff2") format("woff2"); font-weight: 300; }
@@ -22,7 +22,7 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 
 /* Ouverture */
 .ouverture { left: 24px; right: 24px; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; text-align: center; }
-.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 38px; line-height: 1.12; color: #fff; text-wrap: balance; }
+.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 34px; line-height: 1.15; color: #fff; text-wrap: balance; }
 
 /* Légendes */
 .legendes { left: 22px; right: 22px; top: 52px; height: 110px; }
@@ -76,7 +76,7 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 .final p { margin-top: 16px; font-size: 19px; line-height: 1.4; color: rgba(255, 255, 255, 0.9); text-wrap: balance; }
 .cta { margin-top: 30px; width: 100%; height: 58px; border-radius: 14px; background: var(--jaune); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; }
 
-/* Animations : délais absolus, la page est une timeline de 10 s */
+/* Animations : délais absolus, la page est une timeline de 10 s × RYTHME */
 @keyframes entre { from { opacity: 0; transform: translateY(18px) scale(0.96); } }
 @keyframes pop { from { opacity: 0; transform: scale(0.4); } }
 @keyframes sort { to { opacity: 0; transform: translateY(-14px); } }
@@ -88,25 +88,25 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 </head>
 <body>
 <main class="ecran">
-  <!-- 0–2 s : titre -->
-  <div class="ouverture" style="animation: sort 0.35s ease 1.75s forwards">
-    <h1 class="titre" style="animation: entre 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.15) 0.15s both">Michelin Truckfly devient plus social&nbsp;!</h1>
+  <!-- 0–3 s : titre -->
+  <div class="ouverture" style="animation: sort 0.42s ease 2.625s forwards">
+    <h1 class="titre" style="animation: entre 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.15) 0.225s both">Tu perfil evoluciona y se vuelve aún más comunitario</h1>
   </div>
 
   <!-- Légendes des scènes -->
   <div class="legendes">
-    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 2.05s both, sort 0.3s ease 2.95s forwards">Ajoute ta photo</p>
-    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 3.0s both, sort 0.3s ease 3.95s forwards">Personnalise ta bio</p>
-    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 4.05s both, sort 0.3s ease 5.95s forwards">Ajoute ton camion</p>
-    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 6.05s both, sort 0.3s ease 6.95s forwards">Retrouve tes amis</p>
-    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 7.0s both, sort 0.3s ease 7.85s forwards">Découvre leur activité au quotidien</p>
+    <p class="legende" style="animation: entre 0.48s cubic-bezier(0.2, 0.9, 0.3, 1.15) 3.075s both, sort 0.36s ease 4.425s forwards">Añade tu foto</p>
+    <p class="legende" style="animation: entre 0.48s cubic-bezier(0.2, 0.9, 0.3, 1.15) 4.5s both, sort 0.36s ease 5.925s forwards">Personaliza tu bio</p>
+    <p class="legende" style="animation: entre 0.48s cubic-bezier(0.2, 0.9, 0.3, 1.15) 6.075s both, sort 0.36s ease 8.925s forwards">Añade tu camión</p>
+    <p class="legende" style="animation: entre 0.48s cubic-bezier(0.2, 0.9, 0.3, 1.15) 9.075s both, sort 0.36s ease 10.425s forwards">Encuentra a tus amigos</p>
+    <p class="legende" style="animation: entre 0.48s cubic-bezier(0.2, 0.9, 0.3, 1.15) 10.5s both, sort 0.36s ease 11.775s forwards">Descubre su actividad cada día</p>
   </div>
 
-  <!-- 2–6 s : le Profil Trucker se construit -->
-  <div class="profil" style="animation: entre 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.15) 1.95s both, monte 0.5s ease 6.0s forwards, fondu 0.3s ease 7.9s forwards">
+  <!-- 3–9 s : le Profil Trucker se construit -->
+  <div class="profil" style="animation: entre 0.54s cubic-bezier(0.2, 0.9, 0.3, 1.15) 2.925s both, monte 0.6s ease 9.0s forwards, fondu 0.36s ease 11.85s forwards">
     <div class="p-haut">
       <div class="p-photo vide"></div>
-      <div class="p-photo" style="animation: pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 2.3s both"><svg class="illu" viewBox="0 0 240 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <div class="p-photo" style="animation: pop 0.48s cubic-bezier(0.2, 0.9, 0.3, 1.15) 3.45s both"><svg class="illu" viewBox="0 0 240 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
   <rect width="240" height="240" fill="#BFD3F2" />
   <path d="M26 250 Q26 170 120 166 Q214 170 214 250 Z" fill="#FFFF1A" stroke="#061866" stroke-width="6" />
   <path d="M98 160 L142 160 L138 178 L102 178 Z" fill="#E8B48C" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
@@ -116,15 +116,15 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
   <path d="M62 90 Q66 40 120 38 Q174 40 178 90 Z" fill="#061866" />
   <path d="M56 88 L196 88 Q202 100 186 102 L56 102 Z" fill="#061866" />
 </svg></div>
-      <div class="p-nom"><b>Charlie G. <span class="fr"><i></i><i></i><i></i></span></b><span>Membre depuis 2026</span></div>
+      <div class="p-nom"><b>Charlie G. <span class="fr"><i></i><i></i><i></i></span></b><span>Miembro desde 2026</span></div>
     </div>
     <div class="p-bio">
-      <div class="barres" style="animation: fondu 0.2s ease 3.05s forwards"><i></i><i></i></div>
-      <p style="animation: balaye 0.75s ease 3.1s both">Conducteur routier | Toujours sur la route | À la recherche des meilleurs spots&nbsp;!</p>
+      <div class="barres" style="animation: fondu 0.24s ease 4.575s forwards"><i></i><i></i></div>
+      <p style="animation: balaye 1.2s ease 4.65s both">Camionero | Siempre en la carretera | ¡Buscando los mejores sitios!</p>
     </div>
     <div class="p-camion">
-      <div class="camion-vide" style="animation: fondu 0.2s ease 4.2s forwards">+</div>
-      <div class="camion" style="animation: entre 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.15) 4.25s both">
+      <div class="camion-vide" style="animation: fondu 0.24s ease 6.3s forwards">+</div>
+      <div class="camion" style="animation: entre 0.54s cubic-bezier(0.2, 0.9, 0.3, 1.15) 6.375s both">
         <div class="carre"><svg class="illu" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
   <rect width="320" height="200" fill="#DCE6F7" />
   <circle cx="270" cy="42" r="18" fill="#FFFF1A" />
@@ -137,29 +137,29 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
   <circle cx="58" cy="154" r="15" fill="#111111" /><circle cx="96" cy="154" r="15" fill="#111111" />
   <circle cx="180" cy="154" r="15" fill="#111111" /><circle cx="266" cy="154" r="15" fill="#111111" />
 </svg></div>
-        <div class="camion-txt"><b>Le Bolide</b><div class="dims"><div class="dim" style="animation: pop 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.15) 4.75s both"><span>Hauteur</span><b>4,00 m</b></div><div class="dim" style="animation: pop 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.15) 4.95s both"><span>Largeur</span><b>2,55 m</b></div><div class="dim" style="animation: pop 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.15) 5.15s both"><span>Longueur</span><b>16,50 m</b></div></div></div>
+        <div class="camion-txt"><b>El Rayo</b><div class="dims"><div class="dim" style="animation: pop 0.42s cubic-bezier(0.2, 0.9, 0.3, 1.15) 7.125s both"><span>Altura</span><b>4,00 m</b></div><div class="dim" style="animation: pop 0.42s cubic-bezier(0.2, 0.9, 0.3, 1.15) 7.425s both"><span>Anchura</span><b>2,55 m</b></div><div class="dim" style="animation: pop 0.42s cubic-bezier(0.2, 0.9, 0.3, 1.15) 7.725s both"><span>Longitud</span><b>16,50 m</b></div></div></div>
       </div>
     </div>
   </div>
 
-  <!-- 6–8 s : les amis et leur activité -->
+  <!-- 9–12 s : les amis et leur activité -->
   <div class="amis">
-    <div class="carte" style="animation: entre 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.15) 6.2s both, fondu 0.3s ease 7.9s forwards">
-          <svg class="av-m" viewBox="0 0 112 112" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="#C9C3F5" stroke="#FFFF1A" stroke-width="8" /><ellipse cx="40" cy="44" rx="4.5" ry="7" fill="#061866" /><ellipse cx="60" cy="44" rx="4.5" ry="7" fill="#061866" /><text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">L</text><circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" /><svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><circle cx="10" cy="9" r="4" fill="#061866" /><path d="M3 21 Q3 14 10 14 Q17 14 17 21 Z" fill="#061866" /><path d="M20 8 V16 M16 12 H24" stroke="#061866" stroke-width="2.6" stroke-linecap="round" /></svg></svg><div class="c-txt"><span class="fort">Louna vous a envoyé une invitation</span><span class="gris">à l’instant</span></div><span class="btn">Accepter</span>
+    <div class="carte" style="animation: entre 0.54s cubic-bezier(0.2, 0.9, 0.3, 1.15) 9.3s both, fondu 0.36s ease 11.85s forwards">
+          <svg class="av-m" viewBox="0 0 112 112" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="#C9C3F5" stroke="#FFFF1A" stroke-width="8" /><ellipse cx="40" cy="44" rx="4.5" ry="7" fill="#061866" /><ellipse cx="60" cy="44" rx="4.5" ry="7" fill="#061866" /><text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">L</text><circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" /><svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><circle cx="10" cy="9" r="4" fill="#061866" /><path d="M3 21 Q3 14 10 14 Q17 14 17 21 Z" fill="#061866" /><path d="M20 8 V16 M16 12 H24" stroke="#061866" stroke-width="2.6" stroke-linecap="round" /></svg></svg><div class="c-txt"><span class="fort">Louna te ha enviado una invitación</span><span class="gris">ahora mismo</span></div><span class="btn">Aceptar</span>
         </div>
-    <div class="carte" style="animation: entre 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.15) 7.0s both, fondu 0.3s ease 7.9s forwards">
-          <svg class="av-m" viewBox="0 0 112 112" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="#A6E8B8" stroke="#061866" stroke-width="8" /><ellipse cx="40" cy="44" rx="4.5" ry="7" fill="#061866" /><ellipse cx="60" cy="44" rx="4.5" ry="7" fill="#061866" /><text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">N</text><circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" /><svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><rect x="2" y="7" width="13" height="10" rx="2" fill="#061866" /><path d="M15 10 H20 L23 14 V17 H15 Z" fill="#061866" /><circle cx="7" cy="19" r="2.4" fill="#061866" /><circle cx="19" cy="19" r="2.4" fill="#061866" /></svg></svg><div class="c-txt"><span class="gris">Nicolas J. a visité&nbsp;:</span><span class="fort">AS 24</span><span class="gris">à l’instant</span></div>
+    <div class="carte" style="animation: entre 0.54s cubic-bezier(0.2, 0.9, 0.3, 1.15) 10.5s both, fondu 0.36s ease 11.85s forwards">
+          <svg class="av-m" viewBox="0 0 112 112" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="#A6E8B8" stroke="#061866" stroke-width="8" /><ellipse cx="40" cy="44" rx="4.5" ry="7" fill="#061866" /><ellipse cx="60" cy="44" rx="4.5" ry="7" fill="#061866" /><text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">N</text><circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" /><svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><rect x="2" y="7" width="13" height="10" rx="2" fill="#061866" /><path d="M15 10 H20 L23 14 V17 H15 Z" fill="#061866" /><circle cx="7" cy="19" r="2.4" fill="#061866" /><circle cx="19" cy="19" r="2.4" fill="#061866" /></svg></svg><div class="c-txt"><span class="gris">Nicolas J. ha visitado:</span><span class="fort">AS 24</span><span class="gris">ahora mismo</span></div>
         </div>
-    <div class="carte" style="animation: entre 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.15) 7.3s both, fondu 0.3s ease 7.9s forwards">
-          <svg class="av-m" viewBox="0 0 112 112" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="#F6D38B" stroke="#FFFF1A" stroke-width="8" /><path d="M33 38 L42 44 L33 50 M67 38 L58 44 L67 50" fill="none" stroke="#061866" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">D</text><circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" /><svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><rect x="2" y="7" width="13" height="10" rx="2" fill="#061866" /><path d="M15 10 H20 L23 14 V17 H15 Z" fill="#061866" /><circle cx="7" cy="19" r="2.4" fill="#061866" /><circle cx="19" cy="19" r="2.4" fill="#061866" /></svg></svg><div class="c-txt"><span class="gris">David s’est arrêté ici&nbsp;:</span><span class="fort">Le Relais des Cigales</span><span class="gris">à l’instant</span></div>
+    <div class="carte" style="animation: entre 0.54s cubic-bezier(0.2, 0.9, 0.3, 1.15) 10.95s both, fondu 0.36s ease 11.85s forwards">
+          <svg class="av-m" viewBox="0 0 112 112" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="#F6D38B" stroke="#FFFF1A" stroke-width="8" /><path d="M33 38 L42 44 L33 50 M67 38 L58 44 L67 50" fill="none" stroke="#061866" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><text x="50" y="72" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#061866">D</text><circle cx="88" cy="88" r="20" fill="#DCE6F7" stroke="#FFFFFF" stroke-width="4" /><svg x="75" y="75" width="26" height="26" viewBox="0 0 26 26"><rect x="2" y="7" width="13" height="10" rx="2" fill="#061866" /><path d="M15 10 H20 L23 14 V17 H15 Z" fill="#061866" /><circle cx="7" cy="19" r="2.4" fill="#061866" /><circle cx="19" cy="19" r="2.4" fill="#061866" /></svg></svg><div class="c-txt"><span class="gris">David ha parado aquí:</span><span class="fort">Le Relais des Cigales</span><span class="gris">ahora mismo</span></div>
         </div>
   </div>
 
-  <!-- 8–10 s : écran final -->
+  <!-- 12–15 s : écran final -->
   <div class="final">
-    <h2 style="animation: entre 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.15) 8.15s both">Ne roule plus seul&nbsp;!</h2>
-    <p style="animation: entre 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.15) 8.4s both">Crée ton Profil Trucker sur Michelin Truckfly</p>
-    <a class="cta" style="animation: pop 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.15) 8.7s both, pouls 0.6s ease 9.3s both">Créer mon profil</a>
+    <h2 style="animation: entre 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.15) 12.225s both">¡No vuelvas a conducir solo!</h2>
+    <p style="animation: entre 0.54s cubic-bezier(0.2, 0.9, 0.3, 1.15) 12.6s both">Crea tu Perfil Trucker en Michelin Truckfly</p>
+    <a class="cta" style="animation: pop 0.54s cubic-bezier(0.2, 0.9, 0.3, 1.15) 13.05s both, pouls 0.72s ease 13.95s both">Crear mi perfil</a>
     </div>
 </main>
 </body>

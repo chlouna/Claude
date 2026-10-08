@@ -1,19 +1,19 @@
-# Interstitielle vidéo 10 s : Profil Trucker et Social Core
+# Interstitielle vidéo 15 s : Profil Trucker et Social Core
 
-Une vidéo par langue, 1080 × 2338, 30 i/s, 10 s, sans son : `mp4/interstitiel-10s-<langue>.mp4`.
+Une vidéo par langue, 1080 × 2338, 30 i/s, 15 s, sans son : `mp4/interstitiel-15s-<langue>.mp4`.
 
 - `generer.py` écrit une page HTML par langue (`fr.html`, `en.html`…), `rendre.mjs` en tire les MP4.
-- Régénérer : `python3 interstitiels/video-10s/generer.py`, puis `node interstitiels/video-10s/rendre.mjs` (ou `rendre.mjs fr,de` pour certaines langues).
+- Régénérer : `python3 interstitiels/video-15s/generer.py`, puis `node interstitiels/video-15s/rendre.mjs` (ou `rendre.mjs fr,de` pour certaines langues).
 
 ## Déroulé
 
 | Temps | Ce qui se passe |
 |---|---|
-| 0–2 s | Le titre « Michelin Truckfly devient plus social ! » seul, sans logo |
-| 2–4 s | Le Profil Trucker de Charlie apparaît : la photo s'ajoute, puis la bio s'écrit |
-| 4–6 s | Le camion arrive sur le profil : photo carrée, surnom, hauteur, largeur et longueur |
-| 6–8 s | Le profil se réduit et les cartes des amis arrivent : invitation de Louna, visite de Nicolas J. à AS 24, arrêt de David au Relais des Cigales |
-| 8–10 s | Écran final : « Ne roule plus seul ! », sous-titre, bouton jaune « Créer mon profil » qui pulse |
+| 0–3 s | Le titre « Ton profil évolue et devient encore plus communautaire » seul, sans logo |
+| 3–6 s | Le Profil Trucker de Charlie apparaît : la photo s'ajoute, puis la bio s'écrit |
+| 6–9 s | Le camion arrive sur le profil : photo carrée, surnom, hauteur, largeur et longueur |
+| 9–12 s | Le profil se réduit et les cartes des amis arrivent : invitation de Louna, visite de Nicolas J. à AS 24, arrêt de David au Relais des Cigales |
+| 12–15 s | Écran final : « Ne roule plus seul ! », sous-titre, bouton jaune « Créer mon profil » qui pulse |
 
 ## Textes à faire valider par les équipes locales
 
@@ -21,7 +21,7 @@ Traductions faites pour cette maquette : à relire par un locuteur natif de chaq
 
 | | Français | Anglais | Allemand | Néerlandais | Polonais | Italien | Espagnol |
 |---|---|---|---|---|---|---|---|
-| Titre (0–2 s) | Michelin Truckfly devient plus social ! | Michelin Truckfly is getting more social! | Michelin Truckfly wird sozialer! | Michelin Truckfly wordt socialer! | Michelin Truckfly staje się bardziej społecznościowy! | Michelin Truckfly diventa più social! | ¡Michelin Truckfly se vuelve más social! |
+| Titre (0–3 s) | Ton profil évolue et devient encore plus communautaire | Your profile is evolving and becoming even more community-driven | Dein Profil entwickelt sich weiter und wird noch gemeinschaftlicher | Je profiel evolueert en wordt nog meer community-gericht | Twój profil się zmienia i staje się jeszcze bardziej społecznościowy | Il tuo profilo si evolve e diventa ancora più orientato alla community | Tu perfil evoluciona y se vuelve aún más comunitario |
 | Légende photo | Ajoute ta photo | Add your photo | Füge dein Foto hinzu | Voeg je foto toe | Dodaj swoje zdjęcie | Aggiungi la tua foto | Añade tu foto |
 | Légende bio | Personnalise ta bio | Personalise your bio | Personalisiere deine Bio | Personaliseer je bio | Spersonalizuj swój opis | Personalizza la tua bio | Personaliza tu bio |
 | Légende camion | Ajoute ton camion | Add your truck | Füge deinen Lkw hinzu | Voeg je truck toe | Dodaj swoją ciężarówkę | Aggiungi il tuo camion | Añade tu camión |
@@ -38,6 +38,7 @@ Traductions faites pour cette maquette : à relire par un locuteur natif de chaq
 
 ## Choix
 
+- **Rythme** : 15 s au lieu de 10 s, pour laisser le temps de lire. Chaque légende reste affichée environ 1,5 à 3 s ; l'écran final reste près de 3 s. La vitesse se règle avec `RYTHME` dans `generer.py`.
 - **Casse** : « Michelin Truckfly » et « Ne roule plus seul ! » en casse de phrase, comme demandé et selon la charte.
 - **Sans logo ni emoji** : pas de logo dans la vidéo, et aucun emoji dans les textes (légendes et bio).
 - **Décimales** : virgule partout sauf en anglais (4.00 m).

@@ -1,13 +1,15 @@
-"""Interstitielle vidéo de 10 s « Profil Trucker + Social Core », en 7 langues.
+"""Interstitielle vidéo de 15 s « Profil Trucker + Social Core », en 7 langues.
 
-    python3 interstitiels/video-10s/generer.py
+    python3 interstitiels/video-15s/generer.py
 
 Écrit une page par langue (fr.html, en.html, de.html, nl.html, pl.html, it.html, es.html),
 au format téléphone 390 × 844. rendre.mjs en tire un MP4 par langue (1080 × 2338, 30 i/s).
 Toutes les animations sont en CSS avec des délais absolus : la page entière est une timeline
-de 10 s, que le rendu avance image par image.
+de 15 s, que le rendu avance image par image.
 
-0–2 s titre · 2–4 s photo, bio · 4–6 s camion · 6–8 s amis, activité · 8–10 s fin.
+0–3 s titre · 3–6 s photo, bio · 6–9 s camion · 9–12 s amis, activité · 12–15 s fin.
+Les délais sont écrits sur l'ancienne base de 10 s et multipliés par RYTHME (1,5) : tout dure
+50 % plus longtemps, pour laisser le temps de lire.
 """
 
 import sys
@@ -17,10 +19,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 from generer import avatar, PORTRAIT, CAMION, PIN  # noqa: E402  (briques visuelles des interstitiels)
 
 ICI = Path(__file__).resolve().parent
+RYTHME = 1.5  # étire la timeline de 10 s à 15 s
 
 TEXTES = {
     "fr": dict(
-        titre="Michelin Truckfly devient plus social&nbsp;!",
+        titre="Ton profil évolue et devient encore plus communautaire",
         photo="Ajoute ta photo", bio="Personnalise ta bio", camion="Ajoute ton camion",
         amis="Retrouve tes amis", activite="Découvre leur activité au quotidien",
         fin="Ne roule plus seul&nbsp;!", sous="Crée ton Profil Trucker sur Michelin Truckfly", cta="Créer mon profil",
@@ -30,7 +33,7 @@ TEXTES = {
         visite="Nicolas J. a visité&nbsp;:", arret="David s’est arrêté ici&nbsp;:", instant="à l’instant",
     ),
     "en": dict(
-        titre="Michelin Truckfly is getting more social!",
+        titre="Your profile is evolving and becoming even more community-driven",
         photo="Add your photo", bio="Personalise your bio", camion="Add your truck",
         amis="Find your friends", activite="See what they’re up to every day",
         fin="Never drive alone again!", sous="Create your Trucker Profile on Michelin Truckfly", cta="Create my profile",
@@ -40,7 +43,7 @@ TEXTES = {
         visite="Nicolas J. visited:", arret="David stopped here:", instant="just now",
     ),
     "de": dict(
-        titre="Michelin Truckfly wird sozialer!",
+        titre="Dein Profil entwickelt sich weiter und wird noch gemeinschaftlicher",
         photo="Füge dein Foto hinzu", bio="Personalisiere deine Bio", camion="Füge deinen Lkw hinzu",
         amis="Finde deine Freunde", activite="Entdecke täglich, was sie machen",
         fin="Fahr nie mehr allein!", sous="Erstelle dein Trucker-Profil auf Michelin Truckfly", cta="Mein Profil erstellen",
@@ -50,7 +53,7 @@ TEXTES = {
         visite="Nicolas J. hat besucht:", arret="David hat hier angehalten:", instant="gerade eben",
     ),
     "nl": dict(
-        titre="Michelin Truckfly wordt socialer!",
+        titre="Je profiel evolueert en wordt nog meer community-gericht",
         photo="Voeg je foto toe", bio="Personaliseer je bio", camion="Voeg je truck toe",
         amis="Vind je vrienden", activite="Ontdek elke dag wat ze doen",
         fin="Rij nooit meer alleen!", sous="Maak je Truckerprofiel aan op Michelin Truckfly", cta="Mijn profiel aanmaken",
@@ -60,7 +63,7 @@ TEXTES = {
         visite="Nicolas J. heeft bezocht:", arret="David is hier gestopt:", instant="zojuist",
     ),
     "pl": dict(
-        titre="Michelin Truckfly staje się bardziej społecznościowy!",
+        titre="Twój profil się zmienia i staje się jeszcze bardziej społecznościowy",
         photo="Dodaj swoje zdjęcie", bio="Spersonalizuj swój opis", camion="Dodaj swoją ciężarówkę",
         amis="Znajdź znajomych", activite="Odkrywaj ich codzienną aktywność",
         fin="Nie jeźdź już sam!", sous="Utwórz swój Profil Truckera w Michelin Truckfly", cta="Utwórz mój profil",
@@ -70,7 +73,7 @@ TEXTES = {
         visite="Nicolas J. odwiedził:", arret="David zatrzymał się tutaj:", instant="przed chwilą",
     ),
     "it": dict(
-        titre="Michelin Truckfly diventa più social!",
+        titre="Il tuo profilo si evolve e diventa ancora più orientato alla community",
         photo="Aggiungi la tua foto", bio="Personalizza la tua bio", camion="Aggiungi il tuo camion",
         amis="Ritrova i tuoi amici", activite="Scopri la loro attività ogni giorno",
         fin="Non viaggiare più da solo!", sous="Crea il tuo Profilo Trucker su Michelin Truckfly", cta="Crea il mio profilo",
@@ -80,7 +83,7 @@ TEXTES = {
         visite="Nicolas J. ha visitato:", arret="David si è fermato qui:", instant="adesso",
     ),
     "es": dict(
-        titre="¡Michelin Truckfly se vuelve más social!",
+        titre="Tu perfil evoluciona y se vuelve aún más comunitario",
         photo="Añade tu foto", bio="Personaliza tu bio", camion="Añade tu camión",
         amis="Encuentra a tus amigos", activite="Descubre su actividad cada día",
         fin="¡No vuelvas a conducir solo!", sous="Crea tu Perfil Trucker en Michelin Truckfly", cta="Crear mi perfil",
@@ -97,7 +100,7 @@ VALEURS = ("4{s}00 m", "2{s}55 m", "16{s}50 m")
 def anim(*parts):
     """style="animation: ..." à partir de (nom, durée, délai[, remplissage])."""
     return "animation: " + ", ".join(
-        f"{n} {d}s {'cubic-bezier(0.2, 0.9, 0.3, 1.15)' if n in ('entre', 'pop') else 'ease'} {t}s {f}"
+        f"{n} {round(d * (1.6 if n == 'balaye' else 1.2), 3)}s {'cubic-bezier(0.2, 0.9, 0.3, 1.15)' if n in ('entre', 'pop') else 'ease'} {round(t * RYTHME, 3)}s {f}"
         for n, d, t, *r in parts
         for f in [r[0] if r else ("both" if n in ("entre", "pop", "balaye") else "forwards")]
     )
@@ -124,12 +127,12 @@ def page(lang, t):
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=390, height=844" />
-<title>Interstitielle Profil Trucker 10 s ({lang})</title>
+<title>Interstitielle Profil Trucker 15 s ({lang})</title>
 <style>{CSS}</style>
 </head>
 <body>
 <main class="ecran">
-  <!-- 0–2 s : titre -->
+  <!-- 0–3 s : titre -->
   <div class="ouverture" style="{anim(('sort', 0.35, 1.75))}">
     <h1 class="titre" style="{anim(('entre', 0.5, 0.15))}">{t["titre"]}</h1>
   </div>
@@ -143,7 +146,7 @@ def page(lang, t):
     {legende(t["activite"], 7.0, 7.85)}
   </div>
 
-  <!-- 2–6 s : le Profil Trucker se construit -->
+  <!-- 3–9 s : le Profil Trucker se construit -->
   <div class="profil" style="{anim(('entre', 0.45, 1.95), ('monte', 0.5, 6.0), ('fondu', 0.3, 7.9))}">
     <div class="p-haut">
       <div class="p-photo vide"></div>
@@ -163,14 +166,14 @@ def page(lang, t):
     </div>
   </div>
 
-  <!-- 6–8 s : les amis et leur activité -->
+  <!-- 9–12 s : les amis et leur activité -->
   <div class="amis">
     {carte(avatar("louna", "invitation", "av-m"), None, t["invitation"], t["instant"], 6.2, f'<span class="btn">{t["accepter"]}</span>')}
     {carte(avatar("nicolas", "visite", "av-m"), t["visite"], "AS 24", t["instant"], 7.0)}
     {carte(avatar("david", "visite", "av-m"), t["arret"], "Le Relais des Cigales", t["instant"], 7.3)}
   </div>
 
-  <!-- 8–10 s : écran final -->
+  <!-- 12–15 s : écran final -->
   <div class="final">
     <h2 style="{anim(('entre', 0.5, 8.15))}">{t["fin"]}</h2>
     <p style="{anim(('entre', 0.45, 8.4))}">{t["sous"]}</p>
@@ -200,7 +203,7 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 
 /* Ouverture */
 .ouverture { left: 24px; right: 24px; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; text-align: center; }
-.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 38px; line-height: 1.12; color: #fff; text-wrap: balance; }
+.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 34px; line-height: 1.15; color: #fff; text-wrap: balance; }
 
 /* Légendes */
 .legendes { left: 22px; right: 22px; top: 52px; height: 110px; }
@@ -254,7 +257,7 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 .final p { margin-top: 16px; font-size: 19px; line-height: 1.4; color: rgba(255, 255, 255, 0.9); text-wrap: balance; }
 .cta { margin-top: 30px; width: 100%; height: 58px; border-radius: 14px; background: var(--jaune); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; }
 
-/* Animations : délais absolus, la page est une timeline de 10 s */
+/* Animations : délais absolus, la page est une timeline de 10 s × RYTHME */
 @keyframes entre { from { opacity: 0; transform: translateY(18px) scale(0.96); } }
 @keyframes pop { from { opacity: 0; transform: scale(0.4); } }
 @keyframes sort { to { opacity: 0; transform: translateY(-14px); } }

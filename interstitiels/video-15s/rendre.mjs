@@ -1,5 +1,5 @@
-// Rend l'interstitielle de 10 s en MP4, une vidéo par langue (1080 × 2338, 30 i/s), dans mp4/.
-// Usage : node interstitiels/video-10s/rendre.mjs [langues, ex. "fr,en"] [instants à capturer en PNG, ex. "1,3,5"]
+// Rend l'interstitielle de 15 s en MP4, une vidéo par langue (1080 × 2338, 30 i/s), dans mp4/.
+// Usage : node interstitiels/video-15s/rendre.mjs [langues, ex. "fr,en"] [instants à capturer en PNG, ex. "1,3,5"]
 import { createRequire } from "node:module";
 import { execFileSync } from "node:child_process";
 import { mkdirSync, rmSync } from "node:fs";
@@ -10,7 +10,7 @@ const { chromium } = createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODUL
 const ici = path.dirname(fileURLToPath(import.meta.url));
 const langues = (process.argv[2] || "fr,en,de,nl,pl,it,es").split(",");
 const apercus = process.argv[3] ? process.argv[3].split(",").map(Number) : null; // mode aperçu : PNG seulement
-const duree = 10, ips = 30;
+const duree = 15, ips = 30;
 
 const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
 for (const lang of langues) {
@@ -35,8 +35,8 @@ for (const lang of langues) {
   await page.close();
   execFileSync("ffmpeg", ["-y", "-v", "error", "-framerate", String(ips), "-i", path.join(tmp, "%04d.png"),
     "-vf", "scale=1080:2338:flags=lanczos,format=yuv420p", "-c:v", "libx264", "-crf", "18", "-preset", "slow",
-    "-movflags", "+faststart", path.join(ici, "mp4", `interstitiel-10s-${lang}.mp4`)]);
+    "-movflags", "+faststart", path.join(ici, "mp4", `interstitiel-15s-${lang}.mp4`)]);
   rmSync(tmp, { recursive: true, force: true });
-  console.log(`interstitiel-10s-${lang}.mp4`);
+  console.log(`interstitiel-15s-${lang}.mp4`);
 }
 await navigateur.close();
