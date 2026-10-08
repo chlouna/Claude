@@ -51,12 +51,12 @@ EDITIONS = {
     # ---------- Newsletter Trucker · octobre 2026 ----------
     ("trucker/2026-10", "fr"): dict(
         campagne="trucker-2026-10",
-        objet="Le 25 octobre, la nuit te rattrape",
+        objet="Depuis dimanche, la nuit te rattrape",
         preheader="Une heure de jour en moins : nos astuces pour garer ton camion sans stress.",
         lien_navigateur="Voir dans le navigateur",
-        surtitre="Dimanche 25 octobre, on passe à l'heure d'hiver",
+        surtitre="Depuis dimanche, on est à l'heure d'hiver",
         chiffre="−1\u00a0h",
-        accroche="de jour en fin de journée. Dès lundi, la nuit tombe vers 17\u00a0h\u00a030.",
+        accroche="de jour en fin de journée. La nuit tombe maintenant vers 17\u00a0h\u00a030.",
         salutation='Salut {{ contact.PRENOM | default : "la route" }},',
         titre="Trouve ta place avant la cohue",
         points=[
@@ -83,12 +83,12 @@ EDITIONS = {
     ),
     ("trucker/2026-10", "it"): dict(
         campagne="trucker-2026-10",
-        objet="Il 25 ottobre il buio arriva prima",
+        objet="Da domenica il buio arriva prima",
         preheader="Un'ora di luce in meno: i nostri consigli per parcheggiare il camion senza stress.",
         lien_navigateur="Visualizza nel browser",
-        surtitre="Domenica 25 ottobre si torna all'ora solare",
+        surtitre="Da domenica siamo tornati all'ora solare",
         chiffre="−1\u00a0h",
-        accroche="di luce a fine giornata. Da lunedì il sole tramonta verso le 17.",
+        accroche="di luce a fine giornata. Ora il sole tramonta verso le 17.",
         salutation='Ciao {{ contact.PRENOM | default : "camionista" }},',
         titre="Trova il tuo posto prima della ressa",
         points=[

@@ -2,12 +2,20 @@
 
 ## Le plan d'envoi
 
-| Newsletter | Pour qui | Rythme | Langues |
+| Newsletter | Pour qui | Envoi | Langues |
 |---|---|---|---|
-| Trucker | Conducteurs qui utilisent l'app | Mensuelle | FR, IT |
-| Nouveautés Trucker | Conducteurs qui utilisent l'app | À chaque nouveauté | FR, IT |
-| Owner | Établissements présents sur Truckfly | Mensuelle | à préciser |
-| B2B | Partenaires et clients pros : nos nouveautés, l'actu du transport | Mensuelle | FR, EN, IT, ES, DE, NL, PL |
+| B2B | Partenaires et clients pros : nos nouveautés, l'actu du transport | Milieu du mois, vers le 15 | FR, EN, IT, ES, DE, NL, PL |
+| Trucker | Conducteurs qui utilisent l'app | Dernier vendredi du mois | FR, IT |
+| Owner | Établissements présents sur Truckfly | Dernier vendredi du mois | FR (pour l'instant) |
+| Nouveautés Trucker | Conducteurs qui utilisent l'app | Le lundi qui suit le dernier vendredi, quand il y a une nouveauté | FR, IT |
+
+Prochaines dates :
+
+| Mois | B2B | Trucker et Owner | Nouveautés Trucker |
+|---|---|---|---|
+| Octobre 2026 | jeudi 15 | vendredi 30 | lundi 2 novembre |
+| Novembre 2026 | dimanche 15 : avancer au vendredi 13 ou décaler au lundi 16 | vendredi 27 | lundi 30 |
+| Décembre 2026 | mardi 15 | vendredi 25 (Noël) : à avancer, par exemple au vendredi 18 | lundi 28 |
 
 ## Fichiers
 
@@ -20,10 +28,12 @@
 
 | | FR | IT |
 |---|---|---|
-| Objet (A) | Le 25 octobre, la nuit te rattrape | Il 25 ottobre il buio arriva prima |
+| Objet (A) | Depuis dimanche, la nuit te rattrape | Da domenica il buio arriva prima |
 | Objet (B, test A/B) | Ce soir, tu dors où ? | Stasera dove dormi? |
 | Preheader | Une heure de jour en moins : nos astuces pour garer ton camion sans stress. | Un'ora di luce in meno: i nostri consigli per parcheggiare il camion senza stress. |
 | CTA | Trouver mon spot | Trova il mio posto |
+
+Envoi le vendredi 30 octobre, donc après le passage à l'heure d'hiver : l'accroche en parle au passé (« depuis dimanche »).
 
 Les rappels hiver diffèrent par pays : Loi Montagne au 1er novembre en France, obligation hivernale au 15 novembre en Italie.
 
