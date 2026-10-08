@@ -22,8 +22,7 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 
 /* Ouverture */
 .ouverture { left: 24px; right: 24px; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; text-align: center; }
-.logo { width: 230px; height: auto; }
-.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 34px; line-height: 1.12; color: #fff; text-wrap: balance; }
+.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 38px; line-height: 1.12; color: #fff; text-wrap: balance; }
 
 /* Légendes */
 .legendes { left: 22px; right: 22px; top: 52px; height: 110px; }
@@ -76,7 +75,6 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 .final h2 { font-family: "Bib", sans-serif; font-weight: 700; font-size: 44px; line-height: 1.08; color: #fff; text-wrap: balance; }
 .final p { margin-top: 16px; font-size: 19px; line-height: 1.4; color: rgba(255, 255, 255, 0.9); text-wrap: balance; }
 .cta { margin-top: 30px; width: 100%; height: 58px; border-radius: 14px; background: var(--jaune); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; }
-.logo-bas { position: absolute; bottom: 46px; width: 150px; height: auto; }
 
 /* Animations : délais absolus, la page est une timeline de 10 s */
 @keyframes entre { from { opacity: 0; transform: translateY(18px) scale(0.96); } }
@@ -90,19 +88,18 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 </head>
 <body>
 <main class="ecran">
-  <!-- 0–2 s : logo et titre -->
+  <!-- 0–2 s : titre -->
   <div class="ouverture" style="animation: sort 0.35s ease 1.75s forwards">
-    <img class="logo" src="assets/logo-blanc.png" alt="Michelin Truckfly" style="animation: entre 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.15) 0.1s both" />
-    <h1 class="titre" style="animation: entre 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.15) 0.55s both">Michelin Truckfly wird sozialer!</h1>
+    <h1 class="titre" style="animation: entre 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.15) 0.15s both">Michelin Truckfly wird sozialer!</h1>
   </div>
 
   <!-- Légendes des scènes -->
   <div class="legendes">
-    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 2.05s both, sort 0.3s ease 2.95s forwards">📸 Füge dein Foto hinzu</p>
-    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 3.0s both, sort 0.3s ease 3.95s forwards">✍️ Personalisiere deine Bio</p>
-    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 4.05s both, sort 0.3s ease 5.95s forwards">🚛 Füge deinen Lkw hinzu</p>
-    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 6.05s both, sort 0.3s ease 6.95s forwards">👥 Finde deine Freunde</p>
-    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 7.0s both, sort 0.3s ease 7.85s forwards">📍 Entdecke täglich, was sie machen</p>
+    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 2.05s both, sort 0.3s ease 2.95s forwards">Füge dein Foto hinzu</p>
+    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 3.0s both, sort 0.3s ease 3.95s forwards">Personalisiere deine Bio</p>
+    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 4.05s both, sort 0.3s ease 5.95s forwards">Füge deinen Lkw hinzu</p>
+    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 6.05s both, sort 0.3s ease 6.95s forwards">Finde deine Freunde</p>
+    <p class="legende" style="animation: entre 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.15) 7.0s both, sort 0.3s ease 7.85s forwards">Entdecke täglich, was sie machen</p>
   </div>
 
   <!-- 2–6 s : le Profil Trucker se construit -->
@@ -123,7 +120,7 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
     </div>
     <div class="p-bio">
       <div class="barres" style="animation: fondu 0.2s ease 3.05s forwards"><i></i><i></i></div>
-      <p style="animation: balaye 0.75s ease 3.1s both">Lkw-Fahrer 🚛 | Immer auf der Straße | Auf der Suche nach den besten Spots!</p>
+      <p style="animation: balaye 0.75s ease 3.1s both">Lkw-Fahrer | Immer auf der Straße | Auf der Suche nach den besten Spots!</p>
     </div>
     <div class="p-camion">
       <div class="camion-vide" style="animation: fondu 0.2s ease 4.2s forwards">+</div>
@@ -163,8 +160,7 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
     <h2 style="animation: entre 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.15) 8.15s both">Fahr nie mehr allein!</h2>
     <p style="animation: entre 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.15) 8.4s both">Erstelle dein Trucker-Profil auf Michelin Truckfly</p>
     <a class="cta" style="animation: pop 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.15) 8.7s both, pouls 0.6s ease 9.3s both">Mein Profil erstellen</a>
-    <img class="logo-bas" src="assets/logo-blanc.png" alt="" style="animation: entre 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.15) 8.9s both" />
-  </div>
+    </div>
 </main>
 </body>
 </html>

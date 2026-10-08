@@ -7,7 +7,7 @@ au format téléphone 390 × 844. rendre.mjs en tire un MP4 par langue (1080 × 
 Toutes les animations sont en CSS avec des délais absolus : la page entière est une timeline
 de 10 s, que le rendu avance image par image.
 
-0–2 s logo + titre · 2–4 s photo, bio · 4–6 s camion · 6–8 s amis, activité · 8–10 s fin.
+0–2 s titre · 2–4 s photo, bio · 4–6 s camion · 6–8 s amis, activité · 8–10 s fin.
 """
 
 import sys
@@ -24,7 +24,7 @@ TEXTES = {
         photo="Ajoute ta photo", bio="Personnalise ta bio", camion="Ajoute ton camion",
         amis="Retrouve tes amis", activite="Découvre leur activité au quotidien",
         fin="Ne roule plus seul&nbsp;!", sous="Crée ton Profil Trucker sur Michelin Truckfly", cta="Créer mon profil",
-        texte_bio="Conducteur routier 🚛 | Toujours sur la route | À la recherche des meilleurs spots&nbsp;!",
+        texte_bio="Conducteur routier | Toujours sur la route | À la recherche des meilleurs spots&nbsp;!",
         membre="Membre depuis 2026", surnom="Le Bolide", dims=("Hauteur", "Largeur", "Longueur"), sep=",",
         invitation="Louna vous a envoyé une invitation", accepter="Accepter",
         visite="Nicolas J. a visité&nbsp;:", arret="David s’est arrêté ici&nbsp;:", instant="à l’instant",
@@ -34,7 +34,7 @@ TEXTES = {
         photo="Add your photo", bio="Personalise your bio", camion="Add your truck",
         amis="Find your friends", activite="See what they’re up to every day",
         fin="Never drive alone again!", sous="Create your Trucker Profile on Michelin Truckfly", cta="Create my profile",
-        texte_bio="Truck driver 🚛 | Always on the road | Looking for the best spots!",
+        texte_bio="Truck driver | Always on the road | Looking for the best spots!",
         membre="Member since 2026", surnom="The Rocket", dims=("Height", "Width", "Length"), sep=".",
         invitation="Louna sent you an invitation", accepter="Accept",
         visite="Nicolas J. visited:", arret="David stopped here:", instant="just now",
@@ -44,7 +44,7 @@ TEXTES = {
         photo="Füge dein Foto hinzu", bio="Personalisiere deine Bio", camion="Füge deinen Lkw hinzu",
         amis="Finde deine Freunde", activite="Entdecke täglich, was sie machen",
         fin="Fahr nie mehr allein!", sous="Erstelle dein Trucker-Profil auf Michelin Truckfly", cta="Mein Profil erstellen",
-        texte_bio="Lkw-Fahrer 🚛 | Immer auf der Straße | Auf der Suche nach den besten Spots!",
+        texte_bio="Lkw-Fahrer | Immer auf der Straße | Auf der Suche nach den besten Spots!",
         membre="Mitglied seit 2026", surnom="Der Blitz", dims=("Höhe", "Breite", "Länge"), sep=",",
         invitation="Louna hat dir eine Einladung geschickt", accepter="Annehmen",
         visite="Nicolas J. hat besucht:", arret="David hat hier angehalten:", instant="gerade eben",
@@ -54,7 +54,7 @@ TEXTES = {
         photo="Voeg je foto toe", bio="Personaliseer je bio", camion="Voeg je truck toe",
         amis="Vind je vrienden", activite="Ontdek elke dag wat ze doen",
         fin="Rij nooit meer alleen!", sous="Maak je Truckerprofiel aan op Michelin Truckfly", cta="Mijn profiel aanmaken",
-        texte_bio="Vrachtwagenchauffeur 🚛 | Altijd onderweg | Op zoek naar de beste plekken!",
+        texte_bio="Vrachtwagenchauffeur | Altijd onderweg | Op zoek naar de beste plekken!",
         membre="Lid sinds 2026", surnom="De Bliksem", dims=("Hoogte", "Breedte", "Lengte"), sep=",",
         invitation="Louna heeft je een uitnodiging gestuurd", accepter="Accepteren",
         visite="Nicolas J. heeft bezocht:", arret="David is hier gestopt:", instant="zojuist",
@@ -64,7 +64,7 @@ TEXTES = {
         photo="Dodaj swoje zdjęcie", bio="Spersonalizuj swój opis", camion="Dodaj swoją ciężarówkę",
         amis="Znajdź znajomych", activite="Odkrywaj ich codzienną aktywność",
         fin="Nie jeźdź już sam!", sous="Utwórz swój Profil Truckera w Michelin Truckfly", cta="Utwórz mój profil",
-        texte_bio="Kierowca ciężarówki 🚛 | Zawsze w trasie | W poszukiwaniu najlepszych miejsc!",
+        texte_bio="Kierowca ciężarówki | Zawsze w trasie | W poszukiwaniu najlepszych miejsc!",
         membre="Członek od 2026", surnom="Błyskawica", dims=("Wysokość", "Szerokość", "Długość"), sep=",",
         invitation="Louna wysłała ci zaproszenie", accepter="Akceptuj",
         visite="Nicolas J. odwiedził:", arret="David zatrzymał się tutaj:", instant="przed chwilą",
@@ -74,7 +74,7 @@ TEXTES = {
         photo="Aggiungi la tua foto", bio="Personalizza la tua bio", camion="Aggiungi il tuo camion",
         amis="Ritrova i tuoi amici", activite="Scopri la loro attività ogni giorno",
         fin="Non viaggiare più da solo!", sous="Crea il tuo Profilo Trucker su Michelin Truckfly", cta="Crea il mio profilo",
-        texte_bio="Camionista 🚛 | Sempre in viaggio | Alla ricerca dei posti migliori!",
+        texte_bio="Camionista | Sempre in viaggio | Alla ricerca dei posti migliori!",
         membre="Membro dal 2026", surnom="Il Fulmine", dims=("Altezza", "Larghezza", "Lunghezza"), sep=",",
         invitation="Louna ti ha inviato un invito", accepter="Accetta",
         visite="Nicolas J. ha visitato:", arret="David si è fermato qui:", instant="adesso",
@@ -84,7 +84,7 @@ TEXTES = {
         photo="Añade tu foto", bio="Personaliza tu bio", camion="Añade tu camión",
         amis="Encuentra a tus amigos", activite="Descubre su actividad cada día",
         fin="¡No vuelvas a conducir solo!", sous="Crea tu Perfil Trucker en Michelin Truckfly", cta="Crear mi perfil",
-        texte_bio="Camionero 🚛 | Siempre en la carretera | ¡Buscando los mejores sitios!",
+        texte_bio="Camionero | Siempre en la carretera | ¡Buscando los mejores sitios!",
         membre="Miembro desde 2026", surnom="El Rayo", dims=("Altura", "Anchura", "Longitud"), sep=",",
         invitation="Louna te ha enviado una invitación", accepter="Aceptar",
         visite="Nicolas J. ha visitado:", arret="David ha parado aquí:", instant="ahora mismo",
@@ -129,19 +129,18 @@ def page(lang, t):
 </head>
 <body>
 <main class="ecran">
-  <!-- 0–2 s : logo et titre -->
+  <!-- 0–2 s : titre -->
   <div class="ouverture" style="{anim(('sort', 0.35, 1.75))}">
-    <img class="logo" src="assets/logo-blanc.png" alt="Michelin Truckfly" style="{anim(('entre', 0.5, 0.1))}" />
-    <h1 class="titre" style="{anim(('entre', 0.45, 0.55))}">{t["titre"]}</h1>
+    <h1 class="titre" style="{anim(('entre', 0.5, 0.15))}">{t["titre"]}</h1>
   </div>
 
   <!-- Légendes des scènes -->
   <div class="legendes">
-    {legende("📸 " + t["photo"], 2.05, 2.95)}
-    {legende("✍️ " + t["bio"], 3.0, 3.95)}
-    {legende("🚛 " + t["camion"], 4.05, 5.95)}
-    {legende("👥 " + t["amis"], 6.05, 6.95)}
-    {legende("📍 " + t["activite"], 7.0, 7.85)}
+    {legende(t["photo"], 2.05, 2.95)}
+    {legende(t["bio"], 3.0, 3.95)}
+    {legende(t["camion"], 4.05, 5.95)}
+    {legende(t["amis"], 6.05, 6.95)}
+    {legende(t["activite"], 7.0, 7.85)}
   </div>
 
   <!-- 2–6 s : le Profil Trucker se construit -->
@@ -176,8 +175,7 @@ def page(lang, t):
     <h2 style="{anim(('entre', 0.5, 8.15))}">{t["fin"]}</h2>
     <p style="{anim(('entre', 0.45, 8.4))}">{t["sous"]}</p>
     <a class="cta" style="{anim(('pop', 0.45, 8.7), ('pouls', 0.6, 9.3, 'both'))}">{t["cta"]}</a>
-    <img class="logo-bas" src="assets/logo-blanc.png" alt="" style="{anim(('entre', 0.5, 8.9))}" />
-  </div>
+    </div>
 </main>
 </body>
 </html>
@@ -202,8 +200,7 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 
 /* Ouverture */
 .ouverture { left: 24px; right: 24px; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; text-align: center; }
-.logo { width: 230px; height: auto; }
-.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 34px; line-height: 1.12; color: #fff; text-wrap: balance; }
+.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 38px; line-height: 1.12; color: #fff; text-wrap: balance; }
 
 /* Légendes */
 .legendes { left: 22px; right: 22px; top: 52px; height: 110px; }
@@ -256,7 +253,6 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 .final h2 { font-family: "Bib", sans-serif; font-weight: 700; font-size: 44px; line-height: 1.08; color: #fff; text-wrap: balance; }
 .final p { margin-top: 16px; font-size: 19px; line-height: 1.4; color: rgba(255, 255, 255, 0.9); text-wrap: balance; }
 .cta { margin-top: 30px; width: 100%; height: 58px; border-radius: 14px; background: var(--jaune); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; }
-.logo-bas { position: absolute; bottom: 46px; width: 150px; height: auto; }
 
 /* Animations : délais absolus, la page est une timeline de 10 s */
 @keyframes entre { from { opacity: 0; transform: translateY(18px) scale(0.96); } }

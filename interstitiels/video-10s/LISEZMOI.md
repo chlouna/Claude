@@ -9,11 +9,11 @@ Une vidéo par langue, 1080 × 2338, 30 i/s, 10 s, sans son : `mp4/interstitiel-
 
 | Temps | Ce qui se passe |
 |---|---|
-| 0–2 s | Logo Michelin Truckfly blanc, puis le titre « Michelin Truckfly devient plus social ! » |
-| 2–4 s | Le Profil Trucker de Charlie apparaît : la photo s'ajoute (📸), puis la bio s'écrit (✍️) |
-| 4–6 s | Le camion arrive sur le profil (🚛) : photo carrée, surnom, hauteur, largeur et longueur |
-| 6–8 s | Le profil se réduit et les cartes des amis arrivent (👥 📍) : invitation de Louna, visite de Nicolas J. à AS 24, arrêt de David au Relais des Cigales |
-| 8–10 s | Écran final : « Ne roule plus seul ! », sous-titre, bouton jaune « Créer mon profil » qui pulse, logo en bas |
+| 0–2 s | Le titre « Michelin Truckfly devient plus social ! » seul, sans logo |
+| 2–4 s | Le Profil Trucker de Charlie apparaît : la photo s'ajoute, puis la bio s'écrit |
+| 4–6 s | Le camion arrive sur le profil : photo carrée, surnom, hauteur, largeur et longueur |
+| 6–8 s | Le profil se réduit et les cartes des amis arrivent : invitation de Louna, visite de Nicolas J. à AS 24, arrêt de David au Relais des Cigales |
+| 8–10 s | Écran final : « Ne roule plus seul ! », sous-titre, bouton jaune « Créer mon profil » qui pulse |
 
 ## Textes à faire valider par les équipes locales
 
@@ -30,7 +30,7 @@ Traductions faites pour cette maquette : à relire par un locuteur natif de chaq
 | Titre final | Ne roule plus seul ! | Never drive alone again! | Fahr nie mehr allein! | Rij nooit meer alleen! | Nie jeźdź już sam! | Non viaggiare più da solo! | ¡No vuelvas a conducir solo! |
 | Sous-titre final | Crée ton Profil Trucker sur Michelin Truckfly | Create your Trucker Profile on Michelin Truckfly | Erstelle dein Trucker-Profil auf Michelin Truckfly | Maak je Truckerprofiel aan op Michelin Truckfly | Utwórz swój Profil Truckera w Michelin Truckfly | Crea il tuo Profilo Trucker su Michelin Truckfly | Crea tu Perfil Trucker en Michelin Truckfly |
 | Bouton | Créer mon profil | Create my profile | Mein Profil erstellen | Mijn profiel aanmaken | Utwórz mój profil | Crea il mio profilo | Crear mi perfil |
-| Bio de Charlie | Conducteur routier 🚛 \| Toujours sur la route \| À la recherche des meilleurs spots ! | Truck driver 🚛 \| Always on the road \| Looking for the best spots! | Lkw-Fahrer 🚛 \| Immer auf der Straße \| Auf der Suche nach den besten Spots! | Vrachtwagenchauffeur 🚛 \| Altijd onderweg \| Op zoek naar de beste plekken! | Kierowca ciężarówki 🚛 \| Zawsze w trasie \| W poszukiwaniu najlepszych miejsc! | Camionista 🚛 \| Sempre in viaggio \| Alla ricerca dei posti migliori! | Camionero 🚛 \| Siempre en la carretera \| ¡Buscando los mejores sitios! |
+| Bio de Charlie | Conducteur routier \| Toujours sur la route \| À la recherche des meilleurs spots ! | Truck driver \| Always on the road \| Looking for the best spots! | Lkw-Fahrer \| Immer auf der Straße \| Auf der Suche nach den besten Spots! | Vrachtwagenchauffeur \| Altijd onderweg \| Op zoek naar de beste plekken! | Kierowca ciężarówki \| Zawsze w trasie \| W poszukiwaniu najlepszych miejsc! | Camionista \| Sempre in viaggio \| Alla ricerca dei posti migliori! | Camionero \| Siempre en la carretera \| ¡Buscando los mejores sitios! |
 | Surnom du camion | Le Bolide | The Rocket | Der Blitz | De Bliksem | Błyskawica | Il Fulmine | El Rayo |
 | Invitation | Louna vous a envoyé une invitation | Louna sent you an invitation | Louna hat dir eine Einladung geschickt | Louna heeft je een uitnodiging gestuurd | Louna wysłała ci zaproszenie | Louna ti ha inviato un invito | Louna te ha enviado una invitación |
 | Visite | Nicolas J. a visité : | Nicolas J. visited: | Nicolas J. hat besucht: | Nicolas J. heeft bezocht: | Nicolas J. odwiedził: | Nicolas J. ha visitato: | Nicolas J. ha visitado: |
@@ -38,7 +38,8 @@ Traductions faites pour cette maquette : à relire par un locuteur natif de chaq
 
 ## Choix
 
-- **Casse** : « Michelin Truckfly » et « Ne roule plus seul ! » en casse de phrase, comme demandé et selon la charte. Le logo (image officielle) garde sa typographie.
+- **Casse** : « Michelin Truckfly » et « Ne roule plus seul ! » en casse de phrase, comme demandé et selon la charte.
+- **Sans logo ni emoji** : pas de logo dans la vidéo, et aucun emoji dans les textes (légendes et bio).
 - **Décimales** : virgule partout sauf en anglais (4.00 m).
 - **Surnom du camion** traduit dans chaque langue pour rester parlant. Les noms (Charlie G., Louna, Nicolas J., David) et les lieux (AS 24, Le Relais des Cigales) restent identiques.
 - **Drapeau** : Charlie G. garde le drapeau français dans toutes les versions. Il peut être adapté par pays.
