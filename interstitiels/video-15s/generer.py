@@ -3,7 +3,7 @@
     python3 interstitiels/video-15s/generer.py
 
 Écrit une page par langue (fr.html, en.html, de.html, nl.html, pl.html, it.html, es.html),
-au format téléphone 390 × 844. rendre.mjs en tire un MP4 par langue (1080 × 2338, 30 i/s).
+au format 384 × 576 (2:3). rendre.mjs en tire un MP4 par langue (768 × 1152, 30 i/s).
 Toutes les animations sont en CSS avec des délais absolus : la page entière est une timeline
 de 15 s, que le rendu avance image par image.
 
@@ -126,7 +126,7 @@ def page(lang, t):
 <html lang="{lang}">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=390, height=844" />
+<meta name="viewport" content="width=384, height=576" />
 <title>Interstitielle Profil Trucker 15 s ({lang})</title>
 <style>{CSS}</style>
 </head>
@@ -193,10 +193,10 @@ CSS = """
 @font-face { font-family: "Inter"; src: url("../assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
 :root { --bleu: #061866; --jaune: #ffff1a; --gris: #6e6e73; --bleu-clair: #dce6f7; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { width: 390px; height: 844px; overflow: hidden; background: var(--bleu); }
+html, body { width: 384px; height: 576px; overflow: hidden; background: var(--bleu); }
 body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 .ecran {
-  position: relative; width: 390px; height: 844px; overflow: hidden;
+  position: relative; width: 384px; height: 576px; overflow: hidden;
   background: radial-gradient(120% 70% at 50% 10%, #10287f 0%, var(--bleu) 52%, #000e38 100%);
 }
 .ecran > * { position: absolute; }
@@ -206,15 +206,15 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 .titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 34px; line-height: 1.15; color: #fff; text-wrap: balance; }
 
 /* Légendes */
-.legendes { left: 22px; right: 22px; top: 52px; height: 110px; }
+.legendes { left: 22px; right: 22px; top: 24px; height: 92px; }
 .legende {
-  position: absolute; left: 0; right: 0; top: 0; height: 110px; display: flex; align-items: center; justify-content: center;
-  text-align: center; font-family: "Bib", "Noto Color Emoji", sans-serif; font-weight: 700; font-size: 30px; line-height: 1.12; color: #fff; text-wrap: balance;
+  position: absolute; left: 0; right: 0; top: 0; height: 92px; display: flex; align-items: center; justify-content: center;
+  text-align: center; font-family: "Bib", "Noto Color Emoji", sans-serif; font-weight: 700; font-size: 28px; line-height: 1.12; color: #fff; text-wrap: balance;
 }
 
 /* Profil Trucker */
 .profil {
-  left: 24px; right: 24px; top: 190px; background: #fff; border-radius: 22px; padding: 18px;
+  left: 24px; right: 24px; top: 132px; background: #fff; border-radius: 22px; padding: 18px;
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28); transform-origin: 50% 0;
 }
 .p-haut { position: relative; display: flex; align-items: center; gap: 14px; height: 80px; }
@@ -243,9 +243,9 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 .dim b { font-size: 13px; white-space: nowrap; }
 
 /* Amis */
-.amis { left: 22px; right: 22px; top: 476px; display: flex; flex-direction: column; gap: 10px; }
-.carte { display: flex; align-items: center; gap: 12px; background: #fff; border-radius: 16px; padding: 11px 13px; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22); }
-.av-m { width: 50px; height: 50px; flex: none; }
+.amis { left: 22px; right: 22px; top: 324px; display: flex; flex-direction: column; gap: 8px; }
+.carte { display: flex; align-items: center; gap: 12px; background: #fff; border-radius: 16px; padding: 9px 13px; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22); }
+.av-m { width: 46px; height: 46px; flex: none; }
 .c-txt { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
 .gris { color: var(--gris); font-size: 12.5px; }
 .fort { font-weight: 700; font-size: 14.5px; line-height: 1.25; }
@@ -263,7 +263,7 @@ body { font-family: "Inter", "Noto Color Emoji", sans-serif; }
 @keyframes sort { to { opacity: 0; transform: translateY(-14px); } }
 @keyframes fondu { to { opacity: 0; } }
 @keyframes balaye { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
-@keyframes monte { to { transform: translateY(-14px) scale(0.84); } }
+@keyframes monte { to { transform: translateY(-10px) scale(0.64); } }
 @keyframes pouls { 50% { transform: scale(1.04); } }
 """
 

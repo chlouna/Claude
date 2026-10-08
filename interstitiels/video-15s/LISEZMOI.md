@@ -1,6 +1,6 @@
 # Interstitielle vidéo 15 s : Profil Trucker et Social Core
 
-Une vidéo par langue, 1080 × 2338, 30 i/s, 15 s, sans son : `mp4/interstitiel-15s-<langue>.mp4`.
+Une vidéo par langue, 768 × 1152 (format 2:3), 30 i/s, 15 s, sans son : `mp4/interstitiel-15s-<langue>.mp4`.
 
 - `generer.py` écrit une page HTML par langue (`fr.html`, `en.html`…), `rendre.mjs` en tire les MP4.
 - Régénérer : `python3 interstitiels/video-15s/generer.py`, puis `node interstitiels/video-15s/rendre.mjs` (ou `rendre.mjs fr,de` pour certaines langues).
