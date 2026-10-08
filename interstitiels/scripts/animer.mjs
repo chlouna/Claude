@@ -1,5 +1,5 @@
 // Rend chaque interstitiel de index.html en MP4 animé (1080 × 2338, 30 i/s) dans mp4/,
-// plus un montage des 12 écrans. Les animations CSS sont figées puis avancées image par image,
+// 1 interstitiel = 1 fichier. Les animations CSS sont figées puis avancées image par image,
 // pour un rendu sans saccade. Usage : node scripts/animer.mjs [durée en s, 4 par défaut]
 import { createRequire } from "node:module";
 import { execFileSync } from "node:child_process";
@@ -10,7 +10,7 @@ import path from "node:path";
 const { chromium } = createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE || "playwright");
 const racine = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const duree = parseFloat(process.argv[2] || "4");
-const filtre = process.argv[3] || ""; // ex. "i04" pour ne rendre qu'un écran (le montage est alors refait avec les MP4 existants)
+const filtre = process.argv[3] || ""; // ex. "i04" pour ne rendre qu'un écran
 const ips = 30;
 const images = Math.round(duree * ips);
 const tmp = path.join(racine, "mp4", ".images");
@@ -24,7 +24,7 @@ await page.evaluate(() => document.fonts.ready);
 await page.evaluate(() => document.body.classList.add("capture"));
 
 const ecrans = (await page.$$("section.ecran"));
-const tous = [];
+const tous = [];  // noms de tous les écrans, avant filtrage
 for (const e of ecrans) tous.push(`${await e.getAttribute("id")}-${await e.getAttribute("data-nom")}`);
 const garde = tous.map((n) => n.startsWith(filtre));
 for (let k = ecrans.length - 1; k >= 0; k--) if (!garde[k]) ecrans.splice(k, 1);
@@ -47,10 +47,5 @@ for (const n of noms) {
     "-vf", "scale=1080:2338:flags=lanczos,format=yuv420p", "-c:v", "libx264", "-crf", "18", "-preset", "slow",
     "-movflags", "+faststart", sortie]);
 }
-const sorties = tous.map((n) => path.join(racine, "mp4", `${n}.mp4`));
-const liste = path.join(tmp, "liste.txt");
-execFileSync("bash", ["-c", `printf "file '%s'\\n" ${sorties.map((s) => `"${s}"`).join(" ")} > "${liste}"`]);
-execFileSync("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", liste, "-c", "copy",
-  path.join(racine, "mp4", "montage-12-interstitiels.mp4")]);
 rmSync(tmp, { recursive: true, force: true });
-console.log(`${noms.length} MP4 (${duree} s) + montage dans mp4/`);
+console.log(`${noms.length} MP4 (${duree} s) dans mp4/`);

@@ -1,8 +1,8 @@
-"""Génère les 12 interstitiels Profil Trucker / Social Core de Michelin Truckfly.
+"""Génère les 9 interstitiels Profil Trucker / Social Core de Michelin Truckfly.
 
     python3 scripts/generer.py
 
-Écrit index.html : les 12 écrans au format téléphone (390 × 844 px), avec de petites animations
+Écrit index.html : les 9 écrans au format téléphone (390 × 844 px), avec de petites animations
 d'entrée. scripts/capturer.mjs en tire un PNG par écran (×3, soit 1170 × 2532 px) dans png/.
 
 Charte : Michelin Blue pour les visuels, Bib pour les titres, Inter pour l'interface (police
@@ -121,14 +121,13 @@ def profil(photo=True, bio=True, camion=True, coches=False, d0=0.0):
         </div>"""
 
 
-# --- Les 12 interstitiels -------------------------------------------------------------------
+# --- Les 9 interstitiels -------------------------------------------------------------------
 
 def ecran(num, titre, texte, cta, visuel, nom, plein=False, accroche=None, badge=None):
     acc = f'<p class="accroche">{accroche}</p>' if accroche else ""
     bad = f'<span class="badge">{badge}</span>' if badge else ""
     if plein:
         return f"""<section class="ecran plein" id="i{num:02d}" data-nom="{nom}">
-      <div class="statut"><span>9:41</span><span>●●● 4G</span></div>
       <button class="fermer" aria-label="Fermer">×</button>
       <div class="v-plein">{visuel}</div>
       <div class="bas">
@@ -140,7 +139,6 @@ def ecran(num, titre, texte, cta, visuel, nom, plein=False, accroche=None, badge
       </div>
     </section>"""
     return f"""<section class="ecran" id="i{num:02d}" data-nom="{nom}">
-      <div class="statut"><span>9:41</span><span>●●● 4G</span></div>
       <button class="fermer" aria-label="Fermer">×</button>
       <div class="visuel">{visuel}</div>
       <div class="feuille">
@@ -154,14 +152,12 @@ def ecran(num, titre, texte, cta, visuel, nom, plein=False, accroche=None, badge
     </section>"""
 
 
-def reseau():
-    return f"""<div class="reseau">
-          <svg class="liens" viewBox="0 0 330 250" aria-hidden="true">
-            <path d="M165 60 L70 175 M165 60 L260 175 M70 175 L260 175" pathLength="1" />
-          </svg>
-          <div class="noeud entre" style="--d: 0s; left: 125px; top: 20px">{avatar("louna", None, "av-xl")}<i class="en-ligne"></i></div>
-          <div class="noeud entre" style="--d: 0.25s; left: 30px; top: 135px">{avatar("nicolas", None, "av-xl")}<i class="en-ligne"></i></div>
-          <div class="noeud entre" style="--d: 0.5s; left: 220px; top: 135px">{avatar("david", None, "av-xl")}<i class="en-ligne"></i></div>
+def apercu():
+    """Écran 1 : un aperçu des nouveautés (profil, invitation, activité d'un ami)."""
+    return f"""<div class="apercu">
+          <div class="mini-profil entre" style="--d: 0s"><div class="p-photo">{PORTRAIT}</div><div class="p-nom"><b>Charlie G. <span class="fr"><i></i><i></i><i></i></span></b><span>Mon Profil Trucker</span></div></div>
+          {carte(avatar("louna", "invitation", "av-m"), None, "Louna vous a envoyé une invitation", d=0.35, extra='<span class="btn plein petit">Accepter</span>')}
+          {carte(avatar("nicolas", "visite", "av-m"), "Nicolas J. a visité :", "AS 24", d=0.7)}
         </div>"""
 
 
@@ -173,10 +169,10 @@ ETAT_BTN = lambda cls, contenu, label, d: f"""<div class="etat entre" style="--d
 ECRANS = [
     ecran(
         1,
-        "MICHELIN Truckfly devient plus social&nbsp;!",
+        "Michelin Truckfly devient plus social&nbsp;!",
         "Retrouve tes amis, partage ton profil et découvre leur activité au quotidien.",
         "Créer mon Profil Trucker",
-        reseau(),
+        apercu(),
         "decouverte",
         plein=True,
         badge="Nouveau",
@@ -188,22 +184,22 @@ ECRANS = [
         "Créer mon profil",
         profil()
         + """<div class="etapes">
-          <span class="entre" style="--d: 0s">① Photo</span><span class="entre" style="--d: 0.5s">② Bio</span><span class="entre" style="--d: 1s">③ Camion</span>
+          <span class="entre" style="--d: 0s">Photo</span><span class="entre" style="--d: 0.5s">Bio</span><span class="entre" style="--d: 1s">Camion</span>
         </div>""",
         "profil-trucker",
         badge="Nouveau",
     ),
     ecran(
         3,
-        "Personnalise ton Profil Trucker",
-        "Ajoute ton prénom, ta bio, ta photo et ton camion.",
+        "Ton profil est presque complet",
+        "Ajoute ta bio et ton camion.",
         "Personnaliser mon profil",
         f"""<div class="check">
           <div class="check-tete">{anneau_progres(50, "#061866")}<div><b>Ton Profil Trucker</b><span>2 étapes sur 4</span></div></div>
           <ul>
             <li class="fait entre" style="--d: 0s">{COCHE}Prénom et nom</li>
-            <li class="fait entre" style="--d: 0.2s">{COCHE}Bio</li>
-            <li class="entre" style="--d: 0.4s">{PLUS}Photo de profil</li>
+            <li class="fait entre" style="--d: 0.2s">{COCHE}Photo de profil</li>
+            <li class="entre" style="--d: 0.4s">{PLUS}Bio</li>
             <li class="entre" style="--d: 0.6s">{PLUS}Camion</li>
           </ul>
         </div>""",
@@ -212,7 +208,7 @@ ECRANS = [
     ),
     ecran(
         4,
-        "Retrouve tes amis sur MICHELIN Truckfly",
+        "Retrouve tes amis sur Michelin Truckfly",
         "Envoie-leur une invitation et construis ton réseau de conducteurs.",
         "Ajouter mes amis",
         f"""<div class="etats">
@@ -240,19 +236,6 @@ ECRANS = [
     ),
     ecran(
         6,
-        "Bienvenue dans le Social Core",
-        "Découvre ce que font tes amis et reste connecté à ta communauté de conducteurs.",
-        "Découvrir",
-        """<div class="tuiles">
-          <div class="tuile entre" style="--d: 0s"><span class="emo">👥</span><b>Tes amis</b></div>
-          <div class="tuile entre" style="--d: 0.3s"><span class="emo">📍</span><b>Leurs activités</b></div>
-          <div class="tuile entre" style="--d: 0.6s"><span class="emo pulse">🟢</span><b>Qui est en ligne</b></div>
-        </div>""",
-        "social-core",
-        badge="Nouveau",
-    ),
-    ecran(
-        7,
         "Que font tes amis aujourd’hui&nbsp;?",
         "Découvre leur activité au quotidien et regarde qui est en ligne.",
         "Voir l’activité",
@@ -264,7 +247,7 @@ ECRANS = [
         "activite-amis",
     ),
     ecran(
-        8,
+        7,
         "Partage tes bons plans avec tes amis",
         "Découvre leurs recommandations et partage les tiennes avec la communauté.",
         "Découvrir les recommandations",
@@ -276,7 +259,7 @@ ECRANS = [
         "recommandations",
     ),
     ecran(
-        9,
+        8,
         "Et ton camion&nbsp;?&nbsp;🚛",
         "Ajoute son nom, sa photo et ses dimensions à ton Profil Trucker.",
         "Ajouter mon camion",
@@ -291,7 +274,7 @@ ECRANS = [
         "camion",
     ),
     ecran(
-        10,
+        9,
         "Ton profil n’attend plus que toi&nbsp;!",
         "Ajoute ta photo, ta bio et ton camion en quelques secondes.",
         "Compléter mon profil",
@@ -303,27 +286,7 @@ ECRANS = [
         </div>""",
         "rappel",
     ),
-    ecran(
-        11,
-        "Ton profil est prêt&nbsp;!&nbsp;🎉",
-        "Maintenant, ajoute tes amis et retrouve ta communauté sur MICHELIN Truckfly.",
-        "Ajouter mes amis",
-        f"""{profil(coches=True)}
-        <div class="complet entre" style="--d: 0.3s">{COCHE}Profil complété à 100 %</div>""",
-        "profil-pret",
-    ),
-    ecran(
-        12,
-        "Ne roule plus seul&nbsp;!",
-        "Crée ton Profil Trucker, retrouve tes amis et découvre leur activité au quotidien.",
-        "Créer mon Profil Trucker",
-        reseau()
-        + f"""<div class="mini-notifs">
-          {carte(avatar("louna", "invitation", "av-s"), None, "Louna vous a envoyé une invitation", d=0.8)}
-        </div>""",
-        "ne-roule-plus-seul",
-        plein=True,
-    ),
+
 ]
 
 CSS = """
@@ -360,25 +323,23 @@ body {
   position: relative; width: 390px; height: 844px; overflow: hidden;
   border-radius: 40px; background: var(--bleu); color: #000;
   box-shadow: 0 20px 50px rgba(6, 24, 102, 0.22);
+  display: flex; flex-direction: column;
 }
 .capture .ecran { border-radius: 0; box-shadow: none; }
-.statut {
-  position: absolute; left: 0; right: 0; top: 0; height: 48px; padding: 16px 28px 0;
-  display: flex; justify-content: space-between; color: #fff; font-weight: 600; font-size: 15px; z-index: 3;
-}
 .fermer {
-  position: absolute; right: 18px; top: 56px; z-index: 3; width: 34px; height: 34px; border-radius: 50%;
+  position: absolute; right: 18px; top: 20px; z-index: 3; width: 34px; height: 34px; border-radius: 50%;
   border: 0; background: rgba(255, 255, 255, 0.16); color: #fff; font-size: 24px; line-height: 34px;
 }
+/* Le visuel bleu prend toute la place que la feuille blanche, ajustée à son texte, laisse libre */
 .visuel {
-  position: absolute; left: 0; right: 0; top: 0; height: 470px;
+  position: relative; flex: 1; min-height: 0;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
-  padding: 96px 24px 54px;
+  padding: 64px 24px 52px;
   background: radial-gradient(120% 70% at 50% 0%, #10287f 0%, var(--bleu) 55%, var(--bleu-nuit) 100%);
 }
 .feuille {
-  position: absolute; left: 0; right: 0; bottom: 0; min-height: 404px;
-  background: #fff; border-radius: 28px 28px 0 0; padding: 30px 26px 30px;
+  position: relative; margin-top: -28px; flex: none;
+  background: #fff; border-radius: 28px 28px 0 0; padding: 28px 26px 26px;
   display: flex; flex-direction: column;
 }
 h1 { font-family: "Bib", "Noto Color Emoji", sans-serif; font-weight: 700; font-size: 30px; line-height: 1.12; color: #000; }
@@ -392,30 +353,27 @@ h1 { font-family: "Bib", "Noto Color Emoji", sans-serif; font-weight: 700; font-
   background: var(--bleu); color: #fff; font-weight: 700; font-size: 12.5px;
 }
 .cta {
-  margin-top: auto; height: 56px; border-radius: 14px; background: var(--bleu); color: #fff;
+  margin-top: 24px; height: 56px; border-radius: 14px; background: var(--bleu); color: #fff;
   display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px; text-decoration: none;
 }
-.cta.jaune { background: var(--jaune); color: #000; margin-top: 26px; }
+.cta.jaune { background: var(--jaune); color: #000; }
 .plus-tard { margin-top: 12px; text-align: center; color: var(--gris); font-size: 15px; font-weight: 600; text-decoration: none; }
 .plein .plus-tard { color: rgba(255, 255, 255, 0.75); }
 
-/* Écrans pleine page bleue (1 et 12) */
+/* Écran pleine page bleue (1) */
 .plein { background: radial-gradient(110% 60% at 50% 18%, #10287f 0%, var(--bleu) 50%, var(--bleu-nuit) 100%); }
-.v-plein { position: absolute; left: 0; right: 0; top: 96px; height: 380px; display: flex; flex-direction: column; align-items: center; }
-.bas { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 26px 34px; display: flex; flex-direction: column; }
-.plein h1 { color: #fff; font-size: 36px; }
+.v-plein { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 64px 24px 8px; }
+.bas { position: relative; flex: none; padding: 8px 26px 26px; display: flex; flex-direction: column; }
+.plein h1 { color: #fff; font-size: 34px; }
 .plein .texte { color: rgba(255, 255, 255, 0.86); }
 .plein .badge { background: var(--jaune); color: #000; }
 
-/* Réseau d'avatars */
-.reseau { position: relative; width: 330px; height: 250px; }
-.liens { position: absolute; inset: 0; }
-.liens path { fill: none; stroke: rgba(255, 255, 255, 0.35); stroke-width: 3; stroke-dasharray: 1; animation: trace 1.2s ease 0.6s both; }
-.noeud { position: absolute; width: 84px; height: 84px; }
-.av-xl { width: 84px; height: 84px; display: block; }
-.noeud::before { content: ""; position: absolute; inset: -6px; border-radius: 50%; background: #fff; z-index: -1; }
-.en-ligne { position: absolute; right: 2px; top: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--vert); border: 3px solid #fff; animation: pouls 1.8s ease-in-out 1.4s infinite; }
-.mini-notifs { width: 330px; margin-top: 14px; }
+/* Aperçu des nouveautés (écran 1) */
+.apercu { width: 330px; display: flex; flex-direction: column; gap: 12px; }
+.mini-profil { display: flex; align-items: center; gap: 12px; background: #fff; border-radius: 16px; padding: 12px 14px; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16); }
+.mini-profil .p-photo { width: 52px; height: 52px; border-width: 2.5px; }
+.mini-profil .p-nom b { font-size: 17px; }
+.apercu .carte .btn { flex: none; }
 
 /* Cartes au style du fil d'activité */
 .carte {
@@ -453,10 +411,8 @@ h1 { font-family: "Bib", "Noto Color Emoji", sans-serif; font-weight: 700; font-
 .vignette, .carre { width: 52px; height: 52px; border-radius: 10px; overflow: hidden; flex: none; background: var(--bleu-clair); }
 .coche { width: 22px; height: 22px; flex: none; }
 .plus { display: inline-flex; width: 22px; height: 22px; border-radius: 50%; align-items: center; justify-content: center; background: var(--bleu-clair); color: var(--bleu); font-weight: 700; font-size: 16px; flex: none; }
-.etapes { display: flex; gap: 8px; }
-.etapes span { padding: 7px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.12); color: #fff; font-weight: 600; font-size: 13px; }
-.etapes span:nth-child(odd) { color: var(--jaune); }
-.complet { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #fff; font-weight: 700; font-size: 14px; color: #000; }
+.etapes { display: flex; gap: 6px; }
+.etapes span { padding: 6px 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.12); color: #fff; font-weight: 600; font-size: 13px; }
 
 /* Checklist et progression */
 .check { width: 320px; background: #fff; border-radius: 20px; padding: 18px; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2); }
@@ -500,14 +456,9 @@ h1 { font-family: "Bib", "Noto Color Emoji", sans-serif; font-weight: 700; font-
 .invit { display: flex; align-items: center; gap: 8px; padding: 10px 14px; }
 .invit b { flex: 1; font-size: 14.5px; }
 .invit.surbrille { background: #d4e7fa; }
-.cloche { position: absolute; right: 34px; top: 104px; font-size: 34px; }
+.cloche { position: absolute; right: 64px; top: 60px; font-size: 34px; }
 .cloche i { position: absolute; right: -6px; top: -4px; width: 22px; height: 22px; border-radius: 50%; background: var(--jaune); color: #000; font-style: normal; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
 
-/* Social Core */
-.tuiles { display: flex; flex-direction: column; gap: 12px; width: 300px; }
-.tuile { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.18); color: #fff; }
-.tuile b { font-size: 18px; }
-.emo { width: 50px; height: 50px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 26px; flex: none; }
 
 /* Avis */
 .avis { width: 330px; background: #fff; border-radius: 20px; padding: 16px; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25); }
@@ -555,7 +506,7 @@ def page():
 <body>
   <header class="entete-planche">
     <h2>Interstitiels Profil Trucker et Social Core</h2>
-    <p>12 écrans à l'ouverture de l'app · j'ouvre l'app → je comprends la nouveauté → j'ai envie de créer mon profil.</p>
+    <p>9 écrans à l'ouverture de l'app · j'ouvre l'app → je comprends la nouveauté → j'ai envie de créer mon profil.</p>
   </header>
   <main class="planche">
 {cartes}
