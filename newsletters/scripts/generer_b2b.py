@@ -60,39 +60,113 @@ def bloc(contenu, bas=36):
     </td></tr>"""
 
 
-def section_evenements(e, langue):
-    lignes = []
-    for ev in e["evenements"]:
-        lignes.append(f"""        <tr>
-          <td class="date-col" width="76" valign="top" style="padding:0 0 18px 0;">
-            <table role="presentation" width="64" cellpadding="0" cellspacing="0" border="0"><tr>
-              <td align="center" style="background-color:#061866;border-radius:10px;padding:10px 4px;{FONT}color:#FFFFFF;">
-                <span style="display:block;font-size:20px;line-height:22px;font-weight:bold;">{t(ev['jours'])}</span>
-                <span style="display:block;font-size:12px;line-height:16px;">{t(ev['mois'])}</span>
+def sous_titre(texte, marge="22px 0 8px 0"):
+    return (f'      <h4 class="texte-fonce" style="margin:{marge};{FONT}font-size:17px;line-height:24px;'
+            f'font-weight:bold;color:#061866;">{t(texte)}</h4>')
+
+
+def etiquette(texte):
+    return (f'      <p style="margin:0 0 8px 0;{FONT}font-size:12px;line-height:16px;font-weight:bold;color:#53565A;" '
+            f'class="texte-doux">{t(texte)}</p>')
+
+
+def titre_article(texte):
+    return (f'      <h3 class="texte-fonce" style="margin:0 0 12px 0;{FONT}font-size:21px;line-height:28px;'
+            f'font-weight:bold;color:#000000;">{t(texte)}</h3>')
+
+
+def chiffres(liste):
+    cases = []
+    for i, (valeur, legende) in enumerate(liste):
+        marge = "padding:0 6px 0 0;" if i == 0 else "padding:0 0 0 6px;"
+        cases.append(f"""          <td width="50%" valign="top" style="{marge}">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+              <td style="background-color:#061866;border-radius:12px;padding:16px 18px;{FONT}">
+                <p style="margin:0;font-size:26px;line-height:30px;font-weight:bold;color:#FFFF1A;">{t(valeur)}</p>
+                <p style="margin:4px 0 0 0;font-size:13px;line-height:18px;color:#FFFFFF;">{t(legende)}</p>
               </td>
             </tr></table>
-          </td>
-          <td valign="top" style="padding:0 0 18px 12px;{FONT}">
-            <p class="texte-fonce" style="margin:0;font-size:17px;line-height:24px;font-weight:bold;color:#000000;">{t(ev['nom'])}</p>
-            <p class="texte-doux" style="margin:0 0 4px 0;font-size:14px;line-height:20px;color:#53565A;">{t(ev['lieu'])}</p>
-            <p class="texte-fonce" style="margin:0 0 4px 0;font-size:15px;line-height:22px;color:#000000;">{t(ev['texte'])}</p>
-            <p style="margin:0;font-size:14px;line-height:20px;">{lien_texte(e['libelle_site'], escape(ev['url']))}</p>
-          </td>
+          </td>""")
+    return ('      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 18px 0;"><tr>\n'
+            + "\n".join(cases) + "\n      </tr></table>")
+
+
+def case_date(jours, mois, largeur=64):
+    return f"""            <table role="presentation" width="{largeur}" cellpadding="0" cellspacing="0" border="0"><tr>
+              <td align="center" style="background-color:#061866;border-radius:10px;padding:10px 4px;{FONT}color:#FFFFFF;">
+                <span style="display:block;font-size:20px;line-height:22px;font-weight:bold;">{t(jours)}</span>
+                <span style="display:block;font-size:12px;line-height:16px;">{t(mois)}</span>
+              </td>
+            </tr></table>"""
+
+
+def section_evenements(e, langue):
+    a = e["retour"]
+    article = [etiquette(a["etiquette"]), titre_article(a["titre"])]
+    article += [paragraphe(p) for p in a["intro"]]
+    article.append(chiffres(a["chiffres"]))
+    for st, paras in a["blocs"]:
+        article.append(sous_titre(st, "4px 0 8px 0"))
+        article += [paragraphe(p) for p in paras]
+    article.append(paragraphe(a["conclusion"], 15).replace('color:#000000;">', 'color:#000000;font-style:italic;">', 1))
+
+    r = e["rendez_vous"]
+    rdv = f"""      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:10px 0 24px 0;">
+        <tr><td class="bref" style="background-color:#F5F3F1;border-radius:12px;padding:22px 22px 8px 22px;{FONT}">
+          <p style="margin:0 0 12px 0;font-size:12px;line-height:16px;font-weight:bold;color:#53565A;" class="texte-doux">{t(r['etiquette'])}</p>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+            <td class="date-col" width="76" valign="top">
+{case_date(r['jours'], r['mois'])}
+            </td>
+            <td valign="top" style="padding-left:12px;{FONT}">
+              <p class="texte-fonce" style="margin:0;font-size:19px;line-height:26px;font-weight:bold;color:#000000;">{t(r['nom'])}</p>
+              <p class="texte-doux" style="margin:0 0 10px 0;font-size:14px;line-height:20px;color:#53565A;">{t(r['lieu'])}</p>
+            </td>
+          </tr></table>
+{chr(10).join(paragraphe(p, 15) for p in r['textes'])}
+          <p style="margin:0 0 14px 0;font-size:14px;line-height:20px;">{lien_texte(r['lien'], escape(r['url']))}</p>
+        </td></tr>
+      </table>"""
+
+    lignes = []
+    for ev in e["agenda"]:
+        lignes.append(f"""        <tr>
+          <td width="88" valign="top" style="padding:0 0 12px 0;{FONT}font-size:14px;line-height:21px;font-weight:bold;color:#061866;" class="texte-fonce">{t(ev['date'])}</td>
+          <td valign="top" class="texte-fonce" style="padding:0 0 12px 0;{FONT}font-size:14px;line-height:21px;color:#000000;"><a class="lien" href="{escape(ev['url'])}" target="_blank" style="color:#061866;font-weight:bold;">{t(ev['nom'])}</a> · {t(ev['lieu'])}</td>
         </tr>""")
-    tableau = ('      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">\n'
-               + "\n".join(lignes) + "\n      </table>")
-    note = f'      <p class="texte-doux" style="margin:0;{FONT}font-size:12px;line-height:18px;color:#53565A;">{t(e["note_evenements"])}</p>'
-    return entete_section(*e["sections"][0]) + "\n" + bloc(tableau + "\n" + note)
+    agenda = (sous_titre(e["titre_agenda"], "0 0 10px 0")
+              + '\n      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">\n'
+              + "\n".join(lignes) + "\n      </table>"
+              + f'\n      <p class="texte-doux" style="margin:4px 0 0 0;{FONT}font-size:12px;line-height:18px;color:#53565A;">{t(e["note_evenements"])}</p>')
+    return entete_section(*e["sections"][0]) + "\n" + bloc("\n".join(article) + "\n" + rdv + "\n" + agenda)
 
 
 def section_truckfly(e, langue):
-    parts = []
-    for i, a in enumerate(e["truckfly"]):
-        corps = "\n".join(paragraphe(p) for p in a["paragraphes"])
-        lien = (f'      <p style="margin:0 0 24px 0;{FONT}font-size:15px;line-height:22px;">'
-                f'{lien_texte(a["lien"], utm(LIEN_B2B, e["campagne"], langue, f"truckfly-{i + 1}"))}</p>') if a.get("lien") else ""
-        parts.append(f'      <h3 class="texte-fonce" style="margin:0 0 10px 0;{FONT}font-size:19px;line-height:26px;font-weight:bold;color:#000000;">{t(a["titre"])}</h3>\n{corps}\n{lien}')
-    return entete_section(*e["sections"][1]) + "\n" + bloc("\n".join(parts), bas=16)
+    p = e["profil"]
+    contenu = [etiquette(p["etiquette"]), titre_article(p["titre"])]
+    contenu += [paragraphe(x) for x in p["intro"]]
+    lignes = []
+    for i, (titre, texte) in enumerate(p["fonctions"], 1):
+        lignes.append(f"""        <tr>
+          <td width="38" valign="top" style="padding:0 0 16px 0;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+              <td align="center" valign="middle" width="26" height="26" style="width:26px;height:26px;border-radius:13px;background-color:#061866;{FONT}font-size:13px;line-height:26px;font-weight:bold;color:#FFFFFF;">{i}</td>
+            </tr></table>
+          </td>
+          <td class="texte-fonce" valign="top" style="padding:2px 0 16px 0;{FONT}font-size:15px;line-height:23px;color:#000000;"><strong>{t(titre)}</strong><br>{t(texte)}</td>
+        </tr>""")
+    contenu.append('      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 8px 0;">\n'
+                   + "\n".join(lignes) + "\n      </table>")
+    pour_vous = "\n".join(paragraphe(x, 15) for x in p["pour_vous"])
+    contenu.append(f"""      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px 0;">
+        <tr><td class="bref" style="background-color:#F5F3F1;border-radius:12px;padding:20px 22px 6px 22px;">
+{sous_titre(p['titre_pour_vous'], '0 0 8px 0')}
+{pour_vous}
+        </td></tr>
+      </table>""")
+    contenu.append(f'      <p style="margin:0;{FONT}font-size:15px;line-height:22px;">'
+                   f'{lien_texte(p["lien"], utm(LIEN_B2B, e["campagne"], langue, "profil-trucker"))}</p>')
+    return entete_section(*e["sections"][1]) + "\n" + bloc("\n".join(contenu))
 
 
 def section_marche(e, langue):
@@ -101,6 +175,7 @@ def section_marche(e, langue):
     cartes = []
     for m in items:
         corps = "<br><br>".join(t(p) for p in m["textes"])
+        sources = " · ".join(lien_texte(nom, escape(url)) for nom, url in m["sources"])
         cartes.append(f"""      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 14px 0;">
         <tr><td class="bref" style="background-color:#F5F3F1;border-radius:12px;padding:20px 22px;{FONT}">
           <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
@@ -109,7 +184,7 @@ def section_marche(e, langue):
           </tr></table>
           <p class="texte-fonce" style="margin:12px 0 8px 0;font-size:17px;line-height:24px;font-weight:bold;color:#000000;">{t(m['titre'])}</p>
           <p class="texte-fonce" style="margin:0 0 8px 0;font-size:15px;line-height:23px;color:#000000;">{corps}</p>
-          <p style="margin:0;font-size:13px;line-height:18px;">{lien_texte(e['libelle_source'] + ' : ' + m['source'], escape(m['url']))}</p>
+          <p style="margin:0;font-size:13px;line-height:18px;color:#53565A;" class="texte-doux">{t(e['libelle_source'])} : {sources}</p>
         </td></tr>
       </table>""")
     note = f'      <p class="texte-doux" style="margin:6px 0 0 0;{FONT}font-size:12px;line-height:18px;color:#53565A;">{t(e["note_marche"])}</p>'
@@ -118,23 +193,23 @@ def section_marche(e, langue):
 
 def section_question(e, langue):
     q = e["question"]
-    conseils = "\n".join(
-        f'        <tr><td class="texte-fonce" style="padding:0 0 12px 0;border-left:3px solid #061866;padding-left:14px;{FONT}font-size:15px;line-height:23px;color:#000000;">{t(c)}</td></tr>'
-        for c in q["conseils"])
+    barres = []
+    for libelle, pct in q["resultats"]:
+        barres.append(f"""          <p style="margin:0 0 6px 0;{FONT}font-size:15px;line-height:22px;color:#FFFFFF;"><strong style="color:#FFFF1A;">{pct}&nbsp;%</strong>&nbsp;&nbsp;{t(libelle)}</p>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;"><tr>
+            <td width="{pct}%" height="10" style="height:10px;background-color:#FFFF1A;border-radius:5px;font-size:0;line-height:0;">&nbsp;</td>
+            <td width="{100 - pct}%" height="10" style="height:10px;background-color:#2A3A85;font-size:0;line-height:0;">&nbsp;</td>
+          </tr></table>""")
     contenu = f"""      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr><td style="background-color:#061866;border-radius:12px;padding:24px 26px;{FONT}">
+        <tr><td style="background-color:#061866;border-radius:12px;padding:24px 26px 10px 26px;{FONT}">
           <p style="margin:0 0 6px 0;font-size:13px;line-height:18px;font-weight:bold;color:#FFFF1A;">{t(q['label'])}</p>
-          <p style="margin:0;font-size:20px;line-height:28px;font-weight:bold;color:#FFFFFF;">{t(q['question'])}</p>
-          <p style="margin:10px 0 0 0;font-size:13px;line-height:18px;color:#FFFFFF;">{t(q['auteur'])}</p>
+          <p style="margin:0 0 20px 0;font-size:20px;line-height:28px;font-weight:bold;color:#FFFFFF;">{t(q['question'])}</p>
+{chr(10).join(barres)}
         </td></tr>
       </table>
-      <p class="texte-fonce" style="margin:22px 0 6px 0;{FONT}font-size:17px;line-height:24px;font-weight:bold;color:#061866;">{t(q['titre_reponse'])}</p>
-{chr(10).join(paragraphe(p) for p in q['reponse'])}
-      <p class="texte-fonce" style="margin:8px 0 12px 0;{FONT}font-size:17px;line-height:24px;font-weight:bold;color:#061866;">{t(q['titre_conseils'])}</p>
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-{conseils}
-      </table>
-{paragraphe(q['pour_vous'], 15)}"""
+{sous_titre(q['titre_retenir'])}
+{chr(10).join(paragraphe(p) for p in q['retenir'])}
+{paragraphe(q['prochaine'], 15)}"""
     return entete_section(*e["sections"][3]) + "\n" + bloc(contenu)
 
 
@@ -151,25 +226,26 @@ def recap(e):
 EDITIONS = {
     ("b2b/2026-10", "fr"): dict(
         campagne="b2b-2026-10",
-        objet="Gazole, péages, hiver : ce qui change en Europe",
-        preheader="Le récap d'octobre : salons de novembre, Profil Trucker, infos marché pays par pays et la question des truckers.",
+        objet="Voltix, Profil Trucker, gazole : l'actu d'octobre",
+        preheader="Notre retour de Vierzon, la communauté Truckfly en détail, l'actu marché pays par pays et les résultats de notre sondage.",
         lien_navigateur="Voir dans le navigateur",
         edition="Newsletter pro · Octobre 2026",
         label_edito="L'édito du mois",
-        titre_edito="Un automne sous pression, une communauté qui s'organise",
+        titre_edito="Électrique, communauté et gazole : un mois chargé",
         edito=[
-            "Le prix du gazole pèse sur les entreprises de transport. Plusieurs pays réagissent : les Pays-Bas baissent leur péage poids lourds jusqu'à la fin de l'année, l'Italie élargit son crédit d'impôt gazole, l'Espagne impose la clause de révision du prix.",
-            "En parallèle, l'hiver arrive. Équipements obligatoires en montagne, nuits plus longues, parkings saturés plus tôt : les conducteurs le sentent dès maintenant.",
-            "Chez Michelin Truckfly, nous lançons le Profil Trucker. Les conducteurs se retrouvent, se recommandent les bons arrêts et partagent leur route. Une communauté plus visible, et donc des lieux mieux connus.",
+            "Ce mois-ci, la recharge des poids lourds électriques passe un cap. Nous étions à Vierzon pour l'inauguration de la première station Voltix, et nous serons le 22 octobre à Lyon pour les Rencontres de la Filière.",
+            "Côté Michelin Truckfly, zoom sur le Profil Trucker et tout ce qu'il change pour la communauté des conducteurs.",
+            "Côté marché, le gazole reste au cœur de l'actu : baisse de taxe en Allemagne, aides prolongées aux Pays-Bas, document de contrôle électronique en Espagne, et un vote européen sur les péages des camions propres.",
+            "Pour finir, vous découvrirez ce qui compte le plus pour les routiers lors d'un événement comme les 24 Heures Camions.",
             "Bonne lecture.",
         ],
         signature_edito="[Prénom Nom], [fonction], Michelin Truckfly",
         titre_recap="Le récap du mois",
         recap=[
-            "4 salons à noter en novembre et décembre.",
-            "Lancement du Profil Trucker et des fonctions communautaires.",
-            "Péages, gazole, hiver : 7 points à connaître, de l'UE à la Pologne.",
-            "Parkings pleins dès 17 h : comment les conducteurs s'organisent.",
+            "Retour sur l'inauguration Voltix à Vierzon, et rendez-vous le 22 octobre à Lyon.",
+            "Le Profil Trucker en détail : profil, amis, activité, recommandations.",
+            "UE, France, Allemagne, Pays-Bas, Italie, Espagne : ce qui change ce mois-ci.",
+            "Les résultats du sondage sur les 24 Heures Camions.",
         ],
         sections=[
             ("I.", "Événements", "Les prochains rendez-vous à ne pas manquer"),
@@ -177,81 +253,114 @@ EDITIONS = {
             ("III.", "Infos Marché/Légal", "Les évolutions et informations à connaître dans le secteur"),
             ("IV.", "La question des Truckers", "Une question, une réponse et les conseils de notre communauté"),
         ],
-        libelle_site="Infos et inscription",
+        retour=dict(
+            etiquette="Retour sur · Vierzon, 2 octobre 2026",
+            titre="Une première station Voltix inaugurée à Vierzon : Michelin Truckfly au rendez-vous !",
+            intro=[
+                "Une nouvelle étape pour l'électrification du transport routier : Voltix a inauguré à Vierzon sa première station de recharge dédiée aux poids lourds électriques.",
+                "Les équipes Michelin Truckfly étaient présentes pour accompagner ce lancement et présenter le rôle de notre application auprès des conducteurs.",
+            ],
+            chiffres=[("80 % en 30 min", "de recharge, le temps d'une pause réglementaire"),
+                      ("50 stations", "Voltix prévues d'ici 2028, intégrées dans Michelin Truckfly")],
+            blocs=[
+                ("Voltix, c'est quoi ?", [
+                    "Filiale de VINCI Concessions, Voltix développe un réseau de stations de recharge conçu pour les camions électriques. La station de Vierzon permet notamment de recharger jusqu'à 80 % de la batterie en 30 minutes, soit le temps d'une pause réglementaire.",
+                ]),
+                ("50 stations Voltix intégrées dans Michelin Truckfly", [
+                    "À mesure du déploiement du réseau, les 50 stations Voltix prévues d'ici 2028 seront intégrées dans Michelin Truckfly, afin que les conducteurs puissent facilement les identifier et les retrouver lors de leurs trajets.",
+                    "Cette collaboration avec VINCI Autoroutes illustre une ambition commune : accompagner les évolutions du transport routier et les professionnels qui les vivent au quotidien.",
+                ]),
+            ],
+            conclusion="GPS poids lourd, établissements adaptés, services communautaires, emploi et demain recharge électrique : Michelin Truckfly continue d'accompagner les transformations du transport routier, au plus près des conducteurs.",
+        ),
+        rendez_vous=dict(
+            etiquette="On y sera",
+            jours="22", mois="oct.",
+            nom="Les Rencontres de la Filière 2026",
+            lieu="Lyon, Matmut Stadium de Gerland · France",
+            textes=[
+                "Organisée par la Fédération française de carrosserie avant Solutrans 2027, cette journée fait le point sur les grands enjeux du véhicule industriel et urbain.",
+                "Au programme, des tables rondes avec des professionnels, des experts et des représentants européens, notamment sur le financement de la transition énergétique et le reconditionnement des véhicules industriels.",
+                "Les équipes Michelin Truckfly y assisteront. Vous y serez aussi ? [Écrivez-nous pour nous y retrouver.]",
+            ],
+            lien="Programme et inscription",
+            url="https://www.solutrans.fr/en/solutrans-show/industry-meeting",
+        ),
+        titre_agenda="À l'agenda",
+        agenda=[
+            dict(date="3-5 nov.", nom="TransLogistica Poland", lieu="Varsovie", url="https://translogistica.pl"),
+            dict(date="4-5 nov.", nom="Expertrans", lieu="Chartres", url="https://www.salon-expertrans.fr"),
+            dict(date="11-12 nov.", nom="Logistics & Automation", lieu="Madrid", url="https://www.esmadrid.com/agenda/logistics-automation-madrid-ifema-madrid"),
+            dict(date="1-2 déc.", nom="Supply Chain Event", lieu="Paris", url="https://parisjetaime.com/convention/evenement/supply-chain-e591"),
+        ],
         note_evenements="Dates communiquées par les organisateurs, à vérifier sur leur site avant de vous déplacer.",
-        evenements=[
-            dict(jours="3-5", mois="nov.", nom="TransLogistica Poland", lieu="Varsovie, EXPO XXI · Pologne",
-                 texte="Le grand salon polonais du transport routier, de la logistique et de la gestion de flotte. Environ 500 exposants attendus.",
-                 url="https://translogistica.pl"),
-            dict(jours="4-5", mois="nov.", nom="Expertrans", lieu="Chartres, Parc des expositions Illiade · France",
-                 texte="2e édition du salon régional du transport : poids lourds, utilitaires et logistique.",
-                 url="https://www.salon-expertrans.fr"),
-            dict(jours="11-12", mois="nov.", nom="Logistics & Automation Madrid", lieu="Madrid, IFEMA · Espagne",
-                 texte="Transport, entreposage et automatisation de la supply chain.",
-                 url="https://www.esmadrid.com/agenda/logistics-automation-madrid-ifema-madrid"),
-            dict(jours="1-2", mois="déc.", nom="Supply Chain Event", lieu="Paris, Porte de Versailles · France",
-                 texte="Le rendez-vous des décideurs supply chain et transport.",
-                 url="https://parisjetaime.com/convention/evenement/supply-chain-e591"),
-        ],
-        truckfly=[
-            dict(titre="Le Profil Trucker est en ligne",
-                 paragraphes=[
-                     "Chaque conducteur peut désormais créer son profil dans l'app : photo, bio et camion avec ses dimensions.",
-                     "Il ajoute ses amis, voit leurs arrêts et leurs recommandations au fil de la journée. Les bons lieux circulent plus vite, de conducteur à conducteur.",
-                     "Pour les établissements partenaires, c'est plus de visibilité auprès des routiers qui passent près de chez eux. [Chiffre clé à ajouter : profils créés, avis déposés…]",
-                 ],
-                 lien="Voir la présentation du Profil Trucker"),
-            dict(titre="[Deuxième actu : nouveau partenaire, chiffre du mois, événement Truckfly…]",
-                 paragraphes=["[2 ou 3 phrases courtes. Supprimer ce bloc s'il n'y a pas de deuxième actu.]"]),
-        ],
-        libelle_source="Source",
-        note_marche="Informations vérifiées au 8 octobre 2026. Elles ne remplacent pas les textes officiels.",
+        profil=dict(
+            etiquette="Nouveauté",
+            titre="Profil Trucker : la communauté des conducteurs prend vie",
+            intro=[
+                "Michelin Truckfly devient plus communautaire. Avec le Profil Trucker, chaque conducteur a désormais sa propre page dans l'app, et peut retrouver les collègues qu'il croise sur la route.",
+                "Le message aux conducteurs est simple : « Ne roule plus seul ! »",
+            ],
+            fonctions=[
+                ("Un profil à son image", "Photo, nom, bio et drapeau. Le conducteur se présente en quelques secondes, et les autres le reconnaissent facilement."),
+                ("Son camion, en détail", "Photo, surnom, type de véhicule et dimensions : hauteur, largeur et longueur. Le camion fait partie de l'identité du routier."),
+                ("Ses amis", "Il invite ses collègues, accepte leurs invitations et retrouve en un geste ceux avec qui il roule."),
+                ("L'activité de ses amis", "Au fil de la journée, il voit où ses amis se sont arrêtés : une station, un relais routier, un parking."),
+                ("Les recommandations", "Quand un ami dépose un avis, il est mis en avant. Les bonnes adresses circulent de conducteur à conducteur."),
+            ],
+            titre_pour_vous="Ce que ça change pour vous",
+            pour_vous=[
+                "Pour les établissements : chaque visite et chaque avis peut être vu par les amis du conducteur. C'est le bouche-à-oreille des routiers, en version numérique.",
+                "Pour les partenaires : une communauté plus engagée, qui revient dans l'app chaque jour. [Chiffre clé à ajouter : profils créés, amis ajoutés, avis déposés…]",
+            ],
+            lien="Voir la vidéo de présentation du Profil Trucker",
+        ),
+        libelle_source="Sources",
+        note_marche="Informations vérifiées au 8 octobre 2026. Les mesures en discussion peuvent encore évoluer. Elles ne remplacent pas les textes officiels.",
         marche=[
-            dict(pays="UE", nom_pays="Union européenne", titre="Utilitaires : le tachygraphe intelligent est obligatoire à l'international",
-                 textes=["Depuis le 1er juillet 2026, les véhicules de 2,5 à 3,5 t qui font du transport international de marchandises doivent avoir un tachygraphe intelligent de 2e génération.",
-                         "Les règles de temps de conduite et de repos s'appliquent aussi. Le transport national n'est pas concerné."],
-                 source="trans.info", url="https://trans.info/en/f-tachograph-free-van-447001"),
-            dict(pays="FR", nom_pays="France", titre="Loi Montagne : équipements d'hiver dès le 1er novembre",
-                 textes=["Du 1er novembre au 31 mars, dans les communes listées par arrêté préfectoral. Poids lourd seul : chaînes ou pneus hiver 3PMSF. Avec remorque ou semi-remorque : chaînes pour au moins deux roues motrices, même avec des pneus hiver.",
-                         "À noter aussi : interdiction de circuler pour les plus de 7,5 t du mardi 10 novembre à 22 h au mercredi 11 novembre à 22 h."],
-                 source="Préfecture du Jura", url="https://www.jura.gouv.fr/contenu/telechargement/28038/217809/file/20231031_CP_Obligation%20%C3%A9quipements%20sp%C3%A9ciaux.pdf"),
-            dict(pays="DE", nom_pays="Allemagne", titre="Maut : nouvelles classes CO2 pour les plus de 16 t",
-                 textes=["Depuis le 1er juillet 2026, le classement des camions de plus de 16 t dans les classes d'émission CO2 a changé, ce qui modifie le tarif de nombreux véhicules.",
-                         "Les camions à zéro émission restent exonérés de péage jusqu'au 30 juin 2031."],
-                 source="Toll Collect", url="https://www.toll-collect.de/en/toll_collect/rund_um_die_maut/meldungen/meldungen.html"),
-            dict(pays="NL", nom_pays="Pays-Bas", titre="Péage poids lourds : -22,3 % jusqu'au 31 décembre",
-                 textes=["Depuis le 1er juillet 2026, un péage au kilomètre (vrachtwagenheffing) remplace l'Eurovignette pour les plus de 3,5 t. Un boîtier embarqué est obligatoire.",
-                         "Face à la hausse du gazole, le tarif baisse de 22,3 % du 1er septembre au 31 décembre 2026 : de 0,191 € à 0,148 € par km en moyenne. Retour aux tarifs normaux le 1er janvier 2027."],
-                 source="Taxlive (Rijksoverheid)", url="https://www.taxlive.nl/nl/documenten/nieuws/tijdelijke-korting-op-vrachtwagenheffing/"),
-            dict(pays="IT", nom_pays="Italie", titre="Crédit d'impôt gazole élargi et obligation hiver au 15 novembre",
-                 textes=["Un décret d'octobre élargit le crédit d'impôt « caro gasolio » : il concerne les véhicules de 7,5 t et plus, hors Euro IV et inférieurs.",
-                         "Du 15 novembre au 15 avril : pneus hiver ou chaînes à bord sur les routes signalées par l'exploitant."],
-                 source="Il Sole 24 Ore", url="https://ntplusfisco.ilsole24ore.com/art/AJKF9UWB"),
-            dict(pays="ES", nom_pays="Espagne", titre="Révision du prix selon le gazole : désormais impérative",
-                 textes=["Depuis le décret-loi 9/2026 (en vigueur le 16 avril 2026), la clause de révision du prix du transport selon le gazole s'impose dès que le carburant varie de 5 %.",
-                         "L'ajustement doit apparaître à part sur la facture."],
-                 source="Penningtons Manches Cooper", url="https://www.penningtonslaw.com/insights/novedades-en-la-revision-del-precio-del-transporte-por-carretera-impacto-de-los-rdl-7-2026-y-9-2026/"),
-            dict(pays="PL", nom_pays="Pologne", titre="e-TOLL : des tarifs en hausse de 40 % depuis février",
-                 textes=["Après l'indexation de janvier, les tarifs e-TOLL des plus de 3,5 t ont augmenté de 40 à 42 % en février 2026 : de 0,34 à 1,07 PLN par km selon le véhicule et la route.",
-                         "Les amendes vont de 250 à 1 500 PLN."],
-                 source="trans.info", url="https://trans.info/en/poland-truck-toll-rise-446623"),
+            dict(pays="UE", nom_pays="Union européenne", titre="Eurovignette : jusqu'à -75 % de péage pour les camions à faibles émissions",
+                 textes=["Le Parlement européen a voté le 7 octobre la révision de la directive Eurovignette. Elle renforce les réductions de péage pour les poids lourds les moins émetteurs de CO2, jusqu'à 75 %.",
+                         "Le Conseil doit encore l'adopter formellement avant son entrée en vigueur."],
+                 sources=[("TRM24", "https://www.trm24.fr/parlement-europeen-des-reductions-allant-jusqua-75-des-peages-routiers-pour-les-camions-a-faibles-emissions/")]),
+            dict(pays="FR", nom_pays="France", titre="Budget 2027 déposé, mobilisation le 21 octobre",
+                 textes=["Le projet de loi de finances 2027 a été déposé le 1er octobre. Il prévoit de revoir le suramortissement pour les camions électriques et de réduire les avantages des camions gaz et B100. Il propose aussi d'augmenter la taxe sur les concessions d'autoroutes les plus rentables.",
+                         "Face au prix du gazole, l'OTRE et la FAI appellent les transporteurs à se mobiliser à Paris à partir du 21 octobre.",
+                         "Rappel : Loi Montagne dès le 1er novembre, et interdiction de circuler pour les plus de 7,5 t du 10 novembre 22 h au 11 novembre 22 h."],
+                 sources=[("Ministère de la Transition écologique", "https://www.ecologie.gouv.fr/presse/plf-2027-teitld-gouvernement-propose-contribution-plus-elevee-exploitants-plus-rentables"),
+                          ("OTRE", "https://otre.org/carburants-les-transporteurs-routiers-se-mobiliseront-le-21-octobre-2026-et-suivants")]),
+            dict(pays="DE", nom_pays="Allemagne", titre="Gazole : -16,7 centimes par litre jusqu'au 31 décembre",
+                 textes=["Depuis le 1er octobre et jusqu'au 31 décembre 2026, la taxe sur l'énergie baisse de 14,04 centimes par litre de gazole, soit jusqu'à 16,7 centimes TTC. La profession juge la mesure insuffisante.",
+                         "Le ministère des Transports annonce aussi 100 millions d'euros pour les aires de repos fédérales et de nouvelles places de stationnement poids lourds."],
+                 sources=[("VerkehrsRundschau (gazole)", "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/tankrabatt-2026-beschlossen-bis-zu-17-cent-weniger-pro-liter-3909527"),
+                          ("VerkehrsRundschau (aires de repos)", "https://www.verkehrsrundschau.de/nachrichten/recht-geld/verkehrsministerium-verspricht-entlastungen-fuer-logistik-3912142")]),
+            dict(pays="NL", nom_pays="Pays-Bas", titre="Péage et accises gazole en baisse",
+                 textes=["Jusqu'au 31 décembre 2026, le péage poids lourds baisse de 22,3 % (0,148 € au lieu de 0,191 € par km en moyenne), et la taxe de circulation des camions est à zéro.",
+                         "Le plan fiscal 2027, présenté le 15 septembre, propose de prolonger la baisse des accises sur le gazole jusqu'au 31 décembre 2027. Le texte doit encore être voté."],
+                 sources=[("Taxlive", "https://www.taxlive.nl/nl/documenten/nieuws/tijdelijke-korting-op-vrachtwagenheffing/"),
+                          ("Nationale Transportgids", "https://www.nationaletransportgids.nl/wegtransport/prinsjesdag-2026-dit-betekent-het-kabinetsbeleid-voor-de-transportsector/")]),
+            dict(pays="IT", nom_pays="Italie", titre="Budget 2027 : le transport demande moins de taxes sur le gazole",
+                 textes=["Le projet de budget 2027 est attendu autour du 20 octobre. Unatras réclame moins de taxes sur le gazole, qui pèse 35 % des coûts d'une entreprise de transport. Le gouvernement évoque des aides ciblées.",
+                         "Déjà en place : le crédit d'impôt gazole a été élargi début octobre. Et à partir du 15 novembre, pneus hiver ou chaînes à bord sur les routes signalées."],
+                 sources=[("ItaliaOggi", "https://www.italiaoggi.it/economia-e-politica/autotrasporto-ugge-fai-e-unatras-nella-finanziaria-meno-tasse-sul-gasolio-e-piu-aiuti-alle-imprese-b26mvz8a"),
+                          ("Il Sole 24 Ore", "https://ntplusfisco.ilsole24ore.com/art/AJKF9UWB")]),
+            dict(pays="ES", nom_pays="Espagne", titre="Le document de contrôle électronique (DeCA) est obligatoire",
+                 textes=["Depuis le 5 octobre, tout transport intérieur de marchandises, cabotage compris, doit avoir son document de contrôle au format électronique : un PDF natif avec QR code, créé avant le départ. Pas de période de tolérance annoncée.",
+                         "Le chargeur et le transporteur en sont tous les deux responsables. Le transport international garde la lettre de voiture CMR."],
+                 sources=[("Cadena de Suministro", "https://www.cadenadesuministro.es/transporte-carretera/deca-obligatorio-transporte-mercancias-carretera-5-octubre-2026_1518777_102.html"),
+                          ("Camión Actualidad", "https://www.camionactualidad.es/destacadas-noticias/item/11773-deca-documento-electronico-control-transporte")]),
         ],
         question=dict(
-            label="La question du mois",
-            question="« En hiver, les parkings sont pleins dès 17 h. Comment être sûr de trouver une place ? »",
-            auteur="[Prénom, conducteur depuis X ans, pays]",
-            titre_reponse="Notre réponse",
-            reponse=[
-                "Depuis le passage à l'heure d'hiver, la nuit tombe plus tôt et tout le monde cherche une place en même temps.",
-                "La clé : choisir son arrêt du soir dès la pause de midi, vérifier les avis récents sur la carte Truckfly et garder un plan B à 30 minutes de route.",
+            label="Les résultats de notre dernier sondage",
+            question="Qu'est-ce qui compte le plus pour vous lors d'un événement comme les 24 Heures Camions du Mans ?",
+            resultats=[("Profiter du spectacle et des courses", 40),
+                       ("Partager autour de la passion du camion", 38),
+                       ("Découvrir les nouveautés du secteur", 21)],
+            titre_retenir="Ce qu'on en retient",
+            retenir=[
+                "Profiter du spectacle et des courses arrive en tête avec 40 % des votes. Partager autour de la passion du camion suit de près avec 38 % des réponses. Enfin, découvrir les nouveautés du secteur représente 21 % des votes.",
+                "Pour les routiers, un événement camion est d'abord un moment de passion et de partage. Pour les marques et les exposants, l'expérience et la rencontre comptent autant que la vitrine produit.",
             ],
-            titre_conseils="Les conseils de la communauté",
-            conseils=[
-                "« [Conseil d'un trucker de la communauté, avec son accord] »",
-                "« [Deuxième conseil] »",
-                "« [Troisième conseil] »",
-            ],
-            pour_vous="Pour les chargeurs et les sites de livraison : un chargement qui finit tard peut coûter au conducteur sa place pour la nuit. Des créneaux plus tôt l'hiver, c'est un conducteur plus reposé le lendemain.",
+            prochaine="[Le prochain sondage : votre question ici, et où voter.]",
         ),
         cta_intro="Vous voulez apparaître sur la carte des routiers ?",
         cta="Découvrir Michelin Truckfly",
