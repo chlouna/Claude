@@ -294,7 +294,8 @@ EDITIONS = {
         edito=[
             "Bonjour,",
             "L'automne s'annonce chargé pour le transport routier. Prix du gazole, nouvelles règles d'un pays à l'autre, électrification qui s'accélère : le secteur change vite, et vos conducteurs le vivent chaque jour sur la route.",
-            "Chez Michelin Truckfly, notre rôle est de les accompagner au plus près, et de vous aider à y voir clair. Ce mois-ci encore, nous avons réuni pour vous l'essentiel : nos temps forts, nos nouveautés et l'actualité qui compte dans chaque pays.",
+            "Chez Michelin Truckfly, notre rôle est de les accompagner au plus près, et de vous aider à y voir clair.",
+            "Ce mois-ci encore, nous avons réuni pour vous l'essentiel : nos temps forts, nos nouveautés et l'actualité qui compte dans chaque pays.",
             "Bonne lecture,",
         ],
         signature_edito="[Prénom Nom], [fonction], Michelin Truckfly",
