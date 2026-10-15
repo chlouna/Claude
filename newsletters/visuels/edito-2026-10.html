@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Bib;src:url(BIB-Bold.woff2) format("woff2");font-weight:700}
+@font-face{font-family:Inter;src:url(Inter-Regular.otf);font-weight:400}
+@font-face{font-family:Inter;src:url(Inter-SemiBold.otf);font-weight:600}
+html,body{margin:0}
+.v{width:1200px;height:600px;position:relative;overflow:hidden;background:#061866;font-family:Inter,sans-serif;color:#fff}
+.halo{position:absolute;right:-180px;top:-220px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,#1B2F8A 0%,#061866 70%)}
+.logo{position:absolute;left:72px;top:60px;width:190px}
+.label{position:absolute;left:72px;top:110px;font-size:22px;font-weight:600;color:#FFFF1A}
+h1{position:absolute;left:72px;top:146px;margin:0;font-family:Bib,sans-serif;font-weight:700;font-size:70px;line-height:76px;letter-spacing:-.5px;width:560px}
+.sous{position:absolute;left:72px;top:318px;font-size:28px;line-height:38px;width:520px;color:#E6E9F5}
+.pictos{position:absolute;left:72px;top:416px;display:flex;gap:26px}
+.picto{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:600;color:#fff}
+.rond{width:46px;height:46px;border-radius:50%;background:#0F2479;border:2px solid #2A3E9A;display:flex;align-items:center;justify-content:center}
+.route{position:absolute;left:0;right:0;top:492px;bottom:0;background:#000E38;border-top:6px solid #2A3E9A}
+.tiret{position:absolute;top:548px;height:7px;width:70px;border-radius:3px;background:#FFFF1A}
+.scene{position:absolute;right:0;bottom:0;width:640px;height:600px}
+</style></head><body>
+<div class="v">
+  <div class="halo"></div>
+  <div class="route"></div>
+  <div class="tiret" style="left:20px"></div><div class="tiret" style="left:140px"></div><div class="tiret" style="left:260px"></div><div class="tiret" style="left:380px"></div><div class="tiret" style="left:500px"></div><div class="tiret" style="left:620px"></div><div class="tiret" style="left:740px"></div><div class="tiret" style="left:860px"></div><div class="tiret" style="left:980px"></div><div class="tiret" style="left:1100px"></div>
+  <div class="label">La newsletter pro · Octobre 2026</div>
+  <h1>Un secteur en mouvement</h1>
+  <div class="sous">Nous restons à vos côtés, et aux côtés de vos conducteurs.</div>
+  <div class="pictos">
+    <div class="picto"><div class="rond">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFF1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M3 21h12"/><path d="M6 8h6"/><path d="M14 10h2a2 2 0 0 1 2 2v4a1.5 1.5 0 0 0 3 0V8l-3-3"/></svg>
+    </div>Gazole</div>
+    <div class="picto"><div class="rond">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFF1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+    </div>Électrique</div>
+    <div class="picto"><div class="rond">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFF1A"><g transform="translate(12 12)">
+        <circle r="1.6" cx="0" cy="-8"/><circle r="1.6" cx="4" cy="-6.9"/><circle r="1.6" cx="6.9" cy="-4"/><circle r="1.6" cx="8" cy="0"/><circle r="1.6" cx="6.9" cy="4"/><circle r="1.6" cx="4" cy="6.9"/><circle r="1.6" cx="0" cy="8"/><circle r="1.6" cx="-4" cy="6.9"/><circle r="1.6" cx="-6.9" cy="4"/><circle r="1.6" cx="-8" cy="0"/><circle r="1.6" cx="-6.9" cy="-4"/><circle r="1.6" cx="-4" cy="-6.9"/></g></svg>
+    </div>Règles en Europe</div>
+  </div>
+
+  <svg class="scene" viewBox="0 0 640 600">
+    <!-- lignes de vitesse -->
+    <g stroke="#2A3E9A" stroke-width="6" stroke-linecap="round">
+      <line x1="10" y1="300" x2="110" y2="300"/><line x1="40" y1="345" x2="170" y2="345"/><line x1="0" y1="390" x2="95" y2="390"/>
+    </g>
+    <!-- camion -->
+    <g transform="translate(140 228)">
+      <rect x="0" y="0" width="300" height="190" rx="10" fill="#FFFFFF"/>
+      <rect x="20" y="24" width="260" height="10" rx="5" fill="#E6E9F5"/>
+      <rect x="20" y="156" width="260" height="10" rx="5" fill="#E6E9F5"/>
+      <path d="M308 50 h88 q14 0 20 12 l34 70 q4 8 4 18 v58 h-146 z" fill="#FFFFFF"/>
+      <path d="M380 66 h22 q8 0 12 8 l26 54 h-60 z" fill="#1B2F8A"/>
+      <rect x="440" y="186" width="16" height="16" rx="4" fill="#FFFF1A"/>
+      <rect x="0" y="198" width="456" height="16" rx="6" fill="#C9CEDF"/>
+      <g fill="#000E38" stroke="#C9CEDF" stroke-width="7">
+        <circle cx="62" cy="230" r="28"/><circle cx="127" cy="230" r="28"/><circle cx="250" cy="230" r="28"/><circle cx="400" cy="230" r="28"/>
+      </g>
+      <g fill="#C9CEDF"><circle cx="62" cy="230" r="7"/><circle cx="127" cy="230" r="7"/><circle cx="250" cy="230" r="7"/><circle cx="400" cy="230" r="7"/></g>
+    </g>
+  </svg>
+</div>
+</body></html>
