@@ -96,14 +96,34 @@ def ancre(n):
     return f'<tr><td style="font-size:0;line-height:0;"><a name="bloc-{n}" id="bloc-{n}"></a></td></tr>'
 
 
-def libelle(lang, cle):
+def libelle(lang, cle, t=None):
+    if t and t.get("lab_" + cle):
+        return t["lab_" + cle]
     L = {"FR": {"s1": "Loi Montagne", "s2": "Le tuto du mois", "s3": "La communauté", "s4": "Bravo !", "danger": "Hiver"},
          "IT": {"s1": "Loi Montagne", "s2": "Il tutorial del mese", "s3": "La community", "s4": "Bravi!", "danger": "Inverno"},
          "ES": {"s1": "Loi Montagne", "s2": "El tutorial del mes", "s3": "La comunidad", "s4": "¡Enhorabuena!", "danger": "Invierno"}}
     return L[lang][cle]
 
 
-def blocs(L, t):
+def image(url, alt, lien, largeur=520, hauteur=260):
+    if url.startswith("["):
+        return (f'<a href="{lien}" target="_blank" style="text-decoration:none;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
+                f'<td align="center" valign="middle" height="{hauteur}" style="height:{hauteur}px;background-color:{ICE};border-radius:12px;{TXT}font-size:14px;line-height:20px;color:{BLEU};">{url}<br>'
+                f'<span style="font-size:12px;color:{GRIS};">Remplacer par un bloc Image Brevo, cliquable</span></td></tr></table></a>')
+    return (f'<a href="{lien}" target="_blank"><img src="{url}" width="{largeur}" alt="{alt}" '
+            f'style="display:block;width:100%;max-width:{largeur}px;height:auto;border-radius:12px;{TXT}font-size:14px;color:{BLEU};"></a>')
+
+
+def sondage(t):
+    q = t["sondage"]
+    rep = "".join(f'<tr><td style="padding:0 0 10px 0;"><a href="{q["lien"]}?reponse={i}" target="_blank" style="display:block;padding:14px 18px;border-radius:8px;background-color:{BLANC};{TXT}font-size:15px;line-height:20px;font-weight:700;color:{BLEU};text-decoration:none;">{r}</a></td></tr>' for i, r in enumerate(q["reponses"], 1))
+    return sec(pastille(q["label"], INDIGO, BLANC) + h(q["question"], BLANC) + p(q["consigne"], SKY, "0 0 18px 0", 15, 22)
+               + f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rep}</table>', BLEU, "40px 40px 30px 40px")
+
+
+def blocs(L, t, images=None, liens=None):
+    IMAGES_ = images or IMAGES
+    LIENS_ = liens or LIENS
     b = []
     # En-tête : Michelin Blue, logo blanc, nom du rendez-vous
     b.append(sec(f"""<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
@@ -129,23 +149,23 @@ def blocs(L, t):
     puces = "".join(f'<tr><td width="20" valign="top" style="padding:0 0 10px 0;{TXT}font-size:16px;line-height:24px;color:{SKY};">–</td><td style="padding:0 0 10px 0;{TXT}font-size:16px;line-height:24px;color:{BLANC};">{x}</td></tr>' for x in t["s1_liste"])
     check = "".join(f'<tr><td width="34" valign="top" style="padding:0 0 12px 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" width="24" height="24" style="width:24px;height:24px;border-radius:12px;background-color:{TEAL};{TXT}font-size:14px;line-height:24px;font-weight:700;color:{SPACE};">✓</td></tr></table></td><td style="padding:1px 0 12px 0;{TXT}font-size:15px;line-height:22px;color:{BLANC};">{x}</td></tr>' for x in t["check"])
     b.append(ancre(1))
-    b.append(sec(pastille(libelle(L, "s1"), INDIGO, BLANC) + h(t["s1_titre"], BLANC)
+    b.append(sec(pastille(libelle(L, "s1", t), INDIGO, BLANC) + h(t["s1_titre"], BLANC)
         + "".join(p(x, BLANC) for x in t["s1"]) + p("<strong>" + t["s1_liste_tit"] + "</strong>", BLANC, "0 0 10px 0")
         + f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 8px 0;">{puces}</table>'
         + "".join(p(x, BLANC) for x in t["s1_suite"])
-        + f'<a href="{LIENS["s1"]}" target="_blank"><img src="{IMAGES["loi"]}" width="520" alt="{t["alt_loi"]}" style="display:block;width:100%;max-width:520px;height:auto;border-radius:12px;{TXT}font-size:14px;color:{SKY};"></a>'
+        + image(IMAGES_["loi"], t["alt_loi"], LIENS_["s1"])
         + f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:22px 0 24px 0;"><tr><td style="background-color:{INDIGO};border-radius:12px;padding:20px 20px 8px 20px;">{p("<strong>" + t["check_tit"] + "</strong>", BLANC, "0 0 14px 0", 17, 24)}<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{check}</table></td></tr></table>'
-        + bouton(t["s1_btn"], LIENS["s1"], JAUNE, BLEU), BLEU))
+        + bouton(t["s1_btn"], LIENS_["s1"], JAUNE, BLEU), BLEU))
     # 2. Alertes : blanc, étapes Ice Blue, pastille Tangerine (niveau 3)
     def etapes(titre_e, items):
         lig = "".join(f'<tr><td width="34" valign="top" style="padding:0 0 10px 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" width="26" height="26" style="width:26px;height:26px;border-radius:13px;background-color:{BLEU};{TXT}font-size:13px;line-height:26px;font-weight:700;color:{BLANC};">{i}</td></tr></table></td><td style="padding:2px 0 10px 0;{TXT}font-size:15px;line-height:22px;color:{NOIR};">{x}</td></tr>' for i, x in enumerate(items, 1))
         return f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:{ICE};border-radius:12px;padding:18px 18px 8px 18px;">{p("<strong>" + titre_e + "</strong>", BLEU, "0 0 12px 0", 16, 22)}<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{lig}</table></td></tr></table>'
     b.append(ancre(2))
-    b.append(sec(f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td>{pastille(libelle(L, "s2"), ICE, BLEU)}</td><td style="padding-left:8px;">{pastille(libelle(L, "danger"), TANG, BLANC)}</td></tr></table>'
+    b.append(sec(f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td>{pastille(libelle(L, "s2", t), ICE, BLEU)}</td><td style="padding-left:8px;">{pastille(libelle(L, "danger", t), TANG, BLANC)}</td></tr></table>'
         + h(t["s2_titre"], BLEU) + "".join(p(x) for x in t["s2"])
         + f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 20px 0;"><tr><td class="col" width="50%" valign="top" style="padding-right:8px;">{etapes(t["pour_signaler"], t["etapes_signaler"])}</td><td class="col" width="50%" valign="top" style="padding-left:8px;">{etapes(t["pour_anticiper"], t["etapes_anticiper"])}</td></tr></table>'
-        + f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:0 0 24px 0;"><a href="{LIENS["s2"]}" target="_blank"><img src="{IMAGES["alerte"]}" width="240" alt="{t["alt_alerte"]}" style="display:block;width:240px;max-width:100%;height:auto;border-radius:12px;{TXT}font-size:14px;color:{BLEU};"></a></td></tr></table>'
-        + bouton(t["s2_btn"], LIENS["s2"], BLEU, BLANC), BLANC))
+        + f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:0 0 24px 0;">{image(IMAGES_["alerte"], t["alt_alerte"], LIENS_["s2"], 240, 300)}</td></tr></table>'
+        + bouton(t["s2_btn"], LIENS_["s2"], BLEU, BLANC), BLANC))
     # 3. Contributeur : Michelin Blue, cartes Indigo, +1 jaune (touche sur bleu)
     cartes = ""
     acts = t["actions"]
@@ -157,18 +177,21 @@ def blocs(L, t):
                     f'<td valign="middle" style="padding:12px 14px 12px 4px;">{p("<strong>" + ti + "</strong>", BLANC, "0", 14, 19)}{p(de, SKY, "2px 0 0 0", 12, 17)}</td></tr></table></td>')
         cartes += f"<tr>{row}</tr>"
     b.append(ancre(3))
-    b.append(sec(pastille(libelle(L, "s3"), INDIGO, BLANC) + h(t["s3_titre"], BLANC)
+    b.append(sec(pastille(libelle(L, "s3", t), INDIGO, BLANC) + h(t["s3_titre"], BLANC)
         + "".join(p(x, BLANC) for x in t["s3"])
         + p("<strong>" + t["regle"] + "</strong>", JAUNE, "4px 0 14px 0", 18, 26)
         + f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 14px 0;">{cartes}</table>'
         + p(t["s3_fin"], BLANC, "0 0 22px 0")
-        + bouton(t["s3_btn"], LIENS["s3"], JAUNE, BLEU, 240), BLEU))
+        + bouton(t["s3_btn"], LIENS_["s3"], JAUNE, BLEU, 240), BLEU))
     # 4. Top contributeurs : Off White
     b.append(ancre(4))
-    b.append(sec(pastille(libelle(L, "s4"), ICE, BLEU) + h(t["top_titre"], BLEU)
-        + f'<a href="{LIENS["top"]}" target="_blank"><img src="{IMAGES["top"]}" width="520" alt="{t["alt_top"]}" style="display:block;width:100%;max-width:520px;height:auto;border-radius:12px;{TXT}font-size:14px;color:{BLEU};"></a>'
+    b.append(sec(pastille(libelle(L, "s4", t), ICE, BLEU) + h(t["top_titre"], BLEU)
+        + image(IMAGES_["top"], t["alt_top"], LIENS_["top"])
         + '<div style="height:22px;line-height:22px;font-size:0;">&nbsp;</div>'
-        + bouton(t["top_btn"], LIENS["top"], BLEU, BLANC, 220), OFF))
+        + bouton(t["top_btn"], LIENS_["top"], BLEU, BLANC, 220), OFF))
+    if t.get("sondage"):
+        b.append(ancre(5))
+        b.append(sondage(t))
     # Mot de la route : blanc, filet Sky Blue
     b.append(sec(h(t["mot_tag"].capitalize(), BLEU, "t3", 24, 36, "0 0 14px 0") + "".join(p(x) for x in t["mot"])
         + p("<strong>" + t["equipe"] + "</strong>", BLEU, "0"), BLANC, "36px 40px 36px 40px"))
