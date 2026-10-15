@@ -135,57 +135,96 @@ def entete(sous_titre):
 # ---------------- TRUCKER ----------------
 def trucker():
     c = []
-    c.append(entete("[Mois] · Ta newsletter"))
-    # Hero personnalisé
+    # En-tête : un nom de rendez-vous, comme un magazine
+    c.append(f"""<tr><td class="pad" style="background-color:{BLEU};padding:24px 40px 20px 40px;{F}">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td valign="middle"><a href="LIEN-APP"><img src="../../assets/logo-truckfly-blanc.png" width="130" height="33" alt="Michelin Truckfly" style="width:130px;height:33px;{F}font-size:16px;font-weight:bold;color:#FFFFFF;"></a></td>
+    <td valign="middle" align="right" style="{F}font-size:13px;line-height:18px;color:#FFFFFF;">N° [12] · [Octobre 2026]</td>
+  </tr></table>
+  <p style="margin:22px 0 0 0;{F}font-size:40px;line-height:44px;font-weight:bold;color:#FFFFFF;">Le Relais<span style="color:{JAUNE};">.</span></p>
+  <p style="margin:4px 0 0 0;{F}font-size:15px;line-height:21px;color:#C9CEDF;">Le rendez-vous des routiers de la communauté Michelin Truckfly</p>
+</td></tr>""")
+    # Édito signé, avec une accroche
     c.append(ligne(
-        etiquette("SALUT {{ contact.PRENOM | default : \"LA ROUTE\" }} 👋".replace(" 👋", ""), True)
-        + f'<h1 class="h1" style="margin:0 0 14px 0;{F}font-size:34px;line-height:40px;font-weight:bold;color:#FFFFFF;">[Titre du mois : une promesse courte, ex. « Trouve ta place avant 17 h »]</h1>'
-        + texte("[1 ou 2 phrases qui donnent envie : le bénéfice pour le routier, pas la fonctionnalité.]", True, "0 0 22px 0")
-        + bouton("[Action principale]", "LIEN-APP?utm_content=hero"),
-        fond=BLEU, pad="36px 40px 40px 40px", classe=""))
-    c.append(ligne(image("photo du mois, 1200 × 600, un vrai routier ou un vrai lieu", 280, "LIEN-APP?utm_content=image"), pad="0 40px 0 40px", fond=BLEU, classe=""))
-    c.append(f'<tr><td style="background-color:{BLEU};height:32px;line-height:32px;font-size:0;">&nbsp;</td></tr>')
-    # Communauté en chiffres
+        etiquette("L'ÉDITO")
+        + f'<h1 class="h1 t-fonce" style="margin:0 0 16px 0;{F}font-size:30px;line-height:36px;font-weight:bold;color:{BLEU};">[Accroche : une question ou une anecdote, ex. « Toi aussi, tu as déjà tourné 30 minutes pour trouver une place ? »]</h1>'
+        + texte("Salut {{ contact.PRENOM | default : \"la route\" }},")
+        + texte("[3 ou 4 phrases au ton perso : une histoire vraie de la communauté, ce qui se passe sur la route ce mois-ci, et ce que tu vas trouver dans ce numéro.]")
+        + f"""<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 0 0;"><tr>
+  <td width="52" valign="middle"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="44" height="44" style="width:44px;height:44px;border-radius:22px;background-color:#DCE2F0;{F}font-size:12px;color:{BLEU};">[photo]</td></tr></table></td>
+  <td valign="middle" style="{F}"><p class="t-fonce" style="margin:0;font-size:15px;line-height:20px;font-weight:bold;color:{NOIR};">[Prénom]</p><p class="t-doux" style="margin:0;font-size:13px;line-height:18px;color:{GRIS};">[rôle] chez Michelin Truckfly</p></td>
+</tr></table>""",
+        pad="36px 40px 28px 40px"))
+    # Au programme
+    prog = [("1", "Le tuto du mois", "[en une ligne]"), ("2", "L'actu des routiers", "[en une ligne]"),
+            ("3", "La victoire de la communauté", "[en une ligne]"), ("4", "Ton avis compte", "sondage en 1 clic")]
+    lignes = "".join(f'''<tr><td width="30" valign="top" style="padding:0 0 10px 0;{F}font-size:15px;line-height:22px;font-weight:bold;color:{BLEU};" class="t-fonce">{n}.</td><td class="t-fonce" style="padding:0 0 10px 0;{F}font-size:15px;line-height:22px;color:{NOIR};"><a href="#bloc-{n}" style="color:{BLEU};font-weight:bold;">{t}</a> · {d}</td></tr>''' for n, t, d in prog)
+    c.append(ligne(f'''<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="creme" style="background-color:{CREME};border-radius:12px;padding:20px 22px 10px 22px;">
+  {etiquette("AU PROGRAMME")}<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{lignes}</table>
+</td></tr></table>''', pad="0 40px 36px 40px"))
+    # 1. Tuto du mois
+    etapes = "".join(f'''<tr><td width="38" valign="top" style="padding:0 0 14px 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" width="28" height="28" style="width:28px;height:28px;border-radius:14px;background-color:{JAUNE};{F}font-size:14px;line-height:28px;font-weight:bold;color:{BLEU};">{i}</td></tr></table></td><td style="padding:3px 0 14px 0;{F}font-size:16px;line-height:23px;color:#FFFFFF;">{e}</td></tr>'''
+                     for i, e in enumerate(["[Étape 1 : ex. Ouvre la carte et touche « Filtres ».]",
+                                            "[Étape 2 : ex. Coche « Parking sécurisé ».]",
+                                            "[Étape 3 : ex. Lis les avis récents avant de choisir.]"], 1))
+    c.append(f'<tr><td id="bloc-1" style="font-size:0;line-height:0;"><a name="bloc-1"></a></td></tr>')
     c.append(ligne(
-        etiquette("LA COMMUNAUTÉ CE MOIS-CI") + titre("Grâce à vous, la route est mieux renseignée")
+        etiquette("1 · LE TUTO DU MOIS", True) + titre("[Titre du tuto, ex. « Trouver un parking sécurisé en 3 gestes »]", True)
+        + f'''<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+  <td class="col" width="40%" valign="top" style="padding-right:18px;">{image("capture de l'app (ou GIF animé)", 300, "LIEN-TUTO")}</td>
+  <td class="col" width="60%" valign="top"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 8px 0;">{etapes}</table>
+  {bouton("Essayer dans l'app", "LIEN-TUTO", largeur=240)}</td>
+</tr></table>''',
+        fond=BLEU, pad="36px 40px", classe=""))
+    # 2. Actu des routiers
+    actus = [("[Pays · Thème]", "[Titre court de l'actu, ex. « Loi Montagne : les équipements obligatoires dès le 1er novembre »]", "[1 phrase : ce que ça change pour toi.]"),
+             ("[Pays · Thème]", "[Titre de l'actu 2]", "[1 phrase.]"),
+             ("[Pays · Thème]", "[Titre de l'actu 3]", "[1 phrase.]")]
+    cartes = "".join(f'''<tr><td style="padding:0 0 12px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="creme" style="background-color:{CREME};border-radius:12px;padding:16px 20px;border-left:4px solid {BLEU};{F}">
+  <p style="margin:0 0 4px 0;font-size:12px;line-height:16px;font-weight:bold;color:{BLEU};" class="t-fonce">{tag}</p>
+  <p class="t-fonce" style="margin:0 0 4px 0;font-size:17px;line-height:23px;font-weight:bold;color:{NOIR};">{t}</p>
+  <p class="t-fonce" style="margin:0 0 6px 0;font-size:15px;line-height:22px;color:{NOIR};">{d}</p>
+  <p style="margin:0;font-size:14px;line-height:20px;"><a href="LIEN-ACTU-{i}" style="color:{BLEU};font-weight:bold;">En savoir plus&nbsp;&rarr;</a></p>
+</td></tr></table></td></tr>''' for i, (tag, t, d) in enumerate(actus, 1))
+    c.append(f'<tr><td id="bloc-2" style="font-size:0;line-height:0;"><a name="bloc-2"></a></td></tr>')
+    c.append(ligne(etiquette("2 · L'ACTU DES ROUTIERS") + titre("Ce qui change sur la route ce mois-ci")
+                   + f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{cartes}</table>',
+                   pad="36px 40px 24px 40px"))
+    # 3. Victoire de la communauté
+    c.append(f'<tr><td id="bloc-3" style="font-size:0;line-height:0;"><a name="bloc-3"></a></td></tr>')
+    c.append(ligne(
+        etiquette("3 · LA VICTOIRE DE LA COMMUNAUTÉ") + titre("[Ex. « Grâce à vous, [X] nouveaux parkings ajoutés ce mois-ci »]")
+        + texte("[2 phrases : raconte ce que la communauté a accompli ensemble, et remercie.]")
         + stats([("[X]", "avis déposés"), ("[X]", "nouveaux lieux"), ("[X]", "nouveaux Profils Trucker")])
-        + texte("Chaque avis aide un collègue à mieux s'arrêter. Merci !", marge="16px 0 0 0"),
-        pad="36px 34px 30px 34px"))
-    # Spot du mois
+        + '<div style="height:22px;line-height:22px;font-size:0;">&nbsp;</div>'
+        + f'''<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="creme" style="background-color:{CREME};border-radius:12px;padding:18px 20px;{F}">
+  <p style="margin:0 0 6px 0;font-size:12px;line-height:16px;font-weight:bold;color:{BLEU};" class="t-fonce">LE SPOT LE MIEUX NOTÉ DU MOIS</p>
+  <p class="t-fonce" style="margin:0 0 4px 0;font-size:17px;line-height:23px;font-weight:bold;color:{NOIR};">[Nom du lieu], [ville] <span style="color:{BLEU};">★★★★★</span></p>
+  <p class="t-fonce" style="margin:0 0 8px 0;font-size:15px;line-height:22px;color:{NOIR};font-style:italic;">« [Extrait d'un vrai avis] » · [Prénom]</p>
+  <p style="margin:0;font-size:14px;line-height:20px;"><a href="LIEN-SPOT" style="color:{BLEU};font-weight:bold;">Voir le spot&nbsp;&rarr;</a></p>
+</td></tr></table>''',
+        pad="12px 34px 36px 34px"))
+    # 4. Sondage 1 clic
+    c.append(f'<tr><td id="bloc-4" style="font-size:0;line-height:0;"><a name="bloc-4"></a></td></tr>')
     c.append(ligne(
-        etiquette("LE SPOT DU MOIS") + titre("[Nom du lieu], [ville]")
-        + image("photo du lieu", 220, "LIEN-SPOT")
-        + f"""<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:16px 0 0 0;"><tr>
-  <td class="creme" style="background-color:{CREME};border-radius:12px;padding:18px 20px;{F}">
-    <p style="margin:0 0 6px 0;font-size:16px;line-height:20px;color:{BLEU};font-weight:bold;">★★★★★ <span class="t-fonce" style="color:{NOIR};font-weight:normal;font-size:14px;">[4,8/5 · X avis]</span></p>
-    <p class="t-fonce" style="margin:0 0 6px 0;font-size:16px;line-height:24px;color:{NOIR};font-style:italic;">« [Extrait d'un vrai avis de routier] »</p>
-    <p class="t-doux" style="margin:0;font-size:13px;line-height:18px;color:{GRIS};">[Prénom], routier depuis [X] ans</p>
-  </td></tr></table>"""
-        + '<div style="height:18px;line-height:18px;font-size:0;">&nbsp;</div>'
-        + bouton("Voir le spot", "LIEN-SPOT", fond=BLEU, couleur="#FFFFFF", largeur=220),
-        pad="8px 40px 36px 40px"))
-    # Sondage 1 clic
-    c.append(ligne(
-        sondage("[Question du sondage, ex. « Ton plus gros souci pour te garer le soir ? »]",
+        sondage("[Question, ex. « Ton plus gros souci pour te garer le soir ? »]",
                 ["[Réponse A]", "[Réponse B]", "[Réponse C]"], "LIEN-SONDAGE")
-        .replace("{{CONSIGNE}}", "Clique sur ta réponse, c'est tout. Les résultats arrivent dans la prochaine newsletter."),
+        .replace("SONDAGE EXPRESS · 1 CLIC", "4 · TON AVIS COMPTE · 1 CLIC")
+        .replace("{{CONSIGNE}}", "Clique sur ta réponse, c'est tout. Les résultats dans le prochain Relais."),
         fond=BLEU, pad="36px 40px 30px 40px", classe=""))
-    # Astuce
-    c.append(ligne(
-        etiquette("L'ASTUCE DE LA ROUTE") + titre("[Titre de l'astuce]")
-        + texte("[3 phrases max. Concrète, utile tout de suite. Ex. : comment filtrer les parkings sécurisés dans l'app.]")
-        + f'<p style="margin:0;{F}font-size:15px;line-height:22px;"><a href="LIEN-ASTUCE" style="color:{BLEU};font-weight:bold;">[Voir comment faire]&nbsp;&rarr;</a></p>',
-        pad="36px 40px 32px 40px"))
-    # Nouveauté app 2 colonnes
-    c.append(ligne(f"""<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-  <td class="col" width="42%" valign="top" style="padding-right:16px;">{image("capture de l'app", 230, "LIEN-NOUVEAUTE")}</td>
-  <td class="col" width="58%" valign="middle">
-    {etiquette("NOUVEAU DANS L'APP")}{titre("[Nom de la nouveauté]", taille=21)}
-    {texte("[Ce que ça change pour toi, en 2 phrases.]")}
-    {bouton("[Essayer]", "LIEN-NOUVEAUTE", fond=BLEU, couleur="#FFFFFF", largeur=180)}
-  </td></tr></table>""", fond=CREME, pad="32px 40px", classe="creme"))
+    # Le mot de la fin : clin d'œil + contenu des lecteurs
+    c.append(ligne(f'''<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+  <td class="col" width="45%" valign="top" style="padding-right:18px;">{image("la photo d'un routier de la communauté", 220, "LIEN-PHOTO")}</td>
+  <td class="col" width="55%" valign="middle">
+    {etiquette("LE MOT DE LA FIN")}{titre("[Ta plus belle photo de la route]", taille=21)}
+    {texte("[Chaque mois, on publie la photo d'un routier. Envoie-nous la tienne : lever de soleil, aire insolite, ton camion...]")}
+    {bouton("Envoyer ma photo", "LIEN-PHOTO", fond=BLEU, couleur="#FFFFFF", largeur=220)}
+  </td></tr></table>''', fond=CREME, pad="32px 40px", classe="creme"))
+    c.append(ligne(texte("Bonne route, et à dans un mois pour le prochain Relais.", marge="0 0 4px 0")
+                   + f'<p class="t-fonce" style="margin:0;{F}font-size:16px;line-height:24px;font-weight:bold;color:{BLEU};">L\'équipe Michelin Truckfly</p>',
+                   pad="28px 40px 32px 40px"))
     c.append(pied("Tu reçois cet e-mail parce que tu utilises l'application Michelin Truckfly."))
-    return page("Newsletter Trucker", "[Preheader : complète l'objet, 60 à 90 caractères]", "\n".join(c))
+    return page("Le Relais · Michelin Truckfly", "[Preheader : complète l'objet, 60 à 90 caractères]", "\n".join(c))
 
 
 # ---------------- OWNER ----------------
