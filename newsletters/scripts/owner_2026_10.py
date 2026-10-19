@@ -30,10 +30,7 @@ def corps(apercu):
     b.append(sec(f"""<h2 class="t2" style="margin:0 0 20px 0;{TIT}font-size:32px;line-height:44px;color:{BLEU};">{insec("Cet hiver, les routiers vont chercher où s'arrêter plus tôt")}</h2>
 {p("Bonjour {{ contact.PRENOM | default : \"à toute l’équipe\" }},")}
 {p("Depuis le passage à l'heure d'hiver, la nuit tombe vers 17 h 30. Les routiers choisissent leur arrêt du soir plus tôt dans la journée, et les places de parking poids lourds se remplissent plus vite.")}
-{p("C'est le moment où <strong>une fiche à jour fait la différence</strong> : horaires d'hiver, places disponibles, douches, repas chaud. Ce mois-ci, nous vous donnons les clés pour être le premier choix des routiers cet hiver.")}
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 0 0;"><tr>
-  <td width="54" valign="middle"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" width="44" height="44" style="width:44px;height:44px;border-radius:22px;background-color:{ICE};{TXT}font-size:11px;color:{BLEU};">[photo]</td></tr></table></td>
-  <td valign="middle">{p('<strong>[Prénom Nom]</strong>', NOIR, '0', 15, 21)}{p('[rôle] chez Michelin Truckfly', GRIS, '0', 12, 18)}</td></tr></table>""", BLANC, "40px 40px 32px 40px"))
+{p("C'est le moment où <strong>une fiche à jour fait la différence</strong> : horaires d'hiver, places disponibles, douches, repas chaud. Ce mois-ci, nous vous donnons les clés pour être le premier choix des routiers cet hiver.")}""", BLANC, "40px 40px 32px 40px"))
     # Sommaire
     prog = ["L'hiver arrive : ce que cherchent les routiers", "Nouveau : les routiers se recommandent entre amis", "Votre fiche d'hiver en 4 points", "Le conseil du mois : répondre aux avis"]
     lignes = "".join(f'<tr><td width="30" valign="top" style="padding:0 0 10px 0;{TXT}font-size:15px;line-height:22px;font-weight:700;color:{BLEU};">{i}.</td><td style="padding:0 0 10px 0;{TXT}font-size:15px;line-height:22px;"><a href="#bloc-{i}" style="color:{BLEU};font-weight:700;">{x}</a></td></tr>' for i, x in enumerate(prog, 1))
@@ -81,10 +78,11 @@ def corps(apercu):
   <td class="col" width="42%" valign="top" style="padding-right:16px;">{image("[Photo de l'établissement]", "Établissement partenaire", "LIEN-TEMOIGNAGE", 220, 200)}</td>
   <td class="col" width="58%" valign="top">{p("« [Citation du gérant : ce que Michelin Truckfly lui apporte, en 2 phrases.] »", NOIR, "0 0 10px 0", 17, 25)}{p("[Prénom Nom], [fonction]", GRIS, "0 0 14px 0", 13, 18)}
   <p style="margin:0;{TXT}font-size:15px;line-height:22px;"><a href="LIEN-TEMOIGNAGE" style="color:{BLEU};font-weight:700;">Lire son témoignage</a></p></td></tr></table>""", BLANC))
-    # Contact
-    b.append(sec(f"""<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-  <td class="col" valign="middle">{h("Une question sur votre fiche ?", BLEU, "t3", 22, 30, "0 0 6px 0")}{p("Notre équipe vous aide à la mettre à jour.", NOIR, "0")}</td>
-  <td class="col" valign="middle" align="right" width="200">{bouton("Nous écrire", "mailto:[adresse-support]", BLEU, BLANC, 180)}</td></tr></table>""", OFF, "32px 40px"))
+    # Conclusion
+    b.append(sec(f"""{p("À l'approche de l'hiver, nous vous souhaitons une très belle saison, ainsi qu'à vos équipes !")}
+{p('Et si vous avez des questions sur votre fiche ou envie d\'en parler, on est là. N\'hésitez pas à nous contacter en répondant à cet e-mail ou à <a href="mailto:support.truckfly@zendesk.com" style="color:' + BLEU + ';font-weight:700;">support.truckfly@zendesk.com</a>.')}
+{p("À très vite,<br><strong>La Team Michelin Truckfly</strong>", NOIR, "0 0 24px 0")}
+{bouton("Nous écrire", "mailto:support.truckfly@zendesk.com", BLEU, BLANC, 200)}""", OFF, "36px 40px 40px 40px"))
     # Pied
     b.append(sec(f"""{p('<a href="https://faq.truckfly.com/" style="color:' + SKY + ';font-weight:700;">FAQ Michelin Truckfly</a>', BLANC, '0 0 14px 0', 14, 21)}
 {p("Vous recevez cet e-mail car votre établissement est référencé sur Michelin Truckfly.", SKY, '0 0 6px 0', 12, 18)}
