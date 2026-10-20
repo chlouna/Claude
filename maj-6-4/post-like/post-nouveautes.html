@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Post 6.4 : les nouveautés de l'app</title>
+<!-- Post 4:5 d'après la maquette fournie. Maquette en 652 × 815 px, exportée en 1080 × 1350 et 3000 × 3750 par rendre.mjs.
+     Photo de fond : assets/photo-fond.jpg (à fournir) ; sans elle, le fond reste Michelin Blue. -->
+<style>
+@font-face { font-family: "Bib"; src: url("../../ma-video/assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+:root { --bleu: #061866; --jaune: #FFFF1A; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 652px; height: 815px; overflow: hidden; background: var(--bleu); }
+.post { position: relative; width: 652px; height: 815px; overflow: hidden; font-family: "Noto Sans", "Inter", sans-serif; color: #fff;
+  background: var(--bleu) url("assets/photo-fond.jpg") center / cover no-repeat; }
+.post > * { position: absolute; }
+/* Voile sombre pour la lisibilité du texte blanc sur la photo */
+.voile { inset: 0; background: linear-gradient(90deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 55%, rgba(0, 0, 0, 0.5) 100%); }
+.structure { inset: 0; width: 100%; height: 100%; }
+
+.titre { left: 0; right: 0; top: 214px; text-align: center; font-family: "Bib", sans-serif; font-weight: 700; font-size: 35px; line-height: 1.1; }
+.trait { left: 192px; width: 268px; top: 266px; height: 2px; background: var(--jaune); border-radius: 1px; }
+
+.telephone { left: 116px; top: 334px; width: 206px; height: auto; filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.45)); }
+
+.texte { left: 340px; top: 342px; width: 236px; }
+.texte h2 { font-family: "Bib", sans-serif; font-weight: 700; font-size: 21px; line-height: 23px; color: var(--jaune); }
+.texte ul { margin-top: 34px; padding-left: 16px; display: flex; flex-direction: column; gap: 22px; }
+.texte li { font-size: 15.5px; line-height: 21px; }
+.texte li b { font-weight: 700; }
+</style>
+</head>
+<body>
+<main class="post">
+  <div class="voile"></div>
+  <img class="structure" src="assets/structure-4x5-white.png" alt="" />
+  <h1 class="titre">Les nouveautés de l’app</h1>
+  <div class="trait"></div>
+  <img class="telephone" src="assets/capture-like.png" alt="Fil d'activité de Michelin Truckfly avec le bouton J'aime" />
+  <div class="texte">
+    <h2>Like les contributions des autres conducteurs&nbsp;!</h2>
+    <ul>
+      <li>Tu peux maintenant <b>liker les photos et les commentaires des autres conducteurs.</b></li>
+      <li>Un simple geste pour <b>encourager ceux qui font vivre la communauté, et montrer quelles infos sont vraiment utiles sur la route.</b></li>
+    </ul>
+  </div>
+</main>
+</body>
+</html>
