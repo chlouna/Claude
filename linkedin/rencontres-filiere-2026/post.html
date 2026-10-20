@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>LinkedIn : Les Rencontres de la Filière 2026</title>
+<!-- Post LinkedIn 1:1 d'après la maquette de l'utilisateur, corrigée (alignement à gauche, date mise en avant,
+     haut assombri, marque en pied). Fond : photo de la maquette, texte retiré et flouté (assets/fond.png). -->
+<style>
+@font-face { font-family: "Bib"; src: url("../../ma-video/assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Bib"; src: url("../../ma-video/assets/fonts/BIB-Light.woff2") format("woff2"); font-weight: 300; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
+:root { --bleu: #061866; --jaune: #FFFF1A; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 360px; height: 360px; overflow: hidden; background: var(--bleu); }
+.post { position: relative; width: 360px; height: 360px; overflow: hidden; color: #fff; font-family: "Inter", sans-serif;
+  background: var(--bleu) url("assets/fond.png") center / cover no-repeat; }
+.post > * { position: absolute; }
+/* Voile : sombre à gauche pour le texte, et en haut pour calmer l'écran géant */
+.voile { inset: 0; background:
+  linear-gradient(90deg, rgba(0, 8, 40, 0.78) 0%, rgba(0, 8, 40, 0.5) 55%, rgba(0, 8, 40, 0.05) 100%),
+  linear-gradient(180deg, rgba(0, 8, 40, 0.35) 0%, rgba(0, 8, 40, 0) 35%); }
+
+.bloc { left: 28px; top: 40px; width: 310px; }
+.surtitre { font-weight: 600; font-size: 11px; letter-spacing: 0.3px; color: rgba(255, 255, 255, 0.85); }
+.bloc h1 { margin-top: 10px; font-family: "Bib", sans-serif; font-weight: 700; font-size: 29px; line-height: 33px; }
+.date { margin-top: 16px; font-family: "Bib", sans-serif; font-weight: 700; font-size: 24px; line-height: 28px; color: var(--jaune); }
+.trait { margin-top: 18px; width: 40px; height: 2px; background: #fff; }
+.bloc p.phrase { margin-top: 14px; font-weight: 600; font-size: 15px; line-height: 21px; max-width: 230px; }
+.marque { left: 28px; bottom: 24px; font-family: "Bib", sans-serif; font-weight: 300; font-size: 14px; }
+.marque b { font-weight: 700; }
+</style>
+</head>
+<body>
+<main class="post">
+  <div class="voile"></div>
+  <div class="bloc">
+    <p class="surtitre">Aujourd’hui</p>
+    <h1>Les Rencontres<br />de la Filière 2026</h1>
+    <p class="date">Jeudi 22 octobre</p>
+    <div class="trait"></div>
+    <p class="phrase">Retrouvez l’équipe Michelin Truckfly sur place pour échanger.</p>
+  </div>
+  <p class="marque"><b>Michelin</b> Truckfly</p>
+</main>
+</body>
+</html>
