@@ -5,7 +5,7 @@ Régénérer : `node maj-6-4/post-like/rendre.mjs` après modification de `post.
 
 ## Légende
 
-Like les contributions des autres conducteurs ! 👍
+Like les contributions des autres conducteurs !
 
 Une photo de parking utile, un commentaire qui t’a évité un mauvais arrêt ?
 
