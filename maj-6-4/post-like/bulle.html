@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Bulle Aimé par Vous</title>
+<!-- Bulle seule, fond transparent, à poser sur un visuel. Exportée par bulle.mjs. -->
+<style>
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: transparent; }
+body { padding: 24px; display: inline-block; }
+.bulle {
+  height: 34px; padding: 0 12px; border-radius: 17px; font-family: "Inter", sans-serif;
+  display: inline-flex; align-items: center; gap: 6px; background: #fff; color: #061866;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35); white-space: nowrap;
+}
+.bulle span { font-weight: 600; font-size: 12px; }
+.bulle svg { width: 15px; height: 15px; }
+.bulle b { font-weight: 700; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="bulle">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 10h4v11H2zM8 21h9.2a2 2 0 0 0 1.96-1.6l1.6-8A2 2 0 0 0 18.8 9H14l.9-4.3a1.6 1.6 0 0 0-2.9-1.2L8 9.5z"/></svg>
+  <b>1</b><span>· Aimé par Vous</span>
+</div>
+</body>
+</html>
