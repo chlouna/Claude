@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Post 6.4 : like des contributions</title>
+<!-- Post Instagram 4:5. Maquette en 360 × 450 px (échelle de la charte : titre Bib Bold), exportée en 1080 × 1350 et 3000 × 3750 par rendre.mjs. -->
+<style>
+@font-face { font-family: "Bib"; src: url("../../ma-video/assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+:root { --bleu: #061866; --jaune: #FFFF1A; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 360px; height: 450px; overflow: hidden; background: var(--bleu); }
+.post { position: relative; width: 360px; height: 450px; overflow: hidden; background: var(--bleu); font-family: "Inter", sans-serif; color: #fff; }
+.post > * { position: absolute; }
+
+/* Structure de la charte : cadre ouvert en bas, encoche en M en haut */
+.structure { inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+.surtitre { right: 48px; top: 54px; font-weight: 600; font-size: 11px; letter-spacing: 0.2px; color: rgba(255, 255, 255, 0.85); }
+.titre { left: 50px; top: 100px; width: 266px; font-family: "Bib", sans-serif; font-weight: 700; font-size: 24px; line-height: 28px; }
+.titre em { font-style: normal; color: var(--jaune); }
+
+/* Carte du fil d'activité, tirée de la capture (carte : x 37–362, y 210–605 sur 399 × 787) */
+.carte {
+  left: 50px; top: 198px; width: 200px; height: 243px; border-radius: 12px; z-index: 1;
+  background: #fff url("assets/capture-like.png") no-repeat;
+  background-size: calc(399px * 200 / 325) calc(787px * 200 / 325);
+  background-position: calc(-37px * 200 / 325) calc(-210px * 200 / 325);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+/* Le bouton « J'aime » de la carte, entouré, et agrandi dans une bulle */
+.anneau { left: 182px; top: 401px; width: 66px; height: 24px; border: 2px solid var(--bleu); border-radius: 11px; z-index: 2; }
+.lien { left: 236px; top: 362px; width: 2px; height: 39px; background: var(--bleu); z-index: 2; }
+.bulle {
+  right: 40px; top: 328px; height: 34px; padding: 0 12px; border-radius: 17px; z-index: 2;
+  display: flex; align-items: center; gap: 6px; background: #fff; color: var(--bleu);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35); white-space: nowrap;
+}
+.bulle span { font-weight: 600; font-size: 12px; }
+.bulle svg { width: 15px; height: 15px; }
+.bulle b { font-weight: 700; font-size: 13px; }
+</style>
+</head>
+<body>
+<main class="post">
+  <img class="structure" src="assets/structure-4x5-white.png" alt="" />
+  <p class="surtitre">Nouveau dans la 6.4</p>
+  <h1 class="titre"><em>Like</em> les contributions des autres conducteurs&nbsp;!</h1>
+  <div class="carte"></div>
+  <div class="anneau"></div>
+  <div class="lien"></div>
+  <div class="bulle">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 10h4v11H2zM8 21h9.2a2 2 0 0 0 1.96-1.6l1.6-8A2 2 0 0 0 18.8 9H14l.9-4.3a1.6 1.6 0 0 0-2.9-1.2L8 9.5z"/></svg>
+    <b>1</b><span>· Aimé par Vous</span>
+  </div>
+</main>
+</body>
+</html>
