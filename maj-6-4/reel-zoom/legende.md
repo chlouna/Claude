@@ -11,7 +11,7 @@ Régénérer : `node maj-6-4/reel-zoom/rendre.mjs` (ou `rendre.mjs 2,5,8` pour d
 | 3–5,5 s | Ouvre le profil d’un trucker | Le téléphone monte avec le profil de Charlie G. ; tap sur sa photo |
 | 5,5–8,5 s | Touche sa photo : elle s’affiche en grand | La photo s'agrandit en plein écran sur fond noir |
 | 8,5–11,5 s | Idéal pour reconnaître tes amis conducteurs ! | La photo reste en grand, puis tap sur la croix : elle revient à sa place |
-| 11,5–15 s | **Mets à jour ton app !** / bouton « Mettre à jour Michelin Truckfly » | Le bouton jaune pulse |
+| 11,5–15 s | **Mets à jour ton app !** / bouton « Télécharge Michelin Truckfly » | Le bouton jaune pulse |
 
 ## Légende
 
