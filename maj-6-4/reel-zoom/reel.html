@@ -6,7 +6,7 @@
 <title>Reel 6.4 : zoom sur les photos de profil</title>
 <!-- Reel Instagram 9:16, 15 s. Maquette en 540 × 960, rendue en 1080 × 1920 par rendre.mjs.
      Toutes les animations sont en CSS avec des délais absolus : la page est une timeline de 15 s.
-     0–3 s titre · 3–6 s profil + tap · 6–9 s photo en grand · 9–11,5 s on referme · 11,5–15 s fin. -->
+     0–3 s titre · 3–5,5 s profil + tap · 5,5–11 s photo en grand · 11–11,5 s on referme · 11,5–15 s fin. -->
 <style>
 @font-face { font-family: "Bib"; src: url("../../ma-video/assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
 @font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
@@ -35,7 +35,7 @@ svg.illu { display: block; width: 100%; height: 100%; }
 /* --- 0–3 s : ouverture --- */
 .ouverture { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 0 48px; text-align: center;
   animation: sort 0.4s ease 2.75s forwards; }
-.badge { font-weight: 700; font-size: 20px; color: var(--bleu); background: var(--jaune); border-radius: 20px; padding: 7px 18px;
+.badge { font-family: "Bib", sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: var(--jaune);
   animation: pop 0.45s var(--ressort) 0.15s both; }
 .titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 50px; line-height: 1.08; animation: entre 0.55s var(--ressort) 0.35s both; }
 .titre em { font-style: normal; color: var(--jaune); }
@@ -91,12 +91,12 @@ svg.illu { display: block; width: 100%; height: 100%; }
   border: 4px solid var(--jaune); box-shadow: 0 0 0 3px rgba(6, 24, 102, 0.35); z-index: 8; opacity: 0; }
 
 /* Photo en plein écran */
-.voile { inset: 0; background: #000; z-index: 6; animation: fondu 0.35s ease 5.55s both, efface 0.35s ease 10.1s forwards; }
+.voile { inset: 0; background: #000; z-index: 6; animation: fondu 0.35s ease 5.55s both, efface 0.35s ease 10.6s forwards; }
 .grande { left: 0; top: 155px; width: 282px; height: 282px; overflow: hidden; z-index: 7;
-  animation: fondu 0.01s linear 5.5s both, zoom 0.55s cubic-bezier(0.3, 0.8, 0.3, 1) 5.5s both, dezoom 0.5s cubic-bezier(0.5, 0, 0.6, 1) 9.95s forwards, efface 0.01s linear 10.45s forwards; }
-.v-nom { left: 18px; top: 52px; font-weight: 700; font-size: 15px; color: #fff; z-index: 7; animation: fondu 0.3s ease 6.1s both, efface 0.25s ease 9.85s forwards; }
+  animation: fondu 0.01s linear 5.5s both, zoom 0.55s cubic-bezier(0.3, 0.8, 0.3, 1) 5.5s both, dezoom 0.5s cubic-bezier(0.5, 0, 0.6, 1) 10.45s forwards, efface 0.01s linear 10.95s forwards; }
+.v-nom { left: 18px; top: 52px; font-weight: 700; font-size: 15px; color: #fff; z-index: 7; animation: fondu 0.3s ease 6.1s both, efface 0.25s ease 10.35s forwards; }
 .fermer { right: 16px; top: 44px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 255, 255, 0.18); color: #fff;
-  display: grid; place-items: center; font-size: 24px; line-height: 1; z-index: 7; animation: fondu 0.3s ease 6.1s both, efface 0.25s ease 9.85s forwards; }
+  display: grid; place-items: center; font-size: 24px; line-height: 1; z-index: 7; animation: fondu 0.3s ease 6.1s both, efface 0.25s ease 10.35s forwards; }
 
 /* --- 11,5–15 s : fin --- */
 .fin { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 0 44px; text-align: center; }
@@ -111,15 +111,15 @@ svg.illu { display: block; width: 100%; height: 100%; }
 
   <!-- 0–3 s : titre -->
   <div class="ouverture">
-    <span class="badge">Nouveau dans la 6.4</span>
+    <span class="badge">Nouveau</span>
     <h1 class="titre">Zoome sur les <em>photos de profil</em></h1>
     <div class="rond" id="portrait1"></div>
   </div>
 
   <!-- Légendes -->
   <p class="legende" style="animation: entre 0.45s var(--ressort) 3.1s both, sort 0.3s ease 5.3s forwards">Ouvre le profil d’un trucker</p>
-  <p class="legende" style="animation: entre 0.45s var(--ressort) 5.75s both, sort 0.3s ease 8.85s forwards">Touche sa photo&nbsp;: <em>elle s’affiche en grand</em></p>
-  <p class="legende" style="animation: entre 0.45s var(--ressort) 9.05s both, sort 0.3s ease 11.15s forwards">Et referme-la d’un geste</p>
+  <p class="legende" style="animation: entre 0.45s var(--ressort) 5.75s both, sort 0.3s ease 8.25s forwards">Touche sa photo&nbsp;: <em>elle s’affiche en grand</em></p>
+  <p class="legende" style="animation: entre 0.45s var(--ressort) 8.45s both, sort 0.3s ease 11.15s forwards">Idéal pour reconnaître <em>tes amis conducteurs&nbsp;!</em></p>
 
   <!-- 3–11,5 s : le téléphone -->
   <div class="cadre"><div class="tel">
@@ -166,7 +166,7 @@ svg.illu { display: block; width: 100%; height: 100%; }
       <span class="v-nom">Charlie G.</span>
       <div class="fermer">×</div>
       <!-- Tap sur la croix (centre : 248, 62) -->
-      <div class="tap" style="left: 248px; top: 62px; animation: tap 0.7s ease-out 9.45s both"></div>
+      <div class="tap" style="left: 248px; top: 62px; animation: tap 0.7s ease-out 9.95s both"></div>
     </div>
   </div></div>
 

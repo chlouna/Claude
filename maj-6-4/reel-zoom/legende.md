@@ -7,17 +7,17 @@ Régénérer : `node maj-6-4/reel-zoom/rendre.mjs` (ou `rendre.mjs 2,5,8` pour d
 
 | Temps | Texte à l'écran | Ce qui se passe |
 |---|---|---|
-| 0–3 s | Nouveau dans la 6.4 / **Zoome sur les photos de profil** | Titre, puis le portrait de Charlie G. apparaît |
+| 0–3 s | **Nouveau** (en jaune) / **Zoome sur les photos de profil** | Titre, puis le portrait de Charlie G. apparaît |
 | 3–5,5 s | Ouvre le profil d’un trucker | Le téléphone monte avec le profil de Charlie G. ; tap sur sa photo |
-| 5,5–9 s | Touche sa photo : elle s’affiche en grand | La photo s'agrandit en plein écran sur fond noir |
-| 9–11,5 s | Et referme-la d’un geste | Tap sur la croix : la photo revient à sa place |
+| 5,5–8,5 s | Touche sa photo : elle s’affiche en grand | La photo s'agrandit en plein écran sur fond noir |
+| 8,5–11,5 s | Idéal pour reconnaître tes amis conducteurs ! | La photo reste en grand, puis tap sur la croix : elle revient à sa place |
 | 11,5–15 s | **Mets à jour ton app !** / bouton « Mettre à jour Michelin Truckfly » | Le bouton jaune pulse |
 
 ## Légende
 
 Tu veux mettre un visage sur un pseudo ?
 
-Avec la 6.4, touche la photo de profil d’un autre trucker : elle s’affiche en grand. Pratique pour reconnaître un collègue croisé sur une aire, ou vérifier que c’est bien le bon avant de l’ajouter en ami.
+Avec la 6.4, touche la photo de profil d’un autre trucker : elle s’affiche en grand. Idéal pour reconnaître tes amis conducteurs, ou vérifier que c’est bien le bon avant de l’ajouter en ami.
 
 Mets à jour Michelin Truckfly pour en profiter !
 
