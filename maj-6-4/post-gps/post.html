@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Post 6.4 : établissements pendant la navigation</title>
+<!-- Post 4:5, même mise en page que « Les nouveautés de l'app » (post-like/post-nouveautes.html).
+     Maquette en 652 × 815 px, exportée en 1080 × 1350 et 3000 × 3750 par rendre.mjs.
+     L'écran de navigation est recréé au style de l'app (pas de capture GPS 6.4 fournie). -->
+<style>
+@font-face { font-family: "Bib"; src: url("../../ma-video/assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+:root { --bleu: #061866; --jaune: #FFFF1A; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 652px; height: 815px; overflow: hidden; background: var(--bleu); }
+.post { position: relative; width: 652px; height: 815px; overflow: hidden; font-family: "Inter", sans-serif; color: #fff;
+  background: radial-gradient(120% 80% at 50% 45%, #0B2181 0%, var(--bleu) 55%, #030C3A 100%); }
+.post > * { position: absolute; }
+.structure { inset: 0; width: 100%; height: 100%; }
+
+.titre { left: 0; right: 0; top: 214px; text-align: center; font-family: "Bib", sans-serif; font-weight: 700; font-size: 35px; line-height: 1.1; }
+.trait { left: 192px; width: 268px; top: 266px; height: 2px; background: var(--jaune); border-radius: 1px; }
+
+.texte { left: 340px; top: 342px; width: 240px; }
+.texte h2 { font-family: "Bib", sans-serif; font-weight: 700; font-size: 21px; line-height: 23px; color: var(--jaune); }
+.texte ul { margin-top: 34px; padding-left: 16px; display: flex; flex-direction: column; gap: 22px; }
+.texte li { font-size: 15.5px; line-height: 21px; }
+.texte li b { font-weight: 700; }
+
+/* --- Téléphone : écran de navigation recréé --- */
+.tel { left: 116px; top: 330px; width: 206px; height: 418px; border-radius: 32px; background: #111; padding: 7px;
+  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.45)); }
+.ecran { position: relative; width: 100%; height: 100%; border-radius: 26px; overflow: hidden; background: #E9EDF1; }
+.ecran > * { position: absolute; }
+.encoche { left: 50%; top: 6px; width: 62px; height: 17px; margin-left: -31px; border-radius: 10px; background: #111; z-index: 5; }
+.carte-svg { inset: 0; width: 100%; height: 100%; }
+
+.bandeau { left: 0; right: 0; top: 0; height: 84px; background: var(--bleu); padding: 30px 12px 0; display: flex; gap: 9px; align-items: flex-start; z-index: 2; }
+.heure { left: 16px; top: 8px; font-size: 8.5px; font-weight: 600; color: #fff; z-index: 3; }
+.bandeau svg { width: 26px; height: 26px; flex: none; }
+.bandeau b { display: block; font-size: 17px; line-height: 19px; }
+.bandeau span { display: block; font-size: 9px; line-height: 12px; color: rgba(255,255,255,0.85); margin-top: 2px; }
+
+/* Bouton afficher / cacher les établissements */
+.bouton { right: 8px; top: 96px; height: 26px; padding: 0 8px 0 6px; border-radius: 13px; background: #fff; color: var(--bleu);
+  display: flex; align-items: center; gap: 4px; font-size: 8.5px; font-weight: 700; box-shadow: 0 3px 8px rgba(0,0,0,0.2); z-index: 2; }
+.bouton svg { width: 14px; height: 14px; }
+.anneau { right: 3px; top: 91px; width: 104px; height: 36px; border: 2.5px solid var(--jaune); border-radius: 18px; z-index: 3;
+  box-shadow: 0 0 0 2px var(--bleu); }
+
+.recentrer { right: 10px; bottom: 74px; width: 28px; height: 28px; border-radius: 50%; background: #fff; display: grid; place-items: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2); }
+.recentrer svg { width: 14px; height: 14px; }
+
+.bas { left: 0; right: 0; bottom: 0; height: 62px; background: #fff; border-radius: 16px 16px 0 0; padding: 12px 14px 0;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.12); display: flex; justify-content: space-between; align-items: flex-start; }
+.bas b { display: block; font-size: 14px; color: #1E8E3E; }
+.bas span { display: block; font-size: 8.5px; color: #555; margin-top: 2px; }
+.bas .quitter { font-size: 8.5px; font-weight: 700; color: #fff; background: #D93025; border-radius: 12px; padding: 6px 10px; margin-top: 3px; }
+.barre { left: 50%; bottom: 6px; width: 60px; height: 3px; margin-left: -30px; border-radius: 2px; background: #111; }
+</style>
+</head>
+<body>
+<main class="post">
+  <img class="structure" src="assets/structure-4x5-white.png" alt="" />
+  <h1 class="titre">Les nouveautés de l’app</h1>
+  <div class="trait"></div>
+
+  <div class="tel">
+    <div class="ecran">
+      <svg class="carte-svg" viewBox="0 0 192 404" preserveAspectRatio="none" aria-hidden="true">
+        <rect width="192" height="404" fill="#E9EDF1" />
+        <!-- espaces verts et eau -->
+        <path d="M0 120 Q40 110 60 140 L40 190 L0 200 Z" fill="#CFE8C9" />
+        <path d="M130 250 Q170 240 192 260 L192 330 Q160 340 140 310 Z" fill="#CFE8C9" />
+        <path d="M150 90 Q175 120 192 115 L192 160 Q165 150 150 130 Z" fill="#BFDDF5" />
+        <!-- routes secondaires -->
+        <g stroke="#FFFFFF" stroke-width="5" fill="none" stroke-linecap="round">
+          <path d="M0 230 L192 200" /><path d="M20 404 L70 90" /><path d="M120 404 L150 84" /><path d="M0 300 Q90 280 192 330" />
+        </g>
+        <!-- autoroute -->
+        <path d="M-10 380 Q60 330 92 250 Q120 170 200 120" stroke="#F6C445" stroke-width="9" fill="none" stroke-linecap="round" />
+        <!-- itinéraire -->
+        <path d="M96 360 L96 300 Q96 270 92 250 Q120 170 200 120" stroke="#1A6CE8" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+        <!-- position du camion -->
+        <circle cx="96" cy="330" r="12" fill="#FFFFFF" />
+        <path d="M96 320 L104 338 L96 334 L88 338 Z" fill="#061866" />
+        <!-- établissements -->
+        <g>
+          <rect x="54" y="232" width="22" height="22" rx="6" fill="#4C8DF6" stroke="#fff" stroke-width="2" />
+          <text x="65" y="248" text-anchor="middle" font-family="Inter" font-weight="700" font-size="13" fill="#fff">P</text>
+          <rect x="120" y="178" width="22" height="22" rx="6" fill="#4C8DF6" stroke="#fff" stroke-width="2" />
+          <path d="M126 196 V184 H133 V196 Z M133 188 L137 190 V195" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" />
+          <rect x="30" y="292" width="22" height="22" rx="6" fill="#4C8DF6" stroke="#fff" stroke-width="2" />
+          <path d="M37 297 V309 M34 297 V302 Q37 305 40 302 V297 M45 297 Q48 300 46 304 V309" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" />
+          <rect x="140" y="260" width="22" height="22" rx="6" fill="#4C8DF6" stroke="#fff" stroke-width="2" />
+          <text x="151" y="276" text-anchor="middle" font-family="Inter" font-weight="700" font-size="13" fill="#fff">P</text>
+          <rect x="104" y="128" width="22" height="22" rx="6" fill="#4C8DF6" stroke="#fff" stroke-width="2" />
+          <path d="M108 142 H122 M110 142 V136 H120 V142 M112 136 V133 H118 V136" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" />
+        </g>
+      </svg>
+
+      <div class="encoche"></div>
+      <span class="heure">09:41</span>
+      <div class="bandeau">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21 V12 Q7 8 11 8 H18 M14 4 L18 8 L14 12" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        <div><b>800 m</b><span>Prends la sortie vers l’aire de repos</span></div>
+      </div>
+
+      <div class="bouton">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 Q12 3 22 12 Q12 21 2 12 Z" fill="none" stroke="currentColor" stroke-width="2.2" /><circle cx="12" cy="12" r="3.4" fill="currentColor" /></svg>
+        Établissements
+      </div>
+      <div class="anneau"></div>
+
+      <div class="recentrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 L19 20 L12 16 L5 20 Z" fill="#061866" /></svg></div>
+      <div class="bas">
+        <div><b>2 h 05 min</b><span>168 km · arrivée 11:46</span></div>
+        <span class="quitter">Quitter</span>
+      </div>
+      <div class="barre"></div>
+    </div>
+  </div>
+
+  <div class="texte">
+    <h2>Affiche ou cache les établissements pendant ta navigation&nbsp;!</h2>
+    <ul>
+      <li>Pendant ta navigation, <b>un seul bouton pour afficher ou cacher les établissements sur la carte.</b></li>
+      <li><b>Une carte dégagée quand tu roules</b>, et tes parkings, stations et restos <b>dès que tu en as besoin.</b></li>
+    </ul>
+  </div>
+</main>
+</body>
+</html>
