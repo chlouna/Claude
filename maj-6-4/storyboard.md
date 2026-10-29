@@ -1,30 +1,60 @@
-# Storyboard : Mise à jour 6.4, version 1 (25 s)
+# Storyboard : tutoriels Instagram des nouveautés, version 2
 
-Objectif : annoncer les 3 nouveautés de la 6.4 et donner envie de mettre l'app à jour.
-Diffusion : Instagram (9:16, 1080 × 1920, version principale), plus une version 16:9 (1920 × 1080), comme les vidéos précédentes.
+Source des contenus : l'article de blog « Likes, photos de profil, alerte péage : les nouveautés Michelin Truckfly ».
+Une vidéo par nouveauté, avec les paramètres du guide « Crée ton Profil Trucker » (`guide-profil/`) :
+- Instagram 9:16 (1080 × 1920), plus une version 16:9 (1920 × 1080) ;
+- titres en Bib, étapes numérotées dans une pastille Michelin Blue, interface en Inter ;
+- flèches, taps et zooms sur les écrans de l'app ;
+- tutoiement, sans logo, sans emoji, sans musique.
 
-## Style
+Chaque vidéo dure environ 15 s. Chaque texte reste au moins 1,5 s + 0,3 s par mot.
 
-- Même charte que `ma-video` et `guide-profil` : fond Michelin Blue, titres en Bib, interface en Inter, tutoiement.
-- Pas de logo, pas d'emoji, pas de musique.
-- **Écrans** : les captures de la 6.4 si elles sont fournies. Sinon, des écrans recréés au style de l'app, à valider.
-- **Animations** : taps, flèches et cercles, comme dans les vidéos précédentes.
+## 1. Like les contributions des autres conducteurs (15 s)
 
-## Déroulé
-
-| # | Minutage | Texte à l'écran | Ce qui se passe sur le téléphone |
+| # | Minutage | Texte | Ce qui se passe sur le téléphone |
 |---|---|---|---|
-| Intro | 0 → 3,5 s | **Nouveau dans la 6.4** / 3 nouveautés pour toi | Fond bleu. Le chiffre « 6.4 » arrive, puis le sous-titre. |
-| 1 | 3,5 → 9 s | **Like les photos et les commentaires** / des autres truckers | Avis de Nicolas J. sur un établissement, avec sa photo. Tap sur le cœur de la photo : le cœur se remplit et le compteur passe de 12 à 13. Puis tap sur le cœur du commentaire. |
-| 2 | 9 → 14,5 s | **Zoome sur les photos de profil** | Profil de Charlie G. Tap sur l'avatar : la photo s'agrandit en plein écran, sur fond noir. Puis la croix la referme. |
-| 3 | 14,5 → 20,5 s | **Affiche ou cache les établissements** / pendant ta navigation | Aperçu de navigation : carte avec l'itinéraire et les icônes des établissements. Tap sur le bouton « Établissements » : les icônes disparaissent et la carte se dégage. Second tap : elles reviennent. |
-| Fin | 20,5 → 25 s | **Mets à jour ton app !** / bouton « Mettre à jour Michelin Truckfly » | Fond bleu. Le bouton jaune pulse doucement. |
+| Intro | 0 → 3 s | **Nouveau : like les contributions** / des autres conducteurs | Fond bleu, puis le téléphone monte. |
+| 1 | 3 → 7 s | **① Ouvre le fil d'activité** | Accueil « Salut louna ! ». Tap sur l'onglet « Communauté ». |
+| 2 | 7 → 11,5 s | **② Appuie sur « J'aime »** | Avis de Mathieu P. au Relais de la Bascule. Zoom sur le bouton, tap : le compteur passe à 1 et « Aimé par Vous » apparaît. |
+| Fin | 11,5 → 15 s | **Encourage ceux qui font vivre la communauté !** | Fond bleu. |
 
-Temps de lecture : chaque texte tient au moins 1,5 s + 0,3 s par mot.
+Écran : capture fournie (fil d'activité). L'état avant le like (« J'aime », 0) est recréé.
 
-## À fournir ou valider
+## 2. Affiche les photos de profil en plein écran (15 s)
 
-- **Captures de la 6.4** : le cœur sur une photo et un commentaire, la photo de profil en plein écran, et l'aperçu de navigation avec le bouton afficher / cacher les établissements. Sans elles, ces écrans sont recréés et peuvent différer de l'app.
-- **Nom exact du bouton** qui affiche ou cache les établissements (« Établissements » est provisoire).
-- **Langues** : le français seul, ou aussi l'anglais, l'allemand, le néerlandais, le polonais, l'italien et l'espagnol, comme l'interstitiel.
-- **Exemples** : Nicolas J., Charlie G., le compteur 12 → 13 et l'itinéraire sont fictifs.
+| # | Minutage | Texte | Ce qui se passe sur le téléphone |
+|---|---|---|---|
+| Intro | 0 → 3 s | **Nouveau : les photos de profil en grand** | Fond bleu, puis le téléphone monte. |
+| 1 | 3 → 8 s | **① Appuie sur une photo de profil** | Profil de Charlie G. Tap sur l'avatar : la photo s'agrandit en plein écran, sur fond noir. |
+| 2 | 8 → 11,5 s | **② Ajoute la tienne !** / c'est elle que les autres verront en grand | Retour au profil. Flèche vers l'avatar et « Modifier le profil ». |
+| Fin | 11,5 → 15 s | **Fais-toi reconnaître sur les aires !** | Fond bleu. |
+
+Écran : capture du profil de Charlie G. (déjà utilisée dans le guide). L'affichage plein écran est recréé.
+
+## 3. Choisis la langue de ton appli (15 s)
+
+| # | Minutage | Texte | Ce qui se passe sur le téléphone |
+|---|---|---|---|
+| Intro | 0 → 3 s | **Nouveau : l'appli dans ta langue** | Fond bleu. |
+| 1 | 3 → 6 s | **① Ouvre les Paramètres** | Profil. Tap sur la roue dentée. |
+| 2 | 6 → 9 s | **② Appuie sur « Langue de l'application »** | Liste des paramètres, tap sur la ligne. |
+| 3 | 9 → 12 s | **③ Choisis ta langue** | Liste des langues, tap sur « Deutsch » : l'écran passe en allemand. |
+| Fin | 12 → 15 s | **Sans toucher aux réglages de ton téléphone !** | Fond bleu. |
+
+Écrans : Paramètres, « Langue de l'application » et liste des langues sont recréés (aucune capture).
+
+## 4. GPS Premium : l'alerte péage (15 s)
+
+| # | Minutage | Texte | Ce qui se passe sur le téléphone |
+|---|---|---|---|
+| Intro | 0 → 3 s | **Nouveau dans le GPS Premium : l'alerte péage** | Fond bleu. |
+| 1 | 3 → 8 s | **Une alerte te prévient à l'approche d'un péage** | Navigation en cours. Bandeau « Péage dans 2 km », l'icône du péage apparaît sur la carte. |
+| 2 | 8 → 11,5 s | **Anticipe : bonne voie, badge prêt** | Zoom sur le péage sur la carte. |
+| Fin | 11,5 → 15 s | **Plus de sérénité au volant !** | Fond bleu. |
+
+Écran : navigation et alerte recréées (aucune capture).
+
+## À fournir
+
+- Les captures de l'app pour les écrans marqués « recréé », en particulier la photo en plein écran, les Paramètres et la langue, et l'alerte péage en navigation.
+- Confirmation : une vidéo par nouveauté (4 vidéos de 15 s) ou une seule vidéo de 30 à 40 s.
