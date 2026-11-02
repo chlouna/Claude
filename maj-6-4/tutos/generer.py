@@ -56,7 +56,7 @@ VIDEOS = {
         (8.3, 12.5, "clair", 2, "Appuie sur «&nbsp;Ajouter&nbsp;»", "sur la photo", "etablissement-ajouter.png",
          [("zoom", 50, 40, 1.5, 8.6, 12.0), ("tap", 50, 40, 9.6)]),
         (12.5, 16.7, "clair", 3, "Elle apparaît dans le fil d’activité de tes amis", None, "fil-photo.png", [("zoom", 50, 46, 1.4, 13.1, 16.3)]),
-        (16.7, 21.2, "clair", 4, "Et sur ton profil", "retrouve toutes les photos que tu as publiées", "profil-photos.png", [("tap", 49.5, 22.2, 17.8)]),
+        (16.7, 21.2, "clair", 4, "Et sur ton profil", "retrouve toutes les photos que tu as publiées", "profil-clementine.png", [("tap", 16, 83, 17.8)]),
         (21.2, 24.6, "bleu", None, "Partage tes meilleurs spots&nbsp;!", None, None, []),
     ]),
     # Onboarding complet : profil, communauté, nouveautés (voir storyboard-onboarding.md).
