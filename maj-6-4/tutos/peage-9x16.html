@@ -52,16 +52,20 @@ h1 { font-family: "Bib", sans-serif; font-weight: 700; font-size: var(--titre); 
   100% { opacity: 0; transform: scale(1); }
 }
 
-:root { --w: 540px; --h: 960px; --titre: 42px; --titre-fin: 50px; --sous: 24px; --pastille: 50px; --marge: 50px; }
-.texte { left: 36px; right: 36px; top: 70px; align-items: center; text-align: center; gap: 12px; }
-.tel { left: 50%; top: 318px; height: 590px; translate: -50% 0; }
-.scene.bleu .tel { top: 300px; }
+:root { --w: 540px; --h: 960px; --titre: 42px; --titre-fin: 50px; --sous: 24px; --pastille: 50px; --marge: 60px; }
+/* Texte et téléphone empilés, espaces égaux en haut, entre les deux et en bas ; marges de sécurité sur les côtés. */
+.scene:not(.seul) { display: flex; flex-direction: column; align-items: center; justify-content: space-evenly; padding: 20px 60px; }
+.scene:not(.seul) .texte { position: relative; align-items: center; text-align: center; gap: 12px; }
+.tel { position: relative; height: 560px; flex: none; }
+.cta { margin-top: 40px; padding: 0 30px; height: 64px; border-radius: 16px; background: #FFFF1A; color: #000;
+  display: inline-flex; align-items: center; font-family: "Inter", sans-serif; font-weight: 700; font-size: 22px; }
+@keyframes pouls { 50% { transform: scale(1.05); } }
 
 .scene.seul .texte { inset: 0; width: auto; align-items: center; justify-content: center; text-align: center; padding: 0 var(--marge); }
 .scene.seul h1 { font-size: var(--titre-fin); }
 </style>
 </head>
-<body data-duree="15" data-w="540" data-h="960">
+<body data-duree="16" data-w="540" data-h="960">
 <main class="video">
   <section class="scene bleu" style="opacity: 1;">
     <div class="texte">
@@ -99,7 +103,7 @@ h1 { font-family: "Bib", sans-serif; font-weight: 700; font-size: var(--titre); 
   <section class="scene bleu seul" style="animation: apparait 0.25s ease-in-out 11.4s both">
     <div class="texte">
       <h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 11.6s both">Anticipe&nbsp;: bonne voie, badge prêt&nbsp;!</h1>
-      
+      <a class="cta" style="animation: pop 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.1) 12.200000000000001s both, pouls 0.9s ease-in-out 13.0s both, pouls 0.9s ease-in-out 14.0s both">Télécharge Michelin Truckfly</a>
     </div>
     
   </section>

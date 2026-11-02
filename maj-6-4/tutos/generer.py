@@ -90,7 +90,7 @@ def actions_html(actions):
     return html
 
 
-def scene_html(debut, fin, fond, num, titre, sous, image, actions, derniere):
+def scene_html(debut, fin, fond, num, titre, sous, image, actions, derniere, fmt):
     # Chaque scène apparaît par-dessus la précédente (pas de fondu sortant, qui laisserait voir le fond).
     style = anim(("apparait", 0.25, debut)) if debut else "opacity: 1;"
     pastille = f'<span class="pastille" style="{anim(("pop", 0.4, debut + 0.1))}">{num}</span>' if num else ""
@@ -110,10 +110,15 @@ def scene_html(debut, fin, fond, num, titre, sous, image, actions, derniere):
         </div>
       </div>"""
     sans_tel = "" if image else " seul"
+    # Instagram (9x16) : la dernière scène se termine sur le bouton de téléchargement.
+    cta = ""
+    if derniere and fmt == "9x16":
+        cta = f'<a class="cta" style="{anim(("pop", 0.45, debut + 0.8), ("pouls", 0.9, debut + 1.6, "both"), ("pouls", 0.9, debut + 2.6, "both"))}">Télécharge Michelin Truckfly</a>'
+
     return f"""  <section class="scene {fond}{sans_tel}" style="{style}">
     <div class="texte">
       {pastille}<h1 style="{anim(("monte", 0.5, debut + 0.2))}">{titre}</h1>
-      {sous_html}
+      {sous_html}{cta}
     </div>
     {tel}
   </section>
@@ -179,10 +184,14 @@ CSS_SEUL = """
 # Mise en page par format. 9x16 : texte en haut, téléphone en dessous. 16x9 : texte à gauche, téléphone à droite.
 FORMATS = {
     "9x16": dict(w=540, h=960, css="""
-:root { --w: 540px; --h: 960px; --titre: 42px; --titre-fin: 50px; --sous: 24px; --pastille: 50px; --marge: 50px; }
-.texte { left: 36px; right: 36px; top: 70px; align-items: center; text-align: center; gap: 12px; }
-.tel { left: 50%; top: 318px; height: 590px; translate: -50% 0; }
-.scene.bleu .tel { top: 300px; }
+:root { --w: 540px; --h: 960px; --titre: 42px; --titre-fin: 50px; --sous: 24px; --pastille: 50px; --marge: 60px; }
+/* Texte et téléphone empilés, espaces égaux en haut, entre les deux et en bas ; marges de sécurité sur les côtés. */
+.scene:not(.seul) { display: flex; flex-direction: column; align-items: center; justify-content: space-evenly; padding: 20px 60px; }
+.scene:not(.seul) .texte { position: relative; align-items: center; text-align: center; gap: 12px; }
+.tel { position: relative; height: 560px; flex: none; }
+.cta { margin-top: 40px; padding: 0 30px; height: 64px; border-radius: 16px; background: #FFFF1A; color: #000;
+  display: inline-flex; align-items: center; font-family: "Inter", sans-serif; font-weight: 700; font-size: 22px; }
+@keyframes pouls { 50% { transform: scale(1.05); } }
 """),
     "16x9": dict(w=960, h=540, css="""
 :root { --w: 960px; --h: 540px; --titre: 40px; --titre-fin: 50px; --sous: 22px; --pastille: 46px; --marge: 120px; }
@@ -195,7 +204,8 @@ FORMATS = {
 def page(nom, video, fmt):
     f = FORMATS[fmt]
     scenes = video["scenes"]
-    corps = "".join(scene_html(*s, derniere=(i == len(scenes) - 1)) for i, s in enumerate(scenes))
+    corps = "".join(scene_html(*s, derniere=(i == len(scenes) - 1), fmt=fmt) for i, s in enumerate(scenes))
+    duree = video["duree"] + (1 if fmt == "9x16" else 0)  # 1 s de plus pour lire le bouton
     return f"""<!doctype html>
 <html lang="fr">
 <head>
@@ -203,7 +213,7 @@ def page(nom, video, fmt):
 <title>Tutoriel {nom} ({fmt})</title>
 <style>{CSS_COMMUN}{f["css"]}{CSS_SEUL}</style>
 </head>
-<body data-duree="{video["duree"]}" data-w="{f["w"]}" data-h="{f["h"]}">
+<body data-duree="{duree}" data-w="{f["w"]}" data-h="{f["h"]}">
 <main class="video">
 {corps}</main>
 </body>
