@@ -4,7 +4,7 @@
     node scripts/capturer.mjs       # en tire les PNG dans png/
 
 Formats :
-- App Store (CPP)                 : 1290 × 2796 px (iPhone 6,9"), rendu en 430 × 932 × 3
+- App Store (CPP)                 : 1284 × 2778 px (iPhone 6,5"), rendu en 428 × 926 × 3
 - Google Play (fiche personnalisée) : 1080 × 1920 px (9:16), rendu en 360 × 640 × 3
 
 Charte : Michelin Blue en fond, Bib pour les titres, Inter pour l'interface, jaune par petites
@@ -230,7 +230,7 @@ def e_gabarit(titre="Mon camion", vehicules=None):
       </div>"""
 
 
-def e_arrets(titre="Sur ton itinéraire", securise=False):
+def e_arrets(titre="Sur votre itinéraire", securise=False):
     lignes = [
         ligne_arret("parking", "Aire de Saint-Ambreuil", "Parking poids lourds · 60 places", "42 km<br>15:10",
                     '<span class="dispo">Places disponibles</span>' if securise else ""),
@@ -257,7 +257,7 @@ def e_offre(titre, sous, avantages, cta, b2b=False):
         <div class="offre-tete"><span class="badge-j">{"Entreprises" if b2b else "Premium"}</span><h2>{titre}</h2><p>{sous}</p></div>
         <ul>{lis}</ul>
         <span class="btn jaune large">{cta}</span>
-        <p class="petit">{"Réponse de notre équipe sous 48 h" if b2b else "Abonnement géré depuis ton store"}</p>
+        <p class="petit">{"Réponse de notre équipe sous 48 h" if b2b else "Abonnement géré depuis votre store"}</p>
       </div>"""
 
 
@@ -278,7 +278,7 @@ def e_signaler():
              ("parking", "Parking complet"), ("lavage", "Météo")]
     cases = "".join(f"<span>{pastille(i, 62, 31)}<em>{t}</em></span>" for i, t in items)
     return f"""{carte_fond("nav", assombrir=True)}{statut(True)}{camion_pos(182, 440)}
-      <div class="fiche signaler"><div class="poignee"></div><h2>Signaler</h2><p class="sous-fiche">Préviens les conducteurs autour de toi</p>
+      <div class="fiche signaler"><div class="poignee"></div><h2>Signaler</h2><p class="sous-fiche">Prévenez les conducteurs autour de vous</p>
         <div class="grille">{cases}</div>
         <div class="merci">{COCHE}<span>Merci ! <b>214 conducteurs</b> ont été prévenus.</span></div>
       </div>"""
@@ -298,7 +298,7 @@ def e_communaute():
 def e_langues():
     langues = ["Français", "Deutsch", "Español", "Italiano", "Polski", "Português", "Română", "Nederlands", "Čeština"]
     li = "".join(f'<div class="champ"><span>{l}</span>{COCHE if i == 0 else ""}</div>' for i, l in enumerate(langues))
-    return f"""{entete("Langue de l'application")}<div class="corps"><p class="rubrique">Choisis ta langue</p>{li}</div>"""
+    return f"""{entete("Langue de l'application")}<div class="corps"><p class="rubrique">Choisissez votre langue</p>{li}</div>"""
 
 
 def e_edition():
@@ -352,32 +352,21 @@ def e_mise_en_avant():
 
 # --- Les CPP --------------------------------------------------------------------------------
 
-AVANTAGES_PREMIUM = ["GPS poids lourd en 44 pays", "Itinéraire adapté à ton gabarit", "Alerte à l'approche des péages",
-                     "Arrêts poids lourds sur ta route", "Sans publicité"]
+AVANTAGES_PREMIUM = ["GPS poids lourd en 44 pays", "Itinéraire adapté à votre gabarit", "Alerte à l'approche des péages",
+                     "Arrêts poids lourds sur votre route", "Sans publicité"]
 AVANTAGES_B2B = ["GPS poids lourd pour chaque conducteur", "Profils de véhicules : gabarit, poids, ADR",
                  "Alertes communautaires en temps réel", "Parkings et arrêts poids lourds en Europe", "Accompagnement dédié"]
 
 CPP = [
     {
-        "id": "gps-premium",
-        "nom": "GPS Premium (abonnement)",
-        "captures": [
-            ("Le GPS pensé pour <em>ton camion</em>", "Navigation poids lourd dans 44 pays", ecran_nav()),
-            ("Un itinéraire selon <em>ton gabarit</em>", "Hauteur, largeur, poids : on évite les mauvaises surprises", e_gabarit()),
-            ("Le péage ? <em>Tu le vois venir</em>", "Une alerte avant d'y arriver", ecran_nav(alerte=("peage", "Péage dans 2 km", "Prépare ton badge"))),
-            ("Tes arrêts <em>sur ta route</em>", "Parkings, restos et douches poids lourds", e_arrets()),
-            ("Passe à <em>Premium</em>", "Et roule sans publicité", e_offre("Michelin Truckfly Premium", "Tout ce qu'il faut pour rouler sereinement", AVANTAGES_PREMIUM, "Passer à Premium")),
-        ],
-    },
-    {
         "id": "communaute",
         "nom": "App gratuite et communauté (publicité)",
         "captures": [
-            ("Trouve où t'arrêter, <em>partout en Europe</em>", "Parkings, restos, douches, lavages poids lourds", e_explorer()),
-            ("Des avis laissés <em>par des routiers</em>", "Pour choisir ton arrêt en confiance", fiche_lieu()),
-            ("Préviens les autres <em>en un geste</em>", "Accidents, contrôles, dangers en temps réel", e_signaler()),
-            ("Ta communauté <em>de routiers</em>", "Suis tes amis et leurs bons plans", e_communaute()),
-            ("Gratuit, <em>dans ta langue</em>", "Plus de 700 000 conducteurs dans 44 pays", e_langues()),
+            ("Trouvez où <em>vous arrêter</em>", "Parkings, restos et douches poids lourds partout en Europe", e_explorer()),
+            ("Des avis laissés <em>par des routiers</em>", "Pour choisir votre arrêt en confiance", fiche_lieu()),
+            ("Prévenez les autres <em>en un geste</em>", "Accidents, contrôles, dangers en temps réel", e_signaler()),
+            ("Votre communauté <em>de routiers</em>", "Suivez vos amis et leurs bons plans", e_communaute()),
+            ("Gratuit, <em>dans votre langue</em>", "Plus de 700 000 conducteurs dans 44 pays", e_langues()),
         ],
     },
     {
@@ -392,17 +381,18 @@ CPP = [
         ],
     },
     {
-        "id": "entreprises",
-        "nom": "Entreprises de transport (B2B)",
+        "id": "gps-premium",
+        "nom": "GPS Premium (abonnement)",
         "captures": [
-            ("Le GPS poids lourd <em>pour votre flotte</em>", "Michelin Truckfly pour les entreprises", ecran_nav(chip=("Pont 3,50 m évité", "left:96px;top:390px"), route="eviter")),
-            ("Un profil <em>par véhicule</em>", "Gabarit, poids, matières dangereuses", e_gabarit("Ma flotte", [("Semi-remorque", "4,00 m · 16,50 m · 44 t"), ("Porteur", "3,60 m · 9,80 m · 19 t"), ("Citerne ADR", "3,90 m · 12,00 m · 40 t")])),
-            ("Moins d'imprévus <em>sur la route</em>", "Péages, dangers, bouchons signalés à l'avance", ecran_nav(alerte=("danger", "Danger signalé à 4 km", "Objet sur la voie de droite"))),
-            ("Des pauses <em>mieux préparées</em>", "Parkings sécurisés et services sur l'itinéraire", e_arrets("Pauses sur l'itinéraire", securise=True)),
-            ("Équipez <em>vos conducteurs</em>", "Une offre adaptée à la taille de votre flotte", e_offre("Michelin Truckfly pour les entreprises", "Le GPS et la communauté au service de vos conducteurs", AVANTAGES_B2B, "Contacter l'équipe", b2b=True)),
+            ("Le GPS pensé pour <em>votre camion</em>", "Navigation poids lourd dans 44 pays", ecran_nav()),
+            ("Un itinéraire selon <em>votre gabarit</em>", "Hauteur, largeur, poids : évitez les mauvaises surprises", e_gabarit()),
+            ("Le péage ? <em>Vous le voyez venir</em>", "Une alerte avant d'y arriver", ecran_nav(alerte=("peage", "Péage dans 2 km", "Préparez votre badge"))),
+            ("Vos arrêts <em>sur votre route</em>", "Parkings, restos et douches poids lourds", e_arrets()),
+            ("Passez à <em>Premium</em>", "Et roulez sans publicité", e_offre("Michelin Truckfly Premium", "Tout ce qu'il faut pour rouler sereinement", AVANTAGES_PREMIUM, "Passer à Premium")),
         ],
     },
 ]
+# CPP « entreprises » (B2B) mise de côté pour l'instant : voir l'historique git.
 
 # --- Mise en page ---------------------------------------------------------------------------
 
@@ -430,7 +420,7 @@ CSS = (RACINE / "scripts" / "style.css").read_text()
 def page():
     blocs = []
     for cpp in CPP:
-        for fmt, label in (("ios", "App Store · 1290 × 2796"), ("play", "Google Play · 1080 × 1920")):
+        for fmt, label in (("ios", "App Store · 1284 × 2778"), ("play", "Google Play · 1080 × 1920")):
             shots = "".join(capture(cpp, i, *c, fmt) for i, c in enumerate(cpp["captures"]))
             blocs.append(f'<div class="serie"><h2>{cpp["nom"]} <small>{label}</small></h2><div class="rangee">{shots}</div></div>')
     return f"""<!doctype html>
