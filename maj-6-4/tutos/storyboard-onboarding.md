@@ -17,7 +17,7 @@ Source : `generer.py` (vidéo « onboarding »), rendu par `rendre.mjs`. Style :
 | 4 | 18,5 → 22,5 s | **④ Ajoute tes amis** | « Trouver des routiers », tap sur « Ajouter » (ma-video). |
 | 5 | 22,5 → 26,5 s | **⑤ Suis leur activité** | Fil d'activité, « Nicolas J. a visité : AS 24 » (ma-video). |
 | Chapitre C | 26,5 → 28 s | **Les nouveautés** | Carton bleu. |
-| 6 | 28 → 32,5 s | **⑥ Partage tes photos** / parkings, restaurants, stations | Photos d’un établissement, tap sur le bouton d’ajout de photo. |
+| 6 | 28 → 32,5 s | **⑥ Partage tes photos** / depuis la fiche de l’établissement | Fiche « Restaurant chez Fabienne », tap sur « Ajouter » sur la photo. |
 | 7 | 32,5 → 36,5 s | **⑦ Like les contributions** | Fil d'activité, zoom et tap sur « J'aime ». |
 | 8 | 36,5 → 40,5 s | **⑧ Vois les photos de profil en grand** | Profil de Louna, la photo en plein écran. |
 | 9 | 40,5 → 44,5 s | **⑨ Choisis la langue de ton appli** | Paramètres, tap sur « Langue de l'application ». |

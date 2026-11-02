@@ -50,15 +50,14 @@ VIDEOS = {
          "peage.png", [("zoom", 50, 84, 1.7, 7.3, 10.9)]),
         (11.4, 15, "bleu", None, "Anticipe&nbsp;: bonne voie, badge prêt&nbsp;!", None, None, []),
     ]),
-    "photos-communautaires": dict(duree=27, scenes=[
-        (0, 3.6, "bleu", None, "Nouveau&nbsp;: les photos de la communauté", "parkings, restaurants, stations", "photos-tout.png", []),
-        (3.6, 7.6, "clair", 1, "Ouvre la fiche d’un établissement", None, "etablissement.png", [("tap", 49.5, 40.3, 4.8)]),
-        (7.6, 11.6, "clair", 2, "Filtre sur «&nbsp;Communauté&nbsp;»", "les photos partagées par les conducteurs",
-         "photos-communaute.png", [("tap", 49.5, 16.9, 8.8)]),
-        (11.6, 15.6, "clair", 3, "Ajoute tes photos", None, "photos-tout.png", [("tap", 82.5, 88.3, 12.8)]),
-        (15.6, 19.6, "clair", 4, "Elles apparaissent dans le fil d’activité", None, "fil-photo.png", [("zoom", 50, 46, 1.4, 16.3, 19.1)]),
-        (19.6, 23.6, "clair", 5, "Et sur le profil de chaque trucker", None, "profil-photos.png", [("tap", 49.5, 22.2, 20.7)]),
-        (23.6, 27, "bleu", None, "Partage tes meilleurs spots&nbsp;!", None, None, []),
+    "photos-communautaires": dict(duree=24.6, scenes=[
+        (0, 4.5, "bleu", None, "Tu veux partager une photo de là où tu t’es arrêté&nbsp;?", None, "etablissement-ajouter.png", []),
+        (4.5, 8.3, "clair", 1, "Ouvre la fiche de l’établissement", None, "etablissement-ajouter.png", []),
+        (8.3, 12.5, "clair", 2, "Appuie sur «&nbsp;Ajouter&nbsp;»", "sur la photo", "etablissement-ajouter.png",
+         [("zoom", 50, 40, 1.5, 8.6, 12.0), ("tap", 50, 40, 9.6)]),
+        (12.5, 16.7, "clair", 3, "Elle apparaît dans le fil d’activité de tes amis", None, "fil-photo.png", [("zoom", 50, 46, 1.4, 13.1, 16.3)]),
+        (16.7, 21.2, "clair", 4, "Et sur ton profil", "retrouve toutes les photos que tu as publiées", "profil-photos.png", [("tap", 49.5, 22.2, 17.8)]),
+        (21.2, 24.6, "bleu", None, "Partage tes meilleurs spots&nbsp;!", None, None, []),
     ]),
     # Onboarding complet : profil, communauté, nouveautés (voir storyboard-onboarding.md).
     "onboarding": dict(duree=54, scenes=[
@@ -71,7 +70,7 @@ VIDEOS = {
         (19.3, 23.1, "clair", 4, "Ajoute tes amis", None, "trouver-routiers.png", [("tap", 75.6, 35.3, 20.4)]),
         (23.1, 26.9, "clair", 5, "Suis leur activité", None, "accueil-en-ligne.png", [("tap", 49, 47, 24.2)]),
         (26.9, 29.1, "bleu", None, "Les nouveautés", None, None, []),
-        (29.1, 33.3, "clair", 6, "Partage tes photos", "parkings, restaurants, stations", "photos-tout.png", [("tap", 82.5, 88.3, 30.4)]),
+        (29.1, 33.3, "clair", 6, "Partage tes photos", "depuis la fiche de l’établissement", "etablissement-ajouter.png", [("tap", 50, 40, 30.4)]),
         (33.3, 37.3, "clair", 7, "Like les contributions", None, "like.png", [("zoom", 77, 71, 1.7, 33.6, 36.8), ("tap", 77, 71, 34.7)]),
         (37.3, 41.3, "clair", 8, "Vois les photos de profil en grand", None, "photo-profil.png",
          [("tap", 26, 22, 38.3), ("zoom", 49, 51, 1.4, 39.1, 40.9)]),
