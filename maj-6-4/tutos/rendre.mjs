@@ -1,4 +1,5 @@
-// Rend les tutoriels en MP4 (30 i/s) dans renders/ : 9x16 en 1080 × 1920, 16x9 en 1920 × 1080.
+// Rend les tutoriels en MP4 (30 i/s) dans renders/ : 9x16 en 1080 × 1920, 16x9 en 1920 × 1080,
+// interstitiels 2x3 en 768 × 1152 (renders/interstitiel-<nom>.mp4).
 // Usage : node maj-6-4/tutos/rendre.mjs [pages, ex. "like-9x16,peage-16x9"] [instants à capturer en PNG, ex. "2,5,9"]
 import { createRequire } from "node:module";
 import { execFileSync } from "node:child_process";
@@ -8,14 +9,14 @@ import path from "node:path";
 
 const { chromium } = createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE || "playwright");
 const ici = path.dirname(fileURLToPath(import.meta.url));
-const pages = process.argv[2] ? process.argv[2].split(",") : readdirSync(ici).filter((f) => /-(9x16|16x9)\.html$/.test(f)).map((f) => f.replace(".html", ""));
+const pages = process.argv[2] ? process.argv[2].split(",") : readdirSync(ici).filter((f) => /-(9x16|16x9|2x3)\.html$/.test(f)).map((f) => f.replace(".html", ""));
 const apercus = process.argv[3] ? process.argv[3].split(",").map(Number) : null;
 const ips = 30;
 
 const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
 for (const nom of pages) {
-  const vertical = nom.endsWith("9x16");
-  const [w, h] = vertical ? [540, 960] : [960, 540];
+  const [w, h] = nom.endsWith("9x16") ? [540, 960] : nom.endsWith("2x3") ? [384, 576] : [960, 540];
+  const sortie = nom.startsWith("inter-") ? `interstitiel-${nom.slice(6, -4)}.mp4` : `tuto-${nom}.mp4`;
   const page = await navigateur.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: 2 });
   await page.goto("file://" + path.join(ici, `${nom}.html`));
   await page.evaluate(() => document.fonts.ready);
@@ -38,8 +39,8 @@ for (const nom of pages) {
   await page.close();
   execFileSync("ffmpeg", ["-y", "-v", "error", "-framerate", String(ips), "-i", path.join(tmp, "%04d.png"),
     "-vf", "format=yuv420p", "-c:v", "libx264", "-crf", "18", "-preset", "slow",
-    "-movflags", "+faststart", path.join(ici, "renders", `tuto-${nom}.mp4`)]);
+    "-movflags", "+faststart", path.join(ici, "renders", sortie)]);
   rmSync(tmp, { recursive: true, force: true });
-  console.log(`tuto-${nom}.mp4`);
+  console.log(sortie);
 }
 await navigateur.close();

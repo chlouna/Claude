@@ -118,7 +118,7 @@ def actions_html(actions):
     return html
 
 
-def scene_html(debut, fin, fond, num, titre, sous, image, actions, derniere, fmt):
+def scene_html(debut, fin, fond, num, titre, sous, image, actions, derniere, cta_texte=None):
     # Chaque scène apparaît par-dessus la précédente (pas de fondu sortant, qui laisserait voir le fond).
     style = anim(("apparait", 0.25, debut)) if debut else "opacity: 1;"
     pastille = f'<span class="pastille" style="{anim(("pop", 0.4, debut + 0.1))}">{num}</span>' if num else ""
@@ -138,10 +138,10 @@ def scene_html(debut, fin, fond, num, titre, sous, image, actions, derniere, fmt
         </div>
       </div>"""
     sans_tel = "" if image else " seul"
-    # Instagram (9x16) : la dernière scène se termine sur le bouton de téléchargement.
+    # La dernière scène peut se terminer sur un bouton jaune (téléchargement sur Instagram, action dans l'interstitiel).
     cta = ""
-    if derniere and fmt == "9x16":
-        cta = f'<a class="cta" style="{anim(("pop", 0.45, debut + 0.8), ("pouls", 0.9, debut + 1.6, "both"), ("pouls", 0.9, debut + 2.6, "both"))}">Télécharge Michelin Truckfly</a>'
+    if derniere and cta_texte:
+        cta = f'<a class="cta" style="{anim(("pop", 0.45, debut + 0.8), ("pouls", 0.9, debut + 1.6, "both"), ("pouls", 0.9, debut + 2.6, "both"))}">{cta_texte}</a>'
 
     return f"""  <section class="scene {fond}{sans_tel}" style="{style}">
     <div class="texte">
@@ -229,13 +229,15 @@ FORMATS = {
 }
 
 
-def page(nom, video, fmt):
-    f = FORMATS[fmt]
+def page(nom, video, fmt, cta_texte=None, lang="fr"):
+    f = {**FORMATS, **FORMATS_INTER}[fmt]
     scenes = video["scenes"]
-    corps = "".join(scene_html(*s, derniere=(i == len(scenes) - 1), fmt=fmt) for i, s in enumerate(scenes))
+    if cta_texte is None and fmt == "9x16":
+        cta_texte = "Télécharge Michelin Truckfly"  # Instagram : fin sur le bouton de téléchargement
+    corps = "".join(scene_html(*s, derniere=(i == len(scenes) - 1), cta_texte=cta_texte) for i, s in enumerate(scenes))
     duree = video["duree"] + (1 if fmt == "9x16" else 0)  # 1 s de plus pour lire le bouton
     return f"""<!doctype html>
-<html lang="fr">
+<html lang="{lang}">
 <head>
 <meta charset="UTF-8" />
 <title>Tutoriel {nom} ({fmt})</title>
@@ -249,7 +251,52 @@ def page(nom, video, fmt):
 """
 
 
-for nom, video in VIDEOS.items():
+# Interstitiel « photos de la communauté » : 768 × 1152 (rendu ×2), 15 s, une version par langue.
+# Les écrans restent ceux de l'app en français ; seuls les textes sont traduits.
+FORMATS_INTER = {"2x3": dict(w=384, h=576, css="""
+:root { --w: 384px; --h: 576px; --titre: 27px; --titre-fin: 32px; --sous: 15px; --pastille: 34px; --marge: 40px; }
+.scene:not(.seul) { display: flex; flex-direction: column; align-items: center; justify-content: space-evenly; padding: 14px 40px; }
+.scene:not(.seul) .texte { position: relative; align-items: center; text-align: center; gap: 8px; }
+.tel { position: relative; height: 350px; flex: none; }
+.tap { border-width: 2px; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8); }
+.cta { margin-top: 26px; padding: 0 22px; height: 46px; border-radius: 12px; background: #FFFF1A; color: #000;
+  display: inline-flex; align-items: center; font-family: "Inter", sans-serif; font-weight: 700; font-size: 16px; }
+@keyframes pouls { 50% { transform: scale(1.05); } }
+""")}
+
+INTER_TEXTES = {
+    "fr": ("Partage tes photos de la route&nbsp;!", "Appuie sur «&nbsp;Ajouter&nbsp;»", "sur la fiche de l’établissement",
+           "Tes amis la voient dans leur fil d’activité", "Retrouve-les sur ton profil", "Partage tes meilleurs spots&nbsp;!", "Ajouter une photo"),
+    "en": ("Share your photos from the road!", "Tap the photo button", "on the place’s page",
+           "Your friends see it in their activity feed", "Find them all on your profile", "Share your best spots!", "Add a photo"),
+    "de": ("Teile deine Fotos von unterwegs!", "Tippe auf den Foto-Button", "auf der Seite des Betriebs",
+           "Deine Freunde sehen es in ihrem Aktivitäts-Feed", "Finde sie alle in deinem Profil", "Teile deine besten Spots!", "Foto hinzufügen"),
+    "nl": ("Deel je foto’s van onderweg!", "Tik op de fotoknop", "op de pagina van de locatie",
+           "Je vrienden zien hem in hun activiteitenfeed", "Vind ze allemaal terug op je profiel", "Deel je beste plekken!", "Foto toevoegen"),
+    "pl": ("Udostępniaj zdjęcia z trasy!", "Dotknij przycisku zdjęcia", "na stronie obiektu",
+           "Znajomi zobaczą je w swoim kanale aktywności", "Wszystkie znajdziesz na swoim profilu", "Pokaż swoje najlepsze miejsca!", "Dodaj zdjęcie"),
+    "it": ("Condividi le tue foto dalla strada!", "Tocca il pulsante foto", "nella scheda del locale",
+           "I tuoi amici la vedono nel loro feed attività", "Ritrovale tutte sul tuo profilo", "Condividi i tuoi posti migliori!", "Aggiungi una foto"),
+    "es": ("¡Comparte tus fotos de la carretera!", "Toca el botón de foto", "en la ficha del establecimiento",
+           "Tus amigos la ven en su feed de actividad", "Encuéntralas todas en tu perfil", "¡Comparte tus mejores sitios!", "Añadir una foto"),
+}
+
+
+def inter_photos(t):
+    titre, appuie, fiche, amis, profil, fin, _ = t
+    return dict(duree=15, scenes=[
+        (0, 3.2, "bleu", None, titre, None, "fil-photo.png", []),
+        (3.2, 6.6, "clair", 1, appuie, fiche, "etablissement-ajouter.png", [("zoom", 50, 40, 1.5, 3.5, 6.2), ("tap", 50, 40, 4.4)]),
+        (6.6, 10.4, "clair", 2, amis, None, "fil-photo.png", [("zoom", 50, 46, 1.4, 7.1, 10.0)]),
+        (10.4, 13.2, "clair", 3, profil, None, "profil-photos.png", [("tap", 49, 22, 11.3)]),
+        (13.2, 15, "bleu", None, fin, None, None, []),
+    ])
+
+
+if __name__ == "__main__":
+  for lang, t in INTER_TEXTES.items():
+    (ICI / f"inter-photos-{lang}-2x3.html").write_text(page(f"inter-photos-{lang}", inter_photos(t), "2x3", cta_texte=t[6], lang=lang))
+  for nom, video in VIDEOS.items():
     for fmt in FORMATS:
         (ICI / f"{nom}-{fmt}.html").write_text(page(nom, video, fmt))
-print("pages :", ", ".join(f"{n}-{f}" for n in VIDEOS for f in FORMATS))
+  print("pages :", ", ".join(f"{n}-{f}" for n in VIDEOS for f in FORMATS))
