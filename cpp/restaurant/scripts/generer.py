@@ -24,7 +24,7 @@ PANORAMA = (
     '<svg class="deco" viewBox="0 0 1800 640" width="1800" height="640">'
     '<path d="M-20 380 C 120 300, 240 300, 360 360 S 600 440, 720 380 S 960 300, 1080 360 S 1320 440, 1440 380 S 1680 300, 1820 340" '
     'fill="none" stroke="#FFFF1A" stroke-width="14" stroke-linecap="round"/>'
-    '<circle cx="720" cy="480" r="290" fill="#FFFFFF"/>'
+    '<circle cx="720" cy="370" r="215" fill="#FFFFFF"/>'
     "</svg>"
 )
 
