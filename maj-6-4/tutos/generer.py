@@ -50,6 +50,35 @@ VIDEOS = {
          "peage.png", [("zoom", 50, 84, 1.7, 7.3, 10.9)]),
         (11.4, 15, "bleu", None, "Anticipe&nbsp;: bonne voie, badge prêt&nbsp;!", None, None, []),
     ]),
+    "photos-communautaires": dict(duree=27, scenes=[
+        (0, 3.6, "bleu", None, "Nouveau&nbsp;: les photos de la communauté", "parkings, restaurants, stations", "photos-tout.png", []),
+        (3.6, 7.6, "clair", 1, "Ouvre la fiche d’un établissement", None, "etablissement.png", [("tap", 49.5, 40.3, 4.8)]),
+        (7.6, 11.6, "clair", 2, "Filtre sur «&nbsp;Communauté&nbsp;»", "les photos partagées par les conducteurs",
+         "photos-communaute.png", [("tap", 49.5, 16.9, 8.8)]),
+        (11.6, 15.6, "clair", 3, "Ajoute tes photos", None, "photos-tout.png", [("tap", 82.5, 88.3, 12.8)]),
+        (15.6, 19.6, "clair", 4, "Elles apparaissent dans le fil d’activité", None, "fil-photo.png", [("zoom", 50, 46, 1.4, 16.3, 19.1)]),
+        (19.6, 23.6, "clair", 5, "Et sur le profil de chaque trucker", None, "profil-photos.png", [("tap", 49.5, 22.2, 20.7)]),
+        (23.6, 27, "bleu", None, "Partage tes meilleurs spots&nbsp;!", None, None, []),
+    ]),
+    # Onboarding complet : profil, communauté, nouveautés (voir storyboard-onboarding.md).
+    "onboarding": dict(duree=54, scenes=[
+        (0, 3.5, "bleu", None, "Ton Profil Trucker", "tout ce que tu peux faire", "invite.png", []),
+        (3.5, 5.7, "bleu", None, "Crée ton profil", None, None, []),
+        (5.7, 9.5, "clair", 1, "Connecte-toi", None, "connexion.png", [("tap", 50, 66.8, 6.8)]),
+        (9.5, 13.3, "clair", 2, "Ajoute ta photo et ta bio", None, "profil-charlie.png", [("tap", 26, 22, 10.6)]),
+        (13.3, 17.1, "clair", 3, "Ajoute ton camion", None, "vehicule.png", [("tap", 50, 39.7, 14.4)]),
+        (17.1, 19.3, "bleu", None, "Retrouve ta communauté", None, None, []),
+        (19.3, 23.1, "clair", 4, "Ajoute tes amis", None, "trouver-routiers.png", [("tap", 75.6, 35.3, 20.4)]),
+        (23.1, 26.9, "clair", 5, "Suis leur activité", None, "accueil-en-ligne.png", [("tap", 49, 47, 24.2)]),
+        (26.9, 29.1, "bleu", None, "Les nouveautés", None, None, []),
+        (29.1, 33.3, "clair", 6, "Partage tes photos", "parkings, restaurants, stations", "photos-tout.png", [("tap", 82.5, 88.3, 30.4)]),
+        (33.3, 37.3, "clair", 7, "Like les contributions", None, "like.png", [("zoom", 77, 71, 1.7, 33.6, 36.8), ("tap", 77, 71, 34.7)]),
+        (37.3, 41.3, "clair", 8, "Vois les photos de profil en grand", None, "photo-profil.png",
+         [("tap", 26, 22, 38.3), ("zoom", 49, 51, 1.4, 39.1, 40.9)]),
+        (41.3, 45.3, "clair", 9, "Choisis la langue de ton appli", None, "parametres.png", [("tap", 32, 23, 42.4)]),
+        (45.3, 49.5, "clair", 10, "GPS Premium&nbsp;: l’alerte péage", None, "peage.png", [("zoom", 50, 84, 1.7, 45.8, 49.1)]),
+        (49.5, 54, "bleu", None, "Ne roule plus seul&nbsp;!", None, None, []),
+    ]),
 }
 
 LANGUES = ["Français", "English", "Deutsch", "Nederlands", "Polski", "Italiano", "Español"]

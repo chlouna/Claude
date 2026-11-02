@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Tutoriel onboarding (16x9)</title>
+<style>
+@font-face { font-family: "Bib"; src: url("../../ma-video/assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+:root { --bleu: #061866; --clair: #F5F3F1; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: var(--w); height: var(--h); overflow: hidden; background: var(--bleu); }
+.video { position: relative; width: var(--w); height: var(--h); overflow: hidden; font-family: "Inter", sans-serif; }
+.scene { position: absolute; inset: 0; opacity: 0; }
+.scene.bleu { background: var(--bleu); color: #fff; }
+.scene.clair { background: var(--clair); color: var(--bleu); }
+.texte { position: absolute; display: flex; flex-direction: column; }
+.pastille { width: var(--pastille); height: var(--pastille); border-radius: 50%; background: var(--bleu); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-family: "Bib", sans-serif; font-weight: 700; font-size: calc(var(--pastille) * 0.56); }
+h1 { font-family: "Bib", sans-serif; font-weight: 700; font-size: var(--titre); line-height: 1.12; text-wrap: balance; }
+.sous { font-size: var(--sous); line-height: 1.3; text-wrap: balance; opacity: 0.9; }
+.tel { position: absolute; overflow: hidden; border-radius: 15% / 7.5%; }
+.tel-zoom { position: relative; width: 100%; height: 100%; }
+.tel img { display: block; width: 100%; height: 100%; filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.28)); }
+.scene.bleu .tel img { filter: drop-shadow(0 14px 32px rgba(0, 0, 0, 0.5)); }
+.tap { position: absolute; width: 13%; aspect-ratio: 1; margin: -6.5% 0 0 -6.5%; border-radius: 50%;
+  border: 3px solid var(--bleu); background: rgba(255, 255, 255, 0.35); box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8); }
+/* Feuille de choix de langue (recréée, au style de l'app) */
+.tel-zoom { container-type: size; }
+.voile-ecran { position: absolute; left: 4.5%; right: 4.5%; top: 2.5%; bottom: 2.5%; border-radius: 9% / 4.5%; background: rgba(0, 0, 0, 0.35); }
+.feuille { position: absolute; left: 4.5%; right: 4.5%; bottom: 2.5%; height: 55%; background: #fff; border-radius: 6cqw 6cqw 9% 9% / 6cqw 6cqw 4.5% 4.5%;
+  padding: 5cqw 6cqw; color: #000; font-family: "Inter", sans-serif; }
+.f-titre { font-weight: 700; font-size: 5cqw; color: var(--bleu); text-align: center; margin-bottom: 2cqw; }
+.feuille ul { list-style: none; }
+.feuille li { display: flex; justify-content: space-between; align-items: center; height: 7.2cqh; border-bottom: 1px solid #e6e6ea; font-size: 4.4cqw; font-weight: 600; }
+.coche { color: var(--bleu); font-size: 5cqw; }
+
+
+@keyframes apparait { from { opacity: 0; } to { opacity: 1; } }
+@keyframes disparait { from { opacity: 1; } to { opacity: 0; } }
+@keyframes efface { to { opacity: 0; } }
+@keyframes monte { from { opacity: 0; transform: translateY(30px); } }
+@keyframes pop { from { opacity: 0; transform: scale(0.3); } }
+@keyframes feuille { from { transform: translateY(105%); } }
+@keyframes zoome { from { transform: scale(1); } to { transform: scale(var(--s)); } }
+@keyframes dezoome { from { transform: scale(var(--s)); } to { transform: scale(1); } }
+@keyframes tape {
+  0% { opacity: 0; transform: scale(1.7); }
+  30% { opacity: 1; transform: scale(1); }
+  55% { opacity: 1; transform: scale(0.8); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+:root { --w: 960px; --h: 540px; --titre: 40px; --titre-fin: 50px; --sous: 22px; --pastille: 46px; --marge: 120px; }
+.texte { left: 80px; width: 470px; top: 0; bottom: 0; justify-content: center; gap: 16px; }
+.tel { left: 600px; top: 40px; height: 460px; }
+
+.scene.seul .texte { inset: 0; width: auto; align-items: center; justify-content: center; text-align: center; padding: 0 var(--marge); }
+.scene.seul h1 { font-size: var(--titre-fin); }
+</style>
+</head>
+<body data-duree="54" data-w="960" data-h="540">
+<main class="video">
+  <section class="scene bleu" style="opacity: 1;">
+    <div class="texte">
+      <h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 0.2s both">Ton Profil Trucker</h1>
+      <p class="sous" style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 0.35s both">tout ce que tu peux faire</p>
+    </div>
+    <div class="tel" style="aspect-ratio: 460 / 911; animation: monte 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) 0.15s both">
+        <div class="tel-zoom" style="transform-origin:50% 50%; ">
+          <img src="assets/invite.png" alt="" />
+        </div>
+      </div>
+  </section>
+  <section class="scene bleu seul" style="animation: apparait 0.25s ease-in-out 3.5s both">
+    <div class="texte">
+      <h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 3.7s both">Crée ton profil</h1>
+      
+    </div>
+    
+  </section>
+  <section class="scene clair" style="animation: apparait 0.25s ease-in-out 5.7s both">
+    <div class="texte">
+      <span class="pastille" style="animation: pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) 5.8s both">1</span><h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 5.9s both">Connecte-toi</h1>
+      
+    </div>
+    <div class="tel" style="aspect-ratio: 460 / 911; animation: monte 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) 5.8500000000000005s both">
+        <div class="tel-zoom" style="transform-origin:50% 50%; ">
+          <img src="assets/connexion.png" alt="" /><i class="tap" style="left:50%; top:66.8%; animation: tape 0.9s ease-in-out 6.8s both"></i>
+        </div>
+      </div>
+  </section>
+  <section class="scene clair" style="animation: apparait 0.25s ease-in-out 9.5s both">
+    <div class="texte">
+      <span class="pastille" style="animation: pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) 9.6s both">2</span><h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 9.7s both">Ajoute ta photo et ta bio</h1>
+      
+    </div>
+    <div class="tel" style="aspect-ratio: 462 / 911; animation: monte 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) 9.65s both">
+        <div class="tel-zoom" style="transform-origin:50% 50%; ">
+          <img src="assets/profil-charlie.png" alt="" /><i class="tap" style="left:26%; top:22%; animation: tape 0.9s ease-in-out 10.6s both"></i>
+        </div>
+      </div>
+  </section>
+  <section class="scene clair" style="animation: apparait 0.25s ease-in-out 13.3s both">
+    <div class="texte">
+      <span class="pastille" style="animation: pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) 13.4s both">3</span><h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 13.5s both">Ajoute ton camion</h1>
+      
+    </div>
+    <div class="tel" style="aspect-ratio: 460 / 911; animation: monte 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) 13.450000000000001s both">
+        <div class="tel-zoom" style="transform-origin:50% 50%; ">
+          <img src="assets/vehicule.png" alt="" /><i class="tap" style="left:50%; top:39.7%; animation: tape 0.9s ease-in-out 14.4s both"></i>
+        </div>
+      </div>
+  </section>
+  <section class="scene bleu seul" style="animation: apparait 0.25s ease-in-out 17.1s both">
+    <div class="texte">
+      <h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 17.3s both">Retrouve ta communauté</h1>
+      
+    </div>
+    
+  </section>
+  <section class="scene clair" style="animation: apparait 0.25s ease-in-out 19.3s both">
+    <div class="texte">
+      <span class="pastille" style="animation: pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) 19.400000000000002s both">4</span><h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 19.5s both">Ajoute tes amis</h1>
+      
+    </div>
+    <div class="tel" style="aspect-ratio: 460 / 911; animation: monte 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) 19.45s both">
+        <div class="tel-zoom" style="transform-origin:50% 50%; ">
+          <img src="assets/trouver-routiers.png" alt="" /><i class="tap" style="left:75.6%; top:35.3%; animation: tape 0.9s ease-in-out 20.4s both"></i>
+        </div>
+      </div>
+  </section>
+  <section class="scene clair" style="animation: apparait 0.25s ease-in-out 23.1s both">
+    <div class="texte">
+      <span class="pastille" style="animation: pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) 23.200000000000003s both">5</span><h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 23.3s both">Suis leur activité</h1>
+      
+    </div>
+    <div class="tel" style="aspect-ratio: 460 / 911; animation: monte 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) 23.25s both">
+        <div class="tel-zoom" style="transform-origin:50% 50%; ">
+          <img src="assets/accueil-en-ligne.png" alt="" /><i class="tap" style="left:49%; top:47%; animation: tape 0.9s ease-in-out 24.2s both"></i>
+        </div>
+      </div>
+  </section>
+  <section class="scene bleu seul" style="animation: apparait 0.25s ease-in-out 26.9s both">
+    <div class="texte">
+      <h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 27.099999999999998s both">Les nouveautés</h1>
+      
+    </div>
+    
+  </section>
+  <section class="scene clair" style="animation: apparait 0.25s ease-in-out 29.1s both">
+    <div class="texte">
+      <span class="pastille" style="animation: pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) 29.200000000000003s both">6</span><h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 29.3s both">Partage tes photos</h1>
+      <p class="sous" style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 29.450000000000003s both">parkings, restaurants, stations</p>
+    </div>
+    <div class="tel" style="aspect-ratio: 145 / 286; animation: monte 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) 29.25s both">
+        <div class="tel-zoom" style="transform-origin:50% 50%; ">
+          <img src="assets/photos-tout.png" alt="" /><i class="tap" style="left:82.5%; top:88.3%; animation: tape 0.9s ease-in-out 30.4s both"></i>
+        </div>
+      </div>
+  </section>
+  <section class="scene clair" style="animation: apparait 0.25s ease-in-out 33.3s both">
+    <div class="texte">
+      <span class="pastille" style="animation: pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) 33.4s both">7</span><h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 33.5s both">Like les contributions</h1>
+      
+    </div>
+    <div class="tel" style="aspect-ratio: 397 / 786; animation: monte 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) 33.449999999999996s both">
+        <div class="tel-zoom" style="transform-origin:77% 71%; --s:1.7; animation: zoome 0.6s ease-in-out 33.6s forwards, dezoome 0.6s ease-in-out 36.8s forwards">
+          <img src="assets/like.png" alt="" /><i class="tap" style="left:77%; top:71%; animation: tape 0.9s ease-in-out 34.7s both"></i>
+        </div>
+      </div>
+  </section>
+  <section class="scene clair" style="animation: apparait 0.25s ease-in-out 37.3s both">
+    <div class="texte">
+      <span class="pastille" style="animation: pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) 37.4s both">8</span><h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 37.5s both">Vois les photos de profil en grand</h1>
+      
+    </div>
+    <div class="tel" style="aspect-ratio: 348 / 688; animation: monte 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) 37.449999999999996s both">
+        <div class="tel-zoom" style="transform-origin:49% 51%; --s:1.4; animation: zoome 0.6s ease-in-out 39.1s forwards, dezoome 0.6s ease-in-out 40.9s forwards">
+          <img src="assets/photo-profil.png" alt="" /><i class="tap" style="left:26%; top:22%; animation: tape 0.9s ease-in-out 38.3s both"></i>
+        </div>
+      </div>
+  </section>
+  <section class="scene clair" style="animation: apparait 0.25s ease-in-out 41.3s both">
+    <div class="texte">
+      <span class="pastille" style="animation: pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) 41.4s both">9</span><h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 41.5s both">Choisis la langue de ton appli</h1>
+      
+    </div>
+    <div class="tel" style="aspect-ratio: 350 / 693; animation: monte 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) 41.449999999999996s both">
+        <div class="tel-zoom" style="transform-origin:50% 50%; ">
+          <img src="assets/parametres.png" alt="" /><i class="tap" style="left:32%; top:23%; animation: tape 0.9s ease-in-out 42.4s both"></i>
+        </div>
+      </div>
+  </section>
+  <section class="scene clair" style="animation: apparait 0.25s ease-in-out 45.3s both">
+    <div class="texte">
+      <span class="pastille" style="animation: pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) 45.4s both">10</span><h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 45.5s both">GPS Premium&nbsp;: l’alerte péage</h1>
+      
+    </div>
+    <div class="tel" style="aspect-ratio: 348 / 687; animation: monte 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) 45.449999999999996s both">
+        <div class="tel-zoom" style="transform-origin:50% 84%; --s:1.7; animation: zoome 0.6s ease-in-out 45.8s forwards, dezoome 0.6s ease-in-out 49.1s forwards">
+          <img src="assets/peage.png" alt="" />
+        </div>
+      </div>
+  </section>
+  <section class="scene bleu seul" style="animation: apparait 0.25s ease-in-out 49.5s both">
+    <div class="texte">
+      <h1 style="animation: monte 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) 49.7s both">Ne roule plus seul&nbsp;!</h1>
+      
+    </div>
+    
+  </section>
+</main>
+</body>
+</html>

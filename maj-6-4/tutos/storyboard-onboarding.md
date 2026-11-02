@@ -2,7 +2,7 @@
 
 Objectif : montrer en une vidéo tout ce que le Profil Trucker permet, de la création du profil aux dernières nouveautés.
 Diffusion : Instagram 9:16 (1080 × 1920), plus une version 16:9 si besoin.
-Style : celui des tutoriels (`maj-6-4/tutos/`) : étapes sur fond Off White avec pastille numérotée et titre en Bib, taps et zooms sur les captures, intro, cartons de chapitre et fin sur fond Michelin Blue. Mêmes marges que la version finale des tutos (espaces égaux en haut, entre le titre et le téléphone, en bas ; 120 px de marge sur les côtés). Tutoiement, sans logo, sans emoji, sans musique.
+Source : `generer.py` (vidéo « onboarding »), rendu par `rendre.mjs`. Style : celui des tutoriels : étapes sur fond Off White avec pastille numérotée et titre en Bib, taps et zooms sur les captures, intro, cartons de chapitre et fin sur fond Michelin Blue. Mêmes marges que la version finale des tutos (espaces égaux en haut, entre le titre et le téléphone, en bas ; 120 px de marge sur les côtés). Tutoiement, sans logo, sans emoji, sans musique.
 
 ## Déroulé
 
@@ -17,7 +17,7 @@ Style : celui des tutoriels (`maj-6-4/tutos/`) : étapes sur fond Off White avec
 | 4 | 18,5 → 22,5 s | **④ Ajoute tes amis** | « Trouver des routiers », tap sur « Ajouter » (ma-video). |
 | 5 | 22,5 → 26,5 s | **⑤ Suis leur activité** | Fil d'activité, « Nicolas J. a visité : AS 24 » (ma-video). |
 | Chapitre C | 26,5 → 28 s | **Les nouveautés** | Carton bleu. |
-| 6 | 28 → 32,5 s | **⑥ Partage tes photos** / parkings, restaurants, stations | Ajout d'une photo sur un établissement. **Capture à fournir.** |
+| 6 | 28 → 32,5 s | **⑥ Partage tes photos** / parkings, restaurants, stations | Photos d’un établissement, tap sur le bouton d’ajout de photo. |
 | 7 | 32,5 → 36,5 s | **⑦ Like les contributions** | Fil d'activité, zoom et tap sur « J'aime ». |
 | 8 | 36,5 → 40,5 s | **⑧ Vois les photos de profil en grand** | Profil de Louna, la photo en plein écran. |
 | 9 | 40,5 → 44,5 s | **⑨ Choisis la langue de ton appli** | Paramètres, tap sur « Langue de l'application ». |
