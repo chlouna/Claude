@@ -3,7 +3,7 @@
     python3 scripts/generer.py && node scripts/capturer.mjs
 
 Format repris des captures store existantes : verbe d'action en titre, phrase en sous-titre,
-téléphone au centre, courbe jaune ou grand cercle blanc. Titres en casse de phrase (charte).
+téléphone au centre. Décor en panorama continu d'un visuel à l'autre. Titres en casse de phrase (charte).
 """
 from pathlib import Path
 
@@ -17,13 +17,16 @@ VOLETS = [
     ("decouvrez", "Découvrez", "aussi les parkings, stations-service et lavages poids lourd sur votre route !", "carte-tous.png", "vague3"),
 ]
 
-DECOR = {
-    "vague": '<svg class="deco" viewBox="0 0 360 640" preserveAspectRatio="none"><path d="M-20 360 Q90 300 180 350 T380 300" fill="none" stroke="#FFFF1A" stroke-width="14" stroke-linecap="round"/></svg>',
-    "vague2": '<svg class="deco" viewBox="0 0 360 640" preserveAspectRatio="none"><path d="M-20 300 Q120 420 200 360 T380 330" fill="none" stroke="#FFFF1A" stroke-width="14" stroke-linecap="round"/></svg>',
-    "vague3": '<svg class="deco" viewBox="0 0 360 640" preserveAspectRatio="none"><path d="M-20 420 Q100 330 190 380 T380 340" fill="none" stroke="#FFFF1A" stroke-width="14" stroke-linecap="round"/></svg>',
-    "cercle": '<svg class="deco" viewBox="0 0 360 640"><circle cx="330" cy="430" r="230" fill="#FFFFFF"/></svg>',
-    "cercle2": '<svg class="deco" viewBox="0 0 360 640"><circle cx="20" cy="440" r="230" fill="#FFFFFF"/></svg>',
-}
+# Décor en panorama : un seul dessin de 5 × 360 px de large, découpé en 5 visuels.
+# Le trait jaune et le grand rond blanc passent d'une image à l'autre quand on fait défiler.
+LARGEUR = 360
+PANORAMA = (
+    '<svg class="deco" viewBox="0 0 1800 640" width="1800" height="640">'
+    '<path d="M-20 380 C 120 300, 240 300, 360 360 S 600 440, 720 380 S 960 300, 1080 360 S 1320 440, 1440 380 S 1680 300, 1820 340" '
+    'fill="none" stroke="#FFFF1A" stroke-width="14" stroke-linecap="round"/>'
+    '<circle cx="720" cy="480" r="290" fill="#FFFFFF"/>'
+    "</svg>"
+)
 
 CSS = """
 @font-face { font-family: "Bib"; src: url("../../assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
@@ -32,7 +35,7 @@ CSS = """
 body { background: #F5F3F1; padding: 24px; display: flex; gap: 16px; flex-wrap: wrap; font-family: "Inter", sans-serif; }
 body.capture { padding: 0; gap: 0; }
 .shot { position: relative; width: 360px; height: 640px; overflow: hidden; background: #061866; color: #fff; flex: none; }
-.deco { position: absolute; inset: 0; width: 100%; height: 100%; }
+.deco { position: absolute; top: 0; width: 1800px; height: 640px; }
 .textes { position: absolute; top: 46px; left: 0; right: 0; padding: 0 30px; text-align: center; }
 h1 { font-family: "Bib"; font-weight: 700; font-size: 34px; line-height: 1.05; }
 p { font-family: "Inter"; font-weight: 700; font-size: 15px; line-height: 1.35; margin-top: 12px; }
@@ -42,7 +45,7 @@ p { font-family: "Inter"; font-weight: 700; font-size: 15px; line-height: 1.35; 
 
 def page():
     shots = "".join(
-        f'<section class="shot" id="{i + 1:02d}-{cle}">{DECOR[deco]}<div class="textes"><h1>{titre}</h1><p>{sous}</p></div>'
+        f'<section class="shot" id="{i + 1:02d}-{cle}"><div style="position:absolute;top:0;left:{-i * LARGEUR}px">{PANORAMA}</div><div class="textes"><h1>{titre}</h1><p>{sous}</p></div>'
         f'<img class="tel" src="../captures/{img}" alt=""></section>'
         for i, (cle, titre, sous, img, deco) in enumerate(VOLETS)
     )
