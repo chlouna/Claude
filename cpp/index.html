@@ -1,0 +1,1096 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPP Michelin Truckfly</title><style>@font-face { font-family: "Bib"; src: url("assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Bib"; src: url("assets/fonts/BIB-Light.woff2") format("woff2"); font-weight: 300; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+
+:root { --bleu: #061866; --nuit: #000e38; --jaune: #ffff1a; --casse: #f5f3f1; --gris: #6e6e73; --ligne: #e6e8ec; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Inter", sans-serif; background: var(--casse); color: #000; padding: 32px; }
+.entete-planche h1 { font-family: "Bib"; font-size: 30px; color: var(--bleu); }
+.entete-planche p { color: var(--gris); margin: 6px 0 24px; }
+.serie > h2 { font-family: "Bib"; font-size: 20px; color: var(--bleu); margin: 28px 0 12px; }
+.serie > h2 small { font-family: "Inter"; font-weight: 400; font-size: 13px; color: var(--gris); margin-left: 8px; }
+.rangee { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; }
+body.capture { padding: 0; }
+body.capture .entete-planche, body.capture .serie > h2 { display: none; }
+
+/* --- Capture store --- */
+.shot { position: relative; flex: none; overflow: hidden; background: var(--bleu); color: #fff; }
+.shot.ios { width: 430px; height: 932px; --s: .79; --haut: 200px; --t: 36px; --st: 17px; --pad: 80px; }
+.shot.play { width: 360px; height: 640px; --s: .6; --haut: 166px; --t: 27px; --st: 13.5px; --pad: 40px; }
+.vague { position: absolute; inset: 0; width: 100%; height: 100%; }
+.textes { position: absolute; left: 0; right: 0; top: var(--pad); padding: 0 26px; text-align: center; }
+.textes h1 { font-family: "Bib"; font-weight: 700; font-size: var(--t); line-height: 1.08; letter-spacing: -.2px; }
+.textes h1 em { font-style: normal; color: var(--jaune); }
+.textes p { font-size: var(--st); line-height: 1.35; margin-top: 10px; opacity: .88; }
+.tel {
+  position: absolute; left: 50%; top: calc(var(--pad) + var(--haut) - 40px); transform: translateX(-50%);
+  width: calc(390px * var(--s) + 20px); height: calc(844px * var(--s) + 20px);
+  background: #0b0b10; border-radius: calc(56px * var(--s) + 10px); padding: 10px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, .35);
+}
+.ecran {
+  position: relative; width: 390px; height: 844px; transform: scale(var(--s)); transform-origin: top left;
+  border-radius: 50px; overflow: hidden; background: #fff; color: #111;
+}
+.ecran > * { position: absolute; }
+
+/* --- Éléments communs --- */
+.statut { top: 0; left: 0; right: 0; height: 50px; display: flex; justify-content: space-between; align-items: center; padding: 8px 34px 0 40px; z-index: 5; font-size: 16px; color: #111; }
+.statut.clair { color: #fff; }
+.statut span { display: flex; gap: 3px; align-items: flex-end; }
+.statut span i { width: 4px; background: currentColor; border-radius: 1px; }
+.statut span i:nth-child(1) { height: 5px; } .statut span i:nth-child(2) { height: 7px; } .statut span i:nth-child(3) { height: 9px; } .statut span i:nth-child(4) { height: 11px; }
+.statut span em { width: 24px; height: 12px; border: 1.5px solid currentColor; border-radius: 4px; margin-left: 6px; background: linear-gradient(90deg, currentColor 70%, transparent 70%); background-clip: content-box; padding: 1.5px; }
+.ecran .statut { position: absolute; }
+.photo-lieu .statut, .mini-carte .statut { position: absolute; }
+.plan { top: 0; left: 0; width: 390px; height: 844px; }
+.past { display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.pin { width: 34px; height: 42px; display: flex; justify-content: center; filter: drop-shadow(0 3px 4px rgba(0,0,0,.25)); }
+.pin::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top: 8px solid #fff; }
+.pin .past { border: 2.5px solid #fff; }
+.pin.grand { width: 46px; height: 56px; z-index: 2; }
+.moi { width: 40px; height: 40px; filter: drop-shadow(0 3px 6px rgba(0,0,0,.3)); }
+.coche { width: 22px; height: 22px; flex: none; }
+.etoiles { color: #F5A623; letter-spacing: 1px; font-size: 14px; }
+.etoiles i { font-style: normal; color: #d8d8dc; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; color: var(--bleu); flex: none; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 20px; border-radius: 24px; border: 2px solid var(--bleu); color: var(--bleu); font-weight: 600; font-size: 16px; }
+.btn.plein { background: var(--bleu); color: #fff; }
+.btn.jaune { background: var(--jaune); border-color: var(--jaune); color: var(--bleu); }
+.btn.large { display: flex; width: 100%; }
+.btn.petit { height: 34px; font-size: 14px; padding: 0 14px; }
+.poignee { width: 40px; height: 5px; border-radius: 3px; background: #d4d6db; margin: 0 auto 14px; }
+
+/* --- Navigation --- */
+.bandeau-nav { top: 56px; left: 14px; right: 14px; background: var(--bleu); color: #fff; border-radius: 20px; padding: 16px 18px; display: flex; gap: 16px; align-items: center; box-shadow: 0 8px 20px rgba(0,0,0,.25); z-index: 3; }
+.bandeau-nav .fleche svg { width: 52px; height: 52px; display: block; }
+.bandeau-nav b { display: block; font-size: 32px; }
+.bandeau-nav span { font-size: 17px; opacity: .9; }
+.alerte { top: 168px; left: 14px; right: 14px; background: #fff; border-radius: 18px; padding: 14px 16px; display: flex; gap: 14px; align-items: center; box-shadow: 0 8px 20px rgba(0,0,0,.18); border-left: 6px solid var(--jaune); z-index: 3; }
+.alerte b { display: block; font-size: 19px; color: var(--bleu); }
+.alerte span { font-size: 15px; color: var(--gris); }
+.chip-carte { background: #fff; color: var(--bleu); font-weight: 700; font-size: 15px; padding: 10px 14px; border-radius: 14px; box-shadow: 0 6px 14px rgba(0,0,0,.2); border: 2px solid #34C759; z-index: 3; }
+.chip-carte::before { content: "✓ "; color: #34C759; }
+.vitesse { left: 18px; bottom: 136px; width: 60px; height: 60px; border-radius: 50%; background: #fff; border: 6px solid #E2302F; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 22px; }
+.eta { left: 0; right: 0; bottom: 0; background: #fff; border-radius: 26px 26px 0 0; padding: 20px 22px 36px; display: flex; align-items: center; gap: 12px; box-shadow: 0 -6px 18px rgba(0,0,0,.12); }
+.eta > div { flex: 1; }
+.eta b { display: block; font-size: 28px; color: #1a9b4b; }
+.eta span { font-size: 15px; color: var(--gris); }
+.eta .eta-btn { background: #eef1f7; color: var(--bleu); font-weight: 600; padding: 12px 16px; border-radius: 22px; font-size: 15px; }
+.eta-x { width: 44px; height: 44px; border-radius: 50%; background: #E2302F; color: #fff !important; font-size: 26px !important; display: flex; align-items: center; justify-content: center; }
+
+/* --- En-têtes et formulaires --- */
+.entete { top: 0; left: 0; right: 0; height: 112px; background: var(--bleu); color: #fff; z-index: 2; }
+.entete-l { position: absolute; bottom: 14px; left: 18px; right: 18px; display: flex; align-items: center; gap: 10px; }
+.entete-l b { font-size: 20px; flex: 1; }
+.entete .retour { font-size: 34px; line-height: 20px; margin-top: -4px; }
+.entete .act { font-size: 15px; font-weight: 600; color: var(--jaune); }
+.corps { top: 112px; left: 0; right: 0; bottom: 0; padding: 14px 18px; overflow: hidden; }
+.corps.gris-fond { background: #f2f3f6; }
+.rubrique { font-size: 13px; font-weight: 600; color: var(--gris); margin: 14px 2px 8px; }
+.champ { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; border-bottom: 1px solid var(--ligne); padding: 15px 4px; font-size: 16px; }
+.champ span { color: #333; flex: 1; }
+.champ b { color: var(--bleu); }
+.inter { width: 50px; height: 30px; border-radius: 15px; background: #d4d6db; position: relative; flex: none; }
+.inter::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); }
+.inter.on { background: #34C759; }
+.inter.on::after { left: 23px; }
+.grand-camion svg { width: 100%; display: block; border-radius: 14px; margin-bottom: 6px; }
+.corps .btn.large { margin-top: 22px; }
+.vehicule { display: flex; align-items: center; gap: 12px; background: #fff; border: 2px solid var(--ligne); border-radius: 16px; padding: 10px; margin-bottom: 10px; }
+.vehicule.sel { border-color: var(--bleu); }
+.vehicule .v-ill { width: 90px; flex: none; }
+.vehicule .v-ill svg { width: 100%; display: block; border-radius: 8px; }
+.vehicule > div:nth-child(2) { flex: 1; }
+.vehicule b { display: block; font-size: 17px; color: var(--bleu); }
+.vehicule span { font-size: 14px; color: var(--gris); }
+
+/* --- Fiches --- */
+.photo-lieu { top: 0; left: 0; width: 390px; height: 250px; }
+.photo-lieu > svg { width: 100%; height: 100%; display: block; }
+.fiche { left: 0; right: 0; bottom: 0; top: 226px; background: #fff; border-radius: 26px 26px 0 0; padding: 12px 20px; box-shadow: 0 -6px 20px rgba(0,0,0,.12); overflow: hidden; }
+.fiche h2 { font-size: 24px; color: var(--bleu); }
+.sous-fiche { color: var(--gris); font-size: 15px; margin-top: 3px; }
+.note { display: flex; align-items: center; gap: 6px; margin: 10px 0 4px; font-size: 15px; }
+.note span { color: var(--gris); }
+.note .ouvert { font-style: normal; color: #1a9b4b; font-weight: 600; margin-left: auto; font-size: 14px; }
+.verifie { display: inline-flex; align-items: center; gap: 6px; background: #e8f7ee; color: #1a7a40; font-weight: 600; font-size: 13px; padding: 5px 10px 5px 6px; border-radius: 14px; margin-bottom: 8px; }
+.verifie .coche { width: 18px; height: 18px; }
+.services { display: flex; justify-content: space-between; margin: 16px 0; }
+.services span { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 25%; }
+.services em { font-style: normal; font-size: 13px; color: #333; }
+.boutons { display: flex; gap: 10px; }
+.boutons .btn { flex: 1; }
+.avis { background: #fff; border: 1px solid var(--ligne); border-radius: 16px; padding: 14px; margin-top: 14px; }
+.corps .avis { margin: 0 0 12px; }
+.avis-tete { display: flex; gap: 10px; align-items: center; }
+.avis-tete > div { flex: 1; }
+.avis-tete b { display: block; font-size: 15px; }
+.avis-tete span { font-size: 13px; color: var(--gris); }
+.avis p { font-size: 15px; line-height: 1.4; margin-top: 10px; color: #222; }
+.like { margin-top: 10px; font-size: 14px; color: #E2477A; font-weight: 600; }
+.like b { color: #111; }
+.reponse { margin-top: 12px; background: #eef1f7; border-radius: 12px; padding: 10px 12px; border-left: 4px solid var(--bleu); }
+.reponse b { font-size: 13px; color: var(--bleu); }
+.reponse p { margin-top: 4px; font-size: 14px; }
+.resume { display: flex; align-items: center; gap: 12px; background: #fff; border-radius: 16px; padding: 14px; margin-bottom: 12px; }
+.resume > b { font-size: 40px; color: var(--bleu); }
+.resume span { display: block; font-size: 13px; color: var(--gris); }
+.saisie { background: #fff; border: 1px solid var(--ligne); border-radius: 24px; padding: 8px 8px 8px 16px; display: flex; align-items: center; justify-content: space-between; color: var(--gris); font-size: 15px; }
+
+/* --- Arrêts --- */
+.mini-carte { top: 0; left: 0; width: 390px; height: 400px; overflow: hidden; }
+.mini-carte > * { position: absolute; }
+.mini-carte .plan { height: 844px; }
+.fiche.liste { top: 360px; }
+.filtres { display: flex; gap: 8px; margin: 12px 0 6px; }
+.filtres span { padding: 8px 14px; border-radius: 18px; background: #eef1f7; color: var(--bleu); font-size: 14px; font-weight: 600; }
+.filtres span.on { background: var(--bleu); color: #fff; }
+.arret { display: flex; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--ligne); }
+.arret > div { flex: 1; }
+.arret b { display: block; font-size: 16px; }
+.arret span { font-size: 13.5px; color: var(--gris); }
+.arret em { font-style: normal; text-align: right; font-size: 14px; font-weight: 600; color: var(--bleu); line-height: 1.3; }
+.arret .dispo { display: inline-block; margin-top: 3px; color: #1a7a40; font-weight: 600; }
+
+/* --- Offres --- */
+.offre { inset: 0; background: linear-gradient(180deg, #0d2a9a 0%, var(--bleu) 45%, var(--nuit) 100%); color: #fff; padding: 0 26px; }
+.offre > * { position: relative; }
+.offre .eta-x.blanc { position: absolute; right: 22px; top: 60px; background: rgba(255,255,255,.15); }
+.offre-tete { margin-top: 130px; }
+.badge-j { display: inline-block; background: var(--jaune); color: var(--bleu); font-weight: 700; font-size: 14px; padding: 6px 12px; border-radius: 14px; }
+.offre h2 { font-family: "Bib"; font-size: 34px; line-height: 1.1; margin-top: 16px; }
+.offre-tete p { margin-top: 10px; opacity: .85; font-size: 17px; line-height: 1.35; }
+.offre ul { list-style: none; margin: 30px 0 34px; }
+.offre li { display: flex; gap: 14px; align-items: center; font-size: 17px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+.offre .petit { text-align: center; font-size: 13px; opacity: .7; margin-top: 14px; }
+
+/* --- Exploration --- */
+.recherche { top: 58px; left: 16px; right: 16px; height: 52px; background: #fff; border-radius: 26px; display: flex; align-items: center; gap: 10px; padding: 0 18px; color: var(--gris); font-size: 16px; box-shadow: 0 6px 16px rgba(0,0,0,.14); z-index: 3; }
+.recherche svg { width: 22px; height: 22px; }
+.chips { top: 122px; left: 16px; right: 0; display: flex; gap: 8px; z-index: 3; }
+.chips span { display: inline-flex; align-items: center; gap: 6px; background: #fff; color: var(--bleu); font-weight: 600; font-size: 14px; padding: 9px 13px; border-radius: 18px; box-shadow: 0 3px 8px rgba(0,0,0,.12); white-space: nowrap; }
+.chips span.on { background: var(--bleu); color: #fff; }
+.chips span.on .past, .chips span.on svg { display: inline; }
+.mini-fiche { left: 14px; right: 14px; bottom: 104px; background: #fff; border-radius: 20px; padding: 14px; display: flex; gap: 14px; align-items: center; box-shadow: 0 8px 22px rgba(0,0,0,.2); }
+.mini-fiche b { display: block; font-size: 17px; color: var(--bleu); }
+.mini-fiche span { display: block; font-size: 14px; color: var(--gris); margin-top: 2px; }
+.onglets { left: 0; right: 0; bottom: 0; height: 90px; background: #fff; display: flex; justify-content: space-around; padding-top: 10px; border-top: 1px solid var(--ligne); z-index: 4; }
+.onglets span { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11.5px; color: #8a8d94; font-weight: 600; }
+.onglets svg { width: 26px; height: 26px; }
+.onglets .actif { color: var(--bleu); }
+
+/* --- Signaler --- */
+.fiche.signaler { top: 420px; }
+.grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 6px; margin: 20px 0; }
+.grille span { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.grille em { font-style: normal; font-size: 14px; font-weight: 600; color: #222; }
+.merci { display: flex; gap: 10px; align-items: center; background: #e8f7ee; border-radius: 14px; padding: 12px 14px; font-size: 15px; color: #1a5c33; }
+
+/* --- Communauté --- */
+.post { background: #fff; border: 1px solid var(--ligne); border-radius: 16px; padding: 14px; margin-bottom: 12px; }
+.post-alerte { display: flex; gap: 10px; align-items: center; margin-top: 10px; background: #fdeef3; border-radius: 12px; padding: 10px; font-size: 15px; font-weight: 600; }
+.post-camion svg { width: 100%; display: block; margin-top: 10px; border-radius: 12px; }
+
+/* --- Établissements --- */
+.photos { display: flex; gap: 10px; }
+.photos .ph { width: 104px; height: 78px; border-radius: 12px; overflow: hidden; flex: none; }
+.photos .ph svg { width: 100%; height: 100%; display: block; }
+.photos .ph.plus { border: 2px dashed #b9bec8; display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--gris); }
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.kpi { background: #fff; border-radius: 16px; padding: 14px; }
+.kpi span { display: block; font-size: 13px; color: var(--gris); }
+.kpi b { display: block; font-size: 30px; color: var(--bleu); margin: 4px 0 2px; }
+.kpi em { font-style: normal; font-size: 13px; color: #1a9b4b; font-weight: 600; }
+.graphe { background: #fff; border-radius: 16px; padding: 14px; margin-top: 12px; }
+.graphe > b { font-size: 15px; color: var(--bleu); }
+.barres { display: flex; align-items: flex-end; justify-content: space-between; height: 200px; margin-top: 14px; }
+.barres span { width: 11%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 6px; }
+.barres i { width: 100%; background: var(--bleu); border-radius: 6px 6px 0 0; }
+.barres span:last-child i { background: #3B6CF6; }
+.barres em { font-style: normal; font-size: 12px; color: var(--gris); }
+.bulle-offre { left: 120px; top: 200px; background: var(--bleu); color: #fff; font-weight: 700; font-size: 14px; padding: 8px 12px; border-radius: 12px; z-index: 3; box-shadow: 0 6px 14px rgba(0,0,0,.25); }
+.fiche.promo { top: 470px; }
+.tag-promo { display: inline-block; background: #eef1f7; color: var(--bleu); font-size: 13px; font-weight: 700; padding: 5px 10px; border-radius: 12px; margin-bottom: 8px; }
+.offre-carte { display: flex; gap: 14px; align-items: center; background: #fff7d6; border-radius: 16px; padding: 14px; margin: 16px 0; }
+.offre-carte b { display: block; font-size: 17px; color: var(--bleu); }
+.offre-carte span { font-size: 14px; color: #555; }
+
+.mini-fiche .etoiles { display: inline; }
+</style></head>
+<body>
+<header class="entete-planche"><h1>Custom Product Pages · Michelin Truckfly</h1><p>Une série de 5 captures par business model, aux formats App Store et Google Play. Écrans recréés, noms et chiffres d'exemple.</p></header>
+<div class="serie"><h2>GPS Premium (abonnement) <small>App Store · 1290 × 2796</small></h2><div class="rangee"><section class="shot ios" id="gps-premium-01-ios" data-cpp="gps-premium" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 620 Q140 520 260 600 T520 560" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Le GPS pensé pour <em>ton camion</em></h1><p>Navigation poids lourd dans 44 pays</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+      <div class="bandeau-nav"><span class="fleche"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 42V24a6 6 0 0 1 6-6h16" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M30 9l9 9-9 9" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>300 m</b><span>Rue des Transporteurs</span></div></div>
+      <div class="moi" style="left:182px;top:640px;transform:rotate(0deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div>
+      <div class="vitesse">80</div>
+      <div class="eta"><div><b>14:32</b><span>3 h 48 · 312 km</span></div><span class="eta-btn">Arrêts</span><span class="eta-x">×</span></div></div></div>
+  </section><section class="shot ios" id="gps-premium-02-ios" data-cpp="gps-premium" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 540 Q100 680 250 600 T520 650" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Un itinéraire selon <em>ton gabarit</em></h1><p>Hauteur, largeur, poids : on évite les mauvaises surprises</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><span class="retour">‹</span><b>Mon camion</b><span class="act"></span></div></div><div class="corps">
+        <div class="grand-camion"><svg viewBox="0 0 320 170" aria-hidden="true">
+  <rect width="320" height="170" rx="14" fill="#DCE6F7"/>
+  <rect y="132" width="320" height="38" fill="#C5CFDD"/>
+  <rect x="22" y="40" width="186" height="84" rx="6" fill="#fff" stroke="#061866" stroke-width="5"/>
+  <rect x="22" y="92" width="186" height="10" fill="#061866"/>
+  <path d="M214 124V68q0-12 12-12h38q12 0 18 12l16 26v30z" fill="#061866"/>
+  <rect x="246" y="64" width="30" height="24" rx="4" fill="#BFD3F2"/>
+  <circle cx="62" cy="128" r="15" fill="#111"/><circle cx="100" cy="128" r="15" fill="#111"/>
+  <circle cx="182" cy="128" r="15" fill="#111"/><circle cx="270" cy="128" r="15" fill="#111"/>
+</svg></div>
+        <div class="champ"><span>Hauteur</span><b>4,00 m</b></div><div class="champ"><span>Largeur</span><b>2,55 m</b></div><div class="champ"><span>Longueur</span><b>16,50 m</b></div>
+        <div class="champ"><span>Poids total</span><b>44 t</b></div><div class="champ"><span>Poids par essieu</span><b>11,5 t</b></div>
+        <div class="champ"><span>Matières dangereuses (ADR)</span><i class="inter "></i></div>
+        <span class="btn plein large">Calculer l'itinéraire</span>
+      </div></div></div>
+  </section><section class="shot ios" id="gps-premium-03-ios" data-cpp="gps-premium" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 700 Q160 560 300 640 T520 520" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Le péage ? <em>Tu le vois venir</em></h1><p>Une alerte avant d'y arriver</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+      <div class="bandeau-nav"><span class="fleche"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 42V24a6 6 0 0 1 6-6h16" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M30 9l9 9-9 9" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>300 m</b><span>Rue des Transporteurs</span></div></div><div class="alerte"><span class="past" style="width:44px;height:44px;border-radius:12px;background:#061866"><svg width="26" height="26" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 17V7h14v10M3 7l7-4 7 4M7 17v-6h6v6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></span><div><b>Péage dans 2 km</b><span>Prépare ton badge</span></div></div>
+      <div class="moi" style="left:182px;top:640px;transform:rotate(0deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div>
+      <div class="vitesse">80</div>
+      <div class="eta"><div><b>14:32</b><span>3 h 48 · 312 km</span></div><span class="eta-btn">Arrêts</span><span class="eta-x">×</span></div></div></div>
+  </section><section class="shot ios" id="gps-premium-04-ios" data-cpp="gps-premium" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 580 Q180 700 280 580 T520 620" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Tes arrêts <em>sur ta route</em></h1><p>Parkings, restos et douches poids lourds</p></div>
+    <div class="tel"><div class="ecran"><div class="mini-carte"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M60 330 Q120 300 150 250 Q180 190 250 170 Q320 150 340 70" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 330 Q120 300 150 250 Q180 190 250 170 Q320 150 340 70" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+        <div class="pin" style="left:104px;top:270px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span></div><div class="pin" style="left:160px;top:214px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#E2477A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div><div class="pin" style="left:238px;top:150px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#8E5BD8"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span></div><div class="pin" style="left:300px;top:96px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#1BA6C9"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span></div>
+        <div class="moi" style="left:44px;top:314px;transform:rotate(40deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div></div>
+      <div class="fiche liste">
+        <div class="poignee"></div>
+        <h2>Sur ton itinéraire</h2>
+        <div class="filtres"><span class="on">Tout</span><span>Parkings</span><span>Restos</span><span>Douches</span></div>
+        <div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#4A63E7"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span><div><b>Aire de Saint-Ambreuil</b><span>Parking poids lourds · 60 places</span></div><em>42 km<br>15:10</em></div><div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#E2477A"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span><div><b>Relais de la Bascule</b><span>Restaurant · Douches</span></div><em>88 km<br>15:52</em></div><div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#8E5BD8"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span><div><b>Station Total Mâcon</b><span>Douches · Carburant</span></div><em>131 km<br>16:31</em></div><div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#1BA6C9"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span><div><b>Station de lavage PL</b><span>Lavage poids lourds</span></div><em>176 km<br>17:12</em></div>
+      </div></div></div>
+  </section><section class="shot ios" id="gps-premium-05-ios" data-cpp="gps-premium" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 650 Q120 540 240 620 T520 580" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Passe à <em>Premium</em></h1><p>Et roule sans publicité</p></div>
+    <div class="tel"><div class="ecran"><div class="offre"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><span class="eta-x blanc">×</span>
+        <div class="offre-tete"><span class="badge-j">Premium</span><h2>Michelin Truckfly Premium</h2><p>Tout ce qu'il faut pour rouler sereinement</p></div>
+        <ul><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>GPS poids lourd en 44 pays</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Itinéraire adapté à ton gabarit</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Alerte à l'approche des péages</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Arrêts poids lourds sur ta route</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sans publicité</span></li></ul>
+        <span class="btn jaune large">Passer à Premium</span>
+        <p class="petit">Abonnement géré depuis ton store</p>
+      </div></div></div>
+  </section></div></div><div class="serie"><h2>GPS Premium (abonnement) <small>Google Play · 1080 × 1920</small></h2><div class="rangee"><section class="shot play" id="gps-premium-01-play" data-cpp="gps-premium" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 620 Q140 520 260 600 T520 560" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Le GPS pensé pour <em>ton camion</em></h1><p>Navigation poids lourd dans 44 pays</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+      <div class="bandeau-nav"><span class="fleche"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 42V24a6 6 0 0 1 6-6h16" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M30 9l9 9-9 9" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>300 m</b><span>Rue des Transporteurs</span></div></div>
+      <div class="moi" style="left:182px;top:640px;transform:rotate(0deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div>
+      <div class="vitesse">80</div>
+      <div class="eta"><div><b>14:32</b><span>3 h 48 · 312 km</span></div><span class="eta-btn">Arrêts</span><span class="eta-x">×</span></div></div></div>
+  </section><section class="shot play" id="gps-premium-02-play" data-cpp="gps-premium" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 540 Q100 680 250 600 T520 650" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Un itinéraire selon <em>ton gabarit</em></h1><p>Hauteur, largeur, poids : on évite les mauvaises surprises</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><span class="retour">‹</span><b>Mon camion</b><span class="act"></span></div></div><div class="corps">
+        <div class="grand-camion"><svg viewBox="0 0 320 170" aria-hidden="true">
+  <rect width="320" height="170" rx="14" fill="#DCE6F7"/>
+  <rect y="132" width="320" height="38" fill="#C5CFDD"/>
+  <rect x="22" y="40" width="186" height="84" rx="6" fill="#fff" stroke="#061866" stroke-width="5"/>
+  <rect x="22" y="92" width="186" height="10" fill="#061866"/>
+  <path d="M214 124V68q0-12 12-12h38q12 0 18 12l16 26v30z" fill="#061866"/>
+  <rect x="246" y="64" width="30" height="24" rx="4" fill="#BFD3F2"/>
+  <circle cx="62" cy="128" r="15" fill="#111"/><circle cx="100" cy="128" r="15" fill="#111"/>
+  <circle cx="182" cy="128" r="15" fill="#111"/><circle cx="270" cy="128" r="15" fill="#111"/>
+</svg></div>
+        <div class="champ"><span>Hauteur</span><b>4,00 m</b></div><div class="champ"><span>Largeur</span><b>2,55 m</b></div><div class="champ"><span>Longueur</span><b>16,50 m</b></div>
+        <div class="champ"><span>Poids total</span><b>44 t</b></div><div class="champ"><span>Poids par essieu</span><b>11,5 t</b></div>
+        <div class="champ"><span>Matières dangereuses (ADR)</span><i class="inter "></i></div>
+        <span class="btn plein large">Calculer l'itinéraire</span>
+      </div></div></div>
+  </section><section class="shot play" id="gps-premium-03-play" data-cpp="gps-premium" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 700 Q160 560 300 640 T520 520" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Le péage ? <em>Tu le vois venir</em></h1><p>Une alerte avant d'y arriver</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+      <div class="bandeau-nav"><span class="fleche"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 42V24a6 6 0 0 1 6-6h16" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M30 9l9 9-9 9" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>300 m</b><span>Rue des Transporteurs</span></div></div><div class="alerte"><span class="past" style="width:44px;height:44px;border-radius:12px;background:#061866"><svg width="26" height="26" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 17V7h14v10M3 7l7-4 7 4M7 17v-6h6v6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></span><div><b>Péage dans 2 km</b><span>Prépare ton badge</span></div></div>
+      <div class="moi" style="left:182px;top:640px;transform:rotate(0deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div>
+      <div class="vitesse">80</div>
+      <div class="eta"><div><b>14:32</b><span>3 h 48 · 312 km</span></div><span class="eta-btn">Arrêts</span><span class="eta-x">×</span></div></div></div>
+  </section><section class="shot play" id="gps-premium-04-play" data-cpp="gps-premium" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 580 Q180 700 280 580 T520 620" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Tes arrêts <em>sur ta route</em></h1><p>Parkings, restos et douches poids lourds</p></div>
+    <div class="tel"><div class="ecran"><div class="mini-carte"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M60 330 Q120 300 150 250 Q180 190 250 170 Q320 150 340 70" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 330 Q120 300 150 250 Q180 190 250 170 Q320 150 340 70" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+        <div class="pin" style="left:104px;top:270px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span></div><div class="pin" style="left:160px;top:214px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#E2477A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div><div class="pin" style="left:238px;top:150px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#8E5BD8"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span></div><div class="pin" style="left:300px;top:96px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#1BA6C9"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span></div>
+        <div class="moi" style="left:44px;top:314px;transform:rotate(40deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div></div>
+      <div class="fiche liste">
+        <div class="poignee"></div>
+        <h2>Sur ton itinéraire</h2>
+        <div class="filtres"><span class="on">Tout</span><span>Parkings</span><span>Restos</span><span>Douches</span></div>
+        <div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#4A63E7"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span><div><b>Aire de Saint-Ambreuil</b><span>Parking poids lourds · 60 places</span></div><em>42 km<br>15:10</em></div><div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#E2477A"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span><div><b>Relais de la Bascule</b><span>Restaurant · Douches</span></div><em>88 km<br>15:52</em></div><div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#8E5BD8"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span><div><b>Station Total Mâcon</b><span>Douches · Carburant</span></div><em>131 km<br>16:31</em></div><div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#1BA6C9"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span><div><b>Station de lavage PL</b><span>Lavage poids lourds</span></div><em>176 km<br>17:12</em></div>
+      </div></div></div>
+  </section><section class="shot play" id="gps-premium-05-play" data-cpp="gps-premium" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 650 Q120 540 240 620 T520 580" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Passe à <em>Premium</em></h1><p>Et roule sans publicité</p></div>
+    <div class="tel"><div class="ecran"><div class="offre"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><span class="eta-x blanc">×</span>
+        <div class="offre-tete"><span class="badge-j">Premium</span><h2>Michelin Truckfly Premium</h2><p>Tout ce qu'il faut pour rouler sereinement</p></div>
+        <ul><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>GPS poids lourd en 44 pays</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Itinéraire adapté à ton gabarit</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Alerte à l'approche des péages</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Arrêts poids lourds sur ta route</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sans publicité</span></li></ul>
+        <span class="btn jaune large">Passer à Premium</span>
+        <p class="petit">Abonnement géré depuis ton store</p>
+      </div></div></div>
+  </section></div></div><div class="serie"><h2>App gratuite et communauté (publicité) <small>App Store · 1290 × 2796</small></h2><div class="rangee"><section class="shot ios" id="communaute-01-ios" data-cpp="communaute" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 620 Q140 520 260 600 T520 560" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Trouve où t'arrêter, <em>partout en Europe</em></h1><p>Parkings, restos, douches, lavages poids lourds</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+      <div class="recherche"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5" fill="none" stroke="#6E6E73" stroke-width="2.4"/><path d="M15 15l5 5" stroke="#6E6E73" stroke-width="2.4" stroke-linecap="round"/></svg>Rechercher un lieu, une ville…</div>
+      <div class="chips"><span class="on"><svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg>Parkings</span><span>Restaurants</span><span>Douches</span><span>Lavage</span></div>
+      <div class="pin" style="left:70px;top:190px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span></div><div class="pin" style="left:140px;top:250px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#E2477A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div><div class="pin" style="left:290px;top:190px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#8E5BD8"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span></div><div class="pin" style="left:210px;top:260px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#F08A24"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h7.5v14H4z" fill="#fff"/><path d="M11.5 7h2l2 2v5.5a1.3 1.3 0 0 1-2.6 0V11h-1.4" fill="none" stroke="#fff" stroke-width="1.5"/></svg></span></div><div class="pin" style="left:300px;top:330px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span></div><div class="pin" style="left:40px;top:300px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#E2477A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div><div class="pin" style="left:120px;top:420px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#1BA6C9"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span></div><div class="pin" style="left:250px;top:440px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span></div><div class="pin" style="left:330px;top:520px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#F08A24"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h7.5v14H4z" fill="#fff"/><path d="M11.5 7h2l2 2v5.5a1.3 1.3 0 0 1-2.6 0V11h-1.4" fill="none" stroke="#fff" stroke-width="1.5"/></svg></span></div><div class="pin" style="left:60px;top:520px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#E2477A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div><div class="pin" style="left:180px;top:360px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#8E5BD8"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span></div><div class="pin grand" style="left:186px;top:196px"><span class="past" style="width:46px;height:46px;border-radius:11px;background:#E2477A"><svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div>
+      <div class="mini-fiche"><span class="past" style="width:52px;height:52px;border-radius:14px;background:#E2477A"><svg width="31" height="31" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span><div><b>Relais de la Bascule</b><span>Restaurant · Parking PL · 2,4 km</span><span class="note-s">4,5 <span class="etoiles">★★★★<i>★</i></span> (128)</span></div></div>
+      <nav class="onglets"><span class="actif"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14 M15 6v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Carte</span><span class=""><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M16 5a3 3 0 0 1 0 6M18 14c2 .6 3 2.6 3 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Communauté</span><span class=""><svg viewBox="0 0 24 24"><path d="M12 3l7 17-7-4-7 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>GPS</span><span class=""><svg viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Favoris</span><span class=""><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c0-5 4-7 8-7s8 2 8 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>Profil</span></nav></div></div>
+  </section><section class="shot ios" id="communaute-02-ios" data-cpp="communaute" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 540 Q100 680 250 600 T520 650" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Des avis laissés <em>par des routiers</em></h1><p>Pour choisir ton arrêt en confiance</p></div>
+    <div class="tel"><div class="ecran"><div class="photo-lieu"><svg viewBox="0 0 390 230" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="230" fill="#BFD3F2"/>
+  <rect y="170" width="390" height="60" fill="#8A929E"/>
+  <path d="M0 200 H390" stroke="#fff" stroke-width="3" stroke-dasharray="26 20"/>
+  <rect x="40" y="80" width="200" height="92" fill="#F5F3F1" stroke="#061866" stroke-width="4"/>
+  <path d="M30 84 L140 40 L250 84Z" fill="#E2477A" stroke="#061866" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="70" y="112" width="40" height="30" fill="#BFD3F2" stroke="#061866" stroke-width="3"/>
+  <rect x="160" y="112" width="40" height="60" fill="#061866"/>
+  <rect x="96" y="56" width="88" height="20" rx="4" fill="#061866"/>
+  <text x="140" y="71" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#FFFF1A">RELAIS</text>
+  <rect x="262" y="104" width="112" height="56" rx="5" fill="#fff" stroke="#061866" stroke-width="4"/>
+  <path d="M374 160v-40q0-8 8-8h8v48z" fill="#061866"/>
+  <circle cx="290" cy="164" r="9" fill="#111"/><circle cx="350" cy="164" r="9" fill="#111"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div></div>
+      <div class="fiche">
+        <div class="poignee"></div>
+        
+        <h2>Relais de la Bascule</h2>
+        <p class="sous-fiche">Restaurant · Parking poids lourds · A6, sortie 24</p>
+        <div class="note"><b>4,5</b><span class="etoiles">★★★★<i>★</i></span><span>(128 avis)</span><em class="ouvert">Ouvert · 5:00–23:00</em></div>
+        <div class="services"><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#4A63E7"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span><em>40 places</em></span><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#8E5BD8"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span><em>Douches</em></span><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#E2477A"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span><em>Restaurant</em></span><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#2E9E6A"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8a10 10 0 0 1 14 0M5.5 11a6.5 6.5 0 0 1 9 0M8 14a3 3 0 0 1 4 0" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="16.5" r="1.2" fill="#fff"/></svg></span><em>Wi-Fi</em></span></div>
+        <div class="boutons"><span class="btn plein">Itinéraire</span><span class="btn">Appeler</span></div>
+        <div class="avis">
+        <div class="avis-tete"><span class="avatar" style="background:#A6E8B8">M</span><div><b>Mathieu P.</b><span>il y a 2 jours</span></div><span class="etoiles">★★★★<i>★</i></span></div>
+        <p>Super accueil, parking éclairé et douches propres. Je recommande !</p>
+      </div>
+      </div></div></div>
+  </section><section class="shot ios" id="communaute-03-ios" data-cpp="communaute" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 700 Q160 560 300 640 T520 520" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Préviens les autres <em>en un geste</em></h1><p>Accidents, contrôles, dangers en temps réel</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><rect width="390" height="844" fill="#000E38" opacity=".45"/>
+</svg><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="moi" style="left:182px;top:440px;transform:rotate(0deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div>
+      <div class="fiche signaler"><div class="poignee"></div><h2>Signaler</h2><p class="sous-fiche">Préviens les conducteurs autour de toi</p>
+        <div class="grille"><span><span class="past" style="width:62px;height:62px;border-radius:31px;background:#E2477A"><svg width="37" height="37" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 L18 17 H2 Z" fill="#fff"/><path d="M10 8v4.5" stroke="#E2477A" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14.8" r="1.1" fill="#E2477A"/></svg></span><em>Accident</em></span><span><span class="past" style="width:62px;height:62px;border-radius:31px;background:#061866"><svg width="37" height="37" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 17V7h14v10M3 7l7-4 7 4M7 17v-6h6v6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></span><em>Contrôle</em></span><span><span class="past" style="width:62px;height:62px;border-radius:31px;background:#F08A24"><svg width="37" height="37" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h7.5v14H4z" fill="#fff"/><path d="M11.5 7h2l2 2v5.5a1.3 1.3 0 0 1-2.6 0V11h-1.4" fill="none" stroke="#fff" stroke-width="1.5"/></svg></span><em>Bouchon</em></span><span><span class="past" style="width:62px;height:62px;border-radius:31px;background:#E2477A"><svg width="37" height="37" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 L18 17 H2 Z" fill="#fff"/><path d="M10 8v4.5" stroke="#E2477A" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14.8" r="1.1" fill="#E2477A"/></svg></span><em>Danger</em></span><span><span class="past" style="width:62px;height:62px;border-radius:31px;background:#4A63E7"><svg width="37" height="37" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span><em>Parking complet</em></span><span><span class="past" style="width:62px;height:62px;border-radius:31px;background:#1BA6C9"><svg width="37" height="37" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span><em>Météo</em></span></div>
+        <div class="merci"><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Merci ! <b>214 conducteurs</b> ont été prévenus.</span></div>
+      </div></div></div>
+  </section><section class="shot ios" id="communaute-04-ios" data-cpp="communaute" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 580 Q180 700 280 580 T520 620" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Ta communauté <em>de routiers</em></h1><p>Suis tes amis et leurs bons plans</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><b>Communauté</b><span class="act"></span></div></div><div class="corps gris-fond">
+        <div class="filtres"><span class="on">Amis</span><span>Autour de moi</span><span>Mes alertes</span></div>
+        <div class="post"><div class="avis-tete"><span class="avatar" style="background:#BFD3F2">V</span><div><b>Vanessa Y.</b><span>a signalé un danger · A7 · il y a 5 min</span></div></div>
+          <div class="post-alerte"><span class="past" style="width:36px;height:36px;border-radius:18px;background:#E2477A"><svg width="22" height="22" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 L18 17 H2 Z" fill="#fff"/><path d="M10 8v4.5" stroke="#E2477A" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14.8" r="1.1" fill="#E2477A"/></svg></span><span>Objet sur la voie de droite, km 214</span></div><div class="like">♥ J'aime · <b>23</b></div></div>
+        <div class="avis">
+        <div class="avis-tete"><span class="avatar" style="background:#A6E8B8">M</span><div><b>Mathieu P.</b><span>a donné son avis sur Relais de la Bascule</span></div><span class="etoiles">★★★★<i>★</i></span></div>
+        <p>Parking calme la nuit, resto ouvert tôt. Parfait avant de reprendre la route.</p><div class="like">♥ J'aime · <b>12</b></div>
+      </div>
+        <div class="post"><div class="avis-tete"><span class="avatar" style="background:#F6D38B">C</span><div><b>Charlie G.</b><span>a ajouté son camion · il y a 1 h</span></div></div>
+          <div class="post-camion"><svg viewBox="0 0 320 170" aria-hidden="true">
+  <rect width="320" height="170" rx="14" fill="#DCE6F7"/>
+  <rect y="132" width="320" height="38" fill="#C5CFDD"/>
+  <rect x="22" y="40" width="186" height="84" rx="6" fill="#fff" stroke="#061866" stroke-width="5"/>
+  <rect x="22" y="92" width="186" height="10" fill="#061866"/>
+  <path d="M214 124V68q0-12 12-12h38q12 0 18 12l16 26v30z" fill="#061866"/>
+  <rect x="246" y="64" width="30" height="24" rx="4" fill="#BFD3F2"/>
+  <circle cx="62" cy="128" r="15" fill="#111"/><circle cx="100" cy="128" r="15" fill="#111"/>
+  <circle cx="182" cy="128" r="15" fill="#111"/><circle cx="270" cy="128" r="15" fill="#111"/>
+</svg></div></div>
+      </div><nav class="onglets"><span class=""><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14 M15 6v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Carte</span><span class="actif"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M16 5a3 3 0 0 1 0 6M18 14c2 .6 3 2.6 3 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Communauté</span><span class=""><svg viewBox="0 0 24 24"><path d="M12 3l7 17-7-4-7 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>GPS</span><span class=""><svg viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Favoris</span><span class=""><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c0-5 4-7 8-7s8 2 8 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>Profil</span></nav></div></div>
+  </section><section class="shot ios" id="communaute-05-ios" data-cpp="communaute" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 650 Q120 540 240 620 T520 580" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Gratuit, <em>dans ta langue</em></h1><p>Plus de 700 000 conducteurs dans 44 pays</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><span class="retour">‹</span><b>Langue de l'application</b><span class="act"></span></div></div><div class="corps"><p class="rubrique">Choisis ta langue</p><div class="champ"><span>Français</span><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="champ"><span>Deutsch</span></div><div class="champ"><span>Español</span></div><div class="champ"><span>Italiano</span></div><div class="champ"><span>Polski</span></div><div class="champ"><span>Português</span></div><div class="champ"><span>Română</span></div><div class="champ"><span>Nederlands</span></div><div class="champ"><span>Čeština</span></div></div></div></div>
+  </section></div></div><div class="serie"><h2>App gratuite et communauté (publicité) <small>Google Play · 1080 × 1920</small></h2><div class="rangee"><section class="shot play" id="communaute-01-play" data-cpp="communaute" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 620 Q140 520 260 600 T520 560" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Trouve où t'arrêter, <em>partout en Europe</em></h1><p>Parkings, restos, douches, lavages poids lourds</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+      <div class="recherche"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5" fill="none" stroke="#6E6E73" stroke-width="2.4"/><path d="M15 15l5 5" stroke="#6E6E73" stroke-width="2.4" stroke-linecap="round"/></svg>Rechercher un lieu, une ville…</div>
+      <div class="chips"><span class="on"><svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg>Parkings</span><span>Restaurants</span><span>Douches</span><span>Lavage</span></div>
+      <div class="pin" style="left:70px;top:190px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span></div><div class="pin" style="left:140px;top:250px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#E2477A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div><div class="pin" style="left:290px;top:190px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#8E5BD8"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span></div><div class="pin" style="left:210px;top:260px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#F08A24"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h7.5v14H4z" fill="#fff"/><path d="M11.5 7h2l2 2v5.5a1.3 1.3 0 0 1-2.6 0V11h-1.4" fill="none" stroke="#fff" stroke-width="1.5"/></svg></span></div><div class="pin" style="left:300px;top:330px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span></div><div class="pin" style="left:40px;top:300px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#E2477A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div><div class="pin" style="left:120px;top:420px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#1BA6C9"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span></div><div class="pin" style="left:250px;top:440px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span></div><div class="pin" style="left:330px;top:520px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#F08A24"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h7.5v14H4z" fill="#fff"/><path d="M11.5 7h2l2 2v5.5a1.3 1.3 0 0 1-2.6 0V11h-1.4" fill="none" stroke="#fff" stroke-width="1.5"/></svg></span></div><div class="pin" style="left:60px;top:520px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#E2477A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div><div class="pin" style="left:180px;top:360px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#8E5BD8"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span></div><div class="pin grand" style="left:186px;top:196px"><span class="past" style="width:46px;height:46px;border-radius:11px;background:#E2477A"><svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div>
+      <div class="mini-fiche"><span class="past" style="width:52px;height:52px;border-radius:14px;background:#E2477A"><svg width="31" height="31" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span><div><b>Relais de la Bascule</b><span>Restaurant · Parking PL · 2,4 km</span><span class="note-s">4,5 <span class="etoiles">★★★★<i>★</i></span> (128)</span></div></div>
+      <nav class="onglets"><span class="actif"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14 M15 6v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Carte</span><span class=""><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M16 5a3 3 0 0 1 0 6M18 14c2 .6 3 2.6 3 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Communauté</span><span class=""><svg viewBox="0 0 24 24"><path d="M12 3l7 17-7-4-7 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>GPS</span><span class=""><svg viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Favoris</span><span class=""><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c0-5 4-7 8-7s8 2 8 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>Profil</span></nav></div></div>
+  </section><section class="shot play" id="communaute-02-play" data-cpp="communaute" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 540 Q100 680 250 600 T520 650" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Des avis laissés <em>par des routiers</em></h1><p>Pour choisir ton arrêt en confiance</p></div>
+    <div class="tel"><div class="ecran"><div class="photo-lieu"><svg viewBox="0 0 390 230" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="230" fill="#BFD3F2"/>
+  <rect y="170" width="390" height="60" fill="#8A929E"/>
+  <path d="M0 200 H390" stroke="#fff" stroke-width="3" stroke-dasharray="26 20"/>
+  <rect x="40" y="80" width="200" height="92" fill="#F5F3F1" stroke="#061866" stroke-width="4"/>
+  <path d="M30 84 L140 40 L250 84Z" fill="#E2477A" stroke="#061866" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="70" y="112" width="40" height="30" fill="#BFD3F2" stroke="#061866" stroke-width="3"/>
+  <rect x="160" y="112" width="40" height="60" fill="#061866"/>
+  <rect x="96" y="56" width="88" height="20" rx="4" fill="#061866"/>
+  <text x="140" y="71" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#FFFF1A">RELAIS</text>
+  <rect x="262" y="104" width="112" height="56" rx="5" fill="#fff" stroke="#061866" stroke-width="4"/>
+  <path d="M374 160v-40q0-8 8-8h8v48z" fill="#061866"/>
+  <circle cx="290" cy="164" r="9" fill="#111"/><circle cx="350" cy="164" r="9" fill="#111"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div></div>
+      <div class="fiche">
+        <div class="poignee"></div>
+        
+        <h2>Relais de la Bascule</h2>
+        <p class="sous-fiche">Restaurant · Parking poids lourds · A6, sortie 24</p>
+        <div class="note"><b>4,5</b><span class="etoiles">★★★★<i>★</i></span><span>(128 avis)</span><em class="ouvert">Ouvert · 5:00–23:00</em></div>
+        <div class="services"><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#4A63E7"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span><em>40 places</em></span><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#8E5BD8"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span><em>Douches</em></span><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#E2477A"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span><em>Restaurant</em></span><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#2E9E6A"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8a10 10 0 0 1 14 0M5.5 11a6.5 6.5 0 0 1 9 0M8 14a3 3 0 0 1 4 0" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="16.5" r="1.2" fill="#fff"/></svg></span><em>Wi-Fi</em></span></div>
+        <div class="boutons"><span class="btn plein">Itinéraire</span><span class="btn">Appeler</span></div>
+        <div class="avis">
+        <div class="avis-tete"><span class="avatar" style="background:#A6E8B8">M</span><div><b>Mathieu P.</b><span>il y a 2 jours</span></div><span class="etoiles">★★★★<i>★</i></span></div>
+        <p>Super accueil, parking éclairé et douches propres. Je recommande !</p>
+      </div>
+      </div></div></div>
+  </section><section class="shot play" id="communaute-03-play" data-cpp="communaute" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 700 Q160 560 300 640 T520 520" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Préviens les autres <em>en un geste</em></h1><p>Accidents, contrôles, dangers en temps réel</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><rect width="390" height="844" fill="#000E38" opacity=".45"/>
+</svg><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="moi" style="left:182px;top:440px;transform:rotate(0deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div>
+      <div class="fiche signaler"><div class="poignee"></div><h2>Signaler</h2><p class="sous-fiche">Préviens les conducteurs autour de toi</p>
+        <div class="grille"><span><span class="past" style="width:62px;height:62px;border-radius:31px;background:#E2477A"><svg width="37" height="37" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 L18 17 H2 Z" fill="#fff"/><path d="M10 8v4.5" stroke="#E2477A" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14.8" r="1.1" fill="#E2477A"/></svg></span><em>Accident</em></span><span><span class="past" style="width:62px;height:62px;border-radius:31px;background:#061866"><svg width="37" height="37" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 17V7h14v10M3 7l7-4 7 4M7 17v-6h6v6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></span><em>Contrôle</em></span><span><span class="past" style="width:62px;height:62px;border-radius:31px;background:#F08A24"><svg width="37" height="37" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h7.5v14H4z" fill="#fff"/><path d="M11.5 7h2l2 2v5.5a1.3 1.3 0 0 1-2.6 0V11h-1.4" fill="none" stroke="#fff" stroke-width="1.5"/></svg></span><em>Bouchon</em></span><span><span class="past" style="width:62px;height:62px;border-radius:31px;background:#E2477A"><svg width="37" height="37" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 L18 17 H2 Z" fill="#fff"/><path d="M10 8v4.5" stroke="#E2477A" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14.8" r="1.1" fill="#E2477A"/></svg></span><em>Danger</em></span><span><span class="past" style="width:62px;height:62px;border-radius:31px;background:#4A63E7"><svg width="37" height="37" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span><em>Parking complet</em></span><span><span class="past" style="width:62px;height:62px;border-radius:31px;background:#1BA6C9"><svg width="37" height="37" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span><em>Météo</em></span></div>
+        <div class="merci"><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Merci ! <b>214 conducteurs</b> ont été prévenus.</span></div>
+      </div></div></div>
+  </section><section class="shot play" id="communaute-04-play" data-cpp="communaute" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 580 Q180 700 280 580 T520 620" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Ta communauté <em>de routiers</em></h1><p>Suis tes amis et leurs bons plans</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><b>Communauté</b><span class="act"></span></div></div><div class="corps gris-fond">
+        <div class="filtres"><span class="on">Amis</span><span>Autour de moi</span><span>Mes alertes</span></div>
+        <div class="post"><div class="avis-tete"><span class="avatar" style="background:#BFD3F2">V</span><div><b>Vanessa Y.</b><span>a signalé un danger · A7 · il y a 5 min</span></div></div>
+          <div class="post-alerte"><span class="past" style="width:36px;height:36px;border-radius:18px;background:#E2477A"><svg width="22" height="22" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 L18 17 H2 Z" fill="#fff"/><path d="M10 8v4.5" stroke="#E2477A" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14.8" r="1.1" fill="#E2477A"/></svg></span><span>Objet sur la voie de droite, km 214</span></div><div class="like">♥ J'aime · <b>23</b></div></div>
+        <div class="avis">
+        <div class="avis-tete"><span class="avatar" style="background:#A6E8B8">M</span><div><b>Mathieu P.</b><span>a donné son avis sur Relais de la Bascule</span></div><span class="etoiles">★★★★<i>★</i></span></div>
+        <p>Parking calme la nuit, resto ouvert tôt. Parfait avant de reprendre la route.</p><div class="like">♥ J'aime · <b>12</b></div>
+      </div>
+        <div class="post"><div class="avis-tete"><span class="avatar" style="background:#F6D38B">C</span><div><b>Charlie G.</b><span>a ajouté son camion · il y a 1 h</span></div></div>
+          <div class="post-camion"><svg viewBox="0 0 320 170" aria-hidden="true">
+  <rect width="320" height="170" rx="14" fill="#DCE6F7"/>
+  <rect y="132" width="320" height="38" fill="#C5CFDD"/>
+  <rect x="22" y="40" width="186" height="84" rx="6" fill="#fff" stroke="#061866" stroke-width="5"/>
+  <rect x="22" y="92" width="186" height="10" fill="#061866"/>
+  <path d="M214 124V68q0-12 12-12h38q12 0 18 12l16 26v30z" fill="#061866"/>
+  <rect x="246" y="64" width="30" height="24" rx="4" fill="#BFD3F2"/>
+  <circle cx="62" cy="128" r="15" fill="#111"/><circle cx="100" cy="128" r="15" fill="#111"/>
+  <circle cx="182" cy="128" r="15" fill="#111"/><circle cx="270" cy="128" r="15" fill="#111"/>
+</svg></div></div>
+      </div><nav class="onglets"><span class=""><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14 M15 6v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Carte</span><span class="actif"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M16 5a3 3 0 0 1 0 6M18 14c2 .6 3 2.6 3 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Communauté</span><span class=""><svg viewBox="0 0 24 24"><path d="M12 3l7 17-7-4-7 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>GPS</span><span class=""><svg viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Favoris</span><span class=""><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c0-5 4-7 8-7s8 2 8 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>Profil</span></nav></div></div>
+  </section><section class="shot play" id="communaute-05-play" data-cpp="communaute" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 650 Q120 540 240 620 T520 580" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Gratuit, <em>dans ta langue</em></h1><p>Plus de 700 000 conducteurs dans 44 pays</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><span class="retour">‹</span><b>Langue de l'application</b><span class="act"></span></div></div><div class="corps"><p class="rubrique">Choisis ta langue</p><div class="champ"><span>Français</span><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="champ"><span>Deutsch</span></div><div class="champ"><span>Español</span></div><div class="champ"><span>Italiano</span></div><div class="champ"><span>Polski</span></div><div class="champ"><span>Português</span></div><div class="champ"><span>Română</span></div><div class="champ"><span>Nederlands</span></div><div class="champ"><span>Čeština</span></div></div></div></div>
+  </section></div></div><div class="serie"><h2>Établissements (owners) <small>App Store · 1290 × 2796</small></h2><div class="rangee"><section class="shot ios" id="etablissements-01-ios" data-cpp="etablissements" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 620 Q140 520 260 600 T520 560" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Faites venir <em>les poids lourds</em> chez vous</h1><p>Votre établissement visible par 700 000 conducteurs</p></div>
+    <div class="tel"><div class="ecran"><div class="photo-lieu"><svg viewBox="0 0 390 230" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="230" fill="#BFD3F2"/>
+  <rect y="170" width="390" height="60" fill="#8A929E"/>
+  <path d="M0 200 H390" stroke="#fff" stroke-width="3" stroke-dasharray="26 20"/>
+  <rect x="40" y="80" width="200" height="92" fill="#F5F3F1" stroke="#061866" stroke-width="4"/>
+  <path d="M30 84 L140 40 L250 84Z" fill="#E2477A" stroke="#061866" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="70" y="112" width="40" height="30" fill="#BFD3F2" stroke="#061866" stroke-width="3"/>
+  <rect x="160" y="112" width="40" height="60" fill="#061866"/>
+  <rect x="96" y="56" width="88" height="20" rx="4" fill="#061866"/>
+  <text x="140" y="71" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#FFFF1A">RELAIS</text>
+  <rect x="262" y="104" width="112" height="56" rx="5" fill="#fff" stroke="#061866" stroke-width="4"/>
+  <path d="M374 160v-40q0-8 8-8h8v48z" fill="#061866"/>
+  <circle cx="290" cy="164" r="9" fill="#111"/><circle cx="350" cy="164" r="9" fill="#111"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div></div>
+      <div class="fiche">
+        <div class="poignee"></div>
+        <span class="verifie"><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Géré par l'établissement</span>
+        <h2>Relais de la Bascule</h2>
+        <p class="sous-fiche">Restaurant · Parking poids lourds · A6, sortie 24</p>
+        <div class="note"><b>4,5</b><span class="etoiles">★★★★<i>★</i></span><span>(128 avis)</span><em class="ouvert">Ouvert · 5:00–23:00</em></div>
+        <div class="services"><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#4A63E7"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span><em>40 places</em></span><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#8E5BD8"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span><em>Douches</em></span><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#E2477A"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span><em>Restaurant</em></span><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#2E9E6A"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8a10 10 0 0 1 14 0M5.5 11a6.5 6.5 0 0 1 9 0M8 14a3 3 0 0 1 4 0" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="16.5" r="1.2" fill="#fff"/></svg></span><em>Wi-Fi</em></span></div>
+        <div class="boutons"><span class="btn plein">Itinéraire</span><span class="btn">Appeler</span></div>
+        <div class="avis">
+        <div class="avis-tete"><span class="avatar" style="background:#A6E8B8">M</span><div><b>Mathieu P.</b><span>il y a 2 jours</span></div><span class="etoiles">★★★★<i>★</i></span></div>
+        <p>Super accueil, parking éclairé et douches propres. Je recommande !</p>
+      </div>
+      </div></div></div>
+  </section><section class="shot ios" id="etablissements-02-ios" data-cpp="etablissements" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 540 Q100 680 250 600 T520 650" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Votre fiche à jour <em>en 2 minutes</em></h1><p>Horaires, places, services, photos</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><span class="retour">‹</span><b>Ma fiche établissement</b><span class="act">Enregistrer</span></div></div><div class="corps">
+        <p class="rubrique">Photos</p><div class="photos"><span class="ph"><svg viewBox="0 0 390 230" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="230" fill="#BFD3F2"/>
+  <rect y="170" width="390" height="60" fill="#8A929E"/>
+  <path d="M0 200 H390" stroke="#fff" stroke-width="3" stroke-dasharray="26 20"/>
+  <rect x="40" y="80" width="200" height="92" fill="#F5F3F1" stroke="#061866" stroke-width="4"/>
+  <path d="M30 84 L140 40 L250 84Z" fill="#E2477A" stroke="#061866" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="70" y="112" width="40" height="30" fill="#BFD3F2" stroke="#061866" stroke-width="3"/>
+  <rect x="160" y="112" width="40" height="60" fill="#061866"/>
+  <rect x="96" y="56" width="88" height="20" rx="4" fill="#061866"/>
+  <text x="140" y="71" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#FFFF1A">RELAIS</text>
+  <rect x="262" y="104" width="112" height="56" rx="5" fill="#fff" stroke="#061866" stroke-width="4"/>
+  <path d="M374 160v-40q0-8 8-8h8v48z" fill="#061866"/>
+  <circle cx="290" cy="164" r="9" fill="#111"/><circle cx="350" cy="164" r="9" fill="#111"/>
+</svg></span><span class="ph"><svg viewBox="0 0 390 230" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="230" fill="#F6D38B"/>
+  <rect y="170" width="390" height="60" fill="#8A929E"/>
+  <path d="M0 200 H390" stroke="#fff" stroke-width="3" stroke-dasharray="26 20"/>
+  <rect x="40" y="80" width="200" height="92" fill="#F5F3F1" stroke="#061866" stroke-width="4"/>
+  <path d="M30 84 L140 40 L250 84Z" fill="#E2477A" stroke="#061866" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="70" y="112" width="40" height="30" fill="#BFD3F2" stroke="#061866" stroke-width="3"/>
+  <rect x="160" y="112" width="40" height="60" fill="#061866"/>
+  <rect x="96" y="56" width="88" height="20" rx="4" fill="#061866"/>
+  <text x="140" y="71" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#FFFF1A">RELAIS</text>
+  <rect x="262" y="104" width="112" height="56" rx="5" fill="#fff" stroke="#061866" stroke-width="4"/>
+  <path d="M374 160v-40q0-8 8-8h8v48z" fill="#061866"/>
+  <circle cx="290" cy="164" r="9" fill="#111"/><circle cx="350" cy="164" r="9" fill="#111"/>
+</svg></span><span class="ph plus">+</span></div>
+        <p class="rubrique">Informations</p>
+        <div class="champ"><span>Horaires</span><b>Lun–sam · 5:00–23:00</b></div><div class="champ"><span>Places poids lourds</span><b>40</b></div><div class="champ"><span>Téléphone</span><b>03 85 00 00 00</b></div>
+        <p class="rubrique">Services</p>
+        <div class="champ"><span>Douches</span><i class="inter on"></i></div><div class="champ"><span>Restaurant</span><i class="inter on"></i></div><div class="champ"><span>Wi-Fi</span><i class="inter on"></i></div><div class="champ"><span>Parking sécurisé</span><i class="inter "></i></div>
+      </div></div></div>
+  </section><section class="shot ios" id="etablissements-03-ios" data-cpp="etablissements" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 700 Q160 560 300 640 T520 520" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Répondez <em>aux avis</em></h1><p>Montrez aux routiers que vous les écoutez</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><span class="retour">‹</span><b>Avis sur votre établissement</b><span class="act"></span></div></div><div class="corps gris-fond">
+        <div class="resume"><b>4,5</b><div><span class="etoiles">★★★★<i>★</i></span><span>128 avis</span></div></div>
+        <div class="avis">
+        <div class="avis-tete"><span class="avatar" style="background:#A6E8B8">M</span><div><b>Mathieu P.</b><span>il y a 2 jours</span></div><span class="etoiles">★★★★<i>★</i></span></div>
+        <p>Super accueil, parking éclairé et douches propres. Je recommande !</p><div class="reponse"><b>Réponse de l'établissement</b><p>Merci Mathieu ! Au plaisir de vous revoir sur l'A6.</p></div>
+      </div>
+        <div class="avis">
+        <div class="avis-tete"><span class="avatar" style="background:#C9C3F5">N</span><div><b>Nicolas J.</b><span>il y a 5 jours</span></div><span class="etoiles">★★★★<i>★</i></span></div>
+        <p>Bon repas, mais le parking était complet vers 21 h.</p>
+      </div>
+        <div class="saisie">Répondre à Nicolas J.…<span class="btn plein petit">Envoyer</span></div>
+      </div></div></div>
+  </section><section class="shot ios" id="etablissements-04-ios" data-cpp="etablissements" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 580 Q180 700 280 580 T520 620" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Suivez <em>vos visites</em></h1><p>Vues, itinéraires lancés, appels</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><span class="retour">‹</span><b>Statistiques</b><span class="act">30 j</span></div></div><div class="corps gris-fond">
+        <div class="kpis">
+          <div class="kpi"><span>Vues de la fiche</span><b>3 420</b><em>+18 %</em></div>
+          <div class="kpi"><span>Itinéraires lancés</span><b>412</b><em>+9 %</em></div>
+          <div class="kpi"><span>Appels</span><b>58</b><em>+4 %</em></div>
+          <div class="kpi"><span>Nouveaux avis</span><b>17</b><em>+6</em></div>
+        </div>
+        <div class="graphe"><b>Visites par jour</b><div class="barres"><span><i style="height:38%"></i><em>L</em></span><span><i style="height:52%"></i><em>M</em></span><span><i style="height:46%"></i><em>M</em></span><span><i style="height:61%"></i><em>J</em></span><span><i style="height:70%"></i><em>V</em></span><span><i style="height:58%"></i><em>S</em></span><span><i style="height:84%"></i><em>D</em></span></div></div>
+      </div></div></div>
+  </section><section class="shot ios" id="etablissements-05-ios" data-cpp="etablissements" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 650 Q120 540 240 620 T520 580" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Mettez en avant <em>vos offres</em></h1><p>Sur la carte, au moment où ils cherchent un arrêt</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+      <div class="pin" style="left:70px;top:170px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span></div><div class="pin" style="left:290px;top:160px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#F08A24"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h7.5v14H4z" fill="#fff"/><path d="M11.5 7h2l2 2v5.5a1.3 1.3 0 0 1-2.6 0V11h-1.4" fill="none" stroke="#fff" stroke-width="1.5"/></svg></span></div><div class="pin" style="left:300px;top:330px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#8E5BD8"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span></div><div class="pin" style="left:40px;top:310px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#E2477A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div><div class="pin" style="left:250px;top:450px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#1BA6C9"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span></div>
+      <div class="pin grand" style="left:172px;top:250px"><span class="past" style="width:46px;height:46px;border-radius:11px;background:#E2477A"><svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div>
+      <div class="bulle-offre">Café offert aux routiers</div>
+      <div class="fiche promo"><div class="poignee"></div>
+        <span class="tag-promo">Offre de l'établissement</span>
+        <h2>Relais de la Bascule</h2><p class="sous-fiche">Restaurant · 2,4 km · Ouvert</p>
+        <div class="offre-carte"><span class="past" style="width:48px;height:48px;border-radius:14px;background:#E2477A"><svg width="29" height="29" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span><div><b>Café offert aux routiers</b><span>Tous les matins de 5:00 à 9:00, sur présentation de l'app</span></div></div>
+        <div class="boutons"><span class="btn plein">Itinéraire</span><span class="btn">Voir la fiche</span></div>
+      </div></div></div>
+  </section></div></div><div class="serie"><h2>Établissements (owners) <small>Google Play · 1080 × 1920</small></h2><div class="rangee"><section class="shot play" id="etablissements-01-play" data-cpp="etablissements" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 620 Q140 520 260 600 T520 560" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Faites venir <em>les poids lourds</em> chez vous</h1><p>Votre établissement visible par 700 000 conducteurs</p></div>
+    <div class="tel"><div class="ecran"><div class="photo-lieu"><svg viewBox="0 0 390 230" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="230" fill="#BFD3F2"/>
+  <rect y="170" width="390" height="60" fill="#8A929E"/>
+  <path d="M0 200 H390" stroke="#fff" stroke-width="3" stroke-dasharray="26 20"/>
+  <rect x="40" y="80" width="200" height="92" fill="#F5F3F1" stroke="#061866" stroke-width="4"/>
+  <path d="M30 84 L140 40 L250 84Z" fill="#E2477A" stroke="#061866" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="70" y="112" width="40" height="30" fill="#BFD3F2" stroke="#061866" stroke-width="3"/>
+  <rect x="160" y="112" width="40" height="60" fill="#061866"/>
+  <rect x="96" y="56" width="88" height="20" rx="4" fill="#061866"/>
+  <text x="140" y="71" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#FFFF1A">RELAIS</text>
+  <rect x="262" y="104" width="112" height="56" rx="5" fill="#fff" stroke="#061866" stroke-width="4"/>
+  <path d="M374 160v-40q0-8 8-8h8v48z" fill="#061866"/>
+  <circle cx="290" cy="164" r="9" fill="#111"/><circle cx="350" cy="164" r="9" fill="#111"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div></div>
+      <div class="fiche">
+        <div class="poignee"></div>
+        <span class="verifie"><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Géré par l'établissement</span>
+        <h2>Relais de la Bascule</h2>
+        <p class="sous-fiche">Restaurant · Parking poids lourds · A6, sortie 24</p>
+        <div class="note"><b>4,5</b><span class="etoiles">★★★★<i>★</i></span><span>(128 avis)</span><em class="ouvert">Ouvert · 5:00–23:00</em></div>
+        <div class="services"><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#4A63E7"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span><em>40 places</em></span><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#8E5BD8"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span><em>Douches</em></span><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#E2477A"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span><em>Restaurant</em></span><span><span class="past" style="width:40px;height:40px;border-radius:12px;background:#2E9E6A"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8a10 10 0 0 1 14 0M5.5 11a6.5 6.5 0 0 1 9 0M8 14a3 3 0 0 1 4 0" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="16.5" r="1.2" fill="#fff"/></svg></span><em>Wi-Fi</em></span></div>
+        <div class="boutons"><span class="btn plein">Itinéraire</span><span class="btn">Appeler</span></div>
+        <div class="avis">
+        <div class="avis-tete"><span class="avatar" style="background:#A6E8B8">M</span><div><b>Mathieu P.</b><span>il y a 2 jours</span></div><span class="etoiles">★★★★<i>★</i></span></div>
+        <p>Super accueil, parking éclairé et douches propres. Je recommande !</p>
+      </div>
+      </div></div></div>
+  </section><section class="shot play" id="etablissements-02-play" data-cpp="etablissements" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 540 Q100 680 250 600 T520 650" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Votre fiche à jour <em>en 2 minutes</em></h1><p>Horaires, places, services, photos</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><span class="retour">‹</span><b>Ma fiche établissement</b><span class="act">Enregistrer</span></div></div><div class="corps">
+        <p class="rubrique">Photos</p><div class="photos"><span class="ph"><svg viewBox="0 0 390 230" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="230" fill="#BFD3F2"/>
+  <rect y="170" width="390" height="60" fill="#8A929E"/>
+  <path d="M0 200 H390" stroke="#fff" stroke-width="3" stroke-dasharray="26 20"/>
+  <rect x="40" y="80" width="200" height="92" fill="#F5F3F1" stroke="#061866" stroke-width="4"/>
+  <path d="M30 84 L140 40 L250 84Z" fill="#E2477A" stroke="#061866" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="70" y="112" width="40" height="30" fill="#BFD3F2" stroke="#061866" stroke-width="3"/>
+  <rect x="160" y="112" width="40" height="60" fill="#061866"/>
+  <rect x="96" y="56" width="88" height="20" rx="4" fill="#061866"/>
+  <text x="140" y="71" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#FFFF1A">RELAIS</text>
+  <rect x="262" y="104" width="112" height="56" rx="5" fill="#fff" stroke="#061866" stroke-width="4"/>
+  <path d="M374 160v-40q0-8 8-8h8v48z" fill="#061866"/>
+  <circle cx="290" cy="164" r="9" fill="#111"/><circle cx="350" cy="164" r="9" fill="#111"/>
+</svg></span><span class="ph"><svg viewBox="0 0 390 230" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="230" fill="#F6D38B"/>
+  <rect y="170" width="390" height="60" fill="#8A929E"/>
+  <path d="M0 200 H390" stroke="#fff" stroke-width="3" stroke-dasharray="26 20"/>
+  <rect x="40" y="80" width="200" height="92" fill="#F5F3F1" stroke="#061866" stroke-width="4"/>
+  <path d="M30 84 L140 40 L250 84Z" fill="#E2477A" stroke="#061866" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="70" y="112" width="40" height="30" fill="#BFD3F2" stroke="#061866" stroke-width="3"/>
+  <rect x="160" y="112" width="40" height="60" fill="#061866"/>
+  <rect x="96" y="56" width="88" height="20" rx="4" fill="#061866"/>
+  <text x="140" y="71" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#FFFF1A">RELAIS</text>
+  <rect x="262" y="104" width="112" height="56" rx="5" fill="#fff" stroke="#061866" stroke-width="4"/>
+  <path d="M374 160v-40q0-8 8-8h8v48z" fill="#061866"/>
+  <circle cx="290" cy="164" r="9" fill="#111"/><circle cx="350" cy="164" r="9" fill="#111"/>
+</svg></span><span class="ph plus">+</span></div>
+        <p class="rubrique">Informations</p>
+        <div class="champ"><span>Horaires</span><b>Lun–sam · 5:00–23:00</b></div><div class="champ"><span>Places poids lourds</span><b>40</b></div><div class="champ"><span>Téléphone</span><b>03 85 00 00 00</b></div>
+        <p class="rubrique">Services</p>
+        <div class="champ"><span>Douches</span><i class="inter on"></i></div><div class="champ"><span>Restaurant</span><i class="inter on"></i></div><div class="champ"><span>Wi-Fi</span><i class="inter on"></i></div><div class="champ"><span>Parking sécurisé</span><i class="inter "></i></div>
+      </div></div></div>
+  </section><section class="shot play" id="etablissements-03-play" data-cpp="etablissements" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 700 Q160 560 300 640 T520 520" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Répondez <em>aux avis</em></h1><p>Montrez aux routiers que vous les écoutez</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><span class="retour">‹</span><b>Avis sur votre établissement</b><span class="act"></span></div></div><div class="corps gris-fond">
+        <div class="resume"><b>4,5</b><div><span class="etoiles">★★★★<i>★</i></span><span>128 avis</span></div></div>
+        <div class="avis">
+        <div class="avis-tete"><span class="avatar" style="background:#A6E8B8">M</span><div><b>Mathieu P.</b><span>il y a 2 jours</span></div><span class="etoiles">★★★★<i>★</i></span></div>
+        <p>Super accueil, parking éclairé et douches propres. Je recommande !</p><div class="reponse"><b>Réponse de l'établissement</b><p>Merci Mathieu ! Au plaisir de vous revoir sur l'A6.</p></div>
+      </div>
+        <div class="avis">
+        <div class="avis-tete"><span class="avatar" style="background:#C9C3F5">N</span><div><b>Nicolas J.</b><span>il y a 5 jours</span></div><span class="etoiles">★★★★<i>★</i></span></div>
+        <p>Bon repas, mais le parking était complet vers 21 h.</p>
+      </div>
+        <div class="saisie">Répondre à Nicolas J.…<span class="btn plein petit">Envoyer</span></div>
+      </div></div></div>
+  </section><section class="shot play" id="etablissements-04-play" data-cpp="etablissements" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 580 Q180 700 280 580 T520 620" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Suivez <em>vos visites</em></h1><p>Vues, itinéraires lancés, appels</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><span class="retour">‹</span><b>Statistiques</b><span class="act">30 j</span></div></div><div class="corps gris-fond">
+        <div class="kpis">
+          <div class="kpi"><span>Vues de la fiche</span><b>3 420</b><em>+18 %</em></div>
+          <div class="kpi"><span>Itinéraires lancés</span><b>412</b><em>+9 %</em></div>
+          <div class="kpi"><span>Appels</span><b>58</b><em>+4 %</em></div>
+          <div class="kpi"><span>Nouveaux avis</span><b>17</b><em>+6</em></div>
+        </div>
+        <div class="graphe"><b>Visites par jour</b><div class="barres"><span><i style="height:38%"></i><em>L</em></span><span><i style="height:52%"></i><em>M</em></span><span><i style="height:46%"></i><em>M</em></span><span><i style="height:61%"></i><em>J</em></span><span><i style="height:70%"></i><em>V</em></span><span><i style="height:58%"></i><em>S</em></span><span><i style="height:84%"></i><em>D</em></span></div></div>
+      </div></div></div>
+  </section><section class="shot play" id="etablissements-05-play" data-cpp="etablissements" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 650 Q120 540 240 620 T520 580" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Mettez en avant <em>vos offres</em></h1><p>Sur la carte, au moment où ils cherchent un arrêt</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+      <div class="pin" style="left:70px;top:170px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span></div><div class="pin" style="left:290px;top:160px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#F08A24"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h7.5v14H4z" fill="#fff"/><path d="M11.5 7h2l2 2v5.5a1.3 1.3 0 0 1-2.6 0V11h-1.4" fill="none" stroke="#fff" stroke-width="1.5"/></svg></span></div><div class="pin" style="left:300px;top:330px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#8E5BD8"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5S4.5 9 4.5 12.6a5.5 5.5 0 0 0 11 0C15.5 9 10 2.5 10 2.5z" fill="#fff"/></svg></span></div><div class="pin" style="left:40px;top:310px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#E2477A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div><div class="pin" style="left:250px;top:450px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#1BA6C9"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span></div>
+      <div class="pin grand" style="left:172px;top:250px"><span class="past" style="width:46px;height:46px;border-radius:11px;background:#E2477A"><svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div>
+      <div class="bulle-offre">Café offert aux routiers</div>
+      <div class="fiche promo"><div class="poignee"></div>
+        <span class="tag-promo">Offre de l'établissement</span>
+        <h2>Relais de la Bascule</h2><p class="sous-fiche">Restaurant · 2,4 km · Ouvert</p>
+        <div class="offre-carte"><span class="past" style="width:48px;height:48px;border-radius:14px;background:#E2477A"><svg width="29" height="29" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span><div><b>Café offert aux routiers</b><span>Tous les matins de 5:00 à 9:00, sur présentation de l'app</span></div></div>
+        <div class="boutons"><span class="btn plein">Itinéraire</span><span class="btn">Voir la fiche</span></div>
+      </div></div></div>
+  </section></div></div><div class="serie"><h2>Entreprises de transport (B2B) <small>App Store · 1290 × 2796</small></h2><div class="rangee"><section class="shot ios" id="entreprises-01-ios" data-cpp="entreprises" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 620 Q140 520 260 600 T520 560" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Le GPS poids lourd <em>pour votre flotte</em></h1><p>Michelin Truckfly pour les entreprises</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M195 900 L195 600 Q195 560 160 540 L80 500 Q55 488 55 450 L55 300 Q55 260 95 250 L300 230 L300 -20" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M195 900 L195 600 Q195 560 160 540 L80 500 Q55 488 55 450 L55 300 Q55 260 95 250 L300 230 L300 -20" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+      <div class="bandeau-nav"><span class="fleche"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 42V24a6 6 0 0 1 6-6h16" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M30 9l9 9-9 9" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>300 m</b><span>Rue des Transporteurs</span></div></div><div class="chip-carte" style="left:96px;top:390px">Pont 3,50 m évité</div>
+      <div class="moi" style="left:182px;top:660px;transform:rotate(0deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div>
+      <div class="vitesse">80</div>
+      <div class="eta"><div><b>14:32</b><span>3 h 48 · 312 km</span></div><span class="eta-btn">Arrêts</span><span class="eta-x">×</span></div></div></div>
+  </section><section class="shot ios" id="entreprises-02-ios" data-cpp="entreprises" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 540 Q100 680 250 600 T520 650" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Un profil <em>par véhicule</em></h1><p>Gabarit, poids, matières dangereuses</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><span class="retour">‹</span><b>Ma flotte</b><span class="act">+</span></div></div><div class="corps">
+        <p class="rubrique">Véhicules de la flotte</p><div class="vehicule sel"><div class="v-ill"><svg viewBox="0 0 320 170" aria-hidden="true">
+  <rect width="320" height="170" rx="14" fill="#DCE6F7"/>
+  <rect y="132" width="320" height="38" fill="#C5CFDD"/>
+  <rect x="22" y="40" width="186" height="84" rx="6" fill="#fff" stroke="#061866" stroke-width="5"/>
+  <rect x="22" y="92" width="186" height="10" fill="#061866"/>
+  <path d="M214 124V68q0-12 12-12h38q12 0 18 12l16 26v30z" fill="#061866"/>
+  <rect x="246" y="64" width="30" height="24" rx="4" fill="#BFD3F2"/>
+  <circle cx="62" cy="128" r="15" fill="#111"/><circle cx="100" cy="128" r="15" fill="#111"/>
+  <circle cx="182" cy="128" r="15" fill="#111"/><circle cx="270" cy="128" r="15" fill="#111"/>
+</svg></div><div><b>Semi-remorque</b><span>4,00 m · 16,50 m · 44 t</span></div><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="vehicule"><div class="v-ill"><svg viewBox="0 0 320 170" aria-hidden="true">
+  <rect width="320" height="170" rx="14" fill="#DCE6F7"/>
+  <rect y="132" width="320" height="38" fill="#C5CFDD"/>
+  <rect x="22" y="40" width="186" height="84" rx="6" fill="#fff" stroke="#061866" stroke-width="5"/>
+  <rect x="22" y="92" width="186" height="10" fill="#061866"/>
+  <path d="M214 124V68q0-12 12-12h38q12 0 18 12l16 26v30z" fill="#061866"/>
+  <rect x="246" y="64" width="30" height="24" rx="4" fill="#BFD3F2"/>
+  <circle cx="62" cy="128" r="15" fill="#111"/><circle cx="100" cy="128" r="15" fill="#111"/>
+  <circle cx="182" cy="128" r="15" fill="#111"/><circle cx="270" cy="128" r="15" fill="#111"/>
+</svg></div><div><b>Porteur</b><span>3,60 m · 9,80 m · 19 t</span></div></div><div class="vehicule"><div class="v-ill"><svg viewBox="0 0 320 170" aria-hidden="true">
+  <rect width="320" height="170" rx="14" fill="#DCE6F7"/>
+  <rect y="132" width="320" height="38" fill="#C5CFDD"/>
+  <rect x="22" y="40" width="186" height="84" rx="6" fill="#fff" stroke="#061866" stroke-width="5"/>
+  <rect x="22" y="92" width="186" height="10" fill="#061866"/>
+  <path d="M214 124V68q0-12 12-12h38q12 0 18 12l16 26v30z" fill="#061866"/>
+  <rect x="246" y="64" width="30" height="24" rx="4" fill="#BFD3F2"/>
+  <circle cx="62" cy="128" r="15" fill="#111"/><circle cx="100" cy="128" r="15" fill="#111"/>
+  <circle cx="182" cy="128" r="15" fill="#111"/><circle cx="270" cy="128" r="15" fill="#111"/>
+</svg></div><div><b>Citerne ADR</b><span>3,90 m · 12,00 m · 40 t</span></div></div>
+        <p class="rubrique">Chaque profil a son itinéraire</p>
+        <div class="champ"><span>Hauteur · largeur</span><b>4,00 m · 2,55 m</b></div><div class="champ"><span>Poids total</span><b>44 t</b></div><div class="champ"><span>Matières dangereuses (ADR)</span><i class="inter on"></i></div>
+      </div></div></div>
+  </section><section class="shot ios" id="entreprises-03-ios" data-cpp="entreprises" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 700 Q160 560 300 640 T520 520" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Moins d'imprévus <em>sur la route</em></h1><p>Péages, dangers, bouchons signalés à l'avance</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+      <div class="bandeau-nav"><span class="fleche"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 42V24a6 6 0 0 1 6-6h16" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M30 9l9 9-9 9" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>300 m</b><span>Rue des Transporteurs</span></div></div><div class="alerte"><span class="past" style="width:44px;height:44px;border-radius:12px;background:#E2477A"><svg width="26" height="26" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 L18 17 H2 Z" fill="#fff"/><path d="M10 8v4.5" stroke="#E2477A" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14.8" r="1.1" fill="#E2477A"/></svg></span><div><b>Danger signalé à 4 km</b><span>Objet sur la voie de droite</span></div></div>
+      <div class="moi" style="left:182px;top:640px;transform:rotate(0deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div>
+      <div class="vitesse">80</div>
+      <div class="eta"><div><b>14:32</b><span>3 h 48 · 312 km</span></div><span class="eta-btn">Arrêts</span><span class="eta-x">×</span></div></div></div>
+  </section><section class="shot ios" id="entreprises-04-ios" data-cpp="entreprises" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 580 Q180 700 280 580 T520 620" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Des pauses <em>mieux préparées</em></h1><p>Parkings sécurisés et services sur l'itinéraire</p></div>
+    <div class="tel"><div class="ecran"><div class="mini-carte"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M60 330 Q120 300 150 250 Q180 190 250 170 Q320 150 340 70" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 330 Q120 300 150 250 Q180 190 250 170 Q320 150 340 70" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+        <div class="pin" style="left:104px;top:270px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span></div><div class="pin" style="left:160px;top:214px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#E2477A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div><div class="pin" style="left:238px;top:150px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="9" width="11" height="8.5" rx="1.5" fill="#fff"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9" fill="none" stroke="#fff" stroke-width="1.8"/></svg></span></div><div class="pin" style="left:300px;top:96px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#1BA6C9"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span></div>
+        <div class="moi" style="left:44px;top:314px;transform:rotate(40deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div></div>
+      <div class="fiche liste">
+        <div class="poignee"></div>
+        <h2>Pauses sur l'itinéraire</h2>
+        <div class="filtres"><span class="on">Tout</span><span>Parkings</span><span>Restos</span><span>Douches</span></div>
+        <div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#4A63E7"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span><div><b>Aire de Saint-Ambreuil</b><span>Parking poids lourds · 60 places</span><span class="dispo">Places disponibles</span></div><em>42 km<br>15:10</em></div><div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#E2477A"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span><div><b>Relais de la Bascule</b><span>Restaurant · Douches</span></div><em>88 km<br>15:52</em></div><div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#4A63E7"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="9" width="11" height="8.5" rx="1.5" fill="#fff"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9" fill="none" stroke="#fff" stroke-width="1.8"/></svg></span><div><b>Truck Parking Mâcon Nord</b><span>Parking sécurisé · Gardien 24 h/24</span><span class="dispo">Places disponibles</span></div><em>131 km<br>16:31</em></div><div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#1BA6C9"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span><div><b>Station de lavage PL</b><span>Lavage poids lourds</span></div><em>176 km<br>17:12</em></div>
+      </div></div></div>
+  </section><section class="shot ios" id="entreprises-05-ios" data-cpp="entreprises" data-fmt="ios">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 650 Q120 540 240 620 T520 580" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Équipez <em>vos conducteurs</em></h1><p>Une offre adaptée à la taille de votre flotte</p></div>
+    <div class="tel"><div class="ecran"><div class="offre"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><span class="eta-x blanc">×</span>
+        <div class="offre-tete"><span class="badge-j">Entreprises</span><h2>Michelin Truckfly pour les entreprises</h2><p>Le GPS et la communauté au service de vos conducteurs</p></div>
+        <ul><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>GPS poids lourd pour chaque conducteur</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Profils de véhicules : gabarit, poids, ADR</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Alertes communautaires en temps réel</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Parkings et arrêts poids lourds en Europe</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Accompagnement dédié</span></li></ul>
+        <span class="btn jaune large">Contacter l'équipe</span>
+        <p class="petit">Réponse de notre équipe sous 48 h</p>
+      </div></div></div>
+  </section></div></div><div class="serie"><h2>Entreprises de transport (B2B) <small>Google Play · 1080 × 1920</small></h2><div class="rangee"><section class="shot play" id="entreprises-01-play" data-cpp="entreprises" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 620 Q140 520 260 600 T520 560" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Le GPS poids lourd <em>pour votre flotte</em></h1><p>Michelin Truckfly pour les entreprises</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M195 900 L195 600 Q195 560 160 540 L80 500 Q55 488 55 450 L55 300 Q55 260 95 250 L300 230 L300 -20" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M195 900 L195 600 Q195 560 160 540 L80 500 Q55 488 55 450 L55 300 Q55 260 95 250 L300 230 L300 -20" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+      <div class="bandeau-nav"><span class="fleche"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 42V24a6 6 0 0 1 6-6h16" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M30 9l9 9-9 9" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>300 m</b><span>Rue des Transporteurs</span></div></div><div class="chip-carte" style="left:96px;top:390px">Pont 3,50 m évité</div>
+      <div class="moi" style="left:182px;top:660px;transform:rotate(0deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div>
+      <div class="vitesse">80</div>
+      <div class="eta"><div><b>14:32</b><span>3 h 48 · 312 km</span></div><span class="eta-btn">Arrêts</span><span class="eta-x">×</span></div></div></div>
+  </section><section class="shot play" id="entreprises-02-play" data-cpp="entreprises" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 540 Q100 680 250 600 T520 650" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Un profil <em>par véhicule</em></h1><p>Gabarit, poids, matières dangereuses</p></div>
+    <div class="tel"><div class="ecran"><div class="entete"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><div class="entete-l"><span class="retour">‹</span><b>Ma flotte</b><span class="act">+</span></div></div><div class="corps">
+        <p class="rubrique">Véhicules de la flotte</p><div class="vehicule sel"><div class="v-ill"><svg viewBox="0 0 320 170" aria-hidden="true">
+  <rect width="320" height="170" rx="14" fill="#DCE6F7"/>
+  <rect y="132" width="320" height="38" fill="#C5CFDD"/>
+  <rect x="22" y="40" width="186" height="84" rx="6" fill="#fff" stroke="#061866" stroke-width="5"/>
+  <rect x="22" y="92" width="186" height="10" fill="#061866"/>
+  <path d="M214 124V68q0-12 12-12h38q12 0 18 12l16 26v30z" fill="#061866"/>
+  <rect x="246" y="64" width="30" height="24" rx="4" fill="#BFD3F2"/>
+  <circle cx="62" cy="128" r="15" fill="#111"/><circle cx="100" cy="128" r="15" fill="#111"/>
+  <circle cx="182" cy="128" r="15" fill="#111"/><circle cx="270" cy="128" r="15" fill="#111"/>
+</svg></div><div><b>Semi-remorque</b><span>4,00 m · 16,50 m · 44 t</span></div><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="vehicule"><div class="v-ill"><svg viewBox="0 0 320 170" aria-hidden="true">
+  <rect width="320" height="170" rx="14" fill="#DCE6F7"/>
+  <rect y="132" width="320" height="38" fill="#C5CFDD"/>
+  <rect x="22" y="40" width="186" height="84" rx="6" fill="#fff" stroke="#061866" stroke-width="5"/>
+  <rect x="22" y="92" width="186" height="10" fill="#061866"/>
+  <path d="M214 124V68q0-12 12-12h38q12 0 18 12l16 26v30z" fill="#061866"/>
+  <rect x="246" y="64" width="30" height="24" rx="4" fill="#BFD3F2"/>
+  <circle cx="62" cy="128" r="15" fill="#111"/><circle cx="100" cy="128" r="15" fill="#111"/>
+  <circle cx="182" cy="128" r="15" fill="#111"/><circle cx="270" cy="128" r="15" fill="#111"/>
+</svg></div><div><b>Porteur</b><span>3,60 m · 9,80 m · 19 t</span></div></div><div class="vehicule"><div class="v-ill"><svg viewBox="0 0 320 170" aria-hidden="true">
+  <rect width="320" height="170" rx="14" fill="#DCE6F7"/>
+  <rect y="132" width="320" height="38" fill="#C5CFDD"/>
+  <rect x="22" y="40" width="186" height="84" rx="6" fill="#fff" stroke="#061866" stroke-width="5"/>
+  <rect x="22" y="92" width="186" height="10" fill="#061866"/>
+  <path d="M214 124V68q0-12 12-12h38q12 0 18 12l16 26v30z" fill="#061866"/>
+  <rect x="246" y="64" width="30" height="24" rx="4" fill="#BFD3F2"/>
+  <circle cx="62" cy="128" r="15" fill="#111"/><circle cx="100" cy="128" r="15" fill="#111"/>
+  <circle cx="182" cy="128" r="15" fill="#111"/><circle cx="270" cy="128" r="15" fill="#111"/>
+</svg></div><div><b>Citerne ADR</b><span>3,90 m · 12,00 m · 40 t</span></div></div>
+        <p class="rubrique">Chaque profil a son itinéraire</p>
+        <div class="champ"><span>Hauteur · largeur</span><b>4,00 m · 2,55 m</b></div><div class="champ"><span>Poids total</span><b>44 t</b></div><div class="champ"><span>Matières dangereuses (ADR)</span><i class="inter on"></i></div>
+      </div></div></div>
+  </section><section class="shot play" id="entreprises-03-play" data-cpp="entreprises" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 700 Q160 560 300 640 T520 520" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Moins d'imprévus <em>sur la route</em></h1><p>Péages, dangers, bouchons signalés à l'avance</p></div>
+    <div class="tel"><div class="ecran"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M195 900 L195 560 Q195 520 235 520 L330 520 Q360 520 360 490 L360 250 Q360 220 330 210 L250 180 L250 -20" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+      <div class="bandeau-nav"><span class="fleche"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 42V24a6 6 0 0 1 6-6h16" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M30 9l9 9-9 9" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>300 m</b><span>Rue des Transporteurs</span></div></div><div class="alerte"><span class="past" style="width:44px;height:44px;border-radius:12px;background:#E2477A"><svg width="26" height="26" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 L18 17 H2 Z" fill="#fff"/><path d="M10 8v4.5" stroke="#E2477A" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14.8" r="1.1" fill="#E2477A"/></svg></span><div><b>Danger signalé à 4 km</b><span>Objet sur la voie de droite</span></div></div>
+      <div class="moi" style="left:182px;top:640px;transform:rotate(0deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div>
+      <div class="vitesse">80</div>
+      <div class="eta"><div><b>14:32</b><span>3 h 48 · 312 km</span></div><span class="eta-btn">Arrêts</span><span class="eta-x">×</span></div></div></div>
+  </section><section class="shot play" id="entreprises-04-play" data-cpp="entreprises" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 580 Q180 700 280 580 T520 620" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Des pauses <em>mieux préparées</em></h1><p>Parkings sécurisés et services sur l'itinéraire</p></div>
+    <div class="tel"><div class="ecran"><div class="mini-carte"><svg class="plan" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="844" fill="#ECEFF3"/>
+  <path d="M-10 700 Q120 640 210 690 T400 660 L400 760 Q300 720 200 770 T-10 790z" fill="#CFE3F5"/>
+  <rect x="20" y="70" width="110" height="120" rx="8" fill="#D7EBD3"/>
+  <rect x="250" y="590" width="120" height="70" rx="8" fill="#D7EBD3"/>
+  <rect x="140" y="330" width="90" height="90" rx="8" fill="#E2E5EA"/>
+  <rect x="20" y="380" width="90" height="70" rx="8" fill="#E2E5EA"/>
+  <rect x="270" y="300" width="70" height="110" rx="8" fill="#E2E5EA"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M-10 230 L400 200 M-10 520 L400 520 M195 -10 V900 M55 -10 V900 M360 -10 V900 M-10 380 Q200 360 400 420 M250 -10 V520 M-10 620 L400 570" stroke-width="12"/>
+    <path d="M-10 100 Q150 140 400 60 M120 520 V900 M300 520 L330 900 M-10 300 H140" stroke-width="7"/>
+  </g>
+  <path d="M-10 460 Q150 430 260 470 T400 450" fill="none" stroke="#FFE7A3" stroke-width="14"/>
+  <path d="M60 330 Q120 300 150 250 Q180 190 250 170 Q320 150 340 70" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 330 Q120 300 150 250 Q180 190 250 170 Q320 150 340 70" fill="none" stroke="#3B6CF6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="statut "><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div>
+        <div class="pin" style="left:104px;top:270px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span></div><div class="pin" style="left:160px;top:214px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#E2477A"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span></div><div class="pin" style="left:238px;top:150px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#4A63E7"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="9" width="11" height="8.5" rx="1.5" fill="#fff"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9" fill="none" stroke="#fff" stroke-width="1.8"/></svg></span></div><div class="pin" style="left:300px;top:96px"><span class="past" style="width:34px;height:34px;border-radius:9px;background:#1BA6C9"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span></div>
+        <div class="moi" style="left:44px;top:314px;transform:rotate(40deg)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#061866" stroke="#fff" stroke-width="4"/><path d="M20 9l8 20-8-5-8 5z" fill="#fff"/></svg></div></div>
+      <div class="fiche liste">
+        <div class="poignee"></div>
+        <h2>Pauses sur l'itinéraire</h2>
+        <div class="filtres"><span class="on">Tout</span><span>Parkings</span><span>Restos</span><span>Douches</span></div>
+        <div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#4A63E7"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><text x="10" y="15" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#fff">P</text></svg></span><div><b>Aire de Saint-Ambreuil</b><span>Parking poids lourds · 60 places</span><span class="dispo">Places disponibles</span></div><em>42 km<br>15:10</em></div><div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#E2477A"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.5v6a2 2 0 0 0 1.6 2v7h1.6v-7a2 2 0 0 0 1.6-2v-6H9.1v4.5h-.8V2.5H7.1v4.5h-.8V2.5zM14.5 2.5c-1.6.8-2.2 2.8-2.2 5v3.5h1.6v6.5h1.6v-15z" fill="#fff"/></svg></span><div><b>Relais de la Bascule</b><span>Restaurant · Douches</span></div><em>88 km<br>15:52</em></div><div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#4A63E7"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="9" width="11" height="8.5" rx="1.5" fill="#fff"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9" fill="none" stroke="#fff" stroke-width="1.8"/></svg></span><div><b>Truck Parking Mâcon Nord</b><span>Parking sécurisé · Gardien 24 h/24</span><span class="dispo">Places disponibles</span></div><em>131 km<br>16:31</em></div><div class="arret"><span class="past" style="width:40px;height:40px;border-radius:11px;background:#1BA6C9"><svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="12" r="3.6" fill="#fff"/><circle cx="13.5" cy="8" r="2.6" fill="#fff"/><circle cx="13.5" cy="14.5" r="2" fill="#fff"/></svg></span><div><b>Station de lavage PL</b><span>Lavage poids lourds</span></div><em>176 km<br>17:12</em></div>
+      </div></div></div>
+  </section><section class="shot play" id="entreprises-05-play" data-cpp="entreprises" data-fmt="play">
+    <svg class="vague" viewBox="0 0 480 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 650 Q120 540 240 620 T520 580" fill="none" stroke="#FFFF1A" stroke-width="16" stroke-linecap="round"/></svg>
+    <div class="textes"><h1>Équipez <em>vos conducteurs</em></h1><p>Une offre adaptée à la taille de votre flotte</p></div>
+    <div class="tel"><div class="ecran"><div class="offre"><div class="statut clair"><b>9:41</b><span><i></i><i></i><i></i><i></i><em></em></span></div><span class="eta-x blanc">×</span>
+        <div class="offre-tete"><span class="badge-j">Entreprises</span><h2>Michelin Truckfly pour les entreprises</h2><p>Le GPS et la communauté au service de vos conducteurs</p></div>
+        <ul><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>GPS poids lourd pour chaque conducteur</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Profils de véhicules : gabarit, poids, ADR</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Alertes communautaires en temps réel</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Parkings et arrêts poids lourds en Europe</span></li><li><svg class="coche" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#34C759"/><path d="M6.5 12.5 L10.5 16.5 L17.5 8.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Accompagnement dédié</span></li></ul>
+        <span class="btn jaune large">Contacter l'équipe</span>
+        <p class="petit">Réponse de notre équipe sous 48 h</p>
+      </div></div></div>
+  </section></div></div>
+</body></html>
