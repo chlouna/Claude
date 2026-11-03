@@ -1,15 +1,16 @@
 # Interstitiel Michelin Truckfly × VINCI Autoroutes · Fêtes de fin d'année
 
-**Offre** : 2 mois de GPS offerts aux **100 premiers** qui répondent au quiz sécurité.
+**Offre** : 2 mois de GPS offerts aux **1000 premiers** qui répondent au quiz sécurité.
 **Thème** : nos anges gardiens (les patrouilleurs en jaune, un homme et une femme) veillent sur la route pendant les fêtes.
 **Budget** : 4 710 €.
+**Couleurs** : charte Michelin Truckfly (bleu, jaune) + rouge VINCI Autoroutes `#E20025` (bandeau du haut, badge, écharpes des anges, guirlande, bande du fourgon). Logo officiel : `assets/vinci-autoroutes.png`.
 
 ## Parcours
 
 1. L'interstitiel s'affiche dans l'app (CTA « Je participe au quiz »).
-2. Le CTA ouvre le formulaire Tally : 2 questions sécurité, puis email + téléphone + consentement.
+2. Au clic, le conducteur arrive sur une autre page, le formulaire Tally : 2 questions sécurité, puis email + téléphone + consentement.
 3. On récupère les emails et téléphones pour activer les 2 mois.
-4. Le formulaire se ferme seul à 100 réponses (une seule réponse par email).
+4. Le formulaire se ferme seul à 1000 réponses (une seule réponse par email).
 
 Lien d'édition Tally (brouillon, pas encore publié) : https://tally.so/forms/q5L7Y2/edit
 
@@ -42,7 +43,7 @@ Les bonnes réponses s'affichent sur la page de remerciement. Elles sont à fair
 
 ## À compléter avant diffusion
 
-- Logo officiel VINCI Autoroutes (le cadre en pointillés marque son emplacement) et validation du visuel par VINCI.
-- Date de fin de l'offre si VINCI en veut une en plus de la limite des 100 premiers.
+- Validation du visuel et du logo par VINCI Autoroutes.
+- Date de fin de l'offre si VINCI en veut une en plus de la limite des 1000 premiers.
 - Mentions légales du jeu (règlement, RGPD) : lien à ajouter dans le formulaire.
 - Publier le formulaire Tally et mettre son lien sur le CTA.
