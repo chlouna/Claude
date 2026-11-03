@@ -69,9 +69,9 @@ b.fort { color: #000; }
 .bas { position: relative; flex: none; padding: 6px 22px 18px; display: flex; flex-direction: column; }
 .scene { width: 100%; flex: 1 1 0; min-height: 0; height: auto; }
 /* Bloc corridor de sécurité (message et pictogrammes VINCI Autoroutes) */
-.corridor { align-self: stretch; flex: none; display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 14px; background: rgba(255, 255, 26, 0.1); border: 1.5px solid rgba(255, 255, 26, 0.65); }
-.corridor .picto { width: 54px; height: 64px; flex: none; border-radius: 6px; }
-.c-titre { font-size: 13px; font-weight: 600; line-height: 1.3; color: #fff; }
+.corridor { align-self: stretch; flex: none; display: flex; gap: 14px; align-items: center; padding: 2px 4px; }
+.corridor .picto { width: 62px; height: 74px; flex: none; border-radius: 6px; }
+.c-titre { font-size: 14px; font-weight: 600; line-height: 1.3; color: #fff; }
 .c-gestes { display: flex; flex-direction: column; gap: 3px; margin-top: 5px; font-size: 14px; font-weight: 700; color: var(--jaune); }
 .c-gestes span { display: flex; align-items: center; gap: 5px; }
 .c-gestes svg { width: 15px; height: 15px; flex: none; }
@@ -269,7 +269,7 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
-    <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE RALENTIS</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE CHANGE DE VOIE</span></p></div></div>
+    <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span>JE RALENTIS</span><span>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 330" aria-hidden="true">
       <use href="#guirlande" y="6" />
       <path d="M0 270 L360 250 L360 330 L0 330 Z" fill="#0b1f5c" />
@@ -302,7 +302,7 @@ b.fort { color: #000; }
       <i style="left:86%;top:26%;--t:3px;--d:3.4s"></i><i style="left:52%;top:16%;--t:3px;--o:.5;--d:4.2s"></i><i style="left:18%;top:46%;--t:4px;--o:.4;--d:2.6s"></i>
     </div>
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
-    <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE RALENTIS</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE CHANGE DE VOIE</span></p></div></div>
+    <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span>JE RALENTIS</span><span>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 358 290" aria-hidden="true">
       <use href="#guirlande" />
       <g class="flotte"><use href="#ange-f" transform="translate(0 64) scale(.92)" /></g>
@@ -338,7 +338,7 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein" style="gap:8px">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
-    <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE RALENTIS</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE CHANGE DE VOIE</span></p></div></div>
+    <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span>JE RALENTIS</span><span>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 350" aria-hidden="true">
       <!-- halo derrière le sapin -->
       <circle cx="180" cy="170" r="150" fill="url(#lueur)" opacity=".35" />
@@ -415,7 +415,7 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
-    <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE RALENTIS</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE CHANGE DE VOIE</span></p></div></div>
+    <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span>JE RALENTIS</span><span>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 330" aria-hidden="true">
       <use href="#guirlande" y="6" />
       <path d="M0 270 L360 250 L360 330 L0 330 Z" fill="#0b1f5c" />
