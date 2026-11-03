@@ -171,7 +171,7 @@ def page(titre_page, accueil, volets, fmt):
     if (CPP / "assets" / "fin-bibendum.png").exists():
         shots.append(
             f'<section class="shot" id="{n + 1:02d}-fin" style="width:{l}px;height:{h}px;'
-            f'background:#0C155D url(\'../../assets/fin-bibendum.png\') center bottom / 100% auto no-repeat"></section>'
+            f'background:#061866 url(\'../../assets/fin-bibendum.png\') center bottom / 100% auto no-repeat"></section>'
         )
 
     css = f"""
