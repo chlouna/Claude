@@ -52,7 +52,7 @@ figcaption b { color: #111; }
   background: var(--jaune); color: #111; padding: .95em 1.5em; border-radius: .6em; white-space: nowrap; box-shadow: 0 .4em 1.2em rgba(0,0,0,.35); }
 .cta.contour { background: var(--noir); color: var(--blanc); box-shadow: inset 0 0 0 .12em var(--blanc), 0 .4em 1.2em rgba(0,0,0,.35); }
 .tel { position: absolute; filter: drop-shadow(0 1.6em 2.4em rgba(0,0,0,.5)); z-index: 1; }
-.accroche { position: relative; z-index: 3; font: 900 italic 2.5em/1.1 "Titre"; text-transform: uppercase; color: var(--blanc); }
+.accroche { position: relative; z-index: 3; font: 900 italic 2.5em/1.1 "Titre"; color: var(--blanc); }
 .rdv { display: flex; align-items: center; gap: .9em; font: italic 700 1.15em/1 "Texte"; letter-spacing: .12em; text-transform: uppercase; color: var(--blanc); white-space: nowrap; }
 .rdv::before, .rdv::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,.55); }
 .tel.ombre { filter: brightness(var(--lum)) saturate(.6) drop-shadow(0 1.6em 2.4em rgba(0,0,0,.6)); }
@@ -75,12 +75,13 @@ figcaption b { color: #111; }
 .inter .sous { margin-top: 2.2em; position: relative; z-index: 3; }
 .inter .tel { top: 41em; }
 .v .accroche { margin-top: 2.4em; }
-.accroche.gros { font-size: 3.4em; line-height: 1; }
-.v.compte.teasing .tel { top: 43em; }
-.v.fin .accroche.gros { margin-top: 1.5em; }
-.v.fin .ligne-prix { margin-top: 1.8em; }
-.v.fin .tel { top: 44em; }
-.v.compte.teasing .halo { top: 33em; }
+.accroche.gros { font-size: 3.4em; line-height: 1.05; }
+.v.compte.teasing .tel { top: 39em; }
+.v.fin .accroche.gros { margin-top: 1.3em; }
+.v.fin .ligne-prix { margin-top: 1.3em; }
+.v.fin .tel { top: 38.5em; }
+.v.fin.long .tel { top: 41.5em; }
+.v.compte.teasing .halo { top: 30em; }
 .v .accroche.gros { margin-top: 1.5em; }
 .v .accroche.gros + .sous { margin-top: 1em; position: relative; z-index: 3; }
 .inter .accroche + .sous { margin-top: 1.4em; }
@@ -108,8 +109,8 @@ figcaption b { color: #111; }
 
 /* ---------- Bannière web 3:1 ---------- */
 .web { display: flex; align-items: center; padding: 0 5em; gap: 5em; }
-.web .col-titre { display: flex; flex-direction: column; gap: 3.4em; flex: none; position: relative; z-index: 2; }
-.web .logo { height: 3.2em; }
+.web .col-titre { display: flex; flex-direction: column; flex: none; position: relative; z-index: 2; margin-top: 3em; }
+.web .logo { height: 3.2em; position: absolute; top: 3.6em; left: 5em; }
 .web .boite { font-size: 6em; }
 .web .date { font-size: 2.8em; }
 .web .titre .ligne { left: -8em; right: -80em; }
@@ -190,7 +191,7 @@ const story = (id, p, cta) => `<div class="kv v story fondu ${p} ${PHASES[p].gro
   ${tel(p)}
   <div class="bas">${cta}</div></div>`;
 
-const storyFin = (id, p) => `<div class="kv v story fin fondu" id="${id}" style="--w:360px;--h:640px;--u:10px">
+const storyFin = (id, p) => `<div class="kv v story fin fondu ${p === "finh" ? "long" : ""}" id="${id}" style="--w:360px;--h:640px;--u:10px">
   ${logo}${titre(p)}<h3 class="accroche gros">${PHASES[p].compte}</h3>
   <div class="ligne-prix">${tag(p)}${PHASES[p].prix}</div>
   <img class="tel" src="${TEL}" alt="">
@@ -207,7 +208,7 @@ const post = (id, p, cta) => `<div class="kv post ${p}" id="${id}" style="--w:36
   ${tel(p)}</div>`;
 
 const web = id => `<div class="kv web" id="${id}" style="--w:1200px;--h:400px;--u:10px">
-  <div class="col-titre">${logo}${titre("offre")}</div>
+  ${logo}<div class="col-titre">${titre("offre")}</div>
   <div class="col-offre"><div class="ligne-prix">${tag("offre")}${PHASES.offre.prix}</div><span class="cta">J'en profite</span></div>
   <img class="tel" src="${TEL}" alt=""></div>`;
 
