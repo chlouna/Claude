@@ -77,6 +77,9 @@ figcaption b { color: #111; }
 .v .accroche { margin-top: 2.4em; }
 .accroche.gros { font-size: 3.4em; line-height: 1; }
 .v.compte.teasing .tel { top: 43em; }
+.v.fin .accroche.gros { margin-top: 1.5em; }
+.v.fin .ligne-prix { margin-top: 1.8em; }
+.v.fin .tel { top: 44em; }
 .v.compte.teasing .halo { top: 33em; }
 .v .accroche.gros { margin-top: 1.5em; }
 .v .accroche.gros + .sous { margin-top: 1em; position: relative; z-index: 3; }
@@ -166,6 +169,9 @@ const PHASES = {
   offre:   { date: `<small>du</small>27/11<small>au</small>04/12`, tag: `-50<small>%</small>`,
     prix: `<div class="prix"><span class="n">37,99 €<em>/an</em></span><span class="barre">au lieu de 74,99 €</span></div>`,
     sous: `<b>Le GPS Premium</b> à moitié prix, pour toute l'année.` },
+  fin3:    { date: `<small>jusqu'au</small>04/12`, compte: `Plus que<br>3 jours`, tag: `-50<small>%</small>`, prix: `<div class="prix"><span class="n">37,99 €<em>/an</em></span><span class="barre">au lieu de 74,99 €</span></div>` },
+  fin1:    { date: `<small>fin</small>demain`, compte: `Plus qu'un<br>jour`, tag: `-50<small>%</small>`, prix: `<div class="prix"><span class="n">37,99 €<em>/an</em></span><span class="barre">au lieu de 74,99 €</span></div>` },
+  finh:    { date: `<small>fin à</small>minuit`, compte: `Plus que<br>quelques heures`, tag: `-50<small>%</small>`, prix: `<div class="prix"><span class="n">37,99 €<em>/an</em></span><span class="barre">au lieu de 74,99 €</span></div>` },
   jourj:   { date: `<small>c'est parti !</small>`, tag: `-50<small>%</small>`,
     prix: `<div class="prix"><span class="n">37,99 €<em>/an</em></span><span class="barre">au lieu de 74,99 €</span></div>`,
     sous: `Le GPS Premium à moitié prix, jusqu'au 04/12` },
@@ -184,6 +190,11 @@ const story = (id, p, cta) => `<div class="kv v story fondu ${p} ${PHASES[p].gro
   ${tel(p)}
   <div class="bas">${cta}</div></div>`;
 
+const storyFin = (id, p) => `<div class="kv v story fin fondu" id="${id}" style="--w:360px;--h:640px;--u:10px">
+  ${logo}${titre(p)}<h3 class="accroche gros">${PHASES[p].compte}</h3>
+  <div class="ligne-prix">${tag(p)}${PHASES[p].prix}</div>
+  <img class="tel" src="${TEL}" alt="">
+  <div class="bas">${CTA.profite}</div></div>`;
 const inter = (id, p, cta, legal) => `<div class="kv v inter fondu ${p}" id="${id}" style="--w:390px;--h:844px;--u:${390 / 36}px">
   ${logo}${titre(p)}${offre(p)}
   <p class="sous">${PHASES[p].sous}</p>
@@ -214,10 +225,11 @@ const LEGAL = "Offre valable du 27/11 au 04/12/2026 sur l'abonnement annuel GPS 
 // [id, html, échelle d'export, légende]
 const VISUELS = {
   "story-teasing": [story("story-teasing", "teasing", CTA.rdv), 3, "<b>Teasing</b> · 20/11 · 1080 × 1920"],
-  "story-j3": [story("story-j3", "j3", CTA.rdv), 3, "<b>Plus que 3 jours</b> · 24/11 · 1080 × 1920"],
-  "story-j1": [story("story-j1", "j1", CTA.rdv), 3, "<b>Plus qu'un jour</b> · 26/11 matin · 1080 × 1920"],
-  "story-heures": [story("story-heures", "heures", CTA.rdv), 3, "<b>Plus que quelques heures</b> · 26/11 soir · 1080 × 1920"],
-  "story-offre": [story("story-offre", "offre", CTA.profite), 3, "<b>Story pendant l'offre</b> · 27/11 → 04/12 · 1080 × 1920"],
+  "story-j1": [story("story-j1", "j1", CTA.rdv), 3, "<b>Plus qu'un jour</b> · 26/11 · 1080 × 1920"],
+  "story-jourj": [story("story-jourj", "jourj", CTA.profite), 3, "<b>Jour J</b> · 27/11 · 1080 × 1920"],
+  "story-fin3": [storyFin("story-fin3", "fin3"), 3, "<b>Plus que 3 jours</b> · 02/12 · 1080 × 1920"],
+  "story-fin1": [storyFin("story-fin1", "fin1"), 3, "<b>Plus qu'un jour</b> · 03/12 · 1080 × 1920"],
+  "story-finh": [storyFin("story-finh", "finh"), 3, "<b>Plus que quelques heures</b> · 04/12 · 1080 × 1920"],
   "post-teasing": [post("post-teasing", "teasing", CTA.rdv), 3, "<b>Post teasing</b> · 20 → 26/11 · 1080 × 1350"],
   "post-jourj": [post("post-jourj", "jourj", CTA.profite), 3, "<b>Post jour J</b> · 27/11 · 1080 × 1350"],
   "interstitiel-teasing": [inter("interstitiel-teasing", "teasing", CTA.notif, "Vous recevrez une notification le 27/11 au matin."), 3, "<b>Interstitiel teasing</b> · 20 → 26/11 · 1170 × 2532"],
@@ -236,12 +248,13 @@ if (solo) {
   const fig = id => `<figure>${VISUELS[id][0]}<figcaption>${VISUELS[id][2]}</figcaption></figure>`;
   const section = (t, d, ids) => `<div class="section"><h2>${t}</h2><p>${d}</p><div class="rangee">${ids.map(fig).join("")}</div></div>`;
   el.innerHTML = `<h1>Black Friday 2026 · Plaquette fond noir</h1>
-    <p>GPS Premium à -50 % : 37,99 €/an au lieu de 74,99 €, du 27/11 au 04/12/2026. Ancienne charte (exception Black Friday) : titres en capitales grasses italiques, cartouche blanc, ligne fine, date en bandeau jaune. Teasing : pas de prix, une question (« Ça vous dirait une promo sur le GPS ? »), puis un compte à rebours, téléphone dans la pénombre. Aucun gros texte en jaune.</p>` +
-    section("1 · Stories teasing · compte à rebours", "Une question pour ouvrir, puis le compte à rebours. Le téléphone s'éclaire un peu plus à chaque story.", ["story-teasing", "story-j3", "story-j1", "story-heures"]) +
-    section("2 · Story pendant l'offre", "Du 27/11 au 04/12.", ["story-offre"]) +
-    section("3 · Posts réseaux", "Teasing, puis le jour J.", ["post-teasing", "post-jourj"]) +
-    section("4 · Interstitiels app", "Teasing (l'utilisateur demande à être averti), puis offre.", ["interstitiel-teasing", "interstitiel-offre"]) +
-    section("5 · Bannières", "Pendant l'offre.", ["banniere-web"]) +
+    <p>GPS Premium à -50 % : 37,99 €/an au lieu de 74,99 €, du 27/11 au 04/12/2026. Ancienne charte (exception Black Friday) : titres en capitales grasses italiques, cartouche blanc, ligne fine, date en bandeau jaune. Teasing : pas de prix, une question (« Ça vous dirait une promo sur le GPS ? »), téléphone dans la pénombre ; compte à rebours jusqu'à la fin de l'offre. Aucun gros texte en jaune.</p>` +
+    section("1 · Stories teasing", "Avant le lancement : la question, puis la veille. Le téléphone reste dans la pénombre.", ["story-teasing", "story-j1"]) +
+    section("2 · Story jour J", "Le 27/11 : l'offre s'allume.", ["story-jourj"]) +
+    section("3 · Stories compte à rebours", "Jusqu'à la fin de l'offre, le 04/12 à minuit.", ["story-fin3", "story-fin1", "story-finh"]) +
+    section("4 · Posts réseaux", "Teasing, puis le jour J.", ["post-teasing", "post-jourj"]) +
+    section("5 · Interstitiels app", "Teasing (l'utilisateur demande à être averti), puis offre.", ["interstitiel-teasing", "interstitiel-offre"]) +
+    section("6 · Bannières", "Pendant l'offre.", ["banniere-web"]) +
     `<div class="section" style="margin-top:-28px"><div class="rangee">${["banniere-728x90"].map(fig).join("")}</div></div>`;
 }
 window.EXPORTS = Object.entries(VISUELS).map(([id, v]) => [id, v[1]]);

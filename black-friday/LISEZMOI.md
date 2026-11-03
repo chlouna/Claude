@@ -34,10 +34,11 @@ Exception Black Friday : ancienne charte, comme sur le flyer « Le poids lourd d
 | Visuel | Quand | Taille |
 |---|---|---|
 | `story-teasing` | 20/11 · « Ça vous dirait une promo sur le GPS ? » | 1080 × 1920 |
-| `story-j3` | 24/11 · Plus que 3 jours | 1080 × 1920 |
-| `story-j1` | 26/11 matin · Plus qu'un jour | 1080 × 1920 |
-| `story-heures` | 26/11 soir · Plus que quelques heures | 1080 × 1920 |
-| `story-offre` | 27/11 → 04/12 | 1080 × 1920 |
+| `story-j1` | 26/11 · Plus qu'un jour (teasing) | 1080 × 1920 |
+| `story-jourj` | 27/11 · C'est parti ! | 1080 × 1920 |
+| `story-fin3` | 02/12 · Plus que 3 jours | 1080 × 1920 |
+| `story-fin1` | 03/12 · Plus qu'un jour | 1080 × 1920 |
+| `story-finh` | 04/12 · Plus que quelques heures (fin à minuit) | 1080 × 1920 |
 | `post-teasing` | 20 → 26/11 | 1080 × 1350 |
 | `post-jourj` | 27/11 | 1080 × 1350 |
 | `interstitiel-teasing` | 20 → 26/11 (bouton « M'avertir le 27/11 ») | 1170 × 2532 |
@@ -47,4 +48,4 @@ Exception Black Friday : ancienne charte, comme sur le flyer « Le poids lourd d
 
 Les textes de chaque phase (teasing, offre, jour J) sont dans l'objet `PHASES` de `noir.html`.
 
-Teasing : pas de prix ni de « ?? ». Accroche « Ça vous dirait une promo sur le GPS ? », puis stories compte à rebours (plus que 3 jours, plus qu'un jour, plus que quelques heures), téléphone dans la pénombre sous un halo, date en bandeau « LE 27/11 ». Bannière in-app retirée.
+Teasing : pas de prix ni de « ?? ». Accroche « Ça vous dirait une promo sur le GPS ? ». Compte à rebours sur la fin de l'offre jusqu'au 04/12, téléphone dans la pénombre sous un halo, date en bandeau « LE 27/11 ». Bannière in-app retirée.
