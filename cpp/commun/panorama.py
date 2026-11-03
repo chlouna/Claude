@@ -110,45 +110,61 @@ def page(titre_page, accueil, volets, fmt):
     a = accueil
     import math
 
-    haut_tel, angle = 0.4, 14
+    # Scène d'accueil : réglages par défaut (photo d'autoroute commune), ou scène propre à la CPP
+    # via accueil["scene"] : photo, cadrage, téléphone, pictos, rond jaune, logo.
+    sc = a.get("scene", {})
+    haut_tel, angle = sc.get("tel_haut", 0.4), sc.get("tel_angle", 14)
     hp = haut_tel * h
     lp = hp * 0.507  # proportions des captures (cadre du téléphone compris)
     demi_largeur = (lp * math.cos(math.radians(angle)) + hp * math.sin(math.radians(angle))) / 2
     demi_hauteur = (hp * math.cos(math.radians(angle)) + lp * math.sin(math.radians(angle))) / 2
-    x_tel = (l - demi_largeur - 0.05 * l) / l
-    y_tel = (h - demi_hauteur - 0.04 * h) / h
-    elements = "".join(
+    x_tel = sc.get("tel_x", (l - demi_largeur - 0.05 * l) / l)
+    y_tel = sc.get("tel_y", (h - demi_hauteur - 0.04 * h) / h)
+    pictos = sc.get(
+        "pictos",
         [
-            element(telephone(a["tel_incline"], haut_tel, f, angle), x_tel, y_tel, f),
             # icônes au-dessus et en dessous du camion de la photo, pour ne pas le cacher
-            element(icone(a["picto_grand"], 0.2 * l), 0.15, 0.86, f),
-            element(icone(a["picto_moyen"], 0.15 * l), 0.14, 0.42, f),
+            (a["picto_grand"], 0.2, 0.15, 0.86),
+            (a["picto_moyen"], 0.15, 0.14, 0.42),
             # petite icône au-dessus du téléphone
-            element(icone(a["picto_grand"], 0.11 * l), x_tel - 0.08, y_tel - demi_hauteur / h - 0.02, f),
-        ]
+            (a["picto_grand"], 0.11, x_tel - 0.08, y_tel - demi_hauteur / h - 0.02),
+        ],
+    )
+    elements = element(telephone(a["tel_incline"], haut_tel, f, angle), x_tel, y_tel, f) + "".join(
+        element(icone(type_, taille * l), x, y, f) for (type_, taille, x, y) in pictos
     )
 
-    # Photo de fond du visuel 1 (cpp/assets/photos/fond-accueil.*), cadrée pour que le camion
+    # Photo de fond. Par défaut cpp/assets/photos/fond-accueil.*, cadrée pour que le camion
     # (cabine vers 72 % de la largeur de la photo) tombe à gauche du visuel, à l'écart du téléphone.
     style_photo = ""
-    photos = sorted((CPP / "assets" / "photos").glob("fond-accueil.*"))
+    if "photo" in sc:
+        photos = [CPP / "assets" / "photos" / sc["photo"]]
+        cible_photo, cible_visuel = sc.get("cadrage", (0.5, 0.5))
+    else:
+        photos = sorted((CPP / "assets" / "photos").glob("fond-accueil.*"))
+        cible_photo, cible_visuel = 0.72, 0.35
     if photos:
         from PIL import Image
 
         largeur_ph, hauteur_ph = Image.open(photos[0]).size
         affichee = h * largeur_ph / hauteur_ph
-        decalage = 0.72 * affichee - 0.35 * l
-        style_photo = (
-            f"background: linear-gradient(180deg, rgba(6,24,102,.75) 0%, rgba(6,24,102,.25) 22%, rgba(6,24,102,0) 38%),"
-            f" url('../../assets/photos/{photos[0].name}') {-decalage:.0f}px 0 / auto 100% no-repeat;"
-        )
+        decalage = min(max(cible_photo * affichee - cible_visuel * l, 0), affichee - l)
+        voile = sc.get("voile", True)
+        degrade = "linear-gradient(180deg, rgba(6,24,102,.75) 0%, rgba(6,24,102,.25) 22%, rgba(6,24,102,0) 38%)," if voile else ""
+        style_photo = f"background: {degrade} url('../../assets/photos/{photos[0].name}') {-decalage:.0f}px 0 / auto 100% no-repeat;"
 
+    sx, sy = sc.get("soleil", (0.68, 0.315))
+    logo = (
+        f'<img class="logo" src="../../assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" style="width:{0.5 * l:.0f}px;left:{0.09 * l:.0f}px;top:{0.065 * h:.0f}px">'
+        if sc.get("logo", True)
+        else ""
+    )
     fond = (
         f'<div class="fond-accueil" style="width:{l}px;height:{h}px;{style_photo}">'
-        f'<img class="logo" src="../../assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" style="width:{0.5 * l:.0f}px;left:{0.09 * l:.0f}px;top:{0.065 * h:.0f}px">'
-        f'<div class="ligne" style="top:{0.315 * h:.0f}px"></div>'
-        f'<div class="soleil" style="left:{0.68 * l:.0f}px;top:{0.315 * h:.0f}px;width:{0.5 * l:.0f}px;height:{0.5 * l:.0f}px"><i></i></div>'
-        f'<div class="accroche" style="left:{0.68 * l:.0f}px;top:{0.315 * h:.0f}px;width:{0.46 * l:.0f}px;font-size:{11.5 * k:.1f}px">{a["accroche"]}</div>'
+        f"{logo}"
+        f'<div class="ligne" style="top:{sy * h:.0f}px"></div>'
+        f'<div class="soleil" style="left:{sx * l:.0f}px;top:{sy * h:.0f}px;width:{0.5 * l:.0f}px;height:{0.5 * l:.0f}px"><i></i></div>'
+        f'<div class="accroche" style="left:{sx * l:.0f}px;top:{sy * h:.0f}px;width:{0.46 * l:.0f}px;font-size:{11.5 * k:.1f}px">{a["accroche"]}</div>'
         "</div>"
     )
     pano = f'<div class="pano" style="width:{n * l}px;height:{h}px">{decor}{fond}{elements}</div>'

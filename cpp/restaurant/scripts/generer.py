@@ -19,6 +19,18 @@ ACCUEIL = {
     "tel_bas": "itineraire.png",
     "picto_grand": "resto", "picto_moyen": "resto", "picto_petit1": "carburant", "picto_petit2": "douche",
     "picto_v2_1": "resto", "picto_v2_2": "resto",
+    # Scène propre au restaurant : conducteur et camion devant un restaurant routier.
+    # Le logo est déjà dans la photo ; le picto officiel est posé au-dessus du restaurant.
+    "scene": {
+        "photo": "accueil-restaurant.jpg",
+        "cadrage": (0.5, 0.5),
+        "logo": False,
+        "voile": False,
+        "soleil": (0.68, 0.19),
+        "pictos": [("resto", 0.2, 0.84, 0.40)],
+        "tel_haut": 0.42,
+        "tel_angle": 12,
+    },
 }
 
 VOLETS = [
