@@ -13,13 +13,13 @@ body { background: #e6e6ea; font-family: "Texte", sans-serif; font-style: italic
 /* ---------- Pistes de fond ---------- */
 .noir  { --fond: radial-gradient(90% 55% at 80% 80%, #26262e 0%, transparent 70%), #0a0a0c;
          --titre: #fff; --sous: #c9c9d1; --boite: #fff; --boite-txt: #111; --rond: #FFFF1A; --ligne: rgba(255,255,255,.9);
-         --tag: #FFFF1A; --tag-txt: #111; --cta: #FFFF1A; --cta-txt: #111; --chip: #fff; --chip-txt: #111; --barre: #8a8a92; }
+         --tag: #FFFF1A; --tag-txt: #111; --cta: #FFFF1A; --cta-txt: #111; --chip: #fff; --chip-txt: #111; --barre: #8a8a92; --date: #FFFF1A; --date-txt: #111; }
 .blanc { --fond: radial-gradient(90% 55% at 80% 80%, #eef2f9 0%, transparent 70%), #fff;
          --titre: #111; --sous: #53565A; --boite: #111; --boite-txt: #fff; --rond: #FFFF1A; --ligne: #111;
-         --tag: #061866; --tag-txt: #fff; --cta: #061866; --cta-txt: #fff; --chip: #061866; --chip-txt: #fff; --barre: #8a8a92; }
+         --tag: #061866; --tag-txt: #fff; --cta: #061866; --cta-txt: #fff; --chip: #061866; --chip-txt: #fff; --barre: #8a8a92; --date: #061866; --date-txt: #fff; }
 .bleu  { --fond: radial-gradient(90% 55% at 80% 80%, #1a2a7a 0%, transparent 70%), #061866;
          --titre: #fff; --sous: #BFD3F2; --boite: #fff; --boite-txt: #061866; --rond: #FFFF1A; --ligne: rgba(255,255,255,.9);
-         --tag: #FFFF1A; --tag-txt: #061866; --cta: #FFFF1A; --cta-txt: #061866; --chip: #fff; --chip-txt: #061866; --barre: #9a9ab0; }
+         --tag: #FFFF1A; --tag-txt: #061866; --cta: #FFFF1A; --cta-txt: #061866; --chip: #fff; --chip-txt: #061866; --barre: #9a9ab0; --date: #FFFF1A; --date-txt: #061866; }
 
 /* ---------- Planche ---------- */
 .planche h1 { font: 900 italic 30px "Titre"; color: #061866; text-transform: uppercase; }
@@ -44,6 +44,12 @@ figcaption { font-size: 12px; color: #53565A; }
 .boite { position: relative; z-index: 2; background: var(--boite); color: var(--boite-txt); border-radius: .8em;
   font: 900 italic 4.2em/1.02 "Titre"; text-transform: uppercase; text-align: center; padding: .28em .5em .3em; box-shadow: 0 .15em .5em rgba(0,0,0,.18); }
 .boite span { display: block; }
+/* Bandeau date, à cheval sur le bas du cartouche */
+.date { position: absolute; z-index: 3; left: 50%; bottom: -1.5em; transform: translateX(-50%) rotate(-3deg);
+  background: var(--date); color: var(--date-txt); border-radius: .5em; white-space: nowrap;
+  font: 900 italic 2.1em/1 "Titre"; text-transform: uppercase; padding: .45em .7em .4em; box-shadow: 0 .2em .6em rgba(0,0,0,.3); }
+.date b { font-weight: 900; }
+.date small { font-size: .62em; margin: 0 .25em; vertical-align: .12em; }
 
 .sous { font: italic 600 1.45em/1.35 "Texte"; color: var(--sous); }
 .tag { position: relative; display: inline-flex; background: var(--tag); color: var(--tag-txt);
@@ -62,18 +68,21 @@ figcaption { font-size: 12px; color: #53565A; }
 /* Story 9:16 */
 .story { padding: 2.6em; }
 .story .titre { margin-top: 3.4em; }
-.story .ligne-prix { display: flex; align-items: center; gap: 1em; margin-top: 3em; position: relative; z-index: 2; }
+.story .date { font-size: 2.5em; bottom: -1.6em; }
+.story .ligne-prix { display: flex; align-items: center; gap: 1em; margin-top: 6.6em; position: relative; z-index: 2; }
 .story .tag { font-size: 4.2em; flex: none; }
-.story .tel { width: 22em; left: 50%; margin-left: -11em; top: 32em; }
+.story .tel { width: 22em; left: 50%; margin-left: -11em; top: 34.5em; }
 .story .cta { position: absolute; z-index: 3; left: 2.6em; right: 2.6em; bottom: 2.6em; }
 
 /* Post 4:5 */
 .post { padding: 2.4em; }
 .post .titre { margin-top: 1.8em; justify-content: flex-start; }
 .post .boite { font-size: 3.4em; }
+.post .titre { width: 21.4em; }
+.post .date { font-size: 1.6em; }
 .post .titre .rond { width: 10em; height: 10em; margin-top: -6.4em; right: 1.4em; }
 .post .titre .cercle { width: 12.6em; height: 12.6em; margin-top: -6.1em; right: -.2em; }
-.post .gauche { position: relative; z-index: 2; width: 18em; margin-top: 2.2em; display: flex; flex-direction: column; gap: 1.3em; }
+.post .gauche { position: relative; z-index: 2; width: 18em; margin-top: 3.2em; display: flex; flex-direction: column; gap: 1.3em; }
 .post .tag { font-size: 4.4em; align-self: flex-start; }
 .post .sous { font-size: 1.3em; }
 .post .prix .n { font-size: 2.6em; }
@@ -92,10 +101,11 @@ const PISTES = [
   ["bleu", "Fond Michelin Blue", "Cartouche blanc, titre bleu : le plus proche du flyer.", "clair"],
 ];
 const titre = `<div class="titre"><div class="ligne"></div><div class="cercle"></div><div class="rond"></div>
-  <div class="boite"><span>Black</span><span>Friday</span></div></div>`;
+  <div class="boite"><span>Black</span><span>Friday</span></div>
+  <div class="date"><small>du</small>27/11<small>au</small>04/12</div></div>`;
 const prix = `<div class="prix"><span class="n">37,99 €<em>/an</em></span><span class="barre">au lieu de 74,99 €</span></div>`;
 const tag = `<div class="tag"><i></i>-50<small>%</small></div>`;
-const haut = logo => `<div class="haut"><img class="logo" src="${LOGOS[logo]}" alt=""><span class="chip">27/11 → 04/12</span></div>`;
+const haut = logo => `<div class="haut"><img class="logo" src="${LOGOS[logo]}" alt=""></div>`;
 const story = (p, logo) => `<div class="kv story ${p}" id="story-${p}" style="--w:360px;--h:640px;--u:10px">
   ${haut(logo)}${titre}
   <div class="ligne-prix">${tag}${prix}</div>
@@ -115,7 +125,7 @@ if (solo) {
   el.innerHTML = type === "story" ? story(p, logo) : post(p, logo);
 } else {
   el.innerHTML = `<h1>Black Friday 2026 · Ancienne charte</h1>
-    <p>Exception Black Friday : titres en capitales grasses italiques (police MICHELIN, remplacée ici par Archivo en attendant le fichier), texte en italique, cartouche arrondi, rond jaune et ligne fine comme sur le flyer. Aucun gros texte en jaune.</p>` +
+    <p>Exception Black Friday : titres en capitales grasses italiques (police MICHELIN, remplacée ici par Archivo en attendant le fichier), texte en italique, cartouche arrondi, rond jaune et ligne fine comme sur le flyer. Aucun gros texte en jaune. La date est en bandeau sous le titre.</p>` +
     PISTES.map(([p, nom, desc, logo]) => `<div class="rangee"><h2>${nom}<small>${desc}</small></h2>
       <figure>${story(p, logo)}<figcaption>Story 1080 × 1920</figcaption></figure>
       <figure>${post(p, logo)}<figcaption>Post 1080 × 1350</figcaption></figure></div>`).join("");
