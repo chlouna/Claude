@@ -26,7 +26,7 @@ Pour savoir d'où vient chaque réponse, ouvrir le lien avec les paramètres `?u
 |---|---|---|---|
 | A | Pleine page : les deux anges gardiens au bord de l'autoroute, fourgon de patrouille | Ils veillent sur toi, on t'offre 2 mois de GPS | Je participe au quiz |
 | B | Visuel + feuille blanche, étiquette « 2 mois » | Cette année, le Père Noël porte un gilet jaune | Répondre au quiz |
-| C | Un cadeau avant l'heure : sapin décoré d'anges en gilet jaune (un en haut du sapin), GPS emballé sous le sapin avec l'étiquette « 2 mois » | Sous le sapin, 2 mois de GPS offerts | Je déballe mon cadeau |
+| C | Un cadeau avant l'heure : sapin décoré d'anges en gilet jaune (un en haut du sapin), gros cadeau blanc et rouge sous le sapin avec l'étiquette « 2 mois de GPS offerts » | Sous le sapin, 2 mois de GPS offerts | Je déballe mon cadeau |
 
 ## Quiz (2 questions)
 
