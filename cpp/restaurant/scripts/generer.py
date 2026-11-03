@@ -26,10 +26,13 @@ ACCUEIL = {
         "cadrage": (0.5, 0.5),
         "logo": False,
         "voile": False,
-        "soleil": (0.68, 0.19),
-        "pictos": [("resto", 0.2, 0.84, 0.40)],
-        "tel_haut": 0.42,
-        "tel_angle": 12,
+        "soleil": (0.72, 0.873),
+        "soleil_l": 0.4,
+        "pictos": [("resto", 0.25, 0.745, 0.205)],
+        "tel_haut": 0.32,
+        "tel_angle": -9,
+        "tel_x": 0.245,
+        "tel_y": 0.785,
     },
 }
 

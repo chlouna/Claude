@@ -163,7 +163,7 @@ def page(titre_page, accueil, volets, fmt):
         f'<div class="fond-accueil" style="width:{l}px;height:{h}px;{style_photo}">'
         f"{logo}"
         f'<div class="ligne" style="top:{sy * h:.0f}px"></div>'
-        f'<div class="soleil" style="left:{sx * l:.0f}px;top:{sy * h:.0f}px;width:{0.5 * l:.0f}px;height:{0.5 * l:.0f}px"><i></i></div>'
+        f'<div class="soleil" style="left:{sx * l:.0f}px;top:{sy * h:.0f}px;width:{sc.get("soleil_l", 0.5) * l:.0f}px;height:{sc.get("soleil_l", 0.5) * l:.0f}px"><i></i></div>'
         f'<div class="accroche" style="left:{sx * l:.0f}px;top:{sy * h:.0f}px;width:{0.46 * l:.0f}px;font-size:{11.5 * k:.1f}px">{a["accroche"]}</div>'
         "</div>"
     )
