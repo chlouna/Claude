@@ -80,6 +80,7 @@ figcaption { font-size: 12px; color: #53565A; }
 .post .boite { font-size: 3.4em; }
 .post .titre { width: 21.4em; }
 .post .date { font-size: 1.6em; }
+.post .titre .ligne { right: -14em; }
 .post .titre .rond { width: 10em; height: 10em; margin-top: -6.4em; right: 1.4em; }
 .post .titre .cercle { width: 12.6em; height: 12.6em; margin-top: -6.1em; right: -.2em; }
 .post .gauche { position: relative; z-index: 2; width: 18em; margin-top: 3.2em; display: flex; flex-direction: column; gap: 1.3em; }
@@ -100,7 +101,7 @@ const PISTES = [
   ["blanc", "Fond blanc", "Cartouche noir, accents Michelin Blue.", "fonce"],
   ["bleu", "Fond Michelin Blue", "Cartouche blanc, titre bleu : le plus proche du flyer.", "clair"],
 ];
-const titre = `<div class="titre"><div class="ligne"></div><div class="cercle"></div><div class="rond"></div>
+const titre = `<div class="titre"><div class="ligne"></div>
   <div class="boite"><span>Black</span><span>Friday</span></div>
   <div class="date"><small>du</small>27/11<small>au</small>04/12</div></div>`;
 const prix = `<div class="prix"><span class="n">37,99 €<em>/an</em></span><span class="barre">au lieu de 74,99 €</span></div>`;
@@ -125,7 +126,7 @@ if (solo) {
   el.innerHTML = type === "story" ? story(p, logo) : post(p, logo);
 } else {
   el.innerHTML = `<h1>Black Friday 2026 · Ancienne charte</h1>
-    <p>Exception Black Friday : titres en capitales grasses italiques (police MICHELIN, remplacée ici par Archivo en attendant le fichier), texte en italique, cartouche arrondi, rond jaune et ligne fine comme sur le flyer. Aucun gros texte en jaune. La date est en bandeau sous le titre.</p>` +
+    <p>Exception Black Friday : titres en capitales grasses italiques (police MICHELIN, remplacée ici par Archivo en attendant le fichier), texte en italique, cartouche arrondi et ligne fine comme sur le flyer. Aucun gros texte en jaune. La date est en bandeau sous le titre.</p>` +
     PISTES.map(([p, nom, desc, logo]) => `<div class="rangee"><h2>${nom}<small>${desc}</small></h2>
       <figure>${story(p, logo)}<figcaption>Story 1080 × 1920</figcaption></figure>
       <figure>${post(p, logo)}<figcaption>Post 1080 × 1350</figcaption></figure></div>`).join("");

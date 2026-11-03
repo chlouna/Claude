@@ -21,7 +21,7 @@ Charte : pas de gros texte en jaune. Le jaune est réservé aux petits textes (p
 Exception Black Friday : ancienne charte, comme sur le flyer « Le poids lourd des GPS ».
 
 - `fonds.html` : story et post 4:5 avec le téléphone GPS (`assets/telephone-gps.png`), sur 3 fonds : noir, blanc, Michelin Blue. Fond jaune interdit.
-- Titres en capitales grasses italiques, dans un cartouche arrondi, avec un rond jaune et une ligne fine. Texte en italique.
+- Titres en capitales grasses italiques, dans un cartouche arrondi, avec une ligne fine (sans rond jaune). Texte en italique.
 - La date est mise en avant dans un bandeau « DU 27/11 AU 04/12 » à cheval sous le cartouche (jaune sur fond noir et bleu, bleu sur fond blanc).
 - Polices : la police MICHELIN n'est pas dans le repo. Elle est remplacée par Archivo Expanded Black Italic (titres) et Open Sans Italic (texte), sous licence libre OFL, dans `assets/fonts/`. Pour passer à la vraie police, déposer le fichier dans `assets/fonts/` et changer l'URL du `@font-face "Titre"` en haut de `fonds.html`.
 - `png/planche-fonds.png` : aperçu ; `png/fonds/` : un PNG par visuel (story 1080 × 1920, post 1080 × 1350).
