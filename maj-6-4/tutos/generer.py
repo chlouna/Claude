@@ -15,6 +15,8 @@ from pathlib import Path
 
 from PIL import Image
 
+from traduction_ecrans import calques, CSS as CSS_TRAD
+
 ICI = Path(__file__).resolve().parent
 
 # Chaque vidéo : durée et scènes. Une scène : (début, fin, fond, numéro, titre, sous-titre, image, actions).
@@ -118,7 +120,7 @@ def actions_html(actions):
     return html
 
 
-def scene_html(debut, fin, fond, num, titre, sous, image, actions, derniere, cta_texte=None):
+def scene_html(debut, fin, fond, num, titre, sous, image, actions, derniere, cta_texte=None, lang="fr"):
     # Chaque scène apparaît par-dessus la précédente (pas de fondu sortant, qui laisserait voir le fond).
     style = anim(("apparait", 0.25, debut)) if debut else "opacity: 1;"
     pastille = f'<span class="pastille" style="{anim(("pop", 0.4, debut + 0.1))}">{num}</span>' if num else ""
@@ -134,7 +136,7 @@ def scene_html(debut, fin, fond, num, titre, sous, image, actions, derniere, cta
         l, h = Image.open(ICI / "assets" / image).size
         tel = f"""<div class="tel" style="aspect-ratio: {l} / {h}; {anim(("monte", 0.6, debut + 0.15))}">
         <div class="tel-zoom" style="transform-origin:{origine}; {z_style}">
-          <img src="assets/{image}" alt="" />{actions_html(actions)}
+          <img src="assets/{image}" alt="" />{calques(image, lang)}{actions_html(actions)}
         </div>
       </div>"""
     sans_tel = "" if image else " seul"
@@ -234,14 +236,14 @@ def page(nom, video, fmt, cta_texte=None, lang="fr"):
     scenes = video["scenes"]
     if cta_texte is None and fmt == "9x16":
         cta_texte = "Télécharge Michelin Truckfly"  # Instagram : fin sur le bouton de téléchargement
-    corps = "".join(scene_html(*s, derniere=(i == len(scenes) - 1), cta_texte=cta_texte) for i, s in enumerate(scenes))
+    corps = "".join(scene_html(*s, derniere=(i == len(scenes) - 1), cta_texte=cta_texte, lang=lang) for i, s in enumerate(scenes))
     duree = video["duree"] + (1 if fmt == "9x16" else 0)  # 1 s de plus pour lire le bouton
     return f"""<!doctype html>
 <html lang="{lang}">
 <head>
 <meta charset="UTF-8" />
 <title>Tutoriel {nom} ({fmt})</title>
-<style>{CSS_COMMUN}{f["css"]}{CSS_SEUL}</style>
+<style>{CSS_COMMUN}{f["css"]}{CSS_SEUL}{CSS_TRAD}</style>
 </head>
 <body data-duree="{duree}" data-w="{f["w"]}" data-h="{f["h"]}">
 <main class="video">
