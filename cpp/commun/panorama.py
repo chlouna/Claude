@@ -166,6 +166,14 @@ def page(titre_page, accueil, volets, fmt):
             f'<div class="decale" style="left:{-i * l}px">{pano}</div>{contenu}</section>'
         )
 
+    # Visuel de fin : Bibendum et logo (cpp/assets/fin-bibendum.png), calé en bas,
+    # sur le même bleu que l'image pour le format Google Play, plus court.
+    if (CPP / "assets" / "fin-bibendum.png").exists():
+        shots.append(
+            f'<section class="shot" id="{n + 1:02d}-fin" style="width:{l}px;height:{h}px;'
+            f'background:#0C155D url(\'../../assets/fin-bibendum.png\') center bottom / 100% auto no-repeat"></section>'
+        )
+
     css = f"""
 @font-face {{ font-family: "Bib"; src: url("../../assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }}
 @font-face {{ font-family: "Inter"; src: url("../../assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }}
@@ -197,4 +205,4 @@ p {{ font-family: "Inter"; font-weight: 700; font-size: {f["st"]}px; line-height
 def ecrire(racine, titre_page, accueil, volets):
     for fmt in FORMATS:
         (racine / "scripts" / f"index-{fmt}.html").write_text(page(titre_page, accueil, volets, fmt))
-    print(f"scripts/index-*.html écrits : {1 + len(volets)} visuels × 2 formats")
+    print(f"scripts/index-*.html écrits : {1 + len(volets) + 1} visuels × 2 formats (dont le visuel de fin)")
