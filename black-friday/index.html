@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Black Friday 2026 – Planche</title>
+<style>
+@font-face { font-family: "Bib"; src: url("../interstitiels/assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Bib"; src: url("../interstitiels/assets/fonts/BIB-Light.woff2") format("woff2"); font-weight: 300; }
+@font-face { font-family: "Inter"; src: url("../interstitiels/assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../interstitiels/assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("../interstitiels/assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+:root {
+  --bleu: #061866;
+  --bleu-nuit: #000e38;
+  --bleu-clair: #BFD3F2;
+  --jaune: #FFFF1A;
+  --blanc: #FFFFFF;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #eef2f9; font-family: "Inter", sans-serif; color: #111; padding: 48px; }
+
+/* ---------- Planche ---------- */
+.planche h1 { font-family: "Bib"; font-size: 34px; color: var(--bleu); }
+.planche > p { margin: 6px 0 36px; color: #53565A; font-size: 15px; }
+.rangee { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 52px; }
+.rangee h2 { width: 100%; font-family: "Bib"; font-size: 20px; color: var(--bleu); margin-bottom: -16px; }
+figure { display: flex; flex-direction: column; gap: 10px; }
+figcaption { font-size: 13px; color: #53565A; }
+figcaption b { color: #111; }
+
+/* ---------- Visuel ---------- */
+.kv {
+  position: relative; overflow: hidden; color: var(--blanc);
+  background:
+    radial-gradient(120% 70% at 85% 10%, #1a2a7a 0%, transparent 60%),
+    var(--bleu);
+  font-size: var(--u);
+}
+.kv.nuit { background: radial-gradient(120% 70% at 85% 10%, #0a1a6b 0%, transparent 60%), var(--bleu-nuit); }
+/* Bandes de signalisation en fond (rappel route / chantier) */
+.kv::before {
+  content: ""; position: absolute; inset: auto -10% -2em -10%; height: 9em;
+  background: repeating-linear-gradient(-45deg, rgba(255,255,26,.10) 0 1.6em, transparent 1.6em 3.2em);
+  transform: skewY(-6deg); pointer-events: none;
+}
+.logo { height: 2.4em; display: block; }
+.chip {
+  display: inline-flex; align-items: center; gap: .5em;
+  font: 700 1.25em/1 "Inter"; color: var(--bleu); background: var(--jaune);
+  padding: .55em .9em; border-radius: 99em; white-space: nowrap;
+}
+.chip.contour { background: transparent; color: var(--jaune); box-shadow: inset 0 0 0 .12em var(--jaune); }
+.bf { font-family: "Bib"; font-weight: 700; line-height: .86; letter-spacing: -.01em; text-transform: uppercase; }
+.bf span { display: block; }
+.bf .f { color: var(--jaune); }
+.sous { font: 600 1.6em/1.25 "Inter"; color: var(--bleu-clair); }
+.sous b { color: var(--blanc); }
+
+/* L'étiquette (élément signature) */
+.tag {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  background: var(--jaune); color: var(--bleu);
+  font-family: "Bib"; font-weight: 700; line-height: 1; white-space: nowrap;
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 16% 100%, 0 50%);
+  padding: .14em .3em .1em .62em;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 .06em 0 rgba(0,0,0,.25));
+}
+.tag::before {
+  content: ""; position: absolute; left: .2em; top: 50%; width: .14em; height: .14em;
+  margin-top: -.07em; border-radius: 50%; background: var(--bleu);
+}
+.tag small { font-size: .42em; margin-left: .06em; align-self: flex-start; margin-top: .22em; }
+.tag.mystere { background: transparent; color: var(--jaune); box-shadow: none;
+  clip-path: none; border: .05em dashed var(--jaune); border-radius: .08em .08em .08em .08em; }
+.tag.mystere::before { background: var(--jaune); }
+
+.prix { display: flex; align-items: baseline; gap: .5em; flex-wrap: wrap; }
+.prix .n { font: 700 4.4em/1 "Bib"; }
+.prix .n i { font-style: normal; font-size: .45em; font-family: "Inter"; font-weight: 600; margin-left: .15em; }
+.prix .barre { font: 600 1.6em/1 "Inter"; color: var(--bleu-clair); text-decoration: line-through; text-decoration-thickness: .1em; }
+.cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  font: 700 1.6em/1 "Inter"; background: var(--jaune); color: var(--bleu);
+  padding: .9em 1.6em; border-radius: 99em; white-space: nowrap;
+}
+.legal { font: 400 .95em/1.35 "Inter"; color: rgba(191,211,242,.8); }
+
+/* Formats verticaux : 1em = largeur / 36 */
+.v { width: var(--w); height: var(--h); display: flex; flex-direction: column; padding: 2.6em 2.6em 3em; }
+.v .haut { display: flex; justify-content: space-between; align-items: center; }
+.v .milieu { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 1.8em; }
+.v .bf { font-size: 7.4em; }
+.v .tag { font-size: 8.2em; align-self: flex-start; margin: .05em 0 0 -.05em; }
+.v .bas { display: flex; flex-direction: column; gap: 1.4em; }
+.v .bas .cta { align-self: stretch; }
+
+/* Formats horizontaux */
+.h { width: var(--w); height: var(--h); display: flex; align-items: center; gap: 2.4em; padding: 0 3em; }
+.h::before { inset: -20% auto -20% 52%; width: 60%; height: auto; transform: none; }
+.h .titre { display: flex; flex-direction: column; gap: .8em; }
+.h .bf { font-size: 6.2em; }
+.h .bf span { display: inline; }
+.h .bf span + span { margin-left: .22em; }
+.h .tag { font-size: 9em; flex: none; }
+.h .prix .n { font-size: 5.4em; }
+.h .prix .barre { font-size: 2em; }
+.h .cta { font-size: 2.4em; }
+.h.grand .bf { font-size: 8.4em; }
+.h.grand .bf span { display: block; }
+.h.grand .bf span + span { margin-left: 0; }
+.h .prix { flex-wrap: nowrap; white-space: nowrap; }
+.h .titre { min-width: 0; }
+.h.grand .tag { font-size: 10em; }
+.h.grand .titre { flex: none; }
+.h.grand .sous { max-width: 15em; }
+.h.grand { gap: 3.2em; padding: 0 5em; }
+.h.petit .cta { font-size: 4em; padding: .7em 1.2em; }
+.h.petit .prix .n { font-size: 7em; }
+.h.petit .prix .barre { font-size: 3em; }
+.h.petit .bf { font-size: 6.2em; }
+.h.petit .titre { flex: none; }
+.h.petit { gap: 1.8em; padding: 0 2.4em; }
+.v .bf.long { font-size: 6.6em; }
+.v.compact .bf.long { font-size: 5.6em; }
+.h.grand .sous { font-size: 2.2em; }
+.h.grand .prix .n { font-size: 6.4em; }
+/* Format compact (post 4:5) */
+.v.compact { padding: 2.2em 2.4em 2.6em; }
+.v.compact .milieu { gap: 1.2em; }
+.v.compact .bf { font-size: 6.2em; }
+.v.compact .tag { font-size: 6.6em; }
+.v.compact .sous { display: none; }
+.v.compact .bas { gap: 1em; }
+.v.compact .prix .n { font-size: 3.8em; }
+.v.compact .cta { padding: .75em 1.4em; }
+.h .droite { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 1.2em; }
+</style>
+</head>
+<body>
+<div class="planche" id="planche"></div>
+
+<script>
+const LOGO = "../ma-video/assets/logos/truckfly-blanc-rogne.png";
+
+// Textes par phase de campagne
+const PHASES = {
+  teasing: {
+    chip: `<span class="chip contour">Rendez-vous le 27/11</span>`,
+    bf: `<span>Black</span><span class="f">Friday</span>`,
+    tag: `<div class="tag mystere">-??<small>%</small></div>`,
+    sous: `Un prix comme on n'en a jamais vu sur <b>le GPS Premium</b>. Restez branchés.`,
+    prix: ``,
+    cta: `Activer les notifications`,
+    legal: `Offre réservée à l'abonnement annuel, du 27/11 au 04/12/2026.`,
+    nuit: true,
+  },
+  offre: {
+    chip: `<span class="chip">27/11 → 04/12</span>`,
+    bf: `<span>Black</span><span class="f">Friday</span>`,
+    tag: `<div class="tag">-50<small>%</small></div>`,
+    sous: `<b>Le GPS Premium</b> à moitié prix, pour toute l'année.`,
+    prix: `<div class="prix"><span class="n">37,99 €<i>/an</i></span><span class="barre">74,99 €</span></div>`,
+    cta: `J'en profite`,
+    legal: `Offre valable du 27/11 au 04/12/2026 sur l'abonnement annuel, la première année.`,
+  },
+  derniere: {
+    chip: `<span class="chip">Plus que 48 h</span>`,
+    bf: `<span>Derniers</span><span class="f">jours</span>`,
+    tag: `<div class="tag">-50<small>%</small></div>`,
+    sous: `Le Black Friday s'arrête le <b>4 décembre à minuit</b>.`,
+    prix: `<div class="prix"><span class="n">37,99 €<i>/an</i></span><span class="barre">74,99 €</span></div>`,
+    long: true,
+    cta: `J'en profite`,
+    legal: `Offre valable jusqu'au 04/12/2026 à 23 h 59 sur l'abonnement annuel.`,
+  },
+};
+
+function vertical(id, w, h, p, opts = {}) {
+  const t = PHASES[p];
+  return `<div class="kv v ${t.nuit ? "nuit" : ""} ${opts.compact ? "compact" : ""}" id="${id}" style="--w:${w}px;--h:${h}px;--u:${w / 36}px">
+    <div class="haut"><img class="logo" src="${LOGO}" alt="Michelin Truckfly">${t.chip}</div>
+    <div class="milieu">
+      <div class="bf ${t.long ? "long" : ""}">${t.bf}</div>
+      ${t.tag}
+      <p class="sous">${t.sous}</p>
+    </div>
+    <div class="bas">${t.prix}<span class="cta">${t.cta}</span>${opts.legal === false ? "" : `<p class="legal">${t.legal}</p>`}</div>
+  </div>`;
+}
+
+function horizontal(id, w, h, p, u, opts = {}) {
+  const t = PHASES[p];
+  return `<div class="kv h ${t.nuit ? "nuit" : ""} ${opts.grand ? "grand" : ""} ${opts.petit ? "petit" : ""}" id="${id}" style="--w:${w}px;--h:${h}px;--u:${u}px">
+    ${opts.logo ? `<img class="logo" src="${LOGO}" alt="Michelin Truckfly" style="height:${opts.logo}em">` : ""}
+    ${t.tag}
+    <div class="titre"><div class="bf">${t.bf}</div>${opts.sous === false ? "" : `<p class="sous">${t.sous}</p>`}</div>
+    <div class="droite">${opts.prix === false ? "" : t.prix}${opts.cta === false ? "" : `<span class="cta">${t.cta}</span>`}</div>
+  </div>`;
+}
+
+// [id, rendu, échelle d'export, légende]
+const FORMATS = [
+  ["interstitiel", vertical("interstitiel", 390, 844, "offre"), 3, "<b>Interstitiel app</b> · 1170 × 2532"],
+  ["story", vertical("story", 360, 640, "offre"), 3, "<b>Story / Reel</b> · 1080 × 1920"],
+  ["post", vertical("post", 360, 450, "offre", { legal: false, compact: true }), 3, "<b>Post 4:5</b> · 1080 × 1350"],
+  ["web-hero", horizontal("web-hero", 1200, 400, "offre", 10, { grand: true }), 2, "<b>Bannière web</b> · 2400 × 800"],
+  ["banniere-app", horizontal("banniere-app", 360, 112, "offre", 2.9, { sous: false, prix: false, petit: true }), 3, "<b>Bannière in-app</b> · 1080 × 336"],
+  ["leaderboard", horizontal("leaderboard", 728, 90, "offre", 2.6, { sous: false, petit: true }), 2, "<b>Bannière web 728 × 90</b> · 1456 × 180"],
+  ["post-teasing", vertical("post-teasing", 360, 450, "teasing", { legal: false, compact: true }), 3, "<b>1 · Teasing</b> · 20 → 26/11"],
+  ["post-offre", vertical("post-offre", 360, 450, "offre", { legal: false, compact: true }), 3, "<b>2 · Lancement</b> · 27/11 → 02/12"],
+  ["post-derniere", vertical("post-derniere", 360, 450, "derniere", { legal: false, compact: true }), 3, "<b>3 · Dernière chance</b> · 03 → 04/12"],
+];
+
+const solo = new URLSearchParams(location.search).get("solo");
+const el = document.getElementById("planche");
+if (solo) {
+  document.body.style.padding = "0";
+  const f = FORMATS.find(x => x[0] === solo);
+  el.innerHTML = f[1];
+} else {
+  const fig = f => `<figure>${f[1]}<figcaption>${f[3]}</figcaption></figure>`;
+  const by = ids => FORMATS.filter(f => ids.includes(f[0])).map(fig).join("");
+  el.innerHTML = `
+    <h1>Black Friday 2026 · GPS Premium -50 %</h1>
+    <p>Visuel de base : fond Michelin Blue, étiquette jaune « -50 % » inclinée, titre en Bib. Une seule mécanique, déclinée par format et par phase.</p>
+    <div class="rangee"><h2>Déclinaisons formats</h2>${by(["interstitiel", "story", "post"])}</div>
+    <div class="rangee">${by(["web-hero"])}</div>
+    <div class="rangee">${by(["banniere-app", "leaderboard"])}</div>
+    <div class="rangee"><h2>Les 3 temps de la campagne</h2>${by(["post-teasing", "post-offre", "post-derniere"])}</div>`;
+}
+window.FORMATS = FORMATS.map(f => [f[0], f[2]]);
+</script>
+</body>
+</html>
