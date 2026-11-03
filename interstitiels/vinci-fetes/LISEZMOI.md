@@ -8,7 +8,7 @@
 ## Parcours
 
 1. L'interstitiel s'affiche dans l'app (CTA « Je participe au quiz »).
-2. Au clic, le conducteur arrive sur une autre page, le formulaire Tally : 2 questions sécurité, puis email + téléphone + consentement.
+2. Au clic, le conducteur arrive sur une autre page, le formulaire Tally : 3 questions sécurité, puis email + téléphone + consentement.
 3. On récupère les emails et téléphones pour activer les 2 mois.
 4. Le formulaire se ferme seul à 1000 réponses (une seule réponse par email).
 
@@ -33,11 +33,11 @@ Pour savoir d'où vient chaque réponse, ouvrir le lien avec les paramètres `?u
 
 - **Accroche** demandée : « Pour leur sécurité et la vôtre, préservez la sécurité de vos anges gardiens pendant les fêtes de fin d'année. »
   Version utilisée (tutoiement de l'app, sans la répétition de « sécurité ») : « Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année. »
-- **Pictogrammes + message** sur chaque interstitiel : « À l'approche d'un véhicule d'intervention : je ralentis, je change de voie. » Les pictos sont redessinés d'après le dépliant ; à remplacer par les fichiers officiels de VINCI s'ils les fournissent.
+- **Pictogrammes + message** sur chaque interstitiel : « À l'approche d'un véhicule d'intervention : je ralentis, je change de voie. » Le schéma (voies, fourgon avec panneau flèche, voiture qui change de voie) est reproduit d'après le dépliant ; à remplacer par le fichier officiel de VINCI s'ils le fournissent.
 - **Amende de 135 €** : question 2 du quiz.
 - **Règles de sécurité sur autoroute** : rappelées sur la page de remerciement du formulaire.
 
-## Quiz (2 questions)
+## Quiz (3 questions)
 
 1. **Un véhicule d'intervention est arrêté sur la bande d'arrêt d'urgence, gyrophares allumés. Que fais-tu ?**
    - Je garde ma voie et ma vitesse
@@ -47,6 +47,14 @@ Pour savoir d'où vient chaque réponse, ouvrir le lien avec les paramètres `?u
    - Rien, c'est une simple recommandation
    - ✅ Une amende de 135 € (depuis septembre 2018, article R412-11-1 du code de la route)
    - Un simple avertissement
+3. **Ton camion tombe en panne sur l'autoroute. Quel est le bon réflexe ?**
+   - Je reste dans ma cabine, ceinture attachée, en attendant les secours
+   - ✅ Feux de détresse, gilet enfilé, je sors et je me mets derrière la glissière
+   - Je pose mon triangle de pré-signalisation derrière le camion
+
+**Le saviez-vous ?** (repris du dépliant)
+- Après la question 1 : 67 % des conducteurs français n'appliquent pas systématiquement la règle du corridor de sécurité (Baromètre de la conduite responsable, Ipsos pour la Fondation VINCI Autoroutes, 2024).
+- Sur la page email : un balisage est une zone d'intervention interdite d'accès ; des aires sont accessibles tous les 15 km environ.
 
 La page de remerciement donne les bonnes réponses et rappelle les règles de sécurité sur autoroute du dépliant : en cas de panne ou d'accident (feux de détresse, bande d'arrêt d'urgence ou refuge, gilet, évacuer, derrière la glissière, borne orange, 112, pas de triangle) et si l'on est témoin d'un accident (rouler jusqu'à la borne d'appel d'urgence).
 

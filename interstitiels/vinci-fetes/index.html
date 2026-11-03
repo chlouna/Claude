@@ -70,7 +70,7 @@ b.fort { color: #000; }
 .scene { width: 100%; flex: 1 1 0; min-height: 0; height: auto; }
 /* Bloc corridor de sécurité (message et pictogrammes VINCI Autoroutes) */
 .corridor { margin-top: 12px; display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 14px; background: rgba(255, 255, 26, 0.1); border: 1.5px solid rgba(255, 255, 26, 0.65); }
-.corridor .picto { width: 56px; height: 56px; flex: none; }
+.corridor .picto { width: 60px; height: 62px; flex: none; }
 .c-titre { font-size: 13px; font-weight: 600; line-height: 1.3; color: #fff; }
 .c-gestes { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 5px; font-size: 13.5px; font-weight: 700; color: var(--jaune); text-transform: uppercase; }
 .c-gestes span { display: flex; align-items: center; gap: 5px; }
@@ -200,16 +200,32 @@ b.fort { color: #000; }
       <rect x="46" y="46" width="68" height="13" rx="6.5" fill="#e20025" stroke="#061866" stroke-width="3.5" />
       <circle cx="122" cy="-8" r="7" fill="#ffff1a" stroke="#061866" stroke-width="3" />
     </g>
+    <!-- Schéma du corridor de sécurité, reproduit d'après le dépliant VINCI Autoroutes -->
     <g id="picto-corridor">
-      <rect width="64" height="64" rx="10" fill="#0b0b0b" />
-      <path d="M8 4 V60 M56 4 V60" stroke="#fff" stroke-width="2.5" />
-      <path d="M24 4 V60 M40 4 V60" stroke="#fff" stroke-width="2" stroke-dasharray="6 5" />
-      <rect x="43" y="7" width="10" height="13" rx="2" fill="#ffff1a" />
-      <path d="M45 12 l3 3 3 -3 M45 16 l3 3 3 -3" fill="none" stroke="#0b0b0b" stroke-width="1.4" />
-      <rect x="43.5" y="45" width="9" height="13" rx="2.5" fill="#fff" />
-      <path d="M48 42 Q48 32 32 29 V14" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" />
-      <path d="M27 18 L32 11 L37 18" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+      <rect width="220" height="225" rx="16" fill="#0b0b0b" />
+      <rect x="11" y="11" width="198" height="203" rx="5" fill="none" stroke="#f5d300" stroke-width="7" />
+      <path d="M44 26 V206 M98 26 V206" stroke="#f5d300" stroke-width="5" stroke-dasharray="22 15" />
+      <path d="M136 104 V212" stroke="#f5d300" stroke-width="5" />
+      <!-- panneau flèche -->
+      <g fill="#f5d300"><rect x="148" y="28" width="6" height="6" /><rect x="148" y="38" width="6" height="6" /><rect x="158" y="28" width="6" height="6" /></g>
+      <path d="M190 30 L162 58 M162 40 V58 H180" fill="none" stroke="#f5d300" stroke-width="7" stroke-linecap="square" />
+      <!-- fourgon d'intervention vu de face -->
+      <rect x="160" y="62" width="20" height="6" rx="2" fill="#ff8a00" />
+      <rect x="150" y="68" width="40" height="36" rx="5" fill="#f5d300" />
+      <rect x="155" y="72" width="30" height="11" rx="2" fill="#0b0b0b" />
+      <g clip-path="url(#bandes)"><rect x="150" y="86" width="40" height="14" fill="#fff" /><path d="M146 100 L160 86 M156 100 L170 86 M166 100 L180 86 M176 100 L190 86 M186 100 L200 86" stroke="#e20025" stroke-width="5" /></g>
+      <rect x="152" y="104" width="7" height="5" fill="#f5d300" /><rect x="181" y="104" width="7" height="5" fill="#f5d300" />
+      <!-- voiture vue de face -->
+      <path d="M104 182 L108 170 Q110 166 115 166 L133 166 Q138 166 140 170 L144 182 Z" fill="#fff" />
+      <rect x="101" y="181" width="46" height="16" rx="4" fill="#fff" />
+      <path d="M111 171 L113 167 L135 167 L137 171 Z" fill="#0b0b0b" />
+      <rect x="104" y="196" width="8" height="7" rx="2" fill="#fff" /><rect x="136" y="196" width="8" height="7" rx="2" fill="#fff" />
+      <circle cx="108" cy="187" r="2.5" fill="#0b0b0b" /><circle cx="140" cy="187" r="2.5" fill="#0b0b0b" />
+      <!-- changement de voie -->
+      <path d="M124 160 Q124 134 98 122 Q70 110 70 84" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" />
+      <path d="M54 92 L70 68 L86 92 Z" fill="#fff" />
     </g>
+    <clipPath id="bandes"><rect x="150" y="86" width="40" height="14" /></clipPath>
     <g id="ico-ralentis"><path d="M3 4 L8 9 L13 4 M3 9 L8 14 L13 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></g>
     <g id="ico-voie"><path d="M11 15 Q11 8 4 6 M2 9 L4 6 L7 4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></g>
     <g id="fourgon">
@@ -264,7 +280,7 @@ b.fort { color: #000; }
     <span class="badge entre" style="--d:.4s">Réservé aux 1000 premiers</span>
     <h1 class="entre" style="--d:.5s">Ils veillent sur toi, on t'offre <span class="jaune-txt">2 mois de GPS</span></h1>
     <p class="texte accroche entre" style="--d:.6s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
-    <div class="corridor"><svg class="picto" viewBox="0 0 64 64" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-ralentis" /></svg>Je ralentis</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-voie" /></svg>Je change de voie</span></p></div></div>
+    <div class="corridor"><svg class="picto" viewBox="0 0 220 225" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-ralentis" /></svg>Je ralentis</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-voie" /></svg>Je change de voie</span></p></div></div>
     <a class="cta jaune">Je participe au quiz</a>
     <a class="plus-tard">Plus tard</a>
   </div>
@@ -298,7 +314,7 @@ b.fort { color: #000; }
     <span class="badge rouge">1000 accès à gagner</span>
     <h1>Cette année, le Père Noël porte un gilet jaune</h1>
     <p class="texte accroche">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
-    <div class="corridor"><svg class="picto" viewBox="0 0 64 64" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-ralentis" /></svg>Je ralentis</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-voie" /></svg>Je change de voie</span></p></div></div>
+    <div class="corridor"><svg class="picto" viewBox="0 0 220 225" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-ralentis" /></svg>Je ralentis</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-voie" /></svg>Je change de voie</span></p></div></div>
     <a class="cta">Répondre au quiz</a>
     <a class="plus-tard">Plus tard</a>
   </div>
@@ -373,7 +389,7 @@ b.fort { color: #000; }
     <span class="badge entre" style="--d:.4s">Un cadeau avant l'heure · 1000 premiers</span>
     <h1 class="entre" style="--d:.5s">Sous le sapin, <span class="jaune-txt">2 mois de GPS</span> offerts</h1>
     <p class="texte accroche entre" style="--d:.6s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
-    <div class="corridor"><svg class="picto" viewBox="0 0 64 64" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-ralentis" /></svg>Je ralentis</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-voie" /></svg>Je change de voie</span></p></div></div>
+    <div class="corridor"><svg class="picto" viewBox="0 0 220 225" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-ralentis" /></svg>Je ralentis</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-voie" /></svg>Je change de voie</span></p></div></div>
     <a class="cta jaune">Je déballe mon cadeau</a>
     <a class="plus-tard">Plus tard</a>
   </div>
@@ -408,7 +424,7 @@ b.fort { color: #000; }
     <span class="badge entre" style="--d:.4s">Réservé aux 1000 premiers</span>
     <h1 class="entre" style="--d:.5s">Le Père Noël et ses lutins t'offrent <span class="jaune-txt">2&nbsp;mois de GPS</span></h1>
     <p class="texte accroche entre" style="--d:.6s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
-    <div class="corridor"><svg class="picto" viewBox="0 0 64 64" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-ralentis" /></svg>Je ralentis</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-voie" /></svg>Je change de voie</span></p></div></div>
+    <div class="corridor"><svg class="picto" viewBox="0 0 220 225" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-ralentis" /></svg>Je ralentis</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-voie" /></svg>Je change de voie</span></p></div></div>
     <a class="cta jaune">Je participe au quiz</a>
     <a class="plus-tard">Plus tard</a>
   </div>
