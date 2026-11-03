@@ -17,8 +17,8 @@ ACCUEIL = {
     "tel_incline": "carte-restaurants.png",
     "tel_haut": "fiche-restaurant.png",
     "tel_bas": "itineraire.png",
-    "picto_grand": "resto", "picto_moyen": "parking", "picto_petit1": "carburant", "picto_petit2": "douche",
-    "picto_v2_1": "resto", "picto_v2_2": "parking",
+    "picto_grand": "resto", "picto_moyen": "resto", "picto_petit1": "carburant", "picto_petit2": "douche",
+    "picto_v2_1": "resto", "picto_v2_2": "resto",
 }
 
 VOLETS = [

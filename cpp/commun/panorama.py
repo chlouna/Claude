@@ -113,8 +113,9 @@ def page(titre_page, accueil, volets, fmt):
     elements = "".join(
         [
             element(telephone(a["tel_incline"], 0.4, f, 14), 0.84, 0.74, f),
-            element(icone(a["picto_grand"], 0.22 * l), 0.42, 0.6, f),
-            element(icone(a["picto_moyen"], 0.17 * l), 0.2, 0.8, f),
+            # icônes au-dessus et en dessous du camion de la photo, pour ne pas le cacher
+            element(icone(a["picto_grand"], 0.22 * l), 0.24, 0.85, f),
+            element(icone(a["picto_moyen"], 0.15 * l), 0.14, 0.42, f),
             # Visuel 2 : deux téléphones et deux icônes
             element(telephone(a["tel_haut"], 0.4, f), 1.0 + 0.68, 0.31, f),
             element(telephone(a["tel_bas"], 0.4, f), 1.0 + 0.62, 0.79, f),
@@ -123,8 +124,23 @@ def page(titre_page, accueil, volets, fmt):
         ]
     )
 
+    # Photo de fond du visuel 1 (cpp/assets/photos/fond-accueil.*), cadrée pour que le camion
+    # (centré vers 64 % de la largeur de la photo) tombe à gauche du visuel, à l'écart du téléphone.
+    style_photo = ""
+    photos = sorted((CPP / "assets" / "photos").glob("fond-accueil.*"))
+    if photos:
+        from PIL import Image
+
+        largeur_ph, hauteur_ph = Image.open(photos[0]).size
+        affichee = h * largeur_ph / hauteur_ph
+        decalage = 0.64 * affichee - 0.42 * l
+        style_photo = (
+            f"background: linear-gradient(180deg, rgba(6,24,102,.75) 0%, rgba(6,24,102,.25) 22%, rgba(6,24,102,0) 38%),"
+            f" url('../../assets/photos/{photos[0].name}') {-decalage:.0f}px 0 / auto 100% no-repeat;"
+        )
+
     fond = (
-        f'<div class="fond-accueil" style="width:{l}px;height:{h}px">'
+        f'<div class="fond-accueil" style="width:{l}px;height:{h}px;{style_photo}">'
         f'<img class="logo" src="../../assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" style="width:{0.5 * l:.0f}px;left:{0.09 * l:.0f}px;top:{0.065 * h:.0f}px">'
         f'<div class="ligne" style="top:{0.315 * h:.0f}px"></div>'
         f'<div class="soleil" style="left:{0.68 * l:.0f}px;top:{0.315 * h:.0f}px;width:{0.5 * l:.0f}px;height:{0.5 * l:.0f}px"><i></i></div>'

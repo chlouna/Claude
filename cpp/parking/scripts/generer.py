@@ -17,8 +17,8 @@ ACCUEIL = {
     "tel_incline": "carte-parkings.png",
     "tel_haut": "fiche-reserver.png",
     "tel_bas": "itineraire.png",
-    "picto_grand": "parking", "picto_moyen": "resto", "picto_petit1": "carburant", "picto_petit2": "douche",
-    "picto_v2_1": "parking", "picto_v2_2": "resto",
+    "picto_grand": "parking", "picto_moyen": "parking", "picto_petit1": "carburant", "picto_petit2": "douche",
+    "picto_v2_1": "parking", "picto_v2_2": "parking",
 }
 
 VOLETS = [
