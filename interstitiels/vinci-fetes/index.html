@@ -86,7 +86,13 @@ b.fort { color: #000; }
 .q-opt .rond { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #b5bdcf; flex: none; }
 .q-opt.choisi { border-color: var(--bleu); background: #f1f5fd; font-weight: 600; }
 .q-opt.choisi .rond { border: 6px solid var(--bleu); }
-.anges-c { width: 260px; height: 130px; margin-bottom: -50px; z-index: 1; }
+/* C : fond clair */
+.clair { background: radial-gradient(120% 60% at 50% 15%, #ffffff 0%, #eef2f9 60%, #dce6f7 100%); }
+.clair .neige i { background: #9fb3dc; }
+.clair .fermer { background: rgba(6, 24, 102, 0.1); color: var(--bleu); }
+.clair .x { color: var(--bleu); }
+.clair .logo-vinci { box-shadow: 0 2px 10px rgba(6, 24, 102, 0.12); }
+.bleu-txt { color: #1e4fd8; }
 
 .entre { animation: entre 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.2) both; animation-delay: calc(var(--d, 0s) + 0.25s); }
 @keyframes entre { from { opacity: 0; transform: translateY(14px) scale(0.96); } }
@@ -214,13 +220,14 @@ b.fort { color: #000; }
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
     <svg class="entre" style="--d:.2s" width="358" height="290" viewBox="0 0 358 290" aria-hidden="true">
       <use href="#guirlande" />
-      <g class="flotte"><use href="#ange-f" transform="translate(8 58) scale(.98)" /></g>
-      <g class="flotte" style="animation-delay:-1.6s"><use href="#ange-h" transform="translate(136 50) scale(1)" /></g>
-      <g transform="translate(-10 84) rotate(-7 290 70)">
-        <path d="M244 46 L330 46 L330 102 L244 102 L230 74 Z" fill="#fff" stroke="#061866" stroke-width="4" stroke-linejoin="round" />
-        <circle cx="244" cy="74" r="4" fill="#061866" />
-        <text x="288" y="74" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#061866">2 MOIS</text>
-        <text x="288" y="92" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11" fill="#061866">de GPS offerts</text>
+      <g class="flotte"><use href="#ange-f" transform="translate(0 64) scale(.92)" /></g>
+      <g class="flotte" style="animation-delay:-1.6s"><use href="#ange-h" transform="translate(108 56) scale(.95)" /></g>
+      <g transform="translate(234 118) rotate(-6 60 32)">
+        <path d="M14 32 Q-6 10 -18 -20" fill="none" stroke="#e20025" stroke-width="3" />
+        <path d="M20 0 L118 0 L118 64 L20 64 L2 32 Z" fill="#fff" stroke="#061866" stroke-width="4" stroke-linejoin="round" />
+        <circle cx="16" cy="32" r="4.5" fill="#061866" />
+        <text x="70" y="32" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#061866">2 MOIS</text>
+        <text x="70" y="50" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11" fill="#e20025">de GPS offerts</text>
       </g>
     </svg>
   </div>
@@ -233,35 +240,37 @@ b.fort { color: #000; }
   </div>
 </section></div>
 
-<!-- C · Aperçu du quiz, les anges au-dessus -->
-<div><div class="cartel">C · aperçu du quiz</div>
-<section class="ecran nuit" id="vc" data-nom="apercu-quiz">
+<!-- C · Fond clair : les anges gardiens portent un panneau d'autoroute -->
+<div><div class="cartel">C · « merci à nos anges gardiens »</div>
+<section class="ecran clair" id="vc" data-nom="panneau-merci">
   <div class="neige">
-    <i style="left:12%;top:5%;--d:.5s"></i><i style="left:44%;top:12%;--t:3px;--d:2.5s"></i><i style="left:74%;top:6%;--t:5px;--o:.4;--d:1.2s"></i>
-    <i style="left:92%;top:20%;--t:3px;--d:3.8s"></i><i style="left:6%;top:28%;--t:3px;--o:.5;--d:4.6s"></i>
+    <i style="left:12%;top:5%;--d:.5s"></i><i style="left:44%;top:12%;--t:3px;--d:2.5s"></i><i style="left:74%;top:6%;--t:5px;--d:1.2s"></i>
+    <i style="left:92%;top:20%;--t:3px;--d:3.8s"></i><i style="left:6%;top:28%;--t:4px;--d:4.6s"></i><i style="left:30%;top:36%;--t:3px;--d:2s"></i>
   </div>
   <div class="ruban"></div>
   <button class="fermer" aria-label="Fermer">×</button>
-  <div class="v-plein" style="gap:6px; padding-top:64px">
-    <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
-    <svg class="anges-c entre" style="--d:.15s" viewBox="0 0 300 150" aria-hidden="true">
-      <g class="flotte"><use href="#ange-h" transform="translate(40 4) scale(.82)" /></g>
-      <g class="flotte" style="animation-delay:-1.6s"><use href="#ange-f" transform="translate(130 10) scale(.78)" /></g>
+  <div class="v-plein">
+    <div class="duo entre" style="--d:0s"><img src="assets/truckfly-couleur-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
+    <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 330" aria-hidden="true">
+      <use href="#guirlande" y="2" />
+      <!-- panneau d'autoroute -->
+      <path d="M140 250 V318 M220 250 V318" stroke="#8e9bb8" stroke-width="7" />
+      <rect x="88" y="96" width="184" height="160" rx="16" fill="#1e4fd8" stroke="#fff" stroke-width="6" />
+      <rect x="88" y="96" width="184" height="160" rx="16" fill="none" stroke="#061866" stroke-width="3" />
+      <text x="180" y="150" text-anchor="middle" font-family="Inter" font-weight="700" font-size="15" fill="#fff">MERCI À NOS</text>
+      <text x="180" y="176" text-anchor="middle" font-family="Inter" font-weight="700" font-size="15" fill="#fff">ANGES GARDIENS</text>
+      <rect x="104" y="196" width="152" height="38" rx="8" fill="#e20025" />
+      <text x="180" y="221" text-anchor="middle" font-family="Bib" font-weight="700" font-size="17" fill="#fff">JOYEUSES FÊTES</text>
+      <!-- les anges de part et d'autre du panneau -->
+      <g class="flotte"><use href="#ange-h" transform="translate(-6 150) scale(.6)" /></g>
+      <g class="flotte" style="animation-delay:-1.6s"><use href="#ange-f" transform="translate(268 154) scale(.57)" /></g>
     </svg>
-    <div class="quiz entre" style="--d:.3s">
-      <div class="q-haut"><span>Quiz sécurité</span><span>1 / 2</span></div>
-      <div class="q-barre"><b></b></div>
-      <p class="q-titre">Un véhicule de patrouille est arrêté sur la bande d'arrêt d'urgence, gyrophares allumés. Que fais-tu&nbsp;?</p>
-      <div class="q-opt"><span class="rond"></span>Je garde ma voie et ma vitesse</div>
-      <div class="q-opt choisi"><span class="rond"></span>Je change de voie, ou je ralentis fortement</div>
-      <div class="q-opt"><span class="rond"></span>Je klaxonne pour signaler ma présence</div>
-    </div>
   </div>
   <div class="bas">
-    <span class="badge entre" style="--d:.4s">Réservé aux 1000 premiers</span>
-    <h1 class="entre" style="--d:.5s">Protège tes anges gardiens, gagne 2 mois de GPS</h1>
-    <p class="texte entre" style="--d:.6s">Michelin Truckfly et VINCI Autoroutes s'associent pour des fêtes en sécurité. Les 1000 premiers à répondre gagnent.</p>
-    <a class="cta jaune">Je réponds au quiz</a>
+    <span class="badge rouge entre" style="--d:.4s">Réservé aux 1000 premiers</span>
+    <h1 class="entre" style="--d:.5s">Pour les fêtes, <span class="bleu-txt">2 mois de GPS</span> offerts</h1>
+    <p class="texte entre" style="--d:.6s">Michelin Truckfly et VINCI Autoroutes s'associent. Réponds à 2 questions sécurité&nbsp;: les 1000 premiers gagnent.</p>
+    <a class="cta">Je participe</a>
     <a class="plus-tard">Plus tard</a>
   </div>
 </section></div>

@@ -26,7 +26,7 @@ Pour savoir d'où vient chaque réponse, ouvrir le lien avec les paramètres `?u
 |---|---|---|---|
 | A | Pleine page : les deux anges gardiens au bord de l'autoroute, fourgon de patrouille | Ils veillent sur toi, on t'offre 2 mois de GPS | Je participe au quiz |
 | B | Visuel + feuille blanche, étiquette « 2 mois » | Cette année, le Père Noël porte un gilet jaune | Répondre au quiz |
-| C | Aperçu de la question 1 du quiz | Protège tes anges gardiens, gagne 2 mois de GPS | Je réponds au quiz |
+| C | Fond clair : les deux anges de part et d'autre d'un panneau d'autoroute « Merci à nos anges gardiens · Joyeuses fêtes » | Pour les fêtes, 2 mois de GPS offerts | Je participe |
 
 ## Quiz (2 questions)
 
