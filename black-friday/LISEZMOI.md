@@ -13,3 +13,5 @@ Offre annuelle à 37,99 € au lieu de 74,99 €, du 27/11 au 04/12/2026.
 | 3 · Dernière chance | 03 → 04/12 | Derniers jours, plus que 48 h | J'en profite |
 
 Les textes de chaque phase sont dans l'objet `PHASES` de `index.html`.
+
+Charte : pas de gros texte en jaune. Le jaune est réservé aux petits textes (pastilles), aux boutons et au fond de l'étiquette (texte bleu dessus).

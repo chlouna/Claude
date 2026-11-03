@@ -52,7 +52,7 @@ figcaption b { color: #111; }
 .chip.contour { background: transparent; color: var(--jaune); box-shadow: inset 0 0 0 .12em var(--jaune); }
 .bf { font-family: "Bib"; font-weight: 700; line-height: .86; letter-spacing: -.01em; text-transform: uppercase; }
 .bf span { display: block; }
-.bf .f { color: var(--jaune); }
+.bf .f { color: var(--blanc); }
 .sous { font: 600 1.6em/1.25 "Inter"; color: var(--bleu-clair); }
 .sous b { color: var(--blanc); }
 
@@ -71,9 +71,6 @@ figcaption b { color: #111; }
   margin-top: -.07em; border-radius: 50%; background: var(--bleu);
 }
 .tag small { font-size: .42em; margin-left: .06em; align-self: flex-start; margin-top: .22em; }
-.tag.mystere { background: transparent; color: var(--jaune); box-shadow: none;
-  clip-path: none; border: .05em dashed var(--jaune); border-radius: .08em .08em .08em .08em; }
-.tag.mystere::before { background: var(--jaune); }
 
 .prix { display: flex; align-items: baseline; gap: .5em; flex-wrap: wrap; }
 .prix .n { font: 700 4.4em/1 "Bib"; }
@@ -223,7 +220,7 @@ if (solo) {
   const by = ids => FORMATS.filter(f => ids.includes(f[0])).map(fig).join("");
   el.innerHTML = `
     <h1>Black Friday 2026 · GPS Premium -50 %</h1>
-    <p>Visuel de base : fond Michelin Blue, étiquette jaune « -50 % » inclinée, titre en Bib. Une seule mécanique, déclinée par format et par phase.</p>
+    <p>Visuel de base : fond Michelin Blue, étiquette jaune « -50 % » inclinée, titre en Bib blanc (le jaune est réservé aux petits textes, aux boutons et à l'étiquette). Une seule mécanique, déclinée par format et par phase.</p>
     <div class="rangee"><h2>Déclinaisons formats</h2>${by(["interstitiel", "story", "post"])}</div>
     <div class="rangee">${by(["web-hero"])}</div>
     <div class="rangee">${by(["banniere-app", "leaderboard"])}</div>
