@@ -4,84 +4,81 @@
 <meta charset="utf-8">
 <title>Black Friday 2026 – Pistes de fond</title>
 <style>
-@font-face { font-family: "Bib"; src: url("../interstitiels/assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
-@font-face { font-family: "Inter"; src: url("../interstitiels/assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
-@font-face { font-family: "Inter"; src: url("../interstitiels/assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
-@font-face { font-family: "Inter"; src: url("../interstitiels/assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+/* Ancienne charte (exception Black Friday). Titres : remplaçant de la police MICHELIN, en attendant le fichier officiel. */
+@font-face { font-family: "Titre"; src: url("assets/fonts/Archivo-ExpandedBlackItalic.woff2") format("woff2"); font-weight: 900; font-style: italic; }
+@font-face { font-family: "Texte"; src: url("assets/fonts/OpenSans-Italic.woff2") format("woff2"); font-weight: 300 800; font-style: italic; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #e6e6ea; font-family: "Inter", sans-serif; color: #111; padding: 48px; }
+body { background: #e6e6ea; font-family: "Texte", sans-serif; font-style: italic; color: #111; padding: 48px; }
 
 /* ---------- Pistes de fond ---------- */
-.noir   { --fond: radial-gradient(90% 60% at 80% 75%, #23232b 0%, transparent 70%), #0a0a0c;
-          --titre: #fff; --sous: #b8b8c2; --tag: #FFFF1A; --tag-txt: #061866; --cta: #FFFF1A; --cta-txt: #061866;
-          --chip: #FFFF1A; --chip-txt: #061866; --bandes: rgba(255,255,26,.10); --barre: #8a8a92; }
-.blanc  { --fond: radial-gradient(90% 60% at 80% 75%, #eef2f9 0%, transparent 70%), #fff;
-          --titre: #111; --sous: #53565A; --tag: #061866; --tag-txt: #fff; --cta: #061866; --cta-txt: #fff;
-          --chip: #061866; --chip-txt: #fff; --bandes: rgba(6,24,102,.06); --barre: #8a8a92; }
-.ciel   { --fond: radial-gradient(90% 60% at 80% 75%, #fff 0%, transparent 70%), #DCE6F7;
-          --titre: #111; --sous: #53565A; --tag: #061866; --tag-txt: #fff; --cta: #061866; --cta-txt: #fff;
-          --chip: #061866; --chip-txt: #fff; --bandes: rgba(6,24,102,.07); --barre: #6e6e73; }
-.jaune  { --fond: radial-gradient(90% 60% at 80% 75%, #ffffa0 0%, transparent 70%), #FFFF1A;
-          --titre: #111; --sous: #111; --tag: #111; --tag-txt: #fff; --cta: #111; --cta-txt: #fff;
-          --chip: #111; --chip-txt: #fff; --bandes: rgba(0,0,0,.08); --barre: #53565A; }
-.bleu   { --fond: radial-gradient(90% 60% at 80% 75%, #1a2a7a 0%, transparent 70%), #061866;
-          --titre: #fff; --sous: #BFD3F2; --tag: #FFFF1A; --tag-txt: #061866; --cta: #FFFF1A; --cta-txt: #061866;
-          --chip: #FFFF1A; --chip-txt: #061866; --bandes: rgba(255,255,26,.10); --barre: #9a9ab0; }
+.noir  { --fond: radial-gradient(90% 55% at 80% 80%, #26262e 0%, transparent 70%), #0a0a0c;
+         --titre: #fff; --sous: #c9c9d1; --boite: #fff; --boite-txt: #111; --rond: #FFFF1A; --ligne: rgba(255,255,255,.9);
+         --tag: #FFFF1A; --tag-txt: #111; --cta: #FFFF1A; --cta-txt: #111; --chip: #fff; --chip-txt: #111; --barre: #8a8a92; }
+.blanc { --fond: radial-gradient(90% 55% at 80% 80%, #eef2f9 0%, transparent 70%), #fff;
+         --titre: #111; --sous: #53565A; --boite: #111; --boite-txt: #fff; --rond: #FFFF1A; --ligne: #111;
+         --tag: #061866; --tag-txt: #fff; --cta: #061866; --cta-txt: #fff; --chip: #061866; --chip-txt: #fff; --barre: #8a8a92; }
+.bleu  { --fond: radial-gradient(90% 55% at 80% 80%, #1a2a7a 0%, transparent 70%), #061866;
+         --titre: #fff; --sous: #BFD3F2; --boite: #fff; --boite-txt: #061866; --rond: #FFFF1A; --ligne: rgba(255,255,255,.9);
+         --tag: #FFFF1A; --tag-txt: #061866; --cta: #FFFF1A; --cta-txt: #061866; --chip: #fff; --chip-txt: #061866; --barre: #9a9ab0; }
 
 /* ---------- Planche ---------- */
-.planche h1 { font-family: "Bib"; font-size: 34px; color: #061866; }
-.planche > p { margin: 6px 0 36px; color: #53565A; font-size: 15px; max-width: 900px; }
+.planche h1 { font: 900 italic 30px "Titre"; color: #061866; text-transform: uppercase; }
+.planche > p { margin: 8px 0 36px; color: #53565A; font-size: 15px; max-width: 900px; }
 .rangee { display: flex; gap: 28px; align-items: flex-end; margin-bottom: 44px; }
-.rangee h2 { width: 170px; flex: none; font-family: "Bib"; font-size: 20px; color: #061866; align-self: center; }
-.rangee h2 small { display: block; font: 400 13px/1.4 "Inter"; color: #53565A; margin-top: 6px; }
+.rangee h2 { width: 170px; flex: none; font: 900 italic 17px "Titre"; text-transform: uppercase; color: #061866; align-self: center; }
+.rangee h2 small { display: block; font: italic 400 13px/1.4 "Texte"; text-transform: none; color: #53565A; margin-top: 6px; }
 figure { display: flex; flex-direction: column; gap: 8px; }
 figcaption { font-size: 12px; color: #53565A; }
 
 /* ---------- Visuel commun ---------- */
 .kv { position: relative; overflow: hidden; background: var(--fond); color: var(--titre); font-size: var(--u); width: var(--w); height: var(--h); }
-.kv::after { content: ""; position: absolute; inset: auto -10% -1em -10%; height: 9em;
-  background: repeating-linear-gradient(-45deg, var(--bandes) 0 1.6em, transparent 1.6em 3.2em); transform: skewY(-6deg); }
-.logo { height: 2.3em; display: block; }
-.chip { font: 700 1.2em/1 "Inter"; background: var(--chip); color: var(--chip-txt); padding: .55em .9em; border-radius: 99em; white-space: nowrap; }
-.bf { font-family: "Bib"; font-weight: 700; line-height: .86; text-transform: uppercase; color: var(--titre); }
-.bf span { display: block; }
-.sous { font: 600 1.45em/1.3 "Inter"; color: var(--sous); }
+.logo { height: 2.5em; display: block; position: relative; z-index: 4; }
+.chip { font: italic 700 1.2em/1 "Texte"; background: var(--chip); color: var(--chip-txt); padding: .55em .9em; border-radius: .4em; white-space: nowrap; position: relative; z-index: 4; }
+.haut { display: flex; justify-content: space-between; align-items: center; }
+
+/* Bloc titre façon flyer : ligne fine, rond jaune + cercle fin, cartouche arrondi */
+.titre { position: relative; display: flex; justify-content: center; align-items: center; }
+.titre .ligne { position: absolute; left: -5em; right: -5em; top: 50%; height: .12em; background: var(--ligne); }
+.titre .rond { position: absolute; width: 13em; height: 13em; border-radius: 50%; background: var(--rond); right: 1em; top: 50%; margin-top: -8em; }
+.titre .cercle { position: absolute; width: 16em; height: 16em; border-radius: 50%; border: .1em solid var(--rond); right: -.8em; top: 50%; margin-top: -7.6em; }
+.boite { position: relative; z-index: 2; background: var(--boite); color: var(--boite-txt); border-radius: .8em;
+  font: 900 italic 4.2em/1.02 "Titre"; text-transform: uppercase; text-align: center; padding: .28em .5em .3em; box-shadow: 0 .15em .5em rgba(0,0,0,.18); }
+.boite span { display: block; }
+
+.sous { font: italic 600 1.45em/1.35 "Texte"; color: var(--sous); }
 .tag { position: relative; display: inline-flex; background: var(--tag); color: var(--tag-txt);
-  font-family: "Bib"; font-weight: 700; line-height: 1; white-space: nowrap;
-  clip-path: polygon(16% 0, 100% 0, 100% 100%, 16% 100%, 0 50%); padding: .14em .3em .1em .62em; transform: rotate(-8deg); }
-.tag::before { content: ""; position: absolute; left: .2em; top: 50%; width: .14em; height: .14em; margin-top: -.07em; border-radius: 50%; background: var(--fond, #000); background: var(--titre); opacity: .0; }
+  font: 900 italic 1em/1 "Titre"; white-space: nowrap;
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 16% 100%, 0 50%); padding: .16em .32em .12em .66em; transform: rotate(-8deg); }
 .tag i { position: absolute; left: .2em; top: 50%; width: .14em; height: .14em; margin-top: -.07em; border-radius: 50%; background: var(--tag-txt); }
 .tag small { font-size: .42em; margin-left: .06em; margin-top: .22em; }
-.prix { display: flex; align-items: baseline; gap: .45em; white-space: nowrap; }
-.prix .n { font: 700 3.8em/1 "Bib"; color: var(--titre); }
-.prix .n em { font: 600 .42em "Inter"; font-style: normal; margin-left: .12em; }
-.prix .barre { font: 600 1.45em/1 "Inter"; color: var(--barre); text-decoration: line-through; }
-.cta { display: inline-flex; justify-content: center; font: 700 1.5em/1 "Inter"; background: var(--cta); color: var(--cta-txt);
-  padding: .85em 1.5em; border-radius: 99em; white-space: nowrap; box-shadow: 0 .4em 1.2em rgba(0,0,0,.25); }
+.prix { display: flex; flex-direction: column; gap: .35em; white-space: nowrap; }
+.prix .n { font: 900 italic 2.9em/1 "Titre"; color: var(--titre); }
+.prix .n em { font: italic 600 .45em "Texte"; margin-left: .15em; }
+.prix .barre { font: italic 600 1.45em/1 "Texte"; color: var(--barre); text-decoration: line-through; }
+.cta { display: inline-flex; justify-content: center; font: 900 italic 1.4em/1 "Titre"; text-transform: uppercase; background: var(--cta); color: var(--cta-txt);
+  padding: .95em 1.5em; border-radius: .6em; white-space: nowrap; box-shadow: 0 .4em 1.2em rgba(0,0,0,.25); }
 .tel { position: absolute; filter: drop-shadow(0 1.6em 2.4em rgba(0,0,0,.35)); z-index: 1; }
 
-/* Story 9:16 : titre en haut, téléphone en bas rogné, étiquette sur le téléphone */
+/* Story 9:16 */
 .story { padding: 2.6em; }
-.story .haut { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
-.story .bf { font-size: 7.2em; margin-top: .45em; position: relative; z-index: 2; }
-.story .ligne { display: flex; align-items: center; gap: 1.2em; margin-top: 1.4em; position: relative; z-index: 2; }
-.story .tag { font-size: 4.8em; flex: none; }
-.story .prix { flex-direction: column; align-items: flex-start; gap: .35em; }
-.story .prix .n { font-size: 3.1em; }
-.story .tel { width: 23em; left: 50%; margin-left: -11.5em; top: 30.5em; }
+.story .titre { margin-top: 3.4em; }
+.story .ligne-prix { display: flex; align-items: center; gap: 1em; margin-top: 3em; position: relative; z-index: 2; }
+.story .tag { font-size: 4.2em; flex: none; }
+.story .tel { width: 22em; left: 50%; margin-left: -11em; top: 32em; }
 .story .cta { position: absolute; z-index: 3; left: 2.6em; right: 2.6em; bottom: 2.6em; }
 
-/* Post 4:5 : texte à gauche, téléphone à droite */
+/* Post 4:5 */
 .post { padding: 2.4em; }
-.post .haut { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
-.post .gauche { position: relative; z-index: 2; width: 17em; margin-top: 2.4em; display: flex; flex-direction: column; gap: 1.4em; }
-.post .bf { font-size: 5em; }
-.post .prix { flex-direction: column; align-items: flex-start; gap: .3em; }
-.post .tag { font-size: 5.2em; align-self: flex-start; }
-.post .prix .n { font-size: 3.4em; }
-.post .cta { align-self: flex-start; font-size: 1.4em; margin-top: .4em; }
-.post .tel { width: 14.5em; right: -2.6em; top: 10.5em; transform: rotate(6deg); }
-.post .gauche { width: 19em; }
+.post .titre { margin-top: 1.8em; justify-content: flex-start; }
+.post .boite { font-size: 3.4em; }
+.post .titre .rond { width: 10em; height: 10em; margin-top: -6.4em; right: 1.4em; }
+.post .titre .cercle { width: 12.6em; height: 12.6em; margin-top: -6.1em; right: -.2em; }
+.post .gauche { position: relative; z-index: 2; width: 18em; margin-top: 2.2em; display: flex; flex-direction: column; gap: 1.3em; }
+.post .tag { font-size: 4.4em; align-self: flex-start; }
+.post .sous { font-size: 1.3em; }
+.post .prix .n { font-size: 2.6em; }
+.post .cta { align-self: flex-start; font-size: 1.2em; }
+.post .tel { width: 13.5em; right: -2.2em; top: 15.4em; transform: rotate(6deg); }
 </style>
 </head>
 <body>
@@ -90,24 +87,23 @@ figcaption { font-size: 12px; color: #53565A; }
 const LOGOS = { clair: "../ma-video/assets/logos/truckfly-blanc-rogne.png", fonce: "../ma-video/assets/logos/truckfly-couleur-rogne.png" };
 const TEL = "assets/telephone-gps.png";
 const PISTES = [
-  ["noir", "Fond noir", "Le code Black Friday. Le jaune claque, le téléphone ressort.", "clair"],
-  ["blanc", "Fond blanc", "Titre en noir, accents Michelin Blue. Très lisible, plus sage.", "fonce"],
-  ["ciel", "Fond bleu clair", "Titre en noir sur bleu pâle de la charte. Doux, reste dans l'univers app.", "fonce"],
-  ["jaune", "Fond jaune", "Titre et étiquette en noir. Le plus visible en fil d'actu.", "fonce"],
-  ["bleu", "Fond Michelin Blue", "Piste actuelle, pour comparer.", "clair"],
+  ["noir", "Fond noir", "Cartouche blanc, titre noir. Le plus Black Friday.", "clair"],
+  ["blanc", "Fond blanc", "Cartouche noir, accents Michelin Blue.", "fonce"],
+  ["bleu", "Fond Michelin Blue", "Cartouche blanc, titre bleu : le plus proche du flyer.", "clair"],
 ];
-const prix = `<div class="prix"><span class="n">37,99 €<em>/an</em></span><span class="barre">74,99 €</span></div>`;
+const titre = `<div class="titre"><div class="ligne"></div><div class="cercle"></div><div class="rond"></div>
+  <div class="boite"><span>Black</span><span>Friday</span></div></div>`;
+const prix = `<div class="prix"><span class="n">37,99 €<em>/an</em></span><span class="barre">au lieu de 74,99 €</span></div>`;
 const tag = `<div class="tag"><i></i>-50<small>%</small></div>`;
+const haut = logo => `<div class="haut"><img class="logo" src="${LOGOS[logo]}" alt=""><span class="chip">27/11 → 04/12</span></div>`;
 const story = (p, logo) => `<div class="kv story ${p}" id="story-${p}" style="--w:360px;--h:640px;--u:10px">
-  <div class="haut"><img class="logo" src="${LOGOS[logo]}" alt=""><span class="chip">27/11 → 04/12</span></div>
-  <div class="bf"><span>Black</span><span>Friday</span></div>
-  <div class="ligne">${tag}${prix}</div>
+  ${haut(logo)}${titre}
+  <div class="ligne-prix">${tag}${prix}</div>
   <img class="tel" src="${TEL}" alt="">
   <span class="cta">J'en profite</span></div>`;
 const post = (p, logo) => `<div class="kv post ${p}" id="post-${p}" style="--w:360px;--h:450px;--u:10px">
-  <div class="haut"><img class="logo" src="${LOGOS[logo]}" alt=""><span class="chip">27/11 → 04/12</span></div>
-  <div class="gauche"><div class="bf"><span>Black</span><span>Friday</span></div>${tag}
-    <p class="sous">Le GPS Premium à moitié prix</p>${prix}<span class="cta">J'en profite</span></div>
+  ${haut(logo)}${titre}
+  <div class="gauche">${tag}<p class="sous">Le GPS Premium à moitié prix</p>${prix}<span class="cta">J'en profite</span></div>
   <img class="tel" src="${TEL}" alt=""></div>`;
 
 const solo = new URLSearchParams(location.search).get("solo");
@@ -118,8 +114,8 @@ if (solo) {
   const logo = PISTES.find(x => x[0] === p)[3];
   el.innerHTML = type === "story" ? story(p, logo) : post(p, logo);
 } else {
-  el.innerHTML = `<h1>Black Friday 2026 · Pistes de fond</h1>
-    <p>Même mise en page, avec le téléphone GPS, sur 5 fonds. Aucun gros texte en jaune : sur fond clair, le titre passe en noir et l'étiquette en bleu ou noir.</p>` +
+  el.innerHTML = `<h1>Black Friday 2026 · Ancienne charte</h1>
+    <p>Exception Black Friday : titres en capitales grasses italiques (police MICHELIN, remplacée ici par Archivo en attendant le fichier), texte en italique, cartouche arrondi, rond jaune et ligne fine comme sur le flyer. Aucun gros texte en jaune.</p>` +
     PISTES.map(([p, nom, desc, logo]) => `<div class="rangee"><h2>${nom}<small>${desc}</small></h2>
       <figure>${story(p, logo)}<figcaption>Story 1080 × 1920</figcaption></figure>
       <figure>${post(p, logo)}<figcaption>Post 1080 × 1350</figcaption></figure></div>`).join("");
