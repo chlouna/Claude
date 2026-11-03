@@ -29,18 +29,26 @@ Pour savoir d'où vient chaque réponse, ouvrir le lien avec les paramètres `?u
 | C | Un cadeau avant l'heure : sapin décoré d'anges en gilet jaune (un en haut du sapin), gros cadeau blanc et rouge sous le sapin avec l'étiquette « 2 mois de GPS offerts » | Sous le sapin, 2 mois de GPS offerts | Je déballe mon cadeau |
 | D | Pleine page : le Père Noël (manches rouges) et ses deux lutins, tous en gilet jaune de patrouilleur, au bord de l'autoroute | Le Père Noël et ses lutins t'offrent 2 mois de GPS | Je participe au quiz |
 
+## Brief VINCI Autoroutes (Lola, d'après le dépliant « Corridor de sécurité »)
+
+- **Accroche** demandée : « Pour leur sécurité et la vôtre, préservez la sécurité de vos anges gardiens pendant les fêtes de fin d'année. »
+  Version utilisée (tutoiement de l'app, sans la répétition de « sécurité ») : « Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année. »
+- **Pictogrammes + message** sur chaque interstitiel : « À l'approche d'un véhicule d'intervention : je ralentis, je change de voie. » Les pictos sont redessinés d'après le dépliant ; à remplacer par les fichiers officiels de VINCI s'ils les fournissent.
+- **Amende de 135 €** : question 2 du quiz.
+- **Règles de sécurité sur autoroute** : rappelées sur la page de remerciement du formulaire.
+
 ## Quiz (2 questions)
 
-1. **Un véhicule de patrouille est arrêté sur la bande d'arrêt d'urgence, gyrophares allumés. Que fais-tu ?**
+1. **Un véhicule d'intervention est arrêté sur la bande d'arrêt d'urgence, gyrophares allumés. Que fais-tu ?**
    - Je garde ma voie et ma vitesse
-   - ✅ Je change de voie pour m'écarter, ou je ralentis fortement si c'est impossible (corridor de sécurité)
+   - ✅ Je ralentis et je change de voie, ou je m'écarte le plus possible
    - Je klaxonne pour signaler ma présence
-2. **Ton camion tombe en panne sur l'autoroute. Quel est le bon réflexe ?**
-   - Je reste dans la cabine en attendant les secours
-   - ✅ J'enfile mon gilet, je passe derrière la glissière et j'appelle les secours
-   - Je reste devant le camion pour faire signe aux autres
+2. **Que risques-tu si tu ne respectes pas le corridor de sécurité ?**
+   - Rien, c'est une simple recommandation
+   - ✅ Une amende de 135 € (depuis septembre 2018, article R412-11-1 du code de la route)
+   - Un simple avertissement
 
-Les bonnes réponses s'affichent sur la page de remerciement. Elles sont à faire valider par VINCI Autoroutes.
+La page de remerciement donne les bonnes réponses et rappelle les règles de sécurité sur autoroute du dépliant : en cas de panne ou d'accident (feux de détresse, bande d'arrêt d'urgence ou refuge, gilet, évacuer, derrière la glissière, borne orange, 112, pas de triangle) et si l'on est témoin d'un accident (rouler jusqu'à la borne d'appel d'urgence).
 
 ## À compléter avant diffusion
 
