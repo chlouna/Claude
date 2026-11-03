@@ -1,4 +1,4 @@
-"""CPP « Restaurant routier » : 2 visuels d'accueil + 5 volets, Google Play (1080 × 1920) et App Store (1284 × 2778).
+"""CPP « Restaurant routier » : 1 visuel d'accueil + 5 volets, Google Play (1080 × 1920) et App Store (1284 × 2778).
 
     python3 scripts/generer.py && node scripts/capturer.mjs
 

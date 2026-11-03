@@ -1,4 +1,4 @@
-"""Mise en page commune des CPP restaurant et parking : 2 visuels d'accueil + 5 volets, en panorama.
+"""Mise en page commune des CPP restaurant et parking : 1 visuel d'accueil + 5 volets, en panorama.
 
 Le décor (trait jaune, petit rond blanc) et certains éléments (téléphone incliné, icônes) sont placés
 sur un seul grand dessin, découpé ensuite en visuels : ils passent d'une image à l'autre.
@@ -85,16 +85,14 @@ def telephone(img, hauteur, f, angle=0):
 def page(titre_page, accueil, volets, fmt):
     f = FORMATS[fmt]
     l, h = f["l"], f["h"]
-    n = 2 + len(volets)
+    n = 1 + len(volets)
 
-    # Décor : trait jaune à partir du visuel 3,
-    # petit rond blanc entre les volets 2 et 3 (visuels 4 et 5).
-    x0 = 2 * l
+    # Décor : trait jaune à partir du premier volet (visuel 2),
+    # petit rond blanc entre les volets 2 et 3.
+    x0 = l
     k = l / 360
     trait = (
-        # le trait naît en bas du visuel 2, passe derrière le téléphone puis file vers la droite
-        f"M{1.2 * l:.0f} {h + 20:.0f} C {1.45 * l:.0f} {0.8 * h:.0f}, {1.75 * l:.0f} {0.6 * h:.0f}, {x0 - 20 * k:.0f} {0.59 * h:.0f} "
-        f"C {x0 + 120 * k:.0f} {0.47 * h:.0f}, {x0 + 240 * k:.0f} {0.47 * h:.0f}, {x0 + l:.0f} {0.56 * h:.0f} "
+        f"M{x0 - 20 * k:.0f} {0.59 * h:.0f} C {x0 + 120 * k:.0f} {0.47 * h:.0f}, {x0 + 240 * k:.0f} {0.47 * h:.0f}, {x0 + l:.0f} {0.56 * h:.0f} "
         + " ".join(
             f"S {x0 + (j + 1.67) * l:.0f} {(0.69 if j % 2 == 0 else 0.47) * h:.0f}, {x0 + (j + 2) * l:.0f} {(0.59 if j % 2 == 0 else 0.56) * h:.0f}"
             for j in range(0, len(volets) - 1)
@@ -104,28 +102,32 @@ def page(titre_page, accueil, volets, fmt):
     decor = (
         f'<svg class="deco" viewBox="0 0 {n * l} {h}" width="{n * l}" height="{h}">'
         f'<path d="{trait}" fill="none" stroke="#FFFF1A" stroke-width="{14 * k:.0f}" stroke-linecap="round"/>'
-        f'<circle cx="{4 * l:.0f}" cy="{0.58 * h:.0f}" r="{0.336 * h:.0f}" fill="#fff"/>'
+        f'<circle cx="{x0 + 2 * l:.0f}" cy="{0.58 * h:.0f}" r="{0.336 * h:.0f}" fill="#fff"/>'
         "</svg>"
     )
 
-    # Éléments qui passent d'un visuel à l'autre (au-dessus du fond du visuel 1)
+    # Visuel d'accueil : téléphone incliné entièrement dans le visuel, et icônes
     a = accueil
+    import math
+
+    haut_tel, angle = 0.4, 14
+    hp = haut_tel * h
+    lp = hp * 0.507  # proportions des captures (cadre du téléphone compris)
+    demi_largeur = (lp * math.cos(math.radians(angle)) + hp * math.sin(math.radians(angle))) / 2
+    demi_hauteur = (hp * math.cos(math.radians(angle)) + lp * math.sin(math.radians(angle))) / 2
+    x_tel = (l - demi_largeur - 0.05 * l) / l
+    y_tel = (h - demi_hauteur - 0.04 * h) / h
     elements = "".join(
         [
-            element(telephone(a["tel_incline"], 0.4, f, 14), 0.84, 0.74, f),
+            element(telephone(a["tel_incline"], haut_tel, f, angle), x_tel, y_tel, f),
             # icônes au-dessus et en dessous du camion de la photo, pour ne pas le cacher
             element(icone(a["picto_grand"], 0.22 * l), 0.24, 0.85, f),
             element(icone(a["picto_moyen"], 0.15 * l), 0.14, 0.42, f),
-            # Visuel 2 : deux téléphones et deux icônes
-            element(telephone(a["tel_haut"], 0.4, f), 1.0 + 0.68, 0.31, f),
-            element(telephone(a["tel_bas"], 0.4, f), 1.0 + 0.62, 0.79, f),
-            element(icone(a["picto_v2_1"], 0.16 * l), 1.0 + 0.24, 0.42, f),
-            element(icone(a["picto_v2_2"], 0.15 * l), 1.0 + 0.88, 0.62, f),
         ]
     )
 
     # Photo de fond du visuel 1 (cpp/assets/photos/fond-accueil.*), cadrée pour que le camion
-    # (centré vers 64 % de la largeur de la photo) tombe à gauche du visuel, à l'écart du téléphone.
+    # (cabine vers 72 % de la largeur de la photo) tombe à gauche du visuel, à l'écart du téléphone.
     style_photo = ""
     photos = sorted((CPP / "assets" / "photos").glob("fond-accueil.*"))
     if photos:
@@ -133,7 +135,7 @@ def page(titre_page, accueil, volets, fmt):
 
         largeur_ph, hauteur_ph = Image.open(photos[0]).size
         affichee = h * largeur_ph / hauteur_ph
-        decalage = 0.64 * affichee - 0.42 * l
+        decalage = 0.72 * affichee - 0.35 * l
         style_photo = (
             f"background: linear-gradient(180deg, rgba(6,24,102,.75) 0%, rgba(6,24,102,.25) 22%, rgba(6,24,102,0) 38%),"
             f" url('../../assets/photos/{photos[0].name}') {-decalage:.0f}px 0 / auto 100% no-repeat;"
@@ -149,8 +151,8 @@ def page(titre_page, accueil, volets, fmt):
     )
     pano = f'<div class="pano" style="width:{n * l}px;height:{h}px">{decor}{fond}{elements}</div>'
 
-    textes = [None, None] + [(t, s, img) for (_, t, s, img, _) in volets]
-    ids = ["accueil", "accueil-2"] + [c for (c, *_) in volets]
+    textes = [None] + [(t, s, img) for (_, t, s, img, _) in volets]
+    ids = ["accueil"] + [c for (c, *_) in volets]
     shots = []
     for i in range(n):
         contenu = ""
@@ -193,4 +195,4 @@ p {{ font-family: "Inter"; font-weight: 700; font-size: {f["st"]}px; line-height
 def ecrire(racine, titre_page, accueil, volets):
     for fmt in FORMATS:
         (racine / "scripts" / f"index-{fmt}.html").write_text(page(titre_page, accueil, volets, fmt))
-    print(f"scripts/index-*.html écrits : {2 + len(volets)} visuels × 2 formats")
+    print(f"scripts/index-*.html écrits : {1 + len(volets)} visuels × 2 formats")
