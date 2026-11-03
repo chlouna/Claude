@@ -37,10 +37,11 @@ Exception Black Friday : ancienne charte, comme sur le flyer « Le poids lourd d
 | `story-offre` | 27/11 → 04/12 | 1080 × 1920 |
 | `post-teasing` | 20 → 26/11 | 1080 × 1350 |
 | `post-jourj` | 27/11 | 1080 × 1350 |
-| `interstitiel-teasing` | 20 → 26/11 (bouton « Activer les notifications ») | 1170 × 2532 |
+| `interstitiel-teasing` | 20 → 26/11 (bouton « M'avertir le 27/11 ») | 1170 × 2532 |
 | `interstitiel-offre` | 27/11 → 04/12 | 1170 × 2532 |
 | `banniere-web` | 27/11 → 04/12 | 2400 × 800 |
 | `banniere-728x90` | 27/11 → 04/12 | 1456 × 180 |
-| `banniere-in-app` | 27/11 → 04/12 | 1080 × 336 |
 
 Les textes de chaque phase (teasing, offre, jour J) sont dans l'objet `PHASES` de `noir.html`.
+
+Teasing : pas de prix ni de « ?? ». Accroche « Le poids lourd des GPS s'allège. », téléphone dans la pénombre sous un halo, date en bandeau « LE 27/11 ». Bannière in-app retirée.
