@@ -13,7 +13,7 @@ sys.path.insert(0, str(RACINE.parent / "commun"))
 from panorama import ecrire  # noqa: E402
 
 ACCUEIL = {
-    "accroche": "Le bon parking poids lourd, partout en Europe",
+    "accroche": "Garez-vous en sécurité, partout en Europe",
     "tel_incline": "carte-parkings.png",
     "tel_haut": "fiche-reserver.png",
     "tel_bas": "itineraire.png",

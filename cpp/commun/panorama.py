@@ -121,8 +121,10 @@ def page(titre_page, accueil, volets, fmt):
         [
             element(telephone(a["tel_incline"], haut_tel, f, angle), x_tel, y_tel, f),
             # icônes au-dessus et en dessous du camion de la photo, pour ne pas le cacher
-            element(icone(a["picto_grand"], 0.22 * l), 0.24, 0.85, f),
+            element(icone(a["picto_grand"], 0.2 * l), 0.15, 0.86, f),
             element(icone(a["picto_moyen"], 0.15 * l), 0.14, 0.42, f),
+            # petite icône au-dessus du téléphone
+            element(icone(a["picto_grand"], 0.11 * l), x_tel - 0.08, y_tel - demi_hauteur / h - 0.02, f),
         ]
     )
 
