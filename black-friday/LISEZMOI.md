@@ -25,3 +25,22 @@ Exception Black Friday : ancienne charte, comme sur le flyer « Le poids lourd d
 - La date est mise en avant dans un bandeau « DU 27/11 AU 04/12 » à cheval sous le cartouche (jaune sur fond noir et bleu, bleu sur fond blanc).
 - Polices : la police MICHELIN n'est pas dans le repo. Elle est remplacée par Archivo Expanded Black Italic (titres) et Open Sans Italic (texte), sous licence libre OFL, dans `assets/fonts/`. Pour passer à la vraie police, déposer le fichier dans `assets/fonts/` et changer l'URL du `@font-face "Titre"` en haut de `fonds.html`.
 - `png/planche-fonds.png` : aperçu ; `png/fonds/` : un PNG par visuel (story 1080 × 1920, post 1080 × 1350).
+
+## Plaquette fond noir (version retenue)
+
+- `noir.html` : la plaquette complète. `noir.html?solo=<id>` affiche un seul visuel.
+- `png/noir/plaquette-noir.png` : aperçu ; `png/noir/` : un PNG par visuel à la taille d'export.
+
+| Visuel | Quand | Taille |
+|---|---|---|
+| `story-teasing` | 20 → 26/11 | 1080 × 1920 |
+| `story-offre` | 27/11 → 04/12 | 1080 × 1920 |
+| `post-teasing` | 20 → 26/11 | 1080 × 1350 |
+| `post-jourj` | 27/11 | 1080 × 1350 |
+| `interstitiel-teasing` | 20 → 26/11 (bouton « Activer les notifications ») | 1170 × 2532 |
+| `interstitiel-offre` | 27/11 → 04/12 | 1170 × 2532 |
+| `banniere-web` | 27/11 → 04/12 | 2400 × 800 |
+| `banniere-728x90` | 27/11 → 04/12 | 1456 × 180 |
+| `banniere-in-app` | 27/11 → 04/12 | 1080 × 336 |
+
+Les textes de chaque phase (teasing, offre, jour J) sont dans l'objet `PHASES` de `noir.html`.

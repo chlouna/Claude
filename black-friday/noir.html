@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Black Friday 2026 – Plaquette fond noir</title>
+<style>
+/* Ancienne charte (exception Black Friday). Titres : remplaçant de la police MICHELIN, en attendant le fichier officiel. */
+@font-face { font-family: "Titre"; src: url("assets/fonts/Archivo-ExpandedBlackItalic.woff2") format("woff2"); font-weight: 900; font-style: italic; }
+@font-face { font-family: "Texte"; src: url("assets/fonts/OpenSans-Italic.woff2") format("woff2"); font-weight: 300 800; font-style: italic; }
+:root { --noir: #0a0a0c; --blanc: #fff; --jaune: #FFFF1A; --gris: #c9c9d1; --barre: #8a8a92; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #e6e6ea; font-family: "Texte", sans-serif; font-style: italic; color: #111; padding: 48px; }
+
+/* ---------- Plaquette ---------- */
+.planche { width: 1240px; }
+.planche h1 { font: 900 italic 32px "Titre"; color: #111; text-transform: uppercase; }
+.planche > p { margin: 8px 0 40px; color: #53565A; font-size: 15px; max-width: 980px; line-height: 1.45; }
+.section { margin-bottom: 56px; }
+.section h2 { font: 900 italic 20px "Titre"; text-transform: uppercase; color: #111; }
+.section h2 + p { font-size: 14px; color: #53565A; margin: 4px 0 18px; }
+.rangee { display: flex; gap: 28px; align-items: flex-end; flex-wrap: wrap; }
+figure { display: flex; flex-direction: column; gap: 8px; }
+figcaption { font-size: 12px; color: #53565A; }
+figcaption b { color: #111; }
+
+/* ---------- Éléments communs ---------- */
+.kv { position: relative; overflow: hidden; color: var(--blanc); font-size: var(--u); width: var(--w); height: var(--h);
+  background: radial-gradient(90% 55% at 80% 80%, #26262e 0%, transparent 70%), var(--noir); }
+.logo { height: 2.5em; width: auto; align-self: flex-start; display: block; position: relative; z-index: 4; }
+.titre { position: relative; display: flex; justify-content: center; align-items: center; }
+.titre .ligne { position: absolute; left: -5em; right: -5em; top: 50%; height: .12em; background: rgba(255,255,255,.9); }
+.boite { position: relative; z-index: 2; background: var(--blanc); color: #111; border-radius: .8em;
+  font: 900 italic 4.2em/1.02 "Titre"; text-transform: uppercase; text-align: center; padding: .28em .5em .3em; }
+.boite span { display: block; }
+.date { position: absolute; z-index: 3; left: 50%; bottom: -1.5em; transform: translateX(-50%) rotate(-3deg);
+  background: var(--jaune); color: #111; border-radius: .5em; white-space: nowrap;
+  font: 900 italic 2.1em/1 "Titre"; text-transform: uppercase; padding: .45em .7em .4em; box-shadow: 0 .2em .6em rgba(0,0,0,.3); }
+.date small { font-size: .62em; margin: 0 .25em; vertical-align: .12em; }
+.sous { font: italic 600 1.45em/1.35 "Texte"; color: var(--gris); }
+.sous b { color: var(--blanc); font-weight: 700; }
+.tag { position: relative; display: inline-flex; background: var(--jaune); color: #111;
+  font: 900 italic 1em/1 "Titre"; white-space: nowrap;
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 16% 100%, 0 50%); padding: .16em .32em .12em .66em; transform: rotate(-8deg); }
+.tag i { position: absolute; left: .2em; top: 50%; width: .14em; height: .14em; margin-top: -.07em; border-radius: 50%; background: #111; }
+.tag small { font-size: .42em; margin-left: .06em; margin-top: .22em; }
+.prix { display: flex; flex-direction: column; gap: .35em; white-space: nowrap; }
+.prix .n { font: 900 italic 2.9em/1 "Titre"; }
+.prix .n em { font: italic 600 .45em "Texte"; margin-left: .15em; }
+.prix .barre { font: italic 600 1.45em/1 "Texte"; color: var(--barre); text-decoration: line-through; }
+.prix.mystere .n { letter-spacing: .04em; }
+.cta { display: inline-flex; justify-content: center; align-items: center; font: 900 italic 1.4em/1 "Titre"; text-transform: uppercase;
+  background: var(--jaune); color: #111; padding: .95em 1.5em; border-radius: .6em; white-space: nowrap; box-shadow: 0 .4em 1.2em rgba(0,0,0,.35); }
+.cta.contour { background: var(--noir); color: var(--blanc); box-shadow: inset 0 0 0 .12em var(--blanc), 0 .4em 1.2em rgba(0,0,0,.35); }
+.tel { position: absolute; filter: drop-shadow(0 1.6em 2.4em rgba(0,0,0,.5)); z-index: 1; }
+.fondu::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 30%; z-index: 2;
+  background: linear-gradient(transparent, rgba(10,10,12,.92) 70%); }
+
+/* ---------- Story 9:16 et interstitiel ---------- */
+.v { padding: 2.6em; }
+.v .titre { margin-top: 3.4em; }
+.v .date { font-size: 2.5em; bottom: -1.6em; }
+.v .ligne-prix { display: flex; align-items: center; gap: 1em; margin-top: 6.6em; position: relative; z-index: 3; }
+.v .tag { font-size: 4.2em; flex: none; }
+.v .tel { width: 22em; left: 50%; margin-left: -11em; top: 34.5em; }
+.v .bas { position: absolute; z-index: 3; left: 2.6em; right: 2.6em; bottom: 2.6em; display: flex; flex-direction: column; align-items: center; gap: 1.1em; }
+.v .bas .cta { align-self: stretch; }
+.v .plus-tard { font: italic 600 1.35em/1 "Texte"; color: var(--gris); text-decoration: underline; }
+.v .legal { font: italic 400 .95em/1.35 "Texte"; color: var(--barre); text-align: center; }
+.inter .sous { margin-top: 2.2em; position: relative; z-index: 3; }
+.inter .tel { top: 41em; }
+
+/* ---------- Post 4:5 ---------- */
+.post { padding: 2.4em; }
+.post .titre { margin-top: 1.8em; justify-content: flex-start; width: 21.4em; }
+.post .boite { font-size: 3.4em; }
+.post .date { font-size: 1.6em; }
+.post .titre .ligne { right: -14em; }
+.post .gauche { position: relative; z-index: 2; width: 18em; margin-top: 3.2em; display: flex; flex-direction: column; gap: 1.3em; }
+.post .tag { font-size: 4.4em; align-self: flex-start; }
+.post .sous { font-size: 1.3em; }
+.post .prix .n { font-size: 2.6em; }
+.post .cta { align-self: flex-start; font-size: 1.2em; }
+.post .tel { width: 12em; right: 2.2em; top: 17.4em; transform: rotate(5deg); }
+
+/* ---------- Bannière web 3:1 ---------- */
+.web { display: flex; align-items: center; padding: 0 5em; gap: 5em; }
+.web .col-titre { display: flex; flex-direction: column; gap: 3.4em; flex: none; position: relative; z-index: 2; }
+.web .logo { height: 3.2em; }
+.web .boite { font-size: 6em; }
+.web .date { font-size: 2.8em; }
+.web .titre .ligne { left: -8em; right: -80em; }
+.web .col-offre { display: flex; flex-direction: column; gap: 2.4em; position: relative; z-index: 2; }
+.web .ligne-prix { display: flex; align-items: center; gap: 2em; }
+.web .tag { font-size: 6.4em; }
+.web .prix .n { font-size: 4.4em; }
+.web .prix .barre { font-size: 2em; }
+.web .cta { font-size: 2em; align-self: flex-start; }
+.web .tel { width: 17em; right: 5em; top: 3em; transform: rotate(5deg); }
+
+/* ---------- Bannières fines ---------- */
+.fine { display: flex; align-items: center; }
+.fine .titre { flex: none; }
+.fine .titre .ligne { display: none; }
+.fine .boite span { display: inline; }
+.fine .boite span + span { margin-left: .3em; }
+.fine .date { left: auto; right: -.6em; transform: rotate(-3deg); }
+.fine .tag { flex: none; }
+/* 728 × 90 */
+.leader { padding: 0 1.6em; gap: 1.2em; }
+.leader .logo { height: 2.3em; align-self: center; }
+.leader .boite { font-size: 1.75em; border-radius: .45em; padding: .32em .5em .36em; }
+.leader .date { font-size: 1em; bottom: -1.4em; }
+.leader .tag { font-size: 3.2em; }
+.leader .prix .n { font-size: 2.2em; }
+.leader .prix .barre { font-size: 1.2em; }
+.leader .cta { font-size: 1.1em; margin-left: auto; padding: .9em 1.1em; flex: none; }
+/* In-app */
+.inapp { padding: 0 1.8em; gap: 2em; }
+.inapp .boite { font-size: 1.8em; border-radius: .45em; padding: .26em .45em .3em; }
+.inapp .boite span { display: block; }
+.inapp .boite span + span { margin-left: 0; }
+.inapp .titre { margin-top: -.8em; }
+.inapp .date { font-size: 1em; bottom: -1.7em; left: 50%; right: auto; transform: translateX(-50%) rotate(-3deg); }
+.inapp .tag { font-size: 3.6em; }
+.inapp .fleche { margin-left: auto; width: 2.4em; height: 2.4em; border-radius: 50%; background: var(--jaune); color: #111;
+  display: grid; place-items: center; font: 900 italic 2.4em/1 "Titre"; flex: none; }
+</style>
+</head>
+<body>
+<div class="planche" id="planche"></div>
+<script>
+const LOGO = "../ma-video/assets/logos/truckfly-blanc-rogne.png";
+const TEL = "assets/telephone-gps.png";
+
+// Textes par phase
+const PHASES = {
+  teasing: { date: `<small>dès le</small>27/11`, tag: `-??<small>%</small>`,
+    prix: `<div class="prix mystere"><span class="n">??,?? €<em>/an</em></span><span class="barre" style="text-decoration:none">le GPS Premium</span></div>`,
+    sous: `Un prix <b>jamais vu</b> sur le GPS Premium. Restez connectés.` },
+  offre:   { date: `<small>du</small>27/11<small>au</small>04/12`, tag: `-50<small>%</small>`,
+    prix: `<div class="prix"><span class="n">37,99 €<em>/an</em></span><span class="barre">au lieu de 74,99 €</span></div>`,
+    sous: `<b>Le GPS Premium</b> à moitié prix, pour toute l'année.` },
+  jourj:   { date: `<small>c'est parti !</small>`, tag: `-50<small>%</small>`,
+    prix: `<div class="prix"><span class="n">37,99 €<em>/an</em></span><span class="barre">au lieu de 74,99 €</span></div>`,
+    sous: `Le GPS Premium à moitié prix, jusqu'au 04/12` },
+};
+const titre = p => `<div class="titre"><div class="ligne"></div>
+  <div class="boite"><span>Black</span><span>Friday</span></div><div class="date">${PHASES[p].date}</div></div>`;
+const tag = p => `<div class="tag"><i></i>${PHASES[p].tag}</div>`;
+const logo = `<img class="logo" src="${LOGO}" alt="Michelin Truckfly">`;
+
+const story = (id, p, cta) => `<div class="kv v story fondu" id="${id}" style="--w:360px;--h:640px;--u:10px">
+  ${logo}${titre(p)}<div class="ligne-prix">${tag(p)}${PHASES[p].prix}</div>
+  <img class="tel" src="${TEL}" alt="">
+  <div class="bas">${cta}</div></div>`;
+
+const inter = (id, p, cta, legal) => `<div class="kv v inter fondu" id="${id}" style="--w:390px;--h:844px;--u:${390 / 36}px">
+  ${logo}${titre(p)}<div class="ligne-prix">${tag(p)}${PHASES[p].prix}</div>
+  <p class="sous">${PHASES[p].sous}</p>
+  <img class="tel" src="${TEL}" alt="">
+  <div class="bas">${cta}<span class="plus-tard">Plus tard</span><p class="legal">${legal}</p></div></div>`;
+
+const post = (id, p, cta) => `<div class="kv post" id="${id}" style="--w:360px;--h:450px;--u:10px">
+  ${logo}${titre(p)}
+  <div class="gauche">${tag(p)}<p class="sous">${PHASES[p].sous}</p>${p === "teasing" ? "" : PHASES[p].prix}${cta}</div>
+  <img class="tel" src="${TEL}" alt=""></div>`;
+
+const web = id => `<div class="kv web" id="${id}" style="--w:1200px;--h:400px;--u:10px">
+  <div class="col-titre">${logo}${titre("offre")}</div>
+  <div class="col-offre"><div class="ligne-prix">${tag("offre")}${PHASES.offre.prix}</div><span class="cta">J'en profite</span></div>
+  <img class="tel" src="${TEL}" alt=""></div>`;
+
+const leader = id => `<div class="kv fine leader" id="${id}" style="--w:728px;--h:90px;--u:10px">
+  ${logo}${titre("offre")}${tag("offre")}${PHASES.offre.prix}<span class="cta">J'en profite</span></div>`;
+
+const inapp = id => `<div class="kv fine inapp" id="${id}" style="--w:360px;--h:112px;--u:10px">
+  ${titre("offre")}${tag("offre")}<span class="fleche">›</span></div>`;
+
+const CTA = {
+  restez: `<span class="cta contour">Restez connectés</span>`,
+  notif: `<span class="cta">Activer les notifications</span>`,
+  profite: `<span class="cta">J'en profite</span>`,
+};
+const LEGAL = "Offre valable du 27/11 au 04/12/2026 sur l'abonnement annuel GPS Premium.";
+
+// [id, html, échelle d'export, légende]
+const VISUELS = {
+  "story-teasing": [story("story-teasing", "teasing", CTA.restez), 3, "<b>Story teasing</b> · 20 → 26/11 · 1080 × 1920"],
+  "story-offre": [story("story-offre", "offre", CTA.profite), 3, "<b>Story pendant l'offre</b> · 27/11 → 04/12 · 1080 × 1920"],
+  "post-teasing": [post("post-teasing", "teasing", CTA.restez), 3, "<b>Post teasing</b> · 20 → 26/11 · 1080 × 1350"],
+  "post-jourj": [post("post-jourj", "jourj", CTA.profite), 3, "<b>Post jour J</b> · 27/11 · 1080 × 1350"],
+  "interstitiel-teasing": [inter("interstitiel-teasing", "teasing", CTA.notif, "Offre réservée à l'abonnement annuel GPS Premium, du 27/11 au 04/12/2026."), 3, "<b>Interstitiel teasing</b> · 20 → 26/11 · 1170 × 2532"],
+  "interstitiel-offre": [inter("interstitiel-offre", "offre", CTA.profite, LEGAL), 3, "<b>Interstitiel offre</b> · 27/11 → 04/12 · 1170 × 2532"],
+  "banniere-web": [web("banniere-web"), 2, "<b>Bannière web</b> · 2400 × 800"],
+  "banniere-728x90": [leader("banniere-728x90"), 2, "<b>Bannière web 728 × 90</b> · 1456 × 180"],
+  "banniere-in-app": [inapp("banniere-in-app"), 3, "<b>Bannière in-app</b> · 1080 × 336"],
+};
+
+const solo = new URLSearchParams(location.search).get("solo");
+const el = document.getElementById("planche");
+if (solo) {
+  document.body.style.padding = "0";
+  el.style.width = "auto";
+  el.innerHTML = VISUELS[solo][0];
+} else {
+  const fig = id => `<figure>${VISUELS[id][0]}<figcaption>${VISUELS[id][2]}</figcaption></figure>`;
+  const section = (t, d, ids) => `<div class="section"><h2>${t}</h2><p>${d}</p><div class="rangee">${ids.map(fig).join("")}</div></div>`;
+  el.innerHTML = `<h1>Black Friday 2026 · Plaquette fond noir</h1>
+    <p>GPS Premium à -50 % : 37,99 €/an au lieu de 74,99 €, du 27/11 au 04/12/2026. Ancienne charte (exception Black Friday) : titres en capitales grasses italiques, cartouche blanc, ligne fine, date en bandeau jaune. Teasing : le prix est caché (« -??% »). Aucun gros texte en jaune.</p>` +
+    section("1 · Stories", "Avant (teasing) et pendant l'offre.", ["story-teasing", "story-offre"]) +
+    section("2 · Posts réseaux", "Teasing, puis le jour J.", ["post-teasing", "post-jourj"]) +
+    section("3 · Interstitiels app", "Teasing (activer les notifications), puis offre.", ["interstitiel-teasing", "interstitiel-offre"]) +
+    section("4 · Bannières", "Pendant l'offre.", ["banniere-web"]) +
+    `<div class="section" style="margin-top:-28px"><div class="rangee">${["banniere-728x90", "banniere-in-app"].map(fig).join("")}</div></div>`;
+}
+window.EXPORTS = Object.entries(VISUELS).map(([id, v]) => [id, v[1]]);
+</script>
+</body>
+</html>

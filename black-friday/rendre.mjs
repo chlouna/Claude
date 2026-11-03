@@ -44,4 +44,20 @@ for (const id of ids) {
   await page.locator(`#${id}`).screenshot({ path: path.join(sortie, "fonds", `${id}.png`) });
   await page.close();
 }
+// Plaquette fond noir (noir.html)
+const urlNoir = "file://" + path.join(ici, "noir.html");
+fs.mkdirSync(path.join(sortie, "noir"), { recursive: true });
+page = await navigateur.newPage({ viewport: { width: 1340, height: 800 }, deviceScaleFactor: 2 });
+await page.goto(urlNoir);
+await page.evaluate(() => document.fonts.ready);
+await page.screenshot({ path: path.join(sortie, "noir", "plaquette-noir.png"), fullPage: true });
+const exports = await page.evaluate(() => window.EXPORTS);
+await page.close();
+for (const [id, echelle] of exports) {
+  page = await navigateur.newPage({ viewport: { width: 1300, height: 900 }, deviceScaleFactor: echelle });
+  await page.goto(`${urlNoir}?solo=${id}`);
+  await page.evaluate(() => document.fonts.ready);
+  await page.locator(`#${id}`).screenshot({ path: path.join(sortie, "noir", `${id}.png`) });
+  await page.close();
+}
 await navigateur.close();
