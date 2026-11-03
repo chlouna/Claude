@@ -12,7 +12,7 @@
 body { background: #e6e6ea; font-family: "Texte", sans-serif; font-style: italic; color: #111; padding: 48px; }
 
 /* ---------- Plaquette ---------- */
-.planche { width: 1240px; }
+.planche { width: 1560px; }
 .planche h1 { font: 900 italic 32px "Titre"; color: #111; text-transform: uppercase; }
 .planche > p { margin: 8px 0 40px; color: #53565A; font-size: 15px; max-width: 980px; line-height: 1.45; }
 .section { margin-bottom: 56px; }
@@ -55,7 +55,7 @@ figcaption b { color: #111; }
 .accroche { position: relative; z-index: 3; font: 900 italic 2.5em/1.1 "Titre"; text-transform: uppercase; color: var(--blanc); }
 .rdv { display: flex; align-items: center; gap: .9em; font: italic 700 1.15em/1 "Texte"; letter-spacing: .12em; text-transform: uppercase; color: var(--blanc); white-space: nowrap; }
 .rdv::before, .rdv::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,.55); }
-.tel.ombre { filter: brightness(.34) saturate(.6) drop-shadow(0 1.6em 2.4em rgba(0,0,0,.6)); }
+.tel.ombre { filter: brightness(var(--lum)) saturate(.6) drop-shadow(0 1.6em 2.4em rgba(0,0,0,.6)); }
 .halo { position: absolute; z-index: 0; width: 44em; height: 44em; left: 50%; margin-left: -22em; top: 22em;
   background: radial-gradient(closest-side, rgba(255,255,255,.16), rgba(255,255,255,.04) 55%, transparent 100%); }
 .fondu::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 30%; z-index: 2;
@@ -75,6 +75,11 @@ figcaption b { color: #111; }
 .inter .sous { margin-top: 2.2em; position: relative; z-index: 3; }
 .inter .tel { top: 41em; }
 .v .accroche { margin-top: 2.4em; }
+.accroche.gros { font-size: 3.4em; line-height: 1; }
+.v.compte.teasing .tel { top: 43em; }
+.v.compte.teasing .halo { top: 33em; }
+.v .accroche.gros { margin-top: 1.5em; }
+.v .accroche.gros + .sous { margin-top: 1em; position: relative; z-index: 3; }
 .inter .accroche + .sous { margin-top: 1.4em; }
 .v.teasing .tel { top: 36em; }
 .v.teasing .halo { top: 26em; }
@@ -150,8 +155,14 @@ const TEL = "assets/telephone-gps.png";
 
 // Textes par phase
 const PHASES = {
-  teasing: { date: `<small>le</small>27/11`, accroche: `Le poids lourd<br>des GPS s'allège.`,
+  teasing: { date: `<small>le</small>27/11`, accroche: `Ça vous dirait<br>une promo<br>sur le GPS ?`, lum: .3,
     sous: `Rendez-vous le 27 novembre dans l'app <b>Michelin Truckfly</b>.` },
+  j3:      { date: `<small>le</small>27/11`, accroche: `Plus que<br>3 jours`, gros: true, lum: .42,
+    sous: `Une promo sur le GPS se prépare. Rendez-vous le 27/11 dans l'app.` },
+  j1:      { date: `<small>le</small>27/11`, accroche: `Plus qu'un<br>jour`, gros: true, lum: .58,
+    sous: `Demain, une promo sur le GPS. Activez vos notifications.` },
+  heures:  { date: `<small>demain</small>`, accroche: `Plus que<br>quelques heures`, gros: true, lum: .78,
+    sous: `Cette nuit, le GPS Premium change de prix.` },
   offre:   { date: `<small>du</small>27/11<small>au</small>04/12`, tag: `-50<small>%</small>`,
     prix: `<div class="prix"><span class="n">37,99 €<em>/an</em></span><span class="barre">au lieu de 74,99 €</span></div>`,
     sous: `<b>Le GPS Premium</b> à moitié prix, pour toute l'année.` },
@@ -164,10 +175,11 @@ const titre = p => `<div class="titre"><div class="ligne"></div>
 const tag = p => `<div class="tag"><i></i>${PHASES[p].tag}</div>`;
 const logo = `<img class="logo" src="${LOGO}" alt="Michelin Truckfly">`;
 
-const T = p => p === "teasing";
-const offre = p => T(p) ? `<h3 class="accroche">${PHASES[p].accroche}</h3>` : `<div class="ligne-prix">${tag(p)}${PHASES[p].prix}</div>`;
-const tel = p => (T(p) ? `<div class="halo"></div>` : "") + `<img class="tel ${T(p) ? "ombre" : ""}" src="${TEL}" alt="">`;
-const story = (id, p, cta) => `<div class="kv v story fondu ${p}" id="${id}" style="--w:360px;--h:640px;--u:10px">
+const T = p => !!PHASES[p].accroche;
+const accroche = p => `<h3 class="accroche ${PHASES[p].gros ? "gros" : ""}">${PHASES[p].accroche}</h3>`;
+const offre = p => T(p) ? accroche(p) + (PHASES[p].gros ? `<p class="sous">${PHASES[p].sous}</p>` : "") : `<div class="ligne-prix">${tag(p)}${PHASES[p].prix}</div>`;
+const tel = p => (T(p) ? `<div class="halo"></div>` : "") + `<img class="tel ${T(p) ? "ombre" : ""}" src="${TEL}" alt="" style="--lum:${PHASES[p].lum || 1}">`;
+const story = (id, p, cta) => `<div class="kv v story fondu ${p} ${PHASES[p].gros ? "compte teasing" : ""}" id="${id}" style="--w:360px;--h:640px;--u:10px">
   ${logo}${titre(p)}${offre(p)}
   ${tel(p)}
   <div class="bas">${cta}</div></div>`;
@@ -201,7 +213,10 @@ const LEGAL = "Offre valable du 27/11 au 04/12/2026 sur l'abonnement annuel GPS 
 
 // [id, html, échelle d'export, légende]
 const VISUELS = {
-  "story-teasing": [story("story-teasing", "teasing", CTA.rdv), 3, "<b>Story teasing</b> · 20 → 26/11 · 1080 × 1920"],
+  "story-teasing": [story("story-teasing", "teasing", CTA.rdv), 3, "<b>Teasing</b> · 20/11 · 1080 × 1920"],
+  "story-j3": [story("story-j3", "j3", CTA.rdv), 3, "<b>Plus que 3 jours</b> · 24/11 · 1080 × 1920"],
+  "story-j1": [story("story-j1", "j1", CTA.rdv), 3, "<b>Plus qu'un jour</b> · 26/11 matin · 1080 × 1920"],
+  "story-heures": [story("story-heures", "heures", CTA.rdv), 3, "<b>Plus que quelques heures</b> · 26/11 soir · 1080 × 1920"],
   "story-offre": [story("story-offre", "offre", CTA.profite), 3, "<b>Story pendant l'offre</b> · 27/11 → 04/12 · 1080 × 1920"],
   "post-teasing": [post("post-teasing", "teasing", CTA.rdv), 3, "<b>Post teasing</b> · 20 → 26/11 · 1080 × 1350"],
   "post-jourj": [post("post-jourj", "jourj", CTA.profite), 3, "<b>Post jour J</b> · 27/11 · 1080 × 1350"],
@@ -221,11 +236,12 @@ if (solo) {
   const fig = id => `<figure>${VISUELS[id][0]}<figcaption>${VISUELS[id][2]}</figcaption></figure>`;
   const section = (t, d, ids) => `<div class="section"><h2>${t}</h2><p>${d}</p><div class="rangee">${ids.map(fig).join("")}</div></div>`;
   el.innerHTML = `<h1>Black Friday 2026 · Plaquette fond noir</h1>
-    <p>GPS Premium à -50 % : 37,99 €/an au lieu de 74,99 €, du 27/11 au 04/12/2026. Ancienne charte (exception Black Friday) : titres en capitales grasses italiques, cartouche blanc, ligne fine, date en bandeau jaune. Teasing : pas de prix, une accroche (« Le poids lourd des GPS s'allège. ») et le téléphone dans la pénombre. Aucun gros texte en jaune.</p>` +
-    section("1 · Stories", "Avant (teasing) et pendant l'offre.", ["story-teasing", "story-offre"]) +
-    section("2 · Posts réseaux", "Teasing, puis le jour J.", ["post-teasing", "post-jourj"]) +
-    section("3 · Interstitiels app", "Teasing (l'utilisateur demande à être averti), puis offre.", ["interstitiel-teasing", "interstitiel-offre"]) +
-    section("4 · Bannières", "Pendant l'offre.", ["banniere-web"]) +
+    <p>GPS Premium à -50 % : 37,99 €/an au lieu de 74,99 €, du 27/11 au 04/12/2026. Ancienne charte (exception Black Friday) : titres en capitales grasses italiques, cartouche blanc, ligne fine, date en bandeau jaune. Teasing : pas de prix, une question (« Ça vous dirait une promo sur le GPS ? »), puis un compte à rebours, téléphone dans la pénombre. Aucun gros texte en jaune.</p>` +
+    section("1 · Stories teasing · compte à rebours", "Une question pour ouvrir, puis le compte à rebours. Le téléphone s'éclaire un peu plus à chaque story.", ["story-teasing", "story-j3", "story-j1", "story-heures"]) +
+    section("2 · Story pendant l'offre", "Du 27/11 au 04/12.", ["story-offre"]) +
+    section("3 · Posts réseaux", "Teasing, puis le jour J.", ["post-teasing", "post-jourj"]) +
+    section("4 · Interstitiels app", "Teasing (l'utilisateur demande à être averti), puis offre.", ["interstitiel-teasing", "interstitiel-offre"]) +
+    section("5 · Bannières", "Pendant l'offre.", ["banniere-web"]) +
     `<div class="section" style="margin-top:-28px"><div class="rangee">${["banniere-728x90"].map(fig).join("")}</div></div>`;
 }
 window.EXPORTS = Object.entries(VISUELS).map(([id, v]) => [id, v[1]]);

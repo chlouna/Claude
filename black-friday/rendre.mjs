@@ -47,7 +47,7 @@ for (const id of ids) {
 // Plaquette fond noir (noir.html)
 const urlNoir = "file://" + path.join(ici, "noir.html");
 fs.mkdirSync(path.join(sortie, "noir"), { recursive: true });
-page = await navigateur.newPage({ viewport: { width: 1340, height: 800 }, deviceScaleFactor: 2 });
+page = await navigateur.newPage({ viewport: { width: 1660, height: 800 }, deviceScaleFactor: 2 });
 await page.goto(urlNoir);
 await page.evaluate(() => document.fonts.ready);
 await page.screenshot({ path: path.join(sortie, "noir", "plaquette-noir.png"), fullPage: true });
