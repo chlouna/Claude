@@ -28,4 +28,20 @@ for (const [id, echelle] of formats) {
   await page.locator(`#${id}`).screenshot({ path: path.join(sortie, `${id}.png`) });
   await page.close();
 }
+// Pistes de fond (fonds.html)
+const urlFonds = "file://" + path.join(ici, "fonds.html");
+page = await navigateur.newPage({ viewport: { width: 1100, height: 800 }, deviceScaleFactor: 2 });
+await page.goto(urlFonds);
+await page.evaluate(() => document.fonts.ready);
+await page.screenshot({ path: path.join(sortie, "planche-fonds.png"), fullPage: true });
+const ids = await page.evaluate(() => window.IDS);
+await page.close();
+fs.mkdirSync(path.join(sortie, "fonds"), { recursive: true });
+for (const id of ids) {
+  page = await navigateur.newPage({ viewport: { width: 1100, height: 900 }, deviceScaleFactor: 3 });
+  await page.goto(`${urlFonds}?solo=${id}`);
+  await page.evaluate(() => document.fonts.ready);
+  await page.locator(`#${id}`).screenshot({ path: path.join(sortie, "fonds", `${id}.png`) });
+  await page.close();
+}
 await navigateur.close();

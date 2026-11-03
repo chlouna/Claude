@@ -15,3 +15,9 @@ Offre annuelle à 37,99 € au lieu de 74,99 €, du 27/11 au 04/12/2026.
 Les textes de chaque phase sont dans l'objet `PHASES` de `index.html`.
 
 Charte : pas de gros texte en jaune. Le jaune est réservé aux petits textes (pastilles), aux boutons et au fond de l'étiquette (texte bleu dessus).
+
+## Pistes de fond avec le téléphone GPS
+
+- `fonds.html` : story et post 4:5 avec le téléphone GPS (`assets/telephone-gps.png`), sur 5 fonds : noir, blanc, bleu clair, jaune, Michelin Blue.
+- `png/planche-fonds.png` : aperçu des 5 pistes ; `png/fonds/` : un PNG par visuel (story 1080 × 1920, post 1080 × 1350).
+- Sur fond clair ou jaune, le titre passe en noir, l'étiquette et le bouton en bleu (ou noir sur jaune).
