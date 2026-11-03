@@ -1,16 +1,21 @@
-// Exporte chaque visuel en PNG 1080 × 1920 dans png/google-play/, plus une planche.
+// Exporte chaque visuel en PNG : Google Play 1080 × 1920 et App Store 1284 × 2778, plus une planche par format.
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import fs from "node:fs";
 const { chromium } = createRequire(import.meta.url)("playwright");
 const racine = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const nav = await chromium.launch();
-const page = await nav.newPage({ viewport: { width: 2000, height: 700 }, deviceScaleFactor: 3 });
-await page.goto("file://" + path.join(racine, "scripts", "index.html"));
-await page.evaluate(() => document.fonts.ready);
-await page.screenshot({ path: path.join(racine, "png", "planche-google-play.png"), fullPage: true, scale: "css" });
-await page.evaluate(() => document.body.classList.add("capture"));
-for (const s of await page.$$("section.shot")) {
-  await s.screenshot({ path: path.join(racine, "png", "google-play", `restaurant-${await s.getAttribute("id")}.png`) });
+for (const fmt of ["google-play", "app-store"]) {
+  const page = await nav.newPage({ viewport: { width: 2400, height: 1000 }, deviceScaleFactor: 3 });
+  await page.goto("file://" + path.join(racine, "scripts", `index-${fmt}.html`));
+  await page.evaluate(() => document.fonts.ready);
+  fs.mkdirSync(path.join(racine, "png", fmt), { recursive: true });
+  await page.screenshot({ path: path.join(racine, "png", `planche-${fmt}.png`), fullPage: true, scale: "css" });
+  await page.evaluate(() => document.body.classList.add("capture"));
+  for (const s of await page.$$("section.shot")) {
+    await s.screenshot({ path: path.join(racine, "png", fmt, `restaurant-${await s.getAttribute("id")}.png`) });
+  }
+  await page.close();
 }
 await nav.close();
