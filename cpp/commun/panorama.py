@@ -1,6 +1,6 @@
 """Mise en page commune des CPP restaurant et parking : 2 visuels d'accueil + 5 volets, en panorama.
 
-Le décor (rond blanc, trait jaune) et certains éléments (téléphone incliné, pictos) sont placés
+Le décor (trait jaune, petit rond blanc) et certains éléments (téléphone incliné, icônes) sont placés
 sur un seul grand dessin, découpé ensuite en visuels : ils passent d'une image à l'autre.
 
 Formats :
@@ -25,8 +25,17 @@ FOURCHETTE = '<path d="M33 30v18a7 7 0 0 0 6 7v20h5V55a7 7 0 0 0 6-7V30h-4v14h-3
 CAMION_MINI = '<path d="M24 58h22V44H24z M46 48h7l5 6v4H46z" fill="#fff"/><circle cx="30" cy="60" r="3" fill="#fff"/><circle cx="52" cy="60" r="3" fill="#fff"/>'
 
 
+ICONES = {"resto": "restaurant.png", "parking": "parking.png"}  # icônes officielles fournies (cpp/assets/icones)
+
+
+def icone(type_, taille):
+    """Icône officielle. Le picto visible occupe environ 53 % de l'image (marges et ombre comprises)."""
+    largeur = taille / 0.53
+    return f'<img src="../../assets/icones/{ICONES[type_]}" class="icone" style="width:{largeur:.0f}px" alt="">'
+
+
 def picto(type_, taille):
-    """Picto en forme de punaise, comme sur la carte de l'app."""
+    """Ancien picto dessiné : plus utilisé (remplacé par les icônes officielles)."""
     queue = '<path d="M40 92 L50 104 L60 92Z" fill="{c}"/>'
     if type_ == "resto":
         corps = (
@@ -78,22 +87,22 @@ def page(titre_page, accueil, volets, fmt):
     l, h = f["l"], f["h"]
     n = 2 + len(volets)
 
-    # Décor : grand rond blanc sur le visuel 2, trait jaune à partir du visuel 3,
+    # Décor : trait jaune à partir du visuel 3,
     # petit rond blanc entre les volets 2 et 3 (visuels 4 et 5).
     x0 = 2 * l
     k = l / 360
     trait = (
-        f"M{x0 - 20 * k:.0f} {0.59 * h:.0f} C {x0 + 120 * k:.0f} {0.47 * h:.0f}, {x0 + 240 * k:.0f} {0.47 * h:.0f}, {x0 + l:.0f} {0.56 * h:.0f} "
+        # le trait naît en bas du visuel 2, passe derrière le téléphone puis file vers la droite
+        f"M{1.2 * l:.0f} {h + 20:.0f} C {1.45 * l:.0f} {0.8 * h:.0f}, {1.75 * l:.0f} {0.6 * h:.0f}, {x0 - 20 * k:.0f} {0.59 * h:.0f} "
+        f"C {x0 + 120 * k:.0f} {0.47 * h:.0f}, {x0 + 240 * k:.0f} {0.47 * h:.0f}, {x0 + l:.0f} {0.56 * h:.0f} "
         + " ".join(
             f"S {x0 + (j + 1.67) * l:.0f} {(0.69 if j % 2 == 0 else 0.47) * h:.0f}, {x0 + (j + 2) * l:.0f} {(0.59 if j % 2 == 0 else 0.56) * h:.0f}"
             for j in range(0, len(volets) - 1)
         )
         + f" L {n * l + 20:.0f} {0.53 * h:.0f}"
     )
-    rond_r = 0.45 * h if fmt == "app-store" else 0.45 * h
     decor = (
         f'<svg class="deco" viewBox="0 0 {n * l} {h}" width="{n * l}" height="{h}">'
-        f'<circle cx="{1.25 * l:.0f}" cy="{0.5 * h:.0f}" r="{rond_r:.0f}" fill="#fff"/>'
         f'<path d="{trait}" fill="none" stroke="#FFFF1A" stroke-width="{14 * k:.0f}" stroke-linecap="round"/>'
         f'<circle cx="{4 * l:.0f}" cy="{0.58 * h:.0f}" r="{0.336 * h:.0f}" fill="#fff"/>'
         "</svg>"
@@ -103,16 +112,14 @@ def page(titre_page, accueil, volets, fmt):
     a = accueil
     elements = "".join(
         [
-            element(telephone(a["tel_incline"], 0.5, f, 18), 0.92, 0.74, f),
-            element(picto(a["picto_grand"], 0.2 * l), 0.6, 0.6, f),
-            element(picto(a["picto_moyen"], 0.17 * l), 0.36, 0.77, f),
-            element(picto(a["picto_petit1"], 0.11 * l), 0.14, 0.53, f),
-            element(picto(a["picto_petit2"], 0.1 * l), 0.47, 0.47, f),
-            # Visuel 2 : deux téléphones et deux pictos
-            element(telephone(a["tel_haut"], 0.4, f), 1.0 + 0.69, 0.32, f),
-            element(telephone(a["tel_bas"], 0.4, f), 1.0 + 0.47, 0.8, f),
-            element(picto(a["picto_v2_1"], 0.16 * l), 1.0 + 0.24, 0.37, f),
-            element(picto(a["picto_v2_2"], 0.16 * l), 1.0 + 0.82, 0.88, f),
+            element(telephone(a["tel_incline"], 0.4, f, 14), 0.84, 0.74, f),
+            element(icone(a["picto_grand"], 0.22 * l), 0.42, 0.6, f),
+            element(icone(a["picto_moyen"], 0.17 * l), 0.2, 0.8, f),
+            # Visuel 2 : deux téléphones et deux icônes
+            element(telephone(a["tel_haut"], 0.4, f), 1.0 + 0.68, 0.31, f),
+            element(telephone(a["tel_bas"], 0.4, f), 1.0 + 0.62, 0.79, f),
+            element(icone(a["picto_v2_1"], 0.16 * l), 1.0 + 0.24, 0.42, f),
+            element(icone(a["picto_v2_2"], 0.15 * l), 1.0 + 0.88, 0.62, f),
         ]
     )
 
@@ -157,7 +164,7 @@ body.capture {{ padding: 0; gap: 0; }}
 .accroche {{ position: absolute; transform: translate(-50%, -50%); background: #fff; color: #061866; font-weight: 700;
   text-align: center; line-height: 1.25; padding: {5 * k:.1f}px {6 * k:.1f}px; }}
 .el {{ position: absolute; width: 0; height: 0; }}
-.el > svg {{ position: absolute; transform: translate(-50%, -50%); }}
+.el > svg, .el > .icone {{ position: absolute; transform: translate(-50%, -50%); max-width: none; }}
 .tel-pano {{ position: absolute; left: 0; top: 0; filter: drop-shadow(0 18px 28px rgba(0,0,0,.35)); }}
 .textes {{ position: absolute; top: {f["txt"]}px; left: 0; right: 0; padding: 0 30px; text-align: center; }}
 h1 {{ font-family: "Bib"; font-weight: 700; font-size: {f["t"]}px; line-height: 1.05; }}
