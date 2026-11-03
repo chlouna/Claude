@@ -34,7 +34,7 @@ Pour savoir d'où vient chaque réponse, ouvrir le lien avec les paramètres `?u
 - **Accroche** demandée : « Pour leur sécurité et la vôtre, préservez la sécurité de vos anges gardiens pendant les fêtes de fin d'année. »
   Version utilisée (tutoiement de l'app, sans la répétition de « sécurité ») : « Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année. »
 - **Pictogrammes + message** en haut de chaque interstitiel, avec les personnages : « À l'approche d'un véhicule d'intervention : JE RALENTIS / JE CHANGE DE VOIE ». Le schéma (voies, flèche du panneau en pointillés, fourgon, voiture qui change de voie) reproduit le modèle du dépliant ; à remplacer par le fichier officiel si VINCI le fournit.
-- **Textes** : sous le titre, l'accroche VINCI puis le texte de chaque proposition (offre aux 1000 premiers, quiz de 3 questions).
+- **Ordre en haut de l'écran** : logos, accroche VINCI, puis le schéma avec « À l'approche d'un véhicule d'intervention : JE RALENTIS / JE CHANGE DE VOIE », puis les personnages. En bas : badge, titre, texte de l'offre, bouton.
 - **Amende de 135 €** : question 2 du quiz.
 - **Règles de sécurité sur autoroute** : rappelées sur la page de remerciement du formulaire.
 

@@ -78,7 +78,7 @@ b.fort { color: #000; }
 .feuille .corridor { background: #fffbd1; border-color: #e6d800; }
 .feuille .c-titre { color: #000; }
 .feuille .c-gestes { color: var(--bleu); }
-.accroche { font-size: 14px; font-weight: 600; color: #fff !important; }
+.accroche-haut { align-self: stretch; flex: none; font-size: 14px; font-weight: 600; line-height: 1.35; color: #fff; text-align: center; margin: 0 -8px; letter-spacing: -0.1px; }
 .feuille .accroche { color: var(--bleu) !important; }
 
 /* Mise en page B : visuel + feuille blanche */
@@ -269,6 +269,7 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
+    <p class="accroche-haut entre" style="--d:.05s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
     <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span>JE RALENTIS</span><span>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 330" aria-hidden="true">
       <use href="#guirlande" y="6" />
@@ -284,7 +285,6 @@ b.fort { color: #000; }
   <div class="bas">
     <span class="badge entre" style="--d:.4s">Réservé aux 1000 premiers</span>
     <h1 class="entre" style="--d:.5s">Ils veillent sur toi, on t'offre <span class="jaune-txt">2 mois de GPS</span></h1>
-    <p class="texte accroche entre" style="--d:.6s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
     <p class="texte entre" style="--d:.65s">Pour les fêtes, Michelin Truckfly et VINCI Autoroutes saluent nos anges gardiens de la route. Réponds à 3 questions sécurité&nbsp;: les 1000 premiers gagnent 2 mois de GPS.</p>
     <a class="cta jaune">Je participe au quiz</a>
     <a class="plus-tard">Plus tard</a>
@@ -302,6 +302,7 @@ b.fort { color: #000; }
       <i style="left:86%;top:26%;--t:3px;--d:3.4s"></i><i style="left:52%;top:16%;--t:3px;--o:.5;--d:4.2s"></i><i style="left:18%;top:46%;--t:4px;--o:.4;--d:2.6s"></i>
     </div>
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
+    <p class="accroche-haut entre" style="--d:.05s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
     <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span>JE RALENTIS</span><span>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 358 290" aria-hidden="true">
       <use href="#guirlande" />
@@ -319,7 +320,6 @@ b.fort { color: #000; }
   <div class="feuille">
     <span class="badge rouge">1000 accès à gagner</span>
     <h1>Cette année, le Père Noël porte un gilet jaune</h1>
-    <p class="texte accroche">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
     <p class="texte">Les patrouilleurs veillent sur toi jour et nuit, même à Noël. Avec VINCI Autoroutes, Michelin Truckfly offre <b class="fort">2 mois de GPS</b> aux 1000 premiers qui répondent au quiz sécurité.</p>
     <a class="cta">Répondre au quiz</a>
     <a class="plus-tard">Plus tard</a>
@@ -338,6 +338,7 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein" style="gap:8px">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
+    <p class="accroche-haut entre" style="--d:.05s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
     <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span>JE RALENTIS</span><span>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 350" aria-hidden="true">
       <!-- halo derrière le sapin -->
@@ -395,7 +396,6 @@ b.fort { color: #000; }
   <div class="bas">
     <span class="badge entre" style="--d:.4s">Un cadeau avant l'heure</span>
     <h1 class="entre" style="--d:.5s">Sous le sapin, <span class="jaune-txt">2 mois de GPS</span> offerts</h1>
-    <p class="texte accroche entre" style="--d:.6s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
     <p class="texte entre" style="--d:.65s">Michelin Truckfly et VINCI Autoroutes gâtent les 1000 premiers qui répondent à notre quiz sécurité.</p>
     <a class="cta jaune">Je déballe mon cadeau</a>
     <a class="plus-tard">Plus tard</a>
@@ -415,6 +415,7 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
+    <p class="accroche-haut entre" style="--d:.05s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
     <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span>JE RALENTIS</span><span>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 330" aria-hidden="true">
       <use href="#guirlande" y="6" />
@@ -431,7 +432,6 @@ b.fort { color: #000; }
   <div class="bas">
     <span class="badge entre" style="--d:.4s">Réservé aux 1000 premiers</span>
     <h1 class="entre" style="--d:.5s">Le Père Noël et ses lutins t'offrent <span class="jaune-txt">2&nbsp;mois de GPS</span></h1>
-    <p class="texte accroche entre" style="--d:.6s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
     <p class="texte entre" style="--d:.65s">Cette année, ils enfilent le gilet de patrouilleur avec VINCI Autoroutes et Michelin Truckfly. Réponds à 3 questions sécurité&nbsp;: les 1000 premiers gagnent.</p>
     <a class="cta jaune">Je participe au quiz</a>
     <a class="plus-tard">Plus tard</a>
