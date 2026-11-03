@@ -43,16 +43,16 @@ body { background: #e9e7e4; font-family: "Inter", sans-serif; color: #000; paddi
 .logo-vinci { height: 50px; padding: 0 12px; border-radius: 9px; background: #fff; display: flex; align-items: center; }
 .duo .logo-vinci img { height: 34px; }
 
-h1 { font-family: "Bib", sans-serif; font-weight: 700; font-size: 28px; line-height: 1.12; color: #000; }
-.texte { font-size: 16px; line-height: 1.4; color: #3a3a3c; margin-top: 10px; }
-.badge { align-self: flex-start; margin-bottom: 12px; padding: 5px 12px; border-radius: 999px; background: var(--bleu); color: #fff; font-weight: 700; font-size: 12.5px; }
-.cta { margin-top: 16px; height: 56px; border-radius: 14px; background: var(--bleu); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px; text-decoration: none; }
+h1 { font-family: "Bib", sans-serif; font-weight: 700; font-size: 25px; line-height: 1.1; color: #000; }
+.texte { font-size: 14.5px; line-height: 1.38; color: #3a3a3c; margin-top: 8px; }
+.badge { align-self: flex-start; margin-bottom: 9px; padding: 5px 12px; border-radius: 999px; background: var(--bleu); color: #fff; font-weight: 700; font-size: 12.5px; }
+.cta { margin-top: 14px; height: 52px; border-radius: 14px; background: var(--bleu); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px; text-decoration: none; }
 .cta.jaune { background: var(--jaune); color: #000; }
-.plus-tard { margin-top: 12px; text-align: center; color: var(--gris); font-size: 15px; font-weight: 600; }
+.plus-tard { margin-top: 10px; text-align: center; color: var(--gris); font-size: 15px; font-weight: 600; }
 .mention { margin-top: 10px; text-align: center; color: var(--gris); font-size: 11.5px; line-height: 1.35; }
 .nuit .plus-tard { color: rgba(255, 255, 255, 0.75); }
 .nuit .mention { color: rgba(255, 255, 255, 0.55); }
-.nuit h1 { color: #fff; font-size: 29px; }
+.nuit h1 { color: #fff; font-size: 26px; }
 .nuit .texte { color: rgba(255, 255, 255, 0.86); }
 .nuit .badge, .badge.rouge { background: var(--rouge); color: #fff; }
 .ruban { position: absolute; left: 0; right: 0; top: 0; height: 6px; background: var(--rouge); z-index: 4; }
@@ -65,27 +65,28 @@ b.fort { color: #000; }
 @keyframes tombe { from { transform: translateY(-30px); } to { transform: translateY(60px); opacity: 0; } }
 
 /* Mise en page A et C : pleine page */
-.v-plein { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 70px 24px 0; gap: 14px; }
-.bas { position: relative; flex: none; padding: 8px 24px 22px; display: flex; flex-direction: column; }
+.v-plein { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 64px 24px 0; gap: 10px; }
+.bas { position: relative; flex: none; padding: 6px 22px 18px; display: flex; flex-direction: column; }
 .scene { width: 100%; flex: 1 1 0; min-height: 0; height: auto; }
 /* Bloc corridor de sécurité (message et pictogrammes VINCI Autoroutes) */
-.corridor { margin-top: 12px; display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 14px; background: rgba(255, 255, 26, 0.1); border: 1.5px solid rgba(255, 255, 26, 0.65); }
-.corridor .picto { width: 60px; height: 62px; flex: none; }
+.corridor { align-self: stretch; flex: none; display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 14px; background: rgba(255, 255, 26, 0.1); border: 1.5px solid rgba(255, 255, 26, 0.65); }
+.corridor .picto { width: 54px; height: 64px; flex: none; border-radius: 6px; }
 .c-titre { font-size: 13px; font-weight: 600; line-height: 1.3; color: #fff; }
-.c-gestes { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 5px; font-size: 13.5px; font-weight: 700; color: var(--jaune); text-transform: uppercase; }
+.c-gestes { display: flex; flex-direction: column; gap: 3px; margin-top: 5px; font-size: 14px; font-weight: 700; color: var(--jaune); }
 .c-gestes span { display: flex; align-items: center; gap: 5px; }
-.c-gestes svg { width: 15px; height: 15px; }
+.c-gestes svg { width: 15px; height: 15px; flex: none; }
 .feuille .corridor { background: #fffbd1; border-color: #e6d800; }
 .feuille .c-titre { color: #000; }
 .feuille .c-gestes { color: var(--bleu); }
-.accroche { font-size: 15px; }
+.accroche { font-size: 14px; font-weight: 600; color: #fff !important; }
+.feuille .accroche { color: var(--bleu) !important; }
 
 /* Mise en page B : visuel + feuille blanche */
 .visuel {
   position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 10px;
-  padding: 70px 16px 30px; background: radial-gradient(120% 70% at 50% 0%, #10287f 0%, var(--bleu) 55%, var(--bleu-nuit) 100%);
+  padding: 64px 16px 30px; background: radial-gradient(120% 70% at 50% 0%, #10287f 0%, var(--bleu) 55%, var(--bleu-nuit) 100%);
 }
-.feuille { position: relative; margin-top: -28px; flex: none; background: #fff; border-radius: 28px 28px 0 0; padding: 22px 24px 22px; display: flex; flex-direction: column; z-index: 2; }
+.feuille { position: relative; margin-top: -28px; flex: none; background: #fff; border-radius: 28px 28px 0 0; padding: 18px 22px 18px; display: flex; flex-direction: column; z-index: 2; }
 
 /* C : aperçu du quiz */
 .quiz { position: relative; width: 330px; background: #fff; border-radius: 20px; padding: 16px 16px 14px; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25); z-index: 2; }
@@ -202,30 +203,31 @@ b.fort { color: #000; }
     </g>
     <!-- Schéma du corridor de sécurité, reproduit d'après le dépliant VINCI Autoroutes -->
     <g id="picto-corridor">
-      <rect width="220" height="225" rx="16" fill="#0b0b0b" />
-      <rect x="11" y="11" width="198" height="203" rx="5" fill="none" stroke="#f5d300" stroke-width="7" />
-      <path d="M44 26 V206 M98 26 V206" stroke="#f5d300" stroke-width="5" stroke-dasharray="22 15" />
-      <path d="M136 104 V212" stroke="#f5d300" stroke-width="5" />
-      <!-- panneau flèche -->
-      <g fill="#f5d300"><rect x="148" y="28" width="6" height="6" /><rect x="148" y="38" width="6" height="6" /><rect x="158" y="28" width="6" height="6" /></g>
-      <path d="M190 30 L162 58 M162 40 V58 H180" fill="none" stroke="#f5d300" stroke-width="7" stroke-linecap="square" />
+      <rect width="245" height="290" fill="#000" />
+      <path d="M18 0 V290 M97 0 V290" stroke="#f2d200" stroke-width="5" stroke-dasharray="24 18" stroke-dashoffset="6" />
+      <path d="M168 4 V40 M166 132 V290" stroke="#f2d200" stroke-width="5" />
+      <!-- flèche du panneau, en pointillés -->
+      <g fill="#f2d200"><circle cx="224" cy="10" r="3.4" /><circle cx="218" cy="16" r="3.4" /><circle cx="212" cy="22" r="3.4" /><circle cx="206" cy="28" r="3.4" /><circle cx="200" cy="34" r="3.4" /><circle cx="194" cy="40" r="3.4" /><circle cx="194" cy="22" r="3.4" /><circle cx="194" cy="28" r="3.4" /><circle cx="194" cy="34" r="3.4" /><circle cx="200" cy="40" r="3.4" /><circle cx="206" cy="40" r="3.4" /><circle cx="212" cy="40" r="3.4" /></g>
       <!-- fourgon d'intervention vu de face -->
-      <rect x="160" y="62" width="20" height="6" rx="2" fill="#ff8a00" />
-      <rect x="150" y="68" width="40" height="36" rx="5" fill="#f5d300" />
-      <rect x="155" y="72" width="30" height="11" rx="2" fill="#0b0b0b" />
-      <g clip-path="url(#bandes)"><rect x="150" y="86" width="40" height="14" fill="#fff" /><path d="M146 100 L160 86 M156 100 L170 86 M166 100 L180 86 M176 100 L190 86 M186 100 L200 86" stroke="#e20025" stroke-width="5" /></g>
-      <rect x="152" y="104" width="7" height="5" fill="#f5d300" /><rect x="181" y="104" width="7" height="5" fill="#f5d300" />
+      <rect x="186" y="52" width="36" height="7" rx="2" fill="#ff7a00" />
+      <rect x="178" y="59" width="52" height="58" rx="6" fill="#f5b400" />
+      <rect x="184" y="64" width="40" height="16" rx="3" fill="#2a2a2a" />
+      <g clip-path="url(#bandes)"><rect x="180" y="84" width="48" height="26" fill="#fff" />
+        <path d="M172 110 L188 90 L204 110 M188 110 L204 90 L220 110 M204 110 L220 90 L236 110" fill="none" stroke="#e20025" stroke-width="6" /></g>
+      <rect x="180" y="117" width="10" height="7" rx="2" fill="#222" /><rect x="218" y="117" width="10" height="7" rx="2" fill="#222" />
       <!-- voiture vue de face -->
-      <path d="M104 182 L108 170 Q110 166 115 166 L133 166 Q138 166 140 170 L144 182 Z" fill="#fff" />
-      <rect x="101" y="181" width="46" height="16" rx="4" fill="#fff" />
-      <path d="M111 171 L113 167 L135 167 L137 171 Z" fill="#0b0b0b" />
-      <rect x="104" y="196" width="8" height="7" rx="2" fill="#fff" /><rect x="136" y="196" width="8" height="7" rx="2" fill="#fff" />
-      <circle cx="108" cy="187" r="2.5" fill="#0b0b0b" /><circle cx="140" cy="187" r="2.5" fill="#0b0b0b" />
+      <path d="M118 266 L123 252 Q125 248 130 248 L150 248 Q155 248 157 252 L162 266 Z" fill="#fff" />
+      <rect x="114" y="265" width="52" height="17" rx="4" fill="#fff" />
+      <path d="M127 254 L129 250 L151 250 L153 254 Z" fill="#000" />
+      <rect x="117" y="281" width="9" height="8" rx="2" fill="#fff" /><rect x="154" y="281" width="9" height="8" rx="2" fill="#fff" />
+      <circle cx="122" cy="271" r="3" fill="#000" /><circle cx="158" cy="271" r="3" fill="#000" />
       <!-- changement de voie -->
-      <path d="M124 160 Q124 134 98 122 Q70 110 70 84" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" />
-      <path d="M54 92 L70 68 L86 92 Z" fill="#fff" />
+      <path d="M140 240 Q140 196 104 168 Q68 140 68 96" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" />
+      <path d="M50 108 L68 84 L86 108" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
     </g>
-    <clipPath id="bandes"><rect x="150" y="86" width="40" height="14" /></clipPath>
+    <clipPath id="bandes"><rect x="178" y="84" width="52" height="26" /></clipPath>
+    <!-- petite flèche en pointillés, comme sur l'affiche -->
+    <g id="ico-pointilles" fill="currentColor"><circle cx="14.1" cy="1.9" r="1.3" /><circle cx="12.2" cy="3.8" r="1.3" /><circle cx="10.2" cy="5.8" r="1.3" /><circle cx="8.3" cy="7.7" r="1.3" /><circle cx="6.4" cy="9.6" r="1.3" /><circle cx="4.5" cy="11.5" r="1.3" /><circle cx="4.5" cy="5.8" r="1.3" /><circle cx="4.5" cy="7.7" r="1.3" /><circle cx="4.5" cy="9.6" r="1.3" /><circle cx="6.4" cy="11.5" r="1.3" /><circle cx="8.3" cy="11.5" r="1.3" /><circle cx="10.2" cy="11.5" r="1.3" /></g>
     <g id="ico-ralentis"><path d="M3 4 L8 9 L13 4 M3 9 L8 14 L13 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></g>
     <g id="ico-voie"><path d="M11 15 Q11 8 4 6 M2 9 L4 6 L7 4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></g>
     <g id="fourgon">
@@ -265,6 +267,7 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
+    <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE RALENTIS</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 330" aria-hidden="true">
       <use href="#guirlande" y="6" />
       <path d="M0 270 L360 250 L360 330 L0 330 Z" fill="#0b1f5c" />
@@ -280,7 +283,7 @@ b.fort { color: #000; }
     <span class="badge entre" style="--d:.4s">Réservé aux 1000 premiers</span>
     <h1 class="entre" style="--d:.5s">Ils veillent sur toi, on t'offre <span class="jaune-txt">2 mois de GPS</span></h1>
     <p class="texte accroche entre" style="--d:.6s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
-    <div class="corridor"><svg class="picto" viewBox="0 0 220 225" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-ralentis" /></svg>Je ralentis</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-voie" /></svg>Je change de voie</span></p></div></div>
+    <p class="texte entre" style="--d:.65s">Pour les fêtes, Michelin Truckfly et VINCI Autoroutes saluent nos anges gardiens de la route. Réponds à 3 questions sécurité&nbsp;: les 1000 premiers gagnent 2 mois de GPS.</p>
     <a class="cta jaune">Je participe au quiz</a>
     <a class="plus-tard">Plus tard</a>
   </div>
@@ -297,6 +300,7 @@ b.fort { color: #000; }
       <i style="left:86%;top:26%;--t:3px;--d:3.4s"></i><i style="left:52%;top:16%;--t:3px;--o:.5;--d:4.2s"></i><i style="left:18%;top:46%;--t:4px;--o:.4;--d:2.6s"></i>
     </div>
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
+    <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE RALENTIS</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 358 290" aria-hidden="true">
       <use href="#guirlande" />
       <g class="flotte"><use href="#ange-f" transform="translate(0 64) scale(.92)" /></g>
@@ -314,7 +318,7 @@ b.fort { color: #000; }
     <span class="badge rouge">1000 accès à gagner</span>
     <h1>Cette année, le Père Noël porte un gilet jaune</h1>
     <p class="texte accroche">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
-    <div class="corridor"><svg class="picto" viewBox="0 0 220 225" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-ralentis" /></svg>Je ralentis</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-voie" /></svg>Je change de voie</span></p></div></div>
+    <p class="texte">Les patrouilleurs veillent sur toi jour et nuit, même à Noël. Avec VINCI Autoroutes, Michelin Truckfly offre <b class="fort">2 mois de GPS</b> aux 1000 premiers qui répondent au quiz sécurité.</p>
     <a class="cta">Répondre au quiz</a>
     <a class="plus-tard">Plus tard</a>
   </div>
@@ -332,6 +336,7 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein" style="gap:8px">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
+    <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE RALENTIS</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 350" aria-hidden="true">
       <!-- halo derrière le sapin -->
       <circle cx="180" cy="170" r="150" fill="url(#lueur)" opacity=".35" />
@@ -386,10 +391,10 @@ b.fort { color: #000; }
     </svg>
   </div>
   <div class="bas">
-    <span class="badge entre" style="--d:.4s">Un cadeau avant l'heure · 1000 premiers</span>
+    <span class="badge entre" style="--d:.4s">Un cadeau avant l'heure</span>
     <h1 class="entre" style="--d:.5s">Sous le sapin, <span class="jaune-txt">2 mois de GPS</span> offerts</h1>
     <p class="texte accroche entre" style="--d:.6s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
-    <div class="corridor"><svg class="picto" viewBox="0 0 220 225" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-ralentis" /></svg>Je ralentis</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-voie" /></svg>Je change de voie</span></p></div></div>
+    <p class="texte entre" style="--d:.65s">Michelin Truckfly et VINCI Autoroutes gâtent les 1000 premiers qui répondent à notre quiz sécurité (3 questions).</p>
     <a class="cta jaune">Je déballe mon cadeau</a>
     <a class="plus-tard">Plus tard</a>
   </div>
@@ -408,6 +413,7 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci"><img src="assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
+    <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE RALENTIS</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-pointilles" /></svg>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 330" aria-hidden="true">
       <use href="#guirlande" y="6" />
       <path d="M0 270 L360 250 L360 330 L0 330 Z" fill="#0b1f5c" />
@@ -424,7 +430,7 @@ b.fort { color: #000; }
     <span class="badge entre" style="--d:.4s">Réservé aux 1000 premiers</span>
     <h1 class="entre" style="--d:.5s">Le Père Noël et ses lutins t'offrent <span class="jaune-txt">2&nbsp;mois de GPS</span></h1>
     <p class="texte accroche entre" style="--d:.6s">Pour leur sécurité et la tienne, protège tes anges gardiens pendant les fêtes de fin d'année.</p>
-    <div class="corridor"><svg class="picto" viewBox="0 0 220 225" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule d'intervention&nbsp;:</p><p class="c-gestes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-ralentis" /></svg>Je ralentis</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#ico-voie" /></svg>Je change de voie</span></p></div></div>
+    <p class="texte entre" style="--d:.65s">Cette année, ils enfilent le gilet de patrouilleur avec VINCI Autoroutes et Michelin Truckfly. Réponds à 3 questions sécurité&nbsp;: les 1000 premiers gagnent.</p>
     <a class="cta jaune">Je participe au quiz</a>
     <a class="plus-tard">Plus tard</a>
   </div>
