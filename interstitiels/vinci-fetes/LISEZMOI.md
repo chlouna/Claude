@@ -16,7 +16,7 @@ Lien d'édition Tally (brouillon, pas encore publié) : https://tally.so/forms/q
 
 Pour savoir d'où vient chaque réponse, ouvrir le lien avec les paramètres `?user_id=…&source=interstitiel`.
 
-Bouton : « Je veux 2 mois de GPS gratuits », avec « Plus tard » en dessous.
+Boutons (un par proposition) : A « Je veux mes 2 mois de GPS offerts », B « Je veux gagner 2 mois de GPS », C « Je déballe mes 2 mois de GPS », D « Je veux mes 2 mois de GPS gratuits », avec « Plus tard » en dessous.
 
 ## Fichiers
 
@@ -26,10 +26,10 @@ Bouton : « Je veux 2 mois de GPS gratuits », avec « Plus tard » en dessous.
 
 | # | Proposition | Titre | CTA |
 |---|---|---|---|
-| A | Pleine page : les deux anges gardiens au bord de l'autoroute, fourgon de patrouille | Ils veillent sur toi, on t'offre 2 mois de GPS | Je veux 2 mois de GPS gratuits |
-| B | Visuel + feuille blanche, étiquette « 2 mois » | Cette année, le Père Noël porte un gilet jaune | Je veux 2 mois de GPS gratuits |
-| C | Un cadeau avant l'heure : sapin décoré d'anges en gilet jaune (un en haut du sapin), gros cadeau blanc et rouge sous le sapin avec l'étiquette « 2 mois de GPS offerts » | Sous le sapin, 2 mois de GPS offerts | Je veux 2 mois de GPS gratuits |
-| D | Pleine page : le Père Noël (manches rouges) et ses deux lutins, tous en gilet jaune de patrouilleur, au bord de l'autoroute | Le Père Noël et ses lutins t'offrent 2 mois de GPS | Je veux 2 mois de GPS gratuits |
+| A | Pleine page : les deux anges gardiens au bord de l'autoroute, fourgon de patrouille | Ils veillent sur toi, on t'offre 2 mois de GPS | Je veux mes 2 mois de GPS offerts |
+| B | Visuel + feuille blanche, étiquette « 2 mois » | Cette année, le Père Noël porte un gilet jaune | Je veux gagner 2 mois de GPS |
+| C | Un cadeau avant l'heure : sapin décoré d'anges en gilet jaune (un en haut du sapin), gros cadeau blanc et rouge sous le sapin avec l'étiquette « 2 mois de GPS offerts » | Sous le sapin, 2 mois de GPS offerts | Je déballe mes 2 mois de GPS |
+| D | Pleine page : le Père Noël (manches rouges) et ses deux lutins, tous en gilet jaune de patrouilleur, au bord de l'autoroute | Le Père Noël et ses lutins t'offrent 2 mois de GPS | Je veux mes 2 mois de GPS gratuits |
 
 ## Brief VINCI Autoroutes (Lola, d'après le dépliant « Corridor de sécurité »)
 
