@@ -16,6 +16,8 @@ Lien d'édition Tally (brouillon, pas encore publié) : https://tally.so/forms/q
 
 Pour savoir d'où vient chaque réponse, ouvrir le lien avec les paramètres `?user_id=…&source=interstitiel`.
 
+Un seul bouton par interstitiel (pas de « Plus tard ») : la fermeture se fait avec la croix.
+
 ## Fichiers
 
 - `index.html` : les 3 propositions au format téléphone (390 × 844), avec de petites animations.
