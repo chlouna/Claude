@@ -16,7 +16,7 @@ Lien d'édition Tally (brouillon, pas encore publié) : https://tally.so/forms/q
 
 Pour savoir d'où vient chaque réponse, ouvrir le lien avec les paramètres `?user_id=…&source=interstitiel`.
 
-Un seul bouton par interstitiel (pas de « Plus tard ») : la fermeture se fait avec la croix.
+Bouton : « Je veux 2 mois de GPS gratuits », avec « Plus tard » en dessous.
 
 ## Fichiers
 
@@ -26,10 +26,10 @@ Un seul bouton par interstitiel (pas de « Plus tard ») : la fermeture se fait 
 
 | # | Proposition | Titre | CTA |
 |---|---|---|---|
-| A | Pleine page : les deux anges gardiens au bord de l'autoroute, fourgon de patrouille | Ils veillent sur toi, on t'offre 2 mois de GPS | Je participe au quiz |
-| B | Visuel + feuille blanche, étiquette « 2 mois » | Cette année, le Père Noël porte un gilet jaune | Répondre au quiz |
-| C | Un cadeau avant l'heure : sapin décoré d'anges en gilet jaune (un en haut du sapin), gros cadeau blanc et rouge sous le sapin avec l'étiquette « 2 mois de GPS offerts » | Sous le sapin, 2 mois de GPS offerts | Je déballe mon cadeau |
-| D | Pleine page : le Père Noël (manches rouges) et ses deux lutins, tous en gilet jaune de patrouilleur, au bord de l'autoroute | Le Père Noël et ses lutins t'offrent 2 mois de GPS | Je participe au quiz |
+| A | Pleine page : les deux anges gardiens au bord de l'autoroute, fourgon de patrouille | Ils veillent sur toi, on t'offre 2 mois de GPS | Je veux 2 mois de GPS gratuits |
+| B | Visuel + feuille blanche, étiquette « 2 mois » | Cette année, le Père Noël porte un gilet jaune | Je veux 2 mois de GPS gratuits |
+| C | Un cadeau avant l'heure : sapin décoré d'anges en gilet jaune (un en haut du sapin), gros cadeau blanc et rouge sous le sapin avec l'étiquette « 2 mois de GPS offerts » | Sous le sapin, 2 mois de GPS offerts | Je veux 2 mois de GPS gratuits |
+| D | Pleine page : le Père Noël (manches rouges) et ses deux lutins, tous en gilet jaune de patrouilleur, au bord de l'autoroute | Le Père Noël et ses lutins t'offrent 2 mois de GPS | Je veux 2 mois de GPS gratuits |
 
 ## Brief VINCI Autoroutes (Lola, d'après le dépliant « Corridor de sécurité »)
 
