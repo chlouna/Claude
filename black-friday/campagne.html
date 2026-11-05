@@ -27,11 +27,12 @@ figcaption { font-size: 12px; color: #53565A; }
 figcaption b { color: #111; }
 
 /* ---------- Éléments communs ---------- */
-.kv { position: relative; overflow: hidden; color: var(--blanc); font-size: var(--u); width: var(--w); height: var(--h);
+.kv { position: relative; isolation: isolate; overflow: hidden; color: var(--blanc); font-size: var(--u); width: var(--w); height: var(--h);
   background: radial-gradient(90% 55% at 80% 80%, #26262e 0%, transparent 70%), var(--noir); }
 .logo { height: 2.5em; width: auto; align-self: flex-start; display: block; position: relative; z-index: 4; }
 .titre { position: relative; display: flex; justify-content: center; align-items: center; }
-.titre .ligne { position: absolute; left: -5em; right: -5em; top: 50%; height: .12em; background: rgba(255,255,255,.9); }
+/* Trait blanc : tout au fond, derrière le téléphone et les textes */
+.titre .ligne { position: absolute; z-index: -1; left: -5em; right: -5em; top: 50%; height: .12em; background: rgba(255,255,255,.9); }
 .boite { position: relative; z-index: 2; background: var(--blanc); color: #111; border-radius: .8em;
   font: 900 italic 4.2em/1.02 "Titre"; text-transform: uppercase; text-align: center; padding: .28em .5em .3em; }
 .boite span { display: block; }
@@ -75,9 +76,9 @@ figcaption b { color: #111; }
 .v .bas .cta, .v .bas .rdv { align-self: stretch; }
 .v .legal { font: italic 400 .95em/1.35 "Texte"; color: var(--barre); text-align: center; }
 /* Question teasing */
-.v.question .accroche { margin-top: 2.4em; }
+.v.question .accroche { margin-top: 2.4em; text-align: center; }
 .v.question .tel { top: 36em; }
-.iam.question .sous { margin-top: 1.4em; position: relative; z-index: 3; }
+.iam.question .sous { margin-top: 1.4em; position: relative; z-index: 3; text-align: center; }
 .iam.question .tel { top: 40em; }
 .iam.question .halo { top: 30em; }
 /* Compte à rebours avant lancement */
@@ -122,7 +123,7 @@ figcaption b { color: #111; }
 /* ---------- Bannière funnel d'achat 990 × 402 ---------- */
 .funnel { display: flex; align-items: center; padding: 0 4em; gap: 3.6em; }
 .funnel .logo { position: absolute; top: 3em; left: 4em; height: 2.8em; }
-.funnel .col-titre { flex: none; position: relative; z-index: 2; margin-top: 2.6em; }
+.funnel .col-titre { flex: none; position: relative; margin-top: 2.6em; }
 .funnel .boite { font-size: 4.6em; }
 .funnel .date { font-size: 2em; bottom: -1.7em; }
 .funnel .titre .ligne { left: -6em; right: -80em; }
