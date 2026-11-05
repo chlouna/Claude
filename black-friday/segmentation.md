@@ -29,43 +29,43 @@ Règles : à chaque achat, la personne sort du parcours. Un seul message in-app 
 
 ## 3. Textes des push (titre · texte)
 
-Pas d'emoji (règle Truckfly pour les messages GPS). Tutoiement dans toutes les langues.
+Pas d'emoji (règle Truckfly pour les messages GPS). Tutoiement dans toutes les langues. Ton : complice, vocabulaire de la route.
 
 ### Push A · 27/11 · Intéressés
-- **FR** · Black Friday : c'est parti · On t'avait promis de te prévenir : le GPS Premium est à -50 % jusqu'au 30/11.
-- **EN** · Black Friday is on · As promised: GPS Premium is 50% off until 30/11.
-- **DE** · Black Friday ist da · Wie versprochen: GPS Premium bis 30.11. zum halben Preis.
-- **IT** · Il Black Friday è iniziato · Come promesso: GPS Premium a -50% fino al 30/11.
-- **ES** · Ya está aquí el Black Friday · Te lo prometimos: GPS Premium al -50 % hasta el 30/11.
-- **NL** · Black Friday is begonnen · Zoals beloofd: GPS Premium t/m 30/11 voor de halve prijs.
-- **PL** · Black Friday wystartował · Tak jak obiecaliśmy: GPS Premium -50% do 30.11.
+- **FR** · Promesse tenue · Le GPS Premium est à -50 %. Tu es parmi les premiers à le savoir.
+- **EN** · Promise kept · GPS Premium is 50% off. You're among the first to know.
+- **DE** · Versprochen ist versprochen · GPS Premium zum halben Preis. Du gehörst zu den Ersten, die es wissen.
+- **IT** · Promessa mantenuta · GPS Premium a -50%. Sei tra i primi a saperlo.
+- **ES** · Promesa cumplida · GPS Premium al -50 %. Eres de los primeros en saberlo.
+- **NL** · Beloofd is beloofd · GPS Premium voor de halve prijs. Jij hoort het als een van de eersten.
+- **PL** · Obietnica dotrzymana · GPS Premium -50%. Wiesz o tym przed innymi.
 
 ### Push B · 27/11 · Plus tard
-- **FR** · Tu avais dit « plus tard » · C'est maintenant : le GPS Premium est à moitié prix jusqu'au 30/11.
-- **EN** · You said “later” · Well, it's now: GPS Premium is half price until 30/11.
-- **DE** · Du hast „später“ gesagt · Jetzt ist es so weit: GPS Premium bis 30.11. zum halben Preis.
-- **IT** · Avevi detto «più tardi» · È il momento: GPS Premium a metà prezzo fino al 30/11.
-- **ES** · Dijiste «más tarde» · Es ahora: GPS Premium a mitad de precio hasta el 30/11.
-- **NL** · Je zei ‘later’ · Nou, het is nu: GPS Premium t/m 30/11 voor de halve prijs.
-- **PL** · „Później” właśnie nadeszło · GPS Premium za pół ceny do 30.11.
+- **FR** · « Plus tard » vient d'arriver · Le GPS Premium à moitié prix, mais seulement jusqu'au 30/11.
+- **EN** · “Later” has arrived · GPS Premium at half price, but only until 30/11.
+- **DE** · „Später“ ist jetzt · GPS Premium zum halben Preis, aber nur bis 30.11.
+- **IT** · «Più tardi» è arrivato · GPS Premium a metà prezzo, ma solo fino al 30/11.
+- **ES** · «Más tarde» ya ha llegado · GPS Premium a mitad de precio, solo hasta el 30/11.
+- **NL** · ‘Later’ is nu · GPS Premium voor de halve prijs, maar alleen t/m 30/11.
+- **PL** · „Później” właśnie nadeszło · GPS Premium za pół ceny, ale tylko do 30.11.
 
 ### Push C · 29/11 · Plus tard, pas encore acheté
-- **FR** · Plus qu'un jour · Demain soir, le GPS Premium repasse à 74,99 €.
-- **EN** · Only one day left · Tomorrow night, GPS Premium goes back to £63.98.
-- **DE** · Nur noch ein Tag · Morgen Abend kostet GPS Premium wieder 74,99 €.
-- **IT** · Manca solo un giorno · Domani sera GPS Premium torna a 74,99 €.
-- **ES** · Solo queda un día · Mañana por la noche, GPS Premium vuelve a 74,99 €.
-- **NL** · Nog maar één dag · Morgenavond kost GPS Premium weer € 74,99.
-- **PL** · Został tylko jeden dzień · Jutro wieczorem GPS Premium wraca do 333,98 zł.
+- **FR** · Dernière sortie avant la fin · Plus qu'un jour pour le GPS Premium à moitié prix.
+- **EN** · Last exit before the end · One day left for GPS Premium at half price.
+- **DE** · Letzte Ausfahrt vor dem Ende · Nur noch ein Tag: GPS Premium zum halben Preis.
+- **IT** · Ultima uscita prima della fine · Manca un giorno: GPS Premium a metà prezzo.
+- **ES** · Última salida antes del final · Queda un día: GPS Premium a mitad de precio.
+- **NL** · Laatste afslag voor het einde · Nog één dag: GPS Premium voor de halve prijs.
+- **PL** · Ostatni zjazd przed końcem · Został jeden dzień: GPS Premium za pół ceny.
 
 ### Push D · 30/11 · Tous ceux qui ont cliqué, pas encore acheté
-- **FR** · Dernier jour · Le GPS Premium à 37,99 €/an, c'est jusqu'à minuit.
-- **EN** · Last day · GPS Premium at £31.99/year, until midnight.
-- **DE** · Letzter Tag · GPS Premium für 37,99 €/Jahr, nur bis Mitternacht.
-- **IT** · Ultimo giorno · GPS Premium a 37,99 €/anno, fino a mezzanotte.
-- **ES** · Último día · GPS Premium a 37,99 €/año, hasta medianoche.
-- **NL** · Laatste dag · GPS Premium voor € 37,99/jaar, tot middernacht.
-- **PL** · Ostatni dzień · GPS Premium za 166,99 zł/rok, tylko do północy.
+- **FR** · La barrière se ferme à minuit · Dernières heures pour le GPS Premium à 37,99 €/an.
+- **EN** · The barrier closes at midnight · Final hours for GPS Premium at £31.99/year.
+- **DE** · Um Mitternacht geht die Schranke zu · Letzte Stunden: GPS Premium für 37,99 €/Jahr.
+- **IT** · A mezzanotte si chiude la sbarra · Ultime ore: GPS Premium a 37,99 €/anno.
+- **ES** · A medianoche se baja la barrera · Últimas horas: GPS Premium a 37,99 €/año.
+- **NL** · Om middernacht gaat de slagboom dicht · Laatste uren: GPS Premium voor € 37,99/jaar.
+- **PL** · O północy zamykamy szlaban · Ostatnie godziny: GPS Premium za 166,99 zł/rok.
 
 ## 4. À mesurer
 
