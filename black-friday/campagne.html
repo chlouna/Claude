@@ -98,6 +98,9 @@ figcaption b { color: #111; }
 .iam.fin .tel { top: 40em; }
 .iam .tag { font-size: 3.7em; }
 .iam .ligne-prix { gap: .8em; }
+/* Prix long (PL) : un peu plus petit pour tenir dans la largeur */
+.iam .ligne-prix.long .tag { font-size: 3.3em; }
+.iam .ligne-prix.long .prix .n { font-size: 2.5em; }
 
 /* ---------- Post 4:5 ---------- */
 .post { padding: 2.4em; }
@@ -140,7 +143,7 @@ const LOGO = "../ma-video/assets/logos/truckfly-blanc-rogne.png";
 const TEL = "assets/telephone-gps.png";
 
 /* ===== Textes de l'app par langue (B2C : tutoiement partout, anglais britannique)
-   Prix UK et PL : repères XX à remplacer par les vrais prix. ===== */
+   Prix des stores : EUR 37,99 €, GBP 31,99 £, PLN 166,99 zł (prix barré = le double). ===== */
 const L = {
   fr: { nom: "Français",
     prix: "37,99 €", barre: "au lieu de 74,99 €", an: "/an",
@@ -152,7 +155,7 @@ const L = {
     dernier: `Dernier jour`, profite: `J'en profite`,
     legal: `Offre valable du 27/11 au 30/11/2026 sur l'abonnement annuel GPS Premium.` },
   en: { nom: "English (UK)",
-    prix: "£XX.XX", barre: "was £XX.XX", an: "/year",
+    prix: "£31.99", barre: "was £63.98", an: "/year",
     dTeasing: `<small>on</small>27/11`, dOffre: `<small>from</small>27/11<small>to</small>30/11`, dFin: `<small>ends at</small>midnight`,
     question: `Fancy a deal<br>on your GPS?`, questionCourte: `Fancy a deal on your GPS?`,
     rdv: `See you on 27 November in the <b>MICHELIN Truckfly</b> app.`,
@@ -197,7 +200,7 @@ const L = {
     dernier: `Laatste dag`, profite: `Profiteer nu`,
     legal: `Actie geldig van 27/11 t/m 30/11/2026 op het jaarabonnement GPS Premium.` },
   pl: { nom: "Polski",
-    prix: "XX,XX zł", barre: "zamiast XX,XX zł", an: "/rok",
+    prix: "166,99 zł", barre: "zamiast 333,98 zł", long: true, an: "/rok",
     dTeasing: `<small>od</small>27.11`, dOffre: `<small>od</small>27.11<small>do</small>30.11`, dFin: `<small>do</small>północy`,
     question: `Masz ochotę<br>na promocję<br>na GPS?`, questionCourte: `Masz ochotę na promocję na GPS?`,
     rdv: `Do zobaczenia 27 listopada w aplikacji <b>MICHELIN Truckfly</b>.`,
@@ -214,7 +217,7 @@ const titre = date => `<div class="titre"><div class="ligne"></div>
   <div class="boite"><span>Black</span><span>Friday</span></div><div class="date">${date}</div></div>`;
 const tag = `<div class="tag"><i></i>-50<small>%</small></div>`;
 const prix = t => `<div class="prix"><span class="n">${t.prix}<em>${t.an}</em></span><span class="barre">${t.barre}</span></div>`;
-const lignePrix = t => `<div class="ligne-prix">${tag}${prix(t)}</div>`;
+const lignePrix = t => `<div class="ligne-prix ${t.long ? "long" : ""}">${tag}${prix(t)}</div>`;
 const tel = lum => (lum < 1 ? `<div class="halo"></div>` : "") + `<img class="tel ${lum < 1 ? "ombre" : ""}" src="${TEL}" alt="" style="--lum:${lum}">`;
 const cta = (txt, contour) => `<span class="cta ${contour ? "contour" : ""}">${txt}</span>`;
 const rdv = txt => `<span class="rdv">${txt}</span>`;
@@ -288,7 +291,7 @@ if (q.get("solo")) {
   if (q.get("vue") === "app") {
     el.style.width = "3060px";
     el.innerHTML = `<h1>Black Friday 2026 · App · 7 langues</h1>
-      <p>FR, EN (UK), DE, IT, ES, NL, PL. Tutoiement dans toutes les langues (règle Truckfly B2C). Prix UK (£) et PL (zł) : repères XX à remplacer. Les messages in-app reprennent le visuel des anciens interstitiels.</p>` +
+      <p>FR, EN (UK), DE, IT, ES, NL, PL. Tutoiement dans toutes les langues (règle Truckfly B2C). Prix : 37,99 € (zone euro), £31.99 (UK), 166,99 zł (PL) ; prix barré = le double. Les messages in-app reprennent le visuel des anciens interstitiels.</p>` +
       sec("1 · Message in-app teasing", "Du 20 au 26/11. Le bouton demande à être averti le 27/11.", [parLangue("message-in-app-1-teasing")]) +
       sec("2 · Message in-app offre", "Du 27 au 29/11.", [parLangue("message-in-app-2-offre")]) +
       sec("3 · Message in-app dernier jour", "Le 30/11.", [parLangue("message-in-app-3-dernier-jour")]) +
