@@ -67,10 +67,11 @@ alpha = cv2.GaussianBlur(cv2.dilate(entete.astype(np.uint8) * 255, np.ones((3, 3
 gauche = np.where(entete.any(axis=0))[0]
 gauche, droite = gauche.min(), max(gx1, np.where(logo.any(axis=0))[0].max())
 gauche = np.where(logo.any(axis=0))[0].min()
-se = min(s, (L - 80) / (droite - gauche))
-dx = round((gauche + droite) / 2 * se - L / 2)
+MARGE_LOGO, MARGE_DROITE = 110, 40  # à gauche du logo : environ la largeur d'un « M »
+se = min(s, (L - MARGE_LOGO - MARGE_DROITE) / (droite - gauche))
+dx = round(gauche * se - MARGE_LOGO)
 haut_logo = np.where(logo.any(axis=1))[0].min()
-dy = round(haut_logo * se - 178)  # logo à 178 px du haut (le rond recouvre l'emplacement de l'ancien)
+dy = round(haut_logo * se - 212)  # logo à 212 px du haut (le rond recouvre l'emplacement de l'ancien)
 calque = cv2.resize(src, (round(W0 * se), round(H0 * se)), interpolation=cv2.INTER_LANCZOS4)
 a = cv2.resize(alpha, (calque.shape[1], calque.shape[0]), interpolation=cv2.INTER_LINEAR)
 # En-tête posé sur une toile au format Apple (décalage dx, dy ; dy peut être négatif)
