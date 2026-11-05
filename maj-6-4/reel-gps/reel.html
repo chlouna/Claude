@@ -6,9 +6,8 @@
 <title>Reel GPS : signaler les alertes</title>
 <!-- Reel Instagram 9:16, 15 s. Maquette en 540 × 960, rendue en 1080 × 1920 par rendre.mjs.
      Animations CSS à délais absolus : la page est une timeline de 15 s.
-     0–2,7 s titre · 2,7–5,6 s itinéraire et ses alertes · 5,6–8,9 s navigation, tap sur le bouton jaune
-     · 7,5–9,5 s choix de l'alerte · 9,5–11,4 s alerte envoyée · 11,6–15 s fin.
-     Captures : assets/itineraire.png et assets/navigation.png (fournies). Le panneau « Signaler » est redessiné d’après assets/reference-signaler.png (capture trop petite pour être utilisée telle quelle). -->
+     0–2,7 s titre · 2,7–5 s navigation, tap sur le bouton jaune · 5–8,3 s choix de l'alerte · 8,3–11,4 s alerte envoyée · 11,6–15 s fin.
+     Capture : assets/navigation.png (fournie). Le panneau « Signaler » est redessiné d’après assets/reference-signaler.png (capture trop petite pour être utilisée telle quelle). -->
 <style>
 @font-face { font-family: "Bib"; src: url("../../ma-video/assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
 @font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
@@ -56,7 +55,7 @@ html, body { width: 540px; height: 960px; overflow: hidden; background: var(--bl
   animation: pop 0.4s var(--ressort) 3.5s both, anneau 0.8s ease-in-out 3.9s 2; }
 
 /* --- Scènes 2 et 3 : navigation (capture 587 × 1183, affichée × 0,541) --- */
-.bloc-nav { left: 111px; top: 186px; width: 318px; height: 640px; animation: monte 0.6s var(--ressort) 5.55s both, descend 0.45s ease 11.35s forwards; }
+.bloc-nav { left: 111px; top: 186px; width: 318px; height: 640px; animation: monte 0.6s var(--ressort) 2.7s both, descend 0.45s ease 11.35s forwards; }
 .nav { position: absolute; left: 0; top: 0; width: 587px; height: 1183px; transform: scale(0.541); transform-origin: 0 0; }
 .nav > * { position: absolute; }
 .nav img { left: 0; top: 0; width: 587px; height: 1183px; filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.45)); }
@@ -68,7 +67,7 @@ html, body { width: 540px; height: 960px; overflow: hidden; background: var(--bl
 .ecran-bas { left: 30px; top: 560px; width: 527px; height: 597px; overflow: hidden; border-radius: 0 0 48px 48px; z-index: 5; }
 .panneau { position: absolute; left: 0; right: 0; bottom: 0; height: 500px; background: #fff; border-radius: 30px 30px 0 0; padding: 30px 30px 0; color: #111;
   box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
-  transform: translateY(105%); animation: panneau 0.45s cubic-bezier(0.2, 0.9, 0.3, 1) 7.5s forwards, rentre 0.4s ease-in 9.4s forwards; }
+  transform: translateY(105%); animation: panneau 0.45s cubic-bezier(0.2, 0.9, 0.3, 1) 5.0s forwards, rentre 0.4s ease-in 8.3s forwards; }
 .panneau h3 { font-size: 40px; font-weight: 700; color: #111; }
 .panneau .sous { margin-top: 4px; font-size: 22px; color: #8E8E93; }
 .panneau .croix { position: absolute; right: 34px; top: 30px; font-size: 46px; line-height: 1; font-weight: 600; color: #111; }
@@ -85,10 +84,10 @@ html, body { width: 540px; height: 960px; overflow: hidden; background: var(--bl
 /* Confirmation et alerte posée sur la carte */
 .toast { left: 40px; right: 40px; top: 300px; height: 110px; border-radius: 26px; background: #fff; color: var(--bleu); z-index: 6;
   display: flex; align-items: center; gap: 22px; padding: 0 30px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
-  animation: entre 0.4s var(--ressort) 9.75s both, efface 0.3s ease 11.1s forwards; }
+  animation: entre 0.4s var(--ressort) 8.6s both, efface 0.3s ease 10.9s forwards; }
 .toast svg { width: 56px; height: 56px; flex: none; }
 .toast b { display: block; font-size: 32px; } .toast span { display: block; font-size: 24px; color: #555; margin-top: 4px; }
-.alerte { left: 205px; top: 395px; width: 96px; height: 116px; z-index: 4; animation: tombe 0.5s var(--ressort) 10.0s both; }
+.alerte { left: 205px; top: 395px; width: 96px; height: 116px; z-index: 4; animation: tombe 0.5s var(--ressort) 8.85s both; }
 
 /* --- 11,6–15 s : fin --- */
 .fin { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; padding: 0 56px; text-align: center; }
@@ -103,8 +102,7 @@ html, body { width: 540px; height: 960px; overflow: hidden; background: var(--bl
 
   <!-- 0–2,7 s : titre -->
   <div class="ouverture">
-    <span class="surtitre">GPS Michelin Truckfly</span>
-    <h1 class="titre">Signale les <em>alertes</em> sur ta route</h1>
+    <h1 class="titre">Un souci sur la route&nbsp;?<br /><em>Signale-le&nbsp;!</em></h1>
     <svg class="picto" viewBox="0 0 120 120" aria-hidden="true">
       <circle cx="60" cy="60" r="56" fill="#F5A524" stroke="#fff" stroke-width="6" />
       <path d="M60 26 L94 86 H26 Z" fill="#FFFF1A" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
@@ -113,17 +111,9 @@ html, body { width: 540px; height: 960px; overflow: hidden; background: var(--bl
   </div>
 
   <!-- Légendes -->
-  <p class="legende" style="animation: entre 0.45s var(--ressort) 2.85s both, sort 0.3s ease 5.2s forwards">Repère les <em>alertes</em> sur ton trajet</p>
-  <p class="legende" style="animation: entre 0.45s var(--ressort) 5.75s both, sort 0.3s ease 7.9s forwards">Un souci sur la route&nbsp;?<br /><em>Clique sur le bouton jaune</em></p>
-  <p class="legende" style="animation: entre 0.45s var(--ressort) 8.05s both, sort 0.3s ease 9.6s forwards">Choisis ton alerte</p>
-  <p class="legende" style="animation: entre 0.45s var(--ressort) 9.75s both, sort 0.3s ease 11.2s forwards">Et préviens <em>les autres conducteurs&nbsp;!</em></p>
-
-  <!-- Scène 1 : l'itinéraire et ses alertes -->
-  <div class="iti">
-    <img src="assets/itineraire.png" alt="" />
-    <div class="cercle"></div>
-    <div class="cercle" style="left: 390px; top: 261px; animation: pop 0.4s var(--ressort) 3.75s both, anneau 0.8s ease-in-out 4.15s 2"></div>
-  </div>
+  <p class="legende" style="animation: entre 0.45s var(--ressort) 2.9s both, sort 0.3s ease 5.3s forwards"><em>Clique sur le bouton jaune</em></p>
+  <p class="legende" style="animation: entre 0.45s var(--ressort) 5.5s both, sort 0.3s ease 8.2s forwards">Choisis ton alerte</p>
+  <p class="legende" style="animation: entre 0.45s var(--ressort) 8.45s both, sort 0.3s ease 11.2s forwards">Et préviens <em>les autres conducteurs&nbsp;!</em></p>
 
   <!-- Scènes 2 et 3 : la navigation -->
   <div class="bloc-nav">
@@ -140,7 +130,7 @@ html, body { width: 540px; height: 960px; overflow: hidden; background: var(--bl
       </svg>
 
       <!-- Tap sur le bouton jaune (centre 497, 890) -->
-      <div class="tap" style="left: 497px; top: 890px; animation: tap 0.7s ease-out 6.95s both"></div>
+      <div class="tap" style="left: 497px; top: 890px; animation: tap 0.7s ease-out 4.5s both"></div>
 
       <div class="ecran-bas">
         <div class="panneau">
@@ -148,7 +138,7 @@ html, body { width: 540px; height: 960px; overflow: hidden; background: var(--bl
           <p class="sous">N’appuyez qu’une fois en sécurité</p>
           <span class="croix">×</span>
           <div class="grille">
-            <div class="type" style="animation: choisi 0.2s ease 8.95s forwards"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#F26D74"/><path d="M50 22 L55 34 L68 30 L62 42 L74 48 L62 54 L66 66 L54 60 L50 72 L46 60 L34 66 L38 54 L26 48 L38 42 L32 30 L45 34 Z" fill="#061866"/><circle cx="50" cy="48" r="7" fill="#fff"/><rect x="14" y="66" width="72" height="10" rx="3" fill="#fff"/></svg><span>Accident</span><div class="tap" style="animation: tap 0.7s ease-out 8.8s both"></div></div>
+            <div class="type" style="animation: choisi 0.2s ease 7.45s forwards"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#F26D74"/><path d="M50 22 L55 34 L68 30 L62 42 L74 48 L62 54 L66 66 L54 60 L50 72 L46 60 L34 66 L38 54 L26 48 L38 42 L32 30 L45 34 Z" fill="#061866"/><circle cx="50" cy="48" r="7" fill="#fff"/><rect x="14" y="66" width="72" height="10" rx="3" fill="#fff"/></svg><span>Accident</span><div class="tap" style="animation: tap 0.7s ease-out 7.3s both"></div></div>
             <div class="type"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#F39C1E"/><path d="M50 24 L76 68 H24 Z" fill="#fff"/><path d="M50 40 V55" stroke="#061866" stroke-width="7" stroke-linecap="round"/><circle cx="50" cy="62" r="4" fill="#061866"/><rect x="18" y="72" width="64" height="6" rx="3" fill="#061866"/></svg><span>Danger</span></div>
             <div class="type"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#F9C77F"/><path d="M28 56 L50 46 L72 56 L72 76 L50 66 L28 76 Z" fill="#fff" stroke="#061866" stroke-width="3"/><path d="M50 18 Q64 18 64 32 Q64 42 50 54 Q36 42 36 32 Q36 18 50 18 Z" fill="#061866"/><path d="M50 26 V35" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="41" r="2.8" fill="#fff"/></svg><span>Problème de carte</span></div>
             <div class="type"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#2F8CFF"/><path d="M34 62 V52 Q34 38 50 38 Q66 38 66 52 V62 Z" fill="#fff"/><rect x="24" y="62" width="52" height="9" rx="3" fill="#061866"/><path d="M50 22 V30 M30 30 L35 35 M70 30 L65 35" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg><span>Zone de contrôle</span></div>
