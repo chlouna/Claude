@@ -49,3 +49,40 @@ Exception Black Friday : ancienne charte, comme sur le flyer « Le poids lourd d
 Les textes de chaque phase (teasing, offre, jour J) sont dans l'objet `PHASES` de `noir.html`.
 
 Teasing : pas de prix ni de « ?? ». Accroche « Ça vous dirait une promo sur le GPS ? ». Compte à rebours sur la fin de l'offre jusqu'au 30/11, téléphone dans la pénombre sous un halo, date en bandeau « LE 27/11 ». Bannière in-app retirée.
+
+## Campagne complète (version en cours)
+
+`campagne.html` remplace la plaquette fond noir pour la production. Offre du 27/11 au 30/11/2026, teasing dès le 20/11.
+Régénérer : `node black-friday/rendre-campagne.mjs` (41 visuels + planches dans `png/campagne/`).
+
+- Planches : `campagne.html` (réseaux) et `campagne.html?vue=app` (app, 5 langues). Un seul visuel : `campagne.html?solo=<id>`.
+- Registre : tutoiement dans toutes les langues (règle Truckfly B2C). Anglais britannique, prix en livres (£37.99 au lieu de £74.99).
+- Les anciens interstitiels deviennent des messages in-app (même visuel, sans lien « Plus tard » : la fermeture est gérée par l'outil de messages in-app).
+
+### Réseaux sociaux (FR) · `png/campagne/reseaux/`
+
+| Date | Story (1080 × 1920) |
+|---|---|
+| 20/11 | Ça te dirait une promo sur le GPS ? |
+| 22/11 | Plus que 5 jours |
+| 24/11 | Plus que 3 jours |
+| 26/11 | Plus qu'un jour |
+| 27/11 | Jour J (c'est parti !) |
+| 28/11 | Plus que 3 jours (jusqu'au 30/11) |
+| 29/11 | Plus qu'un jour (fin demain) |
+| 30/11 | Plus que quelques heures (fin à minuit) |
+
+Posts Meta (1080 × 1350) : 20/11 teasing, 27/11 jour J, 30/11 dernier jour.
+
+### App (FR, EN, IT, ES, NL) · `png/campagne/app/<langue>/`
+
+| Visuel | Quand | Taille |
+|---|---|---|
+| `message-in-app-1-teasing` | 20 → 26/11 (bouton « Préviens-moi le 27/11 ») | 1170 × 2532 |
+| `message-in-app-2-offre` | 27 → 29/11 | 1170 × 2532 |
+| `message-in-app-3-dernier-jour` | 30/11 | 1170 × 2532 |
+| `banniere-funnel-990x402` | 27 → 30/11 | 990 × 402 (+ @2x) |
+| `banniere-in-app-576x180-teasing` | 20 → 26/11 | 576 × 180 (+ @2x) |
+| `banniere-in-app-576x180-offre` | 27 → 30/11 | 576 × 180 (+ @2x) |
+
+Les textes de chaque langue sont dans l'objet `L` en haut du script de `campagne.html`.

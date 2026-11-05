@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Black Friday 2026 – Campagne</title>
+<style>
+/* Ancienne charte (exception Black Friday). Titres : remplaçant de la police MICHELIN, en attendant le fichier officiel. */
+@font-face { font-family: "Titre"; src: url("assets/fonts/Archivo-ExpandedBlackItalic.woff2") format("woff2"); font-weight: 900; font-style: italic; }
+@font-face { font-family: "Texte"; src: url("assets/fonts/OpenSans-Italic.woff2") format("woff2"); font-weight: 300 800; font-style: italic; }
+:root { --noir: #0a0a0c; --blanc: #fff; --jaune: #FFFF1A; --gris: #c9c9d1; --barre: #8a8a92; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #e6e6ea; font-family: "Texte", sans-serif; font-style: italic; color: #111; padding: 48px; }
+
+/* ---------- Plaquette ---------- */
+.planche { width: 2100px; }
+.planche h1 { font: 900 italic 32px "Titre"; color: #111; text-transform: uppercase; }
+.planche > p { margin: 8px 0 40px; color: #53565A; font-size: 15px; max-width: 1100px; line-height: 1.45; }
+.section { margin-bottom: 56px; }
+.section h2 { font: 900 italic 20px "Titre"; text-transform: uppercase; color: #111; }
+.section h2 + p { font-size: 14px; color: #53565A; margin: 4px 0 18px; }
+.rangee { display: flex; gap: 28px; align-items: flex-end; flex-wrap: wrap; }
+.rangee + .rangee { margin-top: 28px; }
+figure { display: flex; flex-direction: column; gap: 8px; }
+figcaption { font-size: 12px; color: #53565A; }
+figcaption b { color: #111; }
+
+/* ---------- Éléments communs ---------- */
+.kv { position: relative; overflow: hidden; color: var(--blanc); font-size: var(--u); width: var(--w); height: var(--h);
+  background: radial-gradient(90% 55% at 80% 80%, #26262e 0%, transparent 70%), var(--noir); }
+.logo { height: 2.5em; width: auto; align-self: flex-start; display: block; position: relative; z-index: 4; }
+.titre { position: relative; display: flex; justify-content: center; align-items: center; }
+.titre .ligne { position: absolute; left: -5em; right: -5em; top: 50%; height: .12em; background: rgba(255,255,255,.9); }
+.boite { position: relative; z-index: 2; background: var(--blanc); color: #111; border-radius: .8em;
+  font: 900 italic 4.2em/1.02 "Titre"; text-transform: uppercase; text-align: center; padding: .28em .5em .3em; }
+.boite span { display: block; }
+.date { position: absolute; z-index: 3; left: 50%; bottom: -1.5em; transform: translateX(-50%) rotate(-3deg);
+  background: var(--jaune); color: #111; border-radius: .5em; white-space: nowrap;
+  font: 900 italic 2.1em/1 "Titre"; text-transform: uppercase; padding: .45em .7em .4em; box-shadow: 0 .2em .6em rgba(0,0,0,.3); }
+.date small { font-size: .62em; margin: 0 .25em; vertical-align: .12em; }
+.sous { font: italic 600 1.45em/1.35 "Texte"; color: var(--gris); }
+.sous b { color: var(--blanc); font-weight: 700; }
+.tag { position: relative; display: inline-flex; background: var(--jaune); color: #111;
+  font: 900 italic 1em/1 "Titre"; white-space: nowrap;
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 16% 100%, 0 50%); padding: .16em .32em .12em .66em; transform: rotate(-8deg); }
+.tag i { position: absolute; left: .2em; top: 50%; width: .14em; height: .14em; margin-top: -.07em; border-radius: 50%; background: #111; }
+.tag small { font-size: .42em; margin-left: .06em; margin-top: .22em; }
+.prix { display: flex; flex-direction: column; gap: .35em; white-space: nowrap; }
+.prix .n { font: 900 italic 2.9em/1 "Titre"; }
+.prix .n em { font: italic 600 .45em "Texte"; margin-left: .15em; }
+.prix .barre { font: italic 600 1.45em/1 "Texte"; color: var(--barre); text-decoration: line-through; }
+.cta { display: inline-flex; justify-content: center; align-items: center; font: 900 italic 1.4em/1 "Titre"; text-transform: uppercase;
+  background: var(--jaune); color: #111; padding: .95em 1.5em; border-radius: .6em; white-space: nowrap; box-shadow: 0 .4em 1.2em rgba(0,0,0,.35); }
+.cta.contour { background: var(--noir); color: var(--blanc); box-shadow: inset 0 0 0 .12em var(--blanc), 0 .4em 1.2em rgba(0,0,0,.35); }
+.tel { position: absolute; filter: drop-shadow(0 1.6em 2.4em rgba(0,0,0,.5)); z-index: 1; }
+.tel.ombre { filter: brightness(var(--lum)) saturate(.6) drop-shadow(0 1.6em 2.4em rgba(0,0,0,.6)); }
+.halo { position: absolute; z-index: 0; width: 44em; height: 44em; left: 50%; margin-left: -22em; top: 26em;
+  background: radial-gradient(closest-side, rgba(255,255,255,.16), rgba(255,255,255,.04) 55%, transparent 100%); }
+.fondu::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 30%; z-index: 2;
+  background: linear-gradient(transparent, rgba(10,10,12,.92) 70%); }
+.accroche { position: relative; z-index: 3; font: 900 italic 2.5em/1.1 "Titre"; color: var(--blanc); }
+.compte { position: relative; z-index: 3; font: italic 400 1.6em/1.1 "Texte"; color: var(--blanc); white-space: nowrap; text-align: center; }
+.rdv { display: flex; align-items: center; gap: .9em; font: italic 700 1.15em/1 "Texte"; letter-spacing: .12em; text-transform: uppercase; color: var(--blanc); white-space: nowrap; }
+.rdv::before, .rdv::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,.55); }
+
+/* ---------- Story 9:16 et message in-app (même mise en page) ---------- */
+.v { padding: 2.6em; }
+.v .titre { margin-top: 3.4em; }
+.v .date { font-size: 2.5em; bottom: -1.6em; }
+.v .ligne-prix { display: flex; align-items: center; gap: 1em; position: relative; z-index: 3; }
+.v .tag { font-size: 4.2em; flex: none; }
+.v .tel { width: 22em; left: 50%; margin-left: -11em; }
+.v .bas { position: absolute; z-index: 3; left: 2.6em; right: 2.6em; bottom: 2.6em; display: flex; flex-direction: column; align-items: center; gap: 1.1em; }
+.v .bas .cta, .v .bas .rdv { align-self: stretch; }
+.v .legal { font: italic 400 .95em/1.35 "Texte"; color: var(--barre); text-align: center; }
+/* Question teasing */
+.v.question .accroche { margin-top: 2.4em; }
+.v.question .tel { top: 36em; }
+.iam.question .sous { margin-top: 1.4em; position: relative; z-index: 3; }
+.iam.question .tel { top: 40em; }
+.iam.question .halo { top: 30em; }
+/* Compte à rebours avant lancement */
+.v.avant .compte { margin-top: 3.4em; }
+.v.avant .sous { margin-top: 1em; position: relative; z-index: 3; text-align: center; }
+.v.avant .tel { top: 34.5em; }
+.v.avant .halo { top: 25em; }
+/* Offre */
+.v.offre .ligne-prix { margin-top: 6.6em; }
+.v.offre .tel { top: 34.5em; }
+.iam.offre .sous { margin-top: 2.2em; position: relative; z-index: 3; }
+.iam.offre .tel { top: 41em; }
+/* Compte à rebours fin d'offre */
+.v.fin .compte { margin-top: 3.71em; }
+.v.fin .ligne-prix { margin-top: 2.5em; }
+.v.fin .tel { top: 38.3em; }
+.iam.fin .date { font-size: 2.1em; bottom: -1.9em; }
+.iam.fin .tel { top: 40em; }
+.iam .tag { font-size: 3.7em; }
+.iam .ligne-prix { gap: .8em; }
+
+/* ---------- Post 4:5 ---------- */
+.post { padding: 2.4em; }
+.post .titre { margin-top: 1.8em; justify-content: flex-start; width: 21.4em; }
+.post .boite { font-size: 3.4em; }
+.post .date { font-size: 1.6em; }
+.post .titre .ligne { right: -14em; }
+.post .gauche { position: relative; z-index: 2; width: 18em; margin-top: 3.2em; display: flex; flex-direction: column; gap: 1.3em; }
+.post .accroche { font-size: 1.62em; }
+.post .tag { font-size: 4.4em; align-self: flex-start; }
+.post .sous { font-size: 1.3em; }
+.post .prix .n { font-size: 2.6em; }
+.post .cta { align-self: flex-start; font-size: 1.2em; }
+.post .rdv::after { display: none; }
+.post .rdv::before { flex: none; width: 2.4em; }
+.post .tel { width: 12em; right: 2.2em; top: 17.4em; transform: rotate(5deg); }
+.post .halo { width: 30em; height: 30em; left: auto; right: -8em; margin-left: 0; top: 10em; }
+
+/* ---------- Bannière funnel d'achat 990 × 402 ---------- */
+.funnel { display: flex; align-items: center; padding: 0 4em; gap: 3.6em; }
+.funnel .logo { position: absolute; top: 3em; left: 4em; height: 2.8em; }
+.funnel .col-titre { flex: none; position: relative; z-index: 2; margin-top: 2.6em; }
+.funnel .boite { font-size: 4.6em; }
+.funnel .date { font-size: 2em; bottom: -1.7em; }
+.funnel .titre .ligne { left: -6em; right: -80em; }
+.funnel .col-offre { display: flex; flex-direction: column; gap: 2em; position: relative; z-index: 2; margin-top: 1em; }
+.funnel .ligne-prix { display: flex; align-items: center; gap: 1.6em; }
+.funnel .tag { font-size: 5em; flex: none; }
+.funnel .prix .n { font-size: 3.4em; }
+.funnel .prix .barre { font-size: 1.5em; }
+.funnel .cta { font-size: 1.6em; align-self: flex-start; }
+.funnel .tel { width: 15em; right: 3.5em; top: 3.6em; transform: rotate(5deg); }
+
+/* ---------- Bannière in-app 576 × 180 ---------- */
+.bia { display: flex; align-items: center; padding: 0 2.2em; gap: 2.2em; }
+.bia .titre { flex: none; margin-top: -1.4em; }
+.bia .titre .ligne { display: none; }
+.bia .boite { font-size: 2.5em; border-radius: .45em; padding: .26em .45em .3em; }
+.bia .date { font-size: 1.2em; bottom: -1.8em; }
+.bia .tag { font-size: 4em; flex: none; }
+.bia .prix .n { font-size: 2.6em; }
+.bia .prix .barre { font-size: 1.2em; }
+.bia .accroche { font-size: 1.95em; line-height: 1.15; flex: 1; }
+.bia .fleche { margin-left: auto; flex: none; width: 4.4em; height: 4.4em; border-radius: 50%; background: var(--jaune); display: grid; place-items: center; }
+.bia .fleche svg { width: 1.8em; height: 1.8em; }
+.bia .tel { width: 6.2em; right: 2.4em; top: 2.6em; transform: rotate(5deg); }
+.bia.question { padding-right: 10.4em; }
+</style>
+</head>
+<body>
+<div class="planche" id="planche"></div>
+<script>
+const LOGO = "../ma-video/assets/logos/truckfly-blanc-rogne.png";
+const TEL = "assets/telephone-gps.png";
+
+/* ===== Textes de l'app par langue (B2C : tutoiement partout, anglais britannique, prix UK en livres) ===== */
+const L = {
+  fr: { nom: "Français",
+    prix: "37,99 €", barre: "au lieu de 74,99 €", an: "/an",
+    dTeasing: `<small>le</small>27/11`, dOffre: `<small>du</small>27/11<small>au</small>30/11`, dFin: `<small>fin à</small>minuit`,
+    question: `Ça te dirait<br>une promo<br>sur le GPS ?`, questionCourte: `Ça te dirait une promo sur le GPS ?`,
+    rdv: `Rendez-vous le 27 novembre dans l'app <b>MICHELIN Truckfly</b>.`,
+    notif: `Préviens-moi le 27/11`, note: `Tu recevras une notification le 27/11 au matin.`,
+    offre: `<b>Le GPS Premium</b> à moitié prix, pour toute l'année.`,
+    dernier: `Dernier jour`, profite: `J'en profite`,
+    legal: `Offre valable du 27/11 au 30/11/2026 sur l'abonnement annuel GPS Premium.` },
+  en: { nom: "English (UK)",
+    prix: "£37.99", barre: "was £74.99", an: "/year",
+    dTeasing: `<small>on</small>27/11`, dOffre: `<small>from</small>27/11<small>to</small>30/11`, dFin: `<small>ends at</small>midnight`,
+    question: `Fancy a deal<br>on your GPS?`, questionCourte: `Fancy a deal on your GPS?`,
+    rdv: `See you on 27 November in the <b>MICHELIN Truckfly</b> app.`,
+    notif: `Remind me on 27/11`, note: `You'll get a notification on the morning of 27/11.`,
+    offre: `<b>GPS Premium</b> at half price, for a whole year.`,
+    dernier: `Last day`, profite: `Get the deal`,
+    legal: `Offer valid from 27/11 to 30/11/2026 on the annual GPS Premium subscription.` },
+  it: { nom: "Italiano",
+    prix: "37,99 €", barre: "invece di 74,99 €", an: "/anno",
+    dTeasing: `<small>il</small>27/11`, dOffre: `<small>dal</small>27/11<small>al</small>30/11`, dFin: `<small>fino a</small>mezzanotte`,
+    question: `Che ne dici<br>di una promo<br>sul GPS?`, questionCourte: `Che ne dici di una promo sul GPS?`,
+    rdv: `Appuntamento il 27 novembre nell'app <b>MICHELIN Truckfly</b>.`,
+    notif: `Avvisami il 27/11`, note: `Riceverai una notifica la mattina del 27/11.`,
+    offre: `<b>GPS Premium</b> a metà prezzo, per tutto l'anno.`,
+    dernier: `Ultimo giorno`, profite: `Approfittane`,
+    legal: `Offerta valida dal 27/11 al 30/11/2026 sull'abbonamento annuale GPS Premium.` },
+  es: { nom: "Español",
+    prix: "37,99 €", barre: "antes 74,99 €", an: "/año",
+    dTeasing: `<small>el</small>27/11`, dOffre: `<small>del</small>27/11<small>al</small>30/11`, dFin: `<small>hasta</small>medianoche`,
+    question: `¿Qué tal<br>una oferta<br>en el GPS?`, questionCourte: `¿Qué tal una oferta en el GPS?`,
+    rdv: `Nos vemos el 27 de noviembre en la app <b>MICHELIN Truckfly</b>.`,
+    notif: `Avísame el 27/11`, note: `Recibirás una notificación el 27/11 por la mañana.`,
+    offre: `<b>GPS Premium</b> a mitad de precio, todo el año.`,
+    dernier: `Último día`, profite: `Aprovéchalo`,
+    legal: `Oferta válida del 27/11 al 30/11/2026 en la suscripción anual GPS Premium.` },
+  nl: { nom: "Nederlands",
+    prix: "€ 37,99", barre: "i.p.v. € 74,99", an: "/jaar",
+    dTeasing: `<small>op</small>27/11`, dOffre: `<small>van</small>27/11<small>t/m</small>30/11`, dFin: `<small>tot</small>middernacht`,
+    question: `Zin in<br>korting op<br>je gps?`, questionCourte: `Zin in korting op je gps?`,
+    rdv: `Tot 27 november in de <b>MICHELIN Truckfly</b>-app.`,
+    notif: `Herinner me op 27/11`, note: `Je krijgt op 27/11 's ochtends een melding.`,
+    offre: `<b>GPS Premium</b> voor de halve prijs, een heel jaar lang.`,
+    dernier: `Laatste dag`, profite: `Profiteer nu`,
+    legal: `Actie geldig van 27/11 t/m 30/11/2026 op het jaarabonnement GPS Premium.` },
+};
+const LANGS = Object.keys(L);
+
+/* ===== Briques ===== */
+const logo = `<img class="logo" src="${LOGO}" alt="MICHELIN Truckfly">`;
+const titre = date => `<div class="titre"><div class="ligne"></div>
+  <div class="boite"><span>Black</span><span>Friday</span></div><div class="date">${date}</div></div>`;
+const tag = `<div class="tag"><i></i>-50<small>%</small></div>`;
+const prix = t => `<div class="prix"><span class="n">${t.prix}<em>${t.an}</em></span><span class="barre">${t.barre}</span></div>`;
+const lignePrix = t => `<div class="ligne-prix">${tag}${prix(t)}</div>`;
+const tel = lum => (lum < 1 ? `<div class="halo"></div>` : "") + `<img class="tel ${lum < 1 ? "ombre" : ""}" src="${TEL}" alt="" style="--lum:${lum}">`;
+const cta = (txt, contour) => `<span class="cta ${contour ? "contour" : ""}">${txt}</span>`;
+const rdv = txt => `<span class="rdv">${txt}</span>`;
+const fleche = `<span class="fleche"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>`;
+const FR = L.fr;
+
+/* ===== Stories (FR, 1080 × 1920) ===== */
+const S = (cls, inner) => `<div class="kv v story fondu ${cls}" style="--w:360px;--h:640px;--u:10px">${logo}${inner}</div>`;
+const storyQuestion = () => S("question", `${titre(FR.dTeasing)}<h3 class="accroche">${FR.question}</h3>${tel(.3)}<div class="bas">${rdv("Le 27/11 dans l'app")}</div>`);
+const storyAvant = (compte, sous, lum, date = FR.dTeasing) => S("avant", `${titre(date)}<p class="compte">${compte}</p><p class="sous">${sous}</p>${tel(lum)}<div class="bas">${rdv("Le 27/11 dans l'app")}</div>`);
+const storyOffre = date => S("offre", `${titre(date)}${ligneprixFR()}${tel(1)}<div class="bas">${cta(FR.profite)}</div>`);
+const ligneprixFR = () => lignePrix(FR);
+const storyFin = (date, compte) => S("fin", `${titre(date)}<p class="compte">${compte}</p>${ligneprixFR()}${tel(1)}<div class="bas">${cta(FR.profite)}</div>`);
+
+/* ===== Posts Meta (FR, 1080 × 1350) ===== */
+const P = (cls, date, gauche, lum) => `<div class="kv post ${cls}" style="--w:360px;--h:450px;--u:10px">${logo}${titre(date)}<div class="gauche">${gauche}</div>${tel(lum)}</div>`;
+const postTeasing = () => P("question", FR.dTeasing, `<h3 class="accroche">${FR.question}</h3><p class="sous">${FR.rdv}</p>${rdv("Le 27/11 dans l'app")}`, .3);
+const postJourJ = () => P("offre", `<small>c'est parti !</small>`, `${tag}<p class="sous">Le GPS Premium à moitié prix, jusqu'au 30/11.</p>${prix(FR)}${cta(FR.profite)}`, 1);
+const postDernier = () => P("offre", FR.dFin, `${tag}<p class="sous">Dernier jour pour avoir le GPS Premium à moitié prix.</p>${prix(FR)}${cta(FR.profite)}`, 1);
+
+/* ===== Messages in-app (par langue, 1170 × 2532) ===== */
+const M = (cls, inner) => `<div class="kv v iam fondu ${cls}" style="--w:390px;--h:844px;--u:${390 / 36}px">${logo}${inner}</div>`;
+const iamTeasing = t => M("question", `${titre(t.dTeasing)}<h3 class="accroche">${t.question}</h3><p class="sous">${t.rdv}</p>${tel(.3)}
+  <div class="bas">${cta(t.notif, true)}<p class="legal">${t.note}</p></div>`);
+const iamOffre = t => M("offre", `${titre(t.dOffre)}${lignePrix(t)}<p class="sous">${t.offre}</p>${tel(1)}
+  <div class="bas">${cta(t.profite)}<p class="legal">${t.legal}</p></div>`);
+const iamDernier = t => M("fin", `${titre(t.dFin)}<p class="compte">${t.dernier}</p>${lignePrix(t)}${tel(1)}
+  <div class="bas">${cta(t.profite)}<p class="legal">${t.legal}</p></div>`);
+
+/* ===== Bannières (par langue) ===== */
+const funnel = t => `<div class="kv funnel" style="--w:990px;--h:402px;--u:10px">${logo}<div class="col-titre">${titre(t.dOffre)}</div>
+  <div class="col-offre">${lignePrix(t)}${cta(t.profite)}</div>${tel(1)}</div>`;
+const biaTeasing = t => `<div class="kv bia question" style="--w:576px;--h:180px;--u:10px">${titre(t.dTeasing)}<h3 class="accroche">${t.questionCourte}</h3>${tel(.45)}</div>`;
+const biaOffre = t => `<div class="kv bia offre" style="--w:576px;--h:180px;--u:10px">${titre(t.dOffre)}${tag}${prix(t)}${fleche}</div>`;
+
+/* ===== Liste des visuels : id → [html, échelle d'export, légende, dossier] ===== */
+const V = {};
+const add = (id, html, ech, leg, dossier) => { V[id] = [html, ech, leg, dossier]; };
+// Stories
+add("story-1-20-11-question", storyQuestion(), 3, "<b>20/11</b> · Ça te dirait une promo sur le GPS ?", "reseaux/stories");
+add("story-2-22-11-j-5", storyAvant("Plus que 5 jours", "Une promo sur le GPS se prépare.", .36), 3, "<b>22/11</b> · Plus que 5 jours", "reseaux/stories");
+add("story-3-24-11-j-3", storyAvant("Plus que 3 jours", "Une promo sur le GPS arrive le 27/11.", .46), 3, "<b>24/11</b> · Plus que 3 jours", "reseaux/stories");
+add("story-4-26-11-j-1", storyAvant("Plus qu'un jour", "Demain, une promo sur le GPS. Active tes notifications.", .6), 3, "<b>26/11</b> · Plus qu'un jour", "reseaux/stories");
+add("story-5-27-11-jour-j", storyOffre(`<small>c'est parti !</small>`), 3, "<b>27/11</b> · Jour J", "reseaux/stories");
+add("story-6-28-11-fin-3-jours", storyFin(`<small>jusqu'au</small>30/11`, "Plus que 3 jours"), 3, "<b>28/11</b> · Plus que 3 jours", "reseaux/stories");
+add("story-7-29-11-fin-1-jour", storyFin(`<small>fin</small>demain`, "Plus qu'un jour"), 3, "<b>29/11</b> · Plus qu'un jour", "reseaux/stories");
+add("story-8-30-11-fin-heures", storyFin(FR.dFin, "Plus que quelques heures"), 3, "<b>30/11</b> · Plus que quelques heures", "reseaux/stories");
+// Posts Meta
+add("post-1-20-11-teasing", postTeasing(), 3, "<b>Post 1 · 20/11</b> · Teasing", "reseaux/posts-meta");
+add("post-2-27-11-jour-j", postJourJ(), 3, "<b>Post 2 · 27/11</b> · Jour J", "reseaux/posts-meta");
+add("post-3-30-11-dernier-jour", postDernier(), 3, "<b>Post 3 · 30/11</b> · Dernier jour", "reseaux/posts-meta");
+// App, par langue
+for (const lg of LANGS) {
+  const t = L[lg], up = lg.toUpperCase();
+  add(`message-in-app-1-teasing-${lg}`, iamTeasing(t), 3, `<b>${up}</b> · Teasing · 20 → 26/11`, `app/${lg}`);
+  add(`message-in-app-2-offre-${lg}`, iamOffre(t), 3, `<b>${up}</b> · Offre · 27 → 29/11`, `app/${lg}`);
+  add(`message-in-app-3-dernier-jour-${lg}`, iamDernier(t), 3, `<b>${up}</b> · Dernier jour · 30/11`, `app/${lg}`);
+  add(`banniere-funnel-990x402-${lg}`, funnel(t), 1, `<b>${up}</b> · 990 × 402 · 27 → 30/11`, `app/${lg}`);
+  add(`banniere-in-app-576x180-teasing-${lg}`, biaTeasing(t), 1, `<b>${up}</b> · Teasing · 20 → 26/11`, `app/${lg}`);
+  add(`banniere-in-app-576x180-offre-${lg}`, biaOffre(t), 1, `<b>${up}</b> · Offre · 27 → 30/11`, `app/${lg}`);
+}
+
+/* ===== Affichage ===== */
+const q = new URLSearchParams(location.search);
+const el = document.getElementById("planche");
+const wrap = (id, html) => html.replace(/^<div class="kv/, `<div id="${id}" class="kv`);
+if (q.get("solo")) {
+  document.body.style.padding = "0"; el.style.width = "auto";
+  const id = q.get("solo"); el.innerHTML = wrap(id, V[id][0]);
+} else {
+  const fig = id => `<figure>${wrap(id, V[id][0])}<figcaption>${V[id][2]}</figcaption></figure>`;
+  const sec = (t, d, rangees) => `<div class="section"><h2>${t}</h2><p>${d}</p>${rangees.map(ids => `<div class="rangee">${ids.map(fig).join("")}</div>`).join("")}</div>`;
+  const ids = pre => Object.keys(V).filter(k => k.startsWith(pre));
+  const parLangue = pre => LANGS.map(lg => `${pre}-${lg}`);
+  if (q.get("vue") === "app") {
+    el.innerHTML = `<h1>Black Friday 2026 · App · 5 langues</h1>
+      <p>FR, EN (UK), IT, ES, NL. Tutoiement dans toutes les langues (règle Truckfly B2C). Prix UK en livres (£37.99 au lieu de £74.99). Les messages in-app reprennent le visuel des anciens interstitiels.</p>` +
+      sec("1 · Message in-app teasing", "Du 20 au 26/11. Le bouton demande à être averti le 27/11.", [parLangue("message-in-app-1-teasing")]) +
+      sec("2 · Message in-app offre", "Du 27 au 29/11.", [parLangue("message-in-app-2-offre")]) +
+      sec("3 · Message in-app dernier jour", "Le 30/11.", [parLangue("message-in-app-3-dernier-jour")]) +
+      sec("4 · Bannière funnel d'achat · 990 × 402", "Pendant l'offre, du 27 au 30/11.", [parLangue("banniere-funnel-990x402").slice(0, 2), parLangue("banniere-funnel-990x402").slice(2)]) +
+      sec("5 · Bannière in-app · 576 × 180", "Teasing du 20 au 26/11, puis offre du 27 au 30/11.", [parLangue("banniere-in-app-576x180-teasing").slice(0, 3), parLangue("banniere-in-app-576x180-teasing").slice(3), parLangue("banniere-in-app-576x180-offre").slice(0, 3), parLangue("banniere-in-app-576x180-offre").slice(3)]);
+  } else {
+    el.innerHTML = `<h1>Black Friday 2026 · Réseaux sociaux</h1>
+      <p>GPS Premium à -50 % : 37,99 €/an au lieu de 74,99 €, du 27/11 au 30/11/2026. Teasing dès le 20/11 : la question, puis un compte à rebours où le téléphone sort de l'ombre. Le 27/11 l'offre s'allume, puis compte à rebours jusqu'au 30/11 à minuit.</p>` +
+      sec("1 · Stories · du 20 au 30/11", "Teasing (4), jour J (1), compte à rebours fin d'offre (3).", [ids("story-").slice(0, 4), ids("story-").slice(4)]) +
+      sec("2 · Posts Meta · 1080 × 1350", "Teasing, jour J, dernier jour.", [ids("post-")]);
+  }
+}
+window.EXPORTS = Object.entries(V).map(([id, v]) => [id, v[1], v[3]]);
+</script>
+</body>
+</html>
