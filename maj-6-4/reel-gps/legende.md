@@ -15,13 +15,15 @@ Régénérer : `node maj-6-4/reel-gps/rendre.mjs` (ou `rendre.mjs 2,5,8` pour de
 
 ## Légende
 
-Un accident, un contrôle, des travaux sur ta route ?
+Un souci sur la route ? Signale-le !
 
-Avec le GPS Michelin Truckfly, tu vois les alertes sur ton trajet avant de partir. Et si tu tombes sur un souci, un clic sur le bouton jaune suffit pour le signaler et prévenir tous les autres conducteurs.
+Un danger sur la chaussée, un accident, un embouteillage, un contrôle… Avec le GPS Michelin Truckfly, il suffit de cliquer sur le bouton jaune et de choisir ton alerte.
+
+En quelques secondes, elle apparaît sur la carte et prévient tous les autres conducteurs qui passent par là.
 
 Sur la route, on se prévient !
 
-Télécharge Michelin Truckfly et roule mieux informé.
+Télécharge Michelin Truckfly et roule l’esprit tranquille.
 
 #Michelin #MichelinTruckfly #GPS #GPSPoidsLourd #Routiers #Trucker #CommunautéRoutière
 
