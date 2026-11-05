@@ -33,4 +33,4 @@ Télécharge Michelin Truckfly et roule mieux informé.
 
 ## Cadrage
 
-Tout le contenu reste dans la zone visible d'un reel : rien dans les 110 px du haut, les 210 px du bas et les 60 px de droite (en 540 × 960, soit × 2 en 1080 × 1920), où Instagram affiche son interface.
+Tout est centré horizontalement, avec 56 px de marge de chaque côté (en 540 × 960, soit 112 px en 1080 × 1920). Rien dans les 110 px du haut ni les 210 px du bas, où Instagram affiche son interface.
