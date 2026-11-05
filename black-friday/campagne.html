@@ -99,6 +99,13 @@ figcaption b { color: #111; }
 .v.fin .tel { top: 38.3em; }
 .iam.fin .date { font-size: 2.1em; bottom: -1.9em; }
 .iam.fin .tel { top: 40em; }
+.v .plus-tard { font: italic 600 1.35em/1 "Texte"; color: var(--gris); text-decoration: underline; }
+.iam.question .tel { top: 41em; }
+/* Messages segmentés */
+.iam.seg .msg { position: relative; z-index: 3; margin-top: 3.6em; font: italic 400 1.6em/1.3 "Texte"; text-align: center; color: var(--blanc); }
+.iam.seg .ligne-prix { margin-top: 1.6em; justify-content: center; }
+.iam.seg .sous { position: relative; z-index: 3; margin-top: 1.6em; text-align: center; }
+.iam.seg .tel { top: 44em; }
 .iam .tag { font-size: 3.7em; }
 .iam .ligne-prix { gap: .8em; }
 /* Prix long (PL) : un peu plus petit pour tenir dans la largeur */
@@ -156,6 +163,7 @@ const L = {
     notif: `Préviens-moi le 27/11`, note: `Tu recevras une notification le 27/11 au matin.`,
     offre: `<b>Le GPS Premium</b> à moitié prix, pour toute l'année.`,
     dernier: `Dernier jour`, profite: `J'en profite`,
+    plusTard: `Plus tard`, dJ: `<small>c'est parti !</small>`, msgInteresse: `On a vu que ça t'intéressait. La voici :`, msgPlusTard: `Tu avais dit « plus tard » : c'est maintenant.`, sousPlusTard: `Le GPS Premium est à moitié prix jusqu'au 30/11.`, dJusqua: `<small>jusqu'au</small>30/11`,
     legal: `Offre valable du 27/11 au 30/11/2026 sur l'abonnement annuel GPS Premium.` },
   en: { nom: "English (UK)",
     prix: "£31.99", barre: "was £63.98", an: "/year",
@@ -165,6 +173,7 @@ const L = {
     notif: `Remind me on 27/11`, note: `You'll get a notification on the morning of 27/11.`,
     offre: `<b>GPS Premium</b> at half price, for a whole year.`,
     dernier: `Last day`, profite: `Get the deal`,
+    plusTard: `Maybe later`, dJ: `<small>it's on!</small>`, msgInteresse: `We saw you were interested. Here it is:`, msgPlusTard: `You said “later”. Well, it's now.`, sousPlusTard: `GPS Premium is half price until 30/11.`, dJusqua: `<small>until</small>30/11`,
     legal: `Offer valid from 27/11 to 30/11/2026 on the annual GPS Premium subscription.` },
   de: { nom: "Deutsch",
     prix: "37,99 €", barre: "statt 74,99 €", an: "/Jahr",
@@ -174,6 +183,7 @@ const L = {
     notif: `Erinnere mich am 27.11.`, note: `Du bekommst am 27.11. morgens eine Benachrichtigung.`,
     offre: `<b>GPS Premium</b> zum halben Preis, ein ganzes Jahr lang.`,
     dernier: `Letzter Tag`, profite: `Jetzt sichern`,
+    plusTard: `Später`, dJ: `<small>es geht los!</small>`, msgInteresse: `Du wolltest Bescheid wissen. Hier ist das Angebot:`, msgPlusTard: `Du hast „später“ gesagt. Jetzt ist es so weit.`, sousPlusTard: `GPS Premium zum halben Preis bis 30.11.`, dJusqua: `<small>bis</small>30.11.`,
     legal: `Angebot gültig vom 27.11. bis 30.11.2026 für das GPS Premium Jahresabo.` },
   it: { nom: "Italiano",
     prix: "37,99 €", barre: "invece di 74,99 €", an: "/anno",
@@ -183,6 +193,7 @@ const L = {
     notif: `Avvisami il 27/11`, note: `Riceverai una notifica la mattina del 27/11.`,
     offre: `<b>GPS Premium</b> a metà prezzo, per tutto l'anno.`,
     dernier: `Ultimo giorno`, profite: `Approfittane`,
+    plusTard: `Più tardi`, dJ: `<small>ci siamo!</small>`, msgInteresse: `Abbiamo visto che ti interessava. Eccola:`, msgPlusTard: `Avevi detto «più tardi»: è il momento.`, sousPlusTard: `GPS Premium a metà prezzo fino al 30/11.`, dJusqua: `<small>fino al</small>30/11`,
     legal: `Offerta valida dal 27/11 al 30/11/2026 sull'abbonamento annuale GPS Premium.` },
   es: { nom: "Español",
     prix: "37,99 €", barre: "antes 74,99 €", an: "/año",
@@ -192,6 +203,7 @@ const L = {
     notif: `Avísame el 27/11`, note: `Recibirás una notificación el 27/11 por la mañana.`,
     offre: `<b>GPS Premium</b> a mitad de precio, todo el año.`,
     dernier: `Último día`, profite: `Aprovéchalo`,
+    plusTard: `Más tarde`, dJ: `<small>¡ya está aquí!</small>`, msgInteresse: `Vimos que te interesaba. Aquí la tienes:`, msgPlusTard: `Dijiste «más tarde»: es ahora.`, sousPlusTard: `GPS Premium a mitad de precio hasta el 30/11.`, dJusqua: `<small>hasta el</small>30/11`,
     legal: `Oferta válida del 27/11 al 30/11/2026 en la suscripción anual GPS Premium.` },
   nl: { nom: "Nederlands",
     prix: "€ 37,99", barre: "i.p.v. € 74,99", an: "/jaar",
@@ -201,6 +213,7 @@ const L = {
     notif: `Herinner me op 27/11`, note: `Je krijgt op 27/11 's ochtends een melding.`,
     offre: `<b>GPS Premium</b> voor de halve prijs, een heel jaar lang.`,
     dernier: `Laatste dag`, profite: `Profiteer nu`,
+    plusTard: `Later`, dJ: `<small>het is zover!</small>`, msgInteresse: `We zagen dat je interesse had. Hier is de actie:`, msgPlusTard: `Je zei ‘later’. Nou, het is nu.`, sousPlusTard: `GPS Premium voor de halve prijs t/m 30/11.`, dJusqua: `<small>t/m</small>30/11`,
     legal: `Actie geldig van 27/11 t/m 30/11/2026 op het jaarabonnement GPS Premium.` },
   pl: { nom: "Polski",
     prix: "166,99 zł", barre: "zamiast 333,98 zł", long: true, an: "/rok",
@@ -210,6 +223,7 @@ const L = {
     notif: `Przypomnij mi 27.11`, note: `27.11 rano dostaniesz powiadomienie.`,
     offre: `<b>GPS Premium</b> za pół ceny, przez cały rok.`,
     dernier: `Ostatni dzień`, profite: `Skorzystaj`,
+    plusTard: `Później`, dJ: `<small>startujemy!</small>`, msgInteresse: `Widzieliśmy, że cię to interesuje. Oto oferta:`, msgPlusTard: `„Później” właśnie nadeszło.`, sousPlusTard: `GPS Premium za pół ceny do 30.11.`, dJusqua: `<small>do</small>30.11`,
     legal: `Oferta ważna od 27.11 do 30.11.2026 na roczną subskrypcję GPS Premium.` },
 };
 const LANGS = Object.keys(L);
@@ -244,7 +258,12 @@ const postDernier = () => P("offre", FR.dFin, `${tag}<p class="sous">Dernier jou
 /* ===== Messages in-app (par langue, 1170 × 2532) ===== */
 const M = (cls, inner) => `<div class="kv v iam fondu ${cls}" style="--w:390px;--h:844px;--u:${390 / 36}px">${logo}${inner}</div>`;
 const iamTeasing = t => M("question", `${titre(t.dTeasing)}<h3 class="accroche">${t.question}</h3><p class="sous">${t.rdv}</p>${tel(.3)}
-  <div class="bas">${cta(t.notif, true)}<p class="legal">${t.note}</p></div>`);
+  <div class="bas">${cta(t.notif, true)}<span class="plus-tard">${t.plusTard}</span><p class="legal">${t.note}</p></div>`);
+// Segments du 27/11 : ceux qui ont cliqué « Préviens-moi » et ceux qui ont cliqué « Plus tard »
+const iamSeg = (t, date, msg, sous) => M("seg", `${titre(date)}<p class="msg">${msg}</p>${lignePrix(t)}${sous ? `<p class="sous">${sous}</p>` : ""}${tel(1)}
+  <div class="bas">${cta(t.profite)}<p class="legal">${t.legal}</p></div>`);
+const iamInteresses = t => iamSeg(t, t.dJ, t.msgInteresse, t.offre);
+const iamPlusTard = t => iamSeg(t, t.dJusqua, t.msgPlusTard, t.sousPlusTard);
 const iamOffre = t => M("offre", `${titre(t.dOffre)}${lignePrix(t)}<p class="sous">${t.offre}</p>${tel(1)}
   <div class="bas">${cta(t.profite)}<p class="legal">${t.legal}</p></div>`);
 const iamDernier = t => M("fin", `${titre(t.dFin)}<p class="compte">${t.dernier}</p>${lignePrix(t)}${tel(1)}
@@ -274,6 +293,8 @@ add("post-3-30-11-dernier-jour", postDernier(), 3, "<b>Post 3 · 30/11</b> · De
 for (const lg of LANGS) {
   const t = L[lg], up = lg.toUpperCase();
   add(`message-in-app-1-teasing-${lg}`, iamTeasing(t), 3, `<b>${up}</b> · Teasing · 20 → 26/11`, `app/${lg}`);
+  add(`message-in-app-2a-interesses-${lg}`, iamInteresses(t), 3, `<b>${up}</b> · Segment « Préviens-moi » · 27/11`, `app/${lg}`);
+  add(`message-in-app-2b-plus-tard-${lg}`, iamPlusTard(t), 3, `<b>${up}</b> · Segment « Plus tard » · 27/11`, `app/${lg}`);
   add(`message-in-app-2-offre-${lg}`, iamOffre(t), 3, `<b>${up}</b> · Offre · 27 → 29/11`, `app/${lg}`);
   add(`message-in-app-3-dernier-jour-${lg}`, iamDernier(t), 3, `<b>${up}</b> · Dernier jour · 30/11`, `app/${lg}`);
   add(`banniere-funnel-990x402-${lg}`, funnel(t), 1, `<b>${up}</b> · 990 × 402 · 27 → 30/11`, `app/${lg}`);
@@ -295,9 +316,11 @@ if (q.get("solo")) {
     el.style.width = "3060px";
     el.innerHTML = `<h1>Black Friday 2026 · App · 7 langues</h1>
       <p>FR, EN (UK), DE, IT, ES, NL, PL. Tutoiement dans toutes les langues (règle Truckfly B2C). Prix : 37,99 € (zone euro), £31.99 (UK), 166,99 zł (PL) ; prix barré = le double. Les messages in-app reprennent le visuel des anciens interstitiels.</p>` +
-      sec("1 · Message in-app teasing", "Du 20 au 26/11. Le bouton demande à être averti le 27/11.", [parLangue("message-in-app-1-teasing")]) +
-      sec("2 · Message in-app offre", "Du 27 au 29/11.", [parLangue("message-in-app-2-offre")]) +
-      sec("3 · Message in-app dernier jour", "Le 30/11.", [parLangue("message-in-app-3-dernier-jour")]) +
+      sec("1 · Message in-app teasing", "Du 20 au 26/11. Deux boutons : « Préviens-moi le 27/11 » (segment intéressés) et « Plus tard » (segment plus tard).", [parLangue("message-in-app-1-teasing")]) +
+      sec("2a · Segment « Préviens-moi » · 27/11", "Pour ceux qui ont cliqué « Préviens-moi » pendant le teasing.", [parLangue("message-in-app-2a-interesses")]) +
+      sec("2b · Segment « Plus tard » · 27/11", "Pour ceux qui ont cliqué « Plus tard » pendant le teasing.", [parLangue("message-in-app-2b-plus-tard")]) +
+      sec("2 · Message in-app offre (tous les autres)", "Du 27 au 29/11, pour ceux qui n'ont pas vu le teasing ou n'ont rien cliqué.", [parLangue("message-in-app-2-offre")]) +
+      sec("3 · Message in-app dernier jour", "Le 30/11, pour tous ceux qui n'ont pas encore acheté.", [parLangue("message-in-app-3-dernier-jour")]) +
       sec("4 · Bannière funnel d'achat · 990 × 402", "Pendant l'offre, du 27 au 30/11.", [0, 3, 6].map(i => parLangue("banniere-funnel-990x402").slice(i, i + 3)));
   } else {
     el.innerHTML = `<h1>Black Friday 2026 · Réseaux sociaux</h1>

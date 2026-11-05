@@ -53,7 +53,7 @@ Teasing : pas de prix ni de « ?? ». Accroche « Ça vous dirait une promo sur 
 ## Campagne complète (version en cours)
 
 `campagne.html` remplace la plaquette fond noir pour la production. Offre du 27/11 au 30/11/2026, teasing dès le 20/11.
-Régénérer : `node black-friday/rendre-campagne.mjs` (39 visuels + planches dans `png/campagne/`).
+Régénérer : `node black-friday/rendre-campagne.mjs` (53 visuels + planches dans `png/campagne/`).
 
 - Planches : `campagne.html` (réseaux) et `campagne.html?vue=app` (app, 7 langues). Un seul visuel : `campagne.html?solo=<id>`.
 - Marque : toujours « Michelin Truckfly ». Polices : titres en police MICHELIN (Canva), remplacée ici par Archivo Black Italic semi-élargie (lettres resserrées) en attendant le fichier ; textes en Open Sans Italic.
@@ -79,9 +79,11 @@ Posts Meta (1080 × 1350) : 20/11 teasing, 27/11 jour J, 30/11 dernier jour.
 
 | Visuel | Quand | Taille |
 |---|---|---|
-| `message-in-app-1-teasing` | 20 → 26/11 (bouton « Préviens-moi le 27/11 ») | 1170 × 2532 |
-| `message-in-app-2-offre` | 27 → 29/11 | 1170 × 2532 |
+| `message-in-app-1-teasing` | 20 → 26/11 (boutons « Préviens-moi le 27/11 » et « Plus tard ») | 1170 × 2532 |
+| `message-in-app-2a-interesses` | 27/11, segment « Préviens-moi » | 1170 × 2532 |
+| `message-in-app-2b-plus-tard` | 27/11, segment « Plus tard » | 1170 × 2532 |
+| `message-in-app-2-offre` | 27 → 29/11, tous les autres | 1170 × 2532 |
 | `message-in-app-3-dernier-jour` | 30/11 | 1170 × 2532 |
 | `banniere-funnel-990x402` | 27 → 30/11 | 990 × 402 (+ @2x) |
 
-Bannières in-app 576 × 180 retirées. Les textes de chaque langue sont dans l'objet `L` en haut du script de `campagne.html`.
+Parcours segmenté et textes des push : voir `segmentation.md`. Bannières in-app 576 × 180 retirées. Les textes de chaque langue sont dans l'objet `L` en haut du script de `campagne.html`.
