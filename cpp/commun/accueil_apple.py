@@ -63,7 +63,7 @@ fond = cv2.resize(propre, (round(W0 * s), H), interpolation=cv2.INTER_LANCZOS4)
 fond = fond[:, decalage_photo : decalage_photo + L]
 
 # 3. En-tête replacé en haut
-alpha = cv2.GaussianBlur(cv2.dilate(entete.astype(np.uint8) * 255, np.ones((3, 3), np.uint8)), (3, 3), 0)
+alpha = cv2.GaussianBlur(cv2.dilate((jaune | trait | cadre).astype(np.uint8) * 255, np.ones((3, 3), np.uint8)), (3, 3), 0)
 gauche = np.where(entete.any(axis=0))[0]
 gauche, droite = gauche.min(), max(gx1, np.where(logo.any(axis=0))[0].max())
 gauche = np.where(logo.any(axis=0))[0].min()
@@ -89,11 +89,21 @@ y_trait = round(lignes.mean() * se) - dy
 ep = max(3, round(len(lignes) * se))
 out[y_trait - ep // 2 : y_trait - ep // 2 + ep, :] = 255
 # On redessine l'en-tête par-dessus le trait (le trait passe derrière le rond et l'encadré)
-sans_trait = (jaune | cadre | logo).astype(np.uint8) * 255
+sans_trait = (jaune | cadre).astype(np.uint8) * 255
 a2 = cv2.resize(cv2.GaussianBlur(sans_trait, (3, 3), 0), (calque.shape[1], calque.shape[0]))
 toile_a2 = np.zeros((H, L, 1), float)
 toile_a2[yt0 : yt0 + hh, xt0 : xt0 + ww, 0] = a2[ys0 : ys0 + hh, xs0 : xs0 + ww] / 255
 out = toile * toile_a2 + out * (1 - toile_a2)
+
+# Logo posé à part, plus haut que le reste de l'en-tête
+HAUT_LOGO = 130  # px depuis le haut
+y_logo, x_logo = np.where(logo)
+bx0, bx1, by0, by1 = x_logo.min() - 4, x_logo.max() + 5, y_logo.min() - 4, y_logo.max() + 5
+morceau = cv2.resize(src[by0:by1, bx0:bx1], None, fx=se, fy=se, interpolation=cv2.INTER_LANCZOS4).astype(float)
+am = cv2.resize(cv2.GaussianBlur(logo[by0:by1, bx0:bx1].astype(np.uint8) * 255, (3, 3), 0), (morceau.shape[1], morceau.shape[0]))[..., None] / 255
+px, py = MARGE_LOGO - round(4 * se), HAUT_LOGO - round(4 * se)
+zone = out[py : py + morceau.shape[0], px : px + morceau.shape[1]]
+out[py : py + morceau.shape[0], px : px + morceau.shape[1]] = morceau * am + zone * (1 - am)
 
 Image.fromarray(out.clip(0, 255).astype(np.uint8)).save(dossier / "png" / "app-store" / f"{nom}-01-accueil.png")
 Image.fromarray(masque).save(f"/tmp/claude-0/-home-user-Claude/da3bc3ea-8ed9-531e-9bb0-2f2f36f549a7/scratchpad/masque-{nom}.png")
