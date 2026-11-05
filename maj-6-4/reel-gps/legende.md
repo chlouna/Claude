@@ -10,7 +10,7 @@ Régénérer : `node maj-6-4/reel-gps/rendre.mjs` (ou `rendre.mjs 2,5,8` pour de
 | 0–2,7 s | GPS Michelin Truckfly / **Signale les alertes sur ta route** | Titre et picto d'alerte |
 | 2,7–5,6 s | Repère les alertes sur ton trajet | Capture de l'itinéraire ; cercles jaunes sur l'alerte et le contrôle |
 | 5,6–8 s | Un souci sur la route ? / Clique sur le bouton jaune | Capture de la navigation ; tap sur le bouton jaune « + » |
-| 8–9,6 s | Choisis ton alerte | Le panneau « Que veux-tu signaler ? » monte ; tap sur « Accident » |
+| 8–9,6 s | Choisis ton alerte | Le panneau « Signaler » monte ; tap sur « Accident » |
 | 9,6–11,4 s | Et préviens les autres conducteurs ! | « Alerte envoyée » ; l'alerte apparaît sur la carte |
 | 11,6–15 s | **Sur la route, on se prévient !** / bouton « Télécharge Michelin Truckfly » | Le bouton jaune pulse |
 
@@ -28,8 +28,9 @@ Télécharge Michelin Truckfly et roule mieux informé.
 
 ## À valider
 
-- **Panneau des alertes recréé** : le panneau « Que veux-tu signaler ? », ses 6 types (Contrôle, Accident, Bouchon, Travaux, Danger, Route fermée) et le message « Alerte envoyée » sont dessinés, pas tirés de l'app. Avec une capture du vrai panneau, on le remplace.
-- **Captures** : `assets/itineraire.png` et `assets/navigation.png` sont celles fournies.
+- **Panneau « Signaler »** : repris de la capture fournie (`assets/reference-signaler.png`) : titre, « N’appuyez qu’une fois en sécurité » et les 6 alertes (Accident, Danger, Problème de carte, Zone de contrôle, Embouteillage, Zone peu sûre). La capture fait 145 × 286 px, trop petite pour la vidéo : le panneau est redessiné en net et les pictos sont simplifiés.
+- **Vitesse** : 25 km/h affiché à la place de la vitesse de la capture.
+- **« Alerte envoyée »** : message dessiné, pas tiré de l'app.
 
 ## Cadrage
 
