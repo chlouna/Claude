@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=540, height=960" />
+<title>Reel GPS : signaler les alertes</title>
+<!-- Reel Instagram 9:16, 15 s. Maquette en 540 × 960, rendue en 1080 × 1920 par rendre.mjs.
+     Animations CSS à délais absolus : la page est une timeline de 15 s.
+     0–2,7 s titre · 2,7–5,6 s itinéraire et ses alertes · 5,6–8,9 s navigation, tap sur le bouton jaune
+     · 7,5–9,5 s choix de l'alerte · 9,5–11,4 s alerte envoyée · 11,6–15 s fin.
+     Captures : assets/itineraire.png et assets/navigation.png (fournies). Le panneau des alertes est recréé. -->
+<style>
+@font-face { font-family: "Bib"; src: url("../../ma-video/assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+:root { --bleu: #061866; --jaune: #FFFF1A; --ressort: cubic-bezier(0.2, 0.9, 0.3, 1.15); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 540px; height: 960px; overflow: hidden; background: var(--bleu); }
+.scene { position: relative; width: 540px; height: 960px; overflow: hidden; font-family: "Inter", sans-serif; color: #fff;
+  background: radial-gradient(110% 70% at 50% 40%, #0B2181 0%, var(--bleu) 55%, #030C3A 100%); }
+.scene > * { position: absolute; }
+
+@keyframes entre { from { opacity: 0; transform: translateY(26px) scale(0.96); } to { opacity: 1; transform: none; } }
+@keyframes sort { to { opacity: 0; transform: translateY(-16px); } }
+@keyframes pop { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: none; } }
+@keyframes fondu { from { opacity: 0; } to { opacity: 1; } }
+@keyframes efface { to { opacity: 0; } }
+@keyframes monte { from { opacity: 0; transform: translateY(120px); } to { opacity: 1; transform: none; } }
+@keyframes descend { to { opacity: 0; transform: translateY(80px) scale(0.96); } }
+@keyframes tap { 0% { opacity: 0; transform: scale(0.5); } 25% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.7); } }
+@keyframes anneau { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+@keyframes panneau { from { transform: translateY(105%); } to { transform: none; } }
+@keyframes rentre { to { transform: translateY(105%); } }
+@keyframes choisi { to { background: #FFE9E9; border-color: #E5484D; } }
+@keyframes tombe { from { opacity: 0; transform: translateY(-60px) scale(0.6); } to { opacity: 1; transform: none; } }
+@keyframes pulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); } 50% { transform: scale(1.06); box-shadow: 0 0 0 16px rgba(255, 255, 255, 0); } }
+
+/* --- 0–2,7 s : ouverture --- */
+.ouverture { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 0 44px; text-align: center;
+  animation: sort 0.4s ease 2.5s forwards; }
+.surtitre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 34px; color: var(--jaune); animation: pop 0.45s var(--ressort) 0.15s both; }
+.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 52px; line-height: 1.08; animation: entre 0.55s var(--ressort) 0.35s both; }
+.titre em { font-style: normal; color: var(--jaune); }
+.picto { width: 120px; height: 120px; margin-top: 8px; animation: pop 0.5s var(--ressort) 0.8s both; }
+
+/* --- Légendes --- */
+.legende { left: 26px; right: 26px; top: 104px; text-align: center; font-family: "Bib", sans-serif; font-weight: 700; font-size: 32px; line-height: 1.12; }
+.legende em { font-style: normal; color: var(--jaune); }
+
+/* --- Scène 1 : itinéraire (capture 436 × 610, affichée × 1,078) --- */
+.iti { left: 35px; top: 222px; width: 470px; height: 658px; animation: monte 0.6s var(--ressort) 2.7s both, descend 0.4s ease 5.3s forwards; }
+.iti img { width: 100%; height: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45)); }
+.iti .cercle { position: absolute; left: 290px; top: 382px; width: 78px; height: 78px; margin: -39px 0 0 -39px; border-radius: 50%;
+  border: 5px solid var(--jaune); box-shadow: 0 0 0 3px rgba(6, 24, 102, 0.5);
+  animation: pop 0.4s var(--ressort) 3.5s both, anneau 0.8s ease-in-out 3.9s 2; }
+
+/* --- Scènes 2 et 3 : navigation (capture 587 × 1183, affichée × 0,562) --- */
+.bloc-nav { left: 105px; top: 208px; width: 330px; height: 665px; animation: monte 0.6s var(--ressort) 5.55s both, descend 0.45s ease 11.35s forwards; }
+.nav { position: absolute; left: 0; top: 0; width: 587px; height: 1183px; transform: scale(0.562); transform-origin: 0 0; }
+.nav > * { position: absolute; }
+.nav img { left: 0; top: 0; width: 587px; height: 1183px; filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.45)); }
+
+.tap { width: 116px; height: 116px; margin: -58px 0 0 -58px; border-radius: 50%; background: rgba(255, 255, 255, 0.45);
+  border: 7px solid var(--jaune); box-shadow: 0 0 0 5px rgba(6, 24, 102, 0.35); z-index: 8; opacity: 0; }
+
+/* Panneau « Que veux-tu signaler ? » (recréé), dans l'écran : x 30–557, bas 1157 */
+.ecran-bas { left: 30px; top: 560px; width: 527px; height: 597px; overflow: hidden; border-radius: 0 0 48px 48px; z-index: 5; }
+.voile { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); animation: fondu 0.3s ease 7.45s both, efface 0.3s ease 9.45s forwards; }
+.panneau { position: absolute; left: 0; right: 0; bottom: 0; height: 520px; background: #fff; border-radius: 36px 36px 0 0; padding: 22px 30px 0; color: #111;
+  transform: translateY(105%); animation: panneau 0.45s cubic-bezier(0.2, 0.9, 0.3, 1) 7.5s forwards, rentre 0.4s ease-in 9.4s forwards; }
+.poignee { width: 70px; height: 7px; border-radius: 4px; background: #D6D9E0; margin: 0 auto 22px; }
+.panneau h3 { font-size: 36px; font-weight: 700; text-align: center; color: var(--bleu); }
+.grille { margin-top: 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.type { height: 160px; border-radius: 22px; background: #F2F4F7; border: 4px solid transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+.type svg { width: 68px; height: 68px; }
+.type span { font-size: 25px; font-weight: 600; color: #222; }
+
+/* Confirmation et alerte posée sur la carte */
+.toast { left: 40px; right: 40px; top: 300px; height: 110px; border-radius: 26px; background: #fff; color: var(--bleu); z-index: 6;
+  display: flex; align-items: center; gap: 22px; padding: 0 30px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
+  animation: entre 0.4s var(--ressort) 9.75s both, efface 0.3s ease 11.1s forwards; }
+.toast svg { width: 56px; height: 56px; flex: none; }
+.toast b { display: block; font-size: 32px; } .toast span { display: block; font-size: 24px; color: #555; margin-top: 4px; }
+.alerte { left: 205px; top: 395px; width: 96px; height: 116px; z-index: 4; animation: tombe 0.5s var(--ressort) 10.0s both; }
+
+/* --- 11,6–15 s : fin --- */
+.fin { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; padding: 0 44px; text-align: center; }
+.fin h2 { font-family: "Bib", sans-serif; font-weight: 700; font-size: 50px; line-height: 1.08; animation: entre 0.55s var(--ressort) 11.65s both; }
+.fin h2 em { font-style: normal; color: var(--jaune); }
+.cta { background: var(--jaune); color: var(--bleu); font-weight: 700; font-size: 21px; border-radius: 34px; padding: 18px 30px;
+  animation: pop 0.5s var(--ressort) 12.1s both, pulse 0.9s ease-in-out 12.8s 2; }
+</style>
+</head>
+<body>
+<main class="scene">
+
+  <!-- 0–2,7 s : titre -->
+  <div class="ouverture">
+    <span class="surtitre">GPS Michelin Truckfly</span>
+    <h1 class="titre">Signale les <em>alertes</em> sur ta route</h1>
+    <svg class="picto" viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="56" fill="#F5A524" stroke="#fff" stroke-width="6" />
+      <path d="M60 26 L94 86 H26 Z" fill="#FFFF1A" stroke="#061866" stroke-width="6" stroke-linejoin="round" />
+      <path d="M60 46 V66" stroke="#061866" stroke-width="8" stroke-linecap="round" /><circle cx="60" cy="77" r="4.5" fill="#061866" />
+    </svg>
+  </div>
+
+  <!-- Légendes -->
+  <p class="legende" style="animation: entre 0.45s var(--ressort) 2.85s both, sort 0.3s ease 5.2s forwards">Repère les <em>alertes</em> sur ton trajet</p>
+  <p class="legende" style="animation: entre 0.45s var(--ressort) 5.75s both, sort 0.3s ease 7.9s forwards">Un souci sur la route&nbsp;? <em>Touche le bouton jaune</em></p>
+  <p class="legende" style="animation: entre 0.45s var(--ressort) 8.05s both, sort 0.3s ease 9.6s forwards">Choisis ton alerte</p>
+  <p class="legende" style="animation: entre 0.45s var(--ressort) 9.75s both, sort 0.3s ease 11.2s forwards">Et préviens <em>les autres conducteurs&nbsp;!</em></p>
+
+  <!-- Scène 1 : l'itinéraire et ses alertes -->
+  <div class="iti">
+    <img src="assets/itineraire.png" alt="" />
+    <div class="cercle"></div>
+    <div class="cercle" style="left: 401px; top: 268px; animation: pop 0.4s var(--ressort) 3.75s both, anneau 0.8s ease-in-out 4.15s 2"></div>
+  </div>
+
+  <!-- Scènes 2 et 3 : la navigation -->
+  <div class="bloc-nav">
+    <div class="nav">
+      <img src="assets/navigation.png" alt="" />
+
+      <!-- Alerte posée sur l'itinéraire, après l'envoi -->
+      <svg class="alerte" viewBox="0 0 96 116" aria-hidden="true">
+        <path d="M48 112 L36 88 H60 Z" fill="#fff" />
+        <circle cx="48" cy="48" r="44" fill="#F5A524" stroke="#fff" stroke-width="6" />
+        <path d="M48 20 L76 70 H20 Z" fill="#FFFF1A" stroke="#061866" stroke-width="5" stroke-linejoin="round" />
+        <path d="M48 36 V54" stroke="#061866" stroke-width="7" stroke-linecap="round" /><circle cx="48" cy="62" r="4" fill="#061866" />
+      </svg>
+
+      <!-- Tap sur le bouton jaune (centre 497, 890) -->
+      <div class="tap" style="left: 497px; top: 890px; animation: tap 0.7s ease-out 6.95s both"></div>
+
+      <div class="ecran-bas">
+        <div class="voile"></div>
+        <div class="panneau">
+          <div class="poignee"></div>
+          <h3>Que veux-tu signaler&nbsp;?</h3>
+          <div class="grille">
+            <div class="type"><svg viewBox="0 0 68 68" aria-hidden="true"><path d="M20 48 V34 Q20 20 34 20 Q48 20 48 34 V48 Z" fill="#2F6BFF" /><rect x="14" y="48" width="40" height="8" rx="3" fill="#061866" /><path d="M34 6 V13 M14 14 L19 19 M54 14 L49 19" stroke="#2F6BFF" stroke-width="4" stroke-linecap="round" /></svg><span>Contrôle</span></div>
+            <div class="type" style="animation: choisi 0.2s ease 8.95s forwards"><svg viewBox="0 0 68 68" aria-hidden="true"><path d="M34 8 L62 58 H6 Z" fill="#E5484D" /><path d="M34 26 V42" stroke="#fff" stroke-width="6" stroke-linecap="round" /><circle cx="34" cy="50" r="3.6" fill="#fff" /></svg><span>Accident</span></div>
+            <div class="type"><svg viewBox="0 0 68 68" aria-hidden="true"><rect x="6" y="30" width="26" height="16" rx="5" fill="#F5A524" /><rect x="36" y="30" width="26" height="16" rx="5" fill="#F5A524" /><circle cx="13" cy="48" r="4" fill="#061866" /><circle cx="26" cy="48" r="4" fill="#061866" /><circle cx="43" cy="48" r="4" fill="#061866" /><circle cx="56" cy="48" r="4" fill="#061866" /></svg><span>Bouchon</span></div>
+            <div class="type"><svg viewBox="0 0 68 68" aria-hidden="true"><path d="M34 8 L50 56 H18 Z" fill="#FF7A1A" /><path d="M26 32 H42 M22 44 H46" stroke="#fff" stroke-width="5" /><rect x="10" y="56" width="48" height="6" rx="3" fill="#061866" /></svg><span>Travaux</span></div>
+            <div class="type"><svg viewBox="0 0 68 68" aria-hidden="true"><path d="M34 8 L62 58 H6 Z" fill="#F5C518" /><path d="M34 26 V42" stroke="#061866" stroke-width="6" stroke-linecap="round" /><circle cx="34" cy="50" r="3.6" fill="#061866" /></svg><span>Danger</span></div>
+            <div class="type"><svg viewBox="0 0 68 68" aria-hidden="true"><circle cx="34" cy="34" r="26" fill="#E5484D" /><rect x="18" y="29" width="32" height="10" rx="2" fill="#fff" /></svg><span>Route fermée</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- Tap sur « Accident » -->
+      <div class="tap" style="left: 293px; top: 853px; animation: tap 0.7s ease-out 8.8s both"></div>
+
+      <div class="toast">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#34C759" /><path d="M15 29 L24 38 L41 19" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        <div><b>Alerte envoyée</b><span>Merci pour la communauté&nbsp;!</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11,6–15 s : fin -->
+  <div class="fin">
+    <h2>Sur la route, <em>on se prévient&nbsp;!</em></h2>
+    <span class="cta">Télécharge Michelin Truckfly</span>
+  </div>
+</main>
+</body>
+</html>
