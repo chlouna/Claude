@@ -15,13 +15,15 @@ Régénérer : `node maj-6-4/reel-zoom/rendre.mjs` (ou `rendre.mjs 2,5,8` pour d
 
 ## Légende
 
-Tu veux mettre un visage sur un pseudo ?
+Nouveau : zoome sur les photos de profil !
 
-Avec la 6.4, touche la photo de profil d’un autre trucker : elle s’affiche en grand. Idéal pour reconnaître tes amis conducteurs, ou vérifier que c’est bien le bon avant de l’ajouter en ami.
+Un pseudo, une petite photo ronde… et tu te demandes si c’est bien le collègue croisé sur l’aire hier soir ?
 
-Mets à jour Michelin Truckfly pour en profiter !
+Maintenant, touche la photo de profil d’un autre conducteur : elle s’affiche en grand. Idéal pour reconnaître tes amis conducteurs, et être sûr d’ajouter la bonne personne.
 
-#Michelin #MichelinTruckfly #Routiers #Trucker #CommunautéRoutière
+Mets à jour ton app, ou télécharge Michelin Truckfly pour en profiter !
+
+#Michelin #MichelinTruckfly #Routiers #Trucker #CommunautéRoutière #Chauffeur
 
 ## À valider
 
