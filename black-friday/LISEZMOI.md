@@ -53,10 +53,10 @@ Teasing : pas de prix ni de « ?? ». Accroche « Ça vous dirait une promo sur 
 ## Campagne complète (version en cours)
 
 `campagne.html` remplace la plaquette fond noir pour la production. Offre du 27/11 au 30/11/2026, teasing dès le 20/11.
-Régénérer : `node black-friday/rendre-campagne.mjs` (41 visuels + planches dans `png/campagne/`).
+Régénérer : `node black-friday/rendre-campagne.mjs` (39 visuels + planches dans `png/campagne/`).
 
-- Planches : `campagne.html` (réseaux) et `campagne.html?vue=app` (app, 5 langues). Un seul visuel : `campagne.html?solo=<id>`.
-- Registre : tutoiement dans toutes les langues (règle Truckfly B2C). Anglais britannique, prix en livres (£37.99 au lieu de £74.99).
+- Planches : `campagne.html` (réseaux) et `campagne.html?vue=app` (app, 7 langues). Un seul visuel : `campagne.html?solo=<id>`.
+- Registre : tutoiement dans toutes les langues (règle Truckfly B2C). Anglais britannique. Prix UK (£) et PL (zł) : repères « XX » à remplacer dans l'objet `L` de `campagne.html`.
 - Les anciens interstitiels deviennent des messages in-app (même visuel, sans lien « Plus tard » : la fermeture est gérée par l'outil de messages in-app).
 
 ### Réseaux sociaux (FR) · `png/campagne/reseaux/`
@@ -74,7 +74,7 @@ Régénérer : `node black-friday/rendre-campagne.mjs` (41 visuels + planches da
 
 Posts Meta (1080 × 1350) : 20/11 teasing, 27/11 jour J, 30/11 dernier jour.
 
-### App (FR, EN, IT, ES, NL) · `png/campagne/app/<langue>/`
+### App (FR, EN, DE, IT, ES, NL, PL) · `png/campagne/app/<langue>/`
 
 | Visuel | Quand | Taille |
 |---|---|---|
@@ -82,7 +82,5 @@ Posts Meta (1080 × 1350) : 20/11 teasing, 27/11 jour J, 30/11 dernier jour.
 | `message-in-app-2-offre` | 27 → 29/11 | 1170 × 2532 |
 | `message-in-app-3-dernier-jour` | 30/11 | 1170 × 2532 |
 | `banniere-funnel-990x402` | 27 → 30/11 | 990 × 402 (+ @2x) |
-| `banniere-in-app-576x180-teasing` | 20 → 26/11 | 576 × 180 (+ @2x) |
-| `banniere-in-app-576x180-offre` | 27 → 30/11 | 576 × 180 (+ @2x) |
 
-Les textes de chaque langue sont dans l'objet `L` en haut du script de `campagne.html`.
+Bannières in-app 576 × 180 retirées. Les textes de chaque langue sont dans l'objet `L` en haut du script de `campagne.html`.

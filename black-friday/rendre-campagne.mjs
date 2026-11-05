@@ -21,7 +21,7 @@ async function charger(suffixe, largeur, echelle) {
 
 // Planches
 for (const vue of ["reseaux", "app"]) {
-  const page = await charger(`?vue=${vue}`, 2200, 1);
+  const page = await charger(`?vue=${vue}`, 3200, 1);
   await page.screenshot({ path: path.join(sortie, `planche-${vue}.png`), fullPage: true });
   await page.close();
 }

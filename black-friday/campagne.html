@@ -5,8 +5,10 @@
 <title>Black Friday 2026 – Campagne</title>
 <style>
 /* Ancienne charte (exception Black Friday). Titres : remplaçant de la police MICHELIN, en attendant le fichier officiel. */
-@font-face { font-family: "Titre"; src: url("assets/fonts/Archivo-ExpandedBlackItalic.woff2") format("woff2"); font-weight: 900; font-style: italic; }
-@font-face { font-family: "Texte"; src: url("assets/fonts/OpenSans-Italic.woff2") format("woff2"); font-weight: 300 800; font-style: italic; }
+@font-face { font-family: "Titre"; src: url("assets/fonts/Archivo-ExpandedBlackItalic.woff2") format("woff2"); font-weight: 900; font-style: italic; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Titre"; src: url("assets/fonts/Archivo-ExpandedBlackItalic-ext.woff2") format("woff2"); font-weight: 900; font-style: italic; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Texte"; src: url("assets/fonts/OpenSans-Italic.woff2") format("woff2"); font-weight: 300 800; font-style: italic; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Texte"; src: url("assets/fonts/OpenSans-Italic-ext.woff2") format("woff2"); font-weight: 300 800; font-style: italic; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
 :root { --noir: #0a0a0c; --blanc: #fff; --jaune: #FFFF1A; --gris: #c9c9d1; --barre: #8a8a92; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #e6e6ea; font-family: "Texte", sans-serif; font-style: italic; color: #111; padding: 48px; }
@@ -129,20 +131,6 @@ figcaption b { color: #111; }
 .funnel .cta { font-size: 1.6em; align-self: flex-start; }
 .funnel .tel { width: 15em; right: 3.5em; top: 3.6em; transform: rotate(5deg); }
 
-/* ---------- Bannière in-app 576 × 180 ---------- */
-.bia { display: flex; align-items: center; padding: 0 2.2em; gap: 2.2em; }
-.bia .titre { flex: none; margin-top: -1.4em; }
-.bia .titre .ligne { display: none; }
-.bia .boite { font-size: 2.5em; border-radius: .45em; padding: .26em .45em .3em; }
-.bia .date { font-size: 1.2em; bottom: -1.8em; }
-.bia .tag { font-size: 4em; flex: none; }
-.bia .prix .n { font-size: 2.6em; }
-.bia .prix .barre { font-size: 1.2em; }
-.bia .accroche { font-size: 1.95em; line-height: 1.15; flex: 1; }
-.bia .fleche { margin-left: auto; flex: none; width: 4.4em; height: 4.4em; border-radius: 50%; background: var(--jaune); display: grid; place-items: center; }
-.bia .fleche svg { width: 1.8em; height: 1.8em; }
-.bia .tel { width: 6.2em; right: 2.4em; top: 2.6em; transform: rotate(5deg); }
-.bia.question { padding-right: 10.4em; }
 </style>
 </head>
 <body>
@@ -151,7 +139,8 @@ figcaption b { color: #111; }
 const LOGO = "../ma-video/assets/logos/truckfly-blanc-rogne.png";
 const TEL = "assets/telephone-gps.png";
 
-/* ===== Textes de l'app par langue (B2C : tutoiement partout, anglais britannique, prix UK en livres) ===== */
+/* ===== Textes de l'app par langue (B2C : tutoiement partout, anglais britannique)
+   Prix UK et PL : repères XX à remplacer par les vrais prix. ===== */
 const L = {
   fr: { nom: "Français",
     prix: "37,99 €", barre: "au lieu de 74,99 €", an: "/an",
@@ -163,7 +152,7 @@ const L = {
     dernier: `Dernier jour`, profite: `J'en profite`,
     legal: `Offre valable du 27/11 au 30/11/2026 sur l'abonnement annuel GPS Premium.` },
   en: { nom: "English (UK)",
-    prix: "£37.99", barre: "was £74.99", an: "/year",
+    prix: "£XX.XX", barre: "was £XX.XX", an: "/year",
     dTeasing: `<small>on</small>27/11`, dOffre: `<small>from</small>27/11<small>to</small>30/11`, dFin: `<small>ends at</small>midnight`,
     question: `Fancy a deal<br>on your GPS?`, questionCourte: `Fancy a deal on your GPS?`,
     rdv: `See you on 27 November in the <b>MICHELIN Truckfly</b> app.`,
@@ -171,6 +160,15 @@ const L = {
     offre: `<b>GPS Premium</b> at half price, for a whole year.`,
     dernier: `Last day`, profite: `Get the deal`,
     legal: `Offer valid from 27/11 to 30/11/2026 on the annual GPS Premium subscription.` },
+  de: { nom: "Deutsch",
+    prix: "37,99 €", barre: "statt 74,99 €", an: "/Jahr",
+    dTeasing: `<small>am</small>27.11.`, dOffre: `27.11.<small>bis</small>30.11.`, dFin: `<small>bis</small>Mitternacht`,
+    question: `Lust auf<br>einen Deal<br>fürs GPS?`, questionCourte: `Lust auf einen Deal fürs GPS?`,
+    rdv: `Wir sehen uns am 27. November in der <b>MICHELIN Truckfly</b>-App.`,
+    notif: `Erinnere mich am 27.11.`, note: `Du bekommst am 27.11. morgens eine Benachrichtigung.`,
+    offre: `<b>GPS Premium</b> zum halben Preis, ein ganzes Jahr lang.`,
+    dernier: `Letzter Tag`, profite: `Jetzt sichern`,
+    legal: `Angebot gültig vom 27.11. bis 30.11.2026 für das GPS Premium Jahresabo.` },
   it: { nom: "Italiano",
     prix: "37,99 €", barre: "invece di 74,99 €", an: "/anno",
     dTeasing: `<small>il</small>27/11`, dOffre: `<small>dal</small>27/11<small>al</small>30/11`, dFin: `<small>fino a</small>mezzanotte`,
@@ -198,6 +196,15 @@ const L = {
     offre: `<b>GPS Premium</b> voor de halve prijs, een heel jaar lang.`,
     dernier: `Laatste dag`, profite: `Profiteer nu`,
     legal: `Actie geldig van 27/11 t/m 30/11/2026 op het jaarabonnement GPS Premium.` },
+  pl: { nom: "Polski",
+    prix: "XX,XX zł", barre: "zamiast XX,XX zł", an: "/rok",
+    dTeasing: `<small>od</small>27.11`, dOffre: `<small>od</small>27.11<small>do</small>30.11`, dFin: `<small>do</small>północy`,
+    question: `Masz ochotę<br>na promocję<br>na GPS?`, questionCourte: `Masz ochotę na promocję na GPS?`,
+    rdv: `Do zobaczenia 27 listopada w aplikacji <b>MICHELIN Truckfly</b>.`,
+    notif: `Przypomnij mi 27.11`, note: `27.11 rano dostaniesz powiadomienie.`,
+    offre: `<b>GPS Premium</b> za pół ceny, przez cały rok.`,
+    dernier: `Ostatni dzień`, profite: `Skorzystaj`,
+    legal: `Oferta ważna od 27.11 do 30.11.2026 na roczną subskrypcję GPS Premium.` },
 };
 const LANGS = Object.keys(L);
 
@@ -240,8 +247,6 @@ const iamDernier = t => M("fin", `${titre(t.dFin)}<p class="compte">${t.dernier}
 /* ===== Bannières (par langue) ===== */
 const funnel = t => `<div class="kv funnel" style="--w:990px;--h:402px;--u:10px">${logo}<div class="col-titre">${titre(t.dOffre)}</div>
   <div class="col-offre">${lignePrix(t)}${cta(t.profite)}</div>${tel(1)}</div>`;
-const biaTeasing = t => `<div class="kv bia question" style="--w:576px;--h:180px;--u:10px">${titre(t.dTeasing)}<h3 class="accroche">${t.questionCourte}</h3>${tel(.45)}</div>`;
-const biaOffre = t => `<div class="kv bia offre" style="--w:576px;--h:180px;--u:10px">${titre(t.dOffre)}${tag}${prix(t)}${fleche}</div>`;
 
 /* ===== Liste des visuels : id → [html, échelle d'export, légende, dossier] ===== */
 const V = {};
@@ -266,8 +271,6 @@ for (const lg of LANGS) {
   add(`message-in-app-2-offre-${lg}`, iamOffre(t), 3, `<b>${up}</b> · Offre · 27 → 29/11`, `app/${lg}`);
   add(`message-in-app-3-dernier-jour-${lg}`, iamDernier(t), 3, `<b>${up}</b> · Dernier jour · 30/11`, `app/${lg}`);
   add(`banniere-funnel-990x402-${lg}`, funnel(t), 1, `<b>${up}</b> · 990 × 402 · 27 → 30/11`, `app/${lg}`);
-  add(`banniere-in-app-576x180-teasing-${lg}`, biaTeasing(t), 1, `<b>${up}</b> · Teasing · 20 → 26/11`, `app/${lg}`);
-  add(`banniere-in-app-576x180-offre-${lg}`, biaOffre(t), 1, `<b>${up}</b> · Offre · 27 → 30/11`, `app/${lg}`);
 }
 
 /* ===== Affichage ===== */
@@ -283,13 +286,13 @@ if (q.get("solo")) {
   const ids = pre => Object.keys(V).filter(k => k.startsWith(pre));
   const parLangue = pre => LANGS.map(lg => `${pre}-${lg}`);
   if (q.get("vue") === "app") {
-    el.innerHTML = `<h1>Black Friday 2026 · App · 5 langues</h1>
-      <p>FR, EN (UK), IT, ES, NL. Tutoiement dans toutes les langues (règle Truckfly B2C). Prix UK en livres (£37.99 au lieu de £74.99). Les messages in-app reprennent le visuel des anciens interstitiels.</p>` +
+    el.style.width = "3060px";
+    el.innerHTML = `<h1>Black Friday 2026 · App · 7 langues</h1>
+      <p>FR, EN (UK), DE, IT, ES, NL, PL. Tutoiement dans toutes les langues (règle Truckfly B2C). Prix UK (£) et PL (zł) : repères XX à remplacer. Les messages in-app reprennent le visuel des anciens interstitiels.</p>` +
       sec("1 · Message in-app teasing", "Du 20 au 26/11. Le bouton demande à être averti le 27/11.", [parLangue("message-in-app-1-teasing")]) +
       sec("2 · Message in-app offre", "Du 27 au 29/11.", [parLangue("message-in-app-2-offre")]) +
       sec("3 · Message in-app dernier jour", "Le 30/11.", [parLangue("message-in-app-3-dernier-jour")]) +
-      sec("4 · Bannière funnel d'achat · 990 × 402", "Pendant l'offre, du 27 au 30/11.", [parLangue("banniere-funnel-990x402").slice(0, 2), parLangue("banniere-funnel-990x402").slice(2)]) +
-      sec("5 · Bannière in-app · 576 × 180", "Teasing du 20 au 26/11, puis offre du 27 au 30/11.", [parLangue("banniere-in-app-576x180-teasing").slice(0, 3), parLangue("banniere-in-app-576x180-teasing").slice(3), parLangue("banniere-in-app-576x180-offre").slice(0, 3), parLangue("banniere-in-app-576x180-offre").slice(3)]);
+      sec("4 · Bannière funnel d'achat · 990 × 402", "Pendant l'offre, du 27 au 30/11.", [0, 3, 6].map(i => parLangue("banniere-funnel-990x402").slice(i, i + 3)));
   } else {
     el.innerHTML = `<h1>Black Friday 2026 · Réseaux sociaux</h1>
       <p>GPS Premium à -50 % : 37,99 €/an au lieu de 74,99 €, du 27/11 au 30/11/2026. Teasing dès le 20/11 : la question, puis un compte à rebours où le téléphone sort de l'ombre. Le 27/11 l'offre s'allume, puis compte à rebours jusqu'au 30/11 à minuit.</p>` +
