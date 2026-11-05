@@ -41,13 +41,13 @@ Pas d'emoji (règle Truckfly pour les messages GPS). Tutoiement dans toutes les 
 - **PL** · Obietnica dotrzymana · GPS Premium -50%. Wiesz o tym przed innymi.
 
 ### Push B · 27/11 · Plus tard
-- **FR** · « Plus tard » vient d'arriver · Le GPS Premium à moitié prix, mais seulement jusqu'au 30/11.
-- **EN** · “Later” has arrived · GPS Premium at half price, but only until 30/11.
-- **DE** · „Später“ ist jetzt · GPS Premium zum halben Preis, aber nur bis 30.11.
-- **IT** · «Più tardi» è arrivato · GPS Premium a metà prezzo, ma solo fino al 30/11.
-- **ES** · «Más tarde» ya ha llegado · GPS Premium a mitad de precio, solo hasta el 30/11.
-- **NL** · ‘Later’ is nu · GPS Premium voor de halve prijs, maar alleen t/m 30/11.
-- **PL** · „Później” właśnie nadeszło · GPS Premium za pół ceny, ale tylko do 30.11.
+- **FR** · On te l'a gardée de côté · Le GPS Premium à moitié prix, mais seulement jusqu'au 30/11.
+- **EN** · We kept it aside for you · GPS Premium at half price, but only until 30/11.
+- **DE** · Wir haben es für dich zurückgelegt · GPS Premium zum halben Preis, aber nur bis 30.11.
+- **IT** · Te l'abbiamo tenuta da parte · GPS Premium a metà prezzo, ma solo fino al 30/11.
+- **ES** · Te la hemos guardado · GPS Premium a mitad de precio, solo hasta el 30/11.
+- **NL** · We hebben hem voor je apart gehouden · GPS Premium voor de halve prijs, maar alleen t/m 30/11.
+- **PL** · Odłożyliśmy ją dla ciebie · GPS Premium za pół ceny, ale tylko do 30.11.
 
 ### Push C · 29/11 · Plus tard, pas encore acheté
 - **FR** · Dernière sortie avant la fin · Plus qu'un jour pour le GPS Premium à moitié prix.
