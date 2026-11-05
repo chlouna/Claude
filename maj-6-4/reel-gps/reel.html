@@ -40,24 +40,24 @@ html, body { width: 540px; height: 960px; overflow: hidden; background: var(--bl
 .ouverture { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 0 56px; text-align: center;
   animation: sort 0.4s ease 2.5s forwards; }
 .surtitre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 34px; color: var(--jaune); animation: pop 0.45s var(--ressort) 0.15s both; }
-.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 46px; line-height: 1.08; animation: entre 0.55s var(--ressort) 0.35s both; }
+.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 50px; line-height: 1.08; animation: entre 0.55s var(--ressort) 0.35s both; }
 .titre em { font-style: normal; color: var(--jaune); }
 .picto { width: 120px; height: 120px; margin-top: 8px; animation: pop 0.5s var(--ressort) 0.8s both; }
 
 /* --- Légendes --- */
-.legende { left: 56px; right: 56px; top: 128px; text-align: center; font-family: "Bib", sans-serif; font-weight: 700; font-size: 30px; line-height: 1.12; }
+.legende { left: 40px; right: 40px; top: 92px; text-align: center; font-family: "Bib", sans-serif; font-weight: 700; font-size: 32px; line-height: 1.12; }
 .legende em { font-style: normal; color: var(--jaune); }
 
-/* --- Scène 1 : itinéraire (capture 436 × 610, affichée × 0,844) --- */
-.iti { left: 86px; top: 230px; width: 368px; height: 515px; animation: monte 0.6s var(--ressort) 2.7s both, descend 0.4s ease 5.3s forwards; }
+/* --- Scène 1 : itinéraire (capture 436 × 610, affichée × 1,049) --- */
+.iti { left: 41px; top: 186px; width: 457px; height: 640px; animation: monte 0.6s var(--ressort) 2.7s both, descend 0.4s ease 5.3s forwards; }
 .iti img { width: 100%; height: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45)); }
-.iti .cercle { position: absolute; left: 227px; top: 299px; width: 62px; height: 62px; margin: -31px 0 0 -31px; border-radius: 50%;
+.iti .cercle { position: absolute; left: 282px; top: 372px; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%;
   border: 5px solid var(--jaune); box-shadow: 0 0 0 3px rgba(6, 24, 102, 0.5);
   animation: pop 0.4s var(--ressort) 3.5s both, anneau 0.8s ease-in-out 3.9s 2; }
 
-/* --- Scènes 2 et 3 : navigation (capture 587 × 1183, affichée × 0,435) --- */
-.bloc-nav { left: 142px; top: 230px; width: 255px; height: 515px; animation: monte 0.6s var(--ressort) 5.55s both, descend 0.45s ease 11.35s forwards; }
-.nav { position: absolute; left: 0; top: 0; width: 587px; height: 1183px; transform: scale(0.435); transform-origin: 0 0; }
+/* --- Scènes 2 et 3 : navigation (capture 587 × 1183, affichée × 0,541) --- */
+.bloc-nav { left: 111px; top: 186px; width: 318px; height: 640px; animation: monte 0.6s var(--ressort) 5.55s both, descend 0.45s ease 11.35s forwards; }
+.nav { position: absolute; left: 0; top: 0; width: 587px; height: 1183px; transform: scale(0.541); transform-origin: 0 0; }
 .nav > * { position: absolute; }
 .nav img { left: 0; top: 0; width: 587px; height: 1183px; filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.45)); }
 
@@ -86,7 +86,7 @@ html, body { width: 540px; height: 960px; overflow: hidden; background: var(--bl
 
 /* --- 11,6–15 s : fin --- */
 .fin { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; padding: 0 56px; text-align: center; }
-.fin h2 { font-family: "Bib", sans-serif; font-weight: 700; font-size: 46px; line-height: 1.08; animation: entre 0.55s var(--ressort) 11.65s both; }
+.fin h2 { font-family: "Bib", sans-serif; font-weight: 700; font-size: 50px; line-height: 1.08; animation: entre 0.55s var(--ressort) 11.65s both; }
 .fin h2 em { font-style: normal; color: var(--jaune); }
 .cta { background: var(--jaune); color: var(--bleu); font-weight: 700; font-size: 20px; border-radius: 34px; padding: 17px 26px;
   animation: pop 0.5s var(--ressort) 12.1s both, pulse 0.9s ease-in-out 12.8s 2; }
@@ -116,7 +116,7 @@ html, body { width: 540px; height: 960px; overflow: hidden; background: var(--bl
   <div class="iti">
     <img src="assets/itineraire.png" alt="" />
     <div class="cercle"></div>
-    <div class="cercle" style="left: 314px; top: 210px; animation: pop 0.4s var(--ressort) 3.75s both, anneau 0.8s ease-in-out 4.15s 2"></div>
+    <div class="cercle" style="left: 390px; top: 261px; animation: pop 0.4s var(--ressort) 3.75s both, anneau 0.8s ease-in-out 4.15s 2"></div>
   </div>
 
   <!-- Scènes 2 et 3 : la navigation -->

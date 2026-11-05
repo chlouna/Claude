@@ -33,4 +33,4 @@ Télécharge Michelin Truckfly et roule mieux informé.
 
 ## Cadrage
 
-Tout est centré horizontalement, avec 56 px de marge de chaque côté (en 540 × 960, soit 112 px en 1080 × 1920). Rien dans les 110 px du haut ni les 210 px du bas, où Instagram affiche son interface.
+Tout est centré horizontalement. Les légendes commencent à 184 px du haut et les écrans vont de 372 à 1 652 px (en 1080 × 1920), pour remplir la hauteur sans coller aux bords.
