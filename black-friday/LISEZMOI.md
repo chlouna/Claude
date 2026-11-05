@@ -56,6 +56,7 @@ Teasing : pas de prix ni de « ?? ». Accroche « Ça vous dirait une promo sur 
 Régénérer : `node black-friday/rendre-campagne.mjs` (39 visuels + planches dans `png/campagne/`).
 
 - Planches : `campagne.html` (réseaux) et `campagne.html?vue=app` (app, 7 langues). Un seul visuel : `campagne.html?solo=<id>`.
+- Marque : toujours « Michelin Truckfly ». Polices : titres en police MICHELIN (Canva), remplacée ici par Archivo Black Italic semi-élargie (lettres resserrées) en attendant le fichier ; textes en Open Sans Italic.
 - Registre : tutoiement dans toutes les langues (règle Truckfly B2C). Anglais britannique. Prix des stores : 37,99 € (FR, ES, IT, NL, BE, DE), £31.99 (UK), 166,99 zł (PL). Prix barré = le double (74,99 €, £63.98, 333,98 zł).
 - Les anciens interstitiels deviennent des messages in-app (même visuel, sans lien « Plus tard » : la fermeture est gérée par l'outil de messages in-app).
 
