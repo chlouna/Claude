@@ -9,7 +9,7 @@ Régénérer : `node maj-6-4/reel-gps/rendre.mjs` (ou `rendre.mjs 2,5,8` pour de
 |---|---|---|
 | 0–2,7 s | **Un souci sur la route ? Signale-le !** | Titre et picto d'alerte |
 | 2,7–5,3 s | Clique sur le bouton jaune | Capture de la navigation (25 km/h) ; tap sur le bouton jaune « + » |
-| 5,3–8,3 s | Choisis ton alerte | Le panneau « Signaler » monte ; tap sur « Accident » |
+| 5,3–8,3 s | Choisis ton alerte | Le panneau « Signaler » monte ; tap sur « Danger » |
 | 8,3–11,4 s | Et préviens les autres conducteurs ! | « Alerte envoyée » ; l'alerte apparaît sur la carte |
 | 11,6–15 s | **Sur la route, on se prévient !** / bouton « Télécharge Michelin Truckfly » | Le bouton jaune pulse |
 
