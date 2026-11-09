@@ -3,85 +3,97 @@
 <head>
 <meta charset="UTF-8" />
 <title>LinkedIn : carrousel reconnaissance des routiers</title>
-<!-- Carrousel LinkedIn 1:1, d'après le template Michelin « panorama » : 5 slides de 360 × 360 posées côte à côte,
-     un seul trait de cadre qui court sur tout le carrousel (encoche sur la 1re slide, fermé à droite sur la dernière).
-     rendre.mjs découpe chaque slide. #carte : visuel unique, même style. -->
+<!-- Carrousel panoramique 5400 × 1350 = 5 slides 4:5 (1080 × 1350) côte à côte.
+     Maquette en 1800 × 450 (5 × 360 × 450, échelle de la charte), exportée ×3 par rendre.mjs.
+     Le cadre « structure » de la charte court sur tout le carrousel : encoche en M sur la slide 1,
+     trait du haut continu, fermeture à droite sur la slide 5, bas ouvert. #carte : visuel unique 4:5. -->
 <style>
 @font-face { font-family: "Bib"; src: url("../../ma-video/assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
-@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
-@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
-:root { --bleu: #061866; --jaune: #FFFF1A; }
+@font-face { font-family: "Bib"; src: url("../../ma-video/assets/fonts/BIB-Light.woff2") format("woff2"); font-weight: 300; }
+@font-face { font-family: "Noto Sans"; src: url("../../ma-video/assets/fonts/NotoSans-Regular.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Noto Sans"; src: url("../../ma-video/assets/fonts/NotoSans-Bold.woff2") format("woff2"); font-weight: 700; }
+:root { --bleu: #061866; --jaune: #FFFF1A; --blanc: #FFFFFF; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #000; }
-.panorama, .carte { position: relative; height: 360px; background: var(--bleu); color: #fff; font-family: "Inter", sans-serif; overflow: hidden; }
+.panorama, .carte { position: relative; height: 450px; background: var(--bleu); color: var(--blanc); font-family: "Noto Sans", sans-serif; overflow: hidden; }
 .panorama { width: 1800px; }
 .carte { width: 360px; margin-top: 20px; }
-.cadre { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.cadre path { fill: none; stroke: #fff; stroke-width: 1.4; }
 
-.slide { position: absolute; top: 0; width: 360px; height: 360px; padding: 0 44px; display: flex; flex-direction: column; justify-content: center; }
-.slide.s1 { left: 0; } .slide.s2 { left: 360px; } .slide.s3 { left: 720px; } .slide.s4 { left: 1080px; } .slide.s5 { left: 1440px; }
+/* Cadre de la charte (structure-4x5-white.png : 360 × 450, trait du haut à y 41,9 sur 1,9 px) */
+.structure { position: absolute; top: 0; width: 360px; height: 450px; pointer-events: none; }
+.structure.debut { left: 0; clip-path: inset(0 168px 0 0); }      /* bord gauche + encoche */
+.structure.fin { left: 1440px; clip-path: inset(0 0 0 300px); }  /* bord droit */
+.haut { position: absolute; top: 41.92px; height: 1.92px; left: 190px; width: 1552px; background: var(--blanc); }
 
-.sur { font-weight: 600; font-size: 8.5px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.85); margin-bottom: 10px; }
-.chiffre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 76px; line-height: 1; letter-spacing: -1px; color: var(--jaune); }
-.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 19px; line-height: 24px; margin-top: 12px; }
-.petit { font-size: 8.5px; line-height: 12px; color: rgba(255,255,255,.85); margin-top: 10px; }
+.slide { position: absolute; top: 0; width: 360px; height: 450px; padding: 96px 50px 84px 52px; display: flex; flex-direction: column; justify-content: center; }
+.s1 { left: 0; } .s2 { left: 360px; } .s3 { left: 720px; } .s4 { left: 1080px; } .s5 { left: 1440px; }
+
+.sur { position: absolute; top: 54px; right: 50px; font-weight: 700; font-size: 10px; color: var(--jaune); }
+.chiffre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 96px; line-height: 1; letter-spacing: -1.5px; color: var(--jaune); }
+.titre { font-family: "Bib", sans-serif; font-weight: 700; font-size: 22px; line-height: 27px; margin-top: 16px; }
+.texte { font-size: 12px; line-height: 18px; margin-top: 14px; }
+.trait { width: 48px; height: 2px; background: var(--blanc); margin-top: 20px; }
 .centre { align-items: center; text-align: center; }
 
 /* Jauge circulaire */
-.jauge { position: relative; width: 112px; height: 112px; }
+.jauge { position: relative; width: 136px; height: 136px; }
 .jauge svg { width: 100%; height: 100%; transform: rotate(-90deg); }
-.jauge .fond { stroke: #3a4a8f; }
+.jauge .fond { stroke: rgba(255,255,255,.22); }
 .jauge .arc { stroke: var(--jaune); stroke-linecap: round; }
-.jauge b { position: absolute; inset: 0; display: grid; place-items: center; font-family: "Bib", sans-serif; font-size: 26px; }
-.tag { display: inline-block; margin-top: 10px; padding: 3px 9px; border-radius: 10px; background: var(--jaune); color: var(--bleu); font-weight: 600; font-size: 9px; }
+.jauge b { position: absolute; inset: 0; display: grid; place-items: center; font-family: "Bib", sans-serif; font-weight: 700; font-size: 32px; }
 
-/* Liste à puces */
-.liste { list-style: none; margin-top: 22px; position: relative; }
-.liste::before { content: ""; position: absolute; left: 3px; top: 8px; bottom: 8px; width: 1px; background: rgba(255,255,255,.4); }
-.liste li { position: relative; padding-left: 20px; font-size: 12px; line-height: 16px; margin-bottom: 18px; }
-.liste li::before { content: ""; position: absolute; left: 0; top: 5px; width: 7px; height: 7px; border-radius: 50%; background: #fff; }
+.tag { display: inline-flex; align-items: center; gap: 5px; margin-top: 16px; padding: 4px 10px; border-radius: 12px; border: 1px solid var(--blanc); font-weight: 700; font-size: 10px; }
+.tag svg { width: 10px; height: 10px; }
 
-.guillemet { font-family: "Bib", sans-serif; font-size: 40px; line-height: 20px; height: 22px; color: var(--jaune); }
-.logo { width: 140px; margin-top: 22px; }
-.source { position: absolute; bottom: 30px; left: 44px; right: 44px; font-size: 6.5px; line-height: 9px; color: rgba(255,255,255,.6); }
-.suite { position: absolute; bottom: 26px; right: 30px; font-weight: 600; font-size: 16px; color: var(--jaune); }
+/* Liste reliée */
+.liste { list-style: none; margin-top: 24px; position: relative; }
+.liste::before { content: ""; position: absolute; left: 3.5px; top: 9px; bottom: 9px; width: 1px; background: rgba(255,255,255,.45); }
+.liste li { position: relative; padding-left: 22px; font-size: 13px; line-height: 18px; margin-bottom: 20px; }
+.liste li:last-child { margin-bottom: 0; font-weight: 700; }
+.liste li::before { content: ""; position: absolute; left: 0; top: 5.5px; width: 8px; height: 8px; border-radius: 50%; background: var(--blanc); }
+
+.logo { width: 150px; margin-top: 30px; }
+.source { position: absolute; bottom: 30px; left: 52px; width: 260px; font-size: 7px; line-height: 10px; color: rgba(255,255,255,.75); }
+.marque { position: absolute; left: 52px; bottom: 20px; font-family: "Bib", sans-serif; font-weight: 300; font-size: 13px; }
+.marque b { font-weight: 700; }
 </style>
 </head>
 <body>
 
 <main class="panorama" id="panorama">
-  <!-- Trait du cadre : ouvert en bas, encoche en M sur la 1re slide, fermé à droite sur la dernière -->
-  <svg class="cadre" viewBox="0 0 1800 360" preserveAspectRatio="none">
-    <path d="M24 336 V24 H54 C76 24 88 30 101 52" />
-    <path d="M104 50 C116 31 128 24 158 24 H1776 V336" />
-  </svg>
+  <img class="structure debut" src="assets/structure-4x5-white.png" alt="" />
+  <div class="haut"></div>
+  <img class="structure fin" src="assets/structure-4x5-white.png" alt="" />
 
   <section class="slide s1">
-    <p class="sur">Étude OpinionWay · Solutrans × FFC</p>
-    <p class="chiffre">89 %</p>
+    <p class="sur">Étude OpinionWay</p>
+    <p class="chiffre">89&nbsp;%</p>
     <p class="titre">des Français jugent le transport routier essentiel à l’économie.</p>
-    <p class="petit">Et 90 % savent que leurs produits du quotidien passent par la route.</p>
+    <div class="trait"></div>
+    <p class="texte">Et 90 % savent que leurs produits du quotidien passent par la route.</p>
+    <p class="source">Source : étude OpinionWay pour Solutrans et la FFC, septembre 2026, 1&nbsp;003 personnes interrogées.</p>
   </section>
 
   <section class="slide s2 centre">
     <div class="jauge">
-      <svg viewBox="0 0 112 112"><circle class="fond" cx="56" cy="56" r="48" fill="none" stroke-width="9"/>
-        <circle class="arc" cx="56" cy="56" r="48" fill="none" stroke-width="9" stroke-dasharray="244.3 301.6"/></svg>
-      <b>81 %</b>
+      <svg viewBox="0 0 136 136"><circle class="fond" cx="68" cy="68" r="60" fill="none" stroke-width="10"/>
+        <circle class="arc" cx="68" cy="68" r="60" fill="none" stroke-width="10" stroke-dasharray="305.4 377"/></svg>
+      <b>81&nbsp;%</b>
     </div>
     <p class="titre">Et pourtant, ils estiment que les routiers manquent de reconnaissance.</p>
-    <span class="tag">↗ Un chiffre en hausse</span>
+    <span class="tag"><svg viewBox="0 0 10 10"><path d="M2 8 L8 2 M3.5 2 H8 V6.5" fill="none" stroke="#fff" stroke-width="1.4"/></svg>Un chiffre en hausse</span>
+    <p class="source" style="left:50px; width:260px; text-align:center">Source : étude OpinionWay pour Solutrans et la FFC, septembre 2026, 1&nbsp;003 personnes interrogées.</p>
   </section>
 
   <section class="slide s3 centre">
     <div class="jauge">
-      <svg viewBox="0 0 112 112"><circle class="fond" cx="56" cy="56" r="48" fill="none" stroke-width="9"/>
-        <circle class="arc" cx="56" cy="56" r="48" fill="none" stroke-width="9" stroke-dasharray="190 301.6"/></svg>
-      <b>63 %</b>
+      <svg viewBox="0 0 136 136"><circle class="fond" cx="68" cy="68" r="60" fill="none" stroke-width="10"/>
+        <circle class="arc" cx="68" cy="68" r="60" fill="none" stroke-width="10" stroke-dasharray="237.5 377"/></svg>
+      <b>63&nbsp;%</b>
     </div>
     <p class="titre">ont une bonne image des camions.</p>
-    <p class="petit">L’image est là. La reconnaissance du métier, pas encore.</p>
+    <p class="texte">L’image est là. La reconnaissance du métier, pas encore.</p>
+    <p class="source" style="left:50px; width:260px; text-align:center">Source : étude OpinionWay pour Solutrans et la FFC, septembre 2026, 1&nbsp;003 personnes interrogées.</p>
   </section>
 
   <section class="slide s4">
@@ -90,34 +102,29 @@ body { background: #000; }
       <li>De longues heures au volant</li>
       <li>Des nuits loin de chez soi</li>
       <li>Des parkings saturés…</li>
-      <li style="margin-bottom:0">…et un métier qu’on ne voit qu’au moment où il manque.</li>
+      <li>…et un métier qu’on ne voit qu’au moment où il manque.</li>
     </ul>
   </section>
 
   <section class="slide s5 centre">
-    <p class="titre" style="font-size:22px; line-height:27px; margin-top:0">Avec et pour les chauffeurs.</p>
-    <p class="petit" style="font-size:10px; line-height:14px; max-width:230px">Chaque avis laissé sur un parking, un restaurant ou une station aide un autre conducteur sur la route.</p>
+    <p class="titre" style="font-size:26px; line-height:31px; margin-top:0">Avec et pour <br>les chauffeurs.</p>
+    <div class="trait"></div>
+    <p class="texte" style="max-width:240px">Chaque avis laissé sur un parking, un restaurant ou une station aide un autre conducteur sur la route.</p>
     <img class="logo" src="../../ma-video/assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" />
   </section>
-
-  <p class="source" style="right:auto; width:300px">Source : étude OpinionWay pour Solutrans et la FFC, septembre 2026, 1 003 personnes.</p>
-  <p class="source" style="left:404px; right:auto; width:300px">Source : étude OpinionWay pour Solutrans et la FFC, septembre 2026, 1 003 personnes.</p>
-  <p class="source" style="left:764px; right:auto; width:300px">Source : étude OpinionWay pour Solutrans et la FFC, septembre 2026, 1 003 personnes.</p>
 </main>
 
-<!-- Visuel unique -->
+<!-- Visuel unique 4:5 -->
 <main class="carte" id="carte">
-  <svg class="cadre" viewBox="0 0 360 360">
-    <path d="M24 336 V24 H54 C76 24 88 30 101 52" />
-    <path d="M104 50 C116 31 128 24 158 24 H336 V336" />
-  </svg>
+  <img class="structure" style="left:0" src="assets/structure-4x5-white.png" alt="" />
   <section class="slide" style="left:0">
-    <p class="sur">Étude OpinionWay · Solutrans × FFC</p>
-    <p class="chiffre" style="font-size:104px">81 %</p>
+    <p class="sur">Étude OpinionWay</p>
+    <p class="chiffre" style="font-size:100px">81&nbsp;%</p>
     <p class="titre">des Français estiment que les routiers manquent de reconnaissance.</p>
-    <span class="tag" style="align-self:flex-start">↗ Un chiffre en hausse</span>
+    <span class="tag" style="align-self:flex-start"><svg viewBox="0 0 10 10"><path d="M2 8 L8 2 M3.5 2 H8 V6.5" fill="none" stroke="#fff" stroke-width="1.4"/></svg>Un chiffre en hausse</span>
+    <p class="source">Source : étude OpinionWay pour Solutrans et la FFC, septembre 2026, 1&nbsp;003 personnes interrogées.</p>
   </section>
-  <p class="source" style="right:auto; width:300px">Source : étude OpinionWay pour Solutrans et la FFC, septembre 2026, 1 003 personnes.</p>
+  
 </main>
 
 </body>
