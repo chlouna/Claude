@@ -148,7 +148,11 @@ figcaption b { color: #111; }
 /* -50 % et prix collés au cartouche Black Friday */
 .funnel .ligne-prix { align-self: flex-start; margin-left: -1.6em; margin-bottom: -1.5em; position: relative; z-index: 4; }
 /* La pointe de l'étiquette vient toucher le cartouche Black Friday */
-.funnel .ligne-prix .tag { transform: translateY(.55em) rotate(-8deg); }
+.funnel .ligne-prix .tag { transform: translateY(1.07em) rotate(-8deg); }
+/* Coupon BF50 centré sur le trait blanc ; bouton et date suivent */
+.funnel .actions { position: relative; top: 2.84em; }
+.funnel .ligne-prix .prix { position: relative; top: 2.2em; } /* prix aligné sur l'étiquette */
+.funnel .code { position: relative; top: .71em; } /* 2,84 × 10 px, rapporté à la taille du code */
 .funnel .rappel { font: italic 600 1.35em/1.2 "Texte"; color: var(--gris); }
 /* Code promo : coupon en pointillés, blanc (pas de gros texte jaune) */
 .code { position: relative; z-index: 3; display: inline-flex; align-items: baseline; gap: .4em; white-space: nowrap;
