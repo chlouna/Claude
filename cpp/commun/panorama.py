@@ -15,8 +15,8 @@ from pathlib import Path
 CPP = Path(__file__).resolve().parent.parent
 
 FORMATS = {
-    "google-play": {"l": 360, "h": 640, "t": 34, "st": 15, "txt": 46, "tel_haut": 178, "tel_h": 420},
-    "app-store": {"l": 428, "h": 926, "t": 42, "st": 18, "txt": 78, "tel_haut": 258, "tel_h": 620},
+    "google-play": {"captures": "captures-android", "l": 360, "h": 640, "t": 34, "st": 15, "txt": 46, "tel_haut": 178, "tel_h": 420},
+    "app-store": {"captures": "captures", "l": 428, "h": 926, "t": 42, "st": 18, "txt": 78, "tel_haut": 258, "tel_h": 620},
 }
 
 # --- Pictos (repris des visuels store existants) --------------------------------------------
@@ -79,7 +79,7 @@ def element(contenu, x, y, f):
 
 
 def telephone(img, hauteur, f, angle=0):
-    return f'<img src="../captures/{img}" style="height:{hauteur * f["h"]:.0f}px;transform:translate(-50%,-50%) rotate({angle}deg)" class="tel-pano" alt="">'
+    return f'<img src="../{f['captures']}/{img}" style="height:{hauteur * f["h"]:.0f}px;transform:translate(-50%,-50%) rotate({angle}deg)" class="tel-pano" alt="">'
 
 
 def page(titre_page, accueil, volets, fmt):
@@ -176,7 +176,7 @@ def page(titre_page, accueil, volets, fmt):
         contenu = ""
         if textes[i]:
             t, s, img = textes[i]
-            contenu = f'<div class="textes"><h1>{t}</h1><p>{s}</p></div><img class="tel" src="../captures/{img}" alt="">'
+            contenu = f'<div class="textes"><h1>{t}</h1><p>{s}</p></div><img class="tel" src="../{f['captures']}/{img}" alt="">'
         shots.append(
             f'<section class="shot" id="{i + 1:02d}-{ids[i]}" style="width:{l}px;height:{h}px">'
             f'<div class="decale" style="left:{-i * l}px">{pano}</div>{contenu}</section>'
