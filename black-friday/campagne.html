@@ -152,9 +152,8 @@ figcaption b { color: #111; }
 .code small { font: italic 700 .42em "Texte"; letter-spacing: .08em; text-transform: uppercase; color: #53565A; }
 .ligne-code { position: relative; z-index: 3; display: flex; justify-content: center; margin-top: 1.4em; }
 .post .code { font-size: 2em; }
-/* Code et bouton empilés, bouton centré sous le coupon */
-.post .offre-bas { align-self: flex-start; display: flex; flex-direction: column; align-items: center; gap: 1em; }
-.post .offre-bas .cta { align-self: center; position: relative; left: 1.5em; }
+/* Coupon du code en haut à droite, au-dessus du téléphone */
+.post .code-haut { position: absolute; z-index: 3; right: 2.4em; top: 12.7em; width: 12em; display: flex; justify-content: center; }
 .post.offre .gauche { gap: 1.05em; margin-top: 2.8em; }
 .funnel .ligne-prix { display: flex; align-items: center; gap: 1.6em; }
 .funnel .tag { flex: none; }
@@ -278,10 +277,10 @@ const ligneprixFR = () => lignePrix(FR);
 const storyFin = (date, compte) => S("fin", `${titre(date)}<p class="compte">${compte}</p>${ligneprixFR()}${ligneCode(FR)}${tel(1)}<div class="bas">${cta(FR.profite)}</div>`);
 
 /* ===== Posts Meta (FR, 1080 × 1350) ===== */
-const P = (cls, date, gauche, lum) => `<div class="kv post ${cls}" style="--w:360px;--h:450px;--u:10px">${logo}${titre(date)}<div class="gauche">${gauche}</div>${tel(lum)}</div>`;
+const P = (cls, date, gauche, lum, extra = "") => `<div class="kv post ${cls}" style="--w:360px;--h:450px;--u:10px">${logo}${titre(date)}<div class="gauche">${gauche}</div>${extra}${tel(lum)}</div>`;
 const postTeasing = () => P("question", FR.dTeasing, `<h3 class="accroche">${FR.question}</h3><p class="sous">${FR.rdv}</p>${rdv("Le 27/11 dans l'app")}`, .3);
-const postJourJ = () => P("offre", `<small>c'est parti !</small>`, `${tag}<p class="sous">Le GPS Premium à moitié prix, jusqu'au 30/11.</p>${prix(FR)}<div class="offre-bas">${code(FR)}${cta(FR.profite)}</div>`, 1);
-const postDernier = () => P("offre", FR.dFin, `${tag}<p class="sous">Dernier jour pour avoir le GPS Premium à moitié prix.</p>${prix(FR)}<div class="offre-bas">${code(FR)}${cta(FR.profite)}</div>`, 1);
+const postJourJ = () => P("offre", `<small>c'est parti !</small>`, `${tag}<p class="sous">Le GPS Premium à moitié prix, jusqu'au 30/11.</p>${prix(FR)}${cta(FR.profite)}`, 1, `<div class="code-haut">${code(FR)}</div>`);
+const postDernier = () => P("offre", FR.dFin, `${tag}<p class="sous">Dernier jour pour avoir le GPS Premium à moitié prix.</p>${prix(FR)}${cta(FR.profite)}`, 1, `<div class="code-haut">${code(FR)}</div>`);
 
 /* ===== Messages in-app (par langue, 1170 × 2532) ===== */
 const M = (cls, inner) => `<div class="kv v iam fondu ${cls}" style="--w:390px;--h:844px;--u:${390 / 36}px">${logo}${inner}</div>`;
