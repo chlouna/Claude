@@ -92,20 +92,20 @@ figcaption b { color: #111; }
 .v.offre .ligne-prix { margin-top: 6.6em; }
 .v.offre .tel { top: 34.5em; }
 .iam.offre .sous { margin-top: 2.2em; position: relative; z-index: 3; }
-.iam.offre .tel { top: 45em; }
+.iam.offre .tel { top: 46.5em; }
 /* Compte à rebours fin d'offre */
 .v.fin .compte { margin-top: 3.71em; }
 .v.fin .ligne-prix { margin-top: 2.5em; }
 .v.fin .tel { top: 38.3em; }
 .iam.fin .date { font-size: 2.1em; bottom: -1.9em; }
-.iam.fin .tel { top: 44em; }
+.iam.fin .tel { top: 45.5em; }
 .v .plus-tard { font: italic 600 1.35em/1 "Texte"; color: var(--gris); text-decoration: underline; }
 .iam.question .tel { top: 41em; }
 /* Messages segmentés */
 .iam.seg .msg { position: relative; z-index: 3; margin-top: 3.6em; font: italic 400 1.6em/1.3 "Texte"; text-align: center; color: var(--blanc); }
 .iam.seg .ligne-prix { margin-top: 1.6em; justify-content: center; }
 .iam.seg .sous { position: relative; z-index: 3; margin-top: 1.6em; text-align: center; }
-.iam.seg .tel { top: 47.5em; }
+.iam.seg .tel { top: 49em; }
 .iam .tag { font-size: 3.7em; }
 .iam .ligne-prix { gap: .8em; }
 /* Prix long (PL) : un peu plus petit pour tenir dans la largeur */
@@ -137,20 +137,22 @@ figcaption b { color: #111; }
 .funnel .date { font-size: 2em; bottom: -1.7em; }
 .funnel .titre .ligne { left: -6em; right: -80em; }
 .funnel .col-offre { display: flex; flex-direction: column; gap: 1.8em; position: relative; z-index: 2; margin-top: 1em; }
-.funnel .actions { display: flex; align-items: center; gap: 1.4em; }
-.funnel .code { font-size: 1.7em; }
-.funnel .rappel { font: italic 600 1.35em/1 "Texte"; color: var(--gris); margin-top: -.4em; }
+.funnel .col-offre { gap: 1.6em; }
+.funnel .tag { font-size: 4.2em; }
+.funnel .prix .n { font-size: 2.8em; }
+.funnel .code { font-size: 4em; align-self: flex-start; }
+.funnel .actions { display: flex; align-items: center; gap: 1.6em; }
+.funnel .rappel { font: italic 600 1.35em/1.2 "Texte"; color: var(--gris); }
 /* Code promo : coupon en pointillés, blanc (pas de gros texte jaune) */
-.code { position: relative; z-index: 3; display: inline-flex; align-items: baseline; gap: .45em; white-space: nowrap;
-  font: 900 italic 2em/1 "Titre"; letter-spacing: .04em; color: var(--blanc); padding: .38em .7em .34em;
-  border: .08em dashed rgba(255,255,255,.85); border-radius: .35em; background: rgba(255,255,255,.06); }
-.code small { font: italic 600 .55em "Texte"; letter-spacing: .06em; text-transform: uppercase; color: var(--gris); }
+.code { position: relative; z-index: 3; display: inline-flex; align-items: baseline; gap: .4em; white-space: nowrap;
+  font: 900 italic 2.6em/1 "Titre"; letter-spacing: .05em; color: #111; background: var(--blanc); padding: .32em .6em .3em;
+  border-radius: .3em; outline: .05em dashed #111; outline-offset: -.2em; box-shadow: 0 .15em .5em rgba(0,0,0,.35); }
+.code small { font: italic 700 .42em "Texte"; letter-spacing: .08em; text-transform: uppercase; color: #53565A; }
 .ligne-code { position: relative; z-index: 3; display: flex; justify-content: center; margin-top: 1.4em; }
-.post .code { align-self: flex-start; font-size: 1.45em; }
+.post .code { align-self: flex-start; font-size: 2em; }
 .post.offre .gauche { gap: 1.05em; margin-top: 2.8em; }
 .funnel .ligne-prix { display: flex; align-items: center; gap: 1.6em; }
-.funnel .tag { font-size: 5em; flex: none; }
-.funnel .prix .n { font-size: 3.4em; }
+.funnel .tag { flex: none; }
 .funnel .prix .barre { font-size: 1.5em; }
 .funnel .cta { font-size: 1.6em; align-self: flex-start; }
 .funnel .tel { width: 15em; right: 3.5em; top: 3.6em; transform: rotate(5deg); }
@@ -292,7 +294,7 @@ const iamDernier = t => M("fin", `${titre(t.dFin)}<p class="compte">${t.dernier}
 
 /* ===== Bannières (par langue) ===== */
 const funnel = t => `<div class="kv funnel" style="--w:990px;--h:402px;--u:10px">${logo}<div class="col-titre">${titre(t.dOffre)}</div>
-  <div class="col-offre">${lignePrix(t)}<div class="actions">${cta(t.profite)}${code(t)}</div><p class="rappel">${t.rappel}</p></div>${tel(1)}</div>`;
+  <div class="col-offre">${lignePrix(t)}${code(t)}<div class="actions">${cta(t.profite)}<p class="rappel">${t.rappel}</p></div></div>${tel(1)}</div>`;
 
 /* ===== Liste des visuels : id → [html, échelle d'export, légende, dossier] ===== */
 const V = {};
