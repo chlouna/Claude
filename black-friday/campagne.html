@@ -90,13 +90,15 @@ figcaption b { color: #111; }
 .v.avant .halo { top: 25em; }
 /* Offre */
 .v.offre .ligne-prix { margin-top: 6.6em; }
-.v.offre .tel { top: 34.5em; }
+.v.offre .tel { top: 38.5em; }
+.story .ligne-code { margin-top: 1.6em; }
+.story .code { font-size: 2.3em; }
 .iam.offre .sous { margin-top: 2.2em; position: relative; z-index: 3; }
 .iam.offre .tel { top: 46.5em; }
 /* Compte à rebours fin d'offre */
 .v.fin .compte { margin-top: 3.71em; }
 .v.fin .ligne-prix { margin-top: 2.5em; }
-.v.fin .tel { top: 38.3em; }
+.v.fin .tel { top: 42em; }
 .iam.fin .date { font-size: 2.1em; bottom: -1.9em; }
 .iam.fin .tel { top: 45.5em; }
 .v .plus-tard { font: italic 600 1.35em/1 "Texte"; color: var(--gris); text-decoration: underline; }
@@ -149,7 +151,10 @@ figcaption b { color: #111; }
   border-radius: .3em; outline: .05em dashed #111; outline-offset: -.2em; box-shadow: 0 .15em .5em rgba(0,0,0,.35); }
 .code small { font: italic 700 .42em "Texte"; letter-spacing: .08em; text-transform: uppercase; color: #53565A; }
 .ligne-code { position: relative; z-index: 3; display: flex; justify-content: center; margin-top: 1.4em; }
-.post .code { align-self: flex-start; font-size: 2em; }
+.post .code { font-size: 2em; }
+/* Code et bouton empilés, bouton centré sous le coupon */
+.post .offre-bas { align-self: flex-start; display: flex; flex-direction: column; align-items: center; gap: 1em; }
+.post .offre-bas .cta { align-self: center; }
 .post.offre .gauche { gap: 1.05em; margin-top: 2.8em; }
 .funnel .ligne-prix { display: flex; align-items: center; gap: 1.6em; }
 .funnel .tag { flex: none; }
@@ -268,15 +273,15 @@ const FR = L.fr;
 const S = (cls, inner) => `<div class="kv v story fondu ${cls}" style="--w:360px;--h:640px;--u:10px">${logo}${inner}</div>`;
 const storyQuestion = () => S("question", `${titre(FR.dTeasing)}<h3 class="accroche">${FR.question}</h3>${tel(.3)}<div class="bas">${rdv("Le 27/11 dans l'app")}</div>`);
 const storyAvant = (compte, sous, lum, date = FR.dTeasing) => S("avant", `${titre(date)}<p class="compte">${compte}</p><p class="sous">${sous}</p>${tel(lum)}<div class="bas">${rdv("Le 27/11 dans l'app")}</div>`);
-const storyOffre = date => S("offre", `${titre(date)}${ligneprixFR()}${tel(1)}<div class="bas">${cta(FR.profite)}</div>`);
+const storyOffre = date => S("offre", `${titre(date)}${ligneprixFR()}${ligneCode(FR)}${tel(1)}<div class="bas">${cta(FR.profite)}</div>`);
 const ligneprixFR = () => lignePrix(FR);
-const storyFin = (date, compte) => S("fin", `${titre(date)}<p class="compte">${compte}</p>${ligneprixFR()}${tel(1)}<div class="bas">${cta(FR.profite)}</div>`);
+const storyFin = (date, compte) => S("fin", `${titre(date)}<p class="compte">${compte}</p>${ligneprixFR()}${ligneCode(FR)}${tel(1)}<div class="bas">${cta(FR.profite)}</div>`);
 
 /* ===== Posts Meta (FR, 1080 × 1350) ===== */
 const P = (cls, date, gauche, lum) => `<div class="kv post ${cls}" style="--w:360px;--h:450px;--u:10px">${logo}${titre(date)}<div class="gauche">${gauche}</div>${tel(lum)}</div>`;
 const postTeasing = () => P("question", FR.dTeasing, `<h3 class="accroche">${FR.question}</h3><p class="sous">${FR.rdv}</p>${rdv("Le 27/11 dans l'app")}`, .3);
-const postJourJ = () => P("offre", `<small>c'est parti !</small>`, `${tag}<p class="sous">Le GPS Premium à moitié prix, jusqu'au 30/11.</p>${prix(FR)}${code(FR)}${cta(FR.profite)}`, 1);
-const postDernier = () => P("offre", FR.dFin, `${tag}<p class="sous">Dernier jour pour avoir le GPS Premium à moitié prix.</p>${prix(FR)}${code(FR)}${cta(FR.profite)}`, 1);
+const postJourJ = () => P("offre", `<small>c'est parti !</small>`, `${tag}<p class="sous">Le GPS Premium à moitié prix, jusqu'au 30/11.</p>${prix(FR)}<div class="offre-bas">${code(FR)}${cta(FR.profite)}</div>`, 1);
+const postDernier = () => P("offre", FR.dFin, `${tag}<p class="sous">Dernier jour pour avoir le GPS Premium à moitié prix.</p>${prix(FR)}<div class="offre-bas">${code(FR)}${cta(FR.profite)}</div>`, 1);
 
 /* ===== Messages in-app (par langue, 1170 × 2532) ===== */
 const M = (cls, inner) => `<div class="kv v iam fondu ${cls}" style="--w:390px;--h:844px;--u:${390 / 36}px">${logo}${inner}</div>`;
