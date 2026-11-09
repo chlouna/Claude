@@ -174,6 +174,29 @@ figcaption b { color: #111; }
 .funnel .cta { font-size: 1.6em; }
 .funnel .tel { width: 15em; right: 3.5em; top: 3.6em; transform: rotate(5deg); }
 
+
+/* ---------- Réseaux : sans logo, contenu remonté et mieux réparti ---------- */
+.story .titre { margin-top: 1.6em; }
+.story .bas { bottom: 3.6em; }
+.story.question .accroche { margin-top: 3.6em; }
+.story.question .tel { top: 33.5em; }
+.story.question .halo { top: 23.5em; }
+.story.avant .compte { margin-top: 4.6em; }
+.story.avant .sous { margin-top: 1.4em; }
+.story.avant .tel { top: 32.5em; }
+.story.avant .halo { top: 23em; }
+.story.offre .ligne-prix { margin-top: 7.6em; }
+.story .ligne-code { margin-top: 2.6em; }
+.story.offre .tel { top: 37em; }
+.story.fin .compte { margin-top: 4.8em; }
+.story.fin .ligne-prix { margin-top: 3.2em; }
+.story.fin .tel { top: 40.5em; }
+.post .titre { margin-top: .6em; }
+.post .gauche { margin-top: 5em; gap: 2.2em; }
+.post.offre .gauche { margin-top: 4.2em; gap: 1.9em; }
+.post .tel { top: 16.4em; }
+.post .halo { top: 8em; }
+.post .code-haut { top: 10.2em; }
 </style>
 </head>
 <body>
@@ -284,7 +307,7 @@ const fleche = `<span class="fleche"><svg viewBox="0 0 24 24" fill="none" stroke
 const FR = L.fr;
 
 /* ===== Stories (FR, 1080 × 1920) ===== */
-const S = (cls, inner) => `<div class="kv v story fondu ${cls}" style="--w:360px;--h:640px;--u:10px">${logo}${inner}</div>`;
+const S = (cls, inner) => `<div class="kv v story fondu ${cls}" style="--w:360px;--h:640px;--u:10px">${inner}</div>`;
 const storyQuestion = () => S("question", `${titre(FR.dTeasing)}<h3 class="accroche">${FR.question}</h3>${tel(.3)}<div class="bas">${rdv("Le 27/11 dans l'app")}</div>`);
 const storyAvant = (compte, sous, lum, date = FR.dTeasing) => S("avant", `${titre(date)}<p class="compte">${compte}</p><p class="sous">${sous}</p>${tel(lum)}<div class="bas">${rdv("Le 27/11 dans l'app")}</div>`);
 const storyOffre = date => S("offre", `${titre(date)}${ligneprixFR()}${ligneCode(FR)}${tel(1)}<div class="bas">${cta(FR.profite)}</div>`);
@@ -292,7 +315,7 @@ const ligneprixFR = () => lignePrix(FR);
 const storyFin = (date, compte) => S("fin", `${titre(date)}<p class="compte">${compte}</p>${ligneprixFR()}${ligneCode(FR)}${tel(1)}<div class="bas">${cta(FR.profite)}</div>`);
 
 /* ===== Posts Meta (FR, 1080 × 1350) ===== */
-const P = (cls, date, gauche, lum, extra = "") => `<div class="kv post ${cls}" style="--w:360px;--h:450px;--u:10px">${logo}${titre(date)}<div class="gauche">${gauche}</div>${extra}${tel(lum)}</div>`;
+const P = (cls, date, gauche, lum, extra = "") => `<div class="kv post ${cls}" style="--w:360px;--h:450px;--u:10px">${titre(date)}<div class="gauche">${gauche}</div>${extra}${tel(lum)}</div>`;
 const postTeasing = () => P("question", FR.dTeasing, `<h3 class="accroche">${FR.question}</h3><p class="sous">${FR.rdv}</p>${rdv("Le 27/11 dans l'app")}`, .3);
 const postJourJ = () => P("offre", `<small>c'est parti !</small>`, `${tag}<p class="sous">Le GPS Premium à moitié prix, jusqu'au 30/11.</p>${prix(FR)}${cta(FR.profite)}`, 1, `<div class="code-haut">${code(FR)}</div>`);
 const postDernier = () => P("offre", FR.dFin, `${tag}<p class="sous">Dernier jour pour avoir le GPS Premium à moitié prix.</p>${prix(FR)}${cta(FR.profite)}`, 1, `<div class="code-haut">${code(FR)}</div>`);
