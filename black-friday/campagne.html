@@ -92,20 +92,20 @@ figcaption b { color: #111; }
 .v.offre .ligne-prix { margin-top: 6.6em; }
 .v.offre .tel { top: 34.5em; }
 .iam.offre .sous { margin-top: 2.2em; position: relative; z-index: 3; }
-.iam.offre .tel { top: 41em; }
+.iam.offre .tel { top: 45em; }
 /* Compte à rebours fin d'offre */
 .v.fin .compte { margin-top: 3.71em; }
 .v.fin .ligne-prix { margin-top: 2.5em; }
 .v.fin .tel { top: 38.3em; }
 .iam.fin .date { font-size: 2.1em; bottom: -1.9em; }
-.iam.fin .tel { top: 40em; }
+.iam.fin .tel { top: 44em; }
 .v .plus-tard { font: italic 600 1.35em/1 "Texte"; color: var(--gris); text-decoration: underline; }
 .iam.question .tel { top: 41em; }
 /* Messages segmentés */
 .iam.seg .msg { position: relative; z-index: 3; margin-top: 3.6em; font: italic 400 1.6em/1.3 "Texte"; text-align: center; color: var(--blanc); }
 .iam.seg .ligne-prix { margin-top: 1.6em; justify-content: center; }
 .iam.seg .sous { position: relative; z-index: 3; margin-top: 1.6em; text-align: center; }
-.iam.seg .tel { top: 44em; }
+.iam.seg .tel { top: 47.5em; }
 .iam .tag { font-size: 3.7em; }
 .iam .ligne-prix { gap: .8em; }
 /* Prix long (PL) : un peu plus petit pour tenir dans la largeur */
@@ -136,7 +136,18 @@ figcaption b { color: #111; }
 .funnel .boite { font-size: 4.6em; }
 .funnel .date { font-size: 2em; bottom: -1.7em; }
 .funnel .titre .ligne { left: -6em; right: -80em; }
-.funnel .col-offre { display: flex; flex-direction: column; gap: 2em; position: relative; z-index: 2; margin-top: 1em; }
+.funnel .col-offre { display: flex; flex-direction: column; gap: 1.8em; position: relative; z-index: 2; margin-top: 1em; }
+.funnel .actions { display: flex; align-items: center; gap: 1.4em; }
+.funnel .code { font-size: 1.7em; }
+.funnel .rappel { font: italic 600 1.35em/1 "Texte"; color: var(--gris); margin-top: -.4em; }
+/* Code promo : coupon en pointillés, blanc (pas de gros texte jaune) */
+.code { position: relative; z-index: 3; display: inline-flex; align-items: baseline; gap: .45em; white-space: nowrap;
+  font: 900 italic 2em/1 "Titre"; letter-spacing: .04em; color: var(--blanc); padding: .38em .7em .34em;
+  border: .08em dashed rgba(255,255,255,.85); border-radius: .35em; background: rgba(255,255,255,.06); }
+.code small { font: italic 600 .55em "Texte"; letter-spacing: .06em; text-transform: uppercase; color: var(--gris); }
+.ligne-code { position: relative; z-index: 3; display: flex; justify-content: center; margin-top: 1.4em; }
+.post .code { align-self: flex-start; font-size: 1.45em; }
+.post.offre .gauche { gap: 1.05em; margin-top: 2.8em; }
 .funnel .ligne-prix { display: flex; align-items: center; gap: 1.6em; }
 .funnel .tag { font-size: 5em; flex: none; }
 .funnel .prix .n { font-size: 3.4em; }
@@ -164,6 +175,7 @@ const L = {
     offre: `<b>Le GPS Premium</b> à moitié prix, pour toute l'année.`,
     dernier: `Dernier jour`, profite: `J'en profite`,
     plusTard: `Plus tard`, dJ: `<small>c'est parti !</small>`, msgInteresse: `Promesse tenue : voici ton offre.`, msgPlusTard: `On te l'a gardée de côté.`, sousPlusTard: `Le GPS Premium t'attend à moitié prix, jusqu'au 30/11.`, dJusqua: `<small>jusqu'au</small>30/11`,
+    motCode: `Code`, rappel: `Jusqu'au 30/11 à minuit`,
     legal: `Offre valable du 27/11 au 30/11/2026 sur l'abonnement annuel GPS Premium.` },
   en: { nom: "English (UK)",
     prix: "£31.99", barre: "was £63.98", an: "/year",
@@ -174,6 +186,7 @@ const L = {
     offre: `<b>GPS Premium</b> at half price, for a whole year.`,
     dernier: `Last day`, profite: `Get the deal`,
     plusTard: `Maybe later`, dJ: `<small>it's on!</small>`, msgInteresse: `Promise kept: here's your deal.`, msgPlusTard: `We kept it aside for you.`, sousPlusTard: `GPS Premium is waiting for you at half price, until 30/11.`, dJusqua: `<small>until</small>30/11`,
+    motCode: `Code`, rappel: `Until midnight on 30/11`,
     legal: `Offer valid from 27/11 to 30/11/2026 on the annual GPS Premium subscription.` },
   de: { nom: "Deutsch",
     prix: "37,99 €", barre: "statt 74,99 €", an: "/Jahr",
@@ -184,6 +197,7 @@ const L = {
     offre: `<b>GPS Premium</b> zum halben Preis, ein ganzes Jahr lang.`,
     dernier: `Letzter Tag`, profite: `Jetzt sichern`,
     plusTard: `Später`, dJ: `<small>es geht los!</small>`, msgInteresse: `Versprochen ist versprochen: dein Angebot.`, msgPlusTard: `Wir haben es für dich zurückgelegt.`, sousPlusTard: `GPS Premium wartet auf dich: halber Preis bis 30.11.`, dJusqua: `<small>bis</small>30.11.`,
+    motCode: `Code`, rappel: `Bis 30.11. um Mitternacht`,
     legal: `Angebot gültig vom 27.11. bis 30.11.2026 für das GPS Premium Jahresabo.` },
   it: { nom: "Italiano",
     prix: "37,99 €", barre: "invece di 74,99 €", an: "/anno",
@@ -194,6 +208,7 @@ const L = {
     offre: `<b>GPS Premium</b> a metà prezzo, per tutto l'anno.`,
     dernier: `Ultimo giorno`, profite: `Approfittane`,
     plusTard: `Più tardi`, dJ: `<small>ci siamo!</small>`, msgInteresse: `Promessa mantenuta: ecco la tua offerta.`, msgPlusTard: `Te l'abbiamo tenuta da parte.`, sousPlusTard: `GPS Premium ti aspetta a metà prezzo, fino al 30/11.`, dJusqua: `<small>fino al</small>30/11`,
+    motCode: `Codice`, rappel: `Fino al 30/11 a mezzanotte`,
     legal: `Offerta valida dal 27/11 al 30/11/2026 sull'abbonamento annuale GPS Premium.` },
   es: { nom: "Español",
     prix: "37,99 €", barre: "antes 74,99 €", an: "/año",
@@ -204,6 +219,7 @@ const L = {
     offre: `<b>GPS Premium</b> a mitad de precio, todo el año.`,
     dernier: `Último día`, profite: `Aprovéchalo`,
     plusTard: `Más tarde`, dJ: `<small>¡ya está aquí!</small>`, msgInteresse: `Promesa cumplida: aquí tienes tu oferta.`, msgPlusTard: `Te la hemos guardado.`, sousPlusTard: `GPS Premium te espera a mitad de precio, hasta el 30/11.`, dJusqua: `<small>hasta el</small>30/11`,
+    motCode: `Código`, rappel: `Hasta el 30/11 a medianoche`,
     legal: `Oferta válida del 27/11 al 30/11/2026 en la suscripción anual GPS Premium.` },
   nl: { nom: "Nederlands",
     prix: "€ 37,99", barre: "i.p.v. € 74,99", an: "/jaar",
@@ -214,6 +230,7 @@ const L = {
     offre: `<b>GPS Premium</b> voor de halve prijs, een heel jaar lang.`,
     dernier: `Laatste dag`, profite: `Profiteer nu`,
     plusTard: `Later`, dJ: `<small>het is zover!</small>`, msgInteresse: `Beloofd is beloofd: hier is je aanbieding.`, msgPlusTard: `We hebben hem voor je apart gehouden.`, sousPlusTard: `GPS Premium wacht op je: halve prijs t/m 30/11.`, dJusqua: `<small>t/m</small>30/11`,
+    motCode: `Code`, rappel: `T/m 30/11, tot middernacht`,
     legal: `Actie geldig van 27/11 t/m 30/11/2026 op het jaarabonnement GPS Premium.` },
   pl: { nom: "Polski",
     prix: "166,99 zł", barre: "zamiast 333,98 zł", long: true, an: "/rok",
@@ -224,6 +241,7 @@ const L = {
     offre: `<b>GPS Premium</b> za pół ceny, przez cały rok.`,
     dernier: `Ostatni dzień`, profite: `Skorzystaj`,
     plusTard: `Później`, dJ: `<small>startujemy!</small>`, msgInteresse: `Obietnica dotrzymana: oto twoja oferta.`, msgPlusTard: `Odłożyliśmy ją dla ciebie.`, sousPlusTard: `GPS Premium czeka na ciebie za pół ceny, do 30.11.`, dJusqua: `<small>do</small>30.11`,
+    motCode: `Kod`, rappel: `Do 30.11 do północy`,
     legal: `Oferta ważna od 27.11 do 30.11.2026 na roczną subskrypcję GPS Premium.` },
 };
 const LANGS = Object.keys(L);
@@ -233,6 +251,9 @@ const logo = `<img class="logo" src="${LOGO}" alt="Michelin Truckfly">`;
 const titre = date => `<div class="titre"><div class="ligne"></div>
   <div class="boite"><span>Black</span><span>Friday</span></div><div class="date">${date}</div></div>`;
 const tag = `<div class="tag"><i></i>-50<small>%</small></div>`;
+const CODE = "BF50";
+const code = t => `<div class="code"><small>${t.motCode}</small>${CODE}</div>`;
+const ligneCode = t => `<div class="ligne-code">${code(t)}</div>`;
 const prix = t => `<div class="prix"><span class="n">${t.prix}<em>${t.an}</em></span><span class="barre">${t.barre}</span></div>`;
 const lignePrix = t => `<div class="ligne-prix ${t.long ? "long" : ""}">${tag}${prix(t)}</div>`;
 const tel = lum => (lum < 1 ? `<div class="halo"></div>` : "") + `<img class="tel ${lum < 1 ? "ombre" : ""}" src="${TEL}" alt="" style="--lum:${lum}">`;
@@ -252,26 +273,26 @@ const storyFin = (date, compte) => S("fin", `${titre(date)}<p class="compte">${c
 /* ===== Posts Meta (FR, 1080 × 1350) ===== */
 const P = (cls, date, gauche, lum) => `<div class="kv post ${cls}" style="--w:360px;--h:450px;--u:10px">${logo}${titre(date)}<div class="gauche">${gauche}</div>${tel(lum)}</div>`;
 const postTeasing = () => P("question", FR.dTeasing, `<h3 class="accroche">${FR.question}</h3><p class="sous">${FR.rdv}</p>${rdv("Le 27/11 dans l'app")}`, .3);
-const postJourJ = () => P("offre", `<small>c'est parti !</small>`, `${tag}<p class="sous">Le GPS Premium à moitié prix, jusqu'au 30/11.</p>${prix(FR)}${cta(FR.profite)}`, 1);
-const postDernier = () => P("offre", FR.dFin, `${tag}<p class="sous">Dernier jour pour avoir le GPS Premium à moitié prix.</p>${prix(FR)}${cta(FR.profite)}`, 1);
+const postJourJ = () => P("offre", `<small>c'est parti !</small>`, `${tag}<p class="sous">Le GPS Premium à moitié prix, jusqu'au 30/11.</p>${prix(FR)}${code(FR)}${cta(FR.profite)}`, 1);
+const postDernier = () => P("offre", FR.dFin, `${tag}<p class="sous">Dernier jour pour avoir le GPS Premium à moitié prix.</p>${prix(FR)}${code(FR)}${cta(FR.profite)}`, 1);
 
 /* ===== Messages in-app (par langue, 1170 × 2532) ===== */
 const M = (cls, inner) => `<div class="kv v iam fondu ${cls}" style="--w:390px;--h:844px;--u:${390 / 36}px">${logo}${inner}</div>`;
 const iamTeasing = t => M("question", `${titre(t.dTeasing)}<h3 class="accroche">${t.question}</h3><p class="sous">${t.rdv}</p>${tel(.3)}
   <div class="bas">${cta(t.notif, true)}<span class="plus-tard">${t.plusTard}</span><p class="legal">${t.note}</p></div>`);
 // Segments du 27/11 : ceux qui ont cliqué « Préviens-moi » et ceux qui ont cliqué « Plus tard »
-const iamSeg = (t, date, msg, sous) => M("seg", `${titre(date)}<p class="msg">${msg}</p>${lignePrix(t)}${sous ? `<p class="sous">${sous}</p>` : ""}${tel(1)}
+const iamSeg = (t, date, msg, sous) => M("seg", `${titre(date)}<p class="msg">${msg}</p>${lignePrix(t)}${sous ? `<p class="sous">${sous}</p>` : ""}${ligneCode(t)}${tel(1)}
   <div class="bas">${cta(t.profite)}<p class="legal">${t.legal}</p></div>`);
 const iamInteresses = t => iamSeg(t, t.dJ, t.msgInteresse, t.offre);
 const iamPlusTard = t => iamSeg(t, t.dJusqua, t.msgPlusTard, t.sousPlusTard);
-const iamOffre = t => M("offre", `${titre(t.dOffre)}${lignePrix(t)}<p class="sous">${t.offre}</p>${tel(1)}
+const iamOffre = t => M("offre", `${titre(t.dOffre)}${lignePrix(t)}<p class="sous">${t.offre}</p>${ligneCode(t)}${tel(1)}
   <div class="bas">${cta(t.profite)}<p class="legal">${t.legal}</p></div>`);
-const iamDernier = t => M("fin", `${titre(t.dFin)}<p class="compte">${t.dernier}</p>${lignePrix(t)}${tel(1)}
+const iamDernier = t => M("fin", `${titre(t.dFin)}<p class="compte">${t.dernier}</p>${lignePrix(t)}${ligneCode(t)}${tel(1)}
   <div class="bas">${cta(t.profite)}<p class="legal">${t.legal}</p></div>`);
 
 /* ===== Bannières (par langue) ===== */
 const funnel = t => `<div class="kv funnel" style="--w:990px;--h:402px;--u:10px">${logo}<div class="col-titre">${titre(t.dOffre)}</div>
-  <div class="col-offre">${lignePrix(t)}${cta(t.profite)}</div>${tel(1)}</div>`;
+  <div class="col-offre">${lignePrix(t)}<div class="actions">${cta(t.profite)}${code(t)}</div><p class="rappel">${t.rappel}</p></div>${tel(1)}</div>`;
 
 /* ===== Liste des visuels : id → [html, échelle d'export, légende, dossier] ===== */
 const V = {};

@@ -57,6 +57,7 @@ Régénérer : `node black-friday/rendre-campagne.mjs` (53 visuels + planches da
 
 - Planches : `campagne.html` (réseaux) et `campagne.html?vue=app` (app, 7 langues). Un seul visuel : `campagne.html?solo=<id>`.
 - Marque : toujours « Michelin Truckfly ». Polices : titres en police MICHELIN (Canva), remplacée ici par Archivo Black Italic semi-élargie (lettres resserrées) en attendant le fichier ; textes en Open Sans Italic.
+- Code promo : BF50 (constante `CODE` dans `campagne.html`), affiché sur les messages in-app de l'offre, la bannière funnel (avec le rappel de date) et les posts Meta du 27 et du 30/11.
 - Registre : tutoiement dans toutes les langues (règle Truckfly B2C). Anglais britannique. Prix des stores : 37,99 € (FR, ES, IT, NL, BE, DE), £31.99 (UK), 166,99 zł (PL). Prix barré = le double (74,99 €, £63.98, 333,98 zł).
 - Les anciens interstitiels deviennent des messages in-app (même visuel, sans lien « Plus tard » : la fermeture est gérée par l'outil de messages in-app).
 

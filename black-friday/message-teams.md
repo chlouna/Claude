@@ -13,6 +13,7 @@ Fond noir, ancienne charte Michelin : « BLACK FRIDAY » dans un cartouche blanc
 • Messages in-app (ils remplacent les interstitiels) : teasing, offre, dernier jour
 • Bannière funnel d'achat 990 × 402, pendant l'offre uniquement (pour ne pas pousser les gens à attendre)
 • Prix : 37,99 € (zone euro), £31.99 (UK), 166,99 zł (PL)
+• Code promo **BF50** sur tous les visuels de l'offre (messages in-app, bannière funnel avec rappel « jusqu'au 30/11 à minuit », posts Meta du 27 et du 30/11)
 
 **🎯 La nouveauté : on segmente**
 Le message in-app teasing a 2 boutons, et chaque réponse crée un segment :
