@@ -53,12 +53,18 @@ body { background: #000; }
 .liste li::before { content: ""; position: absolute; left: 0; top: 5.5px; width: 8px; height: 8px; border-radius: 50%; background: var(--blanc); }
 
 .logo { width: 150px; margin-top: 30px; }
+.logo.petit { position: absolute; left: 52px; bottom: 30px; width: 110px; margin: 0; }
+.jaune { color: var(--jaune); }
+.guillemet { font-family: "Bib", sans-serif; font-weight: 700; font-size: 64px; line-height: 40px; height: 36px; color: var(--jaune); }
+.finale { display: none; }
+body.fin-a .fin-a, body.fin-b .fin-b, body.fin-c .fin-c { display: flex; }
 .source { position: absolute; bottom: 30px; left: 52px; width: 260px; font-size: 7px; line-height: 10px; color: rgba(255,255,255,.75); }
 .marque { position: absolute; left: 52px; bottom: 20px; font-family: "Bib", sans-serif; font-weight: 300; font-size: 13px; }
 .marque b { font-weight: 700; }
 </style>
 </head>
 <body>
+<script>document.body.className = "fin-" + (new URLSearchParams(location.search).get("fin") || "a");</script>
 
 <main class="panorama" id="panorama">
   <img class="structure debut" src="assets/structure-4x5-white.png" alt="" />
@@ -106,11 +112,27 @@ body { background: #000; }
     </ul>
   </section>
 
-  <section class="slide s5 centre">
-    <p class="titre" style="font-size:26px; line-height:31px; margin-top:0">Avec et pour <br>les chauffeurs.</p>
+  <!-- Fins au choix : rendre.mjs affiche une seule des trois (?fin=a|b|c) -->
+  <section class="slide s5 finale fin-a">
+    <p class="titre" style="font-size:26px; line-height:31px; margin-top:0">Et vous, qu’est-ce qui ferait le plus progresser la reconnaissance du métier&nbsp;?</p>
     <div class="trait"></div>
-    <p class="texte" style="max-width:240px">Chaque avis laissé sur un parking, un restaurant ou une station aide un autre conducteur sur la route.</p>
-    <img class="logo" src="../../ma-video/assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" />
+    <p class="texte">Dites-le-nous en commentaire.</p>
+    <img class="logo petit" src="../../ma-video/assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" />
+  </section>
+
+  <section class="slide s5 finale fin-b">
+    <p class="titre" style="font-size:30px; line-height:35px; margin-top:0"><span class="jaune">Merci</span> à celles et ceux qui font tourner le pays, kilomètre après kilomètre.</p>
+    <div class="trait"></div>
+    <p class="texte">#FiersDesRoutiers</p>
+    <img class="logo petit" src="../../ma-video/assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" />
+  </section>
+
+  <section class="slide s5 finale fin-c">
+    <p class="texte" style="margin-top:0">La reconnaissance passe aussi par des choses concrètes&nbsp;:</p>
+    <p class="titre" style="font-size:27px; line-height:34px">Mieux s’arrêter.<br>Mieux s’équiper.<br><span class="jaune">Mieux se reposer.</span></p>
+    <div class="trait"></div>
+    <p class="texte">Chaque avis laissé dans l’appli aide un autre conducteur sur la route.</p>
+    <img class="logo petit" src="../../ma-video/assets/logos/truckfly-blanc-rogne.png" alt="Michelin Truckfly" />
   </section>
 </main>
 
