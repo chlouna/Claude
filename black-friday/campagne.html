@@ -181,6 +181,8 @@ figcaption b { color: #111; }
 <script>
 const LOGO = "../ma-video/assets/logos/truckfly-blanc-rogne.png";
 const TEL = "assets/telephone-gps.png";
+// Capture traduite (« Puis » dans l'encart de guidage) : assets/telephone-gps-<langue>.png
+let telLangue = TEL;
 
 /* ===== Textes de l'app par langue (B2C : tutoiement partout, anglais britannique)
    Prix des stores : EUR 37,99 €, GBP 31,99 £, PLN 166,99 zł (prix barré = le double). ===== */
@@ -275,7 +277,7 @@ const code = t => `<div class="code"><small>${t.motCode}</small>${CODE}</div>`;
 const ligneCode = t => `<div class="ligne-code">${code(t)}</div>`;
 const prix = t => `<div class="prix"><span class="n">${t.prix}<em>${t.an}</em></span><span class="barre">${t.barre}</span></div>`;
 const lignePrix = t => `<div class="ligne-prix ${t.long ? "long" : ""}">${tag}${prix(t)}</div>`;
-const tel = lum => (lum < 1 ? `<div class="halo"></div>` : "") + `<img class="tel ${lum < 1 ? "ombre" : ""}" src="${TEL}" alt="" style="--lum:${lum}">`;
+const tel = lum => (lum < 1 ? `<div class="halo"></div>` : "") + `<img class="tel ${lum < 1 ? "ombre" : ""}" src="${telLangue}" alt="" style="--lum:${lum}">`;
 const cta = (txt, contour) => `<span class="cta ${contour ? "contour" : ""}">${txt}</span>`;
 const rdv = txt => `<span class="rdv">${txt}</span>`;
 const fleche = `<span class="fleche"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>`;
@@ -331,6 +333,7 @@ add("post-2-27-11-jour-j", postJourJ(), 3, "<b>Post 2 · 27/11</b> · Jour J", "
 add("post-3-30-11-dernier-jour", postDernier(), 3, "<b>Post 3 · 30/11</b> · Dernier jour", "reseaux/posts-meta");
 // App, par langue
 for (const lg of LANGS) {
+  telLangue = lg === "fr" ? TEL : `assets/telephone-gps-${lg}.png`;
   const t = L[lg], up = lg.toUpperCase();
   add(`message-in-app-1-teasing-${lg}`, iamTeasing(t), 3, `<b>${up}</b> · Teasing · 20 → 26/11`, `app/${lg}`);
   add(`message-in-app-2a-interesses-${lg}`, iamInteresses(t), 3, `<b>${up}</b> · Segment « Préviens-moi » · 27/11`, `app/${lg}`);
@@ -338,6 +341,7 @@ for (const lg of LANGS) {
   add(`message-in-app-2-offre-${lg}`, iamOffre(t), 3, `<b>${up}</b> · Offre · 27 → 29/11`, `app/${lg}`);
   add(`message-in-app-3-dernier-jour-${lg}`, iamDernier(t), 3, `<b>${up}</b> · Dernier jour · 30/11`, `app/${lg}`);
   add(`banniere-funnel-990x402-${lg}`, funnel(t), 1, `<b>${up}</b> · 990 × 402 · 27 → 30/11`, `app/${lg}`);
+  telLangue = TEL;
 }
 
 /* ===== Affichage ===== */
