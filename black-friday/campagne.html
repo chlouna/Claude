@@ -132,17 +132,18 @@ figcaption b { color: #111; }
 .post .halo { width: 30em; height: 30em; left: auto; right: -8em; margin-left: 0; top: 10em; }
 
 /* ---------- Bannière funnel d'achat 990 × 402 ---------- */
-.funnel { display: flex; align-items: center; padding: 0 4em; gap: 3.6em; }
+.funnel { display: flex; align-items: center; padding: 0 20em 0 4em; gap: 2em; }
 .funnel .logo { position: absolute; top: 3em; left: 4em; height: 2.8em; }
 .funnel .col-titre { flex: none; position: relative; margin-top: 2.6em; }
 .funnel .boite { font-size: 4.6em; }
 .funnel .date { font-size: 2em; bottom: -1.7em; }
 .funnel .titre .ligne { left: -6em; right: -80em; }
 .funnel .col-offre { display: flex; flex-direction: column; gap: 1.8em; position: relative; z-index: 2; margin-top: 1em; }
-.funnel .col-offre { gap: 1.6em; }
+.funnel .col-offre { gap: 1.6em; flex: 1; align-items: center; }
+/* Bloc offre centré entre le titre et le téléphone */
 .funnel .tag { font-size: 4.2em; }
 .funnel .prix .n { font-size: 2.8em; }
-.funnel .code { font-size: 4em; align-self: flex-start; }
+.funnel .code { font-size: 4em; align-self: center; }
 .funnel .actions { display: flex; align-items: center; gap: 1.6em; }
 .funnel .rappel { font: italic 600 1.35em/1.2 "Texte"; color: var(--gris); }
 /* Code promo : coupon en pointillés, blanc (pas de gros texte jaune) */
@@ -158,7 +159,7 @@ figcaption b { color: #111; }
 .funnel .ligne-prix { display: flex; align-items: center; gap: 1.6em; }
 .funnel .tag { flex: none; }
 .funnel .prix .barre { font-size: 1.5em; }
-.funnel .cta { font-size: 1.6em; align-self: flex-start; }
+.funnel .cta { font-size: 1.6em; }
 .funnel .tel { width: 15em; right: 3.5em; top: 3.6em; transform: rotate(5deg); }
 
 </style>
