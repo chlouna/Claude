@@ -20,8 +20,9 @@ async function charger(suffixe, largeur, echelle) {
 }
 
 // Planches
-for (const vue of ["reseaux", "app"]) {
-  const page = await charger(`?vue=${vue}`, 3200, 1);
+for (const vue of ["app", ...["fr", "en", "de", "it", "es", "nl", "pl"].map(lg => `reseaux-${lg}`)]) {
+  const [v, lg] = vue.split("-");
+  const page = await charger(`?vue=${v}${lg ? `&lg=${lg}` : ""}`, 3200, 1);
   // Capture limitée à la largeur réelle de la planche (pas d'espace vide à droite)
   const largeur = await page.evaluate(() => Math.ceil(document.getElementById("planche").getBoundingClientRect().right) + 48);
   await page.screenshot({ path: path.join(sortie, `planche-${vue}.png`), fullPage: true, clip: { x: 0, y: 0, width: largeur, height: await page.evaluate(() => document.documentElement.scrollHeight) } });
