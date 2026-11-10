@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--y:#ffff1a;--navy:#0c165b;--blue:#0092ff}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#000}
+  .hero{position:relative;width:600px;height:420px;overflow:hidden;background:
+      radial-gradient(ellipse 70% 60% at 30% 35%, #1a2380 0%, rgba(12,22,91,.55) 35%, rgba(0,0,0,0) 70%), #000;
+    font-family:Montserrat,Arial,sans-serif;color:#fff}
+  /* hazard tape */
+  .tape{position:absolute;left:-20px;right:-20px;height:16px;
+    background:repeating-linear-gradient(-45deg,var(--y) 0 14px,#000 14px 28px)}
+  .tape.top{top:0}
+  /* road */
+  svg.road{position:absolute;left:0;bottom:0;width:600px;height:200px}
+  .brand{position:absolute;top:34px;left:36px;font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#cfd3ff}
+  .brand b{color:var(--y)}
+  .title{position:absolute;top:62px;left:30px;font-family:Anton,Impact,sans-serif;line-height:.86;text-transform:uppercase}
+  .title .l1{font-size:100px;color:transparent;-webkit-text-stroke:2.5px #fff;letter-spacing:.01em}
+  .title .l2{font-size:100px;color:var(--y);letter-spacing:.01em;text-shadow:0 0 28px rgba(255,255,26,.35)}
+  .dates{position:absolute;top:298px;left:36px;display:flex;align-items:center;gap:10px}
+  .dates .chip{background:#fff;color:#000;font-weight:900;font-size:15px;padding:7px 12px;border-radius:6px;letter-spacing:.04em}
+  .dates .arrow{color:var(--y);font-weight:900;font-size:18px}
+  /* sticker */
+  .sticker{position:absolute;top:66px;right:40px;width:190px;height:190px;border-radius:50%;
+    background:var(--y);color:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    transform:rotate(-10deg);box-shadow:0 0 0 6px #000,0 0 0 9px var(--y),0 18px 40px rgba(255,255,26,.25)}
+  .sticker .pct{font-family:Anton,Impact,sans-serif;font-size:74px;line-height:.9;letter-spacing:-.01em}
+  .sticker .sub{font-weight:900;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;text-align:center;line-height:1.25;margin-top:4px}
+  .gps{position:absolute;top:292px;right:62px;background:var(--navy);border:2px solid var(--blue);border-radius:10px;
+    padding:8px 12px;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:flex;gap:8px;align-items:center}
+  .gps i{width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue)}
+</style></head>
+<body>
+<div class="hero" id="hero">
+  <svg class="road" viewBox="0 0 600 200" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="asph" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#15151a"/><stop offset="1" stop-color="#2a2a33"/>
+      </linearGradient>
+      <linearGradient id="route" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="#0092ff" stop-opacity=".9"/><stop offset="1" stop-color="#0092ff" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <!-- horizon glow -->
+    <rect x="0" y="60" width="600" height="2" fill="#ffff1a" opacity=".25"/>
+    <!-- road trapezoid -->
+    <polygon points="400,60 440,60 640,200 200,200" fill="url(#asph)"/>
+    <!-- edge lines -->
+    <polyline points="402,60 215,200" stroke="#fff" stroke-width="3" opacity=".8" fill="none"/>
+    <polyline points="438,60 625,200" stroke="#fff" stroke-width="3" opacity=".8" fill="none"/>
+    <!-- GPS route overlay -->
+    <polygon points="414,60 426,60 470,200 370,200" fill="url(#route)" opacity=".55"/>
+    <!-- dashed centre -->
+    <g fill="#ffff1a">
+      <polygon points="419,66 421,66 422,74 418,74"/>
+      <polygon points="417,86 423,86 425,100 415,100"/>
+      <polygon points="414,118 426,118 429,140 411,140"/>
+      <polygon points="409,162 431,162 436,200 404,200"/>
+    </g>
+  </svg>
+  <div class="tape top"></div>
+  <div class="brand">MICHELIN Truckfly · <b>GPS Poids Lourds</b></div>
+  <div class="title"><div class="l1">Black</div><div class="l2">Friday</div></div>
+  <div class="dates"><span class="chip">27 NOV.</span><span class="arrow">→</span><span class="chip">30 NOV.</span></div>
+  <div class="sticker"><div class="pct">-50%</div><div class="sub">sur ton abonnement<br>annuel</div></div>
+  <div class="gps"><i></i>Offre limitée</div>
+</div>
+</body></html>
