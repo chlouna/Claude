@@ -5,8 +5,8 @@ ICI = Path(__file__).parent
 BLOCS = ICI.parent.parent.parent / "blocs"
 y = yaml.safe_load(open(ICI / "template_original.yaml"))
 S = y["body"]["content"][0]["content"]
-REPLI = '( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "DE" ) and ( contact.LANG != "PL" ) )'
-LANGS = ["EN", "ES", "NL", "IT", "DE", "PL"]
+REPLI = '( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )'
+LANGS = ["EN", "ES", "NL", "IT"]
 COND = {L: (REPLI if L == "EN" else f'( "{L}" in contact.LANG )') for L in LANGS}
 
 def nouveaux_ids(o):
@@ -252,7 +252,7 @@ for i, s in enumerate(S):
         '<p><span style="color: rgb(0, 0, 0); font-size: 20px;"><strong>III. Market / Legal Information</strong></span></p><p><span style="color: rgb(0, 0, 0);">Updates and key information to know about the industry</span></p><p><br></p>'
         '<p><span style="color: rgb(0, 0, 0); font-size: 20px;"><strong>IV. The Truckers’ Question</strong></span></p><p><span style="color: rgb(0, 0, 0);">One question, one answer and advice from our community</span></p>')
     if i == 12:
-        for L in ("DE", "PL"):
+        for L in ():
             r = copie(S[10], L, f"Bannière {L} · Récap"); pastille(r["content"][0]["content"][0], RECAP[L][0], "35%")
             r["content"][0]["content"][1]["content"] = "<p><br></p>".join(
                 f'<p><span style="color: rgb(0, 0, 0); font-size: 20px;"><strong>{n}. {a}</strong></span></p><p><span style="color: rgb(0, 0, 0);">{b}</span></p>'
@@ -278,7 +278,7 @@ for i, s in enumerate(S):
                 it["content"] = resultats(lab, q, opts, concl) if res else teaser(tlab, tq, fin)
                 if L == "EN": it["condition"] = REPLI
         es = [it for it in items if it.get("condition") == '( "ES" in contact.LANG )']
-        for L in ("DE", "PL"):
+        for L in ():
             for it in es:
                 c = nouveaux_ids(copy.deepcopy(it)); c["condition"] = COND[L]
                 if c["type"] == "text-button":
@@ -290,7 +290,7 @@ for i, s in enumerate(S):
 y["body"]["content"][0]["content"] = new
 
 out = yaml.dump(y, allow_unicode=True, sort_keys=False, width=10**9, default_flow_style=False)
-(ICI / "template_FR_EN_ES_NL_IT_DE_PL.yaml").write_text(out)
+(ICI / "template_FR_EN_ES_NL_IT.yaml").write_text(out)
 
 # ---------- Vérifications ----------
 z = yaml.safe_load(out); ids = []
