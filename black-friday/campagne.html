@@ -176,7 +176,7 @@ figcaption b { color: #111; }
 /* Flèche jaune qui part du code et descend vers la droite */
 .brevo .tel { top: 5.7em; right: 4.4em; }
 .brevo .logo { top: 3.4em; }
-.brevo .fleche-bas { inset: auto; left: 1.6em; top: 2.1em; width: 99em; height: 40.2em; }
+.brevo .fleche-bas { display: none; } /* la flèche sert seulement dans le funnel d'achat */
 .funnel .fleche-bas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; filter: drop-shadow(0 .2em .4em rgba(0,0,0,.4)); }
 
 
@@ -340,7 +340,7 @@ const iamDernier = t => M("fin", `${titre(t.dFin)}<p class="compte">${t.dernier}
   <div class="bas">${cta(t.profite)}<p class="legal">${t.legal}</p></div>`);
 
 /* ===== Bannières (par langue) ===== */
-const funnel = (t, cls = "", dims = "--w:990px;--h:402px") => `<div class="kv funnel ${cls}" style="${dims};--u:10px">${logo}<div class="col-titre">${titre(t.dOffre)}</div>
+const funnel = (t, cls = "", dims = "--w:990px;--h:402px;--u:10px") => `<div class="kv funnel ${cls}" style="${dims}">${logo}<div class="col-titre">${titre(t.dOffre)}</div>
   <div class="col-offre">${lignePrix(t)}${code(t)}<div class="actions">${cta(t.profite)}<p class="rappel">${t.rappel}</p></div></div>${tel(1)}<svg class="fleche-bas" viewBox="0 0 990 402" aria-hidden="true"><g fill="none" stroke="#FFFF1A" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"><path d="M662 178 C 735 165, 790 230, 772 352"/><path d="M738 322 L 771 362 L 803 326"/></g></svg></div>`;
 
 /* ===== Liste des visuels : id → [html, échelle d'export, légende, dossier] ===== */
@@ -368,7 +368,7 @@ for (const lg of LANGS) {
   add(`message-in-app-2-offre-${lg}`, iamOffre(t), 3, `<b>${up}</b> · Offre · 27 → 29/11`, `app/${lg}`);
   add(`message-in-app-3-dernier-jour-${lg}`, iamDernier(t), 3, `<b>${up}</b> · Dernier jour · 30/11`, `app/${lg}`);
   add(`banniere-funnel-990x402-${lg}`, funnel(t), 1, `<b>${up}</b> · 990 × 402 · 27 → 30/11`, `app/${lg}`);
-  add(`banniere-brevo-2030x889-${lg}`, funnel(t, "brevo", "--w:1015px;--h:444.5px"), 2, `<b>${up}</b> · Brevo 2030 × 889 · 27 → 30/11`, `brevo/${lg}`);
+  add(`banniere-brevo-2030x889-${lg}`, funnel(t, "brevo", "--w:2030px;--h:889px;--u:20.505px"), 1, `<b>${up}</b> · Brevo 2030 × 889 · 27 → 30/11`, `brevo/${lg}`);
   telLangue = TEL;
 }
 
