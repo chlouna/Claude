@@ -173,6 +173,11 @@ figcaption b { color: #111; }
 .funnel .prix .barre { font-size: 1.5em; }
 .funnel .cta { font-size: 1.6em; }
 .funnel .tel { width: 15em; right: 3.5em; top: 3.6em; transform: rotate(5deg); }
+/* Flèche jaune qui part du code et descend vers la droite */
+.brevo .tel { top: 5.7em; right: 4.4em; }
+.brevo .logo { top: 3.4em; }
+.brevo .fleche-bas { inset: auto; left: 1.6em; top: 2.1em; width: 99em; height: 40.2em; }
+.funnel .fleche-bas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; filter: drop-shadow(0 .2em .4em rgba(0,0,0,.4)); }
 
 
 /* ---------- Réseaux : sans logo, contenu remonté et mieux réparti ---------- */
@@ -335,8 +340,8 @@ const iamDernier = t => M("fin", `${titre(t.dFin)}<p class="compte">${t.dernier}
   <div class="bas">${cta(t.profite)}<p class="legal">${t.legal}</p></div>`);
 
 /* ===== Bannières (par langue) ===== */
-const funnel = t => `<div class="kv funnel" style="--w:990px;--h:402px;--u:10px">${logo}<div class="col-titre">${titre(t.dOffre)}</div>
-  <div class="col-offre">${lignePrix(t)}${code(t)}<div class="actions">${cta(t.profite)}<p class="rappel">${t.rappel}</p></div></div>${tel(1)}</div>`;
+const funnel = (t, cls = "", dims = "--w:990px;--h:402px") => `<div class="kv funnel ${cls}" style="${dims};--u:10px">${logo}<div class="col-titre">${titre(t.dOffre)}</div>
+  <div class="col-offre">${lignePrix(t)}${code(t)}<div class="actions">${cta(t.profite)}<p class="rappel">${t.rappel}</p></div></div>${tel(1)}<svg class="fleche-bas" viewBox="0 0 990 402" aria-hidden="true"><g fill="none" stroke="#FFFF1A" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"><path d="M662 178 C 735 165, 790 230, 772 352"/><path d="M738 322 L 771 362 L 803 326"/></g></svg></div>`;
 
 /* ===== Liste des visuels : id → [html, échelle d'export, légende, dossier] ===== */
 const V = {};
@@ -360,10 +365,10 @@ for (const lg of LANGS) {
   const t = L[lg], up = lg.toUpperCase();
   add(`message-in-app-1-teasing-${lg}`, iamTeasing(t), 3, `<b>${up}</b> · Teasing · 20 → 26/11`, `app/${lg}`);
   add(`message-in-app-2a-interesses-${lg}`, iamInteresses(t), 3, `<b>${up}</b> · Segment « Préviens-moi » · 27/11`, `app/${lg}`);
-  add(`message-in-app-2b-plus-tard-${lg}`, iamPlusTard(t), 3, `<b>${up}</b> · Segment « Plus tard » · 27/11`, `app/${lg}`);
   add(`message-in-app-2-offre-${lg}`, iamOffre(t), 3, `<b>${up}</b> · Offre · 27 → 29/11`, `app/${lg}`);
   add(`message-in-app-3-dernier-jour-${lg}`, iamDernier(t), 3, `<b>${up}</b> · Dernier jour · 30/11`, `app/${lg}`);
   add(`banniere-funnel-990x402-${lg}`, funnel(t), 1, `<b>${up}</b> · 990 × 402 · 27 → 30/11`, `app/${lg}`);
+  add(`banniere-brevo-2030x889-${lg}`, funnel(t, "brevo", "--w:1015px;--h:444.25px"), 2, `<b>${up}</b> · Brevo 2030 × 889 · 27 → 30/11`, `brevo/${lg}`);
   telLangue = TEL;
 }
 
@@ -385,10 +390,10 @@ if (q.get("solo")) {
       <p>FR, EN (UK), DE, IT, ES, NL, PL. Tutoiement dans toutes les langues (règle Truckfly B2C). Prix : 37,99 € (zone euro), £31.99 (UK), 166,99 zł (PL) ; prix barré = le double. Les messages in-app reprennent le visuel des anciens interstitiels.</p>` +
       sec("1 · Message in-app teasing", "Du 20 au 26/11. Deux boutons : « Préviens-moi le 27/11 » (segment intéressés) et « Plus tard » (segment plus tard).", [parLangue("message-in-app-1-teasing")]) +
       sec("2a · Segment « Préviens-moi » · 27/11", "Pour ceux qui ont cliqué « Préviens-moi » pendant le teasing.", [parLangue("message-in-app-2a-interesses")]) +
-      sec("2b · Segment « Plus tard » · 27/11", "Pour ceux qui ont cliqué « Plus tard » pendant le teasing.", [parLangue("message-in-app-2b-plus-tard")]) +
       sec("2 · Message in-app offre (tous les autres)", "Du 27 au 29/11, pour ceux qui n'ont pas vu le teasing ou n'ont rien cliqué.", [parLangue("message-in-app-2-offre")]) +
       sec("3 · Message in-app dernier jour", "Le 30/11, pour tous ceux qui n'ont pas encore acheté.", [parLangue("message-in-app-3-dernier-jour")]) +
-      sec("4 · Bannière funnel d'achat · 990 × 402", "Pendant l'offre, du 27 au 30/11.", [0, 3, 6].map(i => parLangue("banniere-funnel-990x402").slice(i, i + 3)));
+      sec("4 · Bannière funnel d'achat · 990 × 402", "Pendant l'offre, du 27 au 30/11.", [0, 3, 6].map(i => parLangue("banniere-funnel-990x402").slice(i, i + 3))) +
+      sec("5 · Bannière e-mail Brevo · 2030 × 889", "Pendant l'offre, du 27 au 30/11.", [0, 3, 6].map(i => parLangue("banniere-brevo-2030x889").slice(i, i + 3)));
   } else {
     el.innerHTML = `<h1>Black Friday 2026 · Réseaux sociaux</h1>
       <p>GPS Premium à -50 % : 37,99 €/an au lieu de 74,99 €, du 27/11 au 30/11/2026. Teasing dès le 20/11 : la question, puis un compte à rebours où le téléphone sort de l'ombre. Le 27/11 l'offre s'allume, puis compte à rebours jusqu'au 30/11 à minuit.</p>` +

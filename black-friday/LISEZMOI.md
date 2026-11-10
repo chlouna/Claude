@@ -82,9 +82,8 @@ Posts Meta (1080 × 1350) : 20/11 teasing, 27/11 jour J, 30/11 dernier jour.
 |---|---|---|
 | `message-in-app-1-teasing` | 20 → 26/11 (boutons « Préviens-moi le 27/11 » et « Plus tard ») | 1170 × 2532 |
 | `message-in-app-2a-interesses` | 27/11, segment « Préviens-moi » | 1170 × 2532 |
-| `message-in-app-2b-plus-tard` | 27/11, segment « Plus tard » | 1170 × 2532 |
 | `message-in-app-2-offre` | 27 → 29/11, tous les autres | 1170 × 2532 |
 | `message-in-app-3-dernier-jour` | 30/11 | 1170 × 2532 |
 | `banniere-funnel-990x402` | 27 → 30/11 | 990 × 402 (+ @2x) |
 
-Parcours segmenté et textes des push : voir `segmentation.md`. Bannières in-app 576 × 180 retirées. Les textes de chaque langue sont dans l'objet `L` en haut du script de `campagne.html`.
+Parcours segmenté et textes des push : voir `segmentation.md`. Bannière e-mail Brevo 2030 × 889 (même visuel que la bannière funnel) : `png/campagne/brevo/<langue>/`. Message in-app « Plus tard » retiré : ce segment n'est personnalisé que par les push. Bannières in-app 576 × 180 retirées. Les textes de chaque langue sont dans l'objet `L` en haut du script de `campagne.html`.

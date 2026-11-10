@@ -18,7 +18,7 @@ Fond noir, ancienne charte Michelin : « BLACK FRIDAY » dans un cartouche blanc
 **🎯 La nouveauté : on segmente**
 Le message in-app teasing a 2 boutons, et chaque réponse crée un segment :
 • « Préviens-moi le 27/11 » ➜ le 27, message « Promesse tenue : voici ton offre. » + push
-• « Plus tard » ➜ le 27, message « On te l'a gardée de côté. » + push, puis relance le 29
+• « Plus tard » ➜ le 27, push « On te l'a gardée de côté » (et message in-app offre classique), puis relance le 29
 • Les autres ➜ message offre classique
 Le 30/11, tous ceux qui n'ont pas acheté reçoivent « Dernier jour ». Les textes des 4 push en 7 langues sont dans le fichier du parcours.
 

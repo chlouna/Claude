@@ -16,6 +16,8 @@ Dans l'outil de messages in-app : un attribut ou un tag par bouton (ex. `bf26_in
 
 Exclure partout ceux qui ont déjà GPS Premium.
 
+Le segment « Plus tard » est personnalisé uniquement par les push (B et C) : dans l'app, il reçoit le message in-app offre classique.
+
 ## Code promo BF50
 
 Le code **BF50** apparaît sur tous les visuels de l'offre (du 27 au 30/11) :
@@ -31,7 +33,7 @@ Pas de code sur le teasing (20 → 26/11) : l'offre n'y est pas encore dévoilé
 
 | Date | Intéressés | Plus tard | Tous les autres |
 |---|---|---|---|
-| 27/11 matin | Push A + message in-app `2a-interesses` | Push B + message in-app `2b-plus-tard` | Message in-app `2-offre` |
+| 27/11 matin | Push A + message in-app `2a-interesses` | Push B + message in-app `2-offre` | Message in-app `2-offre` |
 | 28 → 29/11 | Message in-app `2-offre` si pas acheté | Message in-app `2-offre` si pas acheté | Message in-app `2-offre` |
 | 29/11 | — | Push C si pas acheté | — |
 | 30/11 | Push D + message in-app `3-dernier-jour` si pas acheté | Push D + message in-app `3-dernier-jour` si pas acheté | Message in-app `3-dernier-jour` |
