@@ -5,9 +5,9 @@ ICI = Path(__file__).parent
 BLOCS = ICI.parent.parent.parent / "blocs"
 y = yaml.safe_load(open(ICI / "template_original.yaml"))
 S = y["body"]["content"][0]["content"]
-REPLI = '( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )'
-COND = {"EN": REPLI, "ES": '( "ES" in contact.LANG )', "NL": '( "NL" in contact.LANG )', "IT": '( "IT" in contact.LANG )'}
-LANGS = ["EN", "ES", "NL", "IT"]
+REPLI = '( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "DE" ) and ( contact.LANG != "PL" ) )'
+LANGS = ["EN", "ES", "NL", "IT", "DE", "PL"]
+COND = {L: (REPLI if L == "EN" else f'( "{L}" in contact.LANG )') for L in LANGS}
 
 def nouveaux_ids(o):
     if isinstance(o, dict):
@@ -123,6 +123,53 @@ SONDAGE = {
         "Il mese prossimo parliamo di...", "Per ridurre il rischio su strada, la leva più efficace secondo Lei è…", "Appuntamento tra <strong>15 giorni</strong> per scoprire i risultati e rispondere a una nuova domanda. Alla prossima, su strada!"),
 }
 
+
+PILL_EDITO = {"DE": "Das Editorial des Monats", "PL": "Editorial miesiąca"}
+QBTN = {"DE": "Die Frage der Trucker!", "PL": "Pytanie do Truckerów!"}
+RECAP = {
+ "DE": ("Der Überblick des Monats", [("Veranstaltungen", "Die nächsten Termine, die Sie nicht verpassen sollten"), ("MICHELIN Truckfly News", "Unsere Neuigkeiten, Updates und Highlights"), ("Markt / Recht", "Entwicklungen und wichtige Informationen aus der Branche"), ("Die Frage der Trucker", "Eine Frage, eine Antwort und die Tipps unserer Community")]),
+ "PL": ("Podsumowanie miesiąca", [("Wydarzenia", "Najbliższe terminy, których nie warto przegapić"), ("Aktualności MICHELIN Truckfly", "Nasze nowości, aktualizacje i najważniejsze wydarzenia"), ("Rynek / Przepisy", "Zmiany i informacje, które warto znać w branży"), ("Pytanie do Truckerów", "Jedno pytanie, jedna odpowiedź i porady naszej społeczności")]),
+}
+EDITO["DE"] = ("Der Winter naht: gut vorbereitet in die kalte Jahreszeit", ["Guten Tag,", "Mit dem Winter werden die Tage kürzer, die Straßenverhältnisse schwieriger und das Jahresendgeschäft nimmt Fahrt auf. Eine anspruchsvolle Zeit für Ihre Fahrer ebenso wie für Ihre Teams.", "Bei MICHELIN Truckfly möchten wir Ihnen helfen, sie gelassen anzugehen, mit verlässlichen Informationen und Tools, die im Alltag wirklich nützen.", "Diesen Monat finden Sie das Wichtigste: kommende Termine, unsere Neuigkeiten und die Entwicklungen, die in jedem Land zählen.", "Viel Spaß beim Lesen,"])
+EDITO["PL"] = ("Nadchodzi zima, przygotujmy się dobrze", ["Dzień dobry,", "Wraz z zimą dni stają się krótsze, warunki na drogach trudniejsze, a ruch na koniec roku coraz większy. To wymagający okres zarówno dla Państwa kierowców, jak i zespołów.", "W MICHELIN Truckfly chcemy pomóc Państwu przejść przez niego spokojnie, dzięki rzetelnym informacjom i narzędziom przydatnym na co dzień.", "W tym miesiącu znajdą Państwo najważniejsze informacje: nadchodzące wydarzenia, nasze nowości oraz zmiany, które mają znaczenie w każdym kraju.", "Miłej lektury,"])
+EVT["DE"] = ("Veranstaltungen", "Supply Chain Event 2026: In Paris nimmt die Logistik von morgen Gestalt an", "1. und 2. Dezember 2026 · Paris Expo Porte de Versailles",
+  "Das Supply Chain Event bringt jedes Jahr die Entscheider aus Logistik und Supply Chain zusammen. Auf dem Programm: über 110 Aussteller, 40 Vorträge und Geschäftstermine, um die Lösungen zu entdecken, die 2027 den Unterschied machen.",
+  "Warum lohnt sich der Besuch für Sie?", ["Die neuesten Innovationen in Transport, Lager und Digitalisierung der Warenströme entdecken", "Vorträge zu aktuellen Themen verfolgen: Dekarbonisierung, Kosten, Personalgewinnung", "Partner treffen und sich mit Akteuren der Branche austauschen"], "Messe entdecken")
+EVT["PL"] = ("Wydarzenia", "Supply Chain Event 2026: logistyka jutra nabiera kształtów w Paryżu", "1 i 2 grudnia 2026 · Paris Expo Porte de Versailles",
+  "Supply Chain Event co roku gromadzi decydentów z branży logistyki i łańcucha dostaw. W programie: ponad 110 wystawców, 40 wystąpień i spotkania biznesowe, aby poznać rozwiązania, które będą miały znaczenie w 2027 roku.",
+  "Dlaczego warto?", ["Poznać najnowsze innowacje w transporcie, magazynowaniu i cyfryzacji przepływów", "Wysłuchać wystąpień na aktualne tematy: dekarbonizacja, koszty, rekrutacja", "Spotkać partnerów i porozmawiać z przedstawicielami branży"], "Poznaj targi")
+PUB["DE"] = ("Transportunternehmen und Fuhrparkleiter", "Betriebe", "Partner und Marken")
+PUB["PL"] = ("Firmy transportowe i menedżerowie flot", "Obiekty", "Partnerzy i marki")
+INFO["DE"] = dict(pill="MICHELIN Truckfly News", apporte="Ihr Vorteil", btn="Mehr erfahren", blog="https://www.truckfly.com/blog/en/", items=[
+ ("Fahrer ", "liken die Beiträge der Community", ["Fotos, Kommentare, Empfehlungen: Fahrer können die Beiträge anderer jetzt direkt im Aktivitätsfeed liken.", "Eine Art, Danke zu sagen und die zuverlässigsten Infos sichtbar zu machen."],
+  [(0, "Die beliebtesten Infos fallen schneller auf: Ihre Fahrer erkennen auf einen Blick, welche Parkplätze und Stopps ihre Kollegen für zuverlässig halten."), (1, "Jedes Foto und jede positive Bewertung des Betriebs kann von der Community geliked werden. Die besten Beiträge werden für andere Fahrer sichtbarer.")]),
+ ("Profilfotos ", "jetzt im Vollbild", ["Ein Tippen auf das Foto eines Fahrers genügt, um es groß anzuzeigen. Praktisch, um Kollegen auf dem Rastplatz wiederzuerkennen."],
+  [(0, "Fahrer, die sich auf Rastplätzen wiedererkennen und leichter ins Gespräch kommen: eine menschlichere Community, die die Einsamkeit auf der Straße durchbricht."), (2, "Eine Community, die sich kennt und jeden Tag in die App zurückkehrt: ein engagiertes Publikum, offen für nützliche Inhalte.")]),
+ ("Jeder Fahrer ", "wählt die Sprache seiner App", ["Die Sprache von MICHELIN Truckfly lässt sich direkt in der App ändern (Einstellungen &gt; App-Sprache), ohne die Einstellungen des Handys anzutasten."],
+  [(0, "Ihre Fahrer aller Nationalitäten nutzen die App in ihrer Sprache, auch auf einem geteilten Diensthandy. Weniger Fehler, mehr Selbstständigkeit, keine Handyeinstellungen zu ändern."), (1, "Lkw-Fahrer aus ganz Europa nutzen die App in ihrer Sprache: Sie finden die Informationen über den Betrieb leichter.")]),
+ ("Neu im GPS Premium: ", "der Mauthinweis", ["Während der Navigation warnt ein Hinweis den Fahrer, wenn er sich einer Mautstelle nähert, die auch auf der Karte erscheint. So bleibt Zeit, die richtige Spur zu wählen und die Mautbox oder Karte bereitzuhalten."],
+  [(0, "Weniger Bremsmanöver in letzter Sekunde, Mautbox rechtzeitig bereit, die richtige Spur zur rechten Zeit: mehr Sicherheit und flüssigere Fahrten für Ihre Fahrer mit dem MICHELIN Truckfly GPS."), (2, "Ein GPS für Lkw, das jeden Monat besser wird, im Dienst der Sicherheit aller Verkehrsteilnehmer.")]),
+])
+INFO["PL"] = dict(pill="Aktualności MICHELIN Truckfly", apporte="Co to Państwu daje", btn="Dowiedz się więcej", blog="https://www.truckfly.com/blog/en/", items=[
+ ("Kierowcy mogą teraz ", "polubić wpisy społeczności", ["Zdjęcia, komentarze, rekomendacje: kierowcy mogą teraz polubić wpisy innych kierowców bezpośrednio z kanału aktywności.", "To sposób, by podziękować i wyróżnić najbardziej wiarygodne informacje."],
+  [(0, "Najbardziej cenione informacje szybciej się wyróżniają: Państwa kierowcy od razu widzą, które parkingi i postoje koledzy uznają za sprawdzone."), (1, "Każde zdjęcie lub pozytywna opinia o obiekcie może zostać polubiona przez społeczność. Najlepsze wpisy zyskują widoczność wśród innych kierowców.")]),
+ ("Zdjęcia profilowe ", "na pełnym ekranie", ["Wystarczy dotknąć zdjęcia kierowcy, aby zobaczyć je w dużym rozmiarze. To wygodne, gdy chce się rozpoznać kolegę spotkanego na parkingu."],
+  [(0, "Kierowcy, którzy rozpoznają się na parkingach i łatwiej nawiązują kontakt: bardziej ludzka społeczność, która przełamuje samotność w trasie."), (2, "Społeczność, która się zna i codziennie wraca do aplikacji: zaangażowani odbiorcy, otwarci na przydatne treści.")]),
+ ("Każdy kierowca ", "wybiera język aplikacji", ["Język MICHELIN Truckfly można zmienić bezpośrednio w aplikacji (Ustawienia &gt; Język aplikacji), bez zmiany ustawień telefonu."],
+  [(0, "Państwa kierowcy każdej narodowości korzystają z aplikacji w swoim języku, nawet na wspólnym telefonie służbowym. Mniej błędów, więcej samodzielności, bez zmiany ustawień telefonu."), (1, "Kierowcy z całej Europy korzystają z aplikacji w swoim języku: łatwiej znajdują informacje o obiekcie.")]),
+ ("Nowość w GPS Premium: ", "alert o punkcie poboru opłat", ["Podczas nawigacji alert ostrzega kierowcę o zbliżaniu się do punktu poboru opłat, widocznego także na mapie. Kierowca ma czas, by zająć właściwy pas i przygotować urządzenie do opłat lub kartę."],
+  [(0, "Mniej gwałtownego hamowania w ostatniej chwili, urządzenie do opłat gotowe wcześniej, właściwy pas wybrany na czas: więcej bezpieczeństwa i płynniejsza jazda dla Państwa kierowców z GPS MICHELIN Truckfly."), (2, "GPS stworzony dla ciężarówek, który co miesiąc zyskuje nowe funkcje, z myślą o bezpieczeństwie wszystkich użytkowników dróg.")]),
+])
+MARCHE["DE"] = ("Markt / Recht", "Mehr erfahren", [
+ ("RoadPol Truck &amp; Bus: Kontrollen in Europa vom 16. bis 22. November", ["Die europäischen Verkehrspolizeien des ROADPOL Netzwerks führen ihre letzte Aktion des Jahres bei Lkw und Bussen durch. Im Fokus: Fahrtenschreiber, Lenk- und Ruhezeiten.", "Parallel wird weiter über die Überarbeitung der Richtlinie zu Maßen und Gewichten verhandelt: Die Hersteller fordern, dass Elektro- und Wasserstoff-Lkw gegenüber dem Diesel keine Nutzlast verlieren."], "Quellen: Transportonline · HGV Ireland", ROADPOL),
+ ("Lkw-Maut-Index: Fahrleistung im Oktober gesunken", ["Laut Destatis ist die Fahrleistung mautpflichtiger Lkw auf Autobahnen im Oktober 2026 gegenüber dem Vormonat um 1,6 % gesunken, liegt aber 0,5 % über dem Vorjahresmonat.", "Der Index gilt als Frühindikator für die Konjunktur in der Industrie."], "Quelle: Destatis", "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/11/PD26_391_421.html")])
+MARCHE["PL"] = ("Rynek / Przepisy", "Dowiedz się więcej", [
+ ("Kontrole RoadPol Truck &amp; Bus w Europie od 16 do 22 listopada", ["Europejskie policje drogowe z sieci ROADPOL prowadzą ostatnią w tym roku akcję kontrolną ciężarówek i autokarów. Pod lupą: tachograf, czas jazdy i odpoczynku.", "Równolegle trwają negocjacje w sprawie zmiany dyrektywy o masach i wymiarach: producenci chcą, aby ciężarówki elektryczne i wodorowe nie traciły ładowności w porównaniu z dieslem."], "Źródła: Transportonline · HGV Ireland", ROADPOL)])
+SONDAGE["DE"] = ("Ergebnisse · Vorherige Frage", "Was sollte die breite Öffentlichkeit Ihrer Meinung nach über Ihren Beruf verstehen?", ["Unsere Arbeitsbedingungen", "Unsere Einschränkungen auf der Straße", "Unsere Rolle in der Wirtschaft"], "Für 84 % der Profis in der MICHELIN Truckfly Community sollte die Öffentlichkeit vor allem den Berufsalltag verstehen: die Arbeitsbedingungen und die Einschränkungen auf der Straße.",
+  "Nächsten Monat sprechen wir über...", "Um das Risiko auf der Straße zu verringern, ist der wirksamste Hebel für Sie…", "In <strong>15 Tagen</strong> erfahren Sie die Ergebnisse und können eine neue Frage beantworten. Bis bald auf der Straße!")
+SONDAGE["PL"] = ("Wyniki · Poprzednie pytanie", "Co chcieliby Państwo, aby opinia publiczna zrozumiała w Państwa zawodzie?", ["Nasze warunki pracy", "Nasze ograniczenia na drodze", "Nasza rola w gospodarce"], "Dla 84% profesjonalistów ze społeczności MICHELIN Truckfly opinia publiczna powinna przede wszystkim zrozumieć codzienność zawodu: warunki pracy i ograniczenia na drodze.",
+  "W przyszłym miesiącu porozmawiamy o...", "Aby zmniejszyć ryzyko na drodze, najskuteczniejszym rozwiązaniem jest Państwa zdaniem…", "Za <strong>15 dni</strong> poznają Państwo wyniki i odpowiedzą na nowe pytanie. Do zobaczenia na drodze!")
+
 # ---------- Construction ----------
 fr_res = (BLOCS / "b2b-2026-11-sondage-resultats.html").read_text()
 fr_tea = (BLOCS / "b2b-2026-11-teaser-question.html").read_text()
@@ -146,12 +193,12 @@ fr = {"edito": S[3], "events": S[14], "infos": S[18], "marche": S[23]}
 def edito(L):
     s = copie(fr["edito"], L, f"Bannière {L} · Édito")
     it = s["content"][0]["content"]
-    old = {"EN": 4, "ES": 5, "NL": 6, "IT": 7}[L]
-    pastille(it[0], re.sub("<[^>]+>", "", ancien[old]["content"][0]["content"][0]["text"]).replace("&#39;", "’"), "35%")
+    old = {"EN": 4, "ES": 5, "NL": 6, "IT": 7}.get(L)
+    pastille(it[0], PILL_EDITO[L] if L in PILL_EDITO else re.sub("<[^>]+>", "", ancien[old]["content"][0]["content"][0]["text"]).replace("&#39;", "’"), "35%")
     t, ps = EDITO[L]
     it[1]["content"] = f'<h1 class="default-heading1"><br></h1><h1 class="default-heading1"><strong><span style="color: rgb(0, 0, 0);">{t}</span></strong></h1>'
     it[2]["content"] = paras(ps)
-    it[3]["content"] = copy.deepcopy(ancien[old]["content"][0]["content"][3]["content"])
+    if old: it[3]["content"] = copy.deepcopy(ancien[old]["content"][0]["content"][3]["content"])
     return s
 
 def evenements(L):
@@ -204,6 +251,13 @@ for i, s in enumerate(S):
         '<p><span style="color: rgb(0, 0, 0); font-size: 20px;"><strong>II. MICHELIN Truckfly News</strong></span></p><p><span style="color: rgb(0, 0, 0);">Our news, updates and highlights</span></p><p><br></p>'
         '<p><span style="color: rgb(0, 0, 0); font-size: 20px;"><strong>III. Market / Legal Information</strong></span></p><p><span style="color: rgb(0, 0, 0);">Updates and key information to know about the industry</span></p><p><br></p>'
         '<p><span style="color: rgb(0, 0, 0); font-size: 20px;"><strong>IV. The Truckers’ Question</strong></span></p><p><span style="color: rgb(0, 0, 0);">One question, one answer and advice from our community</span></p>')
+    if i == 12:
+        for L in ("DE", "PL"):
+            r = copie(S[10], L, f"Bannière {L} · Récap"); pastille(r["content"][0]["content"][0], RECAP[L][0], "35%")
+            r["content"][0]["content"][1]["content"] = "<p><br></p>".join(
+                f'<p><span style="color: rgb(0, 0, 0); font-size: 20px;"><strong>{n}. {a}</strong></span></p><p><span style="color: rgb(0, 0, 0);">{b}</span></p>'
+                for n, (a, b) in zip(["I", "II", "III", "IV"], RECAP[L][1]))
+            new.append(r)
     if i == 14: new += [evenements(L) for L in LANGS]
     if i == 18: new += [infos(L) for L in LANGS]
     if i == 23: new += [marche(L) for L in LANGS]
@@ -223,10 +277,20 @@ for i, s in enumerate(S):
                 lab, q, opts, concl, tlab, tq, fin = SONDAGE[L]
                 it["content"] = resultats(lab, q, opts, concl) if res else teaser(tlab, tq, fin)
                 if L == "EN": it["condition"] = REPLI
+        es = [it for it in items if it.get("condition") == '( "ES" in contact.LANG )']
+        for L in ("DE", "PL"):
+            for it in es:
+                c = nouveaux_ids(copy.deepcopy(it)); c["condition"] = COND[L]
+                if c["type"] == "text-button":
+                    h = f"<p><strong>{QBTN[L]}</strong></p>"; c["text"] = h; c["content"]["text"] = h
+                else:
+                    lab, q, opts, concl, tlab, tq, fin = SONDAGE[L]
+                    c["content"] = resultats(lab, q, opts, concl) if "SONDAGE" in c["content"] else teaser(tlab, tq, fin)
+                items.insert(len(items) - 1, c)
 y["body"]["content"][0]["content"] = new
 
 out = yaml.dump(y, allow_unicode=True, sort_keys=False, width=10**9, default_flow_style=False)
-(ICI / "template_FR_EN_ES_NL_IT.yaml").write_text(out)
+(ICI / "template_FR_EN_ES_NL_IT_DE_PL.yaml").write_text(out)
 
 # ---------- Vérifications ----------
 z = yaml.safe_load(out); ids = []
