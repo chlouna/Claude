@@ -35,7 +35,12 @@ await page0.close();
 for (const [id, echelle, dossier] of exports) {
   fs.mkdirSync(path.join(sortie, dossier), { recursive: true });
   const page = await charger(`?solo=${id}`, 1300, echelle);
-  await page.locator(`#${id}`).screenshot({ path: path.join(sortie, dossier, `${id}.png`) });
+  if (id.includes("brevo")) {
+    // Taille exacte 2030 × 889 demandée par Brevo
+    await page.screenshot({ path: path.join(sortie, dossier, `${id}.png`), clip: { x: 0, y: 0, width: 1015, height: 444.5 } });
+  } else {
+    await page.locator(`#${id}`).screenshot({ path: path.join(sortie, dossier, `${id}.png`) });
+  }
   await page.close();
   // Bannières à la taille exacte : aussi une version @2x pour les écrans haute définition
   if (echelle === 1) {
