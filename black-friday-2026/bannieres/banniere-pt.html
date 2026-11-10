@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Bib;src:url(fonts/BIB-Bold.woff2) format("woff2");font-weight:700}
+@font-face{font-family:Inter;src:url(fonts/Inter-Regular.otf);font-weight:400}
+@font-face{font-family:Inter;src:url(fonts/Inter-SemiBold.otf);font-weight:600}
+@font-face{font-family:Inter;src:url(fonts/Inter-Bold.otf);font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000}
+.b{position:relative;width:1000px;height:440px;overflow:hidden;color:#fff;font-family:Inter,Arial,sans-serif;
+ background:radial-gradient(ellipse 60% 70% at 78% 60%,#2b2b31 0%,rgba(0,0,0,0) 70%),linear-gradient(180deg,#0d0d10,#060607)}
+.ligne{position:absolute;left:0;right:0;top:232px;height:1.5px;background:linear-gradient(90deg,rgba(255,255,255,.08),rgba(255,255,255,.35) 40%,rgba(255,255,255,.08))}
+.logo{position:absolute;left:48px;top:36px;font-family:Bib;line-height:1}
+.logo b{display:block;font-size:22px;letter-spacing:.02em;font-style:italic}
+.logo span{display:block;font-size:13px;letter-spacing:.14em;margin-top:3px;font-family:Inter;font-weight:700}
+.bf{position:absolute;left:56px;top:168px;background:#fff;color:#000;border-radius:26px;padding:20px 30px 18px;
+ font-family:Bib;font-size:48px;line-height:.98;text-align:center;transform:rotate(-2deg);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.date{position:absolute;left:70px;top:318px;background:#ffff1a;color:#000;font-family:Bib;font-size:22px;padding:7px 16px 6px;
+ transform:rotate(-3deg);border-radius:6px;white-space:nowrap}
+.date small{font-size:14px}
+.pct{position:absolute;left:300px;top:168px;background:#ffff1a;color:#000;font-family:Bib;font-size:46px;padding:4px 18px 4px 32px;
+ transform:rotate(-9deg);clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%)}
+.pct sup{font-size:20px;vertical-align:top;position:relative;top:4px}
+.pct:before{content:"";position:absolute;left:9px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;border:2.5px solid #000;background:#0d0d10}
+.prix{position:absolute;left:318px;top:62px;line-height:1}
+.prix .p{font-family:Bib;font-size:46px;white-space:nowrap}.prix .p small{font-family:Inter;font-size:15px;font-weight:600;margin-left:4px}
+.prix .alt{font-family:Bib;font-size:20px;color:#ffff1a;margin-top:6px}
+.prix .o{font-size:15px;color:#b9b9c0;margin-top:7px;font-style:italic}.prix s{text-decoration-thickness:1.5px}
+.code{position:absolute;left:470px;top:196px;background:#fff;color:#000;border-radius:10px;padding:6px}
+.code div{border:2px dashed #000;border-radius:7px;padding:8px 22px;display:flex;align-items:baseline;gap:14px;white-space:nowrap}
+.code i{font-style:normal;font-family:Inter;font-weight:600;font-size:17px;letter-spacing:.12em}
+.code b{font-family:Bib;font-size:42px;letter-spacing:.02em}
+.btn{position:absolute;top:296px;background:#ffff1a;color:#000;font-family:Bib;font-size:20px;padding:15px 30px 13px;border-radius:10px;white-space:nowrap;transform:translateX(-50%)}
+.fin{position:absolute;top:358px;font-size:14px;color:#c9c9cf;transform:translateX(-50%);white-space:nowrap}
+.tel{position:absolute;left:770px;top:28px;width:196px;height:392px;border-radius:34px;background:#111;padding:8px;
+ transform:rotate(7deg);box-shadow:0 0 0 2px #3a3a40,0 30px 60px rgba(0,0,0,.7),0 0 80px rgba(255,255,255,.06)}
+.ecran{position:relative;width:100%;height:100%;border-radius:27px;overflow:hidden;background:#fff}
+.ecran svg{position:absolute;top:62px;left:0;width:100%;height:280px}
+.nav{position:absolute;top:0;left:0;right:0;height:62px;background:#0c165b;padding:24px 12px 0;display:flex;gap:10px}
+.nav .fl{width:26px;height:26px;border-left:4px solid #fff;border-top:4px solid #fff;transform:translateY(8px) rotate(-45deg) scale(.6)}
+.nav .t i{display:block;height:6px;border-radius:3px;background:#fff;margin-bottom:6px}
+.bas{position:absolute;bottom:0;left:0;right:0;height:42px;background:#fff;border-top:1px solid #e3e6ea;display:flex;align-items:center;justify-content:center;gap:8px}
+.bas i{display:block;width:40px;height:6px;border-radius:3px;background:#0c165b}.bas i+i{width:26px;background:#c4c9d1}
+.encoche{position:absolute;top:6px;left:50%;width:64px;height:16px;border-radius:9px;background:#111;transform:translateX(-50%);z-index:2}
+</style></head><body>
+<div class="b" id="b"><div class="ligne"></div>
+<div class="logo"><b>MICHELIN</b><span>TRUCKFLY</span></div>
+<div class="prix"><div class="p">37,99 €<small>/ano</small></div><div class="o">em vez de <s>74,99 €</s></div></div>
+<div class="bf">BLACK<br>FRIDAY</div><div class="date"><small>DE</small> 27/11 <small>A</small> 30/11</div>
+<div class="pct">-50<sup>%</sup></div>
+<div class="code" id="code"><div><i>CÓDIGO</i><b>BF50</b></div></div>
+<div class="btn" id="btn">APROVEITA</div><div class="fin" id="fin">Até 30/11 à meia-noite</div>
+<div class="tel"><div class="ecran"><div class="encoche"></div><div class="nav"><div class="fl"></div><div class="t"><i style="width:44px"></i><i style="width:110px"></i></div></div><svg viewBox="0 0 180 330" preserveAspectRatio="xMidYMid slice">
+<rect width="180" height="330" fill="#eef0f3"/>
+<g stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round">
+<path d="M-10 120 L190 95"/><path d="M-10 210 L190 240"/><path d="M40 -10 L60 340"/><path d="M140 -10 L120 340"/><path d="M-10 280 Q90 260 190 300"/></g>
+<g stroke="#dfe3e8" stroke-width="3" fill="none"><path d="M0 60 L180 50"/><path d="M95 0 L100 330"/><path d="M0 170 L180 160"/></g>
+<rect x="10" y="135" width="22" height="30" rx="3" fill="#d7ecd9"/><rect x="150" y="190" width="24" height="34" rx="3" fill="#d7ecd9"/>
+<path d="M92 330 L92 250 Q92 215 110 195 L128 175 Q140 160 138 120 L136 40" stroke="#1d5bd8" stroke-width="9" fill="none" stroke-linecap="round"/>
+<path d="M92 330 L92 250 Q92 215 110 195 L128 175 Q140 160 138 120 L136 40" stroke="#5b8df0" stroke-width="3" fill="none" stroke-linecap="round"/>
+<circle cx="92" cy="262" r="15" fill="#1d5bd8" opacity=".18"/><path d="M92 250 L100 270 L92 265 L84 270 Z" fill="#0c165b"/>
+<g><rect x="150" y="95" width="22" height="22" rx="6" fill="#e5484d"/><rect x="150" y="122" width="22" height="22" rx="6" fill="#3a6df0"/><rect x="150" y="149" width="22" height="22" rx="6" fill="#9b59f0"/></g>
+<rect x="148" y="62" width="26" height="26" rx="13" fill="#fff" stroke="#d0d5dc"/>
+<rect x="8" y="230" width="28" height="28" rx="14" fill="#fff" stroke="#d0d5dc"/>
+<rect x="146" y="258" width="26" height="26" rx="13" fill="#ffd400"/>
+</svg><div class="bas"><i></i><i></i></div></div></div>
+</div>
+<script>/* centre bouton et mention sous le code */
+const c=document.getElementById('code').getBoundingClientRect();const x=c.left+c.width/2;
+for(const id of ['btn','fin'])document.getElementById(id).style.left=x+'px';</script>
+</body></html>
