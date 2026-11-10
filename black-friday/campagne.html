@@ -174,7 +174,12 @@ figcaption b { color: #111; }
 .funnel .cta { font-size: 1.6em; }
 .funnel .tel { width: 15em; right: 3.5em; top: 3.6em; transform: rotate(5deg); }
 /* Flèche jaune qui part du code et descend vers la droite */
-.brevo .tel { top: 5.7em; right: 4.4em; }
+.brevo .tel { top: 2.9em; right: 3.4em; width: 14.2em; }
+/* Brevo : fond noir uni, sans logo, éléments agrandis */
+.kv.brevo { background: #000; }
+.brevo .logo { display: none; }
+.brevo.funnel { padding: 0 18.5em 0 3em; }
+.brevo .col-titre { margin-top: 1.4em; }
 .brevo .logo { top: 3.4em; }
 .brevo .fleche-bas { display: none; } /* la flèche sert seulement dans le funnel d'achat */
 .funnel .fleche-bas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; filter: drop-shadow(0 .2em .4em rgba(0,0,0,.4)); }
@@ -378,7 +383,7 @@ for (const lg of LANGS) {
   add(`message-in-app-2-offre-${lg}`, iamOffre(t), 3, `<b>${up}</b> · Offre · 27 → 29/11`, `app/${lg}`);
   add(`message-in-app-3-dernier-jour-${lg}`, iamDernier(t), 3, `<b>${up}</b> · Dernier jour · 30/11`, `app/${lg}`);
   add(`banniere-funnel-990x402-${lg}`, funnel(t), 1, `<b>${up}</b> · 990 × 402 · 27 → 30/11`, `app/${lg}`);
-  add(`banniere-brevo-2030x889-${lg}`, funnel(t, "brevo", "--w:2030px;--h:889px;--u:20.505px"), 1, `<b>${up}</b> · Brevo 2030 × 889 · 27 → 30/11`, `brevo/${lg}`);
+  add(`banniere-brevo-2030x889-${lg}`, funnel(t, "brevo", "--w:2030px;--h:889px;--u:24.5px"), 1, `<b>${up}</b> · Brevo 2030 × 889 · 27 → 30/11`, `brevo/${lg}`);
   telLangue = TEL;
 }
 
