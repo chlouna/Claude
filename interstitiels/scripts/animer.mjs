@@ -17,7 +17,7 @@ const tmp = path.join(racine, "mp4", ".images");
 rmSync(tmp, { recursive: true, force: true });
 mkdirSync(tmp, { recursive: true });
 
-const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
+const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium" });
 const page = await navigateur.newPage({ viewport: { width: 1360, height: 900 }, deviceScaleFactor: 1080 / 390 });
 await page.goto("file://" + path.join(racine, "index.html"));
 await page.evaluate(() => document.fonts.ready);

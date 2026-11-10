@@ -6,7 +6,7 @@ import path from "node:path";
 
 const { chromium } = createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE || "playwright");
 const ici = path.dirname(fileURLToPath(import.meta.url));
-const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
+const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium" });
 for (const largeur of [1080, 3000]) {
   const page = await navigateur.newPage({ viewport: { width: 360, height: 450 }, deviceScaleFactor: largeur / 360 });
   await page.goto("file://" + path.join(ici, "post.html"));

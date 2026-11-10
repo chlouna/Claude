@@ -6,7 +6,7 @@ import path from "node:path";
 
 const { chromium } = createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE || "playwright");
 const ici = path.dirname(fileURLToPath(import.meta.url));
-const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
+const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium" });
 // [page, largeur de la maquette en px, nom de sortie]
 const posts = [["post.html", 360, "post-like-6-4"], ["post-nouveautes.html", 652, "post-nouveautes-6-4"]];
 for (const [fichier, base, nom] of posts) {

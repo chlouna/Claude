@@ -11,10 +11,13 @@ const ici = path.dirname(fileURLToPath(import.meta.url));
 const langues = (process.argv[2] || "fr,en,de,nl,pl,it,es").split(",");
 const apercus = process.argv[3] ? process.argv[3].split(",").map(Number) : null; // mode aperçu : PNG seulement
 const duree = 15, ips = 30;
+// HD=1 : version haute définition (1536 × 2304, débit élevé), pour les plateformes qui recompressent la vidéo.
+const hd = process.env.HD === "1";
+const [lw, lh, suffixe] = hd ? [1536, 2304, "-hd"] : [768, 1152, ""];
 
-const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
+const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium" });
 for (const lang of langues) {
-  const page = await navigateur.newPage({ viewport: { width: 384, height: 576 }, deviceScaleFactor: 2 });
+  const page = await navigateur.newPage({ viewport: { width: 384, height: 576 }, deviceScaleFactor: lw / 384 });
   await page.goto("file://" + path.join(ici, `${lang}.html`));
   await page.evaluate(() => document.fonts.ready);
   const regle = (t) => page.evaluate((t) => document.getAnimations().forEach((a) => { a.pause(); a.currentTime = t; }), t);
@@ -34,9 +37,9 @@ for (const lang of langues) {
   }
   await page.close();
   execFileSync("ffmpeg", ["-y", "-v", "error", "-framerate", String(ips), "-i", path.join(tmp, "%04d.png"),
-    "-vf", "scale=768:1152:flags=lanczos,format=yuv420p", "-c:v", "libx264", "-crf", "18", "-preset", "slow",
-    "-movflags", "+faststart", path.join(ici, "mp4", `interstitiel-15s-${lang}.mp4`)]);
+    "-vf", `scale=${lw}:${lh}:flags=lanczos,format=yuv420p`, "-c:v", "libx264", "-crf", hd ? "12" : "18", "-preset", "slow",
+    "-movflags", "+faststart", path.join(ici, "mp4", `interstitiel-15s-${lang}${suffixe}.mp4`)]);
   rmSync(tmp, { recursive: true, force: true });
-  console.log(`interstitiel-15s-${lang}.mp4`);
+  console.log(`interstitiel-15s-${lang}${suffixe}.mp4`);
 }
 await navigateur.close();

@@ -13,7 +13,7 @@ const pages = process.argv[2] ? process.argv[2].split(",") : readdirSync(ici).fi
 const apercus = process.argv[3] ? process.argv[3].split(",").map(Number) : null;
 const ips = 30;
 
-const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
+const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium" });
 for (const nom of pages) {
   const [w, h] = nom.endsWith("9x16") ? [540, 960] : nom.endsWith("2x3") ? [384, 576] : [960, 540];
   const sortie = nom.startsWith("inter-") ? `interstitiel-${nom.slice(6, -4)}.mp4` : `tuto-${nom}.mp4`;

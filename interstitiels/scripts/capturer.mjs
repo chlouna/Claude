@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const racine = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
+const navigateur = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium" });
 const page = await navigateur.newPage({ viewport: { width: 1360, height: 900 }, deviceScaleFactor: 3 });
 await page.goto("file://" + path.join(racine, "index.html"));
 await page.evaluate(() => document.fonts.ready);
