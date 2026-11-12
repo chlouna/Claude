@@ -213,6 +213,10 @@ figcaption b { color: #111; }
 .iam .tag, .iam .ligne-prix.long .tag { font-size: 5em; }
 .story .tag { font-size: 5.4em; }
 .post .tag { font-size: 5.4em; }
+/* FR : étiquette + prix côte à côte, tailles d'origine */
+.iam .ligne-prix.avec-prix .tag { font-size: 3.7em; }
+.story .ligne-prix.avec-prix .tag { font-size: 4.2em; }
+.post .gauche:has(.prix) .tag { font-size: 4.4em; }
 </style>
 </head>
 <body>
@@ -227,7 +231,7 @@ let telLangue = TEL;
    Prix des stores : EUR 37,99 €, GBP 31,99 £, PLN 166,99 zł (prix barré = le double). ===== */
 const L = {
   fr: { nom: "Français",
-    prix: "37,99 €", barre: "au lieu de 74,99 €", an: "/an",
+    prix: "37,99 €", barre: "au lieu de 74,99 €", an: "/an", afficherPrix: true,
     dTeasing: `<small>le</small>27/11`, dOffre: `<small>du</small>27/11<small>au</small>30/11`, dFin: `<small>fin à</small>minuit`,
     question: `Ça te dirait<br>une promo<br>sur le GPS ?`, questionCourte: `Ça te dirait une promo sur le GPS ?`,
     rdv: `Rendez-vous le 27 novembre dans l'app <b>Michelin Truckfly</b>.`,
@@ -346,8 +350,9 @@ const CODE = "BF50";
 const code = t => `<div class="code"><small>${t.motCode}</small>${CODE}</div>`;
 const ligneCode = t => `<div class="ligne-code">${code(t)}</div>`;
 // Pas de prix affiché : les prix iOS et Android diffèrent selon les pays. On garde seulement -50 % et le code BF50.
-const prix = t => "";
-const lignePrix = t => `<div class="ligne-prix ${t.long ? "long" : ""}">${tag}${prix(t)}</div>`;
+// Prix affiché seulement en France (même prix iOS et Android). Ailleurs : -50 % et BF50 seulement.
+const prix = t => t.afficherPrix ? `<div class="prix"><span class="n">${t.prix}<em>${t.an}</em></span><span class="barre">${t.barre}</span></div>` : "";
+const lignePrix = t => `<div class="ligne-prix ${t.long ? "long" : ""} ${t.afficherPrix ? "avec-prix" : ""}">${tag}${prix(t)}</div>`;
 const tel = lum => (lum < 1 ? `<div class="halo"></div>` : "") + `<img class="tel ${lum < 1 ? "ombre" : ""}" src="${telLangue}" alt="" style="--lum:${lum}">`;
 const cta = (txt, contour) => `<span class="cta ${contour ? "contour" : ""}">${txt}</span>`;
 const rdv = txt => `<span class="rdv">${txt}</span>`;
