@@ -191,7 +191,7 @@ body:
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/69af01d084372f83fe862850.jpg'
                 -
                   condition: '( "FR" in contact.LANG )'
-                  id: 9e785076-390a-4f8a-9a7c-c2c001e5594e
+                  id: 1187ff54-60a7-4553-8130-3df510f63a8e
                   title: Text
                   type: text
                   layout:
@@ -212,7 +212,7 @@ body:
                   content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, l&#39;appli gratuite préférée des chauffeurs routiers en Europe.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">Et pour ceux qui en veulent plus :&nbsp;<a href="https://lp.truckfly.com/fr/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>Un GPS en option !</strong></a></span></p>'
                 -
                   condition: '( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "DE" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "PT" ) and ( contact.LANG != "RO" ) )'
-                  id: e5c2e258-c74b-4c93-937d-27071e411281
+                  id: 26399b99-ee34-4cfa-8d64-7493ee1041af
                   title: Text
                   type: text
                   layout:
@@ -233,7 +233,7 @@ body:
                   content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, the free app preferred by truck drivers across Europe.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">And for those who want more:&nbsp;<a href="https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>a GPS option!</strong></a></span></p>'
                 -
                   condition: '( "ES" in contact.LANG )'
-                  id: 200c40c5-0a1a-4bb7-a906-569eaf0dc207
+                  id: a696baf9-83a5-4c5a-b74e-3b851e63b309
                   title: Text
                   type: text
                   layout:
@@ -254,7 +254,7 @@ body:
                   content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, la app gratuita preferida por los camioneros en Europa.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">Y para quienes quieren más:&nbsp;<a href="https://lp.truckfly.com/es/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>¡GPS disponible como opción!</strong></a></span></p>'
                 -
                   condition: '( "IT" in contact.LANG )'
-                  id: dacf8a5d-3c96-41b5-98f0-839af666b6ce
+                  id: ce2bfe70-bd93-4ff6-8dc9-0e3d375d8cb0
                   title: Text
                   type: text
                   layout:
@@ -275,7 +275,7 @@ body:
                   content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, l&#39;app gratuita preferita dagli autisti di camion in Europa.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">E per chi vuole di più:&nbsp;<a href="https://lp.truckfly.com/it/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>GPS disponibile come opzione!</strong></a></span></p>'
                 -
                   condition: '( "DE" in contact.LANG )'
-                  id: 2d9e6de9-387f-4738-8480-d86c0904a641
+                  id: 6e22c77e-5644-4adc-a040-04ef5b116564
                   title: Text
                   type: text
                   layout:
@@ -296,7 +296,7 @@ body:
                   content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, die kostenlose App, die bei Lkw-Fahrern in Europa besonders beliebt ist.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">Und für alle, die mehr wollen:&nbsp;<a href="https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>GPS als Option!</strong></a></span></p>'
                 -
                   condition: '( "NL" in contact.LANG )'
-                  id: 78da6007-f587-407a-851b-731d842f4ce5
+                  id: 15760b8d-7c6a-403b-bd31-dde165ff40cc
                   title: Text
                   type: text
                   layout:
@@ -317,7 +317,7 @@ body:
                   content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, de gratis app die favoriet is bij vrachtwagenchauffeurs in Europa.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">En voor wie meer wil:&nbsp;<a href="https://lp.truckfly.com/nl/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>een GPS-optie!</strong></a></span></p>'
                 -
                   condition: '( "PL" in contact.LANG )'
-                  id: e9863a12-7021-4a7d-9307-b9e625746721
+                  id: dfc8e130-de80-4c15-8db7-a2ed26a6a7e2
                   title: Text
                   type: text
                   layout:
@@ -338,7 +338,7 @@ body:
                   content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, darmowa aplikacja najchętniej wybierana przez kierowców ciężarówek w Europie.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">A dla tych, którzy chcą więcej:&nbsp;<a href="https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>opcjonalny GPS!</strong></a></span></p>'
                 -
                   condition: '( "PT" in contact.LANG )'
-                  id: ba12d767-4d31-4f61-bc40-59d9286de2f4
+                  id: cf58ed05-32b7-4100-8c42-1c0b6849bf14
                   title: Text
                   type: text
                   layout:
@@ -359,7 +359,7 @@ body:
                   content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, a aplicação gratuita preferida dos camionistas na Europa.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">E para quem quer mais:&nbsp;<a href="https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>GPS disponível como opção!</strong></a></span></p>'
                 -
                   condition: '( "RO" in contact.LANG )'
-                  id: 6b3baab2-6dca-4db2-9a70-52e7f56c1663
+                  id: 70ceb656-1099-448f-8462-9325fd6b3f4b
                   title: Text
                   type: text
                   layout:
@@ -383,7 +383,7 @@ body:
           condition: '( "FR" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: 8478f962-3105-4a15-9340-1658aae51d96
+          id: 4b899569-fa60-4433-a63b-a5b061b17068
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière FR'
@@ -403,7 +403,7 @@ body:
               width: 100%
           content:
             -
-              id: 24f15053-d452-4665-8843-ba54b8eae878
+              id: b5fb7a0f-b45e-477e-99fa-dae638c1603c
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -415,7 +415,7 @@ body:
                   valign: top
               content:
                 -
-                  id: da48f633-9410-4660-bb1e-a1aac55ae847
+                  id: 5547f4f2-722d-4552-9c3b-f4f3e0678f57
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -437,7 +437,7 @@ body:
                       width: 100%
                   content: '<h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 36px;">Promo exceptionnelle -50%</span></h2><h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 26px;">sur ton abonnement annuel !</span></h2><h2 class="default-heading2"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 255);">Profite de ta pause pour activer ton GPS PL.</span></h2>'
                 -
-                  id: 3873c788-dea5-4f2e-92a6-b1255c28184b
+                  id: 5db4a5d4-426a-45be-b131-9df02700cc14
                   title: Image
                   type: image
                   layout:
@@ -458,7 +458,7 @@ body:
           condition: '( "FR" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: 82ae342d-2861-4237-8f93-8c5a7e665418
+          id: 3dee0021-97f0-4ae7-a256-02e8aa73402e
           moduleName: grid-row12
           stylable: false
           thumbnail: /assets/img/editor/grid_12.svg
@@ -479,7 +479,7 @@ body:
               width: 100%
           content:
             -
-              id: 15e6b592-5105-40f1-8068-fad42e81c117
+              id: b7aabec7-bb9e-4b5e-9561-7dfccf982911
               isEmpty: false
               stylable: false
               title: Column
@@ -492,7 +492,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 80678015-fa02-4a50-9de5-b8d57558b911
+                  id: a4ed6007-b06c-4337-a600-ad5d6f24092a
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -514,7 +514,7 @@ body:
           condition: '( "FR" in contact.LANG )'
           dist: '12'
           gutter: 0px
-          id: 4ba5a5e4-ede9-452d-88e0-ea163fdc74f8
+          id: 0f041b9e-c52f-400d-b510-2c7794eacf39
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière FR bouton'
@@ -533,7 +533,7 @@ body:
               width: 100%
           content:
             -
-              id: 540caff4-8ef4-42d8-9c54-f3ecbafb876c
+              id: 3547dc3c-688c-4eea-8f15-a4336df2495c
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -546,7 +546,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 7e460f97-a957-42ef-b2df-47ca99fc743c
+                  id: 0cb552de-7a8d-451b-8890-e22bce673862
                   text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>J&#39;en profite à 37,99€/an*</strong></span></p>'
                   title: Button
                   type: text-button
@@ -572,7 +572,7 @@ body:
                     text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>J&#39;en profite à 37,99€/an*</strong></span></p>'
                     title: ""
                 -
-                  id: 52a0fd13-fb3f-49d0-9ea3-57766cb467c4
+                  id: c149ae40-e2d7-457c-8ed0-d28b2bf89404
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -589,7 +589,7 @@ body:
                       width: 100%
                   content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif;"><em>*Seulement 5000 codes disponibles</em></span></p>'
                 -
-                  id: bdce0edb-0a49-4d33-8556-52873244d012
+                  id: b1f6615d-8c7d-4926-bf04-78d1c8ed5b30
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -610,7 +610,7 @@ body:
           condition: '( "FR" in contact.LANG )'
           dist: 4-4-4
           gutter: 30px
-          id: 6cc5a21f-166c-46fe-a129-ee513d1e626f
+          id: 03c81d3d-8dde-49a2-b005-8e75dda5a9a8
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière FR avantages'
@@ -634,7 +634,7 @@ body:
               width: 100%
           content:
             -
-              id: 330823f3-d598-479d-b092-c851961e8e7f
+              id: cb098c5f-267a-45b2-8656-496c9f01fb1c
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -650,7 +650,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 62d5d760-b135-483a-ae08-19b0bdcca5b5
+                  id: 9113b668-961e-4f64-ab5b-820abcfa7ec8
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -675,7 +675,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5d50ed19425e80b928be.png'
                 -
-                  id: 781e5cea-858f-4fd1-a03f-7278236d0f1a
+                  id: e74ab38b-f113-479b-98eb-d1aed5e6cb91
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -697,7 +697,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Un GPS qui connaît ton camion</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Le GPS MICHELIN Truckfly prend en compte toutes les contraintes de ton camion : <strong>gabarit, poids et restrictions...</strong></span></p>'
                 -
-                  id: e8bdf51f-9893-43f6-a4d6-012dacce7aef
+                  id: be49eb04-17ec-44b4-b076-2b9b7536150f
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -722,7 +722,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: 6fe06c7a-7f08-4dde-95f1-1b822e332372
+              id: 4a528f6f-4f65-434b-bd7b-739acb596183
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -738,7 +738,7 @@ body:
                   valign: top
               content:
                 -
-                  id: dcd4a07b-3cf7-4e20-a4c1-6f587d8bd334
+                  id: 807119fc-9bb2-4b9d-a4f1-5d348f0de4f3
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -760,7 +760,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/69660b7f0c0a6303df64a860.png'
                 -
-                  id: e570e46c-34c3-4fc3-980f-59bb1d60ec98
+                  id: 502dd9cd-5f99-4680-9650-47827e91a8a7
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -782,7 +782,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Les restrictions, visibles avant d&#39;y être</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Ponts trop bas, tonnages limités : anticipe chaque contrainte directement sur ton itinéraire.</span></p>'
                 -
-                  id: 3b84f5c8-08b3-4b54-a5f5-a976439c1a89
+                  id: 21187a6b-14ae-4ca3-919f-0a44f9f45a6d
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -807,7 +807,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: b6f57f9b-d2c5-45d3-ae02-904a10d27a36
+              id: a6dbe505-e8fe-47a9-b94c-1f55c4779e4f
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -823,7 +823,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 732ca56a-845b-4eba-bdca-80fe62eaa719
+                  id: 1d85f305-4b7f-4946-ba12-4ff69af2e9ad
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -847,7 +847,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5cd235e299bb2f779337.png'
                 -
-                  id: 39924f85-da81-4288-95ea-968ad25fd05d
+                  id: f9b32dd2-b9b7-4047-83df-a40650e12cc4
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -869,7 +869,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">La route, sous surveillance de tous</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Contrôles, accidents, obstacles : la communauté MICHELIN Truckfly te prévient en temps réel, et tu préviens à ton tour.</span></p>'
                 -
-                  id: 740cfde5-33a1-45cc-885e-1f94ea3b3d25
+                  id: d2a9c1e9-807e-4e82-996d-47d28cadf9c3
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -898,7 +898,7 @@ body:
           condition: '( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "DE" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "PT" ) and ( contact.LANG != "RO" ) )'
           dist: '12'
           gutter: 30px
-          id: f5b07d9c-b4d4-437e-befb-349a69a4c4fb
+          id: 496a28e8-9a44-4338-a6de-60218305f418
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière EN'
@@ -918,7 +918,7 @@ body:
               width: 100%
           content:
             -
-              id: ea723184-7038-4a0c-9153-52afdea850f7
+              id: ed7f13c1-7513-4910-b8af-4cb343a5a688
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -930,7 +930,7 @@ body:
                   valign: top
               content:
                 -
-                  id: ae3dc56c-5992-4cdd-98ec-ed8d3db8e860
+                  id: 10e53838-f4ca-4559-8b5b-4752dcb360a8
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -952,7 +952,7 @@ body:
                       width: 100%
                   content: '<h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 36px;">Exceptional deal -50%</span></h2><h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 26px;">on your annual subscription!</span></h2><h2 class="default-heading2"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 255);">Make the most of your break to activate your HGV GPS.</span></h2>'
                 -
-                  id: a73c6545-ac02-4a1d-a5d8-8199a9057b0f
+                  id: 3257912a-6372-411f-baf2-65446a56c9ae
                   title: Image
                   type: image
                   layout:
@@ -973,7 +973,7 @@ body:
           condition: '( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "DE" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "PT" ) and ( contact.LANG != "RO" ) )'
           dist: '12'
           gutter: 30px
-          id: 2360281b-8936-4064-8abf-eac36fce4f0f
+          id: 01e5ec39-b0d6-4ce5-b25a-b6fe4c6fc7b8
           moduleName: grid-row12
           stylable: false
           thumbnail: /assets/img/editor/grid_12.svg
@@ -994,7 +994,7 @@ body:
               width: 100%
           content:
             -
-              id: 74fce323-63fb-4f38-856a-7aebb09cba82
+              id: c43d5d14-7d3d-461a-97e3-f175815b837a
               isEmpty: false
               stylable: false
               title: Column
@@ -1007,7 +1007,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 06a02954-9387-42e2-a299-87a8723a6e7c
+                  id: 3b705d2e-9d88-47a1-8c67-ded203629ba2
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -1029,7 +1029,7 @@ body:
           condition: '( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "DE" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "PT" ) and ( contact.LANG != "RO" ) )'
           dist: '12'
           gutter: 0px
-          id: 0d9acedd-6dab-4f85-8153-76796747c6b2
+          id: bf7e0b72-fa9f-4720-8ce1-88b38fd65478
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière EN bouton'
@@ -1048,7 +1048,7 @@ body:
               width: 100%
           content:
             -
-              id: 3e0d6881-7348-4d2d-b493-d3093abc1838
+              id: 6b609a39-6cd2-4a3b-88ef-28937dee96e8
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -1061,7 +1061,7 @@ body:
                   valign: top
               content:
                 -
-                  id: dc37659e-aae9-4560-9eb1-b69313a4c448
+                  id: ecc0f22b-1b58-414e-b97f-925922eda3a8
                   text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Get the deal*</strong></span></p>'
                   title: Button
                   type: text-button
@@ -1087,7 +1087,7 @@ body:
                     text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Get the deal*</strong></span></p>'
                     title: ""
                 -
-                  id: 43de5819-4d23-472d-8b2b-0b70f8b2b668
+                  id: ffc5cae8-656d-4909-90ef-7b9ed1ac99e5
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -1104,7 +1104,7 @@ body:
                       width: 100%
                   content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif;"><em>*Only 5000 codes available</em></span></p>'
                 -
-                  id: d62e3f1e-93b0-45e5-94d4-84113021f6c5
+                  id: 3ee8f5f0-7f3f-4f61-9d51-cc38b2de2dfd
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -1125,7 +1125,7 @@ body:
           condition: '( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "DE" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "PT" ) and ( contact.LANG != "RO" ) )'
           dist: 4-4-4
           gutter: 30px
-          id: 0e49a165-61be-4fce-8e2a-2730a89a2d58
+          id: a036a740-b8d1-456b-913c-2578613d8e29
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière EN avantages'
@@ -1149,7 +1149,7 @@ body:
               width: 100%
           content:
             -
-              id: 3b9bb28a-7ed8-4935-9c71-83702900ef00
+              id: 06ae16e5-da04-4b8e-b291-714710e9918c
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -1165,7 +1165,7 @@ body:
                   valign: top
               content:
                 -
-                  id: d3ad20c7-8dcc-4f6e-ad52-4131c80cc5cb
+                  id: a7bddd91-b927-414a-be9a-31501f5cba5c
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -1190,7 +1190,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5d50ed19425e80b928be.png'
                 -
-                  id: 2979ec1d-0847-4de2-832b-13633c5ef1ef
+                  id: ff539134-d347-42db-bf23-0fa42aaf8faa
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -1212,7 +1212,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">A GPS that knows your truck</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">The MICHELIN Truckfly GPS takes every constraint of your truck into account: <strong>dimensions, weight and restrictions...</strong></span></p>'
                 -
-                  id: 7b4c8fe8-c55d-4443-865a-58bdd80a4cf1
+                  id: f12cb1fb-2b68-42c4-bf15-a635ed0d4e59
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -1237,7 +1237,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: c1728b3e-c11d-4cbd-81d9-081eea0de3ce
+              id: c679a2a8-89ff-465a-93c8-f71d72de1ca5
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -1253,7 +1253,7 @@ body:
                   valign: top
               content:
                 -
-                  id: efeb72e6-36a7-4c06-a1e2-a00a047b074f
+                  id: 019a6004-108a-417f-9d0f-f85ee2e656ad
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -1275,7 +1275,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/69660b7f0c0a6303df64a860.png'
                 -
-                  id: 90441ab4-0126-498d-a1a2-717c897a5709
+                  id: 2369e1d2-edf7-495f-9e65-d83f56f9959d
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -1297,7 +1297,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Restrictions, visible before you get there</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Low bridges, weight limits: anticipate every constraint right on your route.</span></p>'
                 -
-                  id: 3ef54b58-c840-46e0-a259-53e20c6b761b
+                  id: 1c1a04b4-c623-430e-8477-16504cb827f6
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -1322,7 +1322,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: 20b8764e-99d0-4d75-9188-8acb15f6e07a
+              id: ec64d0f2-1371-487f-b9f1-096726c5dbf1
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -1338,7 +1338,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 246b98e9-4ce4-4b08-a299-38aad5719373
+                  id: cccf6b62-91d7-4df9-abf9-43c4cb46242c
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -1362,7 +1362,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5cd235e299bb2f779337.png'
                 -
-                  id: 1980d09a-706f-4936-a626-630987488a27
+                  id: 90754ed4-d960-4e0b-aab3-461ba0affb7c
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -1384,7 +1384,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">The road, watched over by everyone</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Checks, accidents, obstacles: the MICHELIN Truckfly community warns you in real time, and you warn others in return.</span></p>'
                 -
-                  id: 8b0412e6-80ff-4494-884e-46f8e804779e
+                  id: 5267434e-73a0-4fd4-9384-977713aae417
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -1413,7 +1413,7 @@ body:
           condition: '( "ES" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: 67d4cbda-ece1-4f29-985b-9904095a88bb
+          id: 37c9da5d-da12-49f3-aa2d-09bcfbfe19e2
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière ES'
@@ -1433,7 +1433,7 @@ body:
               width: 100%
           content:
             -
-              id: 31f2cca3-3e7a-4d7d-b1fe-b69f676fcf1f
+              id: 5c2774fe-1b13-49f7-94a1-50c26b4f2e80
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -1445,7 +1445,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 93b8694b-a519-48e1-a90a-1000dc7d2326
+                  id: 091ea5c3-277d-40c1-9ef7-2409faf1ec25
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -1467,7 +1467,7 @@ body:
                       width: 100%
                   content: '<h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 36px;">Oferta excepcional -50%</span></h2><h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 26px;">¡en tu suscripción anual!</span></h2><h2 class="default-heading2"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 255);">Aprovecha tu pausa para activar tu GPS para camiones.</span></h2>'
                 -
-                  id: 53f15f79-a566-4452-bf37-55bb58db80ae
+                  id: 6b69253d-fba7-4c2a-9833-aef48b95d3d2
                   title: Image
                   type: image
                   layout:
@@ -1488,11 +1488,11 @@ body:
           condition: '( "ES" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: 9ec8fae9-01f8-4b87-8de3-b38f6c260f1c
+          id: 4da5adcc-38d4-47e7-abc9-4d1eea781eea
           moduleName: grid-row12
           stylable: false
           thumbnail: /assets/img/editor/grid_12.svg
-          title: 'Bannière ES code'
+          title: 'Bannière ES prix'
           type: grid-row
           layout:
             320px:
@@ -1509,7 +1509,7 @@ body:
               width: 100%
           content:
             -
-              id: 9d6fa5d7-d143-4202-a1f5-fc4efca69d8b
+              id: 36d604f7-55f8-405d-b20a-8525cc47b37e
               isEmpty: false
               stylable: false
               title: Column
@@ -1522,7 +1522,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 82d6c475-29ec-4ac0-964f-6d0b866b5ad5
+                  id: f2b8b985-cca8-4e18-88e3-d4266097afdd
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -1538,13 +1538,13 @@ body:
                       text-valign: top
                       valign: top
                       width: 100%
-                  content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: rgb(255, 255, 255);"><strong>Del 27 al 30 de noviembre</strong></span></p><p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>Código BF50</strong></span></p>'
+                  content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: rgb(255, 255, 255);"><strong>Del 27 al 30 de noviembre</strong></span></p><p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>37,99 €/año&nbsp;</strong></span><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: rgb(255, 255, 255);">en lugar de <s>74,99 €/año</s></span></p>'
         -
           align: top
           condition: '( "ES" in contact.LANG )'
           dist: '12'
           gutter: 0px
-          id: 53fbbd11-ad55-4b43-b751-b7618e79b548
+          id: 71be3a9b-7bb4-400b-b790-6b11e8ec7cf0
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière ES bouton'
@@ -1563,7 +1563,7 @@ body:
               width: 100%
           content:
             -
-              id: 4f376743-e8c4-4561-abe6-dbb702c4b356
+              id: 6975d57e-9995-4fb6-85f7-ee361a4ff462
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -1576,8 +1576,8 @@ body:
                   valign: top
               content:
                 -
-                  id: 34e4e2c9-5982-4df2-964a-479788816300
-                  text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Aprovéchalo*</strong></span></p>'
+                  id: fbccd580-94f0-41e0-b3d2-b7c0a17b422e
+                  text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Aprovéchalo por 37,99 €/año*</strong></span></p>'
                   title: Button
                   type: text-button
                   layout:
@@ -1599,10 +1599,10 @@ body:
                       width: 86%
                   content:
                     href: 'https://www.truckfly.com/add-promo-code?promoCode=BF50'
-                    text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Aprovéchalo*</strong></span></p>'
+                    text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Aprovéchalo por 37,99 €/año*</strong></span></p>'
                     title: ""
                 -
-                  id: 0debe06f-dec8-4a83-836f-64b3b6f7f6ac
+                  id: 1077cc27-adda-4ae3-aab2-8e12a23c259a
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -1619,7 +1619,7 @@ body:
                       width: 100%
                   content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif;"><em>*Solo 5000 códigos disponibles</em></span></p>'
                 -
-                  id: 0f8b267c-6e4e-4927-8835-ca1597302f94
+                  id: 164952d6-ddf6-4da4-91ea-c3eaad0db084
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -1640,7 +1640,7 @@ body:
           condition: '( "ES" in contact.LANG )'
           dist: 4-4-4
           gutter: 30px
-          id: 879c6367-a88e-4080-a749-06d608fbfa35
+          id: 898b8066-39bd-45f6-b635-4f09c07190a6
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière ES avantages'
@@ -1664,7 +1664,7 @@ body:
               width: 100%
           content:
             -
-              id: 8ffa26a6-2523-462f-a323-532b55c2e06a
+              id: bfa13711-1da4-4f16-b878-2347cc109d23
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -1680,7 +1680,7 @@ body:
                   valign: top
               content:
                 -
-                  id: ed625a50-21c4-4f0b-9224-b50d6b4e45e2
+                  id: 7b1a8487-79f0-4e88-b836-d860697fc134
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -1705,7 +1705,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5d50ed19425e80b928be.png'
                 -
-                  id: 3769f6ac-3894-4e1b-b2ee-795b4301bd08
+                  id: 6bc6d036-62e7-48f8-bf1e-177e9517ba57
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -1727,7 +1727,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Un GPS que conoce tu camión</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">El GPS de MICHELIN Truckfly tiene en cuenta todas las limitaciones de tu camión: <strong>dimensiones, peso y restricciones...</strong></span></p>'
                 -
-                  id: 1027c398-8752-4643-b473-770807f10c02
+                  id: ff3b0188-39aa-4681-8eea-bc406b74ba96
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -1752,7 +1752,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: 14e9b7b3-92dc-4d10-aa5b-322cd6be07cf
+              id: 6b58390f-7ddd-4672-98bf-576df784c844
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -1768,7 +1768,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 8529042a-ec4f-4d8a-8ee1-720e9426ee1f
+                  id: 55d02538-a1ee-4130-94dc-3f019078fafb
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -1790,7 +1790,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/69660b7f0c0a6303df64a860.png'
                 -
-                  id: 57e8192a-0bc0-492f-9713-f52f3297f0b8
+                  id: 6e2daa02-c45c-4824-94a8-d6377b70568d
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -1812,7 +1812,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Las restricciones, visibles antes de llegar</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Puentes demasiado bajos, límites de tonelaje: anticipa cada limitación directamente en tu ruta.</span></p>'
                 -
-                  id: 00d54cfc-7914-454e-9f08-827b31ca5a39
+                  id: a7be6804-e5c4-4ad4-95fe-97a0599b3b72
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -1837,7 +1837,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: 1483c8f9-1759-46f2-8cf4-90b7151cb361
+              id: 520c189b-3d0b-4d46-bdcd-3c9e4bb1615f
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -1853,7 +1853,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 9af4fbe9-38cb-4196-9c29-2cbf61605a77
+                  id: a6b0d363-6b39-48d8-83b9-e63b4e6df89f
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -1877,7 +1877,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5cd235e299bb2f779337.png'
                 -
-                  id: 2e30a0b2-b9a0-42d3-908a-49dc4b91e5f5
+                  id: f9999a05-507e-43ea-b74b-d60a7c48b724
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -1899,7 +1899,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">La carretera, vigilada por todos</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Controles, accidentes, obstáculos: la comunidad MICHELIN Truckfly te avisa en tiempo real, y tú avisas a los demás.</span></p>'
                 -
-                  id: f64700ac-0207-444d-baba-98764273b5dd
+                  id: b635621b-dab8-4dd6-b19f-b1c5de85a98c
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -1928,7 +1928,7 @@ body:
           condition: '( "IT" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: 0091f53d-ce90-4a23-8bcf-ebbcf7d3d3f1
+          id: 9b0e4d8e-822f-4111-8c5a-16fe40e9dab5
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière IT'
@@ -1948,7 +1948,7 @@ body:
               width: 100%
           content:
             -
-              id: 09b2c0bd-c4ba-4dfa-875b-6c23575fd305
+              id: 90f0564d-ddc1-493d-aea3-b9cf1b798a12
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -1960,7 +1960,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 2c34b48d-c9bc-4726-8350-7a8d19c9f5ff
+                  id: 699a0866-ab1d-49cf-ba4f-c145aa29adba
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -1982,7 +1982,7 @@ body:
                       width: 100%
                   content: '<h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 36px;">Promo eccezionale -50%</span></h2><h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 26px;">sul tuo abbonamento annuale!</span></h2><h2 class="default-heading2"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 255);">Approfitta della pausa per attivare il tuo GPS per camion.</span></h2>'
                 -
-                  id: d781367e-a6f2-47c7-b2bf-69d765458a7f
+                  id: 4ab7a4ee-4d8d-4347-a700-92a98a5f081f
                   title: Image
                   type: image
                   layout:
@@ -2003,11 +2003,11 @@ body:
           condition: '( "IT" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: 9c165e8f-75e4-4f1b-8180-0fe8e10dd426
+          id: d910cc32-d677-47f8-9a8d-94d9500f493a
           moduleName: grid-row12
           stylable: false
           thumbnail: /assets/img/editor/grid_12.svg
-          title: 'Bannière IT code'
+          title: 'Bannière IT prix'
           type: grid-row
           layout:
             320px:
@@ -2024,7 +2024,7 @@ body:
               width: 100%
           content:
             -
-              id: df5d458d-e744-4195-b041-6493337e4115
+              id: c555bc62-c0b3-4b5e-82a5-9503b04286f9
               isEmpty: false
               stylable: false
               title: Column
@@ -2037,7 +2037,7 @@ body:
                   valign: top
               content:
                 -
-                  id: a44b1628-12c8-4604-a9a4-318ddd3956db
+                  id: eb695ab7-8981-4296-b8a2-7b20b989442b
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -2053,13 +2053,13 @@ body:
                       text-valign: top
                       valign: top
                       width: 100%
-                  content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: rgb(255, 255, 255);"><strong>Dal 27 al 30 novembre</strong></span></p><p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>Codice BF50</strong></span></p>'
+                  content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: rgb(255, 255, 255);"><strong>Dal 27 al 30 novembre</strong></span></p><p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>37,99 €/anno&nbsp;</strong></span><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: rgb(255, 255, 255);">invece di <s>74,99 €/anno</s></span></p>'
         -
           align: top
           condition: '( "IT" in contact.LANG )'
           dist: '12'
           gutter: 0px
-          id: 1ef04185-0e50-4c3b-b474-8f96923f4c70
+          id: 1012e4a2-e729-4dbc-9f3a-41beefaf2a3f
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière IT bouton'
@@ -2078,7 +2078,7 @@ body:
               width: 100%
           content:
             -
-              id: 253d7449-a9cb-45ee-a3a5-4b3971591608
+              id: d9e0b9e4-af6c-4f29-9650-08d698e37f20
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -2091,8 +2091,8 @@ body:
                   valign: top
               content:
                 -
-                  id: 50ca5685-a9c8-48fa-9fcf-26f244b39d4d
-                  text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Approfittane*</strong></span></p>'
+                  id: 1d4c448c-7954-490b-9b5c-684f3d02ad67
+                  text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Approfittane a 37,99 €/anno*</strong></span></p>'
                   title: Button
                   type: text-button
                   layout:
@@ -2114,10 +2114,10 @@ body:
                       width: 86%
                   content:
                     href: 'https://www.truckfly.com/add-promo-code?promoCode=BF50'
-                    text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Approfittane*</strong></span></p>'
+                    text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Approfittane a 37,99 €/anno*</strong></span></p>'
                     title: ""
                 -
-                  id: 2281c7ca-5fa6-45a4-b2a8-a0622fc65a46
+                  id: bf49a47d-18c6-4b69-bf34-5b3ed2618ee1
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -2134,7 +2134,7 @@ body:
                       width: 100%
                   content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif;"><em>*Solo 5000 codici disponibili</em></span></p>'
                 -
-                  id: 76db8b28-50af-4b26-ace4-09c7d6251625
+                  id: 61615498-5f6e-4879-bc65-09ec325a7cf6
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -2155,7 +2155,7 @@ body:
           condition: '( "IT" in contact.LANG )'
           dist: 4-4-4
           gutter: 30px
-          id: 0b9f1df8-7234-4b56-a9e3-ecf783c8eb28
+          id: 0eea36b2-a93e-4ff3-9452-33068029a555
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière IT avantages'
@@ -2179,7 +2179,7 @@ body:
               width: 100%
           content:
             -
-              id: 83fe962f-9405-4996-9250-2932593ce9ec
+              id: c06ad0d8-67ad-42e6-95d0-7539c3d2e733
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -2195,7 +2195,7 @@ body:
                   valign: top
               content:
                 -
-                  id: d57c1872-f241-490b-9ddb-56240964da15
+                  id: cae5a696-2673-4ec4-aa2e-a0e938b4e40a
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -2220,7 +2220,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5d50ed19425e80b928be.png'
                 -
-                  id: 69e3a3e6-7cb4-42d1-8101-9a2576e24809
+                  id: 8f89a4da-6415-4b27-9121-09bad6e62e85
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -2242,7 +2242,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Un GPS che conosce il tuo camion</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Il GPS MICHELIN Truckfly tiene conto di tutti i vincoli del tuo camion: <strong>sagoma, peso e restrizioni...</strong></span></p>'
                 -
-                  id: d5580a45-e4cd-4739-aba8-05d40b92cc70
+                  id: 611c025f-b947-4dce-9792-5e833ce7239f
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -2267,7 +2267,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: 60450bfd-f034-4211-8c8e-89fe7a4806c6
+              id: e762574a-47be-4992-b848-65441d23c666
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -2283,7 +2283,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 3a17fcdc-2eb2-439c-b69e-3a4b0d0123e1
+                  id: 72b956cf-0745-4598-ab9c-340a512d7a57
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -2305,7 +2305,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/69660b7f0c0a6303df64a860.png'
                 -
-                  id: c7a56c23-87a3-4aed-bc67-2f8831ecd277
+                  id: f8499271-55b4-4abc-bfd9-201d102b940e
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -2327,7 +2327,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Le restrizioni, visibili prima di arrivarci</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Ponti troppo bassi, limiti di peso: anticipa ogni vincolo direttamente sul tuo percorso.</span></p>'
                 -
-                  id: 124452b0-02d5-450e-8a0b-0c8a64aef0c2
+                  id: ffbf8028-062e-45ba-afce-811fbd184b15
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -2352,7 +2352,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: 4dda2619-c8cf-4ed4-9c6b-a854c8c26328
+              id: 6a09454f-cc21-4f28-b8af-f9070997580a
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -2368,7 +2368,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 6522360c-e4de-4d0b-96bc-5bf987ebf143
+                  id: f39b6155-dc4d-44d4-bc6d-e10299ff344e
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -2392,7 +2392,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5cd235e299bb2f779337.png'
                 -
-                  id: e34d3e2a-5820-42ee-bbaa-78ecb7e5749e
+                  id: 79d56c5a-80f7-4150-856b-a87f019bb5ae
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -2414,7 +2414,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">La strada, sotto gli occhi di tutti</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Controlli, incidenti, ostacoli: la community MICHELIN Truckfly ti avvisa in tempo reale, e tu avvisi gli altri.</span></p>'
                 -
-                  id: 2e382c75-6a70-4e68-aa05-b3ca3f434cb8
+                  id: 0d29cef4-9d3d-4282-b978-c71f661304c1
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -2443,7 +2443,7 @@ body:
           condition: '( "DE" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: eb865ae5-1598-46f7-a1cc-a7d130d082fb
+          id: e7ca665c-b6bf-4d3c-bd42-636412fdf55f
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière DE'
@@ -2463,7 +2463,7 @@ body:
               width: 100%
           content:
             -
-              id: d61eaf64-6dd2-48dc-81a5-3b350e78db2c
+              id: 3cf5574f-31c9-40c2-bed2-a33bbf9b5518
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -2475,7 +2475,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 6c55237e-aab4-4c39-a113-1521f7ecc45b
+                  id: ff76cc7d-e1e1-4986-acc5-c095fc40f87d
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -2497,7 +2497,7 @@ body:
                       width: 100%
                   content: '<h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 36px;">Sonderaktion -50%</span></h2><h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 26px;">auf dein Jahresabo!</span></h2><h2 class="default-heading2"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 255);">Nutze deine Pause und aktiviere dein Lkw-Navi.</span></h2>'
                 -
-                  id: 1ebfbfeb-c872-4697-878b-9d2d577afec7
+                  id: 6f1d5cc5-e397-4df0-b582-16db4e60df25
                   title: Image
                   type: image
                   layout:
@@ -2518,11 +2518,11 @@ body:
           condition: '( "DE" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: 23aeadd9-927e-4f51-83eb-9a2029748253
+          id: 39dde5c1-fc22-4474-ac91-9d59b2b35074
           moduleName: grid-row12
           stylable: false
           thumbnail: /assets/img/editor/grid_12.svg
-          title: 'Bannière DE code'
+          title: 'Bannière DE prix'
           type: grid-row
           layout:
             320px:
@@ -2539,7 +2539,7 @@ body:
               width: 100%
           content:
             -
-              id: 1ea9d9eb-6683-4fb8-883a-a351ac5a5b5f
+              id: 22292c07-0ed3-4746-baca-499e6ef7ca16
               isEmpty: false
               stylable: false
               title: Column
@@ -2552,7 +2552,7 @@ body:
                   valign: top
               content:
                 -
-                  id: f8d41c35-c744-493b-b05a-727c390bc239
+                  id: caf210d8-48ea-4f3c-a197-35aa55b4a4b1
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -2568,13 +2568,13 @@ body:
                       text-valign: top
                       valign: top
                       width: 100%
-                  content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: rgb(255, 255, 255);"><strong>Vom 27. bis 30. November</strong></span></p><p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>Code BF50</strong></span></p>'
+                  content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: rgb(255, 255, 255);"><strong>Vom 27. bis 30. November</strong></span></p><p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>37,99 €/Jahr&nbsp;</strong></span><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: rgb(255, 255, 255);">statt <s>74,99 €/Jahr</s></span></p>'
         -
           align: top
           condition: '( "DE" in contact.LANG )'
           dist: '12'
           gutter: 0px
-          id: 65f932f9-77e3-461b-8730-de69d2997150
+          id: b682cb70-6f20-45f4-bc5c-8708c3a2bcb4
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière DE bouton'
@@ -2593,7 +2593,7 @@ body:
               width: 100%
           content:
             -
-              id: e7f199b6-8114-4a2e-8981-6247e80f6099
+              id: e8a1191b-65b2-452a-a9ce-b0f4d481a07b
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -2606,8 +2606,8 @@ body:
                   valign: top
               content:
                 -
-                  id: f30a0854-e8c1-47f4-b3c9-4a4bc3e2feb2
-                  text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Jetzt sichern*</strong></span></p>'
+                  id: 65a40c90-46b0-4b70-b72d-3509b0a9f90c
+                  text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Jetzt für 37,99 €/Jahr sichern*</strong></span></p>'
                   title: Button
                   type: text-button
                   layout:
@@ -2629,10 +2629,10 @@ body:
                       width: 86%
                   content:
                     href: 'https://www.truckfly.com/add-promo-code?promoCode=BF50'
-                    text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Jetzt sichern*</strong></span></p>'
+                    text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Jetzt für 37,99 €/Jahr sichern*</strong></span></p>'
                     title: ""
                 -
-                  id: 3f751509-102a-456c-a42d-6136169380e8
+                  id: 9fe56d75-6ea5-4dc6-8016-071a279ac314
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -2649,7 +2649,7 @@ body:
                       width: 100%
                   content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif;"><em>*Nur 5000 Codes verfügbar</em></span></p>'
                 -
-                  id: aa74e694-b1c7-4eea-83ae-88298bd502f0
+                  id: a6d07827-6367-4040-a004-5eb50211de80
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -2670,7 +2670,7 @@ body:
           condition: '( "DE" in contact.LANG )'
           dist: 4-4-4
           gutter: 30px
-          id: 5cb2d5b0-50d3-4d0a-8ccd-cfd0c1758008
+          id: 07ab4fd8-8d6c-4a98-8699-0f78f2705600
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière DE avantages'
@@ -2694,7 +2694,7 @@ body:
               width: 100%
           content:
             -
-              id: bae3f83d-385f-432c-a110-a3cc600570bb
+              id: 058aa99e-2739-4a27-982b-0ca5b213b5eb
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -2710,7 +2710,7 @@ body:
                   valign: top
               content:
                 -
-                  id: bfc819f6-e4ad-4695-8ae0-37e807a15c7b
+                  id: 44bfee15-2368-40e9-b595-8511d7ba8f2d
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -2735,7 +2735,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5d50ed19425e80b928be.png'
                 -
-                  id: 791d5be1-dcff-4e77-82d8-d3855c94bcae
+                  id: 96fa7c12-6581-41c8-92f0-9126b10f710e
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -2757,7 +2757,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Ein Navi, das deinen Lkw kennt</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Das MICHELIN Truckfly Navi berücksichtigt alle Vorgaben deines Lkw: <strong>Abmessungen, Gewicht und Beschränkungen...</strong></span></p>'
                 -
-                  id: 4b160ca2-2edc-4528-958a-7839b6e0a9a9
+                  id: 8d62359c-054b-4518-933a-827f825337d3
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -2782,7 +2782,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: 55eb7933-3379-4173-909e-5aaecd8ff33c
+              id: ea41c38d-a7ad-4463-9f51-a846112e637c
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -2798,7 +2798,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 527bf20c-d72f-45b8-b7f4-01bbdd181106
+                  id: 32484275-e9fd-4404-b687-67bc14cb7874
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -2820,7 +2820,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/69660b7f0c0a6303df64a860.png'
                 -
-                  id: 8c5cac55-1453-48d7-8cec-96911947a94b
+                  id: 49569047-a72c-446c-a89f-fab9dc6813fc
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -2842,7 +2842,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Beschränkungen sehen, bevor du da bist</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Zu niedrige Brücken, Gewichtsgrenzen: erkenne jede Einschränkung direkt auf deiner Route.</span></p>'
                 -
-                  id: 811ac3bf-3310-4e5a-95c7-071060ab3d4f
+                  id: 8458ef52-7eb9-474c-8855-8b7211a0ba21
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -2867,7 +2867,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: bf04fc6d-7f0d-4ab0-a3e0-b23bbe917208
+              id: e45d09cb-a537-4d20-9aba-6b9f1069d2aa
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -2883,7 +2883,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 7e25753b-bfbc-4b1b-880b-9bbfc3a8c26a
+                  id: be6c5b96-76f7-4335-b9f1-44a4694142f3
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -2907,7 +2907,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5cd235e299bb2f779337.png'
                 -
-                  id: 26427617-ac7b-464a-ae8d-1cbc8c242481
+                  id: 5ac9f377-49bb-47ca-befb-affc78572fff
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -2929,7 +2929,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Die Straße im Blick aller</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Kontrollen, Unfälle, Hindernisse: die MICHELIN Truckfly Community warnt dich in Echtzeit, und du warnst die anderen.</span></p>'
                 -
-                  id: be824ff2-1538-404d-98f8-cfb9f873200b
+                  id: 452e3a02-741a-43cc-98d5-55a7836d644e
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -2958,7 +2958,7 @@ body:
           condition: '( "NL" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: 639940d6-cc95-4750-9e03-e07bf1448587
+          id: d1369d16-270e-4e3d-ae69-a3a96d3d4272
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière NL'
@@ -2978,7 +2978,7 @@ body:
               width: 100%
           content:
             -
-              id: b1e2091c-a39e-42e8-b9ae-70568741005d
+              id: b1626e21-3e5c-446f-98b0-ff658c51f363
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -2990,7 +2990,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 6b983327-81a5-40a4-9d9e-3098c647a4c0
+                  id: 357951dc-f53d-488e-8f05-99cc00af947d
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -3012,7 +3012,7 @@ body:
                       width: 100%
                   content: '<h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 36px;">Uitzonderlijke actie -50%</span></h2><h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 26px;">op je jaarabonnement!</span></h2><h2 class="default-heading2"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 255);">Benut je pauze om je vrachtwagen-GPS te activeren.</span></h2>'
                 -
-                  id: 157194e8-0cb6-44fd-a742-dfac375acff7
+                  id: a9c406cf-c669-45e5-9131-7337c882b1ed
                   title: Image
                   type: image
                   layout:
@@ -3033,11 +3033,11 @@ body:
           condition: '( "NL" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: 2d3b001f-f930-45a8-9346-3b00371f2083
+          id: a8286471-f90d-43d7-a559-35ccf1ba7aec
           moduleName: grid-row12
           stylable: false
           thumbnail: /assets/img/editor/grid_12.svg
-          title: 'Bannière NL code'
+          title: 'Bannière NL prix'
           type: grid-row
           layout:
             320px:
@@ -3054,7 +3054,7 @@ body:
               width: 100%
           content:
             -
-              id: 55edd490-d10d-4559-89e9-99c1cc060965
+              id: 46d7155c-733c-4b02-9c79-1f0543bc5bf6
               isEmpty: false
               stylable: false
               title: Column
@@ -3067,7 +3067,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 436ba4b2-989e-46ec-98b6-093ff8837277
+                  id: eed8ac9f-facf-4a89-a487-ca77456cf218
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -3083,13 +3083,13 @@ body:
                       text-valign: top
                       valign: top
                       width: 100%
-                  content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: rgb(255, 255, 255);"><strong>Van 27 tot en met 30 november</strong></span></p><p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>Code BF50</strong></span></p>'
+                  content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: rgb(255, 255, 255);"><strong>Van 27 tot en met 30 november</strong></span></p><p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>€ 37,99/jaar&nbsp;</strong></span><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: rgb(255, 255, 255);">in plaats van <s>€ 74,99/jaar</s></span></p>'
         -
           align: top
           condition: '( "NL" in contact.LANG )'
           dist: '12'
           gutter: 0px
-          id: 2383071c-e852-46b0-bb83-98f9fb96b793
+          id: d841de0b-6845-4f18-ac5c-5e515f479e8e
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière NL bouton'
@@ -3108,7 +3108,7 @@ body:
               width: 100%
           content:
             -
-              id: 31015836-5673-49a2-8ded-3425aa511449
+              id: d7abc299-cfe9-4d0b-b215-984445b6cf2c
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -3121,8 +3121,8 @@ body:
                   valign: top
               content:
                 -
-                  id: f6fdecda-1fe3-4693-b65e-303833cc396d
-                  text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Profiteer nu*</strong></span></p>'
+                  id: fd366da7-672a-4084-99a4-e984ee811124
+                  text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Profiteer nu voor € 37,99/jaar*</strong></span></p>'
                   title: Button
                   type: text-button
                   layout:
@@ -3144,10 +3144,10 @@ body:
                       width: 86%
                   content:
                     href: 'https://www.truckfly.com/add-promo-code?promoCode=BF50'
-                    text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Profiteer nu*</strong></span></p>'
+                    text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Profiteer nu voor € 37,99/jaar*</strong></span></p>'
                     title: ""
                 -
-                  id: e87c749c-1e19-4631-a48b-b595ffba60d6
+                  id: 9ed38ec0-784b-48a5-8681-9c91fda99ba0
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -3164,7 +3164,7 @@ body:
                       width: 100%
                   content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif;"><em>*Slechts 5000 codes beschikbaar</em></span></p>'
                 -
-                  id: 3c3a2343-92c0-489c-8c05-a68619ec071a
+                  id: 4d329494-aab5-4243-b328-94e1127ec6bc
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -3185,7 +3185,7 @@ body:
           condition: '( "NL" in contact.LANG )'
           dist: 4-4-4
           gutter: 30px
-          id: f8da94d7-f1f2-4efe-b188-dad4ca969bd9
+          id: 3e881052-7521-49d1-ba42-0a1b125aa6d9
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière NL avantages'
@@ -3209,7 +3209,7 @@ body:
               width: 100%
           content:
             -
-              id: a71f12bd-b864-46d1-b159-c60ab85f21ab
+              id: 9e86303f-d207-430b-88f4-941d6fe738b7
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -3225,7 +3225,7 @@ body:
                   valign: top
               content:
                 -
-                  id: feacb9a4-5d8b-4564-8568-bb764bffb49d
+                  id: 412f9ce4-0bc7-40ff-b042-8796f607dd00
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -3250,7 +3250,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5d50ed19425e80b928be.png'
                 -
-                  id: f5658f29-3746-4a4c-bd34-2b2cd7055fa4
+                  id: ff6a6c9c-5cda-43f1-8abd-ce35bd0fd427
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -3272,7 +3272,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Een GPS die je vrachtwagen kent</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">De MICHELIN Truckfly GPS houdt rekening met alle beperkingen van je vrachtwagen: <strong>afmetingen, gewicht en restricties...</strong></span></p>'
                 -
-                  id: 9a9fa34f-d7e3-49d1-8e8a-710f2639e54a
+                  id: 5b84eeff-c82d-4270-a5eb-ee5a794bea66
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -3297,7 +3297,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: e261bab9-e01b-4ee0-ac39-01bb2754223f
+              id: feb52684-411f-4c7d-ab19-acc38a29968a
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -3313,7 +3313,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 0092e7f5-5e6d-4b9a-83d9-350cce67fab9
+                  id: 38c75e5e-6104-4ea4-ba35-d543d08697f8
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -3335,7 +3335,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/69660b7f0c0a6303df64a860.png'
                 -
-                  id: 97a9419a-d5e9-4b2e-aaec-a0e8bb3e528c
+                  id: 9e27bae1-597a-4f0d-b493-07ca518a890e
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -3357,7 +3357,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Restricties zien voordat je er bent</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Te lage bruggen, tonnagebeperkingen: zie elke beperking direct op je route aankomen.</span></p>'
                 -
-                  id: f0aba1cd-6cdb-4bf0-8e2a-7289cae2c731
+                  id: 2bb81dd3-9bba-4104-8355-a968c91d3dcf
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -3382,7 +3382,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: 6568d872-e3d9-4ef8-8370-a5fbe6ac8674
+              id: 4821bc3e-da5b-4696-b009-90f870ef89a9
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -3398,7 +3398,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 89140d50-f3ac-4c5d-a45d-591b8a48c4d9
+                  id: 113a2f4b-5e2c-4ccf-9800-3738bef3d110
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -3422,7 +3422,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5cd235e299bb2f779337.png'
                 -
-                  id: b76733fc-2e95-4b1f-a043-77e737524a19
+                  id: 6d5267bf-e198-4ee7-a7d0-c0ce7e792b13
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -3444,7 +3444,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">De weg, in de gaten gehouden door iedereen</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Controles, ongelukken, obstakels: de MICHELIN Truckfly community waarschuwt je in realtime, en jij waarschuwt op jouw beurt.</span></p>'
                 -
-                  id: 75e87ff5-bfbe-4e96-81c8-554ada3e830a
+                  id: c9ac9c0c-581d-448e-bf08-b127bd7e79ca
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -3473,7 +3473,7 @@ body:
           condition: '( "PL" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: d163f54f-804d-4956-9254-eea7c721a397
+          id: 7f1609d6-0aa5-4c7d-8a96-26676154383b
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière PL'
@@ -3493,7 +3493,7 @@ body:
               width: 100%
           content:
             -
-              id: 840be024-82d0-451e-a6bc-a625d7eb07b2
+              id: a0fb965f-ef06-4fa4-b501-a8269fedf885
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -3505,7 +3505,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 0ce4ba86-14e4-41ef-8867-33a4a78f6ba1
+                  id: ce4bd705-61b8-48b4-897c-7e80a25beba1
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -3527,7 +3527,7 @@ body:
                       width: 100%
                   content: '<h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 36px;">Wyjątkowa promocja -50%</span></h2><h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 26px;">na roczną subskrypcję!</span></h2><h2 class="default-heading2"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 255);">Wykorzystaj przerwę, aby aktywować GPS dla ciężarówek.</span></h2>'
                 -
-                  id: 3bb3cbcd-a947-4cd2-b3b9-ffb5c227cd94
+                  id: e0807a67-6d53-41e0-bf5f-69c7d151dd98
                   title: Image
                   type: image
                   layout:
@@ -3548,7 +3548,7 @@ body:
           condition: '( "PL" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: 8800be3a-3560-42c3-a6d7-f174d12a5722
+          id: 0ad35f57-9300-4458-b034-cf8e25ef4de7
           moduleName: grid-row12
           stylable: false
           thumbnail: /assets/img/editor/grid_12.svg
@@ -3569,7 +3569,7 @@ body:
               width: 100%
           content:
             -
-              id: 8de0f6d3-8487-4b04-a647-0bc5fc76780a
+              id: 3e0e9e07-dbc2-48e9-9617-d6f31e8a8ff9
               isEmpty: false
               stylable: false
               title: Column
@@ -3582,7 +3582,7 @@ body:
                   valign: top
               content:
                 -
-                  id: ebdbbbd1-aaa8-4e89-bfd8-c4bf4715d0ee
+                  id: 3c6eed6e-7243-46ab-85f7-04aa537bdbde
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -3604,7 +3604,7 @@ body:
           condition: '( "PL" in contact.LANG )'
           dist: '12'
           gutter: 0px
-          id: a20d64ba-ec14-4e93-b397-96410f3b4ebc
+          id: 8b3a83a4-d987-4d45-890b-264eb09b33d5
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière PL bouton'
@@ -3623,7 +3623,7 @@ body:
               width: 100%
           content:
             -
-              id: 7c85239b-b1c9-42db-9ed8-5798946b8d88
+              id: c95e7888-c10d-4146-9732-fba80bb8b17c
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -3636,7 +3636,7 @@ body:
                   valign: top
               content:
                 -
-                  id: c11a0265-7591-4cbd-9803-9f79fde51a50
+                  id: 25be7984-7c3d-47ae-b514-bd27f05dd1e8
                   text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Skorzystaj*</strong></span></p>'
                   title: Button
                   type: text-button
@@ -3662,7 +3662,7 @@ body:
                     text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Skorzystaj*</strong></span></p>'
                     title: ""
                 -
-                  id: eadc6bfc-1932-499a-b478-b9946f01cb81
+                  id: c459131f-c673-4cb3-aded-569aeb8d897d
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -3679,7 +3679,7 @@ body:
                       width: 100%
                   content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif;"><em>*Dostępnych tylko 5000 kodów</em></span></p>'
                 -
-                  id: e534a291-0bf6-4d6c-bed1-1fc4686d136a
+                  id: b480727d-222d-4f72-bcad-87002246664e
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -3700,7 +3700,7 @@ body:
           condition: '( "PL" in contact.LANG )'
           dist: 4-4-4
           gutter: 30px
-          id: 2bc51748-599a-4104-9d48-ba4a15972491
+          id: 79d22dfd-07e9-4416-9c70-e4e416c0a3f0
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière PL avantages'
@@ -3724,7 +3724,7 @@ body:
               width: 100%
           content:
             -
-              id: 7b0a853b-4506-458f-a57e-8edef503b46e
+              id: 202896f2-58ca-4cb4-b5e5-85230388c8ab
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -3740,7 +3740,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 3b43563f-1158-4907-83a7-49292c4177ff
+                  id: da8aad9f-0069-43ae-8368-ad2a42ff80b5
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -3765,7 +3765,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5d50ed19425e80b928be.png'
                 -
-                  id: d8bf4feb-5c76-40d2-bcdc-d0d3510978fe
+                  id: be724b30-b419-46b4-8e77-be3dcba1fc76
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -3787,7 +3787,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">GPS, który zna Twoją ciężarówkę</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">GPS MICHELIN Truckfly uwzględnia wszystkie ograniczenia Twojej ciężarówki: <strong>gabaryty, masę i zakazy...</strong></span></p>'
                 -
-                  id: 5fcaf891-b04a-419c-9253-eae436b483cd
+                  id: 705bb8c5-eff2-4059-8d9e-c6111f850a4f
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -3812,7 +3812,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: 3aa60c81-5935-48d4-8ce2-f47275d987de
+              id: 16e3f900-d3ff-4c9d-adda-deb79b991068
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -3828,7 +3828,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 065c2c55-e458-4629-b20f-55837e8bfaf4
+                  id: 2246acc4-477a-4920-b19b-db2b6b18a36f
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -3850,7 +3850,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/69660b7f0c0a6303df64a860.png'
                 -
-                  id: 012768f3-84ac-4dd1-aa83-7102d58f25b5
+                  id: d2c27c80-a28f-4b70-b1c5-a64f69dd7b54
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -3872,7 +3872,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Ograniczenia widoczne, zanim tam dojedziesz</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Za niskie mosty, limity tonażu: przewiduj każde ograniczenie bezpośrednio na swojej trasie.</span></p>'
                 -
-                  id: 56c4ed2f-0df4-4bf5-9ff3-11ee9f1b0447
+                  id: f84be7f9-e21a-4764-a6c9-63062f1e48c0
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -3897,7 +3897,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: 16c139a1-d9a3-4338-aac4-ff0a401541e3
+              id: 5f68632c-5b53-4183-a8dc-00a50823ef6a
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -3913,7 +3913,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 361a1032-a313-4142-9e55-35487d436f4e
+                  id: 384167df-11cd-415e-8f79-08c503450bff
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -3937,7 +3937,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5cd235e299bb2f779337.png'
                 -
-                  id: c851909c-2949-444a-8fde-d21c22736138
+                  id: d0724892-c5d2-4aac-8b6b-ad1ca5898c38
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -3959,7 +3959,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Droga pod okiem wszystkich</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Kontrole, wypadki, przeszkody: społeczność MICHELIN Truckfly ostrzega Cię w czasie rzeczywistym, a Ty ostrzegasz innych.</span></p>'
                 -
-                  id: 1a25ddd3-7ed9-4a1c-8b0a-337cdcc99023
+                  id: eac2b789-a08e-4fd7-bb84-c06855190727
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -3988,7 +3988,7 @@ body:
           condition: '( "PT" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: b75e94fd-81aa-41d2-9d04-57a991dbd792
+          id: 819ac95c-78b9-488e-bf78-f20e127089e0
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière PT'
@@ -4008,7 +4008,7 @@ body:
               width: 100%
           content:
             -
-              id: 6cf7b755-977f-43a2-9fbd-3ddb629242e6
+              id: 3bc19a85-dd6e-419a-b0e5-4a46daf14207
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -4020,7 +4020,7 @@ body:
                   valign: top
               content:
                 -
-                  id: ab456045-7edd-485b-8ca7-17373d27370b
+                  id: 3251c05c-5398-4eb9-927c-e5dadab247c5
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -4042,7 +4042,7 @@ body:
                       width: 100%
                   content: '<h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 36px;">Promoção excecional -50%</span></h2><h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 26px;">na tua subscrição anual!</span></h2><h2 class="default-heading2"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 255);">Aproveita a tua paragem para ativar o teu GPS para camiões.</span></h2>'
                 -
-                  id: 0b9925e2-0c5e-4b1a-8d31-e1f28264195f
+                  id: 0fc0a899-2e58-4d5f-abc1-2136e38736d4
                   title: Image
                   type: image
                   layout:
@@ -4063,11 +4063,11 @@ body:
           condition: '( "PT" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: a28de01d-b1a4-4260-9501-326b40911d70
+          id: ce41dfdc-6bd3-4ab2-a8d9-6059d6dd53c2
           moduleName: grid-row12
           stylable: false
           thumbnail: /assets/img/editor/grid_12.svg
-          title: 'Bannière PT code'
+          title: 'Bannière PT prix'
           type: grid-row
           layout:
             320px:
@@ -4084,7 +4084,7 @@ body:
               width: 100%
           content:
             -
-              id: e769624a-145d-49b6-ac9d-74366e35dbc7
+              id: 1e8f0985-06fb-41ac-9a88-d08103a51ca5
               isEmpty: false
               stylable: false
               title: Column
@@ -4097,7 +4097,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 0120b81c-7674-433d-80d1-9b2a1980aab5
+                  id: ad3ab71f-7fee-44fb-b881-9185e1a40701
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -4113,13 +4113,13 @@ body:
                       text-valign: top
                       valign: top
                       width: 100%
-                  content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: rgb(255, 255, 255);"><strong>De 27 a 30 de novembro</strong></span></p><p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>Código BF50</strong></span></p>'
+                  content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: rgb(255, 255, 255);"><strong>De 27 a 30 de novembro</strong></span></p><p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>37,99 €/ano&nbsp;</strong></span><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: rgb(255, 255, 255);">em vez de <s>74,99 €/ano</s></span></p>'
         -
           align: top
           condition: '( "PT" in contact.LANG )'
           dist: '12'
           gutter: 0px
-          id: e033976b-f31a-4d4e-9c11-cd588a22d6af
+          id: c3c9354d-57f2-4feb-aa9c-d9f68e5e69fe
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière PT bouton'
@@ -4138,7 +4138,7 @@ body:
               width: 100%
           content:
             -
-              id: 7c42faa5-5c5c-44c6-9c10-bd54b2a4a30e
+              id: c8a1627f-e468-4ae9-ac0a-0055e1ff1195
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -4151,8 +4151,8 @@ body:
                   valign: top
               content:
                 -
-                  id: beef8edf-a247-417e-bfb6-197bf3f9a69e
-                  text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Aproveita*</strong></span></p>'
+                  id: b296632d-70ec-4c6f-bfc7-ee4cf4e22386
+                  text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Aproveita por 37,99 €/ano*</strong></span></p>'
                   title: Button
                   type: text-button
                   layout:
@@ -4174,10 +4174,10 @@ body:
                       width: 86%
                   content:
                     href: 'https://www.truckfly.com/add-promo-code?promoCode=BF50'
-                    text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Aproveita*</strong></span></p>'
+                    text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Aproveita por 37,99 €/ano*</strong></span></p>'
                     title: ""
                 -
-                  id: 75290578-b8f1-41f1-8c0f-52f47d00af65
+                  id: 4cdfc13c-8e2d-472b-bfba-84d6531ef3af
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -4194,7 +4194,7 @@ body:
                       width: 100%
                   content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif;"><em>*Apenas 5000 códigos disponíveis</em></span></p>'
                 -
-                  id: 3e7a6d27-8218-4f10-9c9e-677726fdbc23
+                  id: d5d49553-4f99-48d3-89ea-e28169520d99
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -4215,7 +4215,7 @@ body:
           condition: '( "PT" in contact.LANG )'
           dist: 4-4-4
           gutter: 30px
-          id: d45f02bc-796a-4596-963c-ae4f71166d0a
+          id: c0220b9a-3a09-4ede-83e0-5f219616f767
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière PT avantages'
@@ -4239,7 +4239,7 @@ body:
               width: 100%
           content:
             -
-              id: 3088dc78-d8e6-4bc4-82f6-9f1b95310615
+              id: d6bc86c9-8d6b-40ef-a1ab-37730b36c427
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -4255,7 +4255,7 @@ body:
                   valign: top
               content:
                 -
-                  id: faac84b5-c20e-4524-afb2-1d9edfa5996c
+                  id: fe586719-48e3-43a1-b39d-c0e06d69d6a8
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -4280,7 +4280,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5d50ed19425e80b928be.png'
                 -
-                  id: 23902222-6a28-4052-bb7a-cab736a89fd0
+                  id: aebd6b03-b383-43ce-b585-2203e226df8d
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -4302,7 +4302,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Um GPS que conhece o teu camião</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">O GPS MICHELIN Truckfly tem em conta todas as restrições do teu camião: <strong>dimensões, peso e limitações...</strong></span></p>'
                 -
-                  id: a5429a3d-0b58-4c73-bcfb-9a1f853168f5
+                  id: 33e60843-a84a-4373-9b35-f4742eea924a
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -4327,7 +4327,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: 1193a3fd-1043-484a-9769-b996426b9eef
+              id: 1dfc5c77-02f2-47fb-b982-79c3482c8839
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -4343,7 +4343,7 @@ body:
                   valign: top
               content:
                 -
-                  id: aa50b578-458b-4c33-9212-527342d40d6a
+                  id: 1223374a-a976-49ee-b1b1-564d8ffa2ee4
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -4365,7 +4365,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/69660b7f0c0a6303df64a860.png'
                 -
-                  id: 5b28a131-6ba2-4a10-abb7-6c412ebdc0c4
+                  id: 43b94505-e980-43cb-b52f-0d24ddf9cb69
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -4387,7 +4387,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">As restrições, visíveis antes de lá chegares</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Pontes demasiado baixas, limites de tonelagem: antecipa cada restrição diretamente no teu itinerário.</span></p>'
                 -
-                  id: 5e30a859-cba8-4d73-bd8e-27fd50e9c3e2
+                  id: 78e713b7-a5ab-4e45-be0a-d320839a600a
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -4412,7 +4412,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: a258ac09-6f89-4a12-a962-8d609e1aaa64
+              id: 4593af14-ee83-4e70-9be5-b07f5897f506
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -4428,7 +4428,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 9f2aea33-5d13-47f9-a240-f80e6f09010f
+                  id: 870617a8-4244-4762-8674-130a3c811cde
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -4452,7 +4452,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5cd235e299bb2f779337.png'
                 -
-                  id: 2f8b076a-aced-417a-a407-bb47b4982b57
+                  id: 8a89d118-2b4e-4b7a-a8c4-bb3e6c7eb142
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -4474,7 +4474,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">A estrada, sob a vigilância de todos</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Controlos, acidentes, obstáculos: a comunidade MICHELIN Truckfly avisa-te em tempo real, e tu avisas os outros.</span></p>'
                 -
-                  id: edfa4318-cd49-4fa2-a611-331db42165f6
+                  id: d285e7bd-ce98-4b7c-918d-db58c6ffdef0
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -4503,7 +4503,7 @@ body:
           condition: '( "RO" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: 4f3258ba-4778-484b-8bfa-493ee5dadfeb
+          id: cb016e64-872f-4073-95f2-f8f61b4cee54
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière RO'
@@ -4523,7 +4523,7 @@ body:
               width: 100%
           content:
             -
-              id: 9b15973b-e60a-477e-856f-b95090972d6d
+              id: 73d009f3-9c76-4db2-904a-f9ce96cc0d8e
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -4535,7 +4535,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 3820a914-28e3-4b3f-b040-d3211fce7598
+                  id: d3aae8de-a332-47b6-a655-5e041fa883f8
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -4557,7 +4557,7 @@ body:
                       width: 100%
                   content: '<h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 36px;">Promoție excepțională -50%</span></h2><h2 class="default-heading2" style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 26px;">la abonamentul tău anual!</span></h2><h2 class="default-heading2"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 255);">Profită de pauză ca să-ți activezi GPS-ul pentru camion.</span></h2>'
                 -
-                  id: 4cd16ff5-dde9-4d49-9498-67b174c875a9
+                  id: ad7b8280-5f8b-47c4-a4df-e53ad6e69395
                   title: Image
                   type: image
                   layout:
@@ -4578,7 +4578,7 @@ body:
           condition: '( "RO" in contact.LANG )'
           dist: '12'
           gutter: 30px
-          id: 86baf11d-170e-493a-8ba3-21f70ba4eb94
+          id: 3185af9a-e7cd-47a1-84f3-864077c0c4e3
           moduleName: grid-row12
           stylable: false
           thumbnail: /assets/img/editor/grid_12.svg
@@ -4599,7 +4599,7 @@ body:
               width: 100%
           content:
             -
-              id: 5324bb89-d4d7-4a4b-b4a7-e7ddac6e8490
+              id: a458d47f-7f16-4f51-82e4-47d78b4d8efb
               isEmpty: false
               stylable: false
               title: Column
@@ -4612,7 +4612,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 8cb7ed71-1053-4733-bbfd-68287b956f3f
+                  id: 7171fade-0ed9-4e55-b3cb-3cbd72227df2
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -4634,7 +4634,7 @@ body:
           condition: '( "RO" in contact.LANG )'
           dist: '12'
           gutter: 0px
-          id: b99dcf9b-35f5-4576-8498-a0a939c7abdd
+          id: b540ca2e-7b3b-45b5-b5a4-02481f9dc8b0
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière RO bouton'
@@ -4653,7 +4653,7 @@ body:
               width: 100%
           content:
             -
-              id: b171cfe2-bc8e-4c60-8216-9c2b5b0ff45e
+              id: a9ee19a3-504a-4f91-873f-d570b69e73f4
               isEmpty: false
               title: 'column 1'
               type: grid-column
@@ -4666,7 +4666,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 5e775b41-fcd2-4464-8d56-6908ae0713b3
+                  id: 41ab6114-99c4-4cd2-ba7e-aad0991bc970
                   text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Profită acum*</strong></span></p>'
                   title: Button
                   type: text-button
@@ -4692,7 +4692,7 @@ body:
                     text: '<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: rgb(0, 0, 0);"><strong>Profită acum*</strong></span></p>'
                     title: ""
                 -
-                  id: 579583db-e04b-44d5-bd7a-c40135a8cdd8
+                  id: 991c6900-7f6e-40dd-a0f8-27275298c0c4
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -4709,7 +4709,7 @@ body:
                       width: 100%
                   content: '<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif;"><em>*Doar 5000 de coduri disponibile</em></span></p>'
                 -
-                  id: 7cad5b92-dba8-4493-850b-0e96a7c2c061
+                  id: b074f46d-d0ce-4758-b7b1-d5a22041c4d0
                   moduleName: text-title
                   thumbnail: /assets/img/editor/element-title.svg
                   title: Titre
@@ -4730,7 +4730,7 @@ body:
           condition: '( "RO" in contact.LANG )'
           dist: 4-4-4
           gutter: 30px
-          id: 50d8722f-7fff-4c95-8802-6e3b5c727a5b
+          id: d3a27e4c-a594-4fb0-9091-7cbcd81e3718
           moduleName: grid-row12
           thumbnail: /assets/img/editor/grid_12.svg
           title: 'Bannière RO avantages'
@@ -4754,7 +4754,7 @@ body:
               width: 100%
           content:
             -
-              id: 7fa94961-705f-4a20-a777-be8d96b02350
+              id: e1bfbe2d-2305-4265-a74a-bc897a3fec5e
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -4770,7 +4770,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 26b8960b-cb14-4265-a309-86845a9cc27b
+                  id: 65e429af-c8c6-4908-9d55-bfc73d2a38db
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -4795,7 +4795,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5d50ed19425e80b928be.png'
                 -
-                  id: b849cabf-4220-414e-a3b2-9783edd8a58e
+                  id: e579098d-ccae-4e8a-ba7f-d68b8a70d863
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -4817,7 +4817,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Un GPS care îți cunoaște camionul</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">GPS-ul MICHELIN Truckfly ține cont de toate constrângerile camionului tău: <strong>gabarit, greutate și restricții...</strong></span></p>'
                 -
-                  id: 611dab3b-b65a-462c-b2ef-5e3936a2e75b
+                  id: 779de4e8-676b-4df9-bcb8-00f035cb6f89
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -4842,7 +4842,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: cc7a9e8f-3459-4cfc-9634-9e0b5e83d2de
+              id: 5da376dc-0b4a-44dc-8ea2-8fad6bf3a7f9
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -4858,7 +4858,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 85ff7c16-f891-431c-a0fd-5ab36cb343a4
+                  id: fc7d4555-4673-4458-9ad3-60caee9477ef
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -4880,7 +4880,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/69660b7f0c0a6303df64a860.png'
                 -
-                  id: d18f7af1-ab1d-4893-8ac5-d14c3e8e9d9f
+                  id: 30fa098e-d119-464b-8220-ff9a745c2676
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -4902,7 +4902,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Restricțiile, vizibile înainte să ajungi</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Poduri prea joase, limite de tonaj: anticipează fiecare constrângere direct pe traseul tău.</span></p>'
                 -
-                  id: d80c888c-2dbb-4b2f-8353-e6b51d9ce294
+                  id: 106333b4-41bb-42da-801e-8047015b3b55
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider
@@ -4927,7 +4927,7 @@ body:
                       showOnDesktopMobile: mobile
                       width: 100%
             -
-              id: d7725e76-9e34-4d80-ad47-78a377e808b5
+              id: 11335c74-4d5e-49de-b0c5-938c40881e03
               isEmpty: false
               stylable: false
               title: 'colonne de grille'
@@ -4943,7 +4943,7 @@ body:
                   valign: top
               content:
                 -
-                  id: 9299b91b-9a3f-48ce-ac08-92999184fc62
+                  id: dae2b8e9-2b31-49fb-bbbc-01a199cb3db2
                   thumbnail: /assets/img/editor/element_image.svg
                   title: Image
                   type: image
@@ -4967,7 +4967,7 @@ body:
                     href: 'https://www.truckfly.com/purchase-gps'
                     src: 'https://img.mailinblue.com/4222425/images/content_library/original/6aba5cd235e299bb2f779337.png'
                 -
-                  id: a022cd88-8d7a-4a0c-8505-91ea8539c2c0
+                  id: e40aa4c6-4efb-462e-94fe-9d17dfdff99e
                   thumbnail: /assets/img/editor/element_text.svg
                   title: Texte
                   type: text
@@ -4989,7 +4989,7 @@ body:
                       width: 100%
                   content: '<p style="text-align: center;"><strong><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Drumul, sub ochii tuturor</span></strong></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);"><br></span></p><p style="text-align: center;"><span style="font-family: Arial, helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);">Controale, accidente, obstacole: comunitatea MICHELIN Truckfly te anunță în timp real, iar tu îi anunți pe ceilalți.</span></p>'
                 -
-                  id: cd909681-c2cf-4854-b5bc-20911b643d08
+                  id: cabfeeee-2990-403e-8c0f-e5dfd7d040df
                   thumbnail: /assets/img/editor/element_divider.svg
                   title: Diviseur
                   type: divider

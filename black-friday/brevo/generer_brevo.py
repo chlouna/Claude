@@ -28,6 +28,7 @@ HEADER = {
 }
 
 # ---------- Textes des bannières ----------
+# Prix affichés en zone euro (FR, ES, IT, DE, NL, PT) ; EN, PL, RO : code BF50 sans prix (prix iOS/Android différents).
 # img : bannière Black Friday déjà importée dans Brevo (RO : à importer, voir png/campagne/brevo/ro)
 B = {
  "FR": dict(img="6af5777201dbfb6057e2cb09.png", y1="Promo exceptionnelle -50%", y2="sur ton abonnement annuel !", blanc="Profite de ta pause pour activer ton GPS PL.",
@@ -42,22 +43,22 @@ B = {
       ("Restrictions, visible before you get there", "Low bridges, weight limits: anticipate every constraint right on your route."),
       ("The road, watched over by everyone", "Checks, accidents, obstacles: the MICHELIN Truckfly community warns you in real time, and you warn others in return.")]),
  "ES": dict(img="6af5793a195e7c4d1ccebe3f.png", y1="Oferta excepcional -50%", y2="¡en tu suscripción anual!", blanc="Aprovecha tu pausa para activar tu GPS para camiones.",
-   date="Del 27 al 30 de noviembre", code="Código BF50", bouton="Aprovéchalo*", note="*Solo 5000 códigos disponibles", t1="¡Déjate tentar por el Black Friday!", t2="No dejes pasar esta oportunidad.",
+   date="Del 27 al 30 de noviembre", prix='<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>37,99 €/año&nbsp;</strong></span><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: rgb(255, 255, 255);">en lugar de <s>74,99 €/año</s></span></p>', bouton="Aprovéchalo por 37,99 €/año*", note="*Solo 5000 códigos disponibles", t1="¡Déjate tentar por el Black Friday!", t2="No dejes pasar esta oportunidad.",
    a=[("Un GPS que conoce tu camión", "El GPS de MICHELIN Truckfly tiene en cuenta todas las limitaciones de tu camión: <strong>dimensiones, peso y restricciones...</strong>"),
       ("Las restricciones, visibles antes de llegar", "Puentes demasiado bajos, límites de tonelaje: anticipa cada limitación directamente en tu ruta."),
       ("La carretera, vigilada por todos", "Controles, accidentes, obstáculos: la comunidad MICHELIN Truckfly te avisa en tiempo real, y tú avisas a los demás.")]),
  "IT": dict(img="6af57956195e7c4d1ccebe46.png", y1="Promo eccezionale -50%", y2="sul tuo abbonamento annuale!", blanc="Approfitta della pausa per attivare il tuo GPS per camion.",
-   date="Dal 27 al 30 novembre", code="Codice BF50", bouton="Approfittane*", note="*Solo 5000 codici disponibili", t1="Lasciati tentare dal Black Friday!", t2="Non lasciarti sfuggire questa occasione.",
+   date="Dal 27 al 30 novembre", prix='<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>37,99 €/anno&nbsp;</strong></span><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: rgb(255, 255, 255);">invece di <s>74,99 €/anno</s></span></p>', bouton="Approfittane a 37,99 €/anno*", note="*Solo 5000 codici disponibili", t1="Lasciati tentare dal Black Friday!", t2="Non lasciarti sfuggire questa occasione.",
    a=[("Un GPS che conosce il tuo camion", "Il GPS MICHELIN Truckfly tiene conto di tutti i vincoli del tuo camion: <strong>sagoma, peso e restrizioni...</strong>"),
       ("Le restrizioni, visibili prima di arrivarci", "Ponti troppo bassi, limiti di peso: anticipa ogni vincolo direttamente sul tuo percorso."),
       ("La strada, sotto gli occhi di tutti", "Controlli, incidenti, ostacoli: la community MICHELIN Truckfly ti avvisa in tempo reale, e tu avvisi gli altri.")]),
  "DE": dict(img="6af57979041c447ff6e33fcb.png", y1="Sonderaktion -50%", y2="auf dein Jahresabo!", blanc="Nutze deine Pause und aktiviere dein Lkw-Navi.",
-   date="Vom 27. bis 30. November", code="Code BF50", bouton="Jetzt sichern*", note="*Nur 5000 Codes verfügbar", t1="Lass dich vom Black Friday verführen!", t2="Lass dir diese Chance nicht entgehen.",
+   date="Vom 27. bis 30. November", prix='<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>37,99 €/Jahr&nbsp;</strong></span><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: rgb(255, 255, 255);">statt <s>74,99 €/Jahr</s></span></p>', bouton="Jetzt für 37,99 €/Jahr sichern*", note="*Nur 5000 Codes verfügbar", t1="Lass dich vom Black Friday verführen!", t2="Lass dir diese Chance nicht entgehen.",
    a=[("Ein Navi, das deinen Lkw kennt", "Das MICHELIN Truckfly Navi berücksichtigt alle Vorgaben deines Lkw: <strong>Abmessungen, Gewicht und Beschränkungen...</strong>"),
       ("Beschränkungen sehen, bevor du da bist", "Zu niedrige Brücken, Gewichtsgrenzen: erkenne jede Einschränkung direkt auf deiner Route."),
       ("Die Straße im Blick aller", "Kontrollen, Unfälle, Hindernisse: die MICHELIN Truckfly Community warnt dich in Echtzeit, und du warnst die anderen.")]),
  "NL": dict(img="6af57992041c447ff6e33fd2.png", y1="Uitzonderlijke actie -50%", y2="op je jaarabonnement!", blanc="Benut je pauze om je vrachtwagen-GPS te activeren.",
-   date="Van 27 tot en met 30 november", code="Code BF50", bouton="Profiteer nu*", note="*Slechts 5000 codes beschikbaar", t1="Laat je verleiden door Black Friday!", t2="Laat deze kans niet liggen.",
+   date="Van 27 tot en met 30 november", prix='<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>€ 37,99/jaar&nbsp;</strong></span><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: rgb(255, 255, 255);">in plaats van <s>€ 74,99/jaar</s></span></p>', bouton="Profiteer nu voor € 37,99/jaar*", note="*Slechts 5000 codes beschikbaar", t1="Laat je verleiden door Black Friday!", t2="Laat deze kans niet liggen.",
    a=[("Een GPS die je vrachtwagen kent", "De MICHELIN Truckfly GPS houdt rekening met alle beperkingen van je vrachtwagen: <strong>afmetingen, gewicht en restricties...</strong>"),
       ("Restricties zien voordat je er bent", "Te lage bruggen, tonnagebeperkingen: zie elke beperking direct op je route aankomen."),
       ("De weg, in de gaten gehouden door iedereen", "Controles, ongelukken, obstakels: de MICHELIN Truckfly community waarschuwt je in realtime, en jij waarschuwt op jouw beurt.")]),
@@ -67,7 +68,7 @@ B = {
       ("Ograniczenia widoczne, zanim tam dojedziesz", "Za niskie mosty, limity tonażu: przewiduj każde ograniczenie bezpośrednio na swojej trasie."),
       ("Droga pod okiem wszystkich", "Kontrole, wypadki, przeszkody: społeczność MICHELIN Truckfly ostrzega Cię w czasie rzeczywistym, a Ty ostrzegasz innych.")]),
  "PT": dict(img="6af31ebe0ee2d874fa69e8b8.png", y1="Promoção excecional -50%", y2="na tua subscrição anual!", blanc="Aproveita a tua paragem para ativar o teu GPS para camiões.",
-   date="De 27 a 30 de novembro", code="Código BF50", bouton="Aproveita*", note="*Apenas 5000 códigos disponíveis", t1="Deixa-te tentar pela Black Friday!", t2="Não percas esta oportunidade.",
+   date="De 27 a 30 de novembro", prix='<p style="text-align:center;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 26); font-size: 48px;"><strong>37,99 €/ano&nbsp;</strong></span><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: rgb(255, 255, 255);">em vez de <s>74,99 €/ano</s></span></p>', bouton="Aproveita por 37,99 €/ano*", note="*Apenas 5000 códigos disponíveis", t1="Deixa-te tentar pela Black Friday!", t2="Não percas esta oportunidade.",
    a=[("Um GPS que conhece o teu camião", "O GPS MICHELIN Truckfly tem em conta todas as restrições do teu camião: <strong>dimensões, peso e limitações...</strong>"),
       ("As restrições, visíveis antes de lá chegares", "Pontes demasiado baixas, limites de tonelagem: antecipa cada restrição diretamente no teu itinerário."),
       ("A estrada, sob a vigilância de todos", "Controlos, acidentes, obstáculos: a comunidade MICHELIN Truckfly avisa-te em tempo real, e tu avisas os outros.")]),
@@ -291,7 +292,7 @@ def bandeau(l):
                   content:
                     src: '{IMG}{d["img"]}'
 """)
-    r2 = ligne(f"Bannière {l} {'prix' if l == 'FR' else 'code'}", lay_noir("20px", "20px"), f"""            -
+    r2 = ligne(f"Bannière {l} {'prix' if d.get('prix') else 'code'}", lay_noir("20px", "20px"), f"""            -
               id: {uid()}
               isEmpty: false
               stylable: false
