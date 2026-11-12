@@ -363,8 +363,8 @@ const FR = L.fr;
 const S = (cls, inner) => `<div class="kv v story fondu ${cls}" style="--w:360px;--h:640px;--u:10px">${inner}</div>`;
 const storyQuestion = t => S("question", `${titre(t.dTeasing)}<h3 class="accroche">${t.question}</h3>${tel(.3)}<div class="bas">${rdv(t.rdvC)}</div>`);
 const storyAvant = (t, compte, sous, lum) => S("avant", `${titre(t.dTeasing)}<p class="compte">${compte}</p><p class="sous">${sous}</p>${tel(lum)}<div class="bas">${rdv(t.rdvC)}</div>`);
-const storyOffre = t => S("offre", `${titre(t.dJ)}${lignePrix(t)}${ligneCode(t)}${tel(1)}<div class="bas">${cta(t.profite)}</div>`);
-const storyFin = (t, date, compte) => S("fin", `${titre(date)}<p class="compte">${compte}</p>${lignePrix(t)}${ligneCode(t)}${tel(1)}<div class="bas">${cta(t.profite)}</div>`);
+const storyOffre = t => S("offre", `${titre(t.dJ)}${lignePrix(t)}${ligneCode(t)}${tel(1)}`); // sans bouton : sticker lien ajouté dans Instagram
+const storyFin = (t, date, compte) => S("fin", `${titre(date)}<p class="compte">${compte}</p>${lignePrix(t)}${ligneCode(t)}${tel(1)}`); // sans bouton : sticker lien ajouté dans Instagram
 
 /* ===== Posts Meta (par langue, 1080 × 1350) ===== */
 const P = (cls, date, gauche, lum, extra = "") => `<div class="kv post ${cls}" style="--w:360px;--h:450px;--u:10px">${titre(date)}<div class="gauche">${gauche}</div>${extra}${tel(lum)}</div>`;
