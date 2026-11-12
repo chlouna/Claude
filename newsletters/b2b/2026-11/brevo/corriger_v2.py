@@ -68,12 +68,12 @@ def corps(date, intro, pourquoi, puces):
 
 event('d93d939d-47e4-406f-87ea-52f406873feb', '6de5e0f1-d4be-4561-be13-f8f17ff6168d',
       '67ea5e8f-793f-4206-9ff7-8f4fce692c87', '69d60dda-5117-4e0b-bd8b-b90bb6ec91a1',
-      'Klimamobility 2027: a Bolzano la mobilità sostenibile',
+      'Klimamobility 2027: a Bolzano il convegno sulla mobilità sostenibile',
       corps('Dal 27 al 30 gennaio 2027 · Fiera Bolzano',
-            'Klimamobility è la fiera con congresso dedicata alla mobilità sostenibile. Un appuntamento per capire come cambiano veicoli, energie e infrastrutture, e cosa significa per la Sua flotta.',
+            'Klimamobility è il convegno dedicato alla mobilità sostenibile, organizzato da Fiera Bolzano in parallelo con Klimahouse. Un appuntamento per capire come cambiano veicoli, energie e infrastrutture, e cosa significa per la Sua flotta.',
             'Perché è interessante per Lei?',
             ['Scoprire le soluzioni per ridurre consumi ed emissioni della Sua flotta',
-             'Seguire il congresso sulle energie alternative e la ricarica',
+             'Seguire gli interventi sulle energie alternative e la ricarica',
              'Incontrare costruttori, fornitori ed esperti della mobilità']),
       'https://www.fierabolzano.it/', 'Scopri il salone')
 

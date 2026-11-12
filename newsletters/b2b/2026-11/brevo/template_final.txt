@@ -2405,7 +2405,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<div><h3 class="default-heading3"><span style="color: rgb(249, 250, 252);"><strong>Klimamobility 2027: a Bolzano la mobilità sostenibile</strong></span></h3></div>'
+          content: '<div><h3 class="default-heading3"><span style="color: rgb(249, 250, 252);"><strong>Klimamobility 2027: a Bolzano il convegno sulla mobilità sostenibile</strong></span></h3></div>'
         - id: 6de5e0f1-d4be-4561-be13-f8f17ff6168d
           title: Text
           type: text
@@ -2421,7 +2421,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>Dal 27 al 30 gennaio 2027 · Fiera Bolzano</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);">Klimamobility è la fiera con congresso dedicata alla mobilità sostenibile. Un appuntamento per capire come cambiano veicoli, energie e infrastrutture, e cosa significa per la Sua flotta.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>Perché è interessante per Lei?</strong></span></p><p class="default"><br></p><ul><li style="color: rgb(255, 255, 255);">Scoprire le soluzioni per ridurre consumi ed emissioni della Sua flotta</li><li style="color: rgb(255, 255, 255);">Seguire il congresso sulle energie alternative e la ricarica</li><li style="color: rgb(255, 255, 255);">Incontrare costruttori, fornitori ed esperti della mobilità</li></ul>'
+          content: '<p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>Dal 27 al 30 gennaio 2027 · Fiera Bolzano</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);">Klimamobility è il convegno dedicato alla mobilità sostenibile, organizzato da Fiera Bolzano in parallelo con Klimahouse. Un appuntamento per capire come cambiano veicoli, energie e infrastrutture, e cosa significa per la Sua flotta.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>Perché è interessante per Lei?</strong></span></p><p class="default"><br></p><ul><li style="color: rgb(255, 255, 255);">Scoprire le soluzioni per ridurre consumi ed emissioni della Sua flotta</li><li style="color: rgb(255, 255, 255);">Seguire gli interventi sulle energie alternative e la ricarica</li><li style="color: rgb(255, 255, 255);">Incontrare costruttori, fornitori ed esperti della mobilità</li></ul>'
         - id: 69d60dda-5117-4e0b-bd8b-b90bb6ec91a1
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri il salone</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
