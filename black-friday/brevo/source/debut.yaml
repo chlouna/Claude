@@ -7,7 +7,7 @@ firstLoadSocialIcons: false
 fonts: []
 id: 8d21d75a-5036-4c92-81ca-ed2a76793355
 name: 24-04-25-brevo-theme-product-highlights-2
-subject: "Du 27 au 30 novembre: -50% sur ton abonnement annuel!\n\n"
+subject: "{% if \"FR\" in contact.LANG %}Du 27 au 30 novembre: -50% sur ton abonnement annuel!{% elif \"ES\" in contact.LANG %}Del 27 al 30 de noviembre: ¡-50% en tu suscripción anual!{% elif \"IT\" in contact.LANG %}Dal 27 al 30 novembre: -50% sul tuo abbonamento annuale!{% elif \"DE\" in contact.LANG %}Vom 27. bis 30. November: -50% auf dein Jahresabo!{% elif \"NL\" in contact.LANG %}Van 27 t/m 30 november: -50% op je jaarabonnement!{% elif \"PT\" in contact.LANG %}De 27 a 30 de novembro: -50% na tua subscrição anual!{% elif \"PL\" in contact.LANG %}Od 27 do 30 listopada: -50% na roczną subskrypcję!{% elif \"RO\" in contact.LANG %}Între 27 și 30 noiembrie: -50% la abonamentul tău anual!{% else %}From 27 to 30 November: 50% off your annual subscription!{% endif %}"
 ui:
   showDeleteOption: false
   showMoreOption: false
