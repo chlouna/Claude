@@ -1,0 +1,191 @@
+author: Voigt
+brandUpdateTime: '2024-04-17T12:22:09.158+02:00'
+campaignType: classic
+fields: []
+fieldsHistory: []
+firstLoadSocialIcons: false
+fonts: []
+id: 8d21d75a-5036-4c92-81ca-ed2a76793355
+name: 24-04-25-brevo-theme-product-highlights-2
+subject: "Du 27 au 30 novembre: -50% sur ton abonnement annuel!\n\n"
+ui:
+  showDeleteOption: false
+  showMoreOption: false
+user-hash: 0ef7dc2ac2a07cb264f87eeb888750c5
+version: 3.0.1
+body:
+  id: 533cce52-b986-4e87-9693-69c6921a7412
+  type: body
+  layout:
+    320px:
+      width: 100%
+    default:
+      direction: ltr
+      wrapper-width: 600px
+  content:
+    -
+      content-type: wrapper
+      customBlockId: null
+      id: f6dcc8f9-0452-4735-8b89-303beeaba093
+      isCustomBlock: null
+      moduleName: null
+      sidebarSection: null
+      thumbnail: null
+      title: Wrapper
+      type: rows
+      layout:
+        320px:
+          width: 100%
+        default:
+          align: center
+          valign: top
+      content:
+        -
+          align: top
+          customBlockId: null
+          dist: '12'
+          gutter: 0px
+          id: ea6ff850-e041-4d41-88ef-8bc2f736f57f
+          isCustomBlock: null
+          moduleName: viewInBrowser
+          sidebarSection: null
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: section
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              width: 100%
+            default:
+              align: center
+              background-color: transparent
+              display: none
+              full-width: true
+              padding-bottom: 5px
+              padding-top: 5px
+              valign: top
+              width: 100%
+          content:
+            -
+              customBlockId: null
+              id: ca5190e5-c374-4e36-a631-ce5b92cd49b5
+              imagelabel: 'Select a content type'
+              isCustomBlock: null
+              isEmpty: false
+              label: 'Drop content here'
+              moduleName: null
+              sidebarSection: null
+              thumbnail: null
+              title: 'column 1'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  customBlockId: null
+                  id: 172296e5-0b76-4236-ac80-d8a93ef19dc0
+                  isCustomBlock: null
+                  moduleName: null
+                  sidebarSection: null
+                  thumbnail: null
+                  title: Webversion
+                  type: text
+                  layout:
+                    320px:
+                      padding-left: 10px
+                      padding-right: 10px
+                      width: 100%
+                    default:
+                      align: center
+                      line-height: 16px
+                      padding-left: 30px
+                      padding-right: 30px
+                      text-align: center
+                      width: 100%
+                  content: "<p><a href=\"{{ mirror }}\">\n                      <span style=\"font-family: arial,helvetica,sans-serif;color:#858588;font-size: 12px; text-decoration: underline;\">\n                      Afficher dans le navigateur</span></a></p>"
+        -
+          align: top
+          dist: '12'
+          gutter: 0px
+          id: f85057f2-9276-4996-a4b1-986a3e797e2e
+          moduleName: grid-row12
+          stylable: false
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: 'B2C Multilingual Header'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 0px
+              padding-right: 0px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 0px
+              padding-top: 0px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: ba595ace-d536-43c7-806a-0b0bc504e9a3
+              isEmpty: false
+              stylable: false
+              title: Column
+              type: grid-column
+              layout:
+                320px: {}
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 76a60471-8758-4248-a44f-76da201f3cad
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      display: rows
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: left
+                      canvas-height: 100px
+                      display: none
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      showHide: true
+                      showOnDesktopMobile: mobile
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://truckfly.onelink.me/rNAz/63cbde2v'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/69af01d384372f83fe862852.jpg'
+                -
+                  id: 5bb7302f-39ed-4cf1-bc54-8bf23f265375
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      display: none
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: left
+                      canvas-height: 90px
+                      display: rows
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      showHide: true
+                      showOnDesktopMobile: desktop
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://www.truckfly.com/?utm_source=brevo&utm_medium=transactional_emails'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/69af01d084372f83fe862850.jpg'
