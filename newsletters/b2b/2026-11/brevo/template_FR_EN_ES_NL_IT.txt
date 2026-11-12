@@ -891,7 +891,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: 8ca1508e-b683-4242-bf24-8e0e29b3e8a4
+      id: fcf795de-72d5-4297-be37-498a93c861d2
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -912,7 +912,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 747cd343-bf88-4e9d-a7b5-6b1ead51b128
+      - id: 70b08fa8-b652-4705-9fc9-c3f7e71823e6
         isEmpty: false
         stylable: false
         title: Column
@@ -925,7 +925,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: d86a433d-392b-4799-bc8c-1f2dcb4476e2
+        - id: b4ae8310-a10b-4520-bfe9-875e55372429
           text: '<p><strong><span style="color: rgb(0, 0, 0);">This month’s editorial</span></strong></p>'
           title: Button
           type: text-button
@@ -955,7 +955,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">This month’s editorial</span></strong></p>'
             title: ''
-        - id: 8603d207-2910-48c8-9b4d-1c989a06d48b
+        - id: 943cc495-4fb3-4961-84be-9ff753bbd9ac
           moduleName: text-title
           title: Title
           type: text
@@ -973,7 +973,7 @@ body:
               valign: top
               width: 100%
           content: '<h1 class="default-heading1"><br></h1><h1 class="default-heading1"><strong><span style="color: rgb(0, 0, 0);">Winter is on its way, let’s be ready</span></strong></h1>'
-        - id: f1bc55bd-ea07-4921-8fee-b7b15e5f4f0c
+        - id: 5258fdcf-335c-4d2a-9b12-25b80e78a841
           title: Text
           type: text
           layout:
@@ -989,7 +989,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Hello,</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">As winter sets in, the days get shorter, road conditions get tougher and end of year activity picks up. It is a demanding time for your drivers and your teams alike.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">At MICHELIN Truckfly, we want to help you face it with peace of mind, with reliable information and tools that are useful every day.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">This month, find the essentials: upcoming events, our latest news and the developments that matter in each country.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Happy reading,</span></p>'
-        - id: afad9d0c-c61c-4019-92cc-8d376319c0c8
+        - id: 926582af-a62a-4171-8a13-70f96cb07868
           title: Image
           type: image
           layout:
@@ -1007,7 +1007,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ac8a8a1508d9861041cad84.jpg
-        - id: 0b9a2852-0b10-4923-86c3-8337070f4118
+        - id: 9f9b3b5a-9040-46a8-bc9f-d9b0566caf88
           title: Divider
           type: divider
           layout:
@@ -1026,7 +1026,7 @@ body:
       condition: ( "ES" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 88e094f4-afe5-4046-984c-9f871be76df1
+      id: a55d7d93-4243-44bf-839a-d7c55b6abc18
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -1047,7 +1047,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: ca5de2dd-984d-4add-ba91-aec0fc156a41
+      - id: 10c0f6a8-212b-4a88-8183-917a40db1b88
         isEmpty: false
         stylable: false
         title: Column
@@ -1060,7 +1060,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: d6afef80-b69d-4401-b467-823b94b6e28c
+        - id: 695c8b9f-404e-4d88-bd5f-7d7699227da3
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Este mes: Editorial</span></strong></p>'
           title: Button
           type: text-button
@@ -1090,7 +1090,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Este mes: Editorial</span></strong></p>'
             title: ''
-        - id: 51d7fe4b-615f-47e8-a09f-53454757b4be
+        - id: 1ddb4098-ac41-4001-98ba-9ec93d604c00
           moduleName: text-title
           title: Title
           type: text
@@ -1108,7 +1108,7 @@ body:
               valign: top
               width: 100%
           content: '<h1 class="default-heading1"><br></h1><h1 class="default-heading1"><strong><span style="color: rgb(0, 0, 0);">Llega el invierno, estemos bien preparados</span></strong></h1>'
-        - id: 1602f51b-01b1-4842-beea-1ec421de0857
+        - id: b384caf1-139a-4704-bcbb-3310f12f86b0
           title: Text
           type: text
           layout:
@@ -1124,7 +1124,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Hola:</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Con el invierno, los días se acortan, las condiciones de la carretera se endurecen y la actividad de final de año se intensifica. Es una época exigente para vuestros conductores y para vuestros equipos.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">En MICHELIN Truckfly queremos ayudaros a afrontarla con tranquilidad, con información fiable y herramientas útiles en el día a día.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Este mes, encontrad lo esencial: los próximos eventos, nuestras novedades y los cambios que importan en cada país.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">¡Buena lectura!</span></p>'
-        - id: 98966893-13ef-423b-84f1-245be650ad39
+        - id: 1fd9db24-02a8-4621-ae7f-2949a1cd2770
           title: Image
           type: image
           layout:
@@ -1142,7 +1142,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/es/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ac8a87ef72831df44cf024e.jpg
-        - id: 694f3c3e-5c3c-4b47-b1c1-50741113c5dc
+        - id: bcbec60f-080a-4509-b128-28fd3023b286
           title: Divider
           type: divider
           layout:
@@ -1161,7 +1161,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 9f7029a4-b500-4515-aa11-21ee230ac80e
+      id: 291cdae0-c78f-4a36-9702-49a32c6c0612
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -1182,7 +1182,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 0935ff02-190e-47c9-9400-de867f2ac44f
+      - id: 8d724899-d122-4ade-909d-e02b90af1d6b
         isEmpty: false
         stylable: false
         title: Column
@@ -1195,7 +1195,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 5a42b0ac-f0bf-44de-a289-eb3f114eb45b
+        - id: 5bf886fe-c980-434b-ae99-55fcc9332cca
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Deze maand: editorial</span></strong></p>'
           title: Button
           type: text-button
@@ -1225,7 +1225,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Deze maand: editorial</span></strong></p>'
             title: ''
-        - id: 8ad4cf47-af10-4c59-9929-4d8f9f408187
+        - id: 22defb1e-9b79-4b0e-8546-95940dc6852c
           moduleName: text-title
           title: Title
           type: text
@@ -1243,7 +1243,7 @@ body:
               valign: top
               width: 100%
           content: '<h1 class="default-heading1"><br></h1><h1 class="default-heading1"><strong><span style="color: rgb(0, 0, 0);">De winter komt eraan, laten we goed voorbereid zijn</span></strong></h1>'
-        - id: a09eff93-49f6-4514-8b82-8b6fc90999b0
+        - id: eede0cd6-7e07-4aff-9f25-d5e79fb51bd4
           title: Text
           type: text
           layout:
@@ -1259,7 +1259,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Goedendag,</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Met de winter worden de dagen korter, worden de omstandigheden op de weg zwaarder en neemt de drukte aan het eind van het jaar toe. Een veeleisende periode voor uw chauffeurs en voor uw teams.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Bij MICHELIN Truckfly willen we u helpen deze periode met een gerust hart in te gaan, met betrouwbare informatie en handige tools voor elke dag.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Deze maand vindt u het belangrijkste: de komende evenementen, ons nieuws en de ontwikkelingen die er in elk land toe doen.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Veel leesplezier,</span></p>'
-        - id: e518ac06-9452-48d8-b9e2-23da6b55a405
+        - id: d8bcc050-e50d-47e3-8692-72e2853de6a2
           title: Image
           type: image
           layout:
@@ -1277,7 +1277,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ac8a8bd4c677186861a0174.jpg
-        - id: 0a8d6fa7-3d74-4aa3-8ce0-b53a90bc6f6b
+        - id: b2607690-2b32-4c0c-a857-b4d6a5ca7b0f
           title: Divider
           type: divider
           layout:
@@ -1296,7 +1296,7 @@ body:
       condition: ( "IT" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 443b35b7-1b7c-4e4c-a5b7-6306c66e79cf
+      id: 42592aa1-1080-494f-b218-7d2a00709e65
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -1317,7 +1317,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: d1b5c218-31b5-492d-ab07-5bbc940401d2
+      - id: 1bb9892e-e397-4699-ae7e-abe47c306403
         isEmpty: false
         stylable: false
         title: Column
@@ -1330,7 +1330,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 857aacbf-8a2d-4513-93d3-58ad46f95f4b
+        - id: b54518d9-a7fd-40ff-bf43-fb17d78fc1d6
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Questo mese: Editoriale</span></strong></p>'
           title: Button
           type: text-button
@@ -1360,7 +1360,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Questo mese: Editoriale</span></strong></p>'
             title: ''
-        - id: e8a2b437-7403-4713-963b-60460a33ce52
+        - id: bf79a9f9-8eda-4937-b777-d0ccd4364505
           moduleName: text-title
           title: Title
           type: text
@@ -1378,7 +1378,7 @@ body:
               valign: top
               width: 100%
           content: '<h1 class="default-heading1"><br></h1><h1 class="default-heading1"><strong><span style="color: rgb(0, 0, 0);">L’inverno si avvicina, restiamo ben preparati</span></strong></h1>'
-        - id: cc39523f-408f-4bfa-843a-8dfc12a74501
+        - id: 4a25b753-d9b1-45e8-b3c4-96127b3108c6
           title: Text
           type: text
           layout:
@@ -1394,7 +1394,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Buongiorno,</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Con l’inverno le giornate si accorciano, le condizioni stradali diventano più difficili e l’attività di fine anno si intensifica. È un periodo impegnativo sia per i Suoi autisti sia per il Suo team.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Con MICHELIN Truckfly vogliamo aiutarLa ad affrontarlo con serenità, con informazioni affidabili e strumenti utili ogni giorno.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Questo mese trova l’essenziale: i prossimi appuntamenti, le nostre novità e gli sviluppi che contano in ogni Paese.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Buona lettura,</span></p>'
-        - id: 14e7559b-65ee-424f-8d9a-626d7037fece
+        - id: 49753a51-d375-4064-b4db-9d93051d510b
           title: Image
           type: image
           layout:
@@ -1412,7 +1412,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/it/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ac8a80d4c677186861a010f.jpg
-        - id: e724c014-b972-4c4c-8e24-20a82d1c8b5b
+        - id: 803f99fe-1df7-443d-be0c-a616b8c64aca
           title: Divider
           type: divider
           layout:
@@ -2044,7 +2044,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: 7b48aab4-935f-487d-adae-c2c994efb31e
+      id: 8be709eb-cffe-46b3-9b3c-08dc0355e17b
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -2065,7 +2065,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 548da408-ebf1-452d-bbc0-bb596d9026d6
+      - id: 16b42c2c-7fa8-4698-9869-e00b2f448482
         isEmpty: false
         stylable: false
         title: Column
@@ -2079,7 +2079,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 6dc51a0f-08b0-4ebc-8b8b-10305bc56fbd
+        - id: 5dd7ea51-b7e0-495f-939b-58696de2a7b9
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Events</span></strong></p>'
           title: Button
           type: text-button
@@ -2109,7 +2109,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Events</span></strong></p>'
             title: ''
-        - id: 1bc45f17-9dbe-4c74-b2a6-17b16cda5231
+        - id: 6617623d-3014-42e9-a1d2-18198ff2e392
           moduleName: text-title
           title: Title
           type: text
@@ -2124,7 +2124,7 @@ body:
               valign: top
               width: 100%
           content: '<div><h3 class="default-heading3"><span style="color: rgb(249, 250, 252);"><strong>Supply Chain Event 2026: tomorrow’s logistics takes shape in Paris</strong></span></h3></div>'
-        - id: 61f67adb-0601-4fa0-8721-a0896d9c374c
+        - id: 9a7477f9-9589-448f-bcf5-325c6df52e3e
           title: Text
           type: text
           layout:
@@ -2140,7 +2140,7 @@ body:
               valign: top
               width: 100%
           content: '<p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>1 and 2 December 2026 · Paris Expo Porte de Versailles</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);">Every year, the Supply Chain Event brings together logistics and supply chain decision makers. On the programme: more than 110 exhibitors, 40 talks and business meetings to spot the solutions that will make a difference in 2027.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>Why is it worth it for you?</strong></span></p><p class="default"><br></p><ul><li style="color: rgb(255, 255, 255);">Discover the latest innovations in transport, warehousing and digital flows</li><li style="color: rgb(255, 255, 255);">Attend talks on today’s hot topics: decarbonisation, costs, recruitment</li><li style="color: rgb(255, 255, 255);">Meet partners and connect with industry players</li></ul>'
-        - id: 3960eb78-542c-412c-9b68-160e1e80a738
+        - id: 9bc26718-1ba9-4364-a7da-34d9bc43689a
           title: Image
           type: image
           layout:
@@ -2158,7 +2158,7 @@ body:
           content:
             href: https://www.supplychain-event.com/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6af2de02050f8d9077a5e50a.jpg
-        - id: 8fc531fc-f269-4acd-bd52-e44244016cb6
+        - id: 7523e81d-3841-42a7-ba87-b6c062ef147a
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Discover the show</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2194,7 +2194,7 @@ body:
       condition: ( "ES" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 97cc4599-0cd2-498a-9635-1834701913f7
+      id: 203be702-b514-43ea-ae70-7b97e56032b0
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -2215,7 +2215,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 91c53f78-8ff4-4b43-9b4b-ae8438469a34
+      - id: b9f0ed41-3d64-4334-b027-c636dbc2712d
         isEmpty: false
         stylable: false
         title: Column
@@ -2229,7 +2229,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 8d34d1b2-f62d-46b2-a8a2-d9884c69b476
+        - id: 254750c8-576a-4c9d-b49f-e6d4dfc96df4
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Eventos</span></strong></p>'
           title: Button
           type: text-button
@@ -2259,7 +2259,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Eventos</span></strong></p>'
             title: ''
-        - id: b07940cc-ccb4-4c27-97b2-1f104c6552bb
+        - id: 40125039-251b-419f-86ba-16f7fac014cd
           moduleName: text-title
           title: Title
           type: text
@@ -2274,7 +2274,7 @@ body:
               valign: top
               width: 100%
           content: '<div><h3 class="default-heading3"><span style="color: rgb(249, 250, 252);"><strong>Supply Chain Event 2026: la logística del mañana se diseña en París</strong></span></h3></div>'
-        - id: 55cff2bd-dbb8-4e22-a523-0c8e9dd384f2
+        - id: 0d7a096f-a536-49a9-b028-ac2925e1b586
           title: Text
           type: text
           layout:
@@ -2290,7 +2290,7 @@ body:
               valign: top
               width: 100%
           content: '<p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>1 y 2 de diciembre de 2026 · Paris Expo Porte de Versailles</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);">Cada año, el Supply Chain Event reúne a los responsables de la logística y la cadena de suministro. En el programa: más de 110 expositores, 40 conferencias y reuniones de negocio para descubrir las soluciones que marcarán la diferencia en 2027.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>¿Por qué te interesa?</strong></span></p><p class="default"><br></p><ul><li style="color: rgb(255, 255, 255);">Descubrir las últimas innovaciones en transporte, almacén y digitalización de flujos</li><li style="color: rgb(255, 255, 255);">Asistir a conferencias sobre los temas del momento: descarbonización, costes, contratación</li><li style="color: rgb(255, 255, 255);">Conocer a socios y conversar con los actores del sector</li></ul>'
-        - id: 1105360c-c3d8-49c8-82c1-fc1e768b5437
+        - id: 4211b4a9-2b7f-461d-b3bb-aab9baf93871
           title: Image
           type: image
           layout:
@@ -2308,7 +2308,7 @@ body:
           content:
             href: https://www.supplychain-event.com/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6af2de02050f8d9077a5e50a.jpg
-        - id: c263e7d8-eacd-40e6-9bbd-9b906af2aabd
+        - id: c0a06b62-8296-4b2a-8474-e305d603f1f8
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Descubre el salón</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2344,7 +2344,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 47abee51-7efb-48c9-9590-ee8c2223077c
+      id: 2ce9d2b4-1714-4522-9dfb-7c04fc76d490
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -2365,7 +2365,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: dd28d25d-478d-44dd-b3dd-f437c2e4cf33
+      - id: 0a41bf36-9688-4f43-b8c9-7564de7ba5db
         isEmpty: false
         stylable: false
         title: Column
@@ -2379,7 +2379,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 5435d2b2-f629-481c-8fb3-ad0d8ea981ce
+        - id: 38855c45-9002-427a-882e-34eddbac57ed
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Evenementen</span></strong></p>'
           title: Button
           type: text-button
@@ -2409,7 +2409,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Evenementen</span></strong></p>'
             title: ''
-        - id: 5aa9e596-3a41-4ab9-bc88-5cf36d00f4f7
+        - id: e160ab61-6e06-4a5a-b6c9-cc828fb4658f
           moduleName: text-title
           title: Title
           type: text
@@ -2424,7 +2424,7 @@ body:
               valign: top
               width: 100%
           content: '<div><h3 class="default-heading3"><span style="color: rgb(249, 250, 252);"><strong>Supply Chain Event 2026: de logistiek van morgen krijgt vorm in Parijs</strong></span></h3></div>'
-        - id: 70a9b7f7-0324-4f69-8135-4a6dc2bfb10e
+        - id: 67f21255-f5d6-4336-880a-5cda2c1f7a5c
           title: Text
           type: text
           layout:
@@ -2440,7 +2440,7 @@ body:
               valign: top
               width: 100%
           content: '<p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>1 en 2 december 2026 · Paris Expo Porte de Versailles</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);">Het Supply Chain Event brengt elk jaar de beslissers uit logistiek en supply chain samen. Op het programma: meer dan 110 exposanten, 40 lezingen en zakelijke afspraken om de oplossingen te ontdekken die in 2027 het verschil maken.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>Waarom is het interessant voor u?</strong></span></p><p class="default"><br></p><ul><li style="color: rgb(255, 255, 255);">De nieuwste innovaties ontdekken in transport, opslag en digitalisering van goederenstromen</li><li style="color: rgb(255, 255, 255);">Lezingen volgen over actuele thema’s: verduurzaming, kosten, werving</li><li style="color: rgb(255, 255, 255);">Partners ontmoeten en in gesprek gaan met spelers uit de sector</li></ul>'
-        - id: da510a49-6684-46a1-b905-567447325a23
+        - id: 59cf952f-3142-4d60-ac24-d87b20bcb1a8
           title: Image
           type: image
           layout:
@@ -2458,7 +2458,7 @@ body:
           content:
             href: https://www.supplychain-event.com/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6af2de02050f8d9077a5e50a.jpg
-        - id: 407ae86b-b6ab-4203-866e-858889051e4c
+        - id: ee927da9-da6b-463a-9e02-878495624df2
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Ontdek de beurs</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2494,7 +2494,7 @@ body:
       condition: ( "IT" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: d7e55f31-4719-4a5b-b892-b4d0ba0dd75d
+      id: 30f27a5d-a653-4283-bf25-c6a467e31208
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -2515,7 +2515,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 0daff2d6-bdaf-4397-873f-f0adbbf8a003
+      - id: 182ad7bc-2140-471b-83bb-0940a6aeeb8f
         isEmpty: false
         stylable: false
         title: Column
@@ -2529,7 +2529,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 158594b9-6e4a-41bb-81f2-36aa85eeda65
+        - id: d74bca6b-c95b-4dbb-a8c6-35ca538f86e9
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Eventi</span></strong></p>'
           title: Button
           type: text-button
@@ -2559,7 +2559,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Eventi</span></strong></p>'
             title: ''
-        - id: 54482828-41d2-45f7-b7f7-9af7a2211d92
+        - id: bf3c1e4b-e1af-421f-935c-ba09ddcfdb1f
           moduleName: text-title
           title: Title
           type: text
@@ -2574,7 +2574,7 @@ body:
               valign: top
               width: 100%
           content: '<div><h3 class="default-heading3"><span style="color: rgb(249, 250, 252);"><strong>Supply Chain Event 2026: a Parigi prende forma la logistica di domani</strong></span></h3></div>'
-        - id: d6e5b9e8-bdd6-498a-89c4-96c160f0d399
+        - id: 0959503d-b237-47e4-992a-b6f3209a121d
           title: Text
           type: text
           layout:
@@ -2590,7 +2590,7 @@ body:
               valign: top
               width: 100%
           content: '<p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>1 e 2 dicembre 2026 · Paris Expo Porte de Versailles</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);">Ogni anno il Supply Chain Event riunisce i decisori della logistica e della supply chain. In programma: oltre 110 espositori, 40 conferenze e incontri d’affari per scoprire le soluzioni che faranno la differenza nel 2027.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>Perché è interessante per Lei?</strong></span></p><p class="default"><br></p><ul><li style="color: rgb(255, 255, 255);">Scoprire le ultime innovazioni in trasporti, magazzino e digitalizzazione dei flussi</li><li style="color: rgb(255, 255, 255);">Seguire conferenze sui temi del momento: decarbonizzazione, costi, reclutamento</li><li style="color: rgb(255, 255, 255);">Incontrare partner e confrontarsi con gli operatori del settore</li></ul>'
-        - id: 0a817f0f-9a18-4a7a-b51f-c1e27d079956
+        - id: b046654a-d1df-4686-89c9-e2ac5830cac1
           title: Image
           type: image
           layout:
@@ -2608,7 +2608,7 @@ body:
           content:
             href: https://www.supplychain-event.com/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6af2de02050f8d9077a5e50a.jpg
-        - id: 00257b05-5e8a-4886-a5bf-2f13e51a19b4
+        - id: 18149ecf-8207-4d25-9694-b7e07d3f09d8
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri il salone</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3076,7 +3076,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: e80fc837-641b-4cab-997e-46f084fe3279
+      id: cfd8bd74-2be1-4200-a428-fc60ca7cf808
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -3097,7 +3097,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: a770a070-2f5a-4e12-9e79-232f249f44a0
+      - id: b5713581-10a4-4d88-85e1-c1253562b580
         isEmpty: false
         stylable: false
         title: Column
@@ -3110,7 +3110,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: f4b1f232-a581-4a7c-b5c3-5d78aca2b127
+        - id: 3a0dd2bc-a0b4-440e-b2b2-0dd080a168c4
           text: '<p><strong><span style="color: rgb(0, 0, 0);">MICHELIN Truckfly News</span></strong></p>'
           title: Button
           type: text-button
@@ -3140,7 +3140,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">MICHELIN Truckfly News</span></strong></p>'
             title: ''
-        - id: 7ce62b9b-b4e5-4337-aae8-f5c169b01623
+        - id: e368bcf4-54d4-4eb9-97f1-0c98b1ba2512
           moduleName: text-title
           title: Title
           type: text
@@ -3155,7 +3155,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Drivers </strong><strong><span style="background-color: rgb(255, 255, 26);">like the community’s contributions</span></strong></span></h2>'
-        - id: c4f2fa70-e386-4ec9-8ed5-f8e1ea441fde
+        - id: df36cc8f-5253-4bba-acaf-4f00a0664fc4
           title: Text
           type: text
           layout:
@@ -3171,7 +3171,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Photos, comments, recommendations: drivers can now like other drivers’ contributions, straight from the activity feed.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">A way to say thank you and bring the most reliable information to the top.</span></p>'
-        - id: a9ef7d34-940b-4939-862f-8d754832c38c
+        - id: d3766308-ccff-4a18-9999-299913f03ea6
           title: Image
           type: image
           layout:
@@ -3189,7 +3189,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad72960b782e1538cd07b27.png
-        - id: 75273e30-0728-4c42-b2fa-b10ece945fb8
+        - id: da98eeb3-d9c0-4e17-baa5-a9a3549c40b3
           title: HTML
           type: raw-html
           layout:
@@ -3199,7 +3199,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">What’s in it for you</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Hauliers and fleet managers</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">The most appreciated information stands out faster: your drivers spot at a glance the parking areas and stops their colleagues rate as reliable.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Establishments</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Every photo or positive review of the establishment can be liked by the community. The best contributions gain visibility with other drivers.</p>\n  </td></tr>\n</table>\n"
-        - id: c4bfbd7f-4cec-4a68-843b-c7d577407246
+        - id: db8f3b7e-8bfd-407d-80e2-144670a14e6e
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Learn more</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3231,7 +3231,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Learn more</span></strong></p>'
-        - id: e78df468-482c-4879-ae44-b93be9f1fc8d
+        - id: eced2afd-f75a-4222-8e0c-491020c41db2
           moduleName: text-title
           title: Title
           type: text
@@ -3246,7 +3246,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Profile photos </strong><strong><span style="background-color: rgb(255, 255, 26);">now open full screen</span></strong></span></h2>'
-        - id: 5a69f7ac-a243-4184-9e71-ebf60077f47f
+        - id: 30aa592d-6193-428b-aef2-169a861bd6ad
           title: Text
           type: text
           layout:
@@ -3262,7 +3262,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">One tap on a driver’s photo is all it takes to see it in full. Handy for recognising a colleague you often meet at truck stops.</span></p>'
-        - id: 60ff11b6-bf43-4dd0-9f85-3e753ffca3b0
+        - id: 19051281-dfe9-459b-9ca2-bf2c82dcc39e
           title: Image
           type: image
           layout:
@@ -3280,7 +3280,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad731c64646ada7d9880205.png
-        - id: ddecf489-32dd-4e8a-b577-5c65be41055b
+        - id: ab3208a9-490a-4d9c-8c33-82e357b7f1a3
           title: HTML
           type: raw-html
           layout:
@@ -3290,7 +3290,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">What’s in it for you</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Hauliers and fleet managers</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Drivers who recognise each other at truck stops and talk more easily: a more human community that breaks the isolation of the road.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Partners and brands</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">A community that knows each other and comes back to the app every day: an engaged audience, attentive to content that is useful to them.</p>\n  </td></tr>\n</table>\n"
-        - id: 05348ca2-6785-4d81-962f-ce518dd2224b
+        - id: 5145d99d-4716-4707-9b91-a7ef4fa084b7
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Learn more</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3322,7 +3322,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Learn more</span></strong></p>'
-        - id: c6d2e20c-03ae-4dd2-a97d-4c2386f2aadb
+        - id: e19319af-27c4-4b67-a553-7f8a14143ca3
           moduleName: text-title
           title: Title
           type: text
@@ -3337,7 +3337,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Every driver </strong><strong><span style="background-color: rgb(255, 255, 26);">chooses their app language</span></strong></span></h2>'
-        - id: 4ccd391e-f82f-48d3-91e7-5966f29b1408
+        - id: ef39b383-567b-4f02-af5c-9132a2c5b1e0
           title: Text
           type: text
           layout:
@@ -3353,7 +3353,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">The MICHELIN Truckfly language can now be changed directly in the app (Settings &gt; App language), without touching the phone settings.</span></p>'
-        - id: 0870ebc9-c370-459e-a6d0-93ffaf860270
+        - id: 0113b2ed-d0f4-400a-aba4-349981d0f942
           title: Image
           type: image
           layout:
@@ -3371,7 +3371,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad72502164c970a1d77e850.png
-        - id: 29a83be0-530f-4a42-b897-6a9f8adda90d
+        - id: 7229e2fd-3160-4dfd-b505-3a0a4a6bf9a9
           title: HTML
           type: raw-html
           layout:
@@ -3381,7 +3381,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">What’s in it for you</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Hauliers and fleet managers</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Your drivers of every nationality use the app in their own language, even on a shared work phone. Fewer mistakes, more independence, no phone settings to change.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Establishments</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Truckers from all over Europe use the app in their own language: they find information about the establishment more easily.</p>\n  </td></tr>\n</table>\n"
-        - id: 9ca0ea32-fdae-47a6-8999-bdcd2e471bc5
+        - id: 9f733952-e080-43d5-898e-103b98b36b11
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Learn more</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3413,7 +3413,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Learn more</span></strong></p>'
-        - id: 8a308b88-5331-4571-a0aa-2afebce675d1
+        - id: 61562d8b-0ca6-4bef-8a1e-64485ef0287f
           moduleName: text-title
           title: Title
           type: text
@@ -3428,7 +3428,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>New on GPS Premium: </strong><strong><span style="background-color: rgb(255, 255, 26);">the toll alert</span></strong></span></h2>'
-        - id: 6433bf77-161b-4567-adf3-b95577f1c11d
+        - id: ab989bf5-a940-4ee1-b87b-d1cdb25f436c
           title: Text
           type: text
           layout:
@@ -3444,7 +3444,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">During navigation, an alert warns the driver when approaching a toll, which also appears on the map. They have time to get into the right lane and get their tag or card ready.</span></p>'
-        - id: bc96f5dd-a451-40c9-9821-025c7fc2cd63
+        - id: 159349c9-1f76-4ff6-b6bf-a3313bb74bac
           title: Image
           type: image
           layout:
@@ -3462,7 +3462,7 @@ body:
           content:
             href: https://lp.truckfly.com/en/gps-premium
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad72917164c970a1d77ea83.png
-        - id: 4a617328-328e-49d8-b7a1-ca03f9cc4521
+        - id: d3d804c8-d77b-4e27-bd23-b08838905f7c
           title: HTML
           type: raw-html
           layout:
@@ -3472,7 +3472,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">What’s in it for you</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Hauliers and fleet managers</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Fewer last minute braking manoeuvres, the toll tag ready in advance, the right lane chosen in time: more safety and smoother journeys for your drivers equipped with the MICHELIN Truckfly GPS.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Partners and brands</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">A GPS built for trucks that gets richer every month, for the safety of all road users.</p>\n  </td></tr>\n</table>\n"
-        - id: 2684020b-fb5a-445d-90be-162d4ca8980b
+        - id: cc40d574-b81d-47a3-bb93-59457af6d73a
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Learn more</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3508,7 +3508,7 @@ body:
       condition: ( "ES" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 3f4903d8-4873-4118-ba02-77ca2f271aee
+      id: 2ffa768e-e5d2-4ff2-b8e3-0cca1b4f2a1a
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -3529,7 +3529,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: bcf1c20b-9895-402c-acdb-a9ef40a136b3
+      - id: f6ad7d3e-4f83-4404-a28f-bfd3c68fa07f
         isEmpty: false
         stylable: false
         title: Column
@@ -3542,7 +3542,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: bfb7f5a3-db9e-4315-a436-c4fa644a0c91
+        - id: fbe51cfb-c11a-48f7-98a9-8ca6d5e6eaff
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Noticias MICHELIN Truckfly</span></strong></p>'
           title: Button
           type: text-button
@@ -3572,7 +3572,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Noticias MICHELIN Truckfly</span></strong></p>'
             title: ''
-        - id: 8a1336fe-b319-498a-9e06-5df4bae116d1
+        - id: e1edd0c8-9a48-4174-9d09-1fb2b7194113
           moduleName: text-title
           title: Title
           type: text
@@ -3587,7 +3587,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Los conductores </strong><strong><span style="background-color: rgb(255, 255, 26);">dan like a las aportaciones de la comunidad</span></strong></span></h2>'
-        - id: be30d4da-9a77-4244-b2a4-2e6b48e72501
+        - id: 86bdab5d-6502-4c62-9d20-1d64de3210fb
           title: Text
           type: text
           layout:
@@ -3603,7 +3603,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Fotos, comentarios, recomendaciones: los conductores ya pueden dar like a las aportaciones de los demás, directamente desde el feed de actividad.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Una forma de dar las gracias y de destacar la información más fiable.</span></p>'
-        - id: 86dd36c4-178a-4f63-987d-2aff62c4f7aa
+        - id: a00c3c17-81e7-482a-b5de-84a7e08d3361
           title: Image
           type: image
           layout:
@@ -3621,7 +3621,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/es/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad72960b782e1538cd07b27.png
-        - id: 2fce1326-035e-4266-a5e9-36fd064f86b2
+        - id: 6cb63cda-f483-4d21-88f2-a3a3479a3d91
           title: HTML
           type: raw-html
           layout:
@@ -3631,7 +3631,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">Lo que te aporta</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Empresas de transporte y gestores de flota</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">La información más valorada destaca antes: tus conductores ven de un vistazo los aparcamientos y paradas que sus compañeros consideran fiables.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Establecimientos</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Cada foto u opinión positiva sobre el establecimiento puede recibir likes de la comunidad. Las mejores aportaciones ganan visibilidad entre los demás conductores.</p>\n  </td></tr>\n</table>\n"
-        - id: 256f2078-da04-415d-b38d-eb753e943f14
+        - id: 0f627fe5-4e34-4360-9fe8-95de2afd94b9
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Más información</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3663,7 +3663,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/es/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Más información</span></strong></p>'
-        - id: 7b8ceda5-95bc-44e6-8cd9-059685a8fff6
+        - id: 99974d91-c217-495a-8876-31e8e27a3aec
           moduleName: text-title
           title: Title
           type: text
@@ -3678,7 +3678,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Las fotos de perfil </strong><strong><span style="background-color: rgb(255, 255, 26);">se ven a pantalla completa</span></strong></span></h2>'
-        - id: 8924c8a1-ac15-4db3-9dcc-9d330c1e4e31
+        - id: eebaf8dc-3288-408b-9801-a2e740757523
           title: Text
           type: text
           layout:
@@ -3694,7 +3694,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Basta con tocar la foto de un conductor para verla en grande. Muy práctico para reconocer a un compañero con el que te cruzas a menudo en las áreas.</span></p>'
-        - id: 8da68b67-6e7b-458a-b4a6-36f3c1c59dcb
+        - id: ea04e304-748d-4988-9d61-bfce08fc02dc
           title: Image
           type: image
           layout:
@@ -3712,7 +3712,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/es/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad731c64646ada7d9880205.png
-        - id: 6aac3a04-1181-4d91-9043-af79fa4ef764
+        - id: 0485598f-04ad-4ba3-9705-d1db3f7ecdae
           title: HTML
           type: raw-html
           layout:
@@ -3722,7 +3722,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">Lo que te aporta</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Empresas de transporte y gestores de flota</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Conductores que se reconocen en las áreas y se comunican con más facilidad: una comunidad más humana, que rompe el aislamiento de la carretera.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Socios y marcas</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Una comunidad que se conoce y vuelve a la app cada día: un público comprometido, atento a los contenidos que le son útiles.</p>\n  </td></tr>\n</table>\n"
-        - id: 045b29ec-ef9f-4e69-90da-61bfe0b40f5f
+        - id: 9a8b0345-8240-498b-8c73-4e7e65037ab2
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Más información</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3754,7 +3754,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/es/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Más información</span></strong></p>'
-        - id: 1c8f344f-4def-4d55-a752-394b76a90226
+        - id: 564d9976-f30b-4e3f-a256-f26ec2b75f9b
           moduleName: text-title
           title: Title
           type: text
@@ -3769,7 +3769,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Cada conductor </strong><strong><span style="background-color: rgb(255, 255, 26);">elige el idioma de su app</span></strong></span></h2>'
-        - id: 5ff0e290-3e30-4a6f-9f61-0af2994983cb
+        - id: d277be64-72a3-4115-944d-fd061a5257ff
           title: Text
           type: text
           layout:
@@ -3785,7 +3785,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">El idioma de MICHELIN Truckfly se cambia directamente en la app (Ajustes &gt; Idioma de la aplicación), sin tocar la configuración del teléfono.</span></p>'
-        - id: 5f1df7e6-ad4a-4544-8cfa-ea0410e1ea2c
+        - id: 58302ccc-7471-4d26-aa7e-e0ea61c0fa42
           title: Image
           type: image
           layout:
@@ -3803,7 +3803,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/es/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad72502164c970a1d77e850.png
-        - id: 18c0deaf-9c71-484a-85e8-4eb64e6f0fa5
+        - id: 3b3f0292-253e-41a1-94ad-81ecc0fc0333
           title: HTML
           type: raw-html
           layout:
@@ -3813,7 +3813,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">Lo que te aporta</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Empresas de transporte y gestores de flota</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Tus conductores de todas las nacionalidades usan la app en su idioma, incluso en un teléfono de trabajo compartido. Menos errores, más autonomía y ningún ajuste del teléfono que cambiar.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Establecimientos</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Los camioneros de toda Europa usan la app en su idioma: encuentran más fácilmente la información sobre el establecimiento.</p>\n  </td></tr>\n</table>\n"
-        - id: acb925c0-3981-4710-adb1-a7faf3e17c65
+        - id: ccbd7990-e566-4c3e-843d-c1aa9784508f
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Más información</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3845,7 +3845,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/es/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Más información</span></strong></p>'
-        - id: 75c612fa-12b4-4317-9598-c341e38c21bf
+        - id: 809dbe57-1d82-4a11-a48a-fe344c180667
           moduleName: text-title
           title: Title
           type: text
@@ -3860,7 +3860,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Novedad GPS Premium: </strong><strong><span style="background-color: rgb(255, 255, 26);">la alerta de peaje</span></strong></span></h2>'
-        - id: 911d158b-648e-41f9-825b-9d83e282e16d
+        - id: 9d56bd36-3ef5-4379-95f0-f9d303bb2f07
           title: Text
           type: text
           layout:
@@ -3876,7 +3876,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Durante la navegación, una alerta avisa al conductor cuando se acerca a un peaje, que también aparece en el mapa. Tiene tiempo de colocarse en el carril correcto y preparar su telepeaje o su tarjeta.</span></p>'
-        - id: 592d0ca3-cf15-4d56-ab64-d248e5f63a19
+        - id: 5733aaa5-1a1e-4dd7-8ad4-71ce7e2de41d
           title: Image
           type: image
           layout:
@@ -3894,7 +3894,7 @@ body:
           content:
             href: https://lp.truckfly.com/en/gps-premium
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad72917164c970a1d77ea83.png
-        - id: d1385d17-c9c9-48bb-8d24-c0caa4325e49
+        - id: 8f573e04-2056-4178-8186-8f72bdca4fec
           title: HTML
           type: raw-html
           layout:
@@ -3904,7 +3904,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">Lo que te aporta</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Empresas de transporte y gestores de flota</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Menos frenazos de última hora, el telepeaje preparado con antelación, el carril correcto elegido a tiempo: más seguridad y fluidez para tus conductores equipados con el GPS MICHELIN Truckfly.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Socios y marcas</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Un GPS pensado para camiones que se enriquece cada mes, al servicio de la seguridad de todos los usuarios de la carretera.</p>\n  </td></tr>\n</table>\n"
-        - id: ac497825-92b6-4d0a-bad1-cbea22091016
+        - id: 1eb4c349-3711-43e0-9d40-e1f1f739552f
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Más información</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3940,7 +3940,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: c4aa6c28-597e-4922-9c24-f048b90c291f
+      id: 791911dd-04d4-4b42-8491-df48f470dc85
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -3961,7 +3961,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 3df3fb6f-417a-4d35-bdc2-4a653aa0f985
+      - id: 23f3e648-cc74-4386-ac09-0802ac40a6e5
         isEmpty: false
         stylable: false
         title: Column
@@ -3974,7 +3974,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: ea930782-d0fa-462a-89b8-155e5c67b1de
+        - id: 3726daa2-cd89-45e8-894b-6973af1caadc
           text: '<p><strong><span style="color: rgb(0, 0, 0);">MICHELIN Truckfly Nieuws</span></strong></p>'
           title: Button
           type: text-button
@@ -4004,7 +4004,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">MICHELIN Truckfly Nieuws</span></strong></p>'
             title: ''
-        - id: 4c8f1e38-e38f-42c5-949a-9a5d2431c1aa
+        - id: 1cb8d41c-f06f-4cde-ab74-d54e051fd593
           moduleName: text-title
           title: Title
           type: text
@@ -4019,7 +4019,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Chauffeurs </strong><strong><span style="background-color: rgb(255, 255, 26);">liken de bijdragen van de community</span></strong></span></h2>'
-        - id: ad9392b7-f912-415f-a421-308ca599ca8c
+        - id: 0eaed9b9-0e1e-4178-8940-fb99d86f24c3
           title: Text
           type: text
           layout:
@@ -4035,7 +4035,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Foto’s, reacties, aanbevelingen: chauffeurs kunnen nu de bijdragen van anderen liken, rechtstreeks vanuit de activiteitenfeed.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Een manier om dank je wel te zeggen en de meest betrouwbare info naar boven te halen.</span></p>'
-        - id: 8a3a25f9-93d0-40e2-b90a-ef5ebc51d716
+        - id: 9a067bb2-2fa9-4008-a71e-92450eaf7559
           title: Image
           type: image
           layout:
@@ -4053,7 +4053,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad72960b782e1538cd07b27.png
-        - id: 20959bb4-0f05-4149-8b3d-8eed05f81026
+        - id: cd04977d-db35-448c-9165-cd9cb8b302b7
           title: HTML
           type: raw-html
           layout:
@@ -4063,7 +4063,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">Wat het u oplevert</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Transportbedrijven en wagenparkbeheerders</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">De meest gewaardeerde info valt sneller op: uw chauffeurs zien in één oogopslag welke parkings en stops hun collega’s betrouwbaar vinden.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Locaties</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Elke foto of positieve beoordeling van de locatie kan door de community worden geliket. De beste bijdragen worden beter zichtbaar voor andere chauffeurs.</p>\n  </td></tr>\n</table>\n"
-        - id: 33e986e7-91cc-4fcf-aba2-1eea138a9a2b
+        - id: 1210317b-704b-4e56-883c-adfdcba971ff
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Meer informatie</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -4095,7 +4095,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Meer informatie</span></strong></p>'
-        - id: a3a21511-5e29-43f2-8e65-9f255faea9b5
+        - id: 6dc98e50-17a3-4cde-9939-c7cada34568e
           moduleName: text-title
           title: Title
           type: text
@@ -4110,7 +4110,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Profielfoto’s </strong><strong><span style="background-color: rgb(255, 255, 26);">op volledig scherm</span></strong></span></h2>'
-        - id: d9e77163-4b3a-432c-8912-0634bdfb356b
+        - id: c4bc6559-891c-43f1-bf48-ecb20f2f3948
           title: Text
           type: text
           layout:
@@ -4126,7 +4126,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Eén tik op de foto van een chauffeur volstaat om hem groot te zien. Handig om collega’s op de parkings te herkennen.</span></p>'
-        - id: 70c86c95-7fed-481c-922e-97aeb801745d
+        - id: 9cd73d77-8736-4fdb-a5e6-460ee979c72c
           title: Image
           type: image
           layout:
@@ -4144,7 +4144,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad731c64646ada7d9880205.png
-        - id: 6fa144e4-1200-4015-8ffe-0ae4ba93356d
+        - id: c2f2a08f-ccd7-4c41-b87b-4134f5485b78
           title: HTML
           type: raw-html
           layout:
@@ -4154,7 +4154,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">Wat het u oplevert</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Transportbedrijven en wagenparkbeheerders</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Chauffeurs die elkaar herkennen op de parkings en makkelijker contact maken: een menselijkere community die het isolement van de weg doorbreekt.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Partners en merken</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Een community die elkaar kent en elke dag terugkomt in de app: een betrokken publiek dat openstaat voor nuttige content.</p>\n  </td></tr>\n</table>\n"
-        - id: 1fcc3560-130c-4a98-bbe9-cfb6124791de
+        - id: e2d523f6-96db-4ba7-81a4-d3c4e0a3eacf
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Meer informatie</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -4186,7 +4186,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Meer informatie</span></strong></p>'
-        - id: cd4fe9ba-5377-4fb7-92b7-d8b00e1779ff
+        - id: 54bd0288-94fc-4b3b-bdbf-4865b1f0c405
           moduleName: text-title
           title: Title
           type: text
@@ -4201,7 +4201,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Elke chauffeur </strong><strong><span style="background-color: rgb(255, 255, 26);">kiest de taal van zijn app</span></strong></span></h2>'
-        - id: baf43445-44af-4dc1-a121-726dcd486dd9
+        - id: 1f08e2c5-e960-48f3-b4b2-c2d5eab527c0
           title: Text
           type: text
           layout:
@@ -4217,7 +4217,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">De taal van MICHELIN Truckfly wijzigt u direct in de app (Instellingen &gt; Taal van de app), zonder de instellingen van de telefoon aan te passen.</span></p>'
-        - id: a0a22a96-9a33-472c-93ad-5ad89a7d4f2e
+        - id: a0ebdbd7-524d-4f32-8dff-ee537125709b
           title: Image
           type: image
           layout:
@@ -4235,7 +4235,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad72502164c970a1d77e850.png
-        - id: 26c0514a-15a7-424e-9eb7-964360c8cdeb
+        - id: 3d9d9d94-924e-487d-bfa6-9d4fb74dd6c5
           title: HTML
           type: raw-html
           layout:
@@ -4245,7 +4245,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">Wat het u oplevert</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Transportbedrijven en wagenparkbeheerders</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Uw chauffeurs van alle nationaliteiten gebruiken de app in hun eigen taal, zelfs op een gedeelde werktelefoon. Minder fouten, meer zelfstandigheid, geen telefooninstellingen te wijzigen.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Locaties</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Truckers uit heel Europa gebruiken de app in hun eigen taal: zij vinden de informatie over de locatie makkelijker.</p>\n  </td></tr>\n</table>\n"
-        - id: 4ccc4573-a9e0-492b-b790-b788884e6967
+        - id: 041a79e8-3bbd-47f5-a9ec-d8e759ea594f
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Meer informatie</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -4277,7 +4277,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/en/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Meer informatie</span></strong></p>'
-        - id: 890c1b6b-6461-45ca-a428-119086c86312
+        - id: 50171a4f-0ec4-4ecf-8867-aca7db8b3473
           moduleName: text-title
           title: Title
           type: text
@@ -4292,7 +4292,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Nieuw in GPS Premium: </strong><strong><span style="background-color: rgb(255, 255, 26);">de tolwaarschuwing</span></strong></span></h2>'
-        - id: a3789cdb-d987-4043-b76a-e9c0b5211827
+        - id: 33f95ce9-a5bd-486f-a7e6-d9b0c3292e36
           title: Text
           type: text
           layout:
@@ -4308,7 +4308,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Tijdens het navigeren waarschuwt een melding de chauffeur bij het naderen van een tolpoort, die ook op de kaart verschijnt. Zo heeft hij tijd om de juiste rijstrook te kiezen en zijn tolbadge of kaart klaar te houden.</span></p>'
-        - id: f5a98ace-8a19-4fc8-841a-a7156bfc1bc3
+        - id: 9708bbe4-acc0-4ec3-8d03-a5248ef409e0
           title: Image
           type: image
           layout:
@@ -4326,7 +4326,7 @@ body:
           content:
             href: https://lp.truckfly.com/en/gps-premium
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad72917164c970a1d77ea83.png
-        - id: 4c3b19e4-b0a9-4aeb-948a-50e00a25c800
+        - id: ee714b8f-326a-44ac-9cc5-43f45c3e18df
           title: HTML
           type: raw-html
           layout:
@@ -4336,7 +4336,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">Wat het u oplevert</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Transportbedrijven en wagenparkbeheerders</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Minder remmen op het laatste moment, de tolbadge op tijd klaar, op tijd de juiste rijstrook: meer veiligheid en een vlottere rit voor uw chauffeurs met de MICHELIN Truckfly GPS.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Partners en merken</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Een gps voor vrachtwagens die elke maand beter wordt, ten dienste van de veiligheid van alle weggebruikers.</p>\n  </td></tr>\n</table>\n"
-        - id: 2bc95588-85f3-481b-8680-ab7429ac4f35
+        - id: ee69c005-26c1-43ee-9d0d-7f44b115fdb8
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Meer informatie</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -4372,7 +4372,7 @@ body:
       condition: ( "IT" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 2d23bf60-c821-42b0-a235-54edd45d873e
+      id: 736475c3-46cb-4996-83cb-39f2c9959dae
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -4393,7 +4393,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: eefe5429-709f-4bba-9f21-26ac64935fa7
+      - id: c0ca1cc8-0147-4aa7-84f3-487147ed6b3a
         isEmpty: false
         stylable: false
         title: Column
@@ -4406,7 +4406,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 909b569b-47e7-4da7-82cf-f9660fd1d157
+        - id: e1492d94-de92-458d-94e2-829cbce1553e
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Notizie MICHELIN Truckfly</span></strong></p>'
           title: Button
           type: text-button
@@ -4436,7 +4436,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Notizie MICHELIN Truckfly</span></strong></p>'
             title: ''
-        - id: 1ad124aa-2002-4274-b5dc-925a8a4f226c
+        - id: 83924e87-e19c-4b24-9577-cee9b6ee6ec4
           moduleName: text-title
           title: Title
           type: text
@@ -4451,7 +4451,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Gli autisti </strong><strong><span style="background-color: rgb(255, 255, 26);">mettono like ai contributi della community</span></strong></span></h2>'
-        - id: fe09353d-0b42-4197-82ed-220204429ca9
+        - id: f0985a10-a734-4b55-af31-497912181eba
           title: Text
           type: text
           layout:
@@ -4467,7 +4467,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Foto, commenti, consigli: ora gli autisti possono mettere like ai contributi degli altri, direttamente dal feed delle attività.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Un modo per dire grazie e far emergere le informazioni più affidabili.</span></p>'
-        - id: 6234d595-47fb-4cf4-8e01-e874ca56d83f
+        - id: 7835f417-6b82-40f8-93d6-8157ce995dfe
           title: Image
           type: image
           layout:
@@ -4485,7 +4485,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/it/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad72960b782e1538cd07b27.png
-        - id: 968f3748-5a40-4cb4-b35f-a38ebf39ca0f
+        - id: 6fee7e18-035a-47ad-9632-9c9b69648c8c
           title: HTML
           type: raw-html
           layout:
@@ -4495,7 +4495,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">Cosa Le offre</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Aziende di trasporto e gestori di flotte</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Le informazioni più apprezzate emergono prima: i Suoi autisti individuano a colpo d’occhio i parcheggi e le soste che i colleghi ritengono affidabili.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Strutture</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Ogni foto o recensione positiva sulla struttura può ricevere like dalla community. I contributi migliori guadagnano visibilità presso gli altri autisti.</p>\n  </td></tr>\n</table>\n"
-        - id: ee379416-2d89-45a2-a31e-6819a654051f
+        - id: 7c0aed30-78b7-45ad-b53f-601bf4cb347d
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri di più</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -4527,7 +4527,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/it/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri di più</span></strong></p>'
-        - id: b3eea06f-e6ac-4639-9185-3da6945ceb92
+        - id: 9fb50923-759a-4760-acc0-d3c93b76452f
           moduleName: text-title
           title: Title
           type: text
@@ -4542,7 +4542,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Le foto profilo </strong><strong><span style="background-color: rgb(255, 255, 26);">si aprono a schermo intero</span></strong></span></h2>'
-        - id: 54ea4bb7-c322-4b9e-92ca-34a056d10528
+        - id: 6dd861be-e0e6-4134-873f-81dd2a360f86
           title: Text
           type: text
           layout:
@@ -4558,7 +4558,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Basta un tocco sulla foto di un autista per vederla in grande. Comodo per riconoscere un collega incontrato spesso nelle aree di sosta.</span></p>'
-        - id: 5d813dd6-da4c-4a42-b3d3-8a7156eacad8
+        - id: 4168b18b-3639-4a77-b4f3-66eaf9d19222
           title: Image
           type: image
           layout:
@@ -4576,7 +4576,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/it/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad731c64646ada7d9880205.png
-        - id: 6553d85c-f72e-42c8-9bb1-cd4b5a7ffc0f
+        - id: 1d9ca2dd-3237-4aa5-8a5b-c2d12cb42edf
           title: HTML
           type: raw-html
           layout:
@@ -4586,7 +4586,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">Cosa Le offre</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Aziende di trasporto e gestori di flotte</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Autisti che si riconoscono nelle aree di sosta e comunicano più facilmente: una community più umana, che rompe l’isolamento della strada.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Partner e marchi</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Una community che si conosce e torna nell’app ogni giorno: un pubblico coinvolto, attento ai contenuti che gli sono utili.</p>\n  </td></tr>\n</table>\n"
-        - id: 276a06ad-cb5c-4bc5-8e1a-cbcd26fd7130
+        - id: e25c6ca9-e454-4985-87ea-2d738d66f4d4
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri di più</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -4618,7 +4618,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/it/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri di più</span></strong></p>'
-        - id: 41e52c93-7e11-4813-8a02-ec3e3c80107f
+        - id: 1a264381-1558-46b2-8f2c-53e4dceb082c
           moduleName: text-title
           title: Title
           type: text
@@ -4633,7 +4633,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Ogni autista </strong><strong><span style="background-color: rgb(255, 255, 26);">sceglie la lingua della sua app</span></strong></span></h2>'
-        - id: e1dc6896-f315-4329-8b0f-0dd97486f86f
+        - id: 875fd6e4-88f3-4f17-85bd-9a1b52787e02
           title: Text
           type: text
           layout:
@@ -4649,7 +4649,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">La lingua di MICHELIN Truckfly si cambia direttamente nell’app (Impostazioni &gt; Lingua dell’app), senza toccare le impostazioni del telefono.</span></p>'
-        - id: 548ec078-3a25-42e8-882d-d0bf2cd7cf8c
+        - id: c4e9fec9-756b-437a-8aee-abd52158980b
           title: Image
           type: image
           layout:
@@ -4667,7 +4667,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/it/
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad72502164c970a1d77e850.png
-        - id: 8e4fb749-4af1-4c77-9dfa-41f76de87ab3
+        - id: 73928aa5-644f-4dfd-a996-1ebf713fd923
           title: HTML
           type: raw-html
           layout:
@@ -4677,7 +4677,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">Cosa Le offre</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Aziende di trasporto e gestori di flotte</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">I Suoi autisti di ogni nazionalità usano l’app nella loro lingua, anche su un telefono di lavoro condiviso. Meno errori, più autonomia, nessuna impostazione del telefono da modificare.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Strutture</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">I camionisti di tutta Europa usano l’app nella loro lingua: trovano più facilmente le informazioni sulla struttura.</p>\n  </td></tr>\n</table>\n"
-        - id: 41526f33-0518-4d5b-8466-b0138777114f
+        - id: 127601ea-72ae-406d-bd3b-b3a27718bfd6
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri di più</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -4709,7 +4709,7 @@ body:
           content:
             href: https://www.truckfly.com/blog/it/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri di più</span></strong></p>'
-        - id: aa6ae0db-bf59-4bed-bcb5-c04fcc219787
+        - id: 8a3f09ca-466a-4fae-a1b1-996feefcabb0
           moduleName: text-title
           title: Title
           type: text
@@ -4724,7 +4724,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);"><strong>Novità GPS Premium: </strong><strong><span style="background-color: rgb(255, 255, 26);">l’avviso casello</span></strong></span></h2>'
-        - id: 778e8642-746f-496b-9082-ced23951e97f
+        - id: cc16fe71-6004-4a22-93d7-f44cec6e5225
           title: Text
           type: text
           layout:
@@ -4740,7 +4740,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(0, 0, 0);">Durante la navigazione, un avviso segnala all’autista l’avvicinarsi di un casello, visibile anche sulla mappa. Ha il tempo di posizionarsi sulla corsia giusta e preparare il telepedaggio o la carta.</span></p>'
-        - id: 9790ef24-9394-46e9-b73a-e2061c6a5334
+        - id: 6bdf41d5-bfb3-448b-bf3a-098395d35855
           title: Image
           type: image
           layout:
@@ -4758,7 +4758,7 @@ body:
           content:
             href: https://lp.truckfly.com/en/gps-premium
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad72917164c970a1d77ea83.png
-        - id: a7ec4c2d-fe56-4c78-9178-9ca50e1ce341
+        - id: b0cdda94-35e8-4296-ab33-cd1e1b8cea36
           title: HTML
           type: raw-html
           layout:
@@ -4768,7 +4768,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<h4 class=\"texte-fonce\" style=\"margin:4px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;font-weight:bold;color:#061866;\">Cosa Le offre</h4>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Aziende di trasporto e gestori di flotte</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Meno frenate dell’ultimo momento, telepedaggio pronto in anticipo, corsia giusta scelta per tempo: più sicurezza e fluidità per i Suoi autisti dotati del GPS MICHELIN Truckfly.</p>\n  </td></tr>\n</table>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 10px 0;\">\n  <tr><td class=\"bref\" style=\"background-color:#F5F3F1;border-radius:12px;padding:16px 20px;font-family:Arial,Helvetica,sans-serif;\">\n    <p class=\"texte-fonce\" style=\"margin:0 0 4px 0;font-size:16px;line-height:23px;font-weight:bold;color:#061866;\">Partner e marchi</p>\n    <p class=\"texte-fonce\" style=\"margin:0;font-size:16px;line-height:24px;color:#000000;\">Un GPS pensato per i camion che si arricchisce ogni mese, al servizio della sicurezza di tutti gli utenti della strada.</p>\n  </td></tr>\n</table>\n"
-        - id: 67167b42-b40a-461c-8347-b4a3fd95e1b2
+        - id: de063343-2341-4463-bdf5-1e6b7158da25
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri di più</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -5010,7 +5010,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: 2264ff62-6c3d-4560-b29c-fd7304c365ad
+      id: c11466dd-d228-4df5-b610-bdeb4e4bd921
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -5031,7 +5031,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: c27d84bd-5e32-4db5-b077-1cc362d11ffc
+      - id: 99dba0dd-a994-486a-b8c1-7ad989a5448d
         isEmpty: false
         stylable: false
         title: Column
@@ -5044,7 +5044,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 7eb2955c-73d4-4666-8aaf-e770a54880b1
+        - id: 94a08743-f2fe-46eb-9157-0f48f39f8563
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Market / Legal Information</span></strong></p>'
           title: Button
           type: text-button
@@ -5074,7 +5074,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Market / Legal Information</span></strong></p>'
             title: ''
-        - id: 497fcdd8-4dec-41bf-904d-d78117be2d88
+        - id: 96e520df-da30-4754-b21d-60cae669eeed
           moduleName: text-title
           title: Title
           type: text
@@ -5089,7 +5089,7 @@ body:
               valign: top
               width: 100%
           content: '<p><strong><span style="color: rgb(255, 255, 255); font-size: 32px;">RoadPol Truck &amp; Bus checks across Europe from 16 to 22 November</span></strong></p>'
-        - id: 535fecd7-f0af-40ce-a3d6-90d65c1b03c7
+        - id: 01e28f9d-3de7-4881-88a4-8a9c8f9c3f0d
           title: Text
           type: text
           layout:
@@ -5104,7 +5104,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(249, 250, 252);">European traffic police forces in the ROADPOL network are running their last operation of the year on trucks and coaches. Focus: tachograph, driving and rest times.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252);">Meanwhile, the revision of the weights and dimensions directive is still under negotiation: manufacturers are asking that electric and hydrogen trucks do not lose payload compared with diesel.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252); font-size: 11px;">Sources: Transportonline · HGV Ireland</span></p>'
-        - id: b0d6adcc-720e-4e03-a233-5ddb733e022e
+        - id: 6b23af0e-1c12-4618-bdfa-728a34b014da
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Learn more</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -5136,7 +5136,7 @@ body:
           content:
             href: https://transportonline.com/news/informazione/roadpol-truck-bus-2026-campagna-novembre/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Learn more</span></strong></p>'
-        - id: ce9ad1cd-9770-4fd6-ac61-446133af7efb
+        - id: f0239711-a6e2-411c-aec9-eba88afeffbc
           title: Divider
           type: divider
           layout:
@@ -5150,7 +5150,7 @@ body:
               padding-bottom: 30px
               padding-top: 30px
               width: 100%
-        - id: 21d0e1e4-eb2c-4fde-a43e-9bf27914d827
+        - id: 3fb20585-9f3c-43c1-8027-e2247d1b5179
           moduleName: text-title
           title: Title
           type: text
@@ -5165,7 +5165,7 @@ body:
               valign: top
               width: 100%
           content: '<p><strong><span style="color: rgb(255, 255, 255); font-size: 32px;">UK: 30,000 fewer HGV drivers in one year</span></strong></p>'
-        - id: 99b8bffe-a47d-46b4-94f6-99e59b56eb2e
+        - id: 6b1be592-412b-4eef-bb5b-b8097c2a7af7
           title: Text
           type: text
           layout:
@@ -5180,7 +5180,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(249, 250, 252);">According to Logistics UK, the UK now has 283,000 HGV drivers, 30,000 fewer than a year earlier. Only 4% are under 25.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252);">Recruitment is once again a key challenge for hauliers.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252); font-size: 11px;">Source: trans.info</span></p>'
-        - id: 5f311eeb-59a9-4eec-9f22-0e8459769fc0
+        - id: a1635b1f-12df-482a-995f-cd71044186e8
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Learn more</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -5216,7 +5216,7 @@ body:
       condition: ( "ES" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 086d555e-7bb5-4025-a705-381886ad3ad0
+      id: 6ed48118-3f41-4f71-8f41-a5eeeed3c442
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -5237,7 +5237,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: d21ac4bd-7e80-4ba6-b7a9-cb130d8bd4cc
+      - id: 3917d537-2031-475f-b34c-cb1c92edffc3
         isEmpty: false
         stylable: false
         title: Column
@@ -5250,7 +5250,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 218b97c7-3dc6-41f9-9ed4-b607f5956fcb
+        - id: 0d2c647e-9140-4949-97ca-efd95896fe06
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Info Mercado/Legal</span></strong></p>'
           title: Button
           type: text-button
@@ -5280,7 +5280,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Info Mercado/Legal</span></strong></p>'
             title: ''
-        - id: 0d2aaecc-b40a-4366-ad23-7c0f5bcd6037
+        - id: 2b437c96-5e7b-4eb3-9417-b1d14f967ec7
           moduleName: text-title
           title: Title
           type: text
@@ -5295,7 +5295,7 @@ body:
               valign: top
               width: 100%
           content: '<p><strong><span style="color: rgb(255, 255, 255); font-size: 32px;">Controles RoadPol Truck &amp; Bus en Europa del 16 al 22 de noviembre</span></strong></p>'
-        - id: d4c5474b-0cf8-4d32-89d9-0a45dd64929a
+        - id: 68c5b87c-098c-41b0-a630-de4fbd7b1c06
           title: Text
           type: text
           layout:
@@ -5310,7 +5310,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(249, 250, 252);">Las policías de tráfico europeas de la red ROADPOL llevan a cabo su última operación del año sobre camiones y autocares. En el punto de mira: tacógrafo, tiempos de conducción y descanso.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252);">Mientras tanto, la revisión de la directiva de pesos y dimensiones sigue en negociación: los fabricantes piden que los camiones eléctricos y de hidrógeno no pierdan carga útil frente al diésel.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252); font-size: 11px;">Fuentes: Transportonline · HGV Ireland</span></p>'
-        - id: f83ca244-8435-40d5-9e2d-e5b8140545ed
+        - id: ad6c1ed6-7673-47df-8b01-fa1c11caaf74
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Más información</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -5346,7 +5346,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: f7f8bb89-8bc7-4ea7-befd-4a7793c47e57
+      id: 7b7f5731-60b4-4aa3-b22b-aefafe668032
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -5367,7 +5367,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 370b04d5-0c04-4460-a53f-7c5b8426f086
+      - id: 5d3a8e06-361a-4ac0-95d1-c7e6cef8d64c
         isEmpty: false
         stylable: false
         title: Column
@@ -5380,7 +5380,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: bb7fd349-1418-49de-a05e-8724616018a7
+        - id: 40f7a926-4771-433e-9ed4-8617d93944c2
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Info Markt/Recht</span></strong></p>'
           title: Button
           type: text-button
@@ -5410,7 +5410,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Info Markt/Recht</span></strong></p>'
             title: ''
-        - id: ecbcc1c5-fd7f-4a62-860b-da1323b030a6
+        - id: 8c43a553-307b-444d-b3a7-21ffcb8c0ddd
           moduleName: text-title
           title: Title
           type: text
@@ -5425,7 +5425,7 @@ body:
               valign: top
               width: 100%
           content: '<p><strong><span style="color: rgb(255, 255, 255); font-size: 32px;">RoadPol Truck &amp; Bus controles in Europa van 16 tot en met 22 november</span></strong></p>'
-        - id: 5fed6ea6-145e-4b76-8243-71bef8745123
+        - id: c06532eb-6efe-4342-a44d-15d3b93d8334
           title: Text
           type: text
           layout:
@@ -5440,7 +5440,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(249, 250, 252);">De Europese verkeerspolitie van het ROADPOL netwerk houdt haar laatste actie van het jaar gericht op vrachtwagens en touringcars. In het vizier: tachograaf, rij en rusttijden.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252);">Ondertussen wordt nog onderhandeld over de herziening van de richtlijn maten en gewichten: fabrikanten vragen dat elektrische trucks en waterstoftrucks geen laadvermogen verliezen ten opzichte van diesel.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252); font-size: 11px;">Bronnen: Transportonline · HGV Ireland</span></p>'
-        - id: 116b6302-ac82-4ede-8dd2-40c969bdb47e
+        - id: d47eebe0-28b2-4dd9-8a2b-ecc4abdcf3ec
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Meer informatie</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -5476,7 +5476,7 @@ body:
       condition: ( "IT" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: a59eba57-f77a-4ed5-bd6c-4ac1ac697594
+      id: 9a735686-2db7-431a-9c35-09e08ffe049b
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -5497,7 +5497,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: bdeb3a48-4c50-406c-9c42-965f7896f190
+      - id: 9958037a-1e01-4f4d-9ac8-3ce30a347635
         isEmpty: false
         stylable: false
         title: Column
@@ -5510,7 +5510,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 72af8d46-768a-4088-8093-37cfef50edda
+        - id: 1dcfec17-6e7b-48d6-b789-951476003270
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Info Mercato/Legale</span></strong></p>'
           title: Button
           type: text-button
@@ -5540,7 +5540,7 @@ body:
             name: quoi-de-neuf2
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Info Mercato/Legale</span></strong></p>'
             title: ''
-        - id: 3a9cf906-d644-465f-ad68-394436a12ce2
+        - id: 1c7964a9-0deb-4aed-91ae-e95dc2b05aaa
           moduleName: text-title
           title: Title
           type: text
@@ -5555,7 +5555,7 @@ body:
               valign: top
               width: 100%
           content: '<p><strong><span style="color: rgb(255, 255, 255); font-size: 32px;">Controlli RoadPol Truck &amp; Bus in Europa dal 16 al 22 novembre</span></strong></p>'
-        - id: 161f00cc-9a4a-45ed-819e-d88ea79ba6a1
+        - id: e5e4cdda-2745-45b7-bd92-118059868e0e
           title: Text
           type: text
           layout:
@@ -5570,7 +5570,7 @@ body:
               valign: top
               width: 100%
           content: '<p><span style="color: rgb(249, 250, 252);">Le polizie stradali europee della rete ROADPOL svolgono l’ultima campagna dell’anno su camion e autobus. Sotto la lente: tachigrafo, tempi di guida e di riposo.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252);">Intanto la revisione della direttiva su pesi e dimensioni è ancora in fase di negoziato: i costruttori chiedono che i camion elettrici e a idrogeno non perdano carico utile rispetto al diesel.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252); font-size: 11px;">Fonti: Transportonline · HGV Ireland</span></p>'
-        - id: 7bd960ef-1fdc-4e48-9493-0b9138f2d670
+        - id: c4419f42-6906-47c7-9270-64d05a02f4f3
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri di più</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -5602,7 +5602,7 @@ body:
           content:
             href: https://transportonline.com/news/informazione/roadpol-truck-bus-2026-campagna-novembre/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri di più</span></strong></p>'
-        - id: e71f1aa0-34a3-4570-932f-5fa3d2fe7ac2
+        - id: 785f6ee1-f532-4834-895d-9144e37fe7e1
           title: Divider
           type: divider
           layout:
@@ -5616,7 +5616,7 @@ body:
               padding-bottom: 30px
               padding-top: 30px
               width: 100%
-        - id: 2311370c-bdee-4ab1-b669-96795702ba76
+        - id: 1e074021-3c7a-46ff-8f1f-d1f15aac609c
           moduleName: text-title
           title: Title
           type: text
@@ -5630,8 +5630,8 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><strong><span style="color: rgb(255, 255, 255); font-size: 32px;">DL 193/2026: sospensione dei canoni di leasing fino a marzo</span></strong></p>'
-        - id: b2eb0bbb-a742-4d62-9f47-0e3b9b7d616e
+          content: '<p><strong><span style="color: rgb(255, 255, 255); font-size: 32px;">Nuovo Codice della strada: autisti professionali fino a 70 anni</span></strong></p>'
+        - id: 9a151bb2-5594-4479-834d-69a8c8698b9e
           title: Text
           type: text
           layout:
@@ -5645,8 +5645,8 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><span style="color: rgb(249, 250, 252);">Dal 24 ottobre le imprese di autotrasporto iscritte all’Albo possono chiedere la sospensione dei canoni di leasing sui veicoli, per le rate dal 1° novembre 2026 al 31 marzo 2027. Il decreto deve essere convertito in legge entro il 22 dicembre.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252);">Il credito d’imposta sul gasolio concesso a fine ottobre va utilizzato entro il 31 dicembre 2026.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252); font-size: 11px;">Fonti: Transportonline · TrasportoEuropa</span></p>'
-        - id: b916d81f-429f-407c-818f-6e48d77f54ab
+          content: '<p><span style="color: rgb(249, 250, 252);">Lo schema del nuovo Codice della strada, approvato in via preliminare dal Consiglio dei ministri il 13 ottobre, è ora all’esame del Parlamento. Tra le novità per l’autotrasporto: guida professionale fino a 70 anni (oggi 68) con visita ogni 2 anni, e possibilità di guidare prima di ottenere la CQC limitata a 1 anno, una sola volta.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252);">Il testo può ancora cambiare: le commissioni della Camera devono dare il loro parere entro il 12 gennaio 2027 e l’entrata in vigore è prevista non prima del 2028.</span></p><p><br></p><p><span style="color: rgb(249, 250, 252); font-size: 11px;">Fonte: Uomini e Trasporti</span></p>'
+        - id: 16e850cd-c833-4ade-babb-590ff9eb92d9
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri di più</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -5676,7 +5676,7 @@ body:
               valign: top
               width: 39%
           content:
-            href: https://transportonline.com/news/informazione/autotrasporto-carburanti-dl-193-2026-novita/
+            href: https://www.uominietrasporti.it/professione/leggi-e-politica/nuovo-codice-della-strada-il-testo-arriva-alla-camera-cqc-senza-esame-per-un-anno-autisti-fino-a-70-anni-e-nuove-regole-per-i-trasporti-eccezionali/
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri di più</span></strong></p>'
     - align: top
       dist: '12'
