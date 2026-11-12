@@ -61,7 +61,7 @@ Régénérer : `node black-friday/rendre-campagne.mjs` (119 visuels + planches d
 - Registre : tutoiement dans toutes les langues (règle Truckfly B2C). Anglais britannique. Prix des stores : 37,99 € (FR, ES, IT, NL, BE, DE), £31.99 (UK), 166,99 zł (PL). Prix barré = le double (74,99 €, £63.98, 333,98 zł).
 - Les anciens interstitiels deviennent des messages in-app (même visuel, sans lien « Plus tard » : la fermeture est gérée par l'outil de messages in-app).
 
-### Réseaux sociaux (FR, EN, DE, IT, ES, NL, PL, RO) · `png/campagne/reseaux/<langue>/`
+### Réseaux sociaux (FR, EN, DE, IT, ES, NL, PL, PT, RO) · `png/campagne/reseaux/<langue>/`
 
 Planches : `png/campagne/planche-reseaux-<langue>.png`. Le téléphone est traduit dans chaque langue.
 
@@ -78,7 +78,7 @@ Planches : `png/campagne/planche-reseaux-<langue>.png`. Le téléphone est tradu
 
 Posts Meta (1080 × 1350) : 20/11 teasing, 27/11 jour J, 30/11 dernier jour.
 
-### App (FR, EN, DE, IT, ES, NL, PL, RO) · `png/campagne/app/<langue>/`
+### App (FR, EN, DE, IT, ES, NL, PL, PT, RO) · `png/campagne/app/<langue>/`
 
 | Visuel | Quand | Taille |
 |---|---|---|

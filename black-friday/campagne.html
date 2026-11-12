@@ -310,6 +310,18 @@ const L = {
     motCode: `Kod`, rappel: `Do 30.11 do północy`,
     rdvC: `27.11 w aplikacji`, j5: `Zostało 5 dni`, s5: `Szykuje się promocja na GPS.`, j3: `Zostały 3 dni`, s3: `27.11 rusza promocja na GPS.`, j1: `Został jeden dzień`, s1: `Jutro promocja na GPS. Włącz powiadomienia.`, fin3: `Zostały 3 dni`, fin1: `Został jeden dzień`, finH: `Zostało kilka godzin`, dDemain: `<small>koniec</small>jutro`, postJ: `GPS Premium za pół ceny, do 30.11.`, postD: `Ostatni dzień, by mieć GPS Premium za pół ceny.`, 
     legal: `Oferta ważna od 27.11 do 30.11.2026 na roczną subskrypcję GPS Premium.` },
+  pt: { nom: "Português",
+    prix: "", barre: "", an: "",
+    dTeasing: `<small>a</small>27/11`, dOffre: `<small>de</small>27/11<small>a</small>30/11`, dFin: `<small>até à</small>meia-noite`,
+    question: `Que tal<br>uma promoção<br>no GPS?`, questionCourte: `Que tal uma promoção no GPS?`,
+    rdv: `Encontramo-nos a 27 de novembro na app <b>Michelin Truckfly</b>.`,
+    notif: `Avisa-me a 27/11`, note: `Vais receber uma notificação na manhã de 27/11.`,
+    offre: `<b>GPS Premium</b> a metade do preço, durante um ano inteiro.`,
+    dernier: `Último dia`, profite: `Aproveita`,
+    plusTard: `Mais tarde`, dJ: `<small>já começou!</small>`, msgInteresse: `Promessa cumprida: aqui está a tua oferta.`, msgPlusTard: `Guardámo-la para ti.`, sousPlusTard: `O GPS Premium espera por ti a metade do preço, até 30/11.`, dJusqua: `<small>até</small>30/11`,
+    motCode: `Código`, rappel: `Até 30/11 à meia-noite`,
+    rdvC: `A 27/11 na app`, j5: `Faltam 5 dias`, s5: `Está a chegar uma promoção no GPS.`, j3: `Faltam 3 dias`, s3: `A 27/11 chega uma promoção no GPS.`, j1: `Falta um dia`, s1: `Amanhã, uma promoção no GPS. Ativa as notificações.`, fin3: `Faltam 3 dias`, fin1: `Falta um dia`, finH: `Faltam poucas horas`, dDemain: `<small>termina</small>amanhã`, postJ: `GPS Premium a metade do preço, até 30/11.`, postD: `Último dia para ter o GPS Premium a metade do preço.`,
+    legal: `Oferta válida de 27/11 a 30/11/2026 na subscrição anual GPS Premium.` },
   ro: { nom: "Română",
     prix: "", barre: "", an: "",
     dTeasing: `<small>pe</small>27.11`, dOffre: `27.11<small>–</small>30.11`, dFin: `<small>până la</small>miezul nopții`,
@@ -421,8 +433,8 @@ if (q.get("solo")) {
   const parLangue = pre => LANGS.map(lg => `${pre}-${lg}`);
   if (q.get("vue") === "app") {
     el.style.width = "3060px";
-    el.innerHTML = `<h1>Black Friday 2026 · App · 8 langues</h1>
-      <p>FR, EN (UK), DE, IT, ES, NL, PL, RO. Tutoiement dans toutes les langues (règle Truckfly B2C). Prix : 37,99 € (zone euro), £31.99 (UK), 166,99 zł (PL) ; prix barré = le double. Les messages in-app reprennent le visuel des anciens interstitiels.</p>` +
+    el.innerHTML = `<h1>Black Friday 2026 · App · 9 langues</h1>
+      <p>FR, EN (UK), DE, IT, ES, NL, PL, PT, RO. Tutoiement dans toutes les langues (règle Truckfly B2C). Prix : 37,99 € (zone euro), £31.99 (UK), 166,99 zł (PL) ; prix barré = le double. Les messages in-app reprennent le visuel des anciens interstitiels.</p>` +
       sec("1 · Message in-app teasing", "Du 20 au 26/11. Deux boutons : « Préviens-moi le 27/11 » (segment intéressés) et « Plus tard » (segment plus tard).", [parLangue("message-in-app-1-teasing")]) +
       sec("2a · Segment « Préviens-moi » · 27/11", "Pour ceux qui ont cliqué « Préviens-moi » pendant le teasing.", [parLangue("message-in-app-2a-interesses")]) +
       sec("2 · Message in-app offre (tous les autres)", "Du 27 au 29/11, pour ceux qui n'ont pas vu le teasing ou n'ont rien cliqué.", [parLangue("message-in-app-2-offre")]) +

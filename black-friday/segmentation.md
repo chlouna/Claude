@@ -29,7 +29,7 @@ Le code **BF50** apparaît sur tous les visuels de l'offre (du 27 au 30/11) :
 - textes des push A, B, C et D (voir plus bas).
 
 Pas de code sur le teasing (20 → 26/11) : l'offre n'y est pas encore dévoilée.
-À vérifier : le code doit être actif sur les stores dans les 8 pays, du 27/11 au 30/11 à minuit.
+À vérifier : le code doit être actif sur les stores dans les 9 pays, du 27/11 au 30/11 à minuit.
 
 ## 2. Le parcours
 
@@ -55,6 +55,7 @@ Pas d'emoji (règle Truckfly pour les messages GPS). Tutoiement dans toutes les 
 - **NL** · Beloofd is beloofd · GPS Premium voor de halve prijs. Jij hoort het als een van de eersten. Code BF50.
 - **PL** · Obietnica dotrzymana · GPS Premium -50%. Wiesz o tym przed innymi. Kod BF50.
 - **RO** · Promisiune ținută · GPS Premium -50%. Afli printre primii. Cod BF50.
+- **PT** · Promessa cumprida · GPS Premium a -50 %. És dos primeiros a saber. Código BF50.
 
 ### Push B · 27/11 · Plus tard
 - **FR** · On te l'a gardée de côté · Le GPS Premium à moitié prix, mais seulement jusqu'au 30/11. Code BF50.
@@ -65,6 +66,7 @@ Pas d'emoji (règle Truckfly pour les messages GPS). Tutoiement dans toutes les 
 - **NL** · We hebben hem voor je apart gehouden · GPS Premium voor de halve prijs, maar alleen t/m 30/11. Code BF50.
 - **PL** · Odłożyliśmy ją dla ciebie · GPS Premium za pół ceny, ale tylko do 30.11. Kod BF50.
 - **RO** · Am păstrat-o pentru tine · GPS Premium la jumătate de preț, doar până pe 30.11. Cod BF50.
+- **PT** · Guardámo-la para ti · GPS Premium a metade do preço, só até 30/11. Código BF50.
 
 ### Push C · 29/11 · Plus tard, pas encore acheté
 - **FR** · Dernière sortie avant la fin · Plus qu'un jour pour le GPS Premium à moitié prix. Code BF50.
@@ -75,6 +77,7 @@ Pas d'emoji (règle Truckfly pour les messages GPS). Tutoiement dans toutes les 
 - **NL** · Laatste afslag voor het einde · Nog één dag: GPS Premium voor de halve prijs. Code BF50.
 - **PL** · Ostatni zjazd przed końcem · Został jeden dzień: GPS Premium za pół ceny. Kod BF50.
 - **RO** · Ultima ieșire înainte de final · Mai e o zi pentru GPS Premium la jumătate de preț. Cod BF50.
+- **PT** · Última saída antes do fim · Falta um dia para o GPS Premium a metade do preço. Código BF50.
 
 ### Push D · 30/11 · Tous ceux qui ont cliqué, pas encore acheté
 - **FR** · La barrière se ferme à minuit · Dernières heures pour le GPS Premium à -50 %. Code BF50.
@@ -85,6 +88,7 @@ Pas d'emoji (règle Truckfly pour les messages GPS). Tutoiement dans toutes les 
 - **NL** · Om middernacht gaat de slagboom dicht · Laatste uren: GPS Premium voor de halve prijs. Code BF50.
 - **PL** · O północy zamykamy szlaban · Ostatnie godziny: GPS Premium -50%. Kod BF50.
 - **RO** · La miezul nopții se lasă bariera · Ultimele ore pentru GPS Premium la -50%. Cod BF50.
+- **PT** · À meia-noite fecha-se a barreira · Últimas horas para o GPS Premium a -50 %. Código BF50.
 
 ## 4. À mesurer
 

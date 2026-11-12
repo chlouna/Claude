@@ -20,7 +20,7 @@ async function charger(suffixe, largeur, echelle) {
 }
 
 // Planches
-for (const vue of ["app", ...["fr", "en", "de", "it", "es", "nl", "pl", "ro"].map(lg => `reseaux-${lg}`)]) {
+for (const vue of ["app", ...["fr", "en", "de", "it", "es", "nl", "pl", "pt", "ro"].map(lg => `reseaux-${lg}`)]) {
   const [v, lg] = vue.split("-");
   const page = await charger(`?vue=${v}${lg ? `&lg=${lg}` : ""}`, 3200, 1);
   // Capture limitée à la largeur réelle de la planche (pas d'espace vide à droite)
