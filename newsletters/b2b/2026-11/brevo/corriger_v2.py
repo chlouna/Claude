@@ -132,14 +132,14 @@ for i in ['153edaad-18db-4465-9854-98d2b3e0ef72', 'd35d0416-0181-4cf5-9c33-9473e
 # 9. Menu NL : utm
 rep(by_id('7f27cd8c-7b14-4efe-a385-6792638a88a4'), 'utm_source=truckfly_web&amp;utm_medium=header', 'utm_source=brevo&amp;utm_medium=transactional_emails')
 
-# 10. Charte : MICHELIN Truckfly, doubles espaces
+# 10. Charte : toujours « Michelin Truckfly » (Michelin en minuscules), doubles espaces
 def walk(o):
     if isinstance(o, dict):
         return {k: walk(v) for k, v in o.items()}
     if isinstance(o, list):
         return [walk(v) for v in o]
     if isinstance(o, str):
-        return o.replace('Michelin Truckfly', 'MICHELIN Truckfly').replace('Michelin</strong>', 'MICHELIN</strong>').replace("sur  l'établissement", "sur l'établissement")
+        return o.replace('MICHELIN Truckfly', 'Michelin Truckfly').replace('MICHELIN</strong>', 'Michelin</strong>').replace("sur  l'établissement", "sur l'établissement")
     return o
 y['body'] = walk(y['body'])
 
