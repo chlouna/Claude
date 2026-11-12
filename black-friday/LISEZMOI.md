@@ -61,7 +61,7 @@ Régénérer : `node black-friday/rendre-campagne.mjs` (119 visuels + planches d
 - Registre : tutoiement dans toutes les langues (règle Truckfly B2C). Anglais britannique. Prix des stores : 37,99 € (FR, ES, IT, NL, BE, DE), £31.99 (UK), 166,99 zł (PL). Prix barré = le double (74,99 €, £63.98, 333,98 zł).
 - Les anciens interstitiels deviennent des messages in-app (même visuel, sans lien « Plus tard » : la fermeture est gérée par l'outil de messages in-app).
 
-### Réseaux sociaux (FR, EN, DE, IT, ES, NL, PL) · `png/campagne/reseaux/<langue>/`
+### Réseaux sociaux (FR, EN, DE, IT, ES, NL, PL, RO) · `png/campagne/reseaux/<langue>/`
 
 Planches : `png/campagne/planche-reseaux-<langue>.png`. Le téléphone est traduit dans chaque langue.
 
@@ -78,7 +78,7 @@ Planches : `png/campagne/planche-reseaux-<langue>.png`. Le téléphone est tradu
 
 Posts Meta (1080 × 1350) : 20/11 teasing, 27/11 jour J, 30/11 dernier jour.
 
-### App (FR, EN, DE, IT, ES, NL, PL) · `png/campagne/app/<langue>/`
+### App (FR, EN, DE, IT, ES, NL, PL, RO) · `png/campagne/app/<langue>/`
 
 | Visuel | Quand | Taille |
 |---|---|---|
@@ -89,3 +89,7 @@ Posts Meta (1080 × 1350) : 20/11 teasing, 27/11 jour J, 30/11 dernier jour.
 | `banniere-funnel-990x402` | 27 → 30/11 | 990 × 402 (+ @2x) |
 
 Parcours segmenté et textes des push : voir `segmentation.md`. Bannière e-mail Brevo 2030 × 889 (même visuel que la bannière funnel) : `png/campagne/brevo/<langue>/`. Message in-app « Plus tard » retiré : ce segment n'est personnalisé que par les push. Bannières in-app 576 × 180 retirées. Les textes de chaque langue sont dans l'objet `L` en haut du script de `campagne.html`.
+
+## Mise à jour prix (12/11)
+
+Plus aucun prix sur les visuels (app, Brevo, réseaux) : les prix iOS et Android diffèrent (UK £34.99 / £31.99, PL 149,99 / 174,99 zł, RO 199,99 / 204,99 lei ; zone euro 37,99 €). On affiche seulement -50 % et le code BF50. Roumain (RO) ajouté partout.

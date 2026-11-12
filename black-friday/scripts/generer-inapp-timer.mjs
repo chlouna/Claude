@@ -12,9 +12,9 @@ const BF = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SORTIE = path.join(BF, "html-in-app");
 fs.mkdirSync(SORTIE, { recursive: true });
 
-// Fin de l'offre : minuit heure locale du pays (heure de Paris partout, sauf Londres pour l'anglais)
+// Fin de l'offre : minuit heure locale du pays (heure de Paris partout, sauf Londres pour l'anglais et Bucarest pour le roumain)
 const FIN = { fr: "2026-11-30T23:59:59+01:00", en: "2026-11-30T23:59:59+00:00", de: "2026-11-30T23:59:59+01:00",
-  it: "2026-11-30T23:59:59+01:00", es: "2026-11-30T23:59:59+01:00", nl: "2026-11-30T23:59:59+01:00", pl: "2026-11-30T23:59:59+01:00" };
+  it: "2026-11-30T23:59:59+01:00", es: "2026-11-30T23:59:59+01:00", nl: "2026-11-30T23:59:59+01:00", pl: "2026-11-30T23:59:59+01:00", ro: "2026-11-30T23:59:59+02:00" };
 // Lien du bouton : à remplacer par le lien profond vers l'abonnement GPS Premium (ou l'action de votre outil in-app)
 const LIEN = "LIEN_ABONNEMENT_GPS_PREMIUM";
 const TXT = {
@@ -25,6 +25,7 @@ const TXT = {
   es: { titre: "Último día: termina en", u: ["h", "min", "s"], fini: "La oferta ha terminado" },
   nl: { titre: "Laatste dag: eindigt over", u: ["uur", "min", "sec"], fini: "De actie is afgelopen" },
   pl: { titre: "Ostatni dzień: koniec za", u: ["godz.", "min", "sek."], fini: "Oferta się zakończyła" },
+  ro: { titre: "Ultima zi: se termină în", u: ["ore", "min", "sec"], fini: "Oferta s-a încheiat" },
 };
 
 const dataUri = (fichier, type) => `data:${type};base64,${fs.readFileSync(fichier).toString("base64")}`;

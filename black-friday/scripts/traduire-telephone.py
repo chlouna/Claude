@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 ICI = Path(__file__).resolve().parent.parent
 SOURCE = ICI / "assets" / "telephone-gps.png"
 POLICE = ICI.parent / "interstitiels" / "assets" / "fonts" / "Inter-Bold.otf"
-MOTS = {"en": "Then", "de": "Dann", "it": "Poi", "es": "Luego", "nl": "Daarna", "pl": "Potem"}
+MOTS = {"en": "Then", "de": "Dann", "it": "Poi", "es": "Luego", "nl": "Daarna", "pl": "Potem", "ro": "Apoi"}
 
 # Zone de l'encart « Puis ↑ » dans la capture (en pixels)
 TEXTE_X, LIGNE_BASE = 49, 254          # début du mot, ligne de base (bas des capitales)

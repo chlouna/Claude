@@ -5,14 +5,14 @@ Voici les visuels de la campagne **Black Friday GPS Premium** : **-50 % sur l'ab
 **🎨 Le parti pris**
 Fond noir, ancienne charte Michelin : « BLACK FRIDAY » dans un cartouche blanc, date en bandeau jaune, étiquette « -50 % ». Pendant le teasing, pas de prix : une question (« Ça te dirait une promo sur le GPS ? »), et le téléphone GPS sort de l'ombre au fil des jours. Il s'allume le 27.
 
-**📱 Planches réseaux (FR, EN, DE, IT, ES, NL, PL)**
+**📱 Planches réseaux (FR, EN, DE, IT, ES, NL, PL, RO)**
 • 8 stories : 20/11 question, puis 22, 24 et 26/11 en compte à rebours, 27/11 jour J, puis 28, 29 et 30/11 jusqu'à la fin de l'offre
 • 3 posts Meta : 20/11 teasing, 27/11 jour J, 30/11 dernier jour
 
-**📲 Planche app (FR, EN, DE, IT, ES, NL, PL)**
+**📲 Planche app (FR, EN, DE, IT, ES, NL, PL, RO)**
 • Messages in-app (ils remplacent les interstitiels) : teasing, offre, dernier jour
 • Bannière funnel d'achat 990 × 402, pendant l'offre uniquement (pour ne pas pousser les gens à attendre)
-• Prix : 37,99 € (zone euro), £31.99 (UK), 166,99 zł (PL)
+• Pas de prix sur les visuels (iOS et Android différents selon les pays) : seulement -50 % et le code BF50
 • Code promo **BF50** sur tous les visuels de l'offre (messages in-app, bannière funnel avec rappel « jusqu'au 30/11 à minuit », posts Meta du 27 et du 30/11)
 
 **🎯 La nouveauté : on segmente**

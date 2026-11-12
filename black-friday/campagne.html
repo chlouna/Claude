@@ -207,6 +207,12 @@ figcaption b { color: #111; }
 .post .tel { top: 16.4em; }
 .post .halo { top: 8em; }
 .post .code-haut { top: 10.2em; }
+
+/* ---------- Sans prix : l'étiquette -50 % seule, centrée et plus grande ---------- */
+.ligne-prix { justify-content: center; }
+.iam .tag, .iam .ligne-prix.long .tag { font-size: 5em; }
+.story .tag { font-size: 5.4em; }
+.post .tag { font-size: 5.4em; }
 </style>
 </head>
 <body>
@@ -304,6 +310,18 @@ const L = {
     motCode: `Kod`, rappel: `Do 30.11 do północy`,
     rdvC: `27.11 w aplikacji`, j5: `Zostało 5 dni`, s5: `Szykuje się promocja na GPS.`, j3: `Zostały 3 dni`, s3: `27.11 rusza promocja na GPS.`, j1: `Został jeden dzień`, s1: `Jutro promocja na GPS. Włącz powiadomienia.`, fin3: `Zostały 3 dni`, fin1: `Został jeden dzień`, finH: `Zostało kilka godzin`, dDemain: `<small>koniec</small>jutro`, postJ: `GPS Premium za pół ceny, do 30.11.`, postD: `Ostatni dzień, by mieć GPS Premium za pół ceny.`, 
     legal: `Oferta ważna od 27.11 do 30.11.2026 na roczną subskrypcję GPS Premium.` },
+  ro: { nom: "Română",
+    prix: "", barre: "", an: "",
+    dTeasing: `<small>pe</small>27.11`, dOffre: `27.11<small>–</small>30.11`, dFin: `<small>până la</small>miezul nopții`,
+    question: `Ce zici de<br>o reducere<br>la GPS?`, questionCourte: `Ce zici de o reducere la GPS?`,
+    rdv: `Ne vedem pe 27 noiembrie în aplicația <b>Michelin Truckfly</b>.`,
+    notif: `Anunță-mă pe 27.11`, note: `Vei primi o notificare pe 27.11 dimineața.`,
+    offre: `<b>GPS Premium</b> la jumătate de preț, un an întreg.`,
+    dernier: `Ultima zi`, profite: `Profită acum`,
+    plusTard: `Mai târziu`, dJ: `<small>a început!</small>`, msgInteresse: `Promisiune ținută: iată oferta ta.`, msgPlusTard: `Am păstrat-o pentru tine.`, sousPlusTard: `GPS Premium te așteaptă la jumătate de preț, până pe 30.11.`, dJusqua: `<small>până pe</small>30.11`,
+    motCode: `Cod`, rappel: `Până pe 30.11 la miezul nopții`,
+    rdvC: `Pe 27.11 în aplicație`, j5: `Mai sunt 5 zile`, s5: `Se pregătește o reducere la GPS.`, j3: `Mai sunt 3 zile`, s3: `Pe 27.11 vine o reducere la GPS.`, j1: `Mai e o zi`, s1: `Mâine, o reducere la GPS. Activează notificările.`, fin3: `Mai sunt 3 zile`, fin1: `Mai e o zi`, finH: `Mai sunt doar câteva ore`, dDemain: `<small>se termină</small>mâine`, postJ: `GPS Premium la jumătate de preț, până pe 30.11.`, postD: `Ultima zi pentru GPS Premium la jumătate de preț.`,
+    legal: `Ofertă valabilă între 27.11 și 30.11.2026 pentru abonamentul anual GPS Premium.` },
 };
 const LANGS = Object.keys(L);
 
@@ -315,7 +333,8 @@ const tag = `<div class="tag"><i></i>-50<small>%</small></div>`;
 const CODE = "BF50";
 const code = t => `<div class="code"><small>${t.motCode}</small>${CODE}</div>`;
 const ligneCode = t => `<div class="ligne-code">${code(t)}</div>`;
-const prix = t => `<div class="prix"><span class="n">${t.prix}<em>${t.an}</em></span><span class="barre">${t.barre}</span></div>`;
+// Pas de prix affiché : les prix iOS et Android diffèrent selon les pays. On garde seulement -50 % et le code BF50.
+const prix = t => "";
 const lignePrix = t => `<div class="ligne-prix ${t.long ? "long" : ""}">${tag}${prix(t)}</div>`;
 const tel = lum => (lum < 1 ? `<div class="halo"></div>` : "") + `<img class="tel ${lum < 1 ? "ombre" : ""}" src="${telLangue}" alt="" style="--lum:${lum}">`;
 const cta = (txt, contour) => `<span class="cta ${contour ? "contour" : ""}">${txt}</span>`;
@@ -402,14 +421,14 @@ if (q.get("solo")) {
   const parLangue = pre => LANGS.map(lg => `${pre}-${lg}`);
   if (q.get("vue") === "app") {
     el.style.width = "3060px";
-    el.innerHTML = `<h1>Black Friday 2026 · App · 7 langues</h1>
-      <p>FR, EN (UK), DE, IT, ES, NL, PL. Tutoiement dans toutes les langues (règle Truckfly B2C). Prix : 37,99 € (zone euro), £31.99 (UK), 166,99 zł (PL) ; prix barré = le double. Les messages in-app reprennent le visuel des anciens interstitiels.</p>` +
+    el.innerHTML = `<h1>Black Friday 2026 · App · 8 langues</h1>
+      <p>FR, EN (UK), DE, IT, ES, NL, PL, RO. Tutoiement dans toutes les langues (règle Truckfly B2C). Prix : 37,99 € (zone euro), £31.99 (UK), 166,99 zł (PL) ; prix barré = le double. Les messages in-app reprennent le visuel des anciens interstitiels.</p>` +
       sec("1 · Message in-app teasing", "Du 20 au 26/11. Deux boutons : « Préviens-moi le 27/11 » (segment intéressés) et « Plus tard » (segment plus tard).", [parLangue("message-in-app-1-teasing")]) +
       sec("2a · Segment « Préviens-moi » · 27/11", "Pour ceux qui ont cliqué « Préviens-moi » pendant le teasing.", [parLangue("message-in-app-2a-interesses")]) +
       sec("2 · Message in-app offre (tous les autres)", "Du 27 au 29/11, pour ceux qui n'ont pas vu le teasing ou n'ont rien cliqué.", [parLangue("message-in-app-2-offre")]) +
       sec("3 · Message in-app dernier jour", "Le 30/11, pour tous ceux qui n'ont pas encore acheté.", [parLangue("message-in-app-3-dernier-jour")]) +
-      sec("4 · Bannière funnel d'achat · 990 × 402", "Pendant l'offre, du 27 au 30/11.", [0, 3, 6].map(i => parLangue("banniere-funnel-990x402").slice(i, i + 3))) +
-      sec("5 · Bannière e-mail Brevo · 2030 × 889", "Pendant l'offre, du 27 au 30/11.", [0, 3, 6].map(i => parLangue("banniere-brevo-2030x889").slice(i, i + 3)));
+      sec("4 · Bannière funnel d'achat · 990 × 402", "Pendant l'offre, du 27 au 30/11.", [0, 3, 6, 9].map(i => parLangue("banniere-funnel-990x402").slice(i, i + 3)).filter(r => r.length)) +
+      sec("5 · Bannière e-mail Brevo · 2030 × 889", "Pendant l'offre, du 27 au 30/11.", [0, 3, 6, 9].map(i => parLangue("banniere-brevo-2030x889").slice(i, i + 3)).filter(r => r.length));
   } else {
     el.innerHTML = `<h1>Black Friday 2026 · Réseaux sociaux · ${LG.toUpperCase()}</h1>
       <p>GPS Premium à -50 % : 37,99 €/an au lieu de 74,99 €, du 27/11 au 30/11/2026. Teasing dès le 20/11 : la question, puis un compte à rebours où le téléphone sort de l'ombre. Le 27/11 l'offre s'allume, puis compte à rebours jusqu'au 30/11 à minuit.</p>` +
