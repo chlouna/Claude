@@ -93,3 +93,7 @@ Parcours segmenté et textes des push : voir `segmentation.md`. Bannière e-mail
 ## Mise à jour prix (12/11)
 
 Plus aucun prix sur les visuels (app, Brevo, réseaux) : les prix iOS et Android diffèrent (UK £34.99 / £31.99, PL 149,99 / 174,99 zł, RO 199,99 / 204,99 lei ; zone euro 37,99 €). On affiche seulement -50 % et le code BF50. Roumain (RO) ajouté partout.
+
+## Mise à jour prix (12/11, suite)
+
+Prix affiché en zone euro (FR, DE, IT, ES, NL, PT : 37,99 € au lieu de 74,99 €). Sans prix au Royaume-Uni, en Pologne et en Roumanie (prix iOS et Android différents) : seulement -50 % et BF50.
