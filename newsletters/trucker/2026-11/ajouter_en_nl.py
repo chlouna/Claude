@@ -243,27 +243,27 @@ IMG1 = "A_REMPLACER_URL_capture-premium-code-promo-corrigee.png"
 IMG2 = "A_REMPLACER_URL_capture-activer-offre.jpg"
 S2 = {
  "FR": ("2. Ton code promo activé en 30&nbsp;secondes",
-        "<strong>Demain, c’est le Black Friday</strong> et ton offre arrive par mail. Pour en profiter, il te suffit d’entrer ton code dans l’appli.",
+        ("<strong>Demain, c’est le Black Friday, reste connecté&nbsp;!</strong>", "Pour en profiter, il te suffit d’entrer ton code dans l’appli."),
         "Pour ouvrir l’écran Premium, tu as 2&nbsp;solutions&nbsp;:",
         ["Appuie sur l’icône GPS en bas de la carte&nbsp;;", "ou va dans ton profil, en haut à gauche de la carte, puis appuie sur «&nbsp;Truckfly Premium · aucun abonnement&nbsp;»."],
         "Ensuite&nbsp;:", ["Choisis «&nbsp;Utiliser un code promotionnel&nbsp;».", "Saisis ton code.", "Appuie sur «&nbsp;Activer&nbsp;»."], "J’ouvre l’appli"),
  "EN": ("2. Your promo code activated in 30 seconds",
-        "<strong>Black Friday starts tomorrow</strong> and your offer is coming by email. To enjoy it, just enter your code in the app.",
+        ("<strong>Black Friday starts tomorrow, stay tuned!</strong>", "To enjoy it, just enter your code in the app."),
         "To open the Premium screen, you have 2 options:",
         ["Tap the GPS icon at the bottom of the map;", "or go to your profile, top left of the map, then tap “Truckfly Premium · no subscription”."],
         "Then:", ["Choose “Use a promotional code”.", "Enter your code.", "Tap “Redeem”."], "Open the app"),
  "ES": ("2. Tu código promocional activado en 30 segundos",
-        "<strong>Mañana empieza el Black Friday</strong> y tu oferta llega por correo. Para aprovecharla, solo tienes que introducir tu código en la app.",
+        ("<strong>Mañana es Black Friday, ¡estate atento!</strong>", "Para aprovecharlo, solo tienes que introducir tu código en la app."),
         "Para abrir la pantalla Premium, tienes 2 opciones:",
         ["Pulsa el icono del GPS en la parte inferior del mapa;", "o ve a tu perfil, arriba a la izquierda del mapa, y pulsa «Truckfly Premium · sin suscripción»."],
         "Después:", ["Elige «Utilizar un código».", "Introduce tu código.", "Pulsa «Canjear»."], "Abro la app"),
  "IT": ("2. Il tuo codice promo attivato in 30 secondi",
-        "<strong>Domani inizia il Black Friday</strong> e la tua offerta arriva via email. Per approfittarne, basta inserire il codice nell’app.",
+        ("<strong>Domani è Black Friday, resta connesso!</strong>", "Per approfittarne, basta inserire il codice nell’app."),
         "Per aprire la schermata Premium, hai 2 possibilità:",
         ["Tocca l’icona del GPS in basso sulla mappa;", "oppure vai nel tuo profilo, in alto a sinistra della mappa, e tocca «Truckfly Premium · nessun abbonamento»."],
         "Poi:", ["Scegli «Utilizza un codice promozionale».", "Inserisci il codice.", "Tocca «Riscatta»."], "Apro l’app"),
  "NL": ("2. Je promotiecode geactiveerd in 30 seconden",
-        "<strong>Morgen begint Black Friday</strong> en je aanbieding komt per mail. Om ervan te profiteren, voer je gewoon je code in de app in.",
+        ("<strong>Morgen is het Black Friday, blijf op de hoogte!</strong>", "Om ervan te profiteren, voer je gewoon je code in de app in."),
         "Om het Premium-scherm te openen, heb je 2 mogelijkheden:",
         ["Tik op het gps-icoon onderaan de kaart;", "of ga naar je profiel, linksboven op de kaart, en tik op ‘Truckfly Premium · geen abonnement’."],
         "Daarna:", ["Kies ‘Gebruik een promotiecode’.", "Voer je code in.", "Tik op ‘Inwisselen’."], "Ik open de app"),
@@ -287,7 +287,7 @@ for r in src["body"]["content"][0]["content"]:
     K = "rgb(0, 0, 0)"
     ul = '<ul dir="ltr">' + "".join(f'<li style="color: {K};">{x}</li>' for x in opts) + "</ul>"
     ol = f'<ol style="color: {K};">' + "".join(f'<li style="color: {K};">{x}</li>' for x in steps) + "</ol>"
-    it[1]["content"] = '<p class="default"><br></p>' + P(a) + BR + P(f"<strong>{how}</strong>") + ul + P(f"<strong>{then}</strong>") + ol + BR
+    it[1]["content"] = '<p class="default"><br></p>' + P(a[0]) + BR + P(a[1]) + BR + P(f"<strong>{how}</strong>") + ul + P(f"<strong>{then}</strong>") + ol + BR
     it[2] = {"id": it[2]["id"], "title": "Image", "type": "image",
              "layout": {"320px": {"max-width": "320px", "width": "100%"}, "default": {"align": "center", "canvas-height": "558px", "padding-bottom": "15px", "padding-top": "15px", "type": "absoluteLink", "valign": "top", "width": "100%"}},
              "content": {"href": "https://truckflyapp.onelink.me/2ysq/r4vkfd60", "src": "https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png"}}
