@@ -300,23 +300,23 @@ import section1_fetes as s1
 INTRO = {
  "FR": ["Chaque jour, des milliers de conducteurs <strong>roulent, partagent et font vivre la communauté Michelin Truckfly.</strong>",
         "Décembre arrive, et avec lui les fêtes&nbsp;: jours fériés, routes chargées, livraisons de dernière minute… Autant de raisons de <strong>bien préparer tes trajets.</strong>",
-        "Ce mois-ci, découvre <strong>les jours où tu ne pourras pas rouler pendant les fêtes, comment activer ton code promo en 30&nbsp;secondes, et le top contributeur d’octobre… avec nos astuces pour prendre sa place&nbsp;!</strong>",
+        "Ce mois-ci, découvre <strong>les jours où tu ne pourras pas rouler pendant les fêtes, comment activer ton code promo en 30&nbsp;secondes, ce que le GPS poids lourds peut faire pour toi, et le top contributeur d’octobre&nbsp;!</strong>",
         "<strong>Et ne rate pas notre offre Black Friday&nbsp;: elle commence demain&nbsp;!</strong>"],
  "EN": ["Every day, thousands of drivers <strong>drive, share and bring the Michelin Truckfly community to life.</strong>",
         "December is coming, and with it the festive season: public holidays, busy roads, last minute deliveries… All good reasons to <strong>plan your trips well.</strong>",
-        "This month, find out <strong>the days you won’t be able to drive over the holidays, how to activate your promo code in 30 seconds, and October’s top contributor… with our tips to take their place!</strong>",
+        "This month, find out <strong>the days you won’t be able to drive over the holidays, how to activate your promo code in 30 seconds, what the truck GPS can do for you, and October’s top contributor!</strong>",
         "<strong>And don’t miss our Black Friday offer: it starts tomorrow!</strong>"],
  "ES": ["Cada día, miles de camioneros <strong>circulan, comparten y dan vida a la comunidad Michelin Truckfly.</strong>",
         "Llega diciembre y, con él, las fiestas: festivos, carreteras cargadas, entregas de última hora… Razones de sobra para <strong>preparar bien tus rutas.</strong>",
-        "Este mes descubre <strong>los días en los que no podrás circular durante las fiestas, cómo activar tu código promocional en 30 segundos y al mejor colaborador de octubre… ¡con nuestros consejos para quitarle el puesto!</strong>",
+        "Este mes descubre <strong>los días en los que no podrás circular durante las fiestas, cómo activar tu código promocional en 30 segundos, lo que el GPS para camiones puede hacer por ti ¡y al mejor colaborador de octubre!</strong>",
         "<strong>¡Y no te pierdas nuestra oferta Black Friday: empieza mañana!</strong>"],
  "IT": ["Ogni giorno, migliaia di autisti <strong>viaggiano, condividono e fanno vivere la community Michelin Truckfly.</strong>",
         "Arriva dicembre e con lui le feste: giorni festivi, strade trafficate, consegne dell’ultimo minuto… Tanti buoni motivi per <strong>preparare bene i tuoi viaggi.</strong>",
-        "Questo mese scopri <strong>i giorni in cui non potrai circolare durante le feste, come attivare il tuo codice promo in 30 secondi e il top contributore di ottobre… con i nostri consigli per prendere il suo posto!</strong>",
+        "Questo mese scopri <strong>i giorni in cui non potrai circolare durante le feste, come attivare il tuo codice promo in 30 secondi, cosa può fare per te il GPS per camion e il top contributore di ottobre!</strong>",
         "<strong>E non perderti la nostra offerta Black Friday: inizia domani!</strong>"],
  "NL": ["Elke dag zijn duizenden chauffeurs <strong>onderweg, delen ze info en houden ze de Michelin Truckfly community levend.</strong>",
         "December komt eraan, en daarmee de feestdagen: vrije dagen, drukke wegen, last minute leveringen… Genoeg redenen om <strong>je ritten goed voor te bereiden.</strong>",
-        "Deze maand ontdek je <strong>op welke dagen je tijdens de feestdagen niet mag rijden, hoe je je promotiecode in 30 seconden activeert en de topbijdrager van oktober… met onze tips om zijn plek in te nemen!</strong>",
+        "Deze maand ontdek je <strong>op welke dagen je tijdens de feestdagen niet mag rijden, hoe je je promotiecode in 30 seconden activeert, wat de vrachtwagen-GPS voor je kan doen en de topbijdrager van oktober!</strong>",
         "<strong>En mis onze Black Friday-actie niet: morgen gaat hij van start!</strong>"],
 }
 def lang_of(c):
@@ -342,6 +342,21 @@ src["subject"] = (
     '{% elif "IT" in contact.LANG %}Domani è Black Friday! E i divieti di Natale?'
     '{% elif "NL" in contact.LANG %}Morgen is het Black Friday! En je kerstritten?'
     '{% else %}Black Friday tomorrow! Ready for the Christmas bans?{% endif %}')
+
+# ---------- Section 3 : GPS poids lourds ----------
+import section3_gps as s3
+n3 = 0
+for r in src["body"]["content"][0]["content"]:
+    it = r["content"][0]["content"]
+    if not (isinstance(it[0].get("content"), str) and ">3. " in it[0]["content"]): continue
+    lg = lang_of(r["condition"]); d = s3.S3[lg.lower()]
+    it[0]["content"] = s3.title(d); it[1]["content"] = s3.para(d); it[2]["content"] = s3.cards(d)
+    set_btn(it[3], BTN(d["btn"]))
+    it[3]["content"]["href"] = f"https://lp.truckfly.com/{d['lp']}/gps-premium?utm_source=brevo&utm_medium=transactional_emails"
+    it[3]["layout"]["default"]["width"] = "45%"
+    (D / f"section3-{lg.lower()}.html").write_text(s3.title(d) + s3.para(d) + s3.cards(d) + "\n")
+    n3 += 1
+assert n3 == 5, n3
 
 # ---------- Marque, footer FR en « tu », footer NL ----------
 src = walk(src, lambda s: s.replace("MICHELIN", "Michelin"))

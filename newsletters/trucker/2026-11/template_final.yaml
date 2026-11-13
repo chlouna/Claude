@@ -410,7 +410,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><span style="color: rgb(0, 0, 0);">Chaque jour, des milliers de conducteurs <strong>roulent, partagent et font vivre la communauté Michelin Truckfly.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Décembre arrive, et avec lui les fêtes&nbsp;: jours fériés, routes chargées, livraisons de dernière minute… Autant de raisons de <strong>bien préparer tes trajets.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Ce mois-ci, découvre <strong>les jours où tu ne pourras pas rouler pendant les fêtes, comment activer ton code promo en 30&nbsp;secondes, et le top contributeur d’octobre… avec nos astuces pour prendre sa place&nbsp;!</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Et ne rate pas notre offre Black Friday&nbsp;: elle commence demain&nbsp;!</strong></span></p>'
+          content: '<p><span style="color: rgb(0, 0, 0);">Chaque jour, des milliers de conducteurs <strong>roulent, partagent et font vivre la communauté Michelin Truckfly.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Décembre arrive, et avec lui les fêtes&nbsp;: jours fériés, routes chargées, livraisons de dernière minute… Autant de raisons de <strong>bien préparer tes trajets.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Ce mois-ci, découvre <strong>les jours où tu ne pourras pas rouler pendant les fêtes, comment activer ton code promo en 30&nbsp;secondes, ce que le GPS poids lourds peut faire pour toi, et le top contributeur d’octobre&nbsp;!</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Et ne rate pas notre offre Black Friday&nbsp;: elle commence demain&nbsp;!</strong></span></p>'
     - align: top
       condition: ( "IT" in contact.LANG )
       dist: '12'
@@ -460,7 +460,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><span style="color: rgb(0, 0, 0);">Ogni giorno, migliaia di autisti <strong>viaggiano, condividono e fanno vivere la community Michelin Truckfly.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Arriva dicembre e con lui le feste: giorni festivi, strade trafficate, consegne dell’ultimo minuto… Tanti buoni motivi per <strong>preparare bene i tuoi viaggi.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Questo mese scopri <strong>i giorni in cui non potrai circolare durante le feste, come attivare il tuo codice promo in 30 secondi e il top contributore di ottobre… con i nostri consigli per prendere il suo posto!</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>E non perderti la nostra offerta Black Friday: inizia domani!</strong></span></p>'
+          content: '<p><span style="color: rgb(0, 0, 0);">Ogni giorno, migliaia di autisti <strong>viaggiano, condividono e fanno vivere la community Michelin Truckfly.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Arriva dicembre e con lui le feste: giorni festivi, strade trafficate, consegne dell’ultimo minuto… Tanti buoni motivi per <strong>preparare bene i tuoi viaggi.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Questo mese scopri <strong>i giorni in cui non potrai circolare durante le feste, come attivare il tuo codice promo in 30 secondi, cosa può fare per te il GPS per camion e il top contributore di ottobre!</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>E non perderti la nostra offerta Black Friday: inizia domani!</strong></span></p>'
     - align: top
       condition: ( "ES" in contact.LANG )
       dist: '12'
@@ -510,12 +510,12 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><span style="color: rgb(0, 0, 0);">Cada día, miles de camioneros <strong>circulan, comparten y dan vida a la comunidad Michelin Truckfly.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Llega diciembre y, con él, las fiestas: festivos, carreteras cargadas, entregas de última hora… Razones de sobra para <strong>preparar bien tus rutas.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Este mes descubre <strong>los días en los que no podrás circular durante las fiestas, cómo activar tu código promocional en 30 segundos y al mejor colaborador de octubre… ¡con nuestros consejos para quitarle el puesto!</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>¡Y no te pierdas nuestra oferta Black Friday: empieza mañana!</strong></span></p>'
+          content: '<p><span style="color: rgb(0, 0, 0);">Cada día, miles de camioneros <strong>circulan, comparten y dan vida a la comunidad Michelin Truckfly.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Llega diciembre y, con él, las fiestas: festivos, carreteras cargadas, entregas de última hora… Razones de sobra para <strong>preparar bien tus rutas.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Este mes descubre <strong>los días en los que no podrás circular durante las fiestas, cómo activar tu código promocional en 30 segundos, lo que el GPS para camiones puede hacer por ti ¡y al mejor colaborador de octubre!</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>¡Y no te pierdas nuestra oferta Black Friday: empieza mañana!</strong></span></p>'
     - align: top
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 20px
-      id: 5de56706-826f-4ab6-b1c1-9a14557e18ca
+      id: 9e1d289a-2f3c-447b-aadc-381742ad2d69
       moduleName: grid-row12
       thumbnail: /assets/img/editor/grid_12.svg
       title: Bannière EN
@@ -533,7 +533,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 4581a29b-71ec-4f18-a436-6b2867e78656
+      - id: 46b09d93-c750-4e75-81f4-d5d9c3956ea2
         isEmpty: false
         label: Drop content here
         title: column 1
@@ -545,7 +545,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 05e88a76-2904-48a2-895f-395c74297e81
+        - id: e1300601-6047-4f0c-8fb2-eeb47282387a
           thumbnail: /assets/img/editor/element_text.svg
           title: Texte
           type: text
@@ -560,12 +560,12 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><span style="color: rgb(0, 0, 0);">Every day, thousands of drivers <strong>drive, share and bring the Michelin Truckfly community to life.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">December is coming, and with it the festive season: public holidays, busy roads, last minute deliveries… All good reasons to <strong>plan your trips well.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">This month, find out <strong>the days you won’t be able to drive over the holidays, how to activate your promo code in 30 seconds, and October’s top contributor… with our tips to take their place!</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>And don’t miss our Black Friday offer: it starts tomorrow!</strong></span></p>'
+          content: '<p><span style="color: rgb(0, 0, 0);">Every day, thousands of drivers <strong>drive, share and bring the Michelin Truckfly community to life.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">December is coming, and with it the festive season: public holidays, busy roads, last minute deliveries… All good reasons to <strong>plan your trips well.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">This month, find out <strong>the days you won’t be able to drive over the holidays, how to activate your promo code in 30 seconds, what the truck GPS can do for you, and October’s top contributor!</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>And don’t miss our Black Friday offer: it starts tomorrow!</strong></span></p>'
     - align: top
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 20px
-      id: 2c1d694a-096e-479c-8b93-ed3281ecc491
+      id: b9e9ebda-9e84-44d2-bd9c-c83848c17f92
       moduleName: grid-row12
       thumbnail: /assets/img/editor/grid_12.svg
       title: Bannière NL
@@ -583,7 +583,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 3f392d0d-b5f2-4b76-9d68-1baa85ce24ba
+      - id: c89f481f-eb66-40b4-a83f-7ee7dcae2f90
         isEmpty: false
         label: Drop content here
         title: column 1
@@ -595,7 +595,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: ec0eca85-7595-4af4-9481-fdc7584099fd
+        - id: 878b9a46-b090-40a2-914f-780117ecffff
           thumbnail: /assets/img/editor/element_text.svg
           title: Texte
           type: text
@@ -610,12 +610,12 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><span style="color: rgb(0, 0, 0);">Elke dag zijn duizenden chauffeurs <strong>onderweg, delen ze info en houden ze de Michelin Truckfly community levend.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">December komt eraan, en daarmee de feestdagen: vrije dagen, drukke wegen, last minute leveringen… Genoeg redenen om <strong>je ritten goed voor te bereiden.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Deze maand ontdek je <strong>op welke dagen je tijdens de feestdagen niet mag rijden, hoe je je promotiecode in 30 seconden activeert en de topbijdrager van oktober… met onze tips om zijn plek in te nemen!</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>En mis onze Black Friday-actie niet: morgen gaat hij van start!</strong></span></p>'
+          content: '<p><span style="color: rgb(0, 0, 0);">Elke dag zijn duizenden chauffeurs <strong>onderweg, delen ze info en houden ze de Michelin Truckfly community levend.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">December komt eraan, en daarmee de feestdagen: vrije dagen, drukke wegen, last minute leveringen… Genoeg redenen om <strong>je ritten goed voor te bereiden.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Deze maand ontdek je <strong>op welke dagen je tijdens de feestdagen niet mag rijden, hoe je je promotiecode in 30 seconden activeert, wat de vrachtwagen-GPS voor je kan doen en de topbijdrager van oktober!</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>En mis onze Black Friday-actie niet: morgen gaat hij van start!</strong></span></p>'
     - align: top
       condition: ''
       dist: '12'
       gutter: 30px
-      id: 64bb4d1f-94d5-48d9-96d0-463ed37f7a7d
+      id: ac56be81-ed88-4fb4-9bfd-4c468bc948a8
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -634,7 +634,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 8b6cf440-e886-4505-a6ca-b7861fc31d13
+      - id: fb9e0f03-50ee-429d-908c-567973a89c36
         isEmpty: false
         stylable: false
         title: Column
@@ -647,7 +647,7 @@ body:
             valign: top
         content:
         - condition: ( "FR" in contact.LANG )
-          id: b2c31e97-9681-4187-9cff-419b267f2ef7
+          id: 2c45c5f4-ea46-416c-ae95-099816003e20
           title: HTML
           type: raw-html
           layout:
@@ -658,7 +658,7 @@ body:
               width: 100%
           content: "<!-- ENCART TEASING BLACK FRIDAY -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background-color:#FFFFFF;padding:8px 20px 8px 20px;\">\n  <tr><td align=\"center\">\n    <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"max-width:520px;background-color:#0d1b5e;border-radius:16px;\">\n      <tr><td align=\"center\" style=\"padding:28px 24px;font-family:Arial,Helvetica,sans-serif;\">\n        <p style=\"margin:0 0 10px 0;font-size:11px;font-weight:700;color:#FFFF18;letter-spacing:2px;text-transform:uppercase;\">Black Friday · du 27 au 30 novembre</p>\n        <p style=\"margin:0 0 12px 0;font-size:28px;line-height:1.2;font-weight:700;color:#FFFF18;\">C’est demain&nbsp;!</p>\n        <p style=\"margin:0 0 20px 0;font-size:16px;line-height:1.5;color:#FFFFFF;\">Le Black Friday Michelin Truckfly commence demain. Surveille ta boîte mail&nbsp;: ton offre GPS arrive vendredi&nbsp;!</p>\n        <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><tr>\n          <td align=\"center\" bgcolor=\"#FFFF18\" style=\"border-radius:10px;\">\n            <a href=\"https://lp.truckfly.com/fr/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails\" target=\"_blank\" style=\"display:inline-block;padding:14px 32px;font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:700;color:#000000;text-decoration:none;border-radius:10px;\">Découvrir le GPS</a>\n          </td></tr></table>\n      </td></tr>\n    </table>\n  </td></tr>\n</table>"
         - condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
-          id: 9bb82b60-a3ef-4feb-b505-460ba04b5d57
+          id: 0626ed15-fe42-4bb6-bb58-b95b7caeae06
           title: HTML
           type: raw-html
           layout:
@@ -669,7 +669,7 @@ body:
               width: 100%
           content: "<!-- ENCART TEASING BLACK FRIDAY -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background-color:#FFFFFF;padding:8px 20px 8px 20px;\">\n  <tr><td align=\"center\">\n    <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"max-width:520px;background-color:#0d1b5e;border-radius:16px;\">\n      <tr><td align=\"center\" style=\"padding:28px 24px;font-family:Arial,Helvetica,sans-serif;\">\n        <p style=\"margin:0 0 10px 0;font-size:11px;font-weight:700;color:#FFFF18;letter-spacing:2px;text-transform:uppercase;\">Black Friday · 27 to 30 November</p>\n        <p style=\"margin:0 0 12px 0;font-size:28px;line-height:1.2;font-weight:700;color:#FFFF18;\">It starts tomorrow!</p>\n        <p style=\"margin:0 0 20px 0;font-size:16px;line-height:1.5;color:#FFFFFF;\">Michelin Truckfly Black Friday starts tomorrow. Keep an eye on your inbox: your GPS offer lands on Friday!</p>\n        <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><tr>\n          <td align=\"center\" bgcolor=\"#FFFF18\" style=\"border-radius:10px;\">\n            <a href=\"https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails\" target=\"_blank\" style=\"display:inline-block;padding:14px 32px;font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:700;color:#000000;text-decoration:none;border-radius:10px;\">Discover the GPS</a>\n          </td></tr></table>\n      </td></tr>\n    </table>\n  </td></tr>\n</table>"
         - condition: ( "ES" in contact.LANG )
-          id: 459a555f-0689-46a1-9f2d-f220fe7121e6
+          id: 0291d2cb-b9f4-45f8-9129-0a5cc7e33dd2
           title: HTML
           type: raw-html
           layout:
@@ -680,7 +680,7 @@ body:
               width: 100%
           content: "<!-- ENCART TEASING BLACK FRIDAY -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background-color:#FFFFFF;padding:8px 20px 8px 20px;\">\n  <tr><td align=\"center\">\n    <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"max-width:520px;background-color:#0d1b5e;border-radius:16px;\">\n      <tr><td align=\"center\" style=\"padding:28px 24px;font-family:Arial,Helvetica,sans-serif;\">\n        <p style=\"margin:0 0 10px 0;font-size:11px;font-weight:700;color:#FFFF18;letter-spacing:2px;text-transform:uppercase;\">Black Friday · del 27 al 30 de noviembre</p>\n        <p style=\"margin:0 0 12px 0;font-size:28px;line-height:1.2;font-weight:700;color:#FFFF18;\">¡Empieza mañana!</p>\n        <p style=\"margin:0 0 20px 0;font-size:16px;line-height:1.5;color:#FFFFFF;\">El Black Friday de Michelin Truckfly empieza mañana. Atento a tu correo: ¡tu oferta GPS llega el viernes!</p>\n        <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><tr>\n          <td align=\"center\" bgcolor=\"#FFFF18\" style=\"border-radius:10px;\">\n            <a href=\"https://lp.truckfly.com/es/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails\" target=\"_blank\" style=\"display:inline-block;padding:14px 32px;font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:700;color:#000000;text-decoration:none;border-radius:10px;\">Descubre el GPS</a>\n          </td></tr></table>\n      </td></tr>\n    </table>\n  </td></tr>\n</table>"
         - condition: ( "IT" in contact.LANG )
-          id: 12504225-b29f-4d94-8814-90fbc8f277b5
+          id: 537c648b-1092-48e7-bbaf-ca3afdd59d4c
           title: HTML
           type: raw-html
           layout:
@@ -691,7 +691,7 @@ body:
               width: 100%
           content: "<!-- ENCART TEASING BLACK FRIDAY -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background-color:#FFFFFF;padding:8px 20px 8px 20px;\">\n  <tr><td align=\"center\">\n    <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"max-width:520px;background-color:#0d1b5e;border-radius:16px;\">\n      <tr><td align=\"center\" style=\"padding:28px 24px;font-family:Arial,Helvetica,sans-serif;\">\n        <p style=\"margin:0 0 10px 0;font-size:11px;font-weight:700;color:#FFFF18;letter-spacing:2px;text-transform:uppercase;\">Black Friday · dal 27 al 30 novembre</p>\n        <p style=\"margin:0 0 12px 0;font-size:28px;line-height:1.2;font-weight:700;color:#FFFF18;\">Inizia domani!</p>\n        <p style=\"margin:0 0 20px 0;font-size:16px;line-height:1.5;color:#FFFFFF;\">Il Black Friday di Michelin Truckfly inizia domani. Tieni d’occhio la tua casella email: la tua offerta GPS arriva venerdì!</p>\n        <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><tr>\n          <td align=\"center\" bgcolor=\"#FFFF18\" style=\"border-radius:10px;\">\n            <a href=\"https://lp.truckfly.com/it/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails\" target=\"_blank\" style=\"display:inline-block;padding:14px 32px;font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:700;color:#000000;text-decoration:none;border-radius:10px;\">Scopri il GPS</a>\n          </td></tr></table>\n      </td></tr>\n    </table>\n  </td></tr>\n</table>"
         - condition: ( "NL" in contact.LANG )
-          id: 591bce31-b752-4161-8c1a-702d47ba7be0
+          id: 094625a6-2db8-4e9c-a420-5e86968803a9
           title: HTML
           type: raw-html
           layout:
@@ -1113,7 +1113,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: 2480340a-30d0-473c-afc5-6c0167c1e44f
+      id: 7e3efa20-57c3-46e2-8586-92d923829e0e
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -1137,7 +1137,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 4603f037-2bad-4548-a65c-10c540332fc7
+      - id: c7c9a04a-0e03-46df-ba99-6a7b3bee2a41
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -1151,7 +1151,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 2fcf7e3b-a3e7-4ed1-a4b7-e16dabd1d349
+        - id: a42da8d0-2a0b-4747-943c-fa4fda9f4424
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -1180,7 +1180,7 @@ body:
               valign: top
               width: 100%
           content: '<p><br></p><h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">1. Festive season: the days you can’t drive</span></h2><p><br></p>'
-        - id: c5b88fde-085f-4946-a346-aebc0cb640d0
+        - id: 2321afae-ab0f-413d-94f1-dd0b81d233b5
           stylable: false
           title: Paragraph
           type: text
@@ -1201,7 +1201,7 @@ body:
               valign: top
               width: 100%
           content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>Did you know?</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);">In December, public holidays come on top of weekends. In France and Italy, that means more days when trucks over 7.5 t are not allowed on the road. Good habit: <strong>plan your deliveries and breaks now.</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>France</strong> (over 7.5 t, whole road network)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">From Thursday 24 December 10 pm to Friday 25 December 10 pm</li><li style="color: rgb(249, 250, 252);">From Thursday 31 December 10 pm to Friday 1 January 10 pm</li><li style="color: rgb(249, 250, 252);">And every weekend, from Saturday 10 pm to Sunday 10 pm</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Italy</strong> (over 7.5 t, outside built-up areas, 9 am to 10 pm)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Sundays 6, 13, 20 and 27 December</li><li style="color: rgb(249, 250, 252);">Tuesday 8, Friday 25 and Saturday 26 December</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Spain</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">No general ban, but restrictions on certain road sections. Catalonia, the Basque Country and Navarre have their own rules.</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);">Local bans may be added: check before you set off. And on Michelin Truckfly, find HGV parking along your route in advance.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 11px;">Sources: Bison Futé · Italian Ministry of Transport · DGT</span></p>'
-        - id: 12e18c96-d2e2-4141-80c7-2823b057fecc
+        - id: 6c17f8be-e945-407f-a1be-fe5da013d586
           title: Image
           type: image
           layout:
@@ -1219,7 +1219,7 @@ body:
           content:
             href: https://www.bison-fute.gouv.fr/regime-general,10852,langen.html
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: b31d6bc0-5f24-42c5-b581-c8851e7d1b5b
+        - id: 732833ae-8178-4f88-8ad0-2f12639f1591
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Plan my trip</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -1249,7 +1249,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 70708918-3f8a-48a5-bf21-a0c36c63571c
+      id: a7e59d06-4f35-4b3f-a2c5-e98b4d991b3e
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -1273,7 +1273,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: b7d3526d-445e-49e5-a77b-2068aa3f7cb7
+      - id: cbbca96a-c69d-4818-bbb0-0dd682d66b9b
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -1287,7 +1287,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 0451bf5c-31de-4ca8-823f-5027e0c52439
+        - id: de6d6762-e8f8-4fbb-b214-7f2771e1370d
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -1316,7 +1316,7 @@ body:
               valign: top
               width: 100%
           content: '<p><br></p><h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">1. Feestdagen: de dagen dat je niet mag rijden</span></h2><p><br></p>'
-        - id: 543f9a18-b23a-407d-aa65-358b15bb9ba2
+        - id: 6a1e0e4e-3f7b-4652-8c0b-b884d50ac2dc
           stylable: false
           title: Paragraph
           type: text
@@ -1337,7 +1337,7 @@ body:
               valign: top
               width: 100%
           content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>Wist je dat?</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);">In december komen de feestdagen bovenop de weekends. In Frankrijk en Italië betekent dat meer dagen waarop vrachtwagens boven 7,5 t niet mogen rijden. Slim: <strong>plan je leveringen en pauzes nu al.</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Frankrijk</strong> (boven 7,5 t, het hele wegennet)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Van donderdag 24 december 22.00 uur tot vrijdag 25 december 22.00 uur</li><li style="color: rgb(249, 250, 252);">Van donderdag 31 december 22.00 uur tot vrijdag 1 januari 22.00 uur</li><li style="color: rgb(249, 250, 252);">En elk weekend, van zaterdag 22.00 uur tot zondag 22.00 uur</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Italië</strong> (boven 7,5 t, buiten de bebouwde kom, van 9.00 tot 22.00 uur)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Zondag 6, 13, 20 en 27 december</li><li style="color: rgb(249, 250, 252);">Dinsdag 8, vrijdag 25 en zaterdag 26 december</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Spanje</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Geen algemeen verbod, wel beperkingen op bepaalde trajecten. Catalonië, Baskenland en Navarra hebben eigen regels.</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);">Er kunnen lokale verboden bijkomen: check dit voor vertrek. En zoek op Michelin Truckfly vooraf de vrachtwagenparkings langs je route.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 11px;">Bronnen: Bison Futé · Italiaans ministerie van Transport · DGT</span></p>'
-        - id: 930d6565-7aec-4ca3-a81f-01227a760fe9
+        - id: d1ce7de9-9f0c-40de-88ab-e03612013723
           title: Image
           type: image
           layout:
@@ -1355,7 +1355,7 @@ body:
           content:
             href: https://www.bison-fute.gouv.fr/regime-general,10852,langen.html
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: d83ccc6d-4c6e-450a-9633-2d4e276110e0
+        - id: 4810a8c0-563e-4138-af8b-0f61ebc992ba
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Ik plan mijn rit</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -1787,7 +1787,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: 38bb41b5-b271-400e-9c41-deadbe59bb2c
+      id: 5490938e-e40c-495c-90d4-56c78d3446fc
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -1808,7 +1808,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: c35f6d17-6666-4ead-b7b5-d2ab0ae06a5c
+      - id: adacd145-d0f6-4920-8fb0-44e986c18cc4
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -1823,7 +1823,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 12db60ab-9e85-4873-9d0b-9a29d571fc24
+        - id: a3355cb5-29b6-4e75-bf2a-648cebe5d598
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -1852,7 +1852,7 @@ body:
               valign: top
               width: 100%
           content: <h2 class="default-heading2"><span style="vertical-align:baseline;font-size:32px;color:rgb(0, 0, 0);">2. Your promo code activated in 30 seconds</span></h2>
-        - id: f6116215-3381-4eb2-9d55-80a6c1d85b27
+        - id: d08389f1-84e6-4c3e-9c2a-25d8dc62bdb4
           stylable: false
           title: Paragraph
           type: text
@@ -1873,7 +1873,7 @@ body:
               valign: top
               width: 100%
           content: '<p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Black Friday starts tomorrow, stay tuned!</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">To enjoy it, just enter your code in the app.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>To open the Premium screen, you have 2 options:</strong></span></p><ul dir="ltr"><li style="color: rgb(0, 0, 0);">Tap the GPS icon at the bottom of the map;</li><li style="color: rgb(0, 0, 0);">or go to your profile, top left of the map, then tap “Truckfly Premium · no subscription”.</li></ul><p><span style="color: rgb(0, 0, 0);"><strong>Then:</strong></span></p><ol style="color: rgb(0, 0, 0);"><li style="color: rgb(0, 0, 0);">Choose “Use a promotional code”.</li><li style="color: rgb(0, 0, 0);">Enter your code.</li><li style="color: rgb(0, 0, 0);">Tap “Redeem”.</li></ol><p><br></p>'
-        - id: cf4f08ac-86fe-4e58-86ef-ebc444c9498c
+        - id: 219f566d-77f0-402c-8390-c379a8cbfa2a
           title: Image
           type: image
           layout:
@@ -1891,7 +1891,7 @@ body:
           content:
             href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: 452c2379-87a0-44fd-a7f8-606e80ee9fec
+        - id: 49bc5601-936e-4b2d-b777-91b1fc030cc6
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Open the app</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -1921,7 +1921,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: ddcae9f8-d7cf-4bfe-9df4-f1cbbcf0494c
+      id: 68dc5880-3b13-4884-8689-3d5d9882f1f3
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -1942,7 +1942,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: d345cb21-63f9-4bee-8c60-97f82f638878
+      - id: 3688e550-e074-478d-9db8-e360aacca6ff
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -1957,7 +1957,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: fc7817bf-22aa-4f3c-a6ad-8edda66dcb4c
+        - id: 41f67d06-d2ef-44cd-90cf-e0d2e0cb9bd5
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -1986,7 +1986,7 @@ body:
               valign: top
               width: 100%
           content: <h2 class="default-heading2"><span style="vertical-align:baseline;font-size:32px;color:rgb(0, 0, 0);">2. Je promotiecode geactiveerd in 30 seconden</span></h2>
-        - id: 75b65f09-937b-426d-a640-fdebed298e7b
+        - id: 5dfbe083-bd63-406a-bfe0-aee642921a81
           stylable: false
           title: Paragraph
           type: text
@@ -2007,7 +2007,7 @@ body:
               valign: top
               width: 100%
           content: '<p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Morgen is het Black Friday, blijf op de hoogte!</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Om ervan te profiteren, voer je gewoon je code in de app in.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Om het Premium-scherm te openen, heb je 2 mogelijkheden:</strong></span></p><ul dir="ltr"><li style="color: rgb(0, 0, 0);">Tik op het gps-icoon onderaan de kaart;</li><li style="color: rgb(0, 0, 0);">of ga naar je profiel, linksboven op de kaart, en tik op ‘Truckfly Premium · geen abonnement’.</li></ul><p><span style="color: rgb(0, 0, 0);"><strong>Daarna:</strong></span></p><ol style="color: rgb(0, 0, 0);"><li style="color: rgb(0, 0, 0);">Kies ‘Gebruik een promotiecode’.</li><li style="color: rgb(0, 0, 0);">Voer je code in.</li><li style="color: rgb(0, 0, 0);">Tik op ‘Inwisselen’.</li></ol><p><br></p>'
-        - id: 80d44b97-1891-4524-be4b-09b8c33ddac8
+        - id: 5cef6bf3-b128-4ad0-83c0-2a1cd3ae878a
           title: Image
           type: image
           layout:
@@ -2025,7 +2025,7 @@ body:
           content:
             href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: 19719780-5cc5-4fa5-b8e8-c24f3e279f05
+        - id: f1889de9-cedb-454c-b245-68e3fa71d4ab
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Ik open de app</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2120,7 +2120,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<!--StartFragment--><h2 class="default-heading2" id="isPasted"><span style="color:rgb(255, 255, 255)">3. <span style="color: rgb(255, 255, 255);">Deviens le meilleur contributeur du mois&nbsp;</span></span></h2><p><br></p>'
+          content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255)">3. Les fêtes en GPS poids lourds</span></h2><p><br></p>
         - id: 7c679fa5-e076-4f3e-b214-f0700cc7291c
           stylable: false
           title: Paragraph
@@ -2141,7 +2141,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Sur la route, on fait confiance à ceux qui partagent les bonnes infos. <strong>Un conducteur avec beaucoup de points de contribution, c&#39;est un conducteur fiable</strong> : quand il signale une alerte ou note un arrêt, la communauté sait qu&#39;elle peut compter dessus.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Et la règle est simple : <strong>chaque action vaut 1 point.</strong> Une pause café suffit pour en gagner plusieurs !</span></p>'
+          content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;"><strong>Le savais-tu&nbsp;?</strong></span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;"><strong>86&nbsp;% des conducteurs poids lourds</strong> utilisent un GPS pour véhicules légers, qui peut les mettre en danger.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Avec les routes chargées et les interdictions des fêtes, ce n’est pas le moment de se tromper de route. Le GPS Michelin Truckfly prend en compte toutes les contraintes de ton camion&nbsp;:</span></p>'
         - id: c8a93088-58d0-4e2e-afb0-94301d17a37c
           title: HTML
           type: raw-html
@@ -2151,9 +2151,9 @@ body:
               padding-bottom: 15px
               padding-top: 15px
               width: 100%
-          content: "<!-- VISUEL TÉLÉPHONE – contributions (FR) – charte Michelin Brand Chapter 2 – à coller dans un bloc HTML Brevo -->\n<style type=\"text/css\">\n@import url(\"https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap\");\n</style>\n<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;\">\n  <tr>\n    <td align=\"center\" style=\"padding:15px 0 10px 0;\">\n\n      <!-- Téléphone -->\n      <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" align=\"center\" width=\"260\" style=\"width:260px;margin:0 auto;border-collapse:separate;\">\n        <tr>\n          <td style=\"background-color:#000000;border-radius:38px;padding:8px;\">\n            <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"244\" style=\"width:244px;border-collapse:separate;background-color:#F5F3F1;border-radius:31px;\">\n\n              <!-- En-tête Michelin Blue -->\n              <tr>\n                <td style=\"background-color:#061866;border-radius:31px 31px 0 0;padding:24px 12px 16px 14px;\">\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:collapse;\">\n                    <tr>\n                      <td style=\"vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0 0 8px 0;\"><span style=\"display:inline-block;background-color:#FFFF1A;color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.5px;border-radius:999px;padding:4px 9px;\">CLASSEMENT DU MOIS</span></p>\n                        <p style=\"margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.2;color:#FFFFFF;font-weight:700;white-space:nowrap;\">1 action = 1 point</p>\n                        <p style=\"margin:5px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:10px;line-height:1.4;color:#FFFFFF;\">Plus tu contribues, plus la communauté te fait confiance.</p>\n                      </td>\n                      <!-- Trophée (Highlight Yellow sur fond bleu) -->\n                      <td width=\"62\" style=\"width:62px;vertical-align:middle;padding-left:6px;\">\n                        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"62\" style=\"width:62px;border-collapse:separate;\">\n                          <tr>\n                            <td align=\"center\">\n                              <div style=\"width:48px;height:40px;border-radius:5px 5px 24px 24px;background-color:#FFFF1A;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:36px;font-weight:700;color:#061866;\">N°1</div>\n                            </td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:10px;height:9px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:36px;height:8px;border-radius:3px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:46px;height:6px;border-radius:3px;background-color:#B5D2F4;\"></div></td>\n                          </tr>\n                        </table>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n\n              <!-- Contributions -->\n              <tr>\n                <td style=\"padding:10px 9px 4px 9px;\">\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Ajouter une photo</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Parking, entrée, douches…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Laisser un avis</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Note ou commente un arrêt</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Liker une photo ou une activité</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Encourage les autres conducteurs</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Mettre à jour un lieu</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Horaires, services, accès</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Ajouter un lieu</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Un arrêt pas encore sur l'appli</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Signaler une alerte</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Neige, accident, danger…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                </td>\n              </tr>\n\n              <!-- Bas du téléphone -->\n              <tr>\n                <td style=\"padding:4px 10px 20px 10px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                  <p style=\"margin:0;font-size:10px;line-height:1.4;color:#061866;\"><strong>Le top contributeur du mois</strong><br>apparaît dans la prochaine newsletter !</p>\n                </td>\n              </tr>\n\n            </table>\n          </td>\n        </tr>\n      </table>\n\n      <!-- Petit texte sous le visuel -->\n      <p style=\"margin:20px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFF;text-align:center;\"><strong>Plus tu as de points, plus ta parole compte.</strong><br>Prêt à grimper au classement ?</p>\n\n    </td>\n  </tr>\n</table>"
+          content: "<!-- GPS POIDS LOURDS : AVANTAGES -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"border-collapse:separate;\">\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Une navigation poids lourds</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Gabarit, poids, routes autorisées, restrictions ADR&nbsp;: ton itinéraire est adapté à ton camion.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Les alertes de la communauté</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Zones de contrôle, accidents, dangers&nbsp;: la plus grande communauté poids lourds d’Europe te prévient en temps réel. Et le trafic en direct t’aide à éviter les bouchons.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Nouveau&nbsp;: l’alerte péage</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Une alerte te prévient à l’approche d’un péage&nbsp;: tu as le temps de te placer sur la bonne voie et de sortir ton badge.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">+135&nbsp;000 établissements poids lourds</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Restaurants, parkings gratuits ou sécurisés, stations-service&nbsp;: tu sais toujours où t’arrêter.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Pas de pub au lancement</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Tu ouvres l’appli, tu roules.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:6px 2px 0 2px;\">\n    <p style=\"margin:0 0 8px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFFFF;\"><strong>Ne tombe plus dans le panneau&nbsp;: teste le GPS 14&nbsp;jours gratuitement.</strong> Et demain, surveille ta boîte mail&nbsp;!</p>\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#F9FAFC;\">Source&nbsp;: Michelin Truckfly</p>\n  </td></tr>\n</table>"
         - id: 959bb5a5-51fc-48d9-99ce-96b2eec3c20f
-          text: <p><span style="color:rgb(0, 0, 0);"><strong>Je gagne des points</strong></span></p>
+          text: '<p><strong><span style="color: rgb(0, 0, 0);">J’essaie le GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
           type: text-button
@@ -2174,10 +2174,10 @@ body:
               text-valign: top
               type: absoluteLink
               valign: top
-              width: 30%
+              width: 45%
           content:
-            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
-            text: <p><span style="color:rgb(0, 0, 0);"><strong>Je gagne des points</strong></span></p>
+            href: https://lp.truckfly.com/fr/gps-premium?utm_source=brevo&utm_medium=transactional_emails
+            text: '<p><strong><span style="color: rgb(0, 0, 0);">J’essaie le GPS</span></strong></p>'
     - align: top
       condition: ( "IT" in contact.LANG )
       dist: '12'
@@ -2247,7 +2247,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<h2 class="default-heading2"><span style="color:rgb(255, 255, 255)">3. <span style="color: rgb(255, 255, 255);">Diventa il miglior contributore del mese&nbsp;</span></span></h2><p><br></p>'
+          content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255)">3. Le feste con un GPS per camion</span></h2><p><br></p>
         - id: 70f3cebf-1b3d-4bc3-8c70-356d56e780e2
           stylable: false
           title: Paragraph
@@ -2268,7 +2268,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Sulla strada, ci si fida di chi condivide le info giuste. <strong>Un autista con tanti punti contributo è un autista affidabile</strong>: quando segnala un pericolo o valuta una sosta, la community sa di poter contare su di lui.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">E la regola è semplice: <strong>ogni azione vale 1 punto.</strong> Basta una pausa caffè per guadagnarne diversi!</span></p>'
+          content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;"><strong>Lo sapevi?</strong></span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;"><strong>L’86% degli autisti di mezzi pesanti</strong> usa un GPS per auto, che può metterli in pericolo.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Con strade trafficate e divieti delle feste, non è il momento di sbagliare strada. Il GPS Michelin Truckfly tiene conto di tutti i vincoli del tuo camion:</span></p>'
         - id: 6c7afbe9-211d-4397-8f2b-bf98d0530851
           title: HTML
           type: raw-html
@@ -2278,9 +2278,9 @@ body:
               padding-bottom: 15px
               padding-top: 15px
               width: 100%
-          content: "<!-- VISUEL TÉLÉPHONE – contributions (IT) – charte Michelin Brand Chapter 2 – à coller dans un bloc HTML Brevo -->\n<style type=\"text/css\">\n@import url(\"https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap\");\n</style>\n<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;\">\n  <tr>\n    <td align=\"center\" style=\"padding:15px 0 10px 0;\">\n\n      <!-- Téléphone -->\n      <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" align=\"center\" width=\"260\" style=\"width:260px;margin:0 auto;border-collapse:separate;\">\n        <tr>\n          <td style=\"background-color:#000000;border-radius:38px;padding:8px;\">\n            <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"244\" style=\"width:244px;border-collapse:separate;background-color:#F5F3F1;border-radius:31px;\">\n\n              <!-- En-tête Michelin Blue -->\n              <tr>\n                <td style=\"background-color:#061866;border-radius:31px 31px 0 0;padding:24px 12px 16px 14px;\">\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:collapse;\">\n                    <tr>\n                      <td style=\"vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0 0 8px 0;\"><span style=\"display:inline-block;background-color:#FFFF1A;color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.5px;border-radius:999px;padding:4px 9px;\">CLASSIFICA DEL MESE</span></p>\n                        <p style=\"margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.2;color:#FFFFFF;font-weight:700;white-space:nowrap;\">1 azione = 1 punto</p>\n                        <p style=\"margin:5px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:10px;line-height:1.4;color:#FFFFFF;\">Più contribuisci, più la community si fida di te.</p>\n                      </td>\n                      <!-- Trophée (Highlight Yellow sur fond bleu) -->\n                      <td width=\"62\" style=\"width:62px;vertical-align:middle;padding-left:6px;\">\n                        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"62\" style=\"width:62px;border-collapse:separate;\">\n                          <tr>\n                            <td align=\"center\">\n                              <div style=\"width:48px;height:40px;border-radius:5px 5px 24px 24px;background-color:#FFFF1A;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:36px;font-weight:700;color:#061866;\">N°1</div>\n                            </td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:10px;height:9px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:36px;height:8px;border-radius:3px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:46px;height:6px;border-radius:3px;background-color:#B5D2F4;\"></div></td>\n                          </tr>\n                        </table>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n\n              <!-- Contributions -->\n              <tr>\n                <td style=\"padding:10px 9px 4px 9px;\">\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Aggiungere una foto</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Parcheggio, ingresso, docce…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Lasciare una recensione</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Valuta o commenta una sosta</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Mettere like a una foto o a un&#39;attività</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Incoraggia gli altri autisti</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Aggiornare un luogo</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Orari, servizi, accesso</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Aggiungere un luogo</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Una sosta non ancora sull&#39;app</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Inviare una segnalazione</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Neve, incidente, pericolo…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                </td>\n              </tr>\n\n              <!-- Bas du téléphone -->\n              <tr>\n                <td style=\"padding:4px 10px 20px 10px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                  <p style=\"margin:0;font-size:10px;line-height:1.4;color:#061866;\"><strong>Il top contributore del mese</strong><br>appare nella prossima newsletter!</p>\n                </td>\n              </tr>\n\n            </table>\n          </td>\n        </tr>\n      </table>\n\n      <!-- Petit texte sous le visuel -->\n      <p style=\"margin:20px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFF;text-align:center;\"><strong>Più punti hai, più la tua parola conta.</strong><br>Pronto a scalare la classifica?</p>\n\n    </td>\n  </tr>\n</table>"
+          content: "<!-- GPS POIDS LOURDS : AVANTAGES -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"border-collapse:separate;\">\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Navigazione per mezzi pesanti</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Sagoma, peso, strade consentite, restrizioni ADR: il percorso è adatto al tuo camion.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Le segnalazioni della community</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Controlli, incidenti, pericoli: la più grande community di camionisti d’Europa ti avvisa in tempo reale. E il traffico in diretta ti aiuta a evitare le code.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Novità: l’avviso casello</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Un avviso ti segnala l’avvicinarsi di un casello: hai il tempo di metterti sulla corsia giusta e preparare il telepedaggio.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Oltre 135.000 strutture per mezzi pesanti</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Ristoranti, parcheggi gratuiti o sorvegliati, distributori: sai sempre dove fermarti.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Niente pubblicità all’avvio</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Apri l’app e parti.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:6px 2px 0 2px;\">\n    <p style=\"margin:0 0 8px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFFFF;\"><strong>Non farti più cogliere di sorpresa: prova il GPS gratis per 14 giorni.</strong> E domani, tieni d’occhio la tua casella email!</p>\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#F9FAFC;\">Fonte: Michelin Truckfly</p>\n  </td></tr>\n</table>"
         - id: 9b68e60e-30ef-4a84-9955-8a00e245f9ab
-          text: <p><span style="color:rgb(0, 0, 0);"><strong>Guadagno punti</strong></span></p>
+          text: '<p><strong><span style="color: rgb(0, 0, 0);">Provo il GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
           type: text-button
@@ -2301,10 +2301,10 @@ body:
               text-valign: top
               type: absoluteLink
               valign: top
-              width: 30%
+              width: 45%
           content:
-            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
-            text: <p><span style="color:rgb(0, 0, 0);"><strong>Guadagno punti</strong></span></p>
+            href: https://lp.truckfly.com/it/gps-premium?utm_source=brevo&utm_medium=transactional_emails
+            text: '<p><strong><span style="color: rgb(0, 0, 0);">Provo il GPS</span></strong></p>'
     - align: top
       condition: ( "ES" in contact.LANG )
       dist: '12'
@@ -2374,7 +2374,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<h2 class="default-heading2"><span style="color:rgb(255, 255, 255)">3. <span style="color: rgb(255, 255, 255);">Conviértete en el mejor colaborador del mes&nbsp;</span></span></h2><p><br></p>'
+          content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255)">3. Las fiestas con un GPS para camiones</span></h2><p><br></p>
         - id: 4f616430-00a6-4b2e-8744-1d14098e8f99
           stylable: false
           title: Paragraph
@@ -2395,7 +2395,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">En la carretera, confiamos en quienes comparten buena información. <strong>Un camionero con muchos puntos de contribución es un camionero de confianza</strong>: cuando avisa de un peligro o valora una parada, la comunidad sabe que puede contar con él.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Y la regla es sencilla: <strong>cada acción vale 1 punto.</strong> ¡Con una pausa para el café ya puedes ganar varios!</span></p>'
+          content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;"><strong>¿Lo sabías?</strong></span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;"><strong>El 86% de los camioneros</strong> usa un GPS para turismos, que puede ponerlos en peligro.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Con las carreteras cargadas y las restricciones de las fiestas, no es momento de equivocarse de ruta. El GPS Michelin Truckfly tiene en cuenta todas las limitaciones de tu camión:</span></p>'
         - id: f24509cb-8679-4425-9d4b-ba0671fc4e6a
           title: HTML
           type: raw-html
@@ -2405,9 +2405,9 @@ body:
               padding-bottom: 15px
               padding-top: 15px
               width: 100%
-          content: "<!-- VISUEL TÉLÉPHONE – contributions (ES) – charte Michelin Brand Chapter 2 – à coller dans un bloc HTML Brevo -->\n<style type=\"text/css\">\n@import url(\"https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap\");\n</style>\n<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;\">\n  <tr>\n    <td align=\"center\" style=\"padding:15px 0 10px 0;\">\n\n      <!-- Téléphone -->\n      <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" align=\"center\" width=\"260\" style=\"width:260px;margin:0 auto;border-collapse:separate;\">\n        <tr>\n          <td style=\"background-color:#000000;border-radius:38px;padding:8px;\">\n            <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"244\" style=\"width:244px;border-collapse:separate;background-color:#F5F3F1;border-radius:31px;\">\n\n              <!-- En-tête Michelin Blue -->\n              <tr>\n                <td style=\"background-color:#061866;border-radius:31px 31px 0 0;padding:24px 12px 16px 14px;\">\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:collapse;\">\n                    <tr>\n                      <td style=\"vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0 0 8px 0;\"><span style=\"display:inline-block;background-color:#FFFF1A;color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.5px;border-radius:999px;padding:4px 9px;\">CLASIFICACIÓN DEL MES</span></p>\n                        <p style=\"margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.2;color:#FFFFFF;font-weight:700;white-space:nowrap;\">1 acción = 1 punto</p>\n                        <p style=\"margin:5px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:10px;line-height:1.4;color:#FFFFFF;\">Cuanto más contribuyes, más confía en ti la comunidad.</p>\n                      </td>\n                      <!-- Trophée (Highlight Yellow sur fond bleu) -->\n                      <td width=\"62\" style=\"width:62px;vertical-align:middle;padding-left:6px;\">\n                        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"62\" style=\"width:62px;border-collapse:separate;\">\n                          <tr>\n                            <td align=\"center\">\n                              <div style=\"width:48px;height:40px;border-radius:5px 5px 24px 24px;background-color:#FFFF1A;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:36px;font-weight:700;color:#061866;\">N°1</div>\n                            </td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:10px;height:9px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:36px;height:8px;border-radius:3px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:46px;height:6px;border-radius:3px;background-color:#B5D2F4;\"></div></td>\n                          </tr>\n                        </table>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n\n              <!-- Contributions -->\n              <tr>\n                <td style=\"padding:10px 9px 4px 9px;\">\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Añadir una foto</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Parking, entrada, duchas…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Dejar una reseña</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Valora o comenta una parada</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Dar like a una foto o actividad</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Anima a otros camioneros</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Actualizar un lugar</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Horarios, servicios, acceso</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Añadir un lugar</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Una parada que aún no está en la app</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Enviar un aviso</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Nieve, accidente, peligro…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                </td>\n              </tr>\n\n              <!-- Bas du téléphone -->\n              <tr>\n                <td style=\"padding:4px 10px 20px 10px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                  <p style=\"margin:0;font-size:10px;line-height:1.4;color:#061866;\"><strong>El mejor colaborador del mes</strong><br>¡aparece en la próxima newsletter!</p>\n                </td>\n              </tr>\n\n            </table>\n          </td>\n        </tr>\n      </table>\n\n      <!-- Petit texte sous le visuel -->\n      <p style=\"margin:20px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFF;text-align:center;\"><strong>Cuantos más puntos tienes, más cuenta tu palabra.</strong><br>¿Listo para subir en la clasificación?</p>\n\n    </td>\n  </tr>\n</table>"
+          content: "<!-- GPS POIDS LOURDS : AVANTAGES -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"border-collapse:separate;\">\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Navegación para camiones</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Gálibo, peso, carreteras permitidas, restricciones ADR: tu ruta se adapta a tu camión.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Avisos de la comunidad</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Controles, accidentes, peligros: la mayor comunidad de camioneros de Europa te avisa en tiempo real. Y el tráfico en directo te ayuda a evitar atascos.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Novedad: la alerta de peaje</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Una alerta te avisa cuando te acercas a un peaje: tienes tiempo de colocarte en el carril correcto y preparar tu telepeaje.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Más de 135.000 establecimientos para camiones</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Restaurantes, aparcamientos gratuitos o vigilados, gasolineras: siempre sabes dónde parar.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Sin publicidad al abrir la app</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Abres la app y a rodar.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:6px 2px 0 2px;\">\n    <p style=\"margin:0 0 8px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFFFF;\"><strong>Que no te pillen desprevenido: prueba el GPS gratis durante 14 días.</strong> ¡Y mañana, atento a tu correo!</p>\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#F9FAFC;\">Fuente: Michelin Truckfly</p>\n  </td></tr>\n</table>"
         - id: 98c35d5a-ac07-4dd8-95c2-9117c98e5b15
-          text: <p><span style="color:rgb(0, 0, 0);"><strong>Gano puntos</strong></span></p>
+          text: '<p><strong><span style="color: rgb(0, 0, 0);">Pruebo el GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
           type: text-button
@@ -2428,15 +2428,15 @@ body:
               text-valign: top
               type: absoluteLink
               valign: top
-              width: 30%
+              width: 45%
           content:
-            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
-            text: <p><span style="color:rgb(0, 0, 0);"><strong>Gano puntos</strong></span></p>
+            href: https://lp.truckfly.com/es/gps-premium?utm_source=brevo&utm_medium=transactional_emails
+            text: '<p><strong><span style="color: rgb(0, 0, 0);">Pruebo el GPS</span></strong></p>'
     - align: top
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: 8fb5ae75-f568-4367-9b24-6284c843d20c
+      id: f1537f7e-60b1-417b-985e-34f41e0bc7ec
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -2458,7 +2458,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 9d06078d-ebd9-4d61-895f-fae4bbff57e7
+      - id: 520feef5-d6c9-4268-bb8e-8659981a5873
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -2473,7 +2473,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 37e44fbe-85c0-49e0-a253-79ac38402a84
+        - id: bae10cb2-ade1-4705-ae8d-fc1430eed76e
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -2501,8 +2501,8 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">3. Become the top contributor of the month</span></h2><p><br></p>'
-        - id: 3db2301b-6ae1-4fd5-be88-94c0211cc87a
+          content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255)">3. The festive season with a truck GPS</span></h2><p><br></p>
+        - id: 396f3776-e84f-40e0-92b5-474d4ea69866
           stylable: false
           title: Paragraph
           type: text
@@ -2522,8 +2522,8 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">On the road, we trust those who share the right info. <strong>A driver with lots of contribution points is a reliable driver</strong>: when they report a hazard or rate a stop, the community knows it can count on them.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">And the rule is simple: <strong>every action is worth 1 point.</strong> A coffee break is enough to earn several!</span></p>'
-        - id: 403fbd7c-e44b-4028-9941-c8627f6208d0
+          content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;"><strong>Did you know?</strong></span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;"><strong>86% of HGV drivers</strong> use a GPS made for cars, which can put them in danger.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">With busy roads and holiday driving bans, this is no time to take a wrong turn. The Michelin Truckfly GPS takes every constraint of your truck into account:</span></p>'
+        - id: 6becb0d8-bafc-44fe-9340-167c06ca0e42
           title: HTML
           type: raw-html
           layout:
@@ -2532,9 +2532,9 @@ body:
               padding-bottom: 15px
               padding-top: 15px
               width: 100%
-          content: "<!-- VISUEL TÉLÉPHONE – contributions (EN) – charte Michelin Brand Chapter 2 – à coller dans un bloc HTML Brevo -->\n<style type=\"text/css\">\n@import url(\"https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap\");\n</style>\n<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;\">\n  <tr>\n    <td align=\"center\" style=\"padding:15px 0 10px 0;\">\n\n      <!-- Téléphone -->\n      <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" align=\"center\" width=\"260\" style=\"width:260px;margin:0 auto;border-collapse:separate;\">\n        <tr>\n          <td style=\"background-color:#000000;border-radius:38px;padding:8px;\">\n            <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"244\" style=\"width:244px;border-collapse:separate;background-color:#F5F3F1;border-radius:31px;\">\n\n              <!-- En-tête Michelin Blue -->\n              <tr>\n                <td style=\"background-color:#061866;border-radius:31px 31px 0 0;padding:24px 12px 16px 14px;\">\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:collapse;\">\n                    <tr>\n                      <td style=\"vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0 0 8px 0;\"><span style=\"display:inline-block;background-color:#FFFF1A;color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.5px;border-radius:999px;padding:4px 9px;\">MONTHLY RANKING</span></p>\n                        <p style=\"margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.2;color:#FFFFFF;font-weight:700;white-space:nowrap;\">1 action = 1 point</p>\n                        <p style=\"margin:5px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:10px;line-height:1.4;color:#FFFFFF;\">The more you contribute, the more the community trusts you.</p>\n                      </td>\n                      <!-- Trophée (Highlight Yellow sur fond bleu) -->\n                      <td width=\"62\" style=\"width:62px;vertical-align:middle;padding-left:6px;\">\n                        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"62\" style=\"width:62px;border-collapse:separate;\">\n                          <tr>\n                            <td align=\"center\">\n                              <div style=\"width:48px;height:40px;border-radius:5px 5px 24px 24px;background-color:#FFFF1A;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:36px;font-weight:700;color:#061866;\">N°1</div>\n                            </td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:10px;height:9px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:36px;height:8px;border-radius:3px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:46px;height:6px;border-radius:3px;background-color:#B5D2F4;\"></div></td>\n                          </tr>\n                        </table>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n\n              <!-- Contributions -->\n              <tr>\n                <td style=\"padding:10px 9px 4px 9px;\">\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Add a photo</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Parking, entrance, showers…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Leave a review</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Rate or comment on a stop</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Like a photo or activity</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Encourage other drivers</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Update a place</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Opening hours, services, access</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Add a place</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">A stop not yet in the app</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Send an alert</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Snow, accident, danger…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                </td>\n              </tr>\n\n              <!-- Bas du téléphone -->\n              <tr>\n                <td style=\"padding:4px 10px 20px 10px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                  <p style=\"margin:0;font-size:10px;line-height:1.4;color:#061866;\"><strong>The top contributor of the month</strong><br>features in the next newsletter!</p>\n                </td>\n              </tr>\n\n            </table>\n          </td>\n        </tr>\n      </table>\n\n      <!-- Petit texte sous le visuel -->\n      <p style=\"margin:20px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFF;text-align:center;\"><strong>The more points you have, the more your word counts.</strong><br>Ready to climb the ranking?</p>\n\n    </td>\n  </tr>\n</table>"
-        - id: 2bc92db0-78a1-463a-9b31-3380cea5627a
-          text: '<p><strong><span style="color: rgb(0, 0, 0);">Earn points</span></strong></p>'
+          content: "<!-- GPS POIDS LOURDS : AVANTAGES -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"border-collapse:separate;\">\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">HGV navigation</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Size, weight, permitted roads, ADR restrictions: your route is adapted to your truck.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Community alerts</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Police checks, accidents, hazards: Europe’s largest HGV community warns you in real time. And live traffic helps you avoid jams.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">New: the toll alert</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">An alert warns you as you approach a toll: you have time to get into the right lane and get your tag ready.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">135,000+ HGV-friendly places</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Restaurants, free or secure parking, fuel stations: you always know where to stop.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">No ads at launch</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Open the app and drive.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:6px 2px 0 2px;\">\n    <p style=\"margin:0 0 8px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFFFF;\"><strong>Never get caught out again: try the GPS free for 14 days.</strong> And tomorrow, keep an eye on your inbox!</p>\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#F9FAFC;\">Source: Michelin Truckfly</p>\n  </td></tr>\n</table>"
+        - id: 0206385f-e8b7-44cd-83bc-e6d52303c1f5
+          text: '<p><strong><span style="color: rgb(0, 0, 0);">Try the GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
           type: text-button
@@ -2555,15 +2555,15 @@ body:
               text-valign: top
               type: absoluteLink
               valign: top
-              width: 30%
+              width: 45%
           content:
-            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
-            text: '<p><strong><span style="color: rgb(0, 0, 0);">Earn points</span></strong></p>'
+            href: https://lp.truckfly.com/en/gps-premium?utm_source=brevo&utm_medium=transactional_emails
+            text: '<p><strong><span style="color: rgb(0, 0, 0);">Try the GPS</span></strong></p>'
     - align: top
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 89c785d8-6d3b-4e63-837f-fa02f063caf4
+      id: 3687bad9-1a81-4071-8d6b-bb2b7ceaa056
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -2585,7 +2585,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 49fdc253-cbc5-4f23-88c2-104eb37a8e24
+      - id: d8f2782f-8a39-42d9-910f-3cf4385eb3a9
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -2600,7 +2600,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: cccd221b-be64-496d-bf5b-89a1d73aefb3
+        - id: 232e2dff-8694-479b-87f9-4cf3e045fd24
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -2628,8 +2628,8 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">3. Word de topbijdrager van de maand</span></h2><p><br></p>'
-        - id: 828fd3ee-ab83-48f5-b0e1-9b54924ead99
+          content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255)">3. De feestdagen met een vrachtwagen-GPS</span></h2><p><br></p>
+        - id: 66ba3b97-d28c-4295-8c43-84d8c954305e
           stylable: false
           title: Paragraph
           type: text
@@ -2649,8 +2649,8 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Onderweg vertrouwen we op wie de juiste info deelt. <strong>Een chauffeur met veel bijdragepunten is een betrouwbare chauffeur</strong>: als hij een gevaar meldt of een stop beoordeelt, weet de community dat ze op hem kan rekenen.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">En de regel is simpel: <strong>elke actie is 1 punt waard.</strong> Met één koffiepauze verdien je er al een paar!</span></p>'
-        - id: 5747ca6f-bf72-46ce-986c-4a5631faf74f
+          content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;"><strong>Wist je dat?</strong></span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;"><strong>86% van de vrachtwagenchauffeurs</strong> gebruikt een GPS voor personenauto’s, en dat kan gevaarlijk zijn.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Met drukke wegen en rijverboden tijdens de feestdagen is dit niet het moment om verkeerd te rijden. De Michelin Truckfly GPS houdt rekening met alle beperkingen van je truck:</span></p>'
+        - id: 2a2a679e-d0ba-4fa8-aa09-b6f5215828f3
           title: HTML
           type: raw-html
           layout:
@@ -2659,9 +2659,9 @@ body:
               padding-bottom: 15px
               padding-top: 15px
               width: 100%
-          content: "<!-- VISUEL TÉLÉPHONE – contributions (NL) – charte Michelin Brand Chapter 2 – à coller dans un bloc HTML Brevo -->\n<style type=\"text/css\">\n@import url(\"https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap\");\n</style>\n<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;\">\n  <tr>\n    <td align=\"center\" style=\"padding:15px 0 10px 0;\">\n\n      <!-- Téléphone -->\n      <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" align=\"center\" width=\"260\" style=\"width:260px;margin:0 auto;border-collapse:separate;\">\n        <tr>\n          <td style=\"background-color:#000000;border-radius:38px;padding:8px;\">\n            <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"244\" style=\"width:244px;border-collapse:separate;background-color:#F5F3F1;border-radius:31px;\">\n\n              <!-- En-tête Michelin Blue -->\n              <tr>\n                <td style=\"background-color:#061866;border-radius:31px 31px 0 0;padding:24px 12px 16px 14px;\">\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:collapse;\">\n                    <tr>\n                      <td style=\"vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0 0 8px 0;\"><span style=\"display:inline-block;background-color:#FFFF1A;color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.5px;border-radius:999px;padding:4px 9px;\">RANGLIJST VAN DE MAAND</span></p>\n                        <p style=\"margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.2;color:#FFFFFF;font-weight:700;white-space:nowrap;\">1 actie = 1 punt</p>\n                        <p style=\"margin:5px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:10px;line-height:1.4;color:#FFFFFF;\">Hoe meer je bijdraagt, hoe meer de community je vertrouwt.</p>\n                      </td>\n                      <!-- Trophée (Highlight Yellow sur fond bleu) -->\n                      <td width=\"62\" style=\"width:62px;vertical-align:middle;padding-left:6px;\">\n                        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"62\" style=\"width:62px;border-collapse:separate;\">\n                          <tr>\n                            <td align=\"center\">\n                              <div style=\"width:48px;height:40px;border-radius:5px 5px 24px 24px;background-color:#FFFF1A;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:36px;font-weight:700;color:#061866;\">N°1</div>\n                            </td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:10px;height:9px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:36px;height:8px;border-radius:3px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:46px;height:6px;border-radius:3px;background-color:#B5D2F4;\"></div></td>\n                          </tr>\n                        </table>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n\n              <!-- Contributions -->\n              <tr>\n                <td style=\"padding:10px 9px 4px 9px;\">\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Een foto toevoegen</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Parking, ingang, douches…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Een review achterlaten</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Geef een stop een score of reactie</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Een foto of activiteit liken</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Moedig andere chauffeurs aan</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Een locatie bijwerken</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Openingstijden, diensten, toegang</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Een locatie toevoegen</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Een stop die nog niet in de app staat</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Een melding sturen</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Sneeuw, ongeval, gevaar…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                </td>\n              </tr>\n\n              <!-- Bas du téléphone -->\n              <tr>\n                <td style=\"padding:4px 10px 20px 10px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                  <p style=\"margin:0;font-size:10px;line-height:1.4;color:#061866;\"><strong>De topbijdrager van de maand</strong><br>staat in de volgende nieuwsbrief!</p>\n                </td>\n              </tr>\n\n            </table>\n          </td>\n        </tr>\n      </table>\n\n      <!-- Petit texte sous le visuel -->\n      <p style=\"margin:20px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFF;text-align:center;\"><strong>Hoe meer punten je hebt, hoe meer je woord telt.</strong><br>Klaar om te stijgen in de ranglijst?</p>\n\n    </td>\n  </tr>\n</table>"
-        - id: d9d5b3f6-d190-4e08-8170-8f1cdc863256
-          text: '<p><strong><span style="color: rgb(0, 0, 0);">Ik verdien punten</span></strong></p>'
+          content: "<!-- GPS POIDS LOURDS : AVANTAGES -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"border-collapse:separate;\">\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Navigatie voor vrachtwagens</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Afmetingen, gewicht, toegestane wegen, ADR-beperkingen: je route is aangepast aan je truck.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Meldingen van de community</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Controles, ongevallen, gevaren: de grootste vrachtwagencommunity van Europa waarschuwt je in realtime. En live verkeer helpt je files te vermijden.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Nieuw: de tolwaarschuwing</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Een melding waarschuwt je bij het naderen van een tolpoort: je hebt tijd om de juiste rijstrook te kiezen en je tolbadge klaar te houden.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Meer dan 135.000 locaties voor vrachtwagens</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">Restaurants, gratis of beveiligde parkings, tankstations: je weet altijd waar je kunt stoppen.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:12px 16px 12px 14px;border-left:4px solid #FFFF18;background-color:#FFFFFF;border-radius:10px;\">\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.35;font-weight:700;color:#061866;\">Geen reclame bij het opstarten</p>\n    <p style=\"margin:4px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#000000;\">App open en rijden maar.</p>\n  </td></tr>\n  <tr><td style=\"height:8px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n  <tr><td style=\"padding:6px 2px 0 2px;\">\n    <p style=\"margin:0 0 8px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFFFF;\"><strong>Laat je niet meer verrassen: probeer de GPS 14 dagen gratis.</strong> En hou morgen je mailbox in de gaten!</p>\n    <p style=\"margin:0;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#F9FAFC;\">Bron: Michelin Truckfly</p>\n  </td></tr>\n</table>"
+        - id: 490b4c92-ec01-4733-a11e-a93173dc0506
+          text: '<p><strong><span style="color: rgb(0, 0, 0);">Ik probeer de GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
           type: text-button
@@ -2682,10 +2682,10 @@ body:
               text-valign: top
               type: absoluteLink
               valign: top
-              width: 30%
+              width: 45%
           content:
-            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
-            text: '<p><strong><span style="color: rgb(0, 0, 0);">Ik verdien punten</span></strong></p>'
+            href: https://lp.truckfly.com/nl/gps-premium?utm_source=brevo&utm_medium=transactional_emails
+            text: '<p><strong><span style="color: rgb(0, 0, 0);">Ik probeer de GPS</span></strong></p>'
     - align: top
       condition: ( "FR" in contact.LANG )
       dist: '12'
@@ -2990,7 +2990,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: 329b1791-f7ba-490e-a182-cd0d18e0a812
+      id: cdd16408-bcb6-4450-91e6-03917fb7bec3
       moduleName: grid-row12
       thumbnail: /assets/img/editor/grid_12.svg
       title: Bannière EN
@@ -3011,7 +3011,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: a0b08112-ce46-4210-ade4-c49f16365621
+      - id: 5516ea65-9b73-4313-9d67-956f7667c383
         isEmpty: false
         title: column 1
         type: grid-column
@@ -3022,7 +3022,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 6bc03bb5-d7e5-4a82-a319-97c6ba9ece22
+        - id: 49f96e9b-a520-4e97-8c37-4ebd098d5f9c
           thumbnail: /assets/img/editor/element_text.svg
           title: Titre
           type: text
@@ -3037,7 +3037,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2" style="font-family:arial, helvetica, sans-serif;font-size:32px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">The top contributors</span></h2><h2 class="default-heading2" style="font-family:arial, helvetica, sans-serif;font-size:32px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">of October!</span></h2>'
-        - id: bb8bfcc3-ad7b-442b-bd83-69adb0c05e43
+        - id: 2bad3e3c-a6bb-4101-98cb-db34d50a3d57
           thumbnail: /assets/img/editor/element_image.svg
           title: Image
           type: image
@@ -3060,7 +3060,7 @@ body:
           content:
             href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad6138efd8ca38cd59e0284.png
-        - id: f384a678-88e2-4642-a0db-ddfc927db68a
+        - id: deb3f6a9-9f63-461e-bc21-374ca7ca01b9
           text: '<p><strong><span style="color: rgb(0, 0, 0);">My turn!</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3090,7 +3090,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 08a29aed-b220-41b1-87b0-184d4086c54a
+      id: f9af3689-be00-4e55-970c-4f0b1253bf2f
       moduleName: grid-row12
       thumbnail: /assets/img/editor/grid_12.svg
       title: Bannière NL
@@ -3111,7 +3111,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: ac569371-afab-42e0-8769-be755fdf2ee9
+      - id: 5e4a1651-c2b9-4083-9b76-9600a1a7bb59
         isEmpty: false
         title: column 1
         type: grid-column
@@ -3122,7 +3122,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 636021d7-5fa9-433e-b717-9da71e2e245f
+        - id: 5233446d-5236-42ca-b778-83fded808bb7
           thumbnail: /assets/img/editor/element_text.svg
           title: Titre
           type: text
@@ -3137,7 +3137,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2" style="font-family:arial, helvetica, sans-serif;font-size:32px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">De topbijdragers</span></h2><h2 class="default-heading2" style="font-family:arial, helvetica, sans-serif;font-size:32px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">van oktober!</span></h2>'
-        - id: e0f28e01-353f-4da5-bb6b-0ac1be58c082
+        - id: 98a07fd3-ba4f-4791-817c-52009a6e7181
           thumbnail: /assets/img/editor/element_image.svg
           title: Image
           type: image
@@ -3160,7 +3160,7 @@ body:
           content:
             href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad6138efd8ca38cd59e0284.png
-        - id: 30a714a9-1b69-457d-8ca4-808f3f1e8b6e
+        - id: aaf8e6f6-b0b3-4ae6-a2b5-d32984d522d4
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Mijn beurt!</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3358,7 +3358,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: df550806-9c95-49c2-8322-fb918b5d22e0
+      id: f833a582-8a94-4c0c-8adc-8222021dd355
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -3377,7 +3377,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 0a0d70e4-26ea-4354-9049-1b25e08e0f14
+      - id: d3be95d0-0184-4caf-bd36-243b9d5d66a3
         isEmpty: false
         stylable: false
         title: Column
@@ -3389,7 +3389,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 745b17c0-cca8-4879-a26e-864ff04fc7ed
+        - id: f69ba4e2-e7f5-4fe7-b0d9-736cd1db3e7a
           thumbnail: /assets/img/editor/element_text.svg
           title: Texte
           type: text
@@ -3414,7 +3414,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 81c448b4-3ffc-4b06-a60e-0ac8bdce0c4c
+      id: 796e9b9d-127d-4e22-a87e-50a40763e3bd
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -3433,7 +3433,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: a0cb0008-aac0-454b-80bd-4f24416b5b7f
+      - id: 1dc65836-d168-4ad5-a7cc-3c468aafb0f0
         isEmpty: false
         stylable: false
         title: Column
@@ -3445,7 +3445,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 896079a0-1eda-4ede-9b56-42cd51f49000
+        - id: 91d843d3-abdd-4ac7-84e0-8c9716f135ee
           thumbnail: /assets/img/editor/element_text.svg
           title: Texte
           type: text
