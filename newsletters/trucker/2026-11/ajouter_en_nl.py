@@ -317,11 +317,10 @@ for r in rws:
     it = r["content"][0]["content"]
     if not (isinstance(it[0].get("content"), str) and ">1." in it[0]["content"]): continue
     lg = lang_of(r["condition"]); d = s1.S1[lg]
-    it[0]["content"] = s1.title(d); it[1]["content"] = s1.para(d)
-    it[2] = {"id": it[2]["id"], "title": "HTML", "type": "raw-html",
-             "layout": {"320px": {}, "default": {"padding-bottom": "10px", "padding-top": "5px", "width": "100%"}}, "content": s1.box(d)}
+    it[0]["content"] = s1.title(d); it[1]["content"] = s1.full_text(d)
+    it[2]["content"] = {"href": d["href"], "src": "https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png"}
     set_btn(it[3], BTN(d["btn"])); it[3]["content"]["href"] = d["href"]
-    (D.parent.parent / "blocs" / f"trucker-2026-11-fetes-interdictions-{lg.lower()}.html").write_text(s1.box(d) + "\n")
+    (D / f"section1-{lg.lower()}.html").write_text(s1.title(d) + s1.full_text(d) + "\n")
     n1 += 1
 assert n1 == 5, n1
 src["subject"] = (

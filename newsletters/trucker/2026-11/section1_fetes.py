@@ -81,3 +81,18 @@ def para(d):
 
 def title(d):
     return f'<p><br></p><h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">{d["title"]}</span></h2><p><br></p>'
+
+
+W = "rgb(249, 250, 252)"
+def full_text(d):
+    """Texte complet de la section 1, en blocs texte Brevo (fond bleu nuit)."""
+    def p(t): return f'<p class="default"><span style="color: {W};">{t}</span></p>'
+    br = '<p class="default"><br></p>'
+    h = p(f'<strong>{d["hook"]}</strong>') + br + p(d["intro"]) + br
+    for name, scope, lines in d["c"]:
+        sc = f" ({scope})" if scope else ""
+        h += p(f'<strong>{name}</strong>{sc}')
+        h += '<ul dir="ltr">' + "".join(f'<li style="color: {W};">{l}</li>' for l in lines) + '</ul>' + br
+    h += p(d["tip"]) + br
+    h += f'<p class="default"><span style="color: {W}; font-size: 11px;">{d["src"]}</span></p>'
+    return h
