@@ -191,11 +191,11 @@ SECTIONS = [("3441d09a-f2db-4ff7-b0ac-e0aba1686f27", f_intro), ("6dcd0518-5bdc-4
 
 # ---------- Encart teasing Black Friday ----------
 BF = {
- "FR": ('( "FR" in contact.LANG )', "Black Friday · du 27 au 30 novembre", "C’est demain&nbsp;!", "Ton GPS poids lourds à prix Black Friday pendant 4 jours. Seulement 5&nbsp;000 codes&nbsp;: sois prêt dès vendredi&nbsp;!", "Découvrir le GPS", "fr"),
- "EN": (EN_COND, "Black Friday · 27 to 30 November", "It starts tomorrow!", "Your HGV GPS at a Black Friday price for 4 days. Only 5,000 codes: be ready on Friday!", "Discover the GPS", "en"),
- "ES": ('( "ES" in contact.LANG )', "Black Friday · del 27 al 30 de noviembre", "¡Empieza mañana!", "Tu GPS para camiones a precio de Black Friday durante 4 días. Solo 5000 códigos: ¡prepárate para el viernes!", "Descubre el GPS", "es"),
- "IT": ('( "IT" in contact.LANG )', "Black Friday · dal 27 al 30 novembre", "Inizia domani!", "Il tuo GPS per camion a prezzo Black Friday per 4 giorni. Solo 5000 codici: tieniti pronto per venerdì!", "Scopri il GPS", "it"),
- "NL": (NL_COND, "Black Friday · 27 t/m 30 november", "Morgen gaat het los!", "Je vrachtwagen-GPS tegen Black Friday-prijs, 4 dagen lang. Slechts 5000 codes: wees er vrijdag snel bij!", "Ontdek de GPS", "nl"),
+ "FR": ('( "FR" in contact.LANG )', "Black Friday · du 27 au 30 novembre", "C’est demain&nbsp;!", "Ton GPS poids lourds à prix Black Friday arrive demain. Surveille ta boîte mail&nbsp;: ton offre t’attend dès vendredi&nbsp;!", "Découvrir le GPS", "fr"),
+ "EN": (EN_COND, "Black Friday · 27 to 30 November", "It starts tomorrow!", "Your HGV GPS at a Black Friday price is coming tomorrow. Keep an eye on your inbox: your offer lands on Friday!", "Discover the GPS", "en"),
+ "ES": ('( "ES" in contact.LANG )', "Black Friday · del 27 al 30 de noviembre", "¡Empieza mañana!", "Tu GPS para camiones a precio de Black Friday llega mañana. Atento a tu correo: ¡tu oferta te espera el viernes!", "Descubre el GPS", "es"),
+ "IT": ('( "IT" in contact.LANG )', "Black Friday · dal 27 al 30 novembre", "Inizia domani!", "Il tuo GPS per camion a prezzo Black Friday arriva domani. Tieni d’occhio la tua casella email: la tua offerta ti aspetta venerdì!", "Scopri il GPS", "it"),
+ "NL": (NL_COND, "Black Friday · 27 t/m 30 november", "Morgen gaat het los!", "Je vrachtwagen-GPS tegen Black Friday-prijs komt morgen. Hou je mailbox in de gaten: vrijdag staat je aanbieding klaar!", "Ontdek de GPS", "nl"),
 }
 def bf_html(label, title, txt, btn, lp):
     return f'''<!-- ENCART TEASING BLACK FRIDAY -->
