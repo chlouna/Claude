@@ -34,7 +34,7 @@ JOURS = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"
 
 TYPES = {
     "B2B": ("Partenaires et clients pros", "FR, EN, IT, ES, NL", "DCE6F7"),
-    "Trucker": ("Conducteurs (app)", "FR, IT", "FFF7B3"),
+    "Trucker": ("Conducteurs (app)", "FR, IT, ES, EN, NL", "FFF7B3"),
     "Owner": ("Établissements sur Truckfly", "FR", "DFF0E0"),
     "Nouveautés Trucker": ("Conducteurs (app)", "FR, IT", "FBE3D0"),
 }

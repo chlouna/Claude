@@ -5,7 +5,7 @@
 | Newsletter | Pour qui | Envoi | Langues |
 |---|---|---|---|
 | B2B | Partenaires et clients pros : nos nouveautés, l'actu du transport | Milieu du mois, vers le 15 | FR, EN, IT, ES, NL |
-| Trucker | Conducteurs qui utilisent l'app | Dernier vendredi du mois | FR, IT |
+| Trucker | Conducteurs qui utilisent l'app | Dernier vendredi du mois | FR, IT, ES, EN, NL |
 | Owner | Établissements présents sur Truckfly | Dernier vendredi du mois | FR (pour l'instant) |
 | Nouveautés Trucker | Conducteurs qui utilisent l'app | Le lundi qui suit le dernier vendredi, quand il y a une nouveauté | FR, IT |
 
