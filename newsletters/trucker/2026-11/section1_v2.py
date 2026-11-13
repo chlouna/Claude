@@ -12,23 +12,22 @@ S = {
    it=("Italie", "plus de 7,5" + NB + "t, hors agglomérations, de 9" + NB + "h à 22" + NB + "h", ["Dimanches 6, 13, 20 et 27 décembre", "Mardi 8, vendredi 25 et samedi 26 décembre", "Du 25 au 27 décembre, ça fait 3 jours d’affilée"]),
    es=("Espagne", "", ["Pas d’interdiction générale" + NB + ": vérifie les restrictions locales avant de partir."]),
    order=("fr", "it", "es"),
-   app="<strong>Le bon réflexe" + NB + ":</strong> sur Michelin Truckfly, repère dès maintenant les parkings avec douches et resto sur ta route, et lis les avis récents pour savoir ce qui est ouvert pendant les fêtes.",
+   app="<strong>Le bon réflexe" + NB + ":</strong> sur Michelin Truckfly, repère dès maintenant les parkings avec douches et resto sur ta route. Regarde tout" + NB + ": les photos, les avis récents et maintenant les j’aime, pour savoir ce qui est ouvert et fiable pendant les fêtes. Et après ton arrêt, laisse un avis ou un j’aime" + NB + ": le collègue suivant te dira merci" + NB + "!",
    src="Sources" + NB + ": Bison Futé · Ministère italien des Transports", btn="Je trouve mon parking"),
- "EN": dict(title="1. Christmas and New Year: where will you spend your stop?",
-   hook="On 25 December and 1 January, trucks over 7.5 t are stopped for 24 hours in France. Better pick your truck stop in advance!",
-   fr=("France", "over 7.5 t, whole road network", ["From Thursday 24 December 10 pm to Friday 25 December 10 pm", "From Thursday 31 December 10 pm to Friday 1 January 10 pm", "And at the weekend, as usual, from Saturday 10 pm to Sunday 10 pm"]),
-   it=("Italy", "over 7.5 t, outside built-up areas, 9 am to 10 pm", ["Sundays 6, 13, 20 and 27 December", "Tuesday 8, Friday 25 and Saturday 26 December", "From 25 to 27 December, that’s 3 days in a row"]),
-   es=("Spain", "", ["No general ban: check local restrictions before you set off."]),
-   order=("fr", "it", "es"),
-   app="<strong>Good habit:</strong> on Michelin Truckfly, find truck stops with showers and a restaurant along your route now, and read recent reviews to see what’s open over the holidays.",
-   src="Sources: Bison Futé · Italian Ministry of Transport", btn="Find my truck stop"),
+ "EN": dict(title="1. Christmas and New Year: pick the right truck stop",
+   hook="Busy roads, closed restaurants, packed car parks: over the holidays, finding a good stop takes time. Here’s how Michelin Truckfly helps you before, during and after the holidays.",
+   steps=[("Before", "Plan your stops along your route. Look at everything: photos, reviews and now likes. The most liked contributions point you to the most reliable places."),
+          ("During", "Read the most recent reviews to see what’s open (showers, restaurant, shop) and how busy the car park is."),
+          ("After", "Leave a review, add a photo or like a useful contribution: you help the next driver, and every action earns you 1 point.")],
+   note="Heading to the continent? In France, trucks over 7.5 t can’t drive on 25 December and 1 January.",
+   btn="Find my truck stop"),
  "ES": dict(title="1. Navidad y Año Nuevo: ¿dónde vas a pasar tu parada?",
    hook="El 25 de diciembre y el 1 de enero, los camiones de más de 7,5 t paran 24 horas en Francia. ¡Mejor elegir tu área con antelación!",
    fr=("Francia", "más de 7,5 t, toda la red", ["Del jueves 24 de diciembre a las 22 h al viernes 25 a las 22 h", "Del jueves 31 de diciembre a las 22 h al viernes 1 de enero a las 22 h", "Y el fin de semana, como siempre, del sábado a las 22 h al domingo a las 22 h"]),
    it=("Italia", "más de 7,5 t, fuera de poblado, de 9 h a 22 h", ["Domingos 6, 13, 20 y 27 de diciembre", "Martes 8, viernes 25 y sábado 26 de diciembre", "Del 25 al 27 de diciembre, son 3 días seguidos"]),
    es=("España", "", ["No hay prohibición general: revisa las restricciones locales antes de salir."]),
    order=("es", "fr", "it"),
-   app="<strong>Buen reflejo:</strong> en Michelin Truckfly, localiza ya los aparcamientos con duchas y restaurante en tu ruta, y lee las opiniones recientes para saber qué está abierto durante las fiestas.",
+   app="<strong>Buen reflejo:</strong> en Michelin Truckfly, localiza ya los aparcamientos con duchas y restaurante en tu ruta. Míralo todo: las fotos, las opiniones recientes y ahora los me gusta, para saber qué está abierto y es fiable durante las fiestas. Y después de tu parada, deja una opinión o un me gusta: ¡el compañero que venga detrás te lo agradecerá!",
    src="Fuentes: Bison Futé · Ministerio de Transportes italiano", btn="Busco mi aparcamiento"),
  "IT": dict(title="1. Natale e Capodanno: dove passerai la tua sosta?",
    hook="Il 25 dicembre e il 1° gennaio, in Francia i camion oltre 7,5 t restano fermi 24 ore. Meglio scegliere l’area di sosta in anticipo!",
@@ -36,20 +35,24 @@ S = {
    it=("Italia", "oltre 7,5 t, fuori dai centri abitati, dalle 9 alle 22", ["Domeniche 6, 13, 20 e 27 dicembre", "Martedì 8, venerdì 25 e sabato 26 dicembre", "Dal 25 al 27 dicembre sono 3 giorni di fila"]),
    es=("Spagna", "", ["Nessun divieto generale: verifica le restrizioni locali prima di partire."]),
    order=("it", "fr", "es"),
-   app="<strong>Il riflesso giusto:</strong> su Michelin Truckfly, individua fin da ora i parcheggi con docce e ristorante lungo il percorso, e leggi le recensioni recenti per sapere cosa è aperto durante le feste.",
+   app="<strong>Il riflesso giusto:</strong> su Michelin Truckfly, individua fin da ora i parcheggi con docce e ristorante lungo il percorso. Guarda tutto: le foto, le recensioni recenti e ora anche i like, per sapere cosa è aperto e affidabile durante le feste. E dopo la sosta, lascia una recensione o un like: il collega che arriva dopo ti ringrazierà!",
    src="Fonti: Ministero delle Infrastrutture e dei Trasporti · Bison Futé", btn="Trovo il mio parcheggio"),
- "NL": dict(title="1. Kerst en Oud en Nieuw: waar sta je stil?",
-   hook="Op 25 december en 1 januari staan vrachtwagens boven 7,5 t in Frankrijk 24 uur stil. Kies je parking dus op tijd!",
-   fr=("Frankrijk", "boven 7,5 t, het hele wegennet", ["Van donderdag 24 december 22.00 uur tot vrijdag 25 december 22.00 uur", "Van donderdag 31 december 22.00 uur tot vrijdag 1 januari 22.00 uur", "En in het weekend, zoals altijd, van zaterdag 22.00 uur tot zondag 22.00 uur"]),
-   it=("Italië", "boven 7,5 t, buiten de bebouwde kom, van 9.00 tot 22.00 uur", ["Zondag 6, 13, 20 en 27 december", "Dinsdag 8, vrijdag 25 en zaterdag 26 december", "Van 25 tot en met 27 december is dat 3 dagen achter elkaar"]),
-   es=("Spanje", "", ["Geen algemeen verbod: check de lokale beperkingen voor vertrek."]),
-   order=("fr", "it", "es"),
-   app="<strong>Slim:</strong> zoek nu al op Michelin Truckfly de parkings met douches en restaurant langs je route, en lees de recente reviews om te zien wat er open is tijdens de feestdagen.",
-   src="Bronnen: Bison Futé · Italiaans ministerie van Transport", btn="Ik zoek mijn parking"),
+ "NL": dict(title="1. Kerst en Oud en Nieuw: kies de juiste parking",
+   hook="Drukke wegen, gesloten restaurants, volle parkings: tijdens de feestdagen kost een goede stop tijd. Zo helpt Michelin Truckfly je voor, tijdens en na de feestdagen.",
+   steps=[("Voor", "Plan je stops langs je route. Bekijk alles: foto’s, reviews en nu ook likes. De meest gelikete bijdragen wijzen je de meest betrouwbare plekken aan."),
+          ("Tijdens", "Lees de meest recente reviews om te zien wat er open is (douches, restaurant, winkel) en hoe vol de parking is."),
+          ("Na", "Laat een review achter, voeg een foto toe of like een nuttige bijdrage: zo help je de volgende chauffeur, en elke actie levert je 1 punt op.")],
+   note="Rij je naar Frankrijk? Daar mogen vrachtwagens boven 7,5 t niet rijden op 25 december en 1 januari.",
+   btn="Ik zoek mijn parking"),
 }
 def p(t): return f'<p class="default"><span style="color: {W};">{t}</span></p>'
 BR = '<p class="default"><br></p>'
 def para(d):
+    if "steps" in d:
+        h = p(f"<strong>{d['hook']}</strong>") + BR
+        for t, x in d["steps"]:
+            h += p(f"<strong>{t}</strong>") + p(x) + BR
+        return h + f'<p class="default"><span style="color: {W}; font-size: 14px;">{d["note"]}</span></p>'
     h = p(f"<strong>{d['hook']}</strong>") + BR
     for k in d["order"]:
         name, scope, lines = d[k]

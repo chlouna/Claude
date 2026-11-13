@@ -650,7 +650,7 @@ body:
             background-color: '#0d1b5e'
         content:
         - condition: ( "FR" in contact.LANG )
-          id: 25356d40-4fb1-4964-a939-00fa93cccfa6
+          id: 3d14ad19-4408-476b-971c-2c7854033d4f
           title: Text
           type: text
           layout:
@@ -665,7 +665,7 @@ body:
               valign: top
               width: 100%
           content: '<p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 11px;"><strong>BLACK FRIDAY · DU 27 AU 30 NOVEMBRE</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 28px;"><strong>⚡ C’est demain&nbsp;! ⚡</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 16px;">Ton offre GPS arrive vendredi. Reste connecté&nbsp;!</span></p>'
-        - id: cdb68107-b7d7-4c66-8e33-a59e07d6a595
+        - id: 2b30a31e-96e5-4221-b771-4570a310978c
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Découvrir le GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -693,7 +693,7 @@ body:
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Découvrir le GPS</span></strong></p>'
           condition: ( "FR" in contact.LANG )
         - condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
-          id: fc9f630b-cd85-4b47-b641-28a4ec55f263
+          id: 2a5abbfa-d9e1-4e05-ae9b-8a0131d434c3
           title: Text
           type: text
           layout:
@@ -708,7 +708,7 @@ body:
               valign: top
               width: 100%
           content: '<p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 11px;"><strong>BLACK FRIDAY · 27 TO 30 NOVEMBER</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 28px;"><strong>⚡ It’s tomorrow! ⚡</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 16px;">Your GPS offer lands on Friday. Stay tuned!</span></p>'
-        - id: bb9b1afb-7c40-4cd1-a2bc-8c08522aa6f1
+        - id: 04c8e6d2-ad2b-49a0-bbf2-7408ee772c83
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Discover the GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -736,7 +736,7 @@ body:
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Discover the GPS</span></strong></p>'
           condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
         - condition: ( "ES" in contact.LANG )
-          id: 96f76530-182c-40d0-bb19-aab126e2e63f
+          id: 5362d65b-78ed-439c-aeff-de2d5943a5a7
           title: Text
           type: text
           layout:
@@ -751,7 +751,7 @@ body:
               valign: top
               width: 100%
           content: '<p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 11px;"><strong>BLACK FRIDAY · DEL 27 AL 30 DE NOVIEMBRE</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 28px;"><strong>⚡ ¡Es mañana! ⚡</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 16px;">Tu oferta GPS llega el viernes. ¡Estate atento!</span></p>'
-        - id: 5de5517b-c0f6-4363-ba1e-f38e9b2e658f
+        - id: cea49b92-ca29-4b14-891c-0ef84c12b392
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Descubre el GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -779,7 +779,7 @@ body:
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Descubre el GPS</span></strong></p>'
           condition: ( "ES" in contact.LANG )
         - condition: ( "IT" in contact.LANG )
-          id: bfc4f491-503c-48f0-a277-132cda14e9be
+          id: 3657dd1e-314e-4c2c-a9d2-1f7cebfaea4f
           title: Text
           type: text
           layout:
@@ -794,7 +794,7 @@ body:
               valign: top
               width: 100%
           content: '<p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 11px;"><strong>BLACK FRIDAY · DAL 27 AL 30 NOVEMBRE</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 28px;"><strong>⚡ È domani! ⚡</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 16px;">La tua offerta GPS arriva venerdì. Resta connesso!</span></p>'
-        - id: 8271a727-2996-4215-b52d-ff41fd807b4a
+        - id: 8fecb326-501f-42da-8776-a9ff6dcbe64b
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri il GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -822,7 +822,7 @@ body:
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri il GPS</span></strong></p>'
           condition: ( "IT" in contact.LANG )
         - condition: ( "NL" in contact.LANG )
-          id: 822b9648-d67f-4bf9-b1a4-64b63b857499
+          id: f4cc4f53-b366-483e-a3c9-ff4844ebd57c
           title: Text
           type: text
           layout:
@@ -837,7 +837,7 @@ body:
               valign: top
               width: 100%
           content: '<p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 11px;"><strong>BLACK FRIDAY · 27 T/M 30 NOVEMBER</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 28px;"><strong>⚡ Het is morgen! ⚡</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 16px;">Je GPS-aanbieding komt vrijdag. Blijf op de hoogte!</span></p>'
-        - id: f75d7b09-b758-4296-8042-f59f68c50e0c
+        - id: eabbec5d-e897-401a-bc03-fcf358b60a05
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Ontdek de GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -955,7 +955,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>Le 25 décembre et le 1er janvier, c’est 24&nbsp;h à l’arrêt en France pour les plus de 7,5&nbsp;t. Autant choisir ton aire à l’avance&nbsp;!</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>France</strong> (plus de 7,5&nbsp;t, tout le réseau)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Du jeudi 24 décembre 22&nbsp;h au vendredi 25 décembre 22&nbsp;h</li><li style="color: rgb(249, 250, 252);">Du jeudi 31 décembre 22&nbsp;h au vendredi 1er janvier 22&nbsp;h</li><li style="color: rgb(249, 250, 252);">Et le week-end, comme d’habitude, du samedi 22&nbsp;h au dimanche 22&nbsp;h</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Italie</strong> (plus de 7,5&nbsp;t, hors agglomérations, de 9&nbsp;h à 22&nbsp;h)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Dimanches 6, 13, 20 et 27 décembre</li><li style="color: rgb(249, 250, 252);">Mardi 8, vendredi 25 et samedi 26 décembre</li><li style="color: rgb(249, 250, 252);">Du 25 au 27 décembre, ça fait 3 jours d’affilée</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Espagne</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Pas d’interdiction générale&nbsp;: vérifie les restrictions locales avant de partir.</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Le bon réflexe&nbsp;:</strong> sur Michelin Truckfly, repère dès maintenant les parkings avec douches et resto sur ta route, et lis les avis récents pour savoir ce qui est ouvert pendant les fêtes.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 11px;">Sources&nbsp;: Bison Futé · Ministère italien des Transports</span></p>'
+          content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>Le 25 décembre et le 1er janvier, c’est 24&nbsp;h à l’arrêt en France pour les plus de 7,5&nbsp;t. Autant choisir ton aire à l’avance&nbsp;!</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>France</strong> (plus de 7,5&nbsp;t, tout le réseau)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Du jeudi 24 décembre 22&nbsp;h au vendredi 25 décembre 22&nbsp;h</li><li style="color: rgb(249, 250, 252);">Du jeudi 31 décembre 22&nbsp;h au vendredi 1er janvier 22&nbsp;h</li><li style="color: rgb(249, 250, 252);">Et le week-end, comme d’habitude, du samedi 22&nbsp;h au dimanche 22&nbsp;h</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Italie</strong> (plus de 7,5&nbsp;t, hors agglomérations, de 9&nbsp;h à 22&nbsp;h)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Dimanches 6, 13, 20 et 27 décembre</li><li style="color: rgb(249, 250, 252);">Mardi 8, vendredi 25 et samedi 26 décembre</li><li style="color: rgb(249, 250, 252);">Du 25 au 27 décembre, ça fait 3 jours d’affilée</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Espagne</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Pas d’interdiction générale&nbsp;: vérifie les restrictions locales avant de partir.</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Le bon réflexe&nbsp;:</strong> sur Michelin Truckfly, repère dès maintenant les parkings avec douches et resto sur ta route. Regarde tout&nbsp;: les photos, les avis récents et maintenant les j’aime, pour savoir ce qui est ouvert et fiable pendant les fêtes. Et après ton arrêt, laisse un avis ou un j’aime&nbsp;: le collègue suivant te dira merci&nbsp;!</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 11px;">Sources&nbsp;: Bison Futé · Ministère italien des Transports</span></p>'
         - id: 5ab9f253-ebb7-4bfc-9e9f-d4c3847da6b2
           title: Image
           type: image
@@ -1091,7 +1091,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>Il 25 dicembre e il 1° gennaio, in Francia i camion oltre 7,5 t restano fermi 24 ore. Meglio scegliere l’area di sosta in anticipo!</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Italia</strong> (oltre 7,5 t, fuori dai centri abitati, dalle 9 alle 22)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Domeniche 6, 13, 20 e 27 dicembre</li><li style="color: rgb(249, 250, 252);">Martedì 8, venerdì 25 e sabato 26 dicembre</li><li style="color: rgb(249, 250, 252);">Dal 25 al 27 dicembre sono 3 giorni di fila</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Francia</strong> (oltre 7,5 t, su tutta la rete)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Da giovedì 24 dicembre ore 22 a venerdì 25 ore 22</li><li style="color: rgb(249, 250, 252);">Da giovedì 31 dicembre ore 22 a venerdì 1° gennaio ore 22</li><li style="color: rgb(249, 250, 252);">E nel fine settimana, come sempre, dal sabato ore 22 alla domenica ore 22</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Spagna</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Nessun divieto generale: verifica le restrizioni locali prima di partire.</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Il riflesso giusto:</strong> su Michelin Truckfly, individua fin da ora i parcheggi con docce e ristorante lungo il percorso, e leggi le recensioni recenti per sapere cosa è aperto durante le feste.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 11px;">Fonti: Ministero delle Infrastrutture e dei Trasporti · Bison Futé</span></p>'
+          content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>Il 25 dicembre e il 1° gennaio, in Francia i camion oltre 7,5 t restano fermi 24 ore. Meglio scegliere l’area di sosta in anticipo!</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Italia</strong> (oltre 7,5 t, fuori dai centri abitati, dalle 9 alle 22)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Domeniche 6, 13, 20 e 27 dicembre</li><li style="color: rgb(249, 250, 252);">Martedì 8, venerdì 25 e sabato 26 dicembre</li><li style="color: rgb(249, 250, 252);">Dal 25 al 27 dicembre sono 3 giorni di fila</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Francia</strong> (oltre 7,5 t, su tutta la rete)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Da giovedì 24 dicembre ore 22 a venerdì 25 ore 22</li><li style="color: rgb(249, 250, 252);">Da giovedì 31 dicembre ore 22 a venerdì 1° gennaio ore 22</li><li style="color: rgb(249, 250, 252);">E nel fine settimana, come sempre, dal sabato ore 22 alla domenica ore 22</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Spagna</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Nessun divieto generale: verifica le restrizioni locali prima di partire.</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Il riflesso giusto:</strong> su Michelin Truckfly, individua fin da ora i parcheggi con docce e ristorante lungo il percorso. Guarda tutto: le foto, le recensioni recenti e ora anche i like, per sapere cosa è aperto e affidabile durante le feste. E dopo la sosta, lascia una recensione o un like: il collega che arriva dopo ti ringrazierà!</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 11px;">Fonti: Ministero delle Infrastrutture e dei Trasporti · Bison Futé</span></p>'
         - id: 2a69427d-0b21-41de-ab4c-58b0b3a34d47
           title: Image
           type: image
@@ -1227,7 +1227,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>El 25 de diciembre y el 1 de enero, los camiones de más de 7,5 t paran 24 horas en Francia. ¡Mejor elegir tu área con antelación!</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>España</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">No hay prohibición general: revisa las restricciones locales antes de salir.</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Francia</strong> (más de 7,5 t, toda la red)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Del jueves 24 de diciembre a las 22 h al viernes 25 a las 22 h</li><li style="color: rgb(249, 250, 252);">Del jueves 31 de diciembre a las 22 h al viernes 1 de enero a las 22 h</li><li style="color: rgb(249, 250, 252);">Y el fin de semana, como siempre, del sábado a las 22 h al domingo a las 22 h</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Italia</strong> (más de 7,5 t, fuera de poblado, de 9 h a 22 h)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Domingos 6, 13, 20 y 27 de diciembre</li><li style="color: rgb(249, 250, 252);">Martes 8, viernes 25 y sábado 26 de diciembre</li><li style="color: rgb(249, 250, 252);">Del 25 al 27 de diciembre, son 3 días seguidos</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Buen reflejo:</strong> en Michelin Truckfly, localiza ya los aparcamientos con duchas y restaurante en tu ruta, y lee las opiniones recientes para saber qué está abierto durante las fiestas.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 11px;">Fuentes: Bison Futé · Ministerio de Transportes italiano</span></p>'
+          content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>El 25 de diciembre y el 1 de enero, los camiones de más de 7,5 t paran 24 horas en Francia. ¡Mejor elegir tu área con antelación!</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>España</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">No hay prohibición general: revisa las restricciones locales antes de salir.</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Francia</strong> (más de 7,5 t, toda la red)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Del jueves 24 de diciembre a las 22 h al viernes 25 a las 22 h</li><li style="color: rgb(249, 250, 252);">Del jueves 31 de diciembre a las 22 h al viernes 1 de enero a las 22 h</li><li style="color: rgb(249, 250, 252);">Y el fin de semana, como siempre, del sábado a las 22 h al domingo a las 22 h</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Italia</strong> (más de 7,5 t, fuera de poblado, de 9 h a 22 h)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Domingos 6, 13, 20 y 27 de diciembre</li><li style="color: rgb(249, 250, 252);">Martes 8, viernes 25 y sábado 26 de diciembre</li><li style="color: rgb(249, 250, 252);">Del 25 al 27 de diciembre, son 3 días seguidos</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Buen reflejo:</strong> en Michelin Truckfly, localiza ya los aparcamientos con duchas y restaurante en tu ruta. Míralo todo: las fotos, las opiniones recientes y ahora los me gusta, para saber qué está abierto y es fiable durante las fiestas. Y después de tu parada, deja una opinión o un me gusta: ¡el compañero que venga detrás te lo agradecerá!</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 11px;">Fuentes: Bison Futé · Ministerio de Transportes italiano</span></p>'
         - id: c0c9044c-2a8b-4cd5-80f9-f23a50369d4d
           title: Image
           type: image
@@ -1342,7 +1342,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><br></p><h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">1. Christmas and New Year: where will you spend your stop?</span></h2><p><br></p>'
+          content: '<p><br></p><h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">1. Christmas and New Year: pick the right truck stop</span></h2><p><br></p>'
         - id: eb264c4d-a708-423c-b2a7-13a4231f48bc
           stylable: false
           title: Paragraph
@@ -1363,7 +1363,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>On 25 December and 1 January, trucks over 7.5 t are stopped for 24 hours in France. Better pick your truck stop in advance!</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>France</strong> (over 7.5 t, whole road network)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">From Thursday 24 December 10 pm to Friday 25 December 10 pm</li><li style="color: rgb(249, 250, 252);">From Thursday 31 December 10 pm to Friday 1 January 10 pm</li><li style="color: rgb(249, 250, 252);">And at the weekend, as usual, from Saturday 10 pm to Sunday 10 pm</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Italy</strong> (over 7.5 t, outside built-up areas, 9 am to 10 pm)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Sundays 6, 13, 20 and 27 December</li><li style="color: rgb(249, 250, 252);">Tuesday 8, Friday 25 and Saturday 26 December</li><li style="color: rgb(249, 250, 252);">From 25 to 27 December, that’s 3 days in a row</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Spain</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">No general ban: check local restrictions before you set off.</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Good habit:</strong> on Michelin Truckfly, find truck stops with showers and a restaurant along your route now, and read recent reviews to see what’s open over the holidays.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 11px;">Sources: Bison Futé · Italian Ministry of Transport</span></p>'
+          content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>Busy roads, closed restaurants, packed car parks: over the holidays, finding a good stop takes time. Here’s how Michelin Truckfly helps you before, during and after the holidays.</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Before</strong></span></p><p class="default"><span style="color: rgb(249, 250, 252);">Plan your stops along your route. Look at everything: photos, reviews and now likes. The most liked contributions point you to the most reliable places.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>During</strong></span></p><p class="default"><span style="color: rgb(249, 250, 252);">Read the most recent reviews to see what’s open (showers, restaurant, shop) and how busy the car park is.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>After</strong></span></p><p class="default"><span style="color: rgb(249, 250, 252);">Leave a review, add a photo or like a useful contribution: you help the next driver, and every action earns you 1 point.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 14px;">Heading to the continent? In France, trucks over 7.5 t can’t drive on 25 December and 1 January.</span></p>'
         - id: 7c5d6ef2-23bf-4567-9b17-c96c1eac95df
           title: Image
           type: image
@@ -1478,7 +1478,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><br></p><h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">1. Kerst en Oud en Nieuw: waar sta je stil?</span></h2><p><br></p>'
+          content: '<p><br></p><h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">1. Kerst en Oud en Nieuw: kies de juiste parking</span></h2><p><br></p>'
         - id: 2c4771f3-ce29-41df-ad96-1a909731606d
           stylable: false
           title: Paragraph
@@ -1499,7 +1499,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>Op 25 december en 1 januari staan vrachtwagens boven 7,5 t in Frankrijk 24 uur stil. Kies je parking dus op tijd!</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Frankrijk</strong> (boven 7,5 t, het hele wegennet)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Van donderdag 24 december 22.00 uur tot vrijdag 25 december 22.00 uur</li><li style="color: rgb(249, 250, 252);">Van donderdag 31 december 22.00 uur tot vrijdag 1 januari 22.00 uur</li><li style="color: rgb(249, 250, 252);">En in het weekend, zoals altijd, van zaterdag 22.00 uur tot zondag 22.00 uur</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Italië</strong> (boven 7,5 t, buiten de bebouwde kom, van 9.00 tot 22.00 uur)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Zondag 6, 13, 20 en 27 december</li><li style="color: rgb(249, 250, 252);">Dinsdag 8, vrijdag 25 en zaterdag 26 december</li><li style="color: rgb(249, 250, 252);">Van 25 tot en met 27 december is dat 3 dagen achter elkaar</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Spanje</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Geen algemeen verbod: check de lokale beperkingen voor vertrek.</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Slim:</strong> zoek nu al op Michelin Truckfly de parkings met douches en restaurant langs je route, en lees de recente reviews om te zien wat er open is tijdens de feestdagen.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 11px;">Bronnen: Bison Futé · Italiaans ministerie van Transport</span></p>'
+          content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>Drukke wegen, gesloten restaurants, volle parkings: tijdens de feestdagen kost een goede stop tijd. Zo helpt Michelin Truckfly je voor, tijdens en na de feestdagen.</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Voor</strong></span></p><p class="default"><span style="color: rgb(249, 250, 252);">Plan je stops langs je route. Bekijk alles: foto’s, reviews en nu ook likes. De meest gelikete bijdragen wijzen je de meest betrouwbare plekken aan.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Tijdens</strong></span></p><p class="default"><span style="color: rgb(249, 250, 252);">Lees de meest recente reviews om te zien wat er open is (douches, restaurant, winkel) en hoe vol de parking is.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Na</strong></span></p><p class="default"><span style="color: rgb(249, 250, 252);">Laat een review achter, voeg een foto toe of like een nuttige bijdrage: zo help je de volgende chauffeur, en elke actie levert je 1 punt op.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 14px;">Rij je naar Frankrijk? Daar mogen vrachtwagens boven 7,5 t niet rijden op 25 december en 1 januari.</span></p>'
         - id: 2658fcd8-926c-48e0-bb4a-80182ad06c95
           title: Image
           type: image
@@ -2351,7 +2351,7 @@ body:
       condition: ( "IT" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: bdde7d0b-da83-40cc-b062-a673df97eebf
+      id: 94572343-772b-4814-8858-fdd8ad70ecc9
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -2373,7 +2373,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 3e434fb0-2917-4fb2-a293-a62c4206f972
+      - id: 7f25c722-a48a-49d2-a79b-411a5965ad60
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -2388,7 +2388,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 96cbcc92-2a98-4f90-9a1a-1193d02d248f
+        - id: 4931a468-2118-4fa4-90c3-72c6aa192b65
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -2417,7 +2417,7 @@ body:
               valign: top
               width: 100%
           content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255);"><strong>3. Le feste con un GPS per camion</strong></span></h2><p><br></p>
-        - id: a054fdac-78f6-437d-916e-3529669c74d4
+        - id: 52e4470c-65b6-493f-aa4b-6b3658b1c657
           stylable: false
           title: Paragraph
           type: text
@@ -2438,7 +2438,7 @@ body:
               valign: top
               width: 100%
           content: '<div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Lo sapevi?</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">L’86% degli autisti di mezzi pesanti usa un GPS per auto, che può metterli in pericolo.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">Con strade trafficate e divieti delle feste, non è il momento di sbagliare strada. <strong>Il GPS Michelin Truckfly tiene conto di tutti i vincoli del tuo camion:</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Navigazione per mezzi pesanti: </strong>Sagoma, peso, strade consentite, restrizioni ADR: il percorso è adatto al tuo camion.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Le segnalazioni della community: </strong>Controlli, incidenti, pericoli: la più grande community di camionisti d’Europa ti avvisa in tempo reale. E il traffico in diretta ti aiuta a evitare le code.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Oltre 135.000 strutture per mezzi pesanti: </strong>Ristoranti, parcheggi gratuiti o sorvegliati, distributori: sai sempre dove fermarti.</span></div>'
-        - id: 21b31bb7-f13c-4e77-a6d5-61a6b7e9d4cb
+        - id: a87c5ff9-53a6-426f-98d3-2e4434531c80
           title: Image
           type: image
           layout:
@@ -2454,7 +2454,7 @@ body:
               width: 45%
           content:
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: df774f12-b926-44de-baed-688f3ab6cfd7
+        - id: 5e77e6e6-dc37-4cc5-8638-f9bd05fc1304
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Provo il GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2484,7 +2484,7 @@ body:
       condition: ( "ES" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: e5c51af2-011d-4aad-80e4-25eccb66e26c
+      id: 2fbf6533-6101-4c67-9dee-06212317cda9
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -2506,7 +2506,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 97d4d5cc-07fc-47fc-91e4-5244108f5148
+      - id: 3552ce93-5883-49fc-aabc-f5a92ce329d1
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -2521,7 +2521,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 16752f02-a379-4abc-a791-8104338dc60e
+        - id: 2946fa1e-6925-4980-9326-11bcef153875
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -2550,7 +2550,7 @@ body:
               valign: top
               width: 100%
           content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255);"><strong>3. Las fiestas con un GPS para camiones</strong></span></h2><p><br></p>
-        - id: 7c0c51c7-b6fa-41aa-8677-9ca85a19aa44
+        - id: 33988573-41aa-41ef-886a-6e9086f433e6
           stylable: false
           title: Paragraph
           type: text
@@ -2571,7 +2571,7 @@ body:
               valign: top
               width: 100%
           content: '<div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>¿Lo sabías?</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">El 86% de los camioneros usa un GPS para turismos, que puede ponerlos en peligro.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">Con las carreteras cargadas y las restricciones de las fiestas, no es momento de equivocarse de ruta. <strong>El GPS Michelin Truckfly tiene en cuenta todas las limitaciones de tu camión:</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Navegación para camiones: </strong>Gálibo, peso, carreteras permitidas, restricciones ADR: tu ruta se adapta a tu camión.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Avisos de la comunidad: </strong>Controles, accidentes, peligros: la mayor comunidad de camioneros de Europa te avisa en tiempo real. Y el tráfico en directo te ayuda a evitar atascos.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Más de 135.000 establecimientos para camiones: </strong>Restaurantes, aparcamientos gratuitos o vigilados, gasolineras: siempre sabes dónde parar.</span></div>'
-        - id: 6934f61e-b0ab-43f4-9d1b-0f397073df3f
+        - id: 2ec3bb71-3c5f-4068-b8ac-b6e4c204a4f4
           title: Image
           type: image
           layout:
@@ -2587,7 +2587,7 @@ body:
               width: 45%
           content:
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: 899c4bd1-e1ea-4006-9f50-90a01f56ee64
+        - id: 6580c5ca-0569-46e6-91e0-9beff64a728f
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Pruebo el GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2617,7 +2617,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: 37d6988f-74d2-4f6c-b0c5-d89c002b3036
+      id: 796c2b7f-3f7b-4103-9a6e-cd92aa3eaf32
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -2639,7 +2639,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 69800149-42dc-427b-957b-911d3ca51be9
+      - id: daaf9a08-df2e-4653-a794-82184db88e60
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -2654,7 +2654,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: f6870205-494c-4701-83db-61d65f783ef1
+        - id: 43cef4b5-c12f-47e2-a6e0-6bbea4101794
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -2683,7 +2683,7 @@ body:
               valign: top
               width: 100%
           content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255);"><strong>3. The festive season with a truck GPS</strong></span></h2><p><br></p>
-        - id: 55f7054b-223f-4fb5-80bd-499e6d8f3a85
+        - id: 5037c681-5761-411b-81ff-df3487512497
           stylable: false
           title: Paragraph
           type: text
@@ -2704,7 +2704,7 @@ body:
               valign: top
               width: 100%
           content: '<div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Did you know?</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">86% of HGV drivers use a GPS made for cars, which can put them in danger.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">With busy roads and holiday driving bans, this is no time to take a wrong turn. <strong>The Michelin Truckfly GPS takes every constraint of your truck into account:</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>HGV navigation: </strong>Size, weight, permitted roads, ADR restrictions: your route is adapted to your truck.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Community alerts: </strong>Police checks, accidents, hazards: Europe’s largest HGV community warns you in real time. And live traffic helps you avoid jams.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>135,000+ HGV-friendly places: </strong>Restaurants, free or secure parking, fuel stations: you always know where to stop.</span></div>'
-        - id: dd867412-0ee2-4bb0-9e70-a254fca01173
+        - id: 93de7001-d47a-412f-819d-62b9687cf515
           title: Image
           type: image
           layout:
@@ -2720,7 +2720,7 @@ body:
               width: 45%
           content:
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: 2780c637-a6a4-47ac-8919-663003097793
+        - id: c9947c0b-b504-4b3a-8b55-d292e960bda9
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Try the GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2750,7 +2750,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 6d946be2-27a5-4135-afcd-c9205376af17
+      id: f77e400f-8e64-4d5b-a69a-7a9bfb1251ef
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -2772,7 +2772,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 3425ab3e-cfc9-4116-87f9-5c9c03fa27c5
+      - id: 8dd3d77b-0fbf-4bac-a12e-ca820e176dca
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -2787,7 +2787,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 72f96e5a-57c6-4322-8074-551d147f5985
+        - id: 12b2b113-0814-4bdc-9774-8cb046e0af31
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -2816,7 +2816,7 @@ body:
               valign: top
               width: 100%
           content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255);"><strong>3. De feestdagen met een vrachtwagen-GPS</strong></span></h2><p><br></p>
-        - id: 553dd973-2497-4101-85af-5496e8b13ecb
+        - id: 0f4a78c7-c9e7-4c27-b801-c42805063446
           stylable: false
           title: Paragraph
           type: text
@@ -2837,7 +2837,7 @@ body:
               valign: top
               width: 100%
           content: '<div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Wist je dat?</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">86% van de vrachtwagenchauffeurs gebruikt een GPS voor personenauto’s, en dat kan gevaarlijk zijn.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">Met drukke wegen en rijverboden tijdens de feestdagen is dit niet het moment om verkeerd te rijden. <strong>De Michelin Truckfly GPS houdt rekening met alle beperkingen van je truck:</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Navigatie voor vrachtwagens: </strong>Afmetingen, gewicht, toegestane wegen, ADR-beperkingen: je route is aangepast aan je truck.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Meldingen van de community: </strong>Controles, ongevallen, gevaren: de grootste vrachtwagencommunity van Europa waarschuwt je in realtime. En live verkeer helpt je files te vermijden.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Meer dan 135.000 locaties voor vrachtwagens: </strong>Restaurants, gratis of beveiligde parkings, tankstations: je weet altijd waar je kunt stoppen.</span></div>'
-        - id: f3c23e2c-a8e6-4b4f-90cb-4b91afe928b0
+        - id: 5afd7195-4646-4357-b427-be9d21321cbf
           title: Image
           type: image
           layout:
@@ -2853,7 +2853,7 @@ body:
               width: 45%
           content:
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: 201bb4f1-c76f-44e1-b1f7-56d175502d6d
+        - id: 2dec1ffd-9ab1-4ed6-a258-3f826a3fd741
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Ik probeer de GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
