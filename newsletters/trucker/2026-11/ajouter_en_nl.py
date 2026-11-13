@@ -1,7 +1,8 @@
 """Newsletter Trucker novembre 2026 (envoi jeudi 26/11).
 Ajoute EN (UK) et NL, l'encart teasing Black Friday, met les dates à jour."""
-import copy, uuid, yaml, sys
 from pathlib import Path
+import copy, uuid, yaml, sys
+sys.path.insert(0, str(Path(__file__).parent))
 
 D = Path(__file__).parent
 src = yaml.safe_load(open(D / "template_user.yaml"))
@@ -236,6 +237,31 @@ for r in rows:
             out += [clone(es_id, "EN", fill), clone(es_id, "NL", fill)]
             if fill is f_intro: out.append(bf_row)
 src["body"]["content"][0]["content"] = out
+
+# ---------- Section 2 : tuto code promo à la place des alertes ----------
+from tuto_code_promo import tuto
+S2 = {
+ "FR": ("2. Ton code promo activé en 30&nbsp;secondes", "<strong>Demain, c’est le Black Friday</strong> et ton offre arrive par mail.", "Pour en profiter, il te suffit d’entrer ton code dans l’appli. Voici comment faire en 5&nbsp;étapes&nbsp;:", "J’ouvre l’appli"),
+ "EN": ("2. Your promo code activated in 30 seconds", "<strong>Black Friday starts tomorrow</strong> and your offer is coming by email.", "To enjoy it, just enter your code in the app. Here’s how in 5 steps:", "Open the app"),
+ "ES": ("2. Tu código promocional activado en 30 segundos", "<strong>Mañana empieza el Black Friday</strong> y tu oferta llega por correo.", "Para aprovecharla, solo tienes que introducir tu código en la app. Así se hace en 5 pasos:", "Abro la app"),
+ "IT": ("2. Il tuo codice promo attivato in 30 secondi", "<strong>Domani inizia il Black Friday</strong> e la tua offerta arriva via email.", "Per approfittarne, basta inserire il codice nell’app. Ecco come fare in 5 passaggi:", "Apro l’app"),
+ "NL": ("2. Je promotiecode geactiveerd in 30 seconden", "<strong>Morgen begint Black Friday</strong> en je aanbieding komt per mail.", "Om ervan te profiteren, voer je gewoon je code in de app in. Zo doe je dat in 5 stappen:", "Ik open de app"),
+}
+n2 = 0
+for r in src["body"]["content"][0]["content"]:
+    it = r["content"][0]["content"]
+    if not (isinstance(it[0].get("content"), str) and ">2. " in it[0]["content"]): continue
+    c = r.get("condition", "")
+    lg = "EN" if c.startswith('( "EN"') else next(k for k in ("FR", "IT", "ES", "NL") if f'( "{k}"' in c)
+    t, a, b, btn = S2[lg]
+    it[0]["content"] = H2B(t)
+    it[1]["content"] = '<p class="default"><br></p>' + P(a) + BR + P(b)
+    img = it[2]; it[2] = {"id": img["id"], "title": "HTML", "type": "raw-html",
+        "layout": {"320px": {}, "default": {"padding-bottom": "15px", "padding-top": "15px", "width": "100%"}}, "content": tuto(lg)}
+    set_btn(it[3], BTN(btn)); it[3]["content"]["href"] = "https://truckflyapp.onelink.me/2ysq/r4vkfd60"
+    (D.parent.parent / "blocs" / f"trucker-2026-11-tuto-code-promo-{lg.lower()}.html").write_text(tuto(lg))
+    n2 += 1
+assert n2 == 5, n2
 
 # ---------- Marque, footer FR en « tu », footer NL ----------
 src = walk(src, lambda s: s.replace("MICHELIN", "Michelin"))
