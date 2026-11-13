@@ -221,6 +221,9 @@ bf_row["content"][0]["content"] = [
      "layout": {"320px": {}, "default": {"padding-bottom": "10px", "padding-top": "10px", "width": "100%"}},
      "content": bf_html(l, t, x, b, lp)} for (c, l, t, x, b, lp) in BF.values()]
 
+# Bloc FR section 1 sans condition dans le modèle : visible par toutes les langues
+byid["eed65fa8-3d6a-4acf-8c18-d254c651c937"]["condition"] = '( "FR" in contact.LANG )'
+
 # ---------- Insertion ----------
 out = []
 for r in rows:
