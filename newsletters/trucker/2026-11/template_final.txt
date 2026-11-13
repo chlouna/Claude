@@ -515,7 +515,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 20px
-      id: 143f890b-786b-4a94-9454-08c09cc49e27
+      id: 78414699-3830-4a8a-a28d-fb95ca9fee00
       moduleName: grid-row12
       thumbnail: /assets/img/editor/grid_12.svg
       title: Bannière EN
@@ -533,7 +533,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 32cf9596-f19d-4a8e-83c5-e4b6930878f2
+      - id: 314a8ce9-7941-4d90-9a46-316f6860c194
         isEmpty: false
         label: Drop content here
         title: column 1
@@ -545,7 +545,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: f48994fe-5f7a-4293-a962-53bce98b3473
+        - id: c7548b1d-4985-4ae4-ac88-99fbcea39622
           thumbnail: /assets/img/editor/element_text.svg
           title: Texte
           type: text
@@ -565,7 +565,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 20px
-      id: 10339d40-2aa6-4b29-94f4-8602fbf4f5a3
+      id: 1d319256-9384-4eff-9f4e-ba13e542214a
       moduleName: grid-row12
       thumbnail: /assets/img/editor/grid_12.svg
       title: Bannière NL
@@ -583,7 +583,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: dad455eb-d611-4c54-b404-abb159a36bf9
+      - id: 1367d372-b6c0-4629-b7b0-e58220c94b25
         isEmpty: false
         label: Drop content here
         title: column 1
@@ -595,7 +595,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 415d65b8-7346-41ca-9657-24a557652867
+        - id: 680cde14-9b1e-41c2-bee8-e7a6e06bb7ae
           thumbnail: /assets/img/editor/element_text.svg
           title: Texte
           type: text
@@ -615,7 +615,7 @@ body:
       condition: ''
       dist: '12'
       gutter: 30px
-      id: b811a8c2-a585-4350-b2e4-0e6ca3f76a9d
+      id: 14ae8a55-6968-4a47-8406-069a8659744d
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -634,7 +634,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: fd1a9ed4-9af0-4d64-a3b3-51e3bddfbfdd
+      - id: 594d69a0-920f-4440-978d-44a7e5ef373f
         isEmpty: false
         stylable: false
         title: Column
@@ -647,7 +647,7 @@ body:
             valign: top
         content:
         - condition: ( "FR" in contact.LANG )
-          id: 7de64b61-7ba7-40ee-aeae-9dc19e79b541
+          id: 2ee6967b-0dc3-4922-befa-1ab7d21cc6e9
           title: HTML
           type: raw-html
           layout:
@@ -658,7 +658,7 @@ body:
               width: 100%
           content: "<!-- ENCART TEASING BLACK FRIDAY -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background-color:#FFFFFF;padding:8px 20px 8px 20px;\">\n  <tr><td align=\"center\">\n    <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"max-width:520px;background-color:#0d1b5e;border-radius:16px;\">\n      <tr><td align=\"center\" style=\"padding:28px 24px;font-family:Arial,Helvetica,sans-serif;\">\n        <p style=\"margin:0 0 10px 0;font-size:11px;font-weight:700;color:#FFFF18;letter-spacing:2px;text-transform:uppercase;\">Black Friday · du 27 au 30 novembre</p>\n        <p style=\"margin:0 0 12px 0;font-size:28px;line-height:1.2;font-weight:700;color:#FFFF18;\">C’est demain&nbsp;!</p>\n        <p style=\"margin:0 0 20px 0;font-size:16px;line-height:1.5;color:#FFFFFF;\">Le Black Friday Michelin Truckfly commence demain. Surveille ta boîte mail&nbsp;: ton offre GPS arrive vendredi&nbsp;!</p>\n        <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><tr>\n          <td align=\"center\" bgcolor=\"#FFFF18\" style=\"border-radius:10px;\">\n            <a href=\"https://lp.truckfly.com/fr/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails\" target=\"_blank\" style=\"display:inline-block;padding:14px 32px;font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:700;color:#000000;text-decoration:none;border-radius:10px;\">Découvrir le GPS</a>\n          </td></tr></table>\n      </td></tr>\n    </table>\n  </td></tr>\n</table>"
         - condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
-          id: a43d8372-4463-499d-b0bc-5f6890105966
+          id: b9813a42-a838-4087-b428-3106576c2b19
           title: HTML
           type: raw-html
           layout:
@@ -669,7 +669,7 @@ body:
               width: 100%
           content: "<!-- ENCART TEASING BLACK FRIDAY -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background-color:#FFFFFF;padding:8px 20px 8px 20px;\">\n  <tr><td align=\"center\">\n    <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"max-width:520px;background-color:#0d1b5e;border-radius:16px;\">\n      <tr><td align=\"center\" style=\"padding:28px 24px;font-family:Arial,Helvetica,sans-serif;\">\n        <p style=\"margin:0 0 10px 0;font-size:11px;font-weight:700;color:#FFFF18;letter-spacing:2px;text-transform:uppercase;\">Black Friday · 27 to 30 November</p>\n        <p style=\"margin:0 0 12px 0;font-size:28px;line-height:1.2;font-weight:700;color:#FFFF18;\">It starts tomorrow!</p>\n        <p style=\"margin:0 0 20px 0;font-size:16px;line-height:1.5;color:#FFFFFF;\">Michelin Truckfly Black Friday starts tomorrow. Keep an eye on your inbox: your GPS offer lands on Friday!</p>\n        <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><tr>\n          <td align=\"center\" bgcolor=\"#FFFF18\" style=\"border-radius:10px;\">\n            <a href=\"https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails\" target=\"_blank\" style=\"display:inline-block;padding:14px 32px;font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:700;color:#000000;text-decoration:none;border-radius:10px;\">Discover the GPS</a>\n          </td></tr></table>\n      </td></tr>\n    </table>\n  </td></tr>\n</table>"
         - condition: ( "ES" in contact.LANG )
-          id: f6f8ad6f-33c4-43df-980e-cff0370e6403
+          id: 345e9f0f-0eec-4eb3-b4a7-92d7320100ad
           title: HTML
           type: raw-html
           layout:
@@ -680,7 +680,7 @@ body:
               width: 100%
           content: "<!-- ENCART TEASING BLACK FRIDAY -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background-color:#FFFFFF;padding:8px 20px 8px 20px;\">\n  <tr><td align=\"center\">\n    <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"max-width:520px;background-color:#0d1b5e;border-radius:16px;\">\n      <tr><td align=\"center\" style=\"padding:28px 24px;font-family:Arial,Helvetica,sans-serif;\">\n        <p style=\"margin:0 0 10px 0;font-size:11px;font-weight:700;color:#FFFF18;letter-spacing:2px;text-transform:uppercase;\">Black Friday · del 27 al 30 de noviembre</p>\n        <p style=\"margin:0 0 12px 0;font-size:28px;line-height:1.2;font-weight:700;color:#FFFF18;\">¡Empieza mañana!</p>\n        <p style=\"margin:0 0 20px 0;font-size:16px;line-height:1.5;color:#FFFFFF;\">El Black Friday de Michelin Truckfly empieza mañana. Atento a tu correo: ¡tu oferta GPS llega el viernes!</p>\n        <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><tr>\n          <td align=\"center\" bgcolor=\"#FFFF18\" style=\"border-radius:10px;\">\n            <a href=\"https://lp.truckfly.com/es/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails\" target=\"_blank\" style=\"display:inline-block;padding:14px 32px;font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:700;color:#000000;text-decoration:none;border-radius:10px;\">Descubre el GPS</a>\n          </td></tr></table>\n      </td></tr>\n    </table>\n  </td></tr>\n</table>"
         - condition: ( "IT" in contact.LANG )
-          id: b877345a-d2a3-4c89-9bbe-868fdec87157
+          id: 81398827-f6c7-4d5c-87c6-b61e950a2597
           title: HTML
           type: raw-html
           layout:
@@ -691,7 +691,7 @@ body:
               width: 100%
           content: "<!-- ENCART TEASING BLACK FRIDAY -->\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background-color:#FFFFFF;padding:8px 20px 8px 20px;\">\n  <tr><td align=\"center\">\n    <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"max-width:520px;background-color:#0d1b5e;border-radius:16px;\">\n      <tr><td align=\"center\" style=\"padding:28px 24px;font-family:Arial,Helvetica,sans-serif;\">\n        <p style=\"margin:0 0 10px 0;font-size:11px;font-weight:700;color:#FFFF18;letter-spacing:2px;text-transform:uppercase;\">Black Friday · dal 27 al 30 novembre</p>\n        <p style=\"margin:0 0 12px 0;font-size:28px;line-height:1.2;font-weight:700;color:#FFFF18;\">Inizia domani!</p>\n        <p style=\"margin:0 0 20px 0;font-size:16px;line-height:1.5;color:#FFFFFF;\">Il Black Friday di Michelin Truckfly inizia domani. Tieni d’occhio la tua casella email: la tua offerta GPS arriva venerdì!</p>\n        <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><tr>\n          <td align=\"center\" bgcolor=\"#FFFF18\" style=\"border-radius:10px;\">\n            <a href=\"https://lp.truckfly.com/it/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails\" target=\"_blank\" style=\"display:inline-block;padding:14px 32px;font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:700;color:#000000;text-decoration:none;border-radius:10px;\">Scopri il GPS</a>\n          </td></tr></table>\n      </td></tr>\n    </table>\n  </td></tr>\n</table>"
         - condition: ( "NL" in contact.LANG )
-          id: 1e7da644-ea9b-4800-86a6-9600670c06ab
+          id: dd56c5ab-f7b4-41cd-9c0f-7f97202e61ef
           title: HTML
           type: raw-html
           layout:
@@ -1113,7 +1113,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: f4915836-c8c4-4542-898e-81a49089e9ad
+      id: 8e88848f-1228-4a77-a9d6-30c62cb851e1
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -1137,7 +1137,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: ec52e4c9-a696-4a47-b059-05da20942749
+      - id: 5ffc3dce-a19b-478d-93aa-c3a93736ca04
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -1151,7 +1151,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 800df05e-9f48-4d7f-b3b7-242a1c8dbb4a
+        - id: 7a2a4076-6c00-4dc0-943a-a5dd57dd4f47
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -1180,7 +1180,7 @@ body:
               valign: top
               width: 100%
           content: '<p><br></p><h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">1. Festive season: the days you can’t drive</span></h2><p><br></p>'
-        - id: 6eae948e-3768-4d52-93f3-6fdd3533c7c8
+        - id: ef94fd09-6606-4d36-b07c-319d499feb66
           stylable: false
           title: Paragraph
           type: text
@@ -1201,7 +1201,7 @@ body:
               valign: top
               width: 100%
           content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>Did you know?</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);">In December, public holidays come on top of weekends. In France and Italy, that means more days when trucks over 7.5 t are not allowed on the road. Good habit: <strong>plan your deliveries and breaks now.</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>France</strong> (over 7.5 t, whole road network)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">From Thursday 24 December 10 pm to Friday 25 December 10 pm</li><li style="color: rgb(249, 250, 252);">From Thursday 31 December 10 pm to Friday 1 January 10 pm</li><li style="color: rgb(249, 250, 252);">And every weekend, from Saturday 10 pm to Sunday 10 pm</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Italy</strong> (over 7.5 t, outside built-up areas, 9 am to 10 pm)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Sundays 6, 13, 20 and 27 December</li><li style="color: rgb(249, 250, 252);">Tuesday 8, Friday 25 and Saturday 26 December</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Spain</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">No general ban, but restrictions on certain road sections. Catalonia, the Basque Country and Navarre have their own rules.</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);">Local bans may be added: check before you set off. And on Michelin Truckfly, find HGV parking along your route in advance.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 11px;">Sources: Bison Futé · Italian Ministry of Transport · DGT</span></p>'
-        - id: f517aa57-f694-46cd-a0a6-c597dafe9a33
+        - id: 91d3849c-764c-4132-94aa-711f100e53f9
           title: Image
           type: image
           layout:
@@ -1219,7 +1219,7 @@ body:
           content:
             href: https://www.bison-fute.gouv.fr/regime-general,10852,langen.html
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: d7b03e1e-9b74-43de-b7a6-16fa8a5b68dc
+        - id: b7dc531a-20ad-4366-9d55-892ea0316012
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Plan my trip</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -1249,7 +1249,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 0dc802d4-65e8-4a09-ac94-c0083f4d9783
+      id: 6f175049-57c2-446b-ba2c-50dfbe233900
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -1273,7 +1273,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: fda1e3f5-f6cc-41cd-8187-9b890d87bda3
+      - id: d0de4933-7786-4467-a30b-5f3bdf55a104
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -1287,7 +1287,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 12c024c0-898f-40eb-bab0-e93c9b2a29fe
+        - id: ef4cfb7f-3d7c-448b-8e38-0a0a2b123d4c
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -1316,7 +1316,7 @@ body:
               valign: top
               width: 100%
           content: '<p><br></p><h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">1. Feestdagen: de dagen dat je niet mag rijden</span></h2><p><br></p>'
-        - id: 269caed9-2103-45e5-aecc-e60e95a2eaf7
+        - id: a0a1bd4b-e834-4124-bff0-9cd7bd510d84
           stylable: false
           title: Paragraph
           type: text
@@ -1337,7 +1337,7 @@ body:
               valign: top
               width: 100%
           content: '<p class="default"><span style="color: rgb(249, 250, 252);"><strong>Wist je dat?</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);">In december komen de feestdagen bovenop de weekends. In Frankrijk en Italië betekent dat meer dagen waarop vrachtwagens boven 7,5 t niet mogen rijden. Slim: <strong>plan je leveringen en pauzes nu al.</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Frankrijk</strong> (boven 7,5 t, het hele wegennet)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Van donderdag 24 december 22.00 uur tot vrijdag 25 december 22.00 uur</li><li style="color: rgb(249, 250, 252);">Van donderdag 31 december 22.00 uur tot vrijdag 1 januari 22.00 uur</li><li style="color: rgb(249, 250, 252);">En elk weekend, van zaterdag 22.00 uur tot zondag 22.00 uur</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Italië</strong> (boven 7,5 t, buiten de bebouwde kom, van 9.00 tot 22.00 uur)</span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Zondag 6, 13, 20 en 27 december</li><li style="color: rgb(249, 250, 252);">Dinsdag 8, vrijdag 25 en zaterdag 26 december</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Spanje</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);">Geen algemeen verbod, wel beperkingen op bepaalde trajecten. Catalonië, Baskenland en Navarra hebben eigen regels.</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);">Er kunnen lokale verboden bijkomen: check dit voor vertrek. En zoek op Michelin Truckfly vooraf de vrachtwagenparkings langs je route.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252); font-size: 11px;">Bronnen: Bison Futé · Italiaans ministerie van Transport · DGT</span></p>'
-        - id: 017a0db3-f76a-4820-a18c-d27241b4c87b
+        - id: e34b0ce3-4f6f-4fe9-bf16-a9aea3fb9d0d
           title: Image
           type: image
           layout:
@@ -1355,7 +1355,7 @@ body:
           content:
             href: https://www.bison-fute.gouv.fr/regime-general,10852,langen.html
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: b9e9d2cb-dbe0-498f-9590-f7237ff271af
+        - id: 76b193c6-414a-449f-b823-7a408e019be3
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Ik plan mijn rit</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -1470,7 +1470,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Demain, c’est le Black Friday</strong> et ton offre arrive par mail. Pour en profiter, il te suffit d’entrer ton code dans l’appli&nbsp;:</span></p><ol style="color: rgb(0, 0, 0);"><li style="color: rgb(0, 0, 0);">Va dans ton profil, en haut à droite de la carte.</li><li style="color: rgb(0, 0, 0);">Appuie sur «&nbsp;Truckfly Premium · aucun abonnement&nbsp;».</li><li style="color: rgb(0, 0, 0);">Choisis «&nbsp;Utiliser un code promotionnel&nbsp;».</li><li style="color: rgb(0, 0, 0);">Saisis ton code.</li><li style="color: rgb(0, 0, 0);">Appuie sur «&nbsp;Activer&nbsp;».</li></ol><p><br></p>'
+          content: '<p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Demain, c’est le Black Friday</strong> et ton offre arrive par mail. Pour en profiter, il te suffit d’entrer ton code dans l’appli.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Pour ouvrir l’écran Premium, tu as 2&nbsp;solutions&nbsp;:</strong></span></p><ul dir="ltr"><li style="color: rgb(0, 0, 0);">Appuie sur l’icône GPS en bas de la carte&nbsp;;</li><li style="color: rgb(0, 0, 0);">ou va dans ton profil, en haut à gauche de la carte, puis appuie sur «&nbsp;Truckfly Premium · aucun abonnement&nbsp;».</li></ul><p><span style="color: rgb(0, 0, 0);"><strong>Ensuite&nbsp;:</strong></span></p><ol style="color: rgb(0, 0, 0);"><li style="color: rgb(0, 0, 0);">Choisis «&nbsp;Utiliser un code promotionnel&nbsp;».</li><li style="color: rgb(0, 0, 0);">Saisis ton code.</li><li style="color: rgb(0, 0, 0);">Appuie sur «&nbsp;Activer&nbsp;».</li></ol><p><br></p>'
         - id: 7ad68143-9c65-44ea-852d-326fe68fab5e
           title: Image
           type: image
@@ -1604,7 +1604,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Domani inizia il Black Friday</strong> e la tua offerta arriva via email. Per approfittarne, basta inserire il codice nell’app:</span></p><ol style="color: rgb(0, 0, 0);"><li style="color: rgb(0, 0, 0);">Vai nel tuo profilo, in alto a destra della mappa.</li><li style="color: rgb(0, 0, 0);">Tocca «Truckfly Premium · nessun abbonamento».</li><li style="color: rgb(0, 0, 0);">Scegli «Utilizza un codice promozionale».</li><li style="color: rgb(0, 0, 0);">Inserisci il codice.</li><li style="color: rgb(0, 0, 0);">Tocca «Riscatta».</li></ol><p><br></p>'
+          content: '<p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Domani inizia il Black Friday</strong> e la tua offerta arriva via email. Per approfittarne, basta inserire il codice nell’app.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Per aprire la schermata Premium, hai 2 possibilità:</strong></span></p><ul dir="ltr"><li style="color: rgb(0, 0, 0);">Tocca l’icona del GPS in basso sulla mappa;</li><li style="color: rgb(0, 0, 0);">oppure vai nel tuo profilo, in alto a sinistra della mappa, e tocca «Truckfly Premium · nessun abbonamento».</li></ul><p><span style="color: rgb(0, 0, 0);"><strong>Poi:</strong></span></p><ol style="color: rgb(0, 0, 0);"><li style="color: rgb(0, 0, 0);">Scegli «Utilizza un codice promozionale».</li><li style="color: rgb(0, 0, 0);">Inserisci il codice.</li><li style="color: rgb(0, 0, 0);">Tocca «Riscatta».</li></ol><p><br></p>'
         - id: b9022eb3-f084-45bd-8cc3-641ca538a6b2
           title: Image
           type: image
@@ -1738,7 +1738,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Mañana empieza el Black Friday</strong> y tu oferta llega por correo. Para aprovecharla, solo tienes que introducir tu código en la app:</span></p><ol style="color: rgb(0, 0, 0);"><li style="color: rgb(0, 0, 0);">Ve a tu perfil, arriba a la derecha del mapa.</li><li style="color: rgb(0, 0, 0);">Pulsa en «Truckfly Premium · sin suscripción».</li><li style="color: rgb(0, 0, 0);">Elige «Utilizar un código».</li><li style="color: rgb(0, 0, 0);">Introduce tu código.</li><li style="color: rgb(0, 0, 0);">Pulsa en «Canjear».</li></ol><p><br></p>'
+          content: '<p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Mañana empieza el Black Friday</strong> y tu oferta llega por correo. Para aprovecharla, solo tienes que introducir tu código en la app.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Para abrir la pantalla Premium, tienes 2 opciones:</strong></span></p><ul dir="ltr"><li style="color: rgb(0, 0, 0);">Pulsa el icono del GPS en la parte inferior del mapa;</li><li style="color: rgb(0, 0, 0);">o ve a tu perfil, arriba a la izquierda del mapa, y pulsa «Truckfly Premium · sin suscripción».</li></ul><p><span style="color: rgb(0, 0, 0);"><strong>Después:</strong></span></p><ol style="color: rgb(0, 0, 0);"><li style="color: rgb(0, 0, 0);">Elige «Utilizar un código».</li><li style="color: rgb(0, 0, 0);">Introduce tu código.</li><li style="color: rgb(0, 0, 0);">Pulsa «Canjear».</li></ol><p><br></p>'
         - id: 3ebbffc2-d818-4583-97f1-53ad9b65dc28
           title: Image
           type: image
@@ -1787,7 +1787,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: 82404097-5e3e-4357-bf45-68d9236e41eb
+      id: 2c108897-4296-465f-b7cd-faa9a7da34ca
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -1808,7 +1808,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: c7173324-9db0-42f7-8552-7c3be7d2fc72
+      - id: c693a0f3-12e4-4849-b476-c6c5e070e366
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -1823,7 +1823,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: b542e658-4cb1-4b04-ae99-9e0f9487ebd1
+        - id: c12132c6-d5f8-424b-bab0-76049f588766
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -1852,7 +1852,7 @@ body:
               valign: top
               width: 100%
           content: <h2 class="default-heading2"><span style="vertical-align:baseline;font-size:32px;color:rgb(0, 0, 0);">2. Your promo code activated in 30 seconds</span></h2>
-        - id: 7770b5b3-873b-46e0-a982-6901c94d1c3c
+        - id: 0c95e54e-46d7-4c55-a332-b590afbba1fc
           stylable: false
           title: Paragraph
           type: text
@@ -1872,8 +1872,8 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Black Friday starts tomorrow</strong> and your offer is coming by email. To enjoy it, just enter your code in the app:</span></p><ol style="color: rgb(0, 0, 0);"><li style="color: rgb(0, 0, 0);">Go to your profile, top right of the map.</li><li style="color: rgb(0, 0, 0);">Tap “Truckfly Premium · no subscription”.</li><li style="color: rgb(0, 0, 0);">Choose “Use a promotional code”.</li><li style="color: rgb(0, 0, 0);">Enter your code.</li><li style="color: rgb(0, 0, 0);">Tap “Redeem”.</li></ol><p><br></p>'
-        - id: ff26901b-f62a-4eb3-acc3-662d79fa991f
+          content: '<p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Black Friday starts tomorrow</strong> and your offer is coming by email. To enjoy it, just enter your code in the app.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>To open the Premium screen, you have 2 options:</strong></span></p><ul dir="ltr"><li style="color: rgb(0, 0, 0);">Tap the GPS icon at the bottom of the map;</li><li style="color: rgb(0, 0, 0);">or go to your profile, top left of the map, then tap “Truckfly Premium · no subscription”.</li></ul><p><span style="color: rgb(0, 0, 0);"><strong>Then:</strong></span></p><ol style="color: rgb(0, 0, 0);"><li style="color: rgb(0, 0, 0);">Choose “Use a promotional code”.</li><li style="color: rgb(0, 0, 0);">Enter your code.</li><li style="color: rgb(0, 0, 0);">Tap “Redeem”.</li></ol><p><br></p>'
+        - id: 930dab89-ef5f-40e5-93d0-075f585e6502
           title: Image
           type: image
           layout:
@@ -1891,7 +1891,7 @@ body:
           content:
             href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: 5d88cebd-b41e-45b1-9a8c-dfdbeee84132
+        - id: 6eac4364-d71c-4f3f-84ee-5749b518ccf4
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Open the app</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -1921,7 +1921,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 9774f540-63ff-4094-ab5a-5f3bb69c8ba3
+      id: 129575bf-1171-4894-8fd5-2796dc143e3a
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -1942,7 +1942,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 91ccfe48-fd54-4b3d-b602-4b1de000dc9a
+      - id: 3c890633-a27d-48e6-b0d5-ba21c32e1a4c
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -1957,7 +1957,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 95c080b1-9d38-4386-a356-f7b36829c144
+        - id: cd8ee47e-2b39-4d30-96c8-48bd64471a58
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -1986,7 +1986,7 @@ body:
               valign: top
               width: 100%
           content: <h2 class="default-heading2"><span style="vertical-align:baseline;font-size:32px;color:rgb(0, 0, 0);">2. Je promotiecode geactiveerd in 30 seconden</span></h2>
-        - id: ef68aff3-0310-4fd7-b174-aa0ef51266cd
+        - id: 64e217a1-fd9c-4b72-94ae-e399407c3a0f
           stylable: false
           title: Paragraph
           type: text
@@ -2006,8 +2006,8 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Morgen begint Black Friday</strong> en je aanbieding komt per mail. Om ervan te profiteren, voer je gewoon je code in de app in:</span></p><ol style="color: rgb(0, 0, 0);"><li style="color: rgb(0, 0, 0);">Ga naar je profiel, rechtsboven op de kaart.</li><li style="color: rgb(0, 0, 0);">Tik op ‘Truckfly Premium · geen abonnement’.</li><li style="color: rgb(0, 0, 0);">Kies ‘Gebruik een promotiecode’.</li><li style="color: rgb(0, 0, 0);">Voer je code in.</li><li style="color: rgb(0, 0, 0);">Tik op ‘Inwisselen’.</li></ol><p><br></p>'
-        - id: 06097cf5-ab03-4f66-9248-98cc33314db7
+          content: '<p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Morgen begint Black Friday</strong> en je aanbieding komt per mail. Om ervan te profiteren, voer je gewoon je code in de app in.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Om het Premium-scherm te openen, heb je 2 mogelijkheden:</strong></span></p><ul dir="ltr"><li style="color: rgb(0, 0, 0);">Tik op het gps-icoon onderaan de kaart;</li><li style="color: rgb(0, 0, 0);">of ga naar je profiel, linksboven op de kaart, en tik op ‘Truckfly Premium · geen abonnement’.</li></ul><p><span style="color: rgb(0, 0, 0);"><strong>Daarna:</strong></span></p><ol style="color: rgb(0, 0, 0);"><li style="color: rgb(0, 0, 0);">Kies ‘Gebruik een promotiecode’.</li><li style="color: rgb(0, 0, 0);">Voer je code in.</li><li style="color: rgb(0, 0, 0);">Tik op ‘Inwisselen’.</li></ol><p><br></p>'
+        - id: d2012c57-62ff-46f4-a918-507e5c949deb
           title: Image
           type: image
           layout:
@@ -2025,7 +2025,7 @@ body:
           content:
             href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: bc0b4e22-17af-4720-8883-be7a30a6a025
+        - id: 637c7484-e117-47df-bdd6-7c3dc6f0911e
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Ik open de app</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2436,7 +2436,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: 933eccde-1320-4759-89dc-87c207354a64
+      id: cbfcf5da-c647-4500-85df-7153bcc1bfac
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -2458,7 +2458,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 9efee797-582b-4d8f-a7f6-5281bb421692
+      - id: 55c43bc2-95b7-4361-a44a-e61940f5cabd
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -2473,7 +2473,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 3a8bf01e-de3e-46dd-8306-304d15088ead
+        - id: d2ad309f-b642-4592-ab9d-1ef395a58821
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -2502,7 +2502,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">3. Become the top contributor of the month</span></h2><p><br></p>'
-        - id: d8274071-5774-495f-ae87-7fe800c56eca
+        - id: 96090266-dcfe-46c0-abf2-ef1655d1d797
           stylable: false
           title: Paragraph
           type: text
@@ -2523,7 +2523,7 @@ body:
               valign: top
               width: 100%
           content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">On the road, we trust those who share the right info. <strong>A driver with lots of contribution points is a reliable driver</strong>: when they report a hazard or rate a stop, the community knows it can count on them.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">And the rule is simple: <strong>every action is worth 1 point.</strong> A coffee break is enough to earn several!</span></p>'
-        - id: e49fde46-4b42-4207-ad9b-dc88a57c38fe
+        - id: 98a6dfbb-d019-498f-8b6d-99d2189fa0fc
           title: HTML
           type: raw-html
           layout:
@@ -2533,7 +2533,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<!-- VISUEL TÉLÉPHONE – contributions (EN) – charte Michelin Brand Chapter 2 – à coller dans un bloc HTML Brevo -->\n<style type=\"text/css\">\n@import url(\"https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap\");\n</style>\n<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;\">\n  <tr>\n    <td align=\"center\" style=\"padding:15px 0 10px 0;\">\n\n      <!-- Téléphone -->\n      <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" align=\"center\" width=\"260\" style=\"width:260px;margin:0 auto;border-collapse:separate;\">\n        <tr>\n          <td style=\"background-color:#000000;border-radius:38px;padding:8px;\">\n            <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"244\" style=\"width:244px;border-collapse:separate;background-color:#F5F3F1;border-radius:31px;\">\n\n              <!-- En-tête Michelin Blue -->\n              <tr>\n                <td style=\"background-color:#061866;border-radius:31px 31px 0 0;padding:24px 12px 16px 14px;\">\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:collapse;\">\n                    <tr>\n                      <td style=\"vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0 0 8px 0;\"><span style=\"display:inline-block;background-color:#FFFF1A;color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.5px;border-radius:999px;padding:4px 9px;\">MONTHLY RANKING</span></p>\n                        <p style=\"margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.2;color:#FFFFFF;font-weight:700;white-space:nowrap;\">1 action = 1 point</p>\n                        <p style=\"margin:5px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:10px;line-height:1.4;color:#FFFFFF;\">The more you contribute, the more the community trusts you.</p>\n                      </td>\n                      <!-- Trophée (Highlight Yellow sur fond bleu) -->\n                      <td width=\"62\" style=\"width:62px;vertical-align:middle;padding-left:6px;\">\n                        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"62\" style=\"width:62px;border-collapse:separate;\">\n                          <tr>\n                            <td align=\"center\">\n                              <div style=\"width:48px;height:40px;border-radius:5px 5px 24px 24px;background-color:#FFFF1A;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:36px;font-weight:700;color:#061866;\">N°1</div>\n                            </td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:10px;height:9px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:36px;height:8px;border-radius:3px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:46px;height:6px;border-radius:3px;background-color:#B5D2F4;\"></div></td>\n                          </tr>\n                        </table>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n\n              <!-- Contributions -->\n              <tr>\n                <td style=\"padding:10px 9px 4px 9px;\">\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Add a photo</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Parking, entrance, showers…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Leave a review</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Rate or comment on a stop</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Like a photo or activity</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Encourage other drivers</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Update a place</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Opening hours, services, access</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Add a place</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">A stop not yet in the app</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Send an alert</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Snow, accident, danger…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                </td>\n              </tr>\n\n              <!-- Bas du téléphone -->\n              <tr>\n                <td style=\"padding:4px 10px 20px 10px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                  <p style=\"margin:0;font-size:10px;line-height:1.4;color:#061866;\"><strong>The top contributor of the month</strong><br>features in the next newsletter!</p>\n                </td>\n              </tr>\n\n            </table>\n          </td>\n        </tr>\n      </table>\n\n      <!-- Petit texte sous le visuel -->\n      <p style=\"margin:20px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFF;text-align:center;\"><strong>The more points you have, the more your word counts.</strong><br>Ready to climb the ranking?</p>\n\n    </td>\n  </tr>\n</table>"
-        - id: ce5aa24d-cace-4b27-90dd-733172e64faa
+        - id: 2182f708-1e9a-46b9-b325-3dd64d233f44
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Earn points</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2563,7 +2563,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 922bf311-d7ef-4406-8617-cd303d260568
+      id: eb1ea26f-f93f-4122-9824-93feb52c85c3
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -2585,7 +2585,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 464f4f4c-649d-4d63-bd26-39be88bff1a2
+      - id: 36d0715c-c3b0-443f-8ca5-251d6bf8cbbb
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -2600,7 +2600,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 49155829-9425-4caf-ab4f-9ea7100a1188
+        - id: ecc14b49-2dd1-46ac-8b45-21515c9b084c
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -2629,7 +2629,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">3. Word de topbijdrager van de maand</span></h2><p><br></p>'
-        - id: 240d87cd-13c7-452d-9e64-9da336cd56d1
+        - id: 3167bfa3-1e06-4122-8094-8ab173d448d1
           stylable: false
           title: Paragraph
           type: text
@@ -2650,7 +2650,7 @@ body:
               valign: top
               width: 100%
           content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Onderweg vertrouwen we op wie de juiste info deelt. <strong>Een chauffeur met veel bijdragepunten is een betrouwbare chauffeur</strong>: als hij een gevaar meldt of een stop beoordeelt, weet de community dat ze op hem kan rekenen.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">En de regel is simpel: <strong>elke actie is 1 punt waard.</strong> Met één koffiepauze verdien je er al een paar!</span></p>'
-        - id: 50c689d0-71b5-412f-bb13-4df04579c0c3
+        - id: 6cd23b09-bd71-44c3-8a4c-3c9f7517a8ef
           title: HTML
           type: raw-html
           layout:
@@ -2660,7 +2660,7 @@ body:
               padding-top: 15px
               width: 100%
           content: "<!-- VISUEL TÉLÉPHONE – contributions (NL) – charte Michelin Brand Chapter 2 – à coller dans un bloc HTML Brevo -->\n<style type=\"text/css\">\n@import url(\"https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap\");\n</style>\n<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;\">\n  <tr>\n    <td align=\"center\" style=\"padding:15px 0 10px 0;\">\n\n      <!-- Téléphone -->\n      <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" align=\"center\" width=\"260\" style=\"width:260px;margin:0 auto;border-collapse:separate;\">\n        <tr>\n          <td style=\"background-color:#000000;border-radius:38px;padding:8px;\">\n            <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"244\" style=\"width:244px;border-collapse:separate;background-color:#F5F3F1;border-radius:31px;\">\n\n              <!-- En-tête Michelin Blue -->\n              <tr>\n                <td style=\"background-color:#061866;border-radius:31px 31px 0 0;padding:24px 12px 16px 14px;\">\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:collapse;\">\n                    <tr>\n                      <td style=\"vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0 0 8px 0;\"><span style=\"display:inline-block;background-color:#FFFF1A;color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.5px;border-radius:999px;padding:4px 9px;\">RANGLIJST VAN DE MAAND</span></p>\n                        <p style=\"margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.2;color:#FFFFFF;font-weight:700;white-space:nowrap;\">1 actie = 1 punt</p>\n                        <p style=\"margin:5px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:10px;line-height:1.4;color:#FFFFFF;\">Hoe meer je bijdraagt, hoe meer de community je vertrouwt.</p>\n                      </td>\n                      <!-- Trophée (Highlight Yellow sur fond bleu) -->\n                      <td width=\"62\" style=\"width:62px;vertical-align:middle;padding-left:6px;\">\n                        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"62\" style=\"width:62px;border-collapse:separate;\">\n                          <tr>\n                            <td align=\"center\">\n                              <div style=\"width:48px;height:40px;border-radius:5px 5px 24px 24px;background-color:#FFFF1A;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:36px;font-weight:700;color:#061866;\">N°1</div>\n                            </td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:10px;height:9px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:36px;height:8px;border-radius:3px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:46px;height:6px;border-radius:3px;background-color:#B5D2F4;\"></div></td>\n                          </tr>\n                        </table>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n\n              <!-- Contributions -->\n              <tr>\n                <td style=\"padding:10px 9px 4px 9px;\">\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Een foto toevoegen</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Parking, ingang, douches…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Een review achterlaten</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Geef een stop een score of reactie</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Een foto of activiteit liken</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Moedig andere chauffeurs aan</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Een locatie bijwerken</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Openingstijden, diensten, toegang</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Een locatie toevoegen</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Een stop die nog niet in de app staat</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Een melding sturen</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Sneeuw, ongeval, gevaar…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                </td>\n              </tr>\n\n              <!-- Bas du téléphone -->\n              <tr>\n                <td style=\"padding:4px 10px 20px 10px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                  <p style=\"margin:0;font-size:10px;line-height:1.4;color:#061866;\"><strong>De topbijdrager van de maand</strong><br>staat in de volgende nieuwsbrief!</p>\n                </td>\n              </tr>\n\n            </table>\n          </td>\n        </tr>\n      </table>\n\n      <!-- Petit texte sous le visuel -->\n      <p style=\"margin:20px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFF;text-align:center;\"><strong>Hoe meer punten je hebt, hoe meer je woord telt.</strong><br>Klaar om te stijgen in de ranglijst?</p>\n\n    </td>\n  </tr>\n</table>"
-        - id: acce783a-8747-4494-a435-daa66b62eaf5
+        - id: 0c9d50b7-6a6a-4cc9-abd2-23a99b87af55
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Ik verdien punten</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2990,7 +2990,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: d851e300-360f-4666-bc66-b00c7a55182b
+      id: 3de8891c-3218-4020-9f4f-174c37c2c755
       moduleName: grid-row12
       thumbnail: /assets/img/editor/grid_12.svg
       title: Bannière EN
@@ -3011,7 +3011,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: ef63d39d-d65a-41a9-ad6e-c6e422bce758
+      - id: 3b116b2c-9f19-4309-bf00-aebaa0955957
         isEmpty: false
         title: column 1
         type: grid-column
@@ -3022,7 +3022,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 603e5d12-129b-4e04-87dd-c0904ae9fc5f
+        - id: c26f5a89-ad12-4781-8214-37102d39575d
           thumbnail: /assets/img/editor/element_text.svg
           title: Titre
           type: text
@@ -3037,7 +3037,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2" style="font-family:arial, helvetica, sans-serif;font-size:32px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">The top contributors</span></h2><h2 class="default-heading2" style="font-family:arial, helvetica, sans-serif;font-size:32px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">of October!</span></h2>'
-        - id: fccf3ec3-32d3-4424-b904-b2255e675ddf
+        - id: 2a620b61-1e3e-4a57-b62f-219c66615e2b
           thumbnail: /assets/img/editor/element_image.svg
           title: Image
           type: image
@@ -3060,7 +3060,7 @@ body:
           content:
             href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad6138efd8ca38cd59e0284.png
-        - id: 3ba550d8-7dba-4d19-a9d3-82f311772b5c
+        - id: 546fb78d-bfe9-4b84-8f41-25693fd60976
           text: '<p><strong><span style="color: rgb(0, 0, 0);">My turn!</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3090,7 +3090,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: ce9e5754-84e9-45bf-a772-eea219fdde3a
+      id: 2ebcfff6-eea3-4221-837c-97ac22067942
       moduleName: grid-row12
       thumbnail: /assets/img/editor/grid_12.svg
       title: Bannière NL
@@ -3111,7 +3111,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: f1666463-1ee9-4d4b-bc1a-7193c6aaf2b2
+      - id: 79c757cd-cbe3-421d-b128-00c691885135
         isEmpty: false
         title: column 1
         type: grid-column
@@ -3122,7 +3122,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 8f2d3416-0cfb-42bd-a2e1-6d2ffeae8aff
+        - id: 3f201b71-e7cd-4d77-8404-60d77326e1da
           thumbnail: /assets/img/editor/element_text.svg
           title: Titre
           type: text
@@ -3137,7 +3137,7 @@ body:
               valign: top
               width: 100%
           content: '<h2 class="default-heading2" style="font-family:arial, helvetica, sans-serif;font-size:32px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">De topbijdragers</span></h2><h2 class="default-heading2" style="font-family:arial, helvetica, sans-serif;font-size:32px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">van oktober!</span></h2>'
-        - id: 10ea487c-dc3a-40d9-b614-f1e208e857f8
+        - id: da4a0415-dbde-46b5-82c5-39a0cf285176
           thumbnail: /assets/img/editor/element_image.svg
           title: Image
           type: image
@@ -3160,7 +3160,7 @@ body:
           content:
             href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad6138efd8ca38cd59e0284.png
-        - id: d63b03f6-d70b-44e9-b442-1996108e8dad
+        - id: 92c716a8-ebdf-4d35-ad6e-cac6994b354d
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Mijn beurt!</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -3358,7 +3358,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: 638e9e34-5c42-4593-a490-bd0b7b568781
+      id: eee16b6e-c851-4e8e-9db0-001a92c1f719
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -3377,7 +3377,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: ac68bc5f-0483-4a4d-9984-94e09826c6a1
+      - id: 465ff681-c283-4700-b6ed-dce2f26b750c
         isEmpty: false
         stylable: false
         title: Column
@@ -3389,7 +3389,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: e12896d7-08e2-472f-974c-c3af2e45c2c6
+        - id: 1ec2ee9b-8fa8-4b85-9291-02858feb6491
           thumbnail: /assets/img/editor/element_text.svg
           title: Texte
           type: text
@@ -3414,7 +3414,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 6a9efedd-8d19-4d9c-8901-aa417f3663f1
+      id: 0deae6d0-8990-4c70-b655-56f60e5d1ff0
       moduleName: grid-row12
       stylable: false
       thumbnail: /assets/img/editor/grid_12.svg
@@ -3433,7 +3433,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: e7d501a3-74c7-4012-ab51-e855080350b7
+      - id: 71053356-cc29-4948-b845-9083edeb61dc
         isEmpty: false
         stylable: false
         title: Column
@@ -3445,7 +3445,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 4d4726b5-0264-4ee2-be81-72130bd3d297
+        - id: 0be84b30-4d85-44e9-9186-b9a9ad6a4072
           thumbnail: /assets/img/editor/element_text.svg
           title: Texte
           type: text
