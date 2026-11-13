@@ -277,7 +277,7 @@ for r in src["body"]["content"][0]["content"]:
     ol = '<ol style="color: rgb(0, 0, 0);">' + "".join(f'<li style="color: rgb(0, 0, 0);">{x}</li>' for x in steps) + "</ol>"
     it[1]["content"] = '<p class="default"><br></p>' + P(a) + ol + BR
     it[2] = {"id": it[2]["id"], "title": "Image", "type": "image",
-             "layout": {"320px": {"max-width": "320px", "width": "100%"}, "default": {"align": "center", "canvas-height": "320px", "padding-bottom": "15px", "padding-top": "15px", "type": "absoluteLink", "valign": "top", "width": "90%"}},
+             "layout": {"320px": {"max-width": "320px", "width": "100%"}, "default": {"align": "center", "canvas-height": "558px", "padding-bottom": "15px", "padding-top": "15px", "type": "absoluteLink", "valign": "top", "width": "100%"}},
              "content": {"href": "https://truckflyapp.onelink.me/2ysq/r4vkfd60", "src": "https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png"}}
     set_btn(it[3], BTN(btn)); it[3]["content"]["href"] = "https://truckflyapp.onelink.me/2ysq/r4vkfd60"
     n2 += 1

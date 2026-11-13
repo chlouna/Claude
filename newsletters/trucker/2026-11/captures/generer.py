@@ -51,17 +51,17 @@ def premium(lang):
     return im
 
 def screen_mask(im, ystart=56):
-    """Masque de l'écran : zone non noire entre les bords du cadre, ligne par ligne."""
+    """Masque de l'écran : remplissage depuis le centre, bloqué par le cadre noir, puis trous comblés ligne par ligne."""
+    from PIL import ImageDraw as _D
     w, h = im.size
-    m = Image.new("L", im.size, 0); px = im.load(); mp = m.load()
+    bw = im.convert("L").point(lambda v: 255 if v > 60 else 0)
+    _D.floodfill(bw, (w // 2, h // 2), 128)
+    px = bw.load()
+    m = Image.new("L", im.size, 0); mp = m.load()
     for y in range(ystart, h):
-        xs = [x for x in range(w) if sum(px[x, y]) > 120]
-        inner = [x for x in xs if 20 < x < w - 20]
-        if not inner: continue
-        # bords intérieurs du cadre : premier et dernier pixel clair hors du liseré
-        a, b = min(inner), max(inner)
-        if b - a < 100: continue
-        for x in range(a, b + 1): mp[x, y] = 255
+        xs = [x for x in range(w) if px[x, y] == 128]
+        if len(xs) < 2 or max(xs) - min(xs) < 100: continue
+        for x in range(min(xs), max(xs) + 1): mp[x, y] = 255
     return m
 
 ICON = Image.open(D / "appstore-fr-original.jpg").convert("RGB").crop((103, 100, 148, 148))
