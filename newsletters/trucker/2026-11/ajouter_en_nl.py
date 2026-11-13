@@ -249,14 +249,14 @@ S2 = {
         ["Go to your profile, top right of the map.", "Tap “Truckfly Premium · no subscription”.", "Choose “Use a promo code”.", "Enter your code.", "Tap “Redeem”."],
         ("Choose “Use a promo code”", "Enter your code, then “Redeem”"), "Open the app"),
  "ES": ("2. Tu código promocional activado en 30 segundos", "<strong>Mañana empieza el Black Friday</strong> y tu oferta llega por correo. Para aprovecharla, solo tienes que introducir tu código en la app:",
-        ["Ve a tu perfil, arriba a la derecha del mapa.", "Pulsa en «Truckfly Premium · sin suscripción».", "Elige «Usar un código promocional».", "Introduce tu código.", "Pulsa en «Activar»."],
-        ("Elige «Usar un código promocional»", "Introduce tu código y pulsa «Activar»"), "Abro la app"),
+        ["Ve a tu perfil, arriba a la derecha del mapa.", "Pulsa en «Truckfly Premium · sin suscripción».", "Elige «Usar un código promocional».", "Introduce tu código.", "Pulsa en «Canjear»."],
+        ("Elige «Usar un código promocional»", "Introduce tu código y pulsa «Canjear»"), "Abro la app"),
  "IT": ("2. Il tuo codice promo attivato in 30 secondi", "<strong>Domani inizia il Black Friday</strong> e la tua offerta arriva via email. Per approfittarne, basta inserire il codice nell’app:",
-        ["Vai nel tuo profilo, in alto a destra della mappa.", "Tocca «Truckfly Premium · nessun abbonamento».", "Scegli «Usa un codice promozionale».", "Inserisci il codice.", "Tocca «Attiva»."],
-        ("Scegli «Usa un codice promozionale»", "Inserisci il codice e tocca «Attiva»"), "Apro l’app"),
+        ["Vai nel tuo profilo, in alto a destra della mappa.", "Tocca «Truckfly Premium · nessun abbonamento».", "Scegli «Usa un codice promozionale».", "Inserisci il codice.", "Tocca «Riscatta»."],
+        ("Scegli «Usa un codice promozionale»", "Inserisci il codice e tocca «Riscatta»"), "Apro l’app"),
  "NL": ("2. Je promotiecode geactiveerd in 30 seconden", "<strong>Morgen begint Black Friday</strong> en je aanbieding komt per mail. Om ervan te profiteren, voer je gewoon je code in de app in:",
-        ["Ga naar je profiel, rechtsboven op de kaart.", "Tik op ‘Truckfly Premium · geen abonnement’.", "Kies ‘Promotiecode gebruiken’.", "Voer je code in.", "Tik op ‘Activeren’."],
-        ("Kies ‘Promotiecode gebruiken’", "Voer je code in en tik op ‘Activeren’"), "Ik open de app"),
+        ["Ga naar je profiel, rechtsboven op de kaart.", "Tik op ‘Truckfly Premium · geen abonnement’.", "Kies ‘Promotiecode gebruiken’.", "Voer je code in.", "Tik op ‘Inwisselen’."],
+        ("Kies ‘Promotiecode gebruiken’", "Voer je code in en tik op ‘Inwisselen’"), "Ik open de app"),
 }
 def captures(cap1, cap2):
     def cell(src, cap, n):
@@ -276,8 +276,9 @@ for r in src["body"]["content"][0]["content"]:
     it[0]["content"] = H2B(t)
     ol = '<ol style="color: rgb(0, 0, 0);">' + "".join(f'<li style="color: rgb(0, 0, 0);">{x}</li>' for x in steps) + "</ol>"
     it[1]["content"] = '<p class="default"><br></p>' + P(a) + ol + BR
-    it[2] = {"id": it[2]["id"], "title": "HTML", "type": "raw-html",
-             "layout": {"320px": {}, "default": {"padding-bottom": "15px", "padding-top": "15px", "width": "100%"}}, "content": captures(*caps)}
+    it[2] = {"id": it[2]["id"], "title": "Image", "type": "image",
+             "layout": {"320px": {"max-width": "320px", "width": "100%"}, "default": {"align": "center", "canvas-height": "320px", "padding-bottom": "15px", "padding-top": "15px", "type": "absoluteLink", "valign": "top", "width": "90%"}},
+             "content": {"href": "https://truckflyapp.onelink.me/2ysq/r4vkfd60", "src": "https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png"}}
     set_btn(it[3], BTN(btn)); it[3]["content"]["href"] = "https://truckflyapp.onelink.me/2ysq/r4vkfd60"
     n2 += 1
 assert n2 == 5, n2
