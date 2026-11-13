@@ -10,7 +10,7 @@ BOLD = "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"
 S = 3  # suréchantillonnage
 
 T = {
- "fr": dict(tile=None, title="Activer l’offre", field="Code", btn="Activer",
+ "fr": dict(tile=["Utiliser un code", "promotionnel"], title="Activer l’offre", field="Code", btn="Activer",
             cap1="1. Choisis « Utiliser un code promotionnel »", cap2="2. Saisis ton code puis « Activer »"),
  "en": dict(tile=["Use a", "promotional code"], title="Redeem Offer", field="Code", btn="Redeem",
             cap1="1. Choose “Use a promotional code”", cap2="2. Enter your code, then “Redeem”"),
@@ -34,10 +34,8 @@ def flat(path):
     im = Image.new("RGB", src.size, (255, 255, 255)); im.paste(src, (0, 0), src); return im
 
 def premium(lang):
-    if lang == "fr":
-        return flat(B / "capture-premium-code-promo-corrigee.png").resize((363, 715), Image.LANCZOS)
     im = flat(D / f"premium-{lang}.png")
-    x0, y0, x1, y1 = (238, 182, 329, 207) if lang == "it" else (238, 191, 329, 217)
+    x0, y0, x1, y1 = (238, 182, 329, 207) if lang in ("it", "fr") else (238, 191, 329, 217)
     bg = im.getpixel((x0 + 2, y0 + 1))
     p = Image.new("RGB", ((x1 - x0) * S, (y1 - y0) * S), bg); d = ImageDraw.Draw(p)
     lines = T[lang]["tile"]
