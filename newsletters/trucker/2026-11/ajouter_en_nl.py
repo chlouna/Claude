@@ -238,30 +238,98 @@ for r in rows:
             if fill is f_intro: out.append(bf_row)
 src["body"]["content"][0]["content"] = out
 
-# ---------- Section 2 : tuto code promo à la place des alertes ----------
-from tuto_code_promo import tuto
+# ---------- Section 2 : tuto code promo avec les 2 vraies captures ----------
+IMG1 = "A_REMPLACER_URL_capture-premium-code-promo-corrigee.png"
+IMG2 = "A_REMPLACER_URL_capture-activer-offre.jpg"
 S2 = {
- "FR": ("2. Ton code promo activé en 30&nbsp;secondes", "<strong>Demain, c’est le Black Friday</strong> et ton offre arrive par mail.", "Pour en profiter, il te suffit d’entrer ton code dans l’appli. Voici comment faire en 5&nbsp;étapes&nbsp;:", "J’ouvre l’appli"),
- "EN": ("2. Your promo code activated in 30 seconds", "<strong>Black Friday starts tomorrow</strong> and your offer is coming by email.", "To enjoy it, just enter your code in the app. Here’s how in 5 steps:", "Open the app"),
- "ES": ("2. Tu código promocional activado en 30 segundos", "<strong>Mañana empieza el Black Friday</strong> y tu oferta llega por correo.", "Para aprovecharla, solo tienes que introducir tu código en la app. Así se hace en 5 pasos:", "Abro la app"),
- "IT": ("2. Il tuo codice promo attivato in 30 secondi", "<strong>Domani inizia il Black Friday</strong> e la tua offerta arriva via email.", "Per approfittarne, basta inserire il codice nell’app. Ecco come fare in 5 passaggi:", "Apro l’app"),
- "NL": ("2. Je promotiecode geactiveerd in 30 seconden", "<strong>Morgen begint Black Friday</strong> en je aanbieding komt per mail.", "Om ervan te profiteren, voer je gewoon je code in de app in. Zo doe je dat in 5 stappen:", "Ik open de app"),
+ "FR": ("2. Ton code promo activé en 30&nbsp;secondes", "<strong>Demain, c’est le Black Friday</strong> et ton offre arrive par mail. Pour en profiter, il te suffit d’entrer ton code dans l’appli&nbsp;:",
+        ["Va dans ton profil, en haut à droite de la carte.", "Appuie sur «&nbsp;Truckfly Premium · aucun abonnement&nbsp;».", "Choisis «&nbsp;Utiliser un code promotionnel&nbsp;».", "Saisis ton code.", "Appuie sur «&nbsp;Activer&nbsp;»."],
+        ("Choisis «&nbsp;Utiliser un code promotionnel&nbsp;»", "Saisis ton code puis «&nbsp;Activer&nbsp;»"), "J’ouvre l’appli"),
+ "EN": ("2. Your promo code activated in 30 seconds", "<strong>Black Friday starts tomorrow</strong> and your offer is coming by email. To enjoy it, just enter your code in the app:",
+        ["Go to your profile, top right of the map.", "Tap “Truckfly Premium · no subscription”.", "Choose “Use a promo code”.", "Enter your code.", "Tap “Redeem”."],
+        ("Choose “Use a promo code”", "Enter your code, then “Redeem”"), "Open the app"),
+ "ES": ("2. Tu código promocional activado en 30 segundos", "<strong>Mañana empieza el Black Friday</strong> y tu oferta llega por correo. Para aprovecharla, solo tienes que introducir tu código en la app:",
+        ["Ve a tu perfil, arriba a la derecha del mapa.", "Pulsa en «Truckfly Premium · sin suscripción».", "Elige «Usar un código promocional».", "Introduce tu código.", "Pulsa en «Activar»."],
+        ("Elige «Usar un código promocional»", "Introduce tu código y pulsa «Activar»"), "Abro la app"),
+ "IT": ("2. Il tuo codice promo attivato in 30 secondi", "<strong>Domani inizia il Black Friday</strong> e la tua offerta arriva via email. Per approfittarne, basta inserire il codice nell’app:",
+        ["Vai nel tuo profilo, in alto a destra della mappa.", "Tocca «Truckfly Premium · nessun abbonamento».", "Scegli «Usa un codice promozionale».", "Inserisci il codice.", "Tocca «Attiva»."],
+        ("Scegli «Usa un codice promozionale»", "Inserisci il codice e tocca «Attiva»"), "Apro l’app"),
+ "NL": ("2. Je promotiecode geactiveerd in 30 seconden", "<strong>Morgen begint Black Friday</strong> en je aanbieding komt per mail. Om ervan te profiteren, voer je gewoon je code in de app in:",
+        ["Ga naar je profiel, rechtsboven op de kaart.", "Tik op ‘Truckfly Premium · geen abonnement’.", "Kies ‘Promotiecode gebruiken’.", "Voer je code in.", "Tik op ‘Activeren’."],
+        ("Kies ‘Promotiecode gebruiken’", "Voer je code in en tik op ‘Activeren’"), "Ik open de app"),
 }
+def captures(cap1, cap2):
+    def cell(src, cap, n):
+        return (f'<td width="50%" align="center" valign="top" style="padding:0 6px;">'
+                f'<img src="{src}" width="220" alt="{cap}" style="display:block;width:100%;max-width:220px;height:auto;border:0;margin:0 auto;">'
+                f'<p style="margin:8px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.4;font-weight:700;color:#061866;text-align:center;">{n}. {cap}</p></td>')
+    return ('<!-- CAPTURES TUTO CODE PROMO -->\n<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:480px;margin:0 auto;"><tr>'
+            + cell(IMG1, cap1, 1) + cell(IMG2, cap2, 2) + '</tr></table>')
+def lang_of(c):
+    return "EN" if c.startswith('( "EN"') else next(k for k in ("FR", "IT", "ES", "NL") if f'( "{k}"' in c)
 n2 = 0
 for r in src["body"]["content"][0]["content"]:
     it = r["content"][0]["content"]
     if not (isinstance(it[0].get("content"), str) and ">2. " in it[0]["content"]): continue
-    c = r.get("condition", "")
-    lg = "EN" if c.startswith('( "EN"') else next(k for k in ("FR", "IT", "ES", "NL") if f'( "{k}"' in c)
-    t, a, b, btn = S2[lg]
+    lg = lang_of(r.get("condition", ""))
+    t, a, steps, caps, btn = S2[lg]
     it[0]["content"] = H2B(t)
-    it[1]["content"] = '<p class="default"><br></p>' + P(a) + BR + P(b)
-    img = it[2]; it[2] = {"id": img["id"], "title": "HTML", "type": "raw-html",
-        "layout": {"320px": {}, "default": {"padding-bottom": "15px", "padding-top": "15px", "width": "100%"}}, "content": tuto(lg)}
+    ol = '<ol style="color: rgb(0, 0, 0);">' + "".join(f'<li style="color: rgb(0, 0, 0);">{x}</li>' for x in steps) + "</ol>"
+    it[1]["content"] = '<p class="default"><br></p>' + P(a) + ol + BR
+    it[2] = {"id": it[2]["id"], "title": "HTML", "type": "raw-html",
+             "layout": {"320px": {}, "default": {"padding-bottom": "15px", "padding-top": "15px", "width": "100%"}}, "content": captures(*caps)}
     set_btn(it[3], BTN(btn)); it[3]["content"]["href"] = "https://truckflyapp.onelink.me/2ysq/r4vkfd60"
-    (D.parent.parent / "blocs" / f"trucker-2026-11-tuto-code-promo-{lg.lower()}.html").write_text(tuto(lg))
     n2 += 1
 assert n2 == 5, n2
+
+# ---------- Section 1 : interdictions des fêtes, intros et objet ----------
+import section1_fetes as s1
+INTRO = {
+ "FR": ["Chaque jour, des milliers de conducteurs <strong>roulent, partagent et font vivre la communauté Michelin Truckfly.</strong>",
+        "Décembre arrive, et avec lui les fêtes&nbsp;: jours fériés, routes chargées, livraisons de dernière minute… Autant de raisons de <strong>bien préparer tes trajets.</strong>",
+        "Ce mois-ci, découvre <strong>les jours où tu ne pourras pas rouler pendant les fêtes, comment activer ton code promo en 30&nbsp;secondes, et le top contributeur d’octobre… avec nos astuces pour prendre sa place&nbsp;!</strong>",
+        "<strong>Et ne rate pas notre offre Black Friday&nbsp;: elle commence demain&nbsp;!</strong>"],
+ "EN": ["Every day, thousands of drivers <strong>drive, share and bring the Michelin Truckfly community to life.</strong>",
+        "December is coming, and with it the festive season: public holidays, busy roads, last minute deliveries… All good reasons to <strong>plan your trips well.</strong>",
+        "This month, find out <strong>the days you won’t be able to drive over the holidays, how to activate your promo code in 30 seconds, and October’s top contributor… with our tips to take their place!</strong>",
+        "<strong>And don’t miss our Black Friday offer: it starts tomorrow!</strong>"],
+ "ES": ["Cada día, miles de camioneros <strong>circulan, comparten y dan vida a la comunidad Michelin Truckfly.</strong>",
+        "Llega diciembre y, con él, las fiestas: festivos, carreteras cargadas, entregas de última hora… Razones de sobra para <strong>preparar bien tus rutas.</strong>",
+        "Este mes descubre <strong>los días en los que no podrás circular durante las fiestas, cómo activar tu código promocional en 30 segundos y al mejor colaborador de octubre… ¡con nuestros consejos para quitarle el puesto!</strong>",
+        "<strong>¡Y no te pierdas nuestra oferta Black Friday: empieza mañana!</strong>"],
+ "IT": ["Ogni giorno, migliaia di autisti <strong>viaggiano, condividono e fanno vivere la community Michelin Truckfly.</strong>",
+        "Arriva dicembre e con lui le feste: giorni festivi, strade trafficate, consegne dell’ultimo minuto… Tanti buoni motivi per <strong>preparare bene i tuoi viaggi.</strong>",
+        "Questo mese scopri <strong>i giorni in cui non potrai circolare durante le feste, come attivare il tuo codice promo in 30 secondi e il top contributore di ottobre… con i nostri consigli per prendere il suo posto!</strong>",
+        "<strong>E non perderti la nostra offerta Black Friday: inizia domani!</strong>"],
+ "NL": ["Elke dag zijn duizenden chauffeurs <strong>onderweg, delen ze info en houden ze de Michelin Truckfly community levend.</strong>",
+        "December komt eraan, en daarmee de feestdagen: vrije dagen, drukke wegen, last minute leveringen… Genoeg redenen om <strong>je ritten goed voor te bereiden.</strong>",
+        "Deze maand ontdek je <strong>op welke dagen je tijdens de feestdagen niet mag rijden, hoe je je promotiecode in 30 seconden activeert en de topbijdrager van oktober… met onze tips om zijn plek in te nemen!</strong>",
+        "<strong>En mis onze Black Friday-actie niet: morgen gaat hij van start!</strong>"],
+}
+def lang_of(c):
+    return "EN" if c.startswith('( "EN"') else next(k for k in ("FR", "IT", "ES", "NL") if f'( "{k}"' in c)
+rws = src["body"]["content"][0]["content"]
+bfi = next(i for i, r in enumerate(rws) if r.get("title") == "Teasing Black Friday multilangue")
+for r in rws[bfi-5:bfi]:
+    r["content"][0]["content"][0]["content"] = BR.join(P(x) for x in INTRO[lang_of(r["condition"])])
+n1 = 0
+for r in rws:
+    it = r["content"][0]["content"]
+    if not (isinstance(it[0].get("content"), str) and ">1." in it[0]["content"]): continue
+    lg = lang_of(r["condition"]); d = s1.S1[lg]
+    it[0]["content"] = s1.title(d); it[1]["content"] = s1.para(d)
+    it[2] = {"id": it[2]["id"], "title": "HTML", "type": "raw-html",
+             "layout": {"320px": {}, "default": {"padding-bottom": "10px", "padding-top": "5px", "width": "100%"}}, "content": s1.box(d)}
+    set_btn(it[3], BTN(d["btn"])); it[3]["content"]["href"] = d["href"]
+    (D.parent.parent / "blocs" / f"trucker-2026-11-fetes-interdictions-{lg.lower()}.html").write_text(s1.box(d) + "\n")
+    n1 += 1
+assert n1 == 5, n1
+src["subject"] = (
+    '{% if "FR" in contact.LANG %}Demain, c\'est Black Friday' + NB + '! Et tes trajets de Noël' + NB + '?'
+    '{% elif "ES" in contact.LANG %}¡Mañana es Black Friday! ¿Y tus rutas de Navidad?'
+    '{% elif "IT" in contact.LANG %}Domani è Black Friday! E i divieti di Natale?'
+    '{% elif "NL" in contact.LANG %}Morgen is het Black Friday! En je kerstritten?'
+    '{% else %}Black Friday tomorrow! Ready for the Christmas bans?{% endif %}')
 
 # ---------- Marque, footer FR en « tu », footer NL ----------
 src = walk(src, lambda s: s.replace("MICHELIN", "Michelin"))
@@ -288,7 +356,7 @@ def col(o):
         for v in o: col(v)
 col(src)
 assert len(ids) == len(set(ids)), "ids en double"
-assert "MICHELIN" not in dump and "Dès ce" not in dump and "domenica 1°" not in dump and "domingo 1 de" not in dump
+assert "Loi Montagne" not in dump and "MICHELIN" not in dump and "Dès ce" not in dump and "domenica 1°" not in dump and "domingo 1 de" not in dump
 assert "Vous avez reçu" not in dump and "Consultez" not in dump
 (D / "template_final.yaml").write_text(dump)
 (D / "template_final.txt").write_text(dump)
