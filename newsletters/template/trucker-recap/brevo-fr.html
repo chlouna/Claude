@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<title>Le Relais · Michelin Truckfly</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<!--[if mso]><style>table,td,p,a,span,h1,h2,h3{font-family:Arial,Helvetica,sans-serif !important;}</style><![endif]-->
+<style>
+  /* Bib : charger BIB-Bold.woff2 dans Brevo puis remplacer URL-BIB-BOLD. Sans ça, repli Noto Sans Bold. */
+  @font-face{font-family:'Bib';src:url('URL-BIB-BOLD') format('woff2');font-weight:700;font-style:normal;}
+  body{margin:0;padding:0;width:100%;-webkit-text-size-adjust:100%;}
+  table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+  img{border:0;display:block;}
+  a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !important;}
+  @media screen and (max-width:620px){
+    .conteneur{width:100% !important;}
+    .pad{padding-left:20px !important;padding-right:20px !important;}
+    .col{display:block !important;width:100% !important;box-sizing:border-box !important;padding:0 0 12px 0 !important;}
+    .btn-full, .btn-full a{display:block !important;width:100% !important;box-sizing:border-box !important;text-align:center !important;}
+    .t1{font-size:32px !important;line-height:48px !important;}
+    .t2{font-size:30px !important;line-height:40px !important;}
+    .t3{font-size:24px !important;line-height:34px !important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#F5F3F1;">
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#F5F3F1;opacity:0;">Tes points, tes alertes, ton prochain niveau : ton mois sur la route en un coup d'œil.&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F5F3F1;">
+<tr><td align="center">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="conteneur" style="width:600px;max-width:600px;">
+<tr><td class="pad" align="right" style="padding:14px 32px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#4A4F5C;"><a href="{{ mirror }}" style="color:#4A4F5C;">Voir dans le navigateur</a></td></tr>
+<tr><td class="pad" style="padding:8px 24px 18px 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+  <td valign="middle"><a href="LIEN-APP"><img src="URL-LOGO-BLEU" width="130" height="33" alt="Michelin Truckfly" style="width:130px;height:33px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#061866;"></a></td>
+  <td valign="middle" align="right" style="font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;color:#061866;">Novembre 2026</td></tr></table></td></tr>
+<tr><td class="pad" style="padding:0 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;"><tr><td style="background-color:#061866;border-radius:20px;padding:32px 28px;">
+<p style="margin:0 0 8px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;color:#FFFF1A;">Ton récap d'octobre</p>
+<h1 class="t1" style="margin:0 0 6px 0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:36px;line-height:44px;color:#FFFFFF;">Bravo {{ contact.PRENOM | default : "" }}, voici ton mois sur la route</h1>
+<p style="margin:0 0 22px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#B5D2F4;">Merci pour tout ce que tu as partagé avec la communauté.</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 22px 0;"><tr><td class="col" width="33%" valign="top" style="padding:0 5px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color:#002499;border-radius:14px;padding:18px 6px;">
+  <p style="margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:40px;line-height:44px;color:#FFFFFF;">{{ contact.POINTS_MOIS | default : "0" }}</p><p style="margin:4px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;color:#B5D2F4;">points gagnés</p></td></tr></table></td><td class="col" width="33%" valign="top" style="padding:0 5px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color:#002499;border-radius:14px;padding:18px 6px;">
+  <p style="margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:40px;line-height:44px;color:#FFFFFF;">{{ contact.AVIS_MOIS | default : "0" }}</p><p style="margin:4px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;color:#B5D2F4;">avis déposés</p></td></tr></table></td><td class="col" width="33%" valign="top" style="padding:0 5px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color:#002499;border-radius:14px;padding:18px 6px;">
+  <p style="margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:40px;line-height:44px;color:#FFFFFF;">{{ contact.ALERTES_MOIS | default : "0" }}</p><p style="margin:4px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;color:#B5D2F4;">alertes signalées</p></td></tr></table></td></tr></table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 22px 0;"><tr><td style="border-top:1px solid #002499;padding-top:18px;">
+  <p style="margin:0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#FFFFFF;">Tes alertes ont été vues par <strong style="color:#FFFF1A;">{{ contact.VUES_ALERTES | default : "0" }} routiers</strong>. Autant de collègues prévenus à temps.</p>
+</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-full"><tr>
+  <td align="center" style="border-radius:8px;background-color:#FFFF1A;">
+    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="LIEN-RECAP" style="height:50px;v-text-anchor:middle;width:240px;" arcsize="16%" stroke="f" fillcolor="#FFFF1A"><w:anchorlock/><center style="color:#061866;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Je partage mon récap</center></v:roundrect><![endif]-->
+    <!--[if !mso]><!-- --><a href="LIEN-RECAP" target="_blank" style="display:inline-block;padding:15px 28px;border-radius:8px;background-color:#FFFF1A;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#061866;text-decoration:none;">Je partage mon récap</a><!--<![endif]-->
+  </td></tr></table>
+</td></tr></table></td></tr>
+<tr><td class="pad" style="padding:0 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;"><tr><td style="background-color:#FFFFFF;border-radius:20px;padding:28px 28px;">
+<p style="margin:0 0 8px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;color:#061866;">Ta progression</p>
+<h2 class="t3" style="margin:0 0 12px 0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:26px;line-height:34px;color:#061866;">Plus que {{ contact.POINTS_NIVEAU_SUIVANT | default&nbsp;: "10" }} points pour passer Routier expert</h2>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 8px 0;"><tr>
+  <td width="62%" height="14" style="height:14px;background-color:#061866;border-radius:7px 0 0 7px;font-size:0;line-height:0;">&nbsp;</td>
+  <td width="38%" height="14" style="height:14px;background-color:#E4EAF2;border-radius:0 7px 7px 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px 0;"><tr>
+  <td style="font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#4A4F5C;">Routier éclaireur</td><td align="right" style="font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#4A4F5C;">Routier expert</td></tr></table>
+<p style="margin:0 0 16px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#000000;">Le plus rapide : <strong>ajoute 3 photos</strong> d'un arrêt que tu connais bien. Parking, entrée, douches : 1 photo = 1 point.</p>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-full"><tr>
+  <td align="center" style="border-radius:8px;background-color:#061866;">
+    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="LIEN-POINTS" style="height:50px;v-text-anchor:middle;width:230px;" arcsize="16%" stroke="f" fillcolor="#061866"><w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Je gagne mes points</center></v:roundrect><![endif]-->
+    <!--[if !mso]><!-- --><a href="LIEN-POINTS" target="_blank" style="display:inline-block;padding:15px 28px;border-radius:8px;background-color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#FFFFFF;text-decoration:none;">Je gagne mes points</a><!--<![endif]-->
+  </td></tr></table>
+</td></tr></table></td></tr>
+<tr><td class="pad" style="padding:0 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;"><tr><td style="background-color:#FFFFFF;border-radius:20px;padding:28px 28px 14px 28px;">
+<p style="margin:0 0 8px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;color:#061866;">L'essentiel en 30 secondes</p><h2 class="t3" style="margin:0 0 12px 0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:26px;line-height:34px;color:#061866;">Ce qui change sur la route ce mois-ci</h2>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 0 14px 0;border-bottom:1px solid #E4EAF2;"><p style="margin:0 0 2px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;font-weight:700;color:#061866;">Loi Montagne</p>
+<p style="margin:0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#000000;">Dès le 1er novembre, chaînes ou pneus 3PMSF dans les zones de montagne signalées. <a href="LIEN-INFO-1" style="color:#061866;font-weight:700;">Lire</a></p></td></tr><tr><td style="height:14px;line-height:14px;font-size:0;">&nbsp;</td></tr><tr><td style="padding:0 0 14px 0;border-bottom:1px solid #E4EAF2;"><p style="margin:0 0 2px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;font-weight:700;color:#061866;">Italie</p>
+<p style="margin:0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#000000;">Pneus hiver ou chaînes à bord sur les routes signalées à partir du 15 novembre. <a href="LIEN-INFO-2" style="color:#061866;font-weight:700;">Lire</a></p></td></tr><tr><td style="height:14px;line-height:14px;font-size:0;">&nbsp;</td></tr><tr><td style="padding:0 0 14px 0;border-bottom:1px solid #E4EAF2;"><p style="margin:0 0 2px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;font-weight:700;color:#061866;">Dans l'app</p>
+<p style="margin:0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#000000;">Les alertes brouillard et verglas s'affichent sur ton itinéraire avant le départ. <a href="LIEN-INFO-3" style="color:#061866;font-weight:700;">Lire</a></p></td></tr><tr><td style="height:14px;line-height:14px;font-size:0;">&nbsp;</td></tr></table>
+</td></tr></table></td></tr>
+<tr><td class="pad" style="padding:0 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;"><tr><td style="background-color:#E4EAF2;border-radius:20px;padding:28px 28px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+  <td width="74" valign="top"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" width="60" height="60" style="width:60px;height:60px;border-radius:30px;background-color:#061866;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:26px;line-height:60px;color:#FFFF1A;">1</td></tr></table></td>
+  <td valign="top"><p style="margin:0 0 8px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;color:#061866;">Le défi du mois</p><h2 class="t3" style="margin:0 0 8px 0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:22px;line-height:30px;color:#061866;">Signale ta première alerte météo</h2>
+  <p style="margin:0 0 16px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:#000000;">Brouillard, verglas, neige : 10 secondes depuis la carte, et les routiers derrière toi sont prévenus.</p>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-full"><tr>
+  <td align="center" style="border-radius:8px;background-color:#061866;">
+    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="LIEN-DEFI" style="height:50px;v-text-anchor:middle;width:210px;" arcsize="16%" stroke="f" fillcolor="#061866"><w:anchorlock/><center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Je relève le défi</center></v:roundrect><![endif]-->
+    <!--[if !mso]><!-- --><a href="LIEN-DEFI" target="_blank" style="display:inline-block;padding:15px 28px;border-radius:8px;background-color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#FFFFFF;text-decoration:none;">Je relève le défi</a><!--<![endif]-->
+  </td></tr></table></td></tr></table>
+</td></tr></table></td></tr>
+<tr><td class="pad" style="padding:0 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;"><tr><td style="background-color:#FFFFFF;border-radius:20px;padding:28px 28px;">
+<p style="margin:0 0 8px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;color:#061866;">Vu par la communauté</p>
+<a href="LIEN-PHOTO-DU-MOIS"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" height="260" style="height:260px;background-color:#E4EAF2;border-radius:14px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:14px;color:#061866;">[Photo d'un routier de la communauté · 1040 × 520 px]</td></tr></table></a>
+<p style="margin:14px 0 4px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:17px;line-height:25px;font-style:italic;color:#000000;">« [Le petit mot du routier sur sa photo] »</p>
+<p style="margin:0 0 16px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;color:#4A4F5C;">[Prénom], routier depuis [X] ans · [lieu]</p>
+<p style="margin:0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;"><a href="LIEN-ENVOYER-PHOTO" style="color:#061866;font-weight:700;">Envoie ta photo, elle sera peut-être la prochaine</a></p>
+</td></tr></table></td></tr>
+<tr><td class="pad" style="padding:0 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;"><tr><td style="background-color:#061866;border-radius:20px;padding:28px 28px;">
+<p style="margin:0 0 8px 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:700;color:#FFFF1A;">Le quiz de la route</p>
+<h2 class="t3" style="margin:0 0 18px 0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:22px;line-height:30px;color:#FFFFFF;">Vrai ou faux&nbsp;: en zone Loi Montagne, des pneus M+S suffisent pour un poids lourd avec semi-remorque.</h2>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="col" width="50%" style="padding:0 5px;"><a href="LIEN-QUIZ?reponse=vrai" style="display:block;padding:16px 10px;border-radius:12px;background-color:#FFFFFF;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:17px;line-height:22px;font-weight:700;color:#061866;text-align:center;text-decoration:none;">Vrai</a></td><td class="col" width="50%" style="padding:0 5px;"><a href="LIEN-QUIZ?reponse=faux" style="display:block;padding:16px 10px;border-radius:12px;background-color:#FFFFFF;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:17px;line-height:22px;font-weight:700;color:#061866;text-align:center;text-decoration:none;">Faux</a></td></tr></table>
+<p style="margin:14px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;color:#B5D2F4;">Clique, on te donne la réponse tout de suite.</p>
+</td></tr></table></td></tr>
+<tr><td class="pad" align="center" style="padding:14px 24px 34px 24px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#4A4F5C;">
+  <p style="margin:0 0 6px 0;">Une question ? <a href="https://faq.truckfly.com/" style="color:#061866;font-weight:700;">faq.truckfly.com</a></p>
+  <p style="margin:0 0 6px 0;">Tu reçois cet e-mail car tu t'es inscrit à l'application mobile Michelin Truckfly.</p>
+  <p style="margin:0;"><a href="{{ unsubscribe }}" style="color:#4A4F5C;">Se désinscrire</a></p></td></tr>
+</table>
+</td></tr></table>
+</body></html>
