@@ -1,0 +1,2705 @@
+author: ""
+brandUpdateTime: '2024-06-07T15:41:42.246+02:00'
+campaignType: classic
+colors:
+  - '#e84c3d'
+  - '#f46b66'
+fields:
+  products:
+    productData:
+      '1':
+        description: 'Product description. Lorem ipsum dolor sit amet, consetetur sadipscing'
+        image: 'https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png'
+        images:
+          - 'https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png'
+        language: de
+        name: 'Product Name'
+        oldPrice: 195.5
+        price: 180
+        type: 'Default Product'
+        url: 'https://my.sendinblue.com/'
+    productIndex: 0
+fieldsHistory: []
+firstLoadSocialIcons: false
+fonts:
+  - 'https://fonts.googleapis.com/css2?family=Arial black'
+hasAIFeature: true
+id: 38d0ee3f-714f-4022-a931-75d419fa2058
+name: ""
+subject: '{% if contact.LANG == "FR" %}Dès dimanche, chaînes obligatoires en montagne : es-tu prêt ?{% elif contact.LANG == "IT" %}Da domenica catene obbligatorie in Francia: sei pronto?{% elif contact.LANG == "ES" %}Desde el domingo, cadenas obligatorias en Francia: ¿estás listo?{% else %}Dès dimanche, chaînes obligatoires en montagne : es-tu prêt ?{% endif %}'
+ui:
+  showDeleteOption: false
+  showMoreOption: false
+user-hash: 0ef7dc2ac2a07cb264f87eeb888750c5
+version: 3.0.1
+body:
+  id: 42b445cb-808d-4d13-b3a9-c2aafbb29e32
+  type: body
+  layout:
+    320px:
+      width: 320px
+    default:
+      direction: ltr
+      padding-bottom: 0px
+      padding-left: 0px
+      padding-right: 0px
+      padding-top: 0px
+      wrapper-width: 600px
+  content:
+    -
+      content-type: wrapper
+      id: 2d5a94cd-ebf7-4902-aeb9-4c1bd6fd4fdd
+      title: Wrapper
+      type: rows
+      layout:
+        320px:
+          width: 320px
+        default:
+          align: center
+          valign: top
+      content:
+        -
+          align: top
+          dist: '12'
+          gutter: 0px
+          id: 673a339f-2f52-4476-8512-1cbd461866dc
+          moduleName: viewInBrowser
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: section
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              width: 100%
+            default:
+              align: center
+              background-color: transparent
+              display: none
+              full-width: true
+              padding-bottom: 5px
+              padding-top: 5px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 6d62e263-0651-42f9-9840-6c9c6d35c8bc
+              isEmpty: false
+              label: 'Drop content here'
+              title: 'column 1'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 9ed2a155-63c0-4fa7-83f9-82b004771ad2
+                  title: Webversion
+                  type: text
+                  layout:
+                    320px:
+                      padding-left: 10px
+                      padding-right: 10px
+                      width: 100%
+                    default:
+                      align: center
+                      line-height: 16px
+                      padding-left: 30px
+                      padding-right: 30px
+                      text-align: center
+                      width: 100%
+                  content: "<p><a href=\"{{ mirror }}\">\n                      <span style=\"font-family: arial,helvetica,sans-serif;color:#858588;font-size: 12px; text-decoration: underline;\">\n                      Afficher dans le navigateur</span></a></p>"
+        -
+          align: top
+          dist: '12'
+          gutter: 0px
+          id: 04f8bc87-df05-44a3-b7d4-5fbe1ae982eb
+          moduleName: grid-row12
+          stylable: false
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: 'B2C Multilingual Header'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 0px
+              padding-right: 0px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 0px
+              padding-top: 0px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 8078a1f4-4105-4690-b2d8-5a30d0d5531a
+              isEmpty: false
+              stylable: false
+              title: Column
+              type: grid-column
+              layout:
+                320px: {}
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 183c68d8-a342-495d-ba68-36efb00d2677
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      display: rows
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: left
+                      canvas-height: 100px
+                      display: none
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      showHide: true
+                      showOnDesktopMobile: mobile
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://truckfly.onelink.me/rNAz/63cbde2v'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/69af01d384372f83fe862852.jpg'
+                -
+                  id: bec7f35f-8855-43b5-b6e4-d048d2b5568c
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      display: none
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: left
+                      canvas-height: 90px
+                      display: rows
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      showHide: true
+                      showOnDesktopMobile: desktop
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://www.truckfly.com/?utm_source=brevo&utm_medium=transactional_emails'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/69af01d084372f83fe862850.jpg'
+                -
+                  condition: '( "FR" in contact.LANG )'
+                  id: 6f7cfa77-1f72-4143-b523-8e6a443f2c6e
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#0c165b'
+                      groupPadding: false
+                      line-height: '1'
+                      padding-bottom: 20px
+                      padding-left: 0px
+                      padding-top: 0px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, l&#39;appli gratuite préférée des chauffeurs routiers en Europe.&nbsp;<br>Et pour ceux qui en veulent plus :<strong>&nbsp;</strong></span><a href="https://lp.truckfly.com/fr/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="font-size: 11px; color: rgb(0, 146, 255);"><strong>Un&nbsp;</strong></span></a><a href="https://lp.truckfly.com/fr/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="font-size: 11px; color: rgb(0, 146, 255);"><strong>GPS en option !</strong></span></a></p>'
+                -
+                  condition: '( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "PT" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "DE" ) ) or ( contact.LANG == "EN" ) or ( !contact.LANG )'
+                  id: 49ae4f54-cd8d-4da7-b908-48615da9d54f
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#0c165b'
+                      groupPadding: false
+                      line-height: '1'
+                      padding-bottom: 20px
+                      padding-left: 0px
+                      padding-top: 0px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, the free app preferred by truck drivers across Europe.&nbsp;</span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">And for those who want more:&nbsp;<a href="https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>a GPS option!</strong></a></span></p>'
+                -
+                  condition: '( contact.LANG == "ES" )'
+                  id: 7054bcfe-81fd-4f64-8206-dcf705b51b06
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#0c165b'
+                      groupPadding: false
+                      line-height: '1'
+                      padding-bottom: 20px
+                      padding-left: 0px
+                      padding-top: 0px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, la app gratuita preferida por los camioneros en Europa.&nbsp;</span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Y para quienes quieren más:&nbsp;<a href="https://lp.truckfly.com/es/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>¡GPS disponible como opción!</strong></a></span></p>'
+                -
+                  condition: '( contact.LANG == "PL" )'
+                  id: b9667f63-9f3f-4c61-8b87-efb4277d5b43
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#0c165b'
+                      groupPadding: false
+                      line-height: '1'
+                      padding-bottom: 20px
+                      padding-left: 0px
+                      padding-top: 0px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, darmowa aplikacja najchętniej wybierana przez kierowców ciężarówek w Europie.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">A dla tych, którzy chcą więcej: <a href="https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>opcjonalny GPS!</strong></a></span></p>'
+                -
+                  condition: '( contact.LANG == "IT" )'
+                  id: 2918a194-2535-4fea-87ad-635ddcf95787
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#0c165b'
+                      groupPadding: false
+                      line-height: '1'
+                      padding-bottom: 20px
+                      padding-left: 0px
+                      padding-top: 0px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, l&#39;app gratuita preferita dagli autisti di camion in Europa.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">E per chi vuole di più:&nbsp;<a href="https://lp.truckfly.com/it/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>GPS disponibile come opzione!</strong></a></span></p>'
+                -
+                  condition: '( contact.LANG == "PT" )'
+                  id: e629446c-b1fe-42bf-ae80-edfae27d736e
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#0c165b'
+                      groupPadding: false
+                      line-height: '1'
+                      padding-bottom: 20px
+                      padding-left: 0px
+                      padding-top: 0px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, a aplicação gratuita preferida dos camionistas na Europa.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">E para quem quer mais:&nbsp;<a href="https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>GPS disponível como opção!</strong></a></span></p>'
+                -
+                  condition: '( contact.LANG == "NL" )'
+                  id: 15f951d3-06ab-4fea-b967-e948ab3fe67a
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#0c165b'
+                      groupPadding: false
+                      line-height: '1'
+                      padding-bottom: 20px
+                      padding-left: 0px
+                      padding-top: 0px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, de gratis app die favoriet is bij vrachtwagenchauffeurs in Europa.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">En voor wie meer wil:<strong>&nbsp;</strong><a href="https://lp.truckfly.com/nl/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>een GPS-optie!</strong></a></span></p>'
+                -
+                  condition: '( contact.LANG == "DE" )'
+                  id: 28030eb5-5106-4209-931c-ac9f9ed244d1
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#0c165b'
+                      groupPadding: false
+                      line-height: '1'
+                      padding-bottom: 20px
+                      padding-left: 0px
+                      padding-top: 0px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">MICHELIN Truckfly, die kostenlose App, die bei Lkw-Fahrern in Europa besonders beliebt ist.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">Und für alle, die mehr wollen:&nbsp;<a href="https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>GPS als Option!</strong></a></span></p>'
+                -
+                  id: bb90298a-1cef-493c-b927-574999b76e96
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: center
+                      canvas-height: 22px
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      valign: top
+                      width: 100%
+                  content:
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/69a1600b6f5610296e741162.jpg'
+        -
+          align: top
+          condition: '( "FR" in contact.LANG )'
+          dist: '12'
+          gutter: 20px
+          id: 9c9a2317-e900-419e-883d-e6f89b5951dd
+          moduleName: grid-row12
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: Texte
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 20px
+              padding-left: 10px
+              padding-right: 10px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 0538ef23-173d-4508-97d3-31a7217d591b
+              isEmpty: false
+              label: 'Drop content here'
+              title: 'column 1'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 3c9807d5-9f5f-40a6-a767-150639e89c78
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><span style="color: rgb(0, 0, 0);">Chaque jour, des milliers de conducteurs <strong>roulent, partagent et font vivre la communauté Michelin Truckfly.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Avec novembre, l’hiver s’installe sur la route : nouvelles obligations en montagne, routes glissantes, conditions qui changent vite… Autant de raisons de bien <strong>préparer tes trajets et de partager les bonnes infos.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Ce mois-ci, découvre <strong>ce qui devient obligatoire dès le 1er novembre et comment aider les autres conducteurs face aux dangers de l’hiver. Sans oublier le top contributeur d’octobre… et nos astuces pour prendre sa place !</strong></span></p>'
+        -
+          align: top
+          condition: '( "IT" in contact.LANG )'
+          dist: '12'
+          gutter: 20px
+          id: dcd388ed-e65b-483f-b936-5579dad62fa0
+          moduleName: grid-row12
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: 'Bannière IT'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 20px
+              padding-left: 10px
+              padding-right: 10px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 02ee6016-7349-40f8-b594-29707c9deee0
+              isEmpty: false
+              label: 'Drop content here'
+              title: 'column 1'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: d94c962e-750d-46d6-b452-f48a374040a7
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><span style="color: rgb(0, 0, 0);">Ogni giorno, migliaia di autisti <strong>viaggiano, condividono e fanno vivere la community Michelin Truckfly.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Con novembre, l’inverno arriva sulla strada: nuovi obblighi in montagna, strade scivolose, condizioni che cambiano in fretta… Tanti buoni motivi per <strong>preparare bene i tuoi viaggi e condividere le info giuste.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Questo mese scopri <strong>cosa diventa obbligatorio in Francia dal 1° novembre e come aiutare gli altri autisti contro i pericoli dell’inverno. Senza dimenticare il top contributore di ottobre… e i nostri consigli per prendere il suo posto!</strong></span></p>'
+        -
+          align: top
+          condition: '( "ES" in contact.LANG )'
+          dist: '12'
+          gutter: 20px
+          id: 3441d09a-f2db-4ff7-b0ac-e0aba1686f27
+          moduleName: grid-row12
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: 'Bannière ES'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 20px
+              padding-left: 10px
+              padding-right: 10px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 5ababcdc-9a74-4cf3-89d8-dcc7fe1280d0
+              isEmpty: false
+              label: 'Drop content here'
+              title: 'column 1'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: b941af12-31f4-4b24-a47b-d98bb2e422cd
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><span style="color: rgb(0, 0, 0);">Cada día, miles de camioneros <strong>circulan, comparten y dan vida a la comunidad Michelin Truckfly.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Con noviembre, el invierno llega a la carretera: nuevas obligaciones en montaña, carreteras resbaladizas, condiciones que cambian rápido… Razones de sobra para <strong>preparar bien tus rutas y compartir la información correcta.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Este mes descubre <strong>qué pasa a ser obligatorio en Francia a partir del 1 de noviembre y cómo ayudar a otros camioneros frente a los peligros del invierno. Sin olvidar al mejor colaborador de octubre… ¡y nuestros consejos para quitarle el puesto!</strong></span></p>'
+        -
+          align: top
+          condition: ""
+          dist: '12'
+          gutter: 30px
+          id: eed65fa8-3d6a-4acf-8c18-d254c651c937
+          moduleName: image-text
+          sectionName: 'Text and Image 2'
+          stylable: false
+          thumbnail: /assets/img/editor/element-style-2.svg
+          title: 'Style 2'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#0c165b'
+              groupPadding: true
+              padding-bottom: 20px
+              padding-left: 10px
+              padding-right: 10px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 6dea7ea7-879d-48a9-8c32-1025a0908897
+              imagelabel: 'Select a content type'
+              isEmpty: false
+              label: 'Drop content here'
+              stylable: false
+              title: 'text column'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: f4c889de-568a-4e6c-9314-1ad3f085b4e1
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      applyAllBorder: false
+                      border-bottom-style: solid
+                      border-bottom-width: 0px
+                      border-left-style: solid
+                      border-left-width: 0px
+                      border-right-style: solid
+                      border-right-width: 0px
+                      border-top-style: solid
+                      border-top-width: 0px
+                      line-height: '1'
+                      margin-bottom: 5px
+                      margin-top: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><br id="isPasted"></p><h2 class="default-heading2" id="isPasted"><span style="color: rgb(255, 255, 255);">1.&nbsp;<span style="color:rgb(255, 255, 255)">Chaînes, pneus hiver : es-tu en règle ?</span></span></h2><p><br></p>'
+                -
+                  id: 8e2e5103-92fd-4dd7-9070-20daaf7fa08f
+                  stylable: false
+                  title: Paragraph
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p class="default" id="isPasted"><strong><span style="color: rgb(249, 250, 252);">Le savais-tu ?</span></strong><span style="color: rgb(249, 250, 252);">&nbsp;</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);">Dès ce <strong>dimanche 1er novembre et jusqu’au 31 mars</strong>, la <strong>Loi Montagne</strong> s’applique dans certaines communes de montagne en France. Elles sont signalées par un panneau à l’entrée de la zone.</span></p><p class="default"><span style="color: rgb(249, 250, 252);"><br></span></p><p class="default"><span style="color: rgb(249, 250, 252);">Et les poids lourds sont concernés :</span></p><p class="default"><span style="color: rgb(249, 250, 252);"><br></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);"><strong>PL avec remorque ou semi-remorque</strong> : chaînes obligatoires dans le camion pour équiper <strong>au moins deux roues motrices</strong>, même si tu roules en pneus hiver.</li><li style="color: rgb(249, 250, 252);"><strong>PL sans remorque</strong> : au choix, <strong>chaînes</strong> ou <strong>pneus hiver</strong>.</li></ul><p><span style="color: rgb(249, 250, 252);"><br></span></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Attention aux pneus :</strong> seuls les pneus marqués du <strong>symbole 3PMSF</strong> (la montagne à trois pics avec un flocon) comptent comme équipement hiver. Les autres pneus « neige » ne suffisent pas seuls : il te faut aussi des chaînes.</span></p><p class="default"><span style="color: rgb(249, 250, 252);"><br></span></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Ta checklist avant de partir :</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);"><strong>Vérifie tes pneus</strong> : le symbole 3PMSF est-il bien présent ?</li><li style="color: rgb(249, 250, 252);"><strong>Contrôle tes chaînes</strong> : elles sont dans le camion, en bon état, et tu sais les monter.</li></ul>'
+                -
+                  id: 01558eaa-624d-4325-a47e-91f858e845eb
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: center
+                      canvas-height: 368px
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://mobiliteclub.fr/wp-content/uploads/2025/11/Pneumatiques-et-chaines-en-hiver_compressed-1.pdf'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/6acf6747fabbc1de921863be.jpg'
+                -
+                  id: fefa465f-e2bb-4e65-80ae-2e5abfd4fd0f
+                  text: '<p><strong><span style="color: rgb(0, 0, 0);">Je prépare mon trajet</span></strong></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://www.truckfly.com/purchase-gps'
+                      data-placeholder-href: 'https://www.truckfly.com/purchase-gps'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 46%
+                  content:
+                    href: 'https://www.truckfly.com/purchase-gps'
+                    text: '<p><strong><span style="color: rgb(0, 0, 0);">Je prépare mon trajet</span></strong></p>'
+        -
+          align: top
+          condition: '( "IT" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: 7c207538-1c0a-4562-9c86-02d754b6f812
+          moduleName: image-text
+          sectionName: 'Text and Image 2'
+          stylable: false
+          thumbnail: /assets/img/editor/element-style-2.svg
+          title: 'Bannière IT'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#0c165b'
+              groupPadding: true
+              padding-bottom: 20px
+              padding-left: 10px
+              padding-right: 10px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 927d75d9-98bb-4c3e-ba1a-64a3a7c69ca4
+              imagelabel: 'Select a content type'
+              isEmpty: false
+              label: 'Drop content here'
+              stylable: false
+              title: 'text column'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 4fcd1707-80cb-4c07-ae75-6f9a261eb44b
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      applyAllBorder: false
+                      border-bottom-style: solid
+                      border-bottom-width: 0px
+                      border-left-style: solid
+                      border-left-width: 0px
+                      border-right-style: solid
+                      border-right-width: 0px
+                      border-top-style: solid
+                      border-top-width: 0px
+                      line-height: '1'
+                      margin-bottom: 5px
+                      margin-top: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><br></p><h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">1.&nbsp;<span style="color:rgb(255, 255, 255)">Catene, pneumatici invernali: sei in regola?</span></span></h2><p><br></p>'
+                -
+                  id: 822272fc-31da-4be2-a9db-3db7cc878d4b
+                  stylable: false
+                  title: Paragraph
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p class="default"><strong><span style="color: rgb(249, 250, 252);">Lo sapevi?</span></strong><span style="color: rgb(249, 250, 252);">&nbsp;</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);">Viaggi in Francia? Da <strong>domenica 1° novembre fino al 31 marzo</strong>, la <strong>Loi Montagne</strong> (la legge francese sulla montagna) si applica in alcuni comuni di montagna in Francia. Sono segnalati da un cartello all&#39;ingresso della zona.</span></p><p class="default"><span style="color: rgb(249, 250, 252);"><br></span></p><p class="default"><span style="color: rgb(249, 250, 252);">E i mezzi pesanti sono interessati:</span></p><p class="default"><span style="color: rgb(249, 250, 252);"><br></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);"><strong>Camion con rimorchio o semirimorchio</strong>: catene obbligatorie a bordo per equipaggiare <strong>almeno due ruote motrici</strong>, anche se monti pneumatici invernali.</li><li style="color: rgb(249, 250, 252);"><strong>Camion senza rimorchio</strong>: a scelta, <strong>catene</strong> o <strong>pneumatici invernali</strong>.</li></ul><p><span style="color: rgb(249, 250, 252);"><br></span></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Attenzione ai pneumatici:</strong> valgono come equipaggiamento invernale solo i pneumatici con il <strong>simbolo 3PMSF</strong> (la montagna a tre punte con il fiocco di neve). Gli altri pneumatici «da neve» da soli non bastano: servono anche le catene.</span></p><p class="default"><br></p><p><strong id="isPasted"><span style="color: rgb(255, 255, 255);">Anche i camion stranieri sono interessati!</span></strong><span style="color: rgb(255, 255, 255);">&nbsp;Per ora non sono previste multe. Ma senza equipaggiamento le forze dell’ordine possono vietarti l’accesso alla zona e la tua assicurazione può ridurre o rifiutare il risarcimento in caso di incidente.</span></p><p class="default"><span style="color: rgb(249, 250, 252);"><br></span></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>La tua checklist prima di partire:</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);"><strong>Controlla i pneumatici</strong>: c&#39;è il simbolo 3PMSF?</li><li style="color: rgb(249, 250, 252);"><strong>Controlla le catene</strong>: sono nel camion, in buono stato, e sai come montarle.</li></ul>'
+                -
+                  id: 33b7546d-0b21-4dce-975c-a9cd21400538
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: center
+                      canvas-height: 365px
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://www.sicurauto.it/news/pneumatici-auto/obbligo-gomme-invernali-francia-2025-2026-quale-la-regola/'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/6acf7578d0f90eae6b11e410.jpg'
+                -
+                  id: 9ee7db0b-4605-47d8-8bc8-c836f4657a8a
+                  text: '<p><strong><span style="color: rgb(0, 0, 0);">Preparo il mio viaggio</span></strong></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://www.truckfly.com/purchase-gps'
+                      data-placeholder-href: 'https://www.truckfly.com/purchase-gps'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 46%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    text: '<p><strong><span style="color: rgb(0, 0, 0);">Preparo il mio viaggio</span></strong></p>'
+        -
+          align: top
+          condition: '( "ES" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: 6dcd0518-5bdc-4943-b8d2-d37ba34c3a39
+          moduleName: image-text
+          sectionName: 'Text and Image 2'
+          stylable: false
+          thumbnail: /assets/img/editor/element-style-2.svg
+          title: 'Bannière ES'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#0c165b'
+              groupPadding: true
+              padding-bottom: 20px
+              padding-left: 10px
+              padding-right: 10px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: d7c98acd-a393-447d-af30-b52dc7ea9f15
+              imagelabel: 'Select a content type'
+              isEmpty: false
+              label: 'Drop content here'
+              stylable: false
+              title: 'text column'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: af731373-cb86-40fb-848e-6d8fe0547479
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      applyAllBorder: false
+                      border-bottom-style: solid
+                      border-bottom-width: 0px
+                      border-left-style: solid
+                      border-left-width: 0px
+                      border-right-style: solid
+                      border-right-width: 0px
+                      border-top-style: solid
+                      border-top-width: 0px
+                      line-height: '1'
+                      margin-bottom: 5px
+                      margin-top: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><br></p><h2 class="default-heading2"><span style="color: rgb(255, 255, 255);">1.&nbsp;<span style="color:rgb(255, 255, 255)">Cadenas, neumáticos de invierno: ¿estás en regla?</span></span></h2><p><br></p>'
+                -
+                  id: 768ff955-c6b5-4e46-ac82-6cde682c04d9
+                  stylable: false
+                  title: Paragraph
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p class="default"><strong><span style="color: rgb(249, 250, 252);">¿Lo sabías?</span></strong><span style="color: rgb(249, 250, 252);">&nbsp;</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(249, 250, 252);">¿Circulas por Francia? Desde el <strong>domingo 1 de noviembre hasta el 31 de marzo</strong>, la <strong>Loi Montagne</strong> (la ley francesa de montaña) se aplica en algunos municipios de montaña de Francia. Están señalizados con un panel a la entrada de la zona.</span></p><p class="default"><span style="color: rgb(249, 250, 252);"><br></span></p><p class="default"><span style="color: rgb(249, 250, 252);">Y los camiones también están afectados:</span></p><p class="default"><span style="color: rgb(249, 250, 252);"><br></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);"><strong>Camión con remolque o semirremolque</strong>: cadenas obligatorias a bordo para equipar <strong>al menos dos ruedas motrices</strong>, aunque lleves neumáticos de invierno.</li><li style="color: rgb(249, 250, 252);"><strong>Camión sin remolque</strong>: a elegir, <strong>cadenas</strong> o <strong>neumáticos de invierno</strong>.</li></ul><p><span style="color: rgb(249, 250, 252);"><br></span></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Ojo con los neumáticos:</strong> solo cuentan como equipamiento de invierno los neumáticos con el <strong>símbolo 3PMSF</strong> (la montaña de tres picos con un copo de nieve). Los demás neumáticos «de nieve» no bastan por sí solos: también necesitas cadenas.</span></p><p class="default"><br></p><p class="default"><span style="color:rgb(249, 250, 252)"><strong>¡Los camiones extranjeros también están afectados!</strong> De momento no hay multas. Pero sin equipamiento, las fuerzas del orden pueden impedirte el acceso a la zona y tu seguro puede reducir o rechazar la indemnización en caso de accidente.</span></p><p class="default"><span style="color: rgb(249, 250, 252);"><br></span></p><p class="default"><span style="color: rgb(249, 250, 252);"><strong>Tu checklist antes de salir:</strong></span></p><ul dir="ltr"><li style="color: rgb(249, 250, 252);"><strong>Revisa tus neumáticos</strong>: ¿llevan el símbolo 3PMSF?</li><li style="color: rgb(249, 250, 252);"><strong>Comprueba tus cadenas</strong>: están en el camión, en buen estado, y sabes montarlas.</li></ul>'
+                -
+                  id: 35a534c1-a18e-45a4-b20e-24888a0ec040
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: center
+                      canvas-height: 365px
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://bandomovil.com/userFiles/mj/mj9gUNOTAINFORMATIVA_CADENASTNELESYCARRETERASFRANCESAS2021.pdf'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/6acf7578d0f90eae6b11e410.jpg'
+                -
+                  id: dcb37c9c-4756-455b-9d95-f9cccb734829
+                  text: '<p><strong><span style="color: rgb(0, 0, 0);">Preparo mi ruta</span></strong></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://www.truckfly.com/purchase-gps'
+                      data-placeholder-href: 'https://www.truckfly.com/purchase-gps'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 46%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    text: '<p><strong><span style="color: rgb(0, 0, 0);">Preparo mi ruta</span></strong></p>'
+        -
+          align: top
+          condition: '( "FR" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: 4e634f9a-ac84-4243-b79d-f3d1241c7ce6
+          moduleName: image-text
+          sectionName: 'Text and Image 2'
+          stylable: false
+          thumbnail: /assets/img/editor/element-style-2.svg
+          title: 'Style 2'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 20px
+              padding-right: 0px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 33c04a0d-49a5-4278-b8ef-5f11fd19998a
+              imagelabel: 'Select a content type'
+              isEmpty: false
+              label: 'Drop content here'
+              stylable: false
+              title: 'text column'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  item-width: 26px
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 1260d961-02ab-4493-837d-9498e71f7953
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      applyAllBorder: false
+                      border-bottom-style: solid
+                      border-bottom-width: 0px
+                      border-left-style: solid
+                      border-left-width: 0px
+                      border-right-style: solid
+                      border-right-width: 0px
+                      border-top-style: solid
+                      border-top-width: 0px
+                      line-height: '1'
+                      margin-bottom: 5px
+                      margin-top: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2"><span style="vertical-align:baseline;font-size:32px;color:rgb(0, 0, 0);">2. <span style="vertical-align:baseline;font-size:32px;color:rgb(0, 0, 0)">Route glissante, brouillard, accident : préviens les autres !</span></span></h2>'
+                -
+                  id: a4b722ae-3b0c-4916-9911-1b50fa612045
+                  stylable: false
+                  title: Paragraph
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p class="default"><br></p><p class="default" id="isPasted"><strong><span style="color: rgb(0, 0, 0);">Brouillard épais, route glissante, accident, bouchon…</span></strong><span style="color: rgb(0, 0, 0);">&nbsp;Sur la route, une info partagée au bon moment peut éviter bien des galères à un autre conducteur.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(0, 0, 0);">Sur Michelin Truckfly, tu peux <strong>signaler une alerte en quelques secondes</strong>, directement depuis la carte. Elle s’affiche alors pour toute la communauté qui roule dans le secteur.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(0, 0, 0);"><strong>Et à l’inverse</strong>, pense à jeter un œil aux alertes sur ton parcours avant de partir : tu anticipes les dangers et tu évites les mauvaises surprises.</span></p><p class="default"><br></p><ul dir="ltr"><li style="color: rgb(0, 0, 0);"><strong>Pour signaler</strong> : ouvre l’appli → appuie sur le bouton d’alerte → choisis le type de danger → c’est envoyé !</li><li style="color: rgb(0, 0, 0);"><strong>Pour anticiper</strong> : lance ton itinéraire → regarde les alertes signalées sur ta route → adapte ton trajet si besoin</li></ul><p><br></p>'
+                -
+                  id: 7ad68143-9c65-44ea-852d-326fe68fab5e
+                  label: Replace
+                  stylable: false
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 70%
+                    default:
+                      align: center
+                      border-radius: 8px
+                      canvas-height: 503px
+                      dynamic: false
+                      embed: false
+                      imgSize: '144215'
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removePadding: false
+                      type: absoluteLink
+                      valign: top
+                      width: 42%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/6acf4d43fabbc1de921856bf.png'
+                -
+                  id: a16eb59a-4d0e-4261-8bde-239a9716306b
+                  text: '<p><strong><span style="color: rgb(0, 0, 0);">Je signale une alerte&nbsp;</span></strong></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://www.truckfly.com/purchase-gps'
+                      data-placeholder-href: 'https://www.truckfly.com/purchase-gps'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 45%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    text: '<p><strong><span style="color: rgb(0, 0, 0);">Je signale une alerte&nbsp;</span></strong></p>'
+        -
+          align: top
+          condition: '( "IT" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: 15311219-3bbd-449c-9cfc-a82b308d7298
+          moduleName: image-text
+          sectionName: 'Text and Image 2'
+          stylable: false
+          thumbnail: /assets/img/editor/element-style-2.svg
+          title: 'Bannière IT'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 20px
+              padding-right: 0px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 1bb445c6-4289-4646-a1d1-d0152e6ed5e5
+              imagelabel: 'Select a content type'
+              isEmpty: false
+              label: 'Drop content here'
+              stylable: false
+              title: 'text column'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  item-width: 26px
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 4dc62b98-0ee2-4302-a75a-a251a2b03fcf
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      applyAllBorder: false
+                      border-bottom-style: solid
+                      border-bottom-width: 0px
+                      border-left-style: solid
+                      border-left-width: 0px
+                      border-right-style: solid
+                      border-right-width: 0px
+                      border-top-style: solid
+                      border-top-width: 0px
+                      line-height: '1'
+                      margin-bottom: 5px
+                      margin-top: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2"><span style="vertical-align:baseline;font-size:32px;color:rgb(0, 0, 0);">2. <span style="vertical-align:baseline;font-size:32px;color:rgb(0, 0, 0)">Strada scivolosa, nebbia, incidente: avvisa gli altri!</span></span></h2>'
+                -
+                  id: 2a20934e-971a-499d-98a1-fe57f7e11d3b
+                  stylable: false
+                  title: Paragraph
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p class="default"><br></p><p class="default" id="isPasted"><strong><span style="color: rgb(0, 0, 0);">Nebbia fitta, strada scivolosa, incidente, coda…</span></strong><span style="color: rgb(0, 0, 0);">&nbsp;Sulla strada, un’info condivisa al momento giusto può evitare tanti problemi a un altro autista.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(0, 0, 0);">Su Michelin Truckfly puoi <strong>inviare una segnalazione in pochi secondi</strong>, direttamente dalla mappa. Viene poi mostrata a tutta la community che viaggia nella zona.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(0, 0, 0);"><strong>E al contrario</strong>, dai un’occhiata alle segnalazioni sul tuo percorso prima di partire: anticipi i pericoli ed eviti brutte sorprese.</span></p><p class="default"><br></p><ul dir="ltr"><li style="color: rgb(0, 0, 0);"><strong>Per segnalare</strong>: apri l’app → tocca il pulsante di segnalazione → scegli il tipo di pericolo → è inviata!</li><li style="color: rgb(0, 0, 0);"><strong>Per anticipare</strong>: avvia il tuo itinerario → guarda le segnalazioni sul tuo percorso → adatta il viaggio se serve</li></ul><p><br></p>'
+                -
+                  id: b9022eb3-f084-45bd-8cc3-641ca538a6b2
+                  label: Replace
+                  stylable: false
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 70%
+                    default:
+                      align: center
+                      border-radius: 8px
+                      canvas-height: 503px
+                      dynamic: false
+                      embed: false
+                      imgSize: '144215'
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removePadding: false
+                      type: absoluteLink
+                      valign: top
+                      width: 42%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/6acf7630cf1003e8874913c7.png'
+                -
+                  id: 970d3b16-fd65-4718-aff8-f58cbefec770
+                  text: '<p><strong><span style="color: rgb(0, 0, 0);">Invio una segnalazione&nbsp;</span></strong></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://www.truckfly.com/purchase-gps'
+                      data-placeholder-href: 'https://www.truckfly.com/purchase-gps'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 45%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    text: '<p><strong><span style="color: rgb(0, 0, 0);">Invio una segnalazione&nbsp;</span></strong></p>'
+        -
+          align: top
+          condition: '( "ES" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: 8390fc92-e8ed-4167-8697-4f69704069fb
+          moduleName: image-text
+          sectionName: 'Text and Image 2'
+          stylable: false
+          thumbnail: /assets/img/editor/element-style-2.svg
+          title: 'Bannière ES'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 20px
+              padding-right: 0px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 38ed78f5-f1dd-4e63-addc-9cb2c12c860a
+              imagelabel: 'Select a content type'
+              isEmpty: false
+              label: 'Drop content here'
+              stylable: false
+              title: 'text column'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  item-width: 26px
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 78ce0a39-05e3-4411-b3bb-fa83461911e3
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      applyAllBorder: false
+                      border-bottom-style: solid
+                      border-bottom-width: 0px
+                      border-left-style: solid
+                      border-left-width: 0px
+                      border-right-style: solid
+                      border-right-width: 0px
+                      border-top-style: solid
+                      border-top-width: 0px
+                      line-height: '1'
+                      margin-bottom: 5px
+                      margin-top: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2"><span style="vertical-align:baseline;font-size:32px;color:rgb(0, 0, 0);">2. <span style="vertical-align:baseline;font-size:32px;color:rgb(0, 0, 0)">Carretera resbaladiza, niebla, accidente: ¡avisa a los demás!</span></span></h2>'
+                -
+                  id: 74c49c1d-60ed-4dbc-9980-869b73aca92a
+                  stylable: false
+                  title: Paragraph
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p class="default"><br></p><p class="default" id="isPasted"><strong><span style="color: rgb(0, 0, 0);">Niebla espesa, carretera resbaladiza, accidente, atasco…</span></strong><span style="color: rgb(0, 0, 0);">&nbsp;En la carretera, una información compartida en el momento justo puede ahorrarle muchos problemas a otro camionero.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(0, 0, 0);">En Michelin Truckfly puedes <strong>enviar un aviso en pocos segundos</strong>, directamente desde el mapa. Se muestra a toda la comunidad que circula por la zona.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(0, 0, 0);"><strong>Y al revés</strong>, echa un vistazo a los avisos de tu ruta antes de salir: te anticipas a los peligros y evitas sorpresas.</span></p><p class="default"><br></p><ul dir="ltr"><li style="color: rgb(0, 0, 0);"><strong>Para avisar</strong>: abre la app → pulsa el botón de aviso → elige el tipo de peligro → ¡enviado!</li><li style="color: rgb(0, 0, 0);"><strong>Para anticiparte</strong>: lanza tu ruta → mira los avisos de tu trayecto → adapta tu viaje si hace falta</li></ul><p><br></p>'
+                -
+                  id: 3ebbffc2-d818-4583-97f1-53ad9b65dc28
+                  label: Replace
+                  stylable: false
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 70%
+                    default:
+                      align: center
+                      border-radius: 8px
+                      canvas-height: 503px
+                      dynamic: false
+                      embed: false
+                      imgSize: '144215'
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removePadding: false
+                      type: absoluteLink
+                      valign: top
+                      width: 42%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/6acf7639d41ee4ec08446dd5.png'
+                -
+                  id: ca15afe2-84ed-4e0d-8457-7de5fc65eec4
+                  text: '<p><strong><span style="color: rgb(0, 0, 0);">Envío un aviso&nbsp;</span></strong></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://www.truckfly.com/purchase-gps'
+                      data-placeholder-href: 'https://www.truckfly.com/purchase-gps'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 45%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    text: '<p><strong><span style="color: rgb(0, 0, 0);">Envío un aviso&nbsp;</span></strong></p>'
+        -
+          align: top
+          condition: '( "FR" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: 6f09481f-5452-4073-8a3c-7e0d12f82ac5
+          moduleName: image-text
+          sectionName: 'Text and Image 2'
+          stylable: false
+          thumbnail: /assets/img/editor/element-style-2.svg
+          title: 'Style 2'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#0c165b'
+              padding-bottom: 20px
+              padding-right: 0px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: f36d5d8b-14c2-4f8a-a0de-8e3675336301
+              imagelabel: 'Select a content type'
+              isEmpty: false
+              label: 'Drop content here'
+              stylable: false
+              title: 'text column'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  item-width: 26px
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: c3846e82-f65e-4355-a96c-d638e4642c54
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      applyAllBorder: false
+                      border-bottom-style: solid
+                      border-bottom-width: 0px
+                      border-left-style: solid
+                      border-left-width: 0px
+                      border-right-style: solid
+                      border-right-width: 0px
+                      border-top-style: solid
+                      border-top-width: 0px
+                      line-height: '1'
+                      margin-bottom: 5px
+                      margin-top: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<!--StartFragment--><h2 class="default-heading2" id="isPasted"><span style="color:rgb(255, 255, 255)">3. <span style="color: rgb(255, 255, 255);">Deviens le meilleur contributeur du mois&nbsp;</span></span></h2><p><br></p>'
+                -
+                  id: 7c679fa5-e076-4f3e-b214-f0700cc7291c
+                  stylable: false
+                  title: Paragraph
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Sur la route, on fait confiance à ceux qui partagent les bonnes infos. <strong>Un conducteur avec beaucoup de points de contribution, c&#39;est un conducteur fiable</strong> : quand il signale une alerte ou note un arrêt, la communauté sait qu&#39;elle peut compter dessus.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Et la règle est simple : <strong>chaque action vaut 1 point.</strong> Une pause café suffit pour en gagner plusieurs !</span></p>'
+                -
+                  id: c8a93088-58d0-4e2e-afb0-94301d17a37c
+                  title: HTML
+                  type: raw-html
+                  layout:
+                    320px: {}
+                    default:
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      width: 100%
+                  content: "<!-- VISUEL TÉLÉPHONE – contributions (FR) – charte Michelin Brand Chapter 2 – à coller dans un bloc HTML Brevo -->\n<style type=\"text/css\">\n@import url(\"https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap\");\n</style>\n<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;\">\n  <tr>\n    <td align=\"center\" style=\"padding:15px 0 10px 0;\">\n\n      <!-- Téléphone -->\n      <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" align=\"center\" width=\"260\" style=\"width:260px;margin:0 auto;border-collapse:separate;\">\n        <tr>\n          <td style=\"background-color:#000000;border-radius:38px;padding:8px;\">\n            <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"244\" style=\"width:244px;border-collapse:separate;background-color:#F5F3F1;border-radius:31px;\">\n\n              <!-- En-tête Michelin Blue -->\n              <tr>\n                <td style=\"background-color:#061866;border-radius:31px 31px 0 0;padding:24px 12px 16px 14px;\">\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:collapse;\">\n                    <tr>\n                      <td style=\"vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0 0 8px 0;\"><span style=\"display:inline-block;background-color:#FFFF1A;color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.5px;border-radius:999px;padding:4px 9px;\">CLASSEMENT DU MOIS</span></p>\n                        <p style=\"margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.2;color:#FFFFFF;font-weight:700;white-space:nowrap;\">1 action = 1 point</p>\n                        <p style=\"margin:5px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:10px;line-height:1.4;color:#FFFFFF;\">Plus tu contribues, plus la communauté te fait confiance.</p>\n                      </td>\n                      <!-- Trophée (Highlight Yellow sur fond bleu) -->\n                      <td width=\"62\" style=\"width:62px;vertical-align:middle;padding-left:6px;\">\n                        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"62\" style=\"width:62px;border-collapse:separate;\">\n                          <tr>\n                            <td align=\"center\">\n                              <div style=\"width:48px;height:40px;border-radius:5px 5px 24px 24px;background-color:#FFFF1A;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:36px;font-weight:700;color:#061866;\">N°1</div>\n                            </td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:10px;height:9px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:36px;height:8px;border-radius:3px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:46px;height:6px;border-radius:3px;background-color:#B5D2F4;\"></div></td>\n                          </tr>\n                        </table>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n\n              <!-- Contributions -->\n              <tr>\n                <td style=\"padding:10px 9px 4px 9px;\">\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Ajouter une photo</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Parking, entrée, douches…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Laisser un avis</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Note ou commente un arrêt</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Liker une photo ou une activité</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Encourage les autres conducteurs</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Mettre à jour un lieu</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Horaires, services, accès</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Ajouter un lieu</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Un arrêt pas encore sur l'appli</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Signaler une alerte</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Neige, accident, danger…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                </td>\n              </tr>\n\n              <!-- Bas du téléphone -->\n              <tr>\n                <td style=\"padding:4px 10px 20px 10px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                  <p style=\"margin:0;font-size:10px;line-height:1.4;color:#061866;\"><strong>Le top contributeur du mois</strong><br>apparaît dans la prochaine newsletter !</p>\n                </td>\n              </tr>\n\n            </table>\n          </td>\n        </tr>\n      </table>\n\n      <!-- Petit texte sous le visuel -->\n      <p style=\"margin:20px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFF;text-align:center;\"><strong>Plus tu as de points, plus ta parole compte.</strong><br>Prêt à grimper au classement ?</p>\n\n    </td>\n  </tr>\n</table>"
+                -
+                  id: 959bb5a5-51fc-48d9-99ce-96b2eec3c20f
+                  text: '<p><span style="color:rgb(0, 0, 0);"><strong>Je gagne des points</strong></span></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://www.truckfly.com/purchase-gps'
+                      data-placeholder-href: 'https://www.truckfly.com/purchase-gps'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 30%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    text: '<p><span style="color:rgb(0, 0, 0);"><strong>Je gagne des points</strong></span></p>'
+        -
+          align: top
+          condition: '( "IT" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: f2fbd7c8-a2ea-49e8-bfa4-61a1d22adbe4
+          moduleName: image-text
+          sectionName: 'Text and Image 2'
+          stylable: false
+          thumbnail: /assets/img/editor/element-style-2.svg
+          title: 'Bannière IT'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#0c165b'
+              padding-bottom: 20px
+              padding-right: 0px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: aad4377b-db8a-49a6-92c4-419be04ae71f
+              imagelabel: 'Select a content type'
+              isEmpty: false
+              label: 'Drop content here'
+              stylable: false
+              title: 'text column'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  item-width: 26px
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 65af0ea9-ac57-4087-8b5c-467e826ee581
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      applyAllBorder: false
+                      border-bottom-style: solid
+                      border-bottom-width: 0px
+                      border-left-style: solid
+                      border-left-width: 0px
+                      border-right-style: solid
+                      border-right-width: 0px
+                      border-top-style: solid
+                      border-top-width: 0px
+                      line-height: '1'
+                      margin-bottom: 5px
+                      margin-top: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2"><span style="color:rgb(255, 255, 255)">3. <span style="color: rgb(255, 255, 255);">Diventa il miglior contributore del mese&nbsp;</span></span></h2><p><br></p>'
+                -
+                  id: 70f3cebf-1b3d-4bc3-8c70-356d56e780e2
+                  stylable: false
+                  title: Paragraph
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Sulla strada, ci si fida di chi condivide le info giuste. <strong>Un autista con tanti punti contributo è un autista affidabile</strong>: quando segnala un pericolo o valuta una sosta, la community sa di poter contare su di lui.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">E la regola è semplice: <strong>ogni azione vale 1 punto.</strong> Basta una pausa caffè per guadagnarne diversi!</span></p>'
+                -
+                  id: 6c7afbe9-211d-4397-8f2b-bf98d0530851
+                  title: HTML
+                  type: raw-html
+                  layout:
+                    320px: {}
+                    default:
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      width: 100%
+                  content: "<!-- VISUEL TÉLÉPHONE – contributions (IT) – charte Michelin Brand Chapter 2 – à coller dans un bloc HTML Brevo -->\n<style type=\"text/css\">\n@import url(\"https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap\");\n</style>\n<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;\">\n  <tr>\n    <td align=\"center\" style=\"padding:15px 0 10px 0;\">\n\n      <!-- Téléphone -->\n      <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" align=\"center\" width=\"260\" style=\"width:260px;margin:0 auto;border-collapse:separate;\">\n        <tr>\n          <td style=\"background-color:#000000;border-radius:38px;padding:8px;\">\n            <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"244\" style=\"width:244px;border-collapse:separate;background-color:#F5F3F1;border-radius:31px;\">\n\n              <!-- En-tête Michelin Blue -->\n              <tr>\n                <td style=\"background-color:#061866;border-radius:31px 31px 0 0;padding:24px 12px 16px 14px;\">\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:collapse;\">\n                    <tr>\n                      <td style=\"vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0 0 8px 0;\"><span style=\"display:inline-block;background-color:#FFFF1A;color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.5px;border-radius:999px;padding:4px 9px;\">CLASSIFICA DEL MESE</span></p>\n                        <p style=\"margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.2;color:#FFFFFF;font-weight:700;white-space:nowrap;\">1 azione = 1 punto</p>\n                        <p style=\"margin:5px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:10px;line-height:1.4;color:#FFFFFF;\">Più contribuisci, più la community si fida di te.</p>\n                      </td>\n                      <!-- Trophée (Highlight Yellow sur fond bleu) -->\n                      <td width=\"62\" style=\"width:62px;vertical-align:middle;padding-left:6px;\">\n                        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"62\" style=\"width:62px;border-collapse:separate;\">\n                          <tr>\n                            <td align=\"center\">\n                              <div style=\"width:48px;height:40px;border-radius:5px 5px 24px 24px;background-color:#FFFF1A;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:36px;font-weight:700;color:#061866;\">N°1</div>\n                            </td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:10px;height:9px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:36px;height:8px;border-radius:3px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:46px;height:6px;border-radius:3px;background-color:#B5D2F4;\"></div></td>\n                          </tr>\n                        </table>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n\n              <!-- Contributions -->\n              <tr>\n                <td style=\"padding:10px 9px 4px 9px;\">\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Aggiungere una foto</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Parcheggio, ingresso, docce…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Lasciare una recensione</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Valuta o commenta una sosta</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Mettere like a una foto o a un&#39;attività</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Incoraggia gli altri autisti</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Aggiornare un luogo</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Orari, servizi, accesso</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Aggiungere un luogo</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Una sosta non ancora sull&#39;app</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Inviare una segnalazione</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Neve, incidente, pericolo…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                </td>\n              </tr>\n\n              <!-- Bas du téléphone -->\n              <tr>\n                <td style=\"padding:4px 10px 20px 10px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                  <p style=\"margin:0;font-size:10px;line-height:1.4;color:#061866;\"><strong>Il top contributore del mese</strong><br>appare nella prossima newsletter!</p>\n                </td>\n              </tr>\n\n            </table>\n          </td>\n        </tr>\n      </table>\n\n      <!-- Petit texte sous le visuel -->\n      <p style=\"margin:20px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFF;text-align:center;\"><strong>Più punti hai, più la tua parola conta.</strong><br>Pronto a scalare la classifica?</p>\n\n    </td>\n  </tr>\n</table>"
+                -
+                  id: 9b68e60e-30ef-4a84-9955-8a00e245f9ab
+                  text: '<p><span style="color:rgb(0, 0, 0);"><strong>Guadagno punti</strong></span></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://www.truckfly.com/purchase-gps'
+                      data-placeholder-href: 'https://www.truckfly.com/purchase-gps'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 30%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    text: '<p><span style="color:rgb(0, 0, 0);"><strong>Guadagno punti</strong></span></p>'
+        -
+          align: top
+          condition: '( "ES" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: 4ff1c1ac-67da-4e77-aeed-9859d1a48c68
+          moduleName: image-text
+          sectionName: 'Text and Image 2'
+          stylable: false
+          thumbnail: /assets/img/editor/element-style-2.svg
+          title: 'Bannière ES'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#0c165b'
+              padding-bottom: 20px
+              padding-right: 0px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: d3d5bc1e-a50c-48ce-859a-410f69bd21d3
+              imagelabel: 'Select a content type'
+              isEmpty: false
+              label: 'Drop content here'
+              stylable: false
+              title: 'text column'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  item-width: 26px
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: e07226a0-a431-4b1e-a5a7-b2d10d33ff52
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      applyAllBorder: false
+                      border-bottom-style: solid
+                      border-bottom-width: 0px
+                      border-left-style: solid
+                      border-left-width: 0px
+                      border-right-style: solid
+                      border-right-width: 0px
+                      border-top-style: solid
+                      border-top-width: 0px
+                      line-height: '1'
+                      margin-bottom: 5px
+                      margin-top: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2"><span style="color:rgb(255, 255, 255)">3. <span style="color: rgb(255, 255, 255);">Conviértete en el mejor colaborador del mes&nbsp;</span></span></h2><p><br></p>'
+                -
+                  id: 4f616430-00a6-4b2e-8744-1d14098e8f99
+                  stylable: false
+                  title: Paragraph
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">En la carretera, confiamos en quienes comparten buena información. <strong>Un camionero con muchos puntos de contribución es un camionero de confianza</strong>: cuando avisa de un peligro o valora una parada, la comunidad sabe que puede contar con él.</span></p><p><br></p><p><span style="color: rgb(255, 255, 255); font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Y la regla es sencilla: <strong>cada acción vale 1 punto.</strong> ¡Con una pausa para el café ya puedes ganar varios!</span></p>'
+                -
+                  id: f24509cb-8679-4425-9d4b-ba0671fc4e6a
+                  title: HTML
+                  type: raw-html
+                  layout:
+                    320px: {}
+                    default:
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      width: 100%
+                  content: "<!-- VISUEL TÉLÉPHONE – contributions (ES) – charte Michelin Brand Chapter 2 – à coller dans un bloc HTML Brevo -->\n<style type=\"text/css\">\n@import url(\"https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap\");\n</style>\n<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;\">\n  <tr>\n    <td align=\"center\" style=\"padding:15px 0 10px 0;\">\n\n      <!-- Téléphone -->\n      <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" align=\"center\" width=\"260\" style=\"width:260px;margin:0 auto;border-collapse:separate;\">\n        <tr>\n          <td style=\"background-color:#000000;border-radius:38px;padding:8px;\">\n            <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"244\" style=\"width:244px;border-collapse:separate;background-color:#F5F3F1;border-radius:31px;\">\n\n              <!-- En-tête Michelin Blue -->\n              <tr>\n                <td style=\"background-color:#061866;border-radius:31px 31px 0 0;padding:24px 12px 16px 14px;\">\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:collapse;\">\n                    <tr>\n                      <td style=\"vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0 0 8px 0;\"><span style=\"display:inline-block;background-color:#FFFF1A;color:#061866;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.5px;border-radius:999px;padding:4px 9px;\">CLASIFICACIÓN DEL MES</span></p>\n                        <p style=\"margin:0;font-family:'Bib','Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.2;color:#FFFFFF;font-weight:700;white-space:nowrap;\">1 acción = 1 punto</p>\n                        <p style=\"margin:5px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:10px;line-height:1.4;color:#FFFFFF;\">Cuanto más contribuyes, más confía en ti la comunidad.</p>\n                      </td>\n                      <!-- Trophée (Highlight Yellow sur fond bleu) -->\n                      <td width=\"62\" style=\"width:62px;vertical-align:middle;padding-left:6px;\">\n                        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"62\" style=\"width:62px;border-collapse:separate;\">\n                          <tr>\n                            <td align=\"center\">\n                              <div style=\"width:48px;height:40px;border-radius:5px 5px 24px 24px;background-color:#FFFF1A;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:36px;font-weight:700;color:#061866;\">N°1</div>\n                            </td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:10px;height:9px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:36px;height:8px;border-radius:3px;background-color:#FFFF1A;\"></div></td>\n                          </tr>\n                          <tr>\n                            <td align=\"center\"><div style=\"width:46px;height:6px;border-radius:3px;background-color:#B5D2F4;\"></div></td>\n                          </tr>\n                        </table>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n\n              <!-- Contributions -->\n              <tr>\n                <td style=\"padding:10px 9px 4px 9px;\">\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Añadir una foto</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Parking, entrada, duchas…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Dejar una reseña</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Valora o comenta una parada</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Dar like a una foto o actividad</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Anima a otros camioneros</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Actualizar un lugar</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Horarios, servicios, acceso</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Añadir un lugar</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Una parada que aún no está en la app</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                  <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" role=\"presentation\" width=\"100%\" style=\"width:100%;border-collapse:separate;background-color:#FFFFFF;border-radius:12px;margin-bottom:6px;\">\n                    <tr>\n                      <td width=\"38\" style=\"padding:7px 0 7px 8px;vertical-align:middle;\"><div style=\"background-color:#061866;border-radius:8px;width:34px;height:26px;line-height:26px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFFFFF;\">+1</div></td>\n                      <td style=\"padding:7px 8px;vertical-align:middle;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                        <p style=\"margin:0;font-size:12px;line-height:1.25;color:#061866;font-weight:700;\">Enviar un aviso</p>\n                        <p style=\"margin:1px 0 0 0;font-size:10px;line-height:1.3;color:#000000;\">Nieve, accidente, peligro…</p>\n                      </td>\n                    </tr>\n                  </table>\n\n                </td>\n              </tr>\n\n              <!-- Bas du téléphone -->\n              <tr>\n                <td style=\"padding:4px 10px 20px 10px;text-align:center;font-family:'Noto Sans',Arial,Helvetica,sans-serif;\">\n                  <p style=\"margin:0;font-size:10px;line-height:1.4;color:#061866;\"><strong>El mejor colaborador del mes</strong><br>¡aparece en la próxima newsletter!</p>\n                </td>\n              </tr>\n\n            </table>\n          </td>\n        </tr>\n      </table>\n\n      <!-- Petit texte sous le visuel -->\n      <p style=\"margin:20px 0 0 0;font-family:'Noto Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#FFFF;text-align:center;\"><strong>Cuantos más puntos tienes, más cuenta tu palabra.</strong><br>¿Listo para subir en la clasificación?</p>\n\n    </td>\n  </tr>\n</table>"
+                -
+                  id: 98c35d5a-ac07-4dd8-95c2-9117c98e5b15
+                  text: '<p><span style="color:rgb(0, 0, 0);"><strong>Gano puntos</strong></span></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://www.truckfly.com/purchase-gps'
+                      data-placeholder-href: 'https://www.truckfly.com/purchase-gps'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 30%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    text: '<p><span style="color:rgb(0, 0, 0);"><strong>Gano puntos</strong></span></p>'
+        -
+          align: top
+          condition: '( "FR" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: 65077e4d-b390-4aca-936e-bc5d4ffb1e2e
+          moduleName: grid-row12
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: section
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 1687d7a6-dd76-491e-ac1d-04ded47e1976
+              isEmpty: false
+              title: 'column 1'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: c6bd7cb8-975a-48a2-9971-b54b5d1fe047
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2" style="-webkit-text-stroke-width:0px;background- text-decoration-thickness:initial;font-family:arial, helvetica, sans-serif;font-size:32px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:normal;margin:0px;orphans:2;text-align:left;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-break:break-word;word-spacing:0px;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">Les meilleurs contributeurs&nbsp;</span></h2><h2 class="default-heading2" style="-webkit-text-stroke-width:0px;background- text-decoration-thickness:initial;font-family:arial, helvetica, sans-serif;font-size:32px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:normal;margin:0px;orphans:2;text-align:left;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-break:break-word;word-spacing:0px;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">du mois&nbsp;</span><span style="font-family:Arial, Helvetica, sans-serif;color:rgb(0, 0, 0);background-color:rgb(255, 255, 255);">d&#39;octobre !</span><span style="font-family:Arial black, helvetica, sans-serif;color:rgb(0, 0, 0);background-color:rgb(255, 255, 255);">&nbsp;</span></h2>'
+                -
+                  id: e2928eb1-f860-4114-b996-d0f7ff2f4241
+                  thumbnail: /assets/img/editor/element_image.svg
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: center
+                      canvas-height: 326px
+                      dynamic: false
+                      embed: false
+                      img-border-radius: 0px
+                      imgSize: '20491'
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/6ad61323164c970a1d77b1d8.png'
+                -
+                  id: 714a8a78-fc93-47a8-ae5d-2e6761def15a
+                  text: '<p><span style="color: rgb(0, 0, 0);"><strong>C’est mon tour !</strong></span></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://www.truckfly.com/purchase-gps'
+                      data-placeholder-href: 'https://www.truckfly.com/purchase-gps'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 31%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    text: '<p><span style="color: rgb(0, 0, 0);"><strong>C’est mon tour !</strong></span></p>'
+        -
+          align: top
+          condition: '( "IT" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: b2938efc-e2c3-4462-bb79-04a7ad5278fd
+          moduleName: grid-row12
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: 'Bannière IT'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 7224acc6-99ca-4ac7-8d6b-55c4a4950383
+              isEmpty: false
+              title: 'column 1'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: f233810a-04ee-415d-8ff6-fe86eaa0fd4f
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2" style="-webkit-text-stroke-width:0px;background- text-decoration-thickness:initial;font-family:arial, helvetica, sans-serif;font-size:32px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:normal;margin:0px;orphans:2;text-align:left;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-break:break-word;word-spacing:0px;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">I migliori contributori&nbsp;</span></h2><h2 class="default-heading2" style="-webkit-text-stroke-width:0px;background- text-decoration-thickness:initial;font-family:arial, helvetica, sans-serif;font-size:32px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:normal;margin:0px;orphans:2;text-align:left;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-break:break-word;word-spacing:0px;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">del mese&nbsp;</span><span style="font-family:Arial, Helvetica, sans-serif;color:rgb(0, 0, 0);background-color:rgb(255, 255, 255);">di ottobre!</span><span style="font-family:Arial black, helvetica, sans-serif;color:rgb(0, 0, 0);background-color:rgb(255, 255, 255);">&nbsp;</span></h2>'
+                -
+                  id: 54006d52-521f-46f6-9763-34a909af8465
+                  thumbnail: /assets/img/editor/element_image.svg
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: center
+                      canvas-height: 326px
+                      dynamic: false
+                      embed: false
+                      img-border-radius: 0px
+                      imgSize: '20491'
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/6ad613624646ada7d987c434.png'
+                -
+                  id: 0c027295-9190-408f-ae30-ded7d9182efe
+                  text: '<p><span style="color: rgb(0, 0, 0);"><strong>Tocca a me!</strong></span></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://www.truckfly.com/purchase-gps'
+                      data-placeholder-href: 'https://www.truckfly.com/purchase-gps'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 31%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    text: '<p><span style="color: rgb(0, 0, 0);"><strong>Tocca a me!</strong></span></p>'
+        -
+          align: top
+          condition: '( "ES" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: 85668e93-b3f4-4683-b5e2-8a3e5fa9696c
+          moduleName: grid-row12
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: 'Bannière ES'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 6499b775-e54f-44a7-834b-a774b37584fa
+              isEmpty: false
+              title: 'column 1'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: ceac309e-ac31-47fb-9c99-4230e4ec19d1
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2" style="-webkit-text-stroke-width:0px;background- text-decoration-thickness:initial;font-family:arial, helvetica, sans-serif;font-size:32px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:normal;margin:0px;orphans:2;text-align:left;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-break:break-word;word-spacing:0px;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">¡Los mejores colaboradores&nbsp;</span></h2><h2 class="default-heading2" style="-webkit-text-stroke-width:0px;background- text-decoration-thickness:initial;font-family:arial, helvetica, sans-serif;font-size:32px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:normal;margin:0px;orphans:2;text-align:left;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-break:break-word;word-spacing:0px;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">del mes&nbsp;</span><span style="font-family:Arial, Helvetica, sans-serif;color:rgb(0, 0, 0);background-color:rgb(255, 255, 255);">de octubre!</span><span style="font-family:Arial black, helvetica, sans-serif;color:rgb(0, 0, 0);background-color:rgb(255, 255, 255);">&nbsp;</span></h2>'
+                -
+                  id: caf80559-3acc-4a0e-b25c-557b162bcf16
+                  thumbnail: /assets/img/editor/element_image.svg
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: center
+                      canvas-height: 326px
+                      dynamic: false
+                      embed: false
+                      img-border-radius: 0px
+                      imgSize: '20491'
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/6ad6138efd8ca38cd59e0284.png'
+                -
+                  id: e285fea4-15fa-402c-bde7-37b460b8591e
+                  text: '<p><span style="color: rgb(0, 0, 0);"><strong>¡Me toca!</strong></span></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://www.truckfly.com/purchase-gps'
+                      data-placeholder-href: 'https://www.truckfly.com/purchase-gps'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 31%
+                  content:
+                    href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                    text: '<p><span style="color: rgb(0, 0, 0);"><strong>¡Me toca!</strong></span></p>'
+        -
+          align: top
+          condition: '( "FR" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: 4b09a40c-ad49-4f91-b28f-2b37e69aa995
+          moduleName: grid-row12
+          stylable: false
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: Section
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 20px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: b46465af-a9f3-48c8-b7e0-8cf308def07f
+              isEmpty: false
+              stylable: false
+              title: Column
+              type: grid-column
+              layout:
+                320px: {}
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 233d9c7b-a80a-491e-9f12-f43eda8d0132
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2" id="isPasted"><span style="color: rgb(0, 0, 0);">Le mot de la route&nbsp;</span></h2><p><br></p><p><span style="color: rgb(0, 0, 0);">Un grand merci à toute la communauté Michelin Truckfly pour sa fidélité et ses contributions au quotidien.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">On se retrouve très bientôt pour de <strong>nouvelles actus, astuces et infos utiles pour tes trajets.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>D’ici là, prends soin de toi, sois prudent sur la route et bonne route !</strong></span></p>'
+        -
+          align: top
+          condition: '( "IT" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: 59166b0a-70d5-4277-822d-296fc46db2e2
+          moduleName: grid-row12
+          stylable: false
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: 'Bannière IT'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 20px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: deb2d56a-ff9b-4add-bc20-4e9caab245a2
+              isEmpty: false
+              stylable: false
+              title: Column
+              type: grid-column
+              layout:
+                320px: {}
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: cad98f92-6e7f-47a1-bbad-e2e2a5d26fff
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);">Il messaggio della strada&nbsp;</span></h2><p><br></p><p><span style="color: rgb(0, 0, 0);">Grazie di cuore a tutta la community Michelin Truckfly per la fedeltà e i contributi di ogni giorno.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Ci ritroviamo molto presto con <strong>nuove notizie, consigli e info utili per i tuoi viaggi.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Nel frattempo, prenditi cura di te, fai attenzione sulla strada e buon viaggio!</strong></span></p>'
+        -
+          align: top
+          condition: '( "ES" in contact.LANG )'
+          dist: '12'
+          gutter: 30px
+          id: 52efe66d-805a-47c3-af88-e7908afce591
+          moduleName: grid-row12
+          stylable: false
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: 'Bannière ES'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 20px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: e3521bad-85b1-4065-b6af-eeb5de6d7eef
+              isEmpty: false
+              stylable: false
+              title: Column
+              type: grid-column
+              layout:
+                320px: {}
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: cf56f7d9-acd1-4fb1-8e58-001d86eda7b6
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2"><span style="color: rgb(0, 0, 0);">El mensaje de la carretera&nbsp;</span></h2><p><br></p><p><span style="color: rgb(0, 0, 0);">Mil gracias a toda la comunidad Michelin Truckfly por la fidelidad y las contribuciones de cada día.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Nos vemos muy pronto con <strong>nuevas noticias, consejos e información útil para tus rutas.</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Mientras tanto, cuídate, ten cuidado en la carretera y ¡buen viaje!</strong></span></p>'
+        -
+          align: top
+          block_id: 37
+          condition: ""
+          dist: '12'
+          gutter: 0px
+          id: 2881ed0b-7717-460e-a25f-5ce35e9e4c1f
+          moduleName: grid-template
+          title: 'B2C Multilingual Footer Clementine'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#0c165b'
+              full-width: false
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: e1a3397f-70dc-487d-975d-012945d11397
+              imagelabel: 'Sélectionnez un type de contenu'
+              isEmpty: false
+              label: 'Déposer du contenu ici'
+              title: 'colonne de grille'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  condition: '( contact.LANG == "FR" )'
+                  id: d1928439-1801-4014-8bc8-e4c2e0f61601
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#ffffff'
+                      groupPadding: false
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 10px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p class="default" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>Une question ? Un problème ?</strong></span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Consultez notre FAQ ou contactez-nous :&nbsp;<a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+                -
+                  condition: '( contact.LANG == "EN" ) or ( !contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "PT" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "DE" ) )'
+                  id: 0b2a8872-6191-4aed-8733-b6818a9a9562
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#ffffff'
+                      groupPadding: false
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 10px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>A question? A problem?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Check our FAQ or contact us:&nbsp;<a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+                -
+                  condition: '( contact.LANG == "ES" )'
+                  id: 81015465-12fc-40e0-b2c2-3dfc4cdb55f9
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#ffffff'
+                      groupPadding: false
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 10px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>¿Una pregunta? ¿Un problema?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Consulta nuestra FAQ o contáctanos:&nbsp;</span><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);"><a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+                -
+                  condition: '( contact.LANG == "IT" )'
+                  id: b9fda404-be37-4cb5-bafc-99f4b9a4c27f
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#ffffff'
+                      groupPadding: false
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 10px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>Una domanda? Un problema?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Consulta le nostre FAQ o contattaci:</span><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">&nbsp;<a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+                -
+                  condition: '( contact.LANG == "PT" )'
+                  id: 6ea41b29-641a-43d7-8774-9a95aa101662
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#ffffff'
+                      groupPadding: false
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 10px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>Uma pergunta? Um problema?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Consulte a nossa FAQ ou contacte-nos:&nbsp;</span><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);"><a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+                -
+                  condition: '( contact.LANG == "NL" )'
+                  id: 4605ceb1-b283-4acb-bb2d-3c45f6f414df
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#ffffff'
+                      groupPadding: false
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 10px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p class="default" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>Een vraag? Een probleem?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Bekijk onze FAQ of neem contact met ons op:</span><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">&nbsp;<a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+                -
+                  condition: '( contact.LANG == "DE" )'
+                  id: e88ea3bc-a6a8-40bd-86e2-12449935d9c1
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#ffffff'
+                      groupPadding: false
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 10px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>Eine Frage? Ein Problem?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Besuchen Sie unsere FAQ oder kontaktieren Sie uns:</span><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);"><a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+                -
+                  condition: '( contact.LANG == "PL" )'
+                  id: e5cc6cc3-be77-4dd3-a198-6cbea1165783
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#ffffff'
+                      groupPadding: false
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 10px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>Masz pytanie? Problem?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Sprawdź nasze FAQ lub skontaktuj się z nami:</span><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">&nbsp;<a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+                -
+                  id: 862188b6-f5a4-4cb9-a837-fcf5eca929f2
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: center
+                      canvas-height: 145px
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'http://truckfly.com/?utm_source=brevo&utm_medium=transactional_emails'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/69a5b2e8c25a39a73aa3cea5.jpg'
+                    title: Truckfly.com
+                -
+                  condition: '( "FR" in contact.LANG )'
+                  id: ba7e612b-1ae8-419b-ad69-1437de8fe925
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 10px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Cet e-mail a été envoyé à {{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Vous avez reçu cet email car vous vous êtes inscrit à l&#39;application mobile <strong>MICHELIN Truckfly.</strong></span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><u>Se désinscrire</u></span></a><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p>'
+                -
+                  condition: '( ( contact.LANG != "FR" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "DE" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "PT" ) )'
+                  id: 291b5298-725d-41f4-a551-cb13ff83dee3
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 10px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">This email was sent to&nbsp;{{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">You are receiving this email because you registered on the <strong>MICHELIN</strong> <strong data-start="525" data-end="548" id="isPasted">Truckfly mobile app.</strong></span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><u>Unsubscribe</u></span></a><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p>'
+                -
+                  condition: '( "ES" in contact.LANG )'
+                  id: 9a248f41-74bd-4ecd-b3a2-73e33e28a71e
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 10px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Este correo electrónico fue enviado a&nbsp;{{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Recibes este correo porque estás registrado en la aplicación móvil MICHELIN <strong id="isPasted">Truckfly</strong>.&nbsp;</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><u>Darse de baja</u></span></a><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p>'
+                -
+                  condition: '( "IT" in contact.LANG )'
+                  id: 6a9d9150-bd60-425c-ba56-e6a60ae176d0
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 10px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Questa email è stata inviata a {{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Ricevi questa email perché sei registrato sull&#39;app mobile&nbsp;MICHELIN <strong id="isPasted">Truckfly</strong>.&nbsp;</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><u>Annulla l&#39;iscrizione</u></span></a><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p>'
+                -
+                  condition: '( "PT" in contact.LANG )'
+                  id: f49ba82a-7f9d-4758-989d-730d4514496f
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 10px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Este e-mail foi enviado para {{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Está a receber este e-mail porque está registado na aplicação móvel&nbsp;MICHELIN&nbsp;Truckfly.&nbsp;</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="text-decoration:underline;font-size:11px;color:rgb(255, 255, 255)"><strong data-start="1014" data-end="1037"><u>Cancelar subscriçao</u></strong></span></a></p>'
+                -
+                  condition: '( "NL" in contact.LANG )'
+                  id: 2704ff72-f8f3-48a6-9f30-b020cf796007
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 10px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Deze e-mail is verzonden naar&nbsp;{{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Je ontvangt deze e-mail omdat je geregistreerd bent in de&nbsp;MICHELIN&nbsp;Truckfly.</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="color: rgb(255, 255, 255);"><span style="color: rgb(255, 255, 255); font-size: 11px;"><u>Uitschrijven</u></span></a><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p>'
+                -
+                  condition: '( "DE" in contact.LANG )'
+                  id: 514a44a6-0562-466b-85df-2e49cea95534
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 10px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Diese E-Mail wurde an {{ contact.EMAIL }}&nbsp;gesendet.</span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Sie erhalten diese E-Mail, weil Sie sich in der <strong>MICHELIN</strong> <strong data-start="1296" data-end="1319" id="isPasted">Truckfly Mobile-App</strong> registriert haben.</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="text-decoration: underline; color: rgb(255, 255, 255); font-size: 11px;">Abmelden</span></a></p>'
+                -
+                  condition: '( "PL" in contact.LANG )'
+                  id: 65e08420-651f-40e2-81d6-2778aced958d
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      groupPadding: false
+                      margin-bottom: 10px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Ta wiadomość e-mail została wysłana na adres&nbsp;{{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Otrzymujesz tę wiadomość, ponieważ jesteś zarejestrowany w aplikacji mobilnej MICHELIN&nbsp;Truckfly.&nbsp;</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><u>Wypisz się</u></span></a><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p>'
+media:
+  320px:
+    max-width: 600
+    min-width: 0
+styles:
+  default:
+    properties:
+      color: '#3b3f44'
+      font-family: 'arial,helvetica,sans-serif'
+      font-size: 16px
+      line-height: '1.5'
+    title: Paragraph
+  default-button:
+    properties:
+      background-color: '#e84c3d'
+      border-radius: 4px
+      border-width: 0px
+      color: '#fff'
+      font-family: 'arial,helvetica,sans-serif'
+      font-size: 16px
+      remove-vml-button: optional
+      width: 50%
+    title: Button
+  default-heading1:
+    properties:
+      color: '#1F2D3D'
+      font-family: 'arial,helvetica,sans-serif'
+      font-size: 36px
+    title: 'Heading 1'
+  default-heading2:
+    properties:
+      color: '#1F2D3D'
+      font-family: 'arial,helvetica,sans-serif'
+      font-size: 32px
+    title: 'Heading 2'
+  default-heading3:
+    properties:
+      color: '#1F2D3D'
+      font-family: 'arial,helvetica,sans-serif'
+      font-size: 24px
+    title: 'Heading 3'
+  default-heading4:
+    properties:
+      color: '#1F2D3D'
+      font-family: 'arial,helvetica,sans-serif'
+      font-size: 18px
+    title: 'Heading 4'
+  default-link:
+    properties:
+      color: '#e84c3d'
+      text-decoration: underline
+    title: Link
