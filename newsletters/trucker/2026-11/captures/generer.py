@@ -1,84 +1,140 @@
-"""Captures du tuto code promo traduites (FR, EN, ES, IT, NL), en une image par langue.
-Capture 1 : écran Premium, flouté sauf la case code promo (aucun prix lisible).
-Capture 2 : écran App Store « Activer l'offre », titre, champ et bouton traduits."""
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+"""Captures du tuto code promo, une image par langue (FR, EN, ES, IT, NL).
+Capture 1 : écran Premium fourni par langue (case code promo corrigée : sans « Soit / Either / O / Cualquiera / Of »).
+Capture 2 : écran App Store « Activer l'offre » redessiné net dans chaque langue, sur le cadre de téléphone des captures fournies."""
+from PIL import Image, ImageDraw, ImageFont
 from pathlib import Path
 D = Path(__file__).parent
 B = D.parent.parent.parent / "blocs"
 REG = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
 BOLD = "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"
+S = 3  # suréchantillonnage
 
 T = {
- "fr": dict(tile=["Utiliser un code", "promotionnel"], title="Activer l’offre", field="Code", btn=["Acti", "ver"],
-            cap=["1. Choisis « Utiliser un", "code promotionnel »"], cap2=["2. Saisis ton code", "puis « Activer »"]),
- "en": dict(tile=["Use a promo", "code"], title="Redeem Offer", field="Code", btn=["Re", "deem"],
-            cap=["1. Choose “Use a", "promo code”"], cap2=["2. Enter your code,", "then “Redeem”"]),
- "es": dict(tile=["Usar un código", "promocional"], title="Canjear oferta", field="Código", btn=["Can", "jear"],
-            cap=["1. Elige «Usar un", "código promocional»"], cap2=["2. Introduce tu código", "y pulsa «Canjear»"]),
- "it": dict(tile=["Usa un codice", "promozionale"], title="Riscatta offerta", field="Codice", btn=["Ris", "catta"],
-            cap=["1. Scegli «Usa un", "codice promozionale»"], cap2=["2. Inserisci il codice", "e tocca «Riscatta»"]),
- "nl": dict(tile=["Promotiecode", "gebruiken"], title="Aanbieding inwisselen", field="Code", btn=["Inwis", "selen"],
-            cap=["1. Kies ‘Promotiecode", "gebruiken’"], cap2=["2. Voer je code in en", "tik op ‘Inwisselen’"]),
+ "fr": dict(tile=None, title="Activer l’offre", field="Code", btn="Activer",
+            cap1="1. Choisis « Utiliser un code promotionnel »", cap2="2. Saisis ton code puis « Activer »"),
+ "en": dict(tile=["Use a", "promotional code"], title="Redeem Offer", field="Code", btn="Redeem",
+            cap1="1. Choose “Use a promotional code”", cap2="2. Enter your code, then “Redeem”"),
+ "es": dict(tile=["Utilizar", "un código"], title="Canjear oferta", field="Código", btn="Canjear",
+            cap1="1. Elige «Utilizar un código»", cap2="2. Introduce tu código y pulsa «Canjear»"),
+ "it": dict(tile=["Utilizza un codice", "promozionale"], title="Riscatta offerta", field="Codice", btn="Riscatta",
+            cap1="1. Scegli «Utilizza un codice promozionale»", cap2="2. Inserisci il codice e tocca «Riscatta»"),
+ "nl": dict(tile=["Gebruik een", "promotiecode"], title="Aanbieding inwisselen", field="Code", btn="Inwisselen",
+            cap1="1. Kies ‘Gebruik een promotiecode’", cap2="2. Voer je code in en tik op ‘Inwisselen’"),
 }
 
-def patch(im, box, bg, lines, font, size, color, S=6, maxw=None, dy=0):
-    x0, y0, x1, y1 = box
-    w, h = (x1 - x0) * S, (y1 - y0) * S
-    p = Image.new("RGB", (w, h), bg); d = ImageDraw.Draw(p)
-    fs = size
-    while True:
-        f = ImageFont.truetype(font, int(fs * S))
-        if max(d.textlength(t, font=f) for t in lines) <= (maxw or (x1 - x0)) * S or fs < 4: break
-        fs -= 0.2
-    lh = fs * 1.2 * S
-    top = (h - lh * len(lines)) / 2 + dy * S
-    for i, t in enumerate(lines):
-        tw = d.textlength(t, font=f); d.text(((w - tw) / 2, top + i * lh), t, font=f, fill=color)
-    im.paste(p.resize((x1 - x0, y1 - y0), Image.LANCZOS), (x0, y0))
+def fit(d, text, font, size, maxw):
+    while size > 6:
+        f = ImageFont.truetype(font, int(size * S))
+        if d.textlength(text, font=f) <= maxw * S: return f
+        size -= 0.25
+    return ImageFont.truetype(font, int(size * S))
+
+def flat(path):
+    src = Image.open(path).convert("RGBA")
+    im = Image.new("RGB", src.size, (255, 255, 255)); im.paste(src, (0, 0), src); return im
 
 def premium(lang):
-    src = Image.open(B / "capture-premium-code-promo-corrigee.png").convert("RGBA")
-    im = Image.new("RGB", src.size, (255, 255, 255)); im.paste(src, (0, 0), src)
-    # flou de l'écran sauf la case code promo et la flèche
-    keep = [(139, 63, 199, 131), (155, 126, 200, 150), (186, 148, 218, 168)]
-    zone = (18, 58, 201, 398)
-    bl = im.crop(zone).filter(ImageFilter.GaussianBlur(3.2))
-    wash = Image.new("RGB", bl.size, (255, 255, 255)); bl = Image.blend(bl, wash, 0.35)
-    orig = im.copy(); im.paste(bl, zone[:2])
-    for k in keep: im.paste(orig.crop(k), k[:2])
-    patch(im, (143, 106, 195, 126), (255, 255, 255), T[lang]["tile"], REG, 6.6, (55, 55, 55), maxw=50)
+    if lang == "fr":
+        return flat(B / "capture-premium-code-promo-corrigee.png").resize((363, 715), Image.LANCZOS)
+    im = flat(D / f"premium-{lang}.png")
+    x0, y0, x1, y1 = (238, 182, 329, 207) if lang == "it" else (238, 191, 329, 217)
+    bg = im.getpixel((x0 + 2, y0 + 1))
+    p = Image.new("RGB", ((x1 - x0) * S, (y1 - y0) * S), bg); d = ImageDraw.Draw(p)
+    lines = T[lang]["tile"]
+    f = None
+    for t in lines:
+        g = fit(d, t, REG, 10.5, 86)
+        f = g if f is None or g.size < f.size else f
+    lh = f.size * 1.18
+    top = (p.height - lh * len(lines)) / 2
+    for i, t in enumerate(lines):
+        tw = d.textlength(t, font=f); d.text(((p.width - tw) / 2, top + i * lh), t, font=f, fill=(50, 50, 50))
+    im.paste(p.resize((x1 - x0, y1 - y0), Image.LANCZOS), (x0, y0))
     return im
 
+def screen_mask(im, ystart=56):
+    """Masque de l'écran : zone non noire entre les bords du cadre, ligne par ligne."""
+    w, h = im.size
+    m = Image.new("L", im.size, 0); px = im.load(); mp = m.load()
+    for y in range(ystart, h):
+        xs = [x for x in range(w) if sum(px[x, y]) > 120]
+        inner = [x for x in xs if 20 < x < w - 20]
+        if not inner: continue
+        # bords intérieurs du cadre : premier et dernier pixel clair hors du liseré
+        a, b = min(inner), max(inner)
+        if b - a < 100: continue
+        for x in range(a, b + 1): mp[x, y] = 255
+    return m
+
+ICON = Image.open(D / "appstore-fr-original.jpg").convert("RGB").crop((103, 100, 148, 148))
+
 def appstore(lang):
-    im = Image.open(B / "capture-activer-offre.jpg").convert("RGB")
+    base = flat(D / "premium-en.png")
+    mask = screen_mask(base)
+    w, h = base.size
+    c = Image.new("RGB", (w * S, h * S), (255, 255, 255)); d = ImageDraw.Draw(c)
+    def R(*v): return [x * S for x in v]
+    # fond grisé derrière la feuille iOS, puis feuille blanche
+    d.rectangle(R(0, 0, w, 78), fill=(214, 214, 219))
+    d.rounded_rectangle(R(20, 72, w - 20, h), radius=14 * S, fill=(255, 255, 255))
+    # en-tête App Store
+    d.rounded_rectangle(R(44, 88, 64, 108), radius=5 * S, fill=(25, 136, 247))
+    fa = ImageFont.truetype(BOLD, 14 * S); d.text(R(49.5, 89.5), "A", font=fa, fill=(255, 255, 255))
+    d.text(R(71, 90), "App Store", font=ImageFont.truetype(BOLD, 13 * S), fill=(0, 0, 0))
+    d.ellipse(R(302, 86, 324, 108), fill=(238, 238, 240))
+    d.line(R(309, 93, 317, 101), fill=(120, 120, 125), width=2 * S); d.line(R(317, 93, 309, 101), fill=(120, 120, 125), width=2 * S)
+    # icône de l'appli
+    ic = ICON.resize((66 * S, 70 * S), Image.LANCZOS)
+    c.paste(ic, (int((w / 2 - 33) * S), 132 * S))
     t = T[lang]
-    patch(im, (40, 176, 214, 199), im.getpixel((45, 178)), [t["title"]], BOLD, 15.5, (0, 0, 0), maxw=168)
-    patch(im, (36, 214, 100, 231), im.getpixel((37, 214)), [t["field"]], REG, 7.2, (170, 170, 170), maxw=60)
-    # aligne le texte du champ à gauche
-    fld = im.getpixel((37, 214))
-    sub = Image.new("RGB", (64 * 6, 17 * 6), fld); d = ImageDraw.Draw(sub)
-    d.text((3 * 6, 2.2 * 6), t["field"], font=ImageFont.truetype(REG, int(7.2 * 6)), fill=(170, 170, 170))
-    im.paste(sub.resize((64, 17), Image.LANCZOS), (36, 214))
-    patch(im, (193, 211, 219, 235), im.getpixel((194, 212)), t["btn"], REG, 6.4, (175, 175, 175), maxw=24)
-    return im
+    def center(text, y, font, color):
+        tw = d.textlength(text, font=font); d.text(((w * S - tw) / 2, y * S), text, font=font, fill=color)
+    center("Michelin Truckfly - GPS", 218, ImageFont.truetype(REG, 12 * S), (120, 120, 125))
+    center(t["title"], 240, fit(d, t["title"], BOLD, 24, 270), (0, 0, 0))
+    # champ et bouton
+    d.rounded_rectangle(R(42, 296, 258, 330), radius=8 * S, fill=(240, 240, 242))
+    d.text(R(54, 305), t["field"], font=ImageFont.truetype(REG, 13 * S), fill=(165, 165, 170))
+    d.rounded_rectangle(R(264, 296, 322, 330), radius=8 * S, fill=(240, 240, 242))
+    fb = fit(d, t["btn"], REG, 12, 52); tw = d.textlength(t["btn"], font=fb)
+    d.text(((293 * S - tw / 2), (313 - fb.size / S / 1.7) * S), t["btn"], font=fb, fill=(165, 165, 170))
+    # flèche vers le champ
+    pts = []
+    for i in range(41):
+        u = i / 40
+        x = (1 - u) ** 2 * 205 + 2 * (1 - u) * u * 95 + u ** 2 * 80
+        y = (1 - u) ** 2 * 425 + 2 * (1 - u) * u * 430 + u ** 2 * 352
+        pts.append((x * S, y * S))
+    d.line(pts, fill=(0, 0, 0), width=4 * S, joint="curve")
+    d.polygon(R(80, 340, 66, 366, 94, 362), fill=(0, 0, 0))
+    scr = c.resize((w, h), Image.LANCZOS)
+    out = base.copy(); out.paste(scr, (0, 0), mask)
+    return out
+
+def wrap(d, text, font, maxw):
+    words, lines, cur = text.split(" "), [], ""
+    for wd in words:
+        nxt = (cur + " " + wd).strip()
+        if d.textlength(nxt, font=font) <= maxw: cur = nxt
+        else: lines.append(cur); cur = wd
+    return lines + [cur]
 
 def compose(lang):
     a, b = premium(lang), appstore(lang)
-    H = 760
-    a = a.resize((round(a.width * H / a.height), H), Image.LANCZOS)
-    b = b.resize((round(b.width * H / b.height), H), Image.LANCZOS)
-    gap, pad, capH = 40, 30, 110
+    gap, pad = 40, 30
     W = a.width + b.width + gap + 2 * pad
-    c = Image.new("RGB", (W, H + capH + pad), (255, 255, 255)); d = ImageDraw.Draw(c)
+    f = ImageFont.truetype(BOLD, 22)
+    tmp = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    l1 = wrap(tmp, T[lang]["cap1"], f, a.width); l2 = wrap(tmp, T[lang]["cap2"], f, b.width)
+    capH = 24 + 30 * max(len(l1), len(l2)) + 10
+    c = Image.new("RGB", (W, a.height + capH), (255, 255, 255)); d = ImageDraw.Draw(c)
     c.paste(a, (pad, 0)); c.paste(b, (pad + a.width + gap, 0))
-    f = ImageFont.truetype(BOLD, 26)
-    for (x, w), lines in (((pad, a.width), T[lang]["cap"]), ((pad + a.width + gap, b.width), T[lang]["cap2"])):
+    for (x, wd), lines in (((pad, a.width), l1), ((pad + a.width + gap, b.width), l2)):
         for i, t in enumerate(lines):
-            tw = d.textlength(t, font=f); d.text((x + (w - tw) / 2, H + 18 + i * 34), t, font=f, fill=(6, 24, 102))
+            tw = d.textlength(t, font=f); d.text((x + (wd - tw) / 2, a.height + 14 + i * 30), t, font=f, fill=(6, 24, 102))
     out = B / f"tuto-code-promo-{lang}.jpg"
-    c.save(out, quality=82, optimize=True, progressive=True)
+    c.save(out, quality=85, optimize=True, progressive=True)
     return out
 
 if __name__ == "__main__":
     for lg in T:
-        o = compose(lg); print(o.name, c := o.stat().st_size // 1024, "Ko", Image.open(o).size)
+        o = compose(lg); print(o.name, o.stat().st_size // 1024, "Ko", Image.open(o).size)
