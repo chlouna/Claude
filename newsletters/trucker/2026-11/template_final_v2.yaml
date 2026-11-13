@@ -650,7 +650,7 @@ body:
             background-color: '#0d1b5e'
         content:
         - condition: ( "FR" in contact.LANG )
-          id: 57466a10-8b0e-4032-a917-7555d9a26ab0
+          id: 16aa77b5-6cd9-481a-a58c-73a828b4973c
           title: Text
           type: text
           layout:
@@ -665,7 +665,7 @@ body:
               valign: top
               width: 100%
           content: '<p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 11px;"><strong>BLACK FRIDAY · DU 27 AU 30 NOVEMBRE</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 28px;"><strong>⚡ C’est demain&nbsp;! ⚡</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 16px;">Ton offre GPS arrive vendredi. Reste connecté&nbsp;!</span></p>'
-        - id: 53d8c481-93af-44ae-861b-6436d089876a
+        - id: 5d7ccbfe-4aab-4e09-a991-8d174957498c
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Découvrir le GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -693,7 +693,7 @@ body:
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Découvrir le GPS</span></strong></p>'
           condition: ( "FR" in contact.LANG )
         - condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
-          id: 9e03f929-ac83-48a8-a8b7-9b14371d2cad
+          id: d74e54f4-192a-4edd-b677-3cba8232c3b6
           title: Text
           type: text
           layout:
@@ -708,7 +708,7 @@ body:
               valign: top
               width: 100%
           content: '<p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 11px;"><strong>BLACK FRIDAY · 27 TO 30 NOVEMBER</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 28px;"><strong>⚡ It’s tomorrow! ⚡</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 16px;">Your GPS offer lands on Friday. Stay tuned!</span></p>'
-        - id: 35415bb7-72c8-44bf-87d6-7dbb99fff92f
+        - id: 3bfb0c9d-c454-4947-b62a-6f77463138ed
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Discover the GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -736,7 +736,7 @@ body:
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Discover the GPS</span></strong></p>'
           condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
         - condition: ( "ES" in contact.LANG )
-          id: 553d5ab9-c9bf-4995-b75f-a391bf3bb5ce
+          id: b15bb19e-1cbf-4c74-a8f8-42c21c85a007
           title: Text
           type: text
           layout:
@@ -751,7 +751,7 @@ body:
               valign: top
               width: 100%
           content: '<p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 11px;"><strong>BLACK FRIDAY · DEL 27 AL 30 DE NOVIEMBRE</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 28px;"><strong>⚡ ¡Es mañana! ⚡</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 16px;">Tu oferta GPS llega el viernes. ¡Estate atento!</span></p>'
-        - id: d74e104d-ed79-404d-b552-3c12cb8ce66f
+        - id: 4752a7aa-e242-4897-8516-b79adc5f5a6f
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Descubre el GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -779,7 +779,7 @@ body:
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Descubre el GPS</span></strong></p>'
           condition: ( "ES" in contact.LANG )
         - condition: ( "IT" in contact.LANG )
-          id: 9e892c55-1372-41e3-b4af-b717640e2e23
+          id: 7e863919-c0d2-4bd9-a2ed-51ce9ac1ac94
           title: Text
           type: text
           layout:
@@ -794,7 +794,7 @@ body:
               valign: top
               width: 100%
           content: '<p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 11px;"><strong>BLACK FRIDAY · DAL 27 AL 30 NOVEMBRE</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 28px;"><strong>⚡ È domani! ⚡</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 16px;">La tua offerta GPS arriva venerdì. Resta connesso!</span></p>'
-        - id: 22a9b9bd-54b8-4c31-a28d-2fceea41d16b
+        - id: c0fec3d6-c29a-49f0-8bdb-bd0fc7c24c16
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri il GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -822,7 +822,7 @@ body:
             text: '<p><strong><span style="color: rgb(0, 0, 0);">Scopri il GPS</span></strong></p>'
           condition: ( "IT" in contact.LANG )
         - condition: ( "NL" in contact.LANG )
-          id: 58ab83b7-17fb-42bb-925c-0e3565862d45
+          id: 58d92685-e8eb-4942-853a-9375a978da4d
           title: Text
           type: text
           layout:
@@ -837,7 +837,7 @@ body:
               valign: top
               width: 100%
           content: '<p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 11px;"><strong>BLACK FRIDAY · 27 T/M 30 NOVEMBER</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 24); font-size: 28px;"><strong>⚡ Het is morgen! ⚡</strong></span></p><p style="text-align: center;"><br></p><p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 16px;">Je GPS-aanbieding komt vrijdag. Blijf op de hoogte!</span></p>'
-        - id: d6e6b4c3-a29d-4af2-8d6e-42636a018ad0
+        - id: 29cb92a8-36ab-425a-818c-ea883d8bf329
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Ontdek de GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2351,7 +2351,7 @@ body:
       condition: ( "IT" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 0b595582-ed7a-4c47-9ddd-cd462349e93d
+      id: 39edddaa-5831-44ac-b045-c59507bcbd85
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -2373,7 +2373,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 16998b42-6e84-45a2-9d5a-1a3ea260300b
+      - id: 99a9a4b2-b7c8-4d25-882b-98ff438f39ca
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -2388,7 +2388,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 81c8fcff-fa89-4f99-989e-a04beb98ef83
+        - id: 35045489-190b-4e67-b1dc-3a4f6b1dfd55
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -2417,7 +2417,7 @@ body:
               valign: top
               width: 100%
           content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255);"><strong>3. Le feste con un GPS per camion</strong></span></h2><p><br></p>
-        - id: 773a97cd-100f-41c8-8474-95313402f5a7
+        - id: 7515b7a5-edb6-4ff0-8a87-ff3d2a3de17f
           stylable: false
           title: Paragraph
           type: text
@@ -2438,7 +2438,7 @@ body:
               valign: top
               width: 100%
           content: '<div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Lo sapevi?</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">L’86% degli autisti di mezzi pesanti usa un GPS per auto, che può metterli in pericolo.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">Con strade trafficate e divieti delle feste, non è il momento di sbagliare strada. <strong>Il GPS Michelin Truckfly tiene conto di tutti i vincoli del tuo camion:</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Navigazione per mezzi pesanti: </strong>Sagoma, peso, strade consentite, restrizioni ADR: il percorso è adatto al tuo camion.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Le segnalazioni della community: </strong>Controlli, incidenti, pericoli: la più grande community di camionisti d’Europa ti avvisa in tempo reale. E il traffico in diretta ti aiuta a evitare le code.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Oltre 135.000 strutture per mezzi pesanti: </strong>Ristoranti, parcheggi gratuiti o sorvegliati, distributori: sai sempre dove fermarti.</span></div>'
-        - id: 5b2ca20c-d39d-431f-9ee9-a2b877a25e9a
+        - id: 0e15873b-4423-4d19-92cc-5e78b0d359a2
           title: Image
           type: image
           layout:
@@ -2454,7 +2454,7 @@ body:
               width: 45%
           content:
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: 9faa7dfc-a1de-4f3f-a41e-e37ca2a45114
+        - id: 5e3a68d7-0c48-4e77-90a4-8065793e4ce7
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Provo il GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2484,7 +2484,7 @@ body:
       condition: ( "ES" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: 7a8ca972-1bf9-498c-8d23-39a7a70ec86a
+      id: 41fa15a2-2d0e-42a5-acdb-863868553c4c
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -2506,7 +2506,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: d0332136-1143-46e9-b7ea-58bc77a4bec9
+      - id: 84928cb2-721d-42b1-89f8-00bb81265b46
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -2521,7 +2521,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: a03919ed-0ab2-4121-bfa0-c923f57e7972
+        - id: 6b2649d9-1e47-4e68-917d-90b6425c1ca4
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -2550,7 +2550,7 @@ body:
               valign: top
               width: 100%
           content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255);"><strong>3. Las fiestas con un GPS para camiones</strong></span></h2><p><br></p>
-        - id: df2a1a1c-fcbd-4c29-ae1e-803bf4279370
+        - id: fee7e88b-932d-4f81-9dd5-10425fe48adb
           stylable: false
           title: Paragraph
           type: text
@@ -2571,7 +2571,7 @@ body:
               valign: top
               width: 100%
           content: '<div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>¿Lo sabías?</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">El 86% de los camioneros usa un GPS para turismos, que puede ponerlos en peligro.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">Con las carreteras cargadas y las restricciones de las fiestas, no es momento de equivocarse de ruta. <strong>El GPS Michelin Truckfly tiene en cuenta todas las limitaciones de tu camión:</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Navegación para camiones: </strong>Gálibo, peso, carreteras permitidas, restricciones ADR: tu ruta se adapta a tu camión.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Avisos de la comunidad: </strong>Controles, accidentes, peligros: la mayor comunidad de camioneros de Europa te avisa en tiempo real. Y el tráfico en directo te ayuda a evitar atascos.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Más de 135.000 establecimientos para camiones: </strong>Restaurantes, aparcamientos gratuitos o vigilados, gasolineras: siempre sabes dónde parar.</span></div>'
-        - id: 79bc20af-15fa-468f-a07e-4c40f2892fcb
+        - id: 5a3eddf7-ce37-431a-845c-538843aadf4f
           title: Image
           type: image
           layout:
@@ -2587,7 +2587,7 @@ body:
               width: 45%
           content:
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: b757eb39-fd21-4e2d-ac4b-81f48ac5f737
+        - id: bfecff64-113f-4bbe-9acf-54b9d8dd44a5
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Pruebo el GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2617,7 +2617,7 @@ body:
       condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
       dist: '12'
       gutter: 30px
-      id: c0f2737b-d520-4943-831d-c67b62ce2a22
+      id: 9a676fff-aa27-49b7-9416-d876eb3e5a05
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -2639,7 +2639,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: 685098c0-46f0-4d9a-8bd3-5396fdfa03c7
+      - id: e720c875-b6e7-44d5-b47a-cb36105b7009
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -2654,7 +2654,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: 3a86ed7b-c90b-4171-a6e9-501c7d08c078
+        - id: f0f1dce4-1f16-4550-8e86-bf0001cb7783
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -2683,7 +2683,7 @@ body:
               valign: top
               width: 100%
           content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255);"><strong>3. The festive season with a truck GPS</strong></span></h2><p><br></p>
-        - id: a94c7a35-6f75-4a3f-a9e1-4dacbfe005a6
+        - id: 22a7be39-327d-4e7a-b162-47f3fcdbe745
           stylable: false
           title: Paragraph
           type: text
@@ -2704,7 +2704,7 @@ body:
               valign: top
               width: 100%
           content: '<div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Did you know?</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">86% of HGV drivers use a GPS made for cars, which can put them in danger.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">With busy roads and holiday driving bans, this is no time to take a wrong turn. <strong>The Michelin Truckfly GPS takes every constraint of your truck into account:</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>HGV navigation: </strong>Size, weight, permitted roads, ADR restrictions: your route is adapted to your truck.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Community alerts: </strong>Police checks, accidents, hazards: Europe’s largest HGV community warns you in real time. And live traffic helps you avoid jams.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>135,000+ HGV-friendly places: </strong>Restaurants, free or secure parking, fuel stations: you always know where to stop.</span></div>'
-        - id: 2bab216c-6363-44db-8434-0246e543e618
+        - id: 230a0b8a-de8a-436f-ba0c-79dcf6e52522
           title: Image
           type: image
           layout:
@@ -2720,7 +2720,7 @@ body:
               width: 45%
           content:
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: e825dffb-733d-4434-ae84-00bc581b8ae7
+        - id: a03091ba-608d-490a-92e2-fb4fb97afc0d
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Try the GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
@@ -2750,7 +2750,7 @@ body:
       condition: ( "NL" in contact.LANG )
       dist: '12'
       gutter: 30px
-      id: f84c8b91-fcfd-4c2f-9328-8160fff53517
+      id: 702b0d7d-d3ed-4b68-bd4b-e7d9893d8057
       moduleName: image-text
       sectionName: Text and Image 2
       stylable: false
@@ -2772,7 +2772,7 @@ body:
           valign: top
           width: 100%
       content:
-      - id: d844ee4a-44e7-4c2d-9667-69f72a529483
+      - id: a888aaee-2cf3-4020-b07b-7cce055ffcda
         imagelabel: Select a content type
         isEmpty: false
         label: Drop content here
@@ -2787,7 +2787,7 @@ body:
             padding-right: 0px
             valign: top
         content:
-        - id: d80a3150-a087-4e6b-a157-5df32881597a
+        - id: 899c09be-60cc-422b-a5bd-07977b0302c1
           moduleName: text-title
           thumbnail: /assets/img/editor/element-title.svg
           title: Titre
@@ -2816,7 +2816,7 @@ body:
               valign: top
               width: 100%
           content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255);"><strong>3. De feestdagen met een vrachtwagen-GPS</strong></span></h2><p><br></p>
-        - id: 141f3536-9062-4a76-8d44-06c84ada307c
+        - id: e61e70ea-1030-4f89-b21d-c5254c02d60a
           stylable: false
           title: Paragraph
           type: text
@@ -2837,7 +2837,7 @@ body:
               valign: top
               width: 100%
           content: '<div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Wist je dat?</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">86% van de vrachtwagenchauffeurs gebruikt een GPS voor personenauto’s, en dat kan gevaarlijk zijn.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);">Met drukke wegen en rijverboden tijdens de feestdagen is dit niet het moment om verkeerd te rijden. <strong>De Michelin Truckfly GPS houdt rekening met alle beperkingen van je truck:</strong></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Navigatie voor vrachtwagens: </strong>Afmetingen, gewicht, toegestane wegen, ADR-beperkingen: je route is aangepast aan je truck.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Meldingen van de community: </strong>Controles, ongevallen, gevaren: de grootste vrachtwagencommunity van Europa waarschuwt je in realtime. En live verkeer helpt je files te vermijden.</span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><br></span></div><div style="font-style: normal; font-weight: 400;"><span style="color: rgb(255, 255, 255);"><strong>Meer dan 135.000 locaties voor vrachtwagens: </strong>Restaurants, gratis of beveiligde parkings, tankstations: je weet altijd waar je kunt stoppen.</span></div>'
-        - id: 398d6ecc-a180-426a-a8eb-4f012dcc9b26
+        - id: fa5716de-10d7-426e-bccc-e79840465332
           title: Image
           type: image
           layout:
@@ -2853,7 +2853,7 @@ body:
               width: 45%
           content:
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
-        - id: eac60ac0-094c-4e65-884e-4111ae268484
+        - id: ae93b2de-6653-4409-bbe8-95eb273c5b4c
           text: '<p><strong><span style="color: rgb(0, 0, 0);">Ik probeer de GPS</span></strong></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
