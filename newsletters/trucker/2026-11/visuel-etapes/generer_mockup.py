@@ -4,7 +4,7 @@ from pathlib import Path
 from PIL import Image
 D = Path(__file__).parent
 def load(lg):
-    ph = Image.open(D / f"mockup-fil-{lg}.png").convert("RGBA")
+    ph = Image.open(D / (f"mockup-fil-{lg}-trad.png" if lg != "fr" else "mockup-fil-fr.png")).convert("RGBA")
     buf = io.BytesIO(); ph.save(buf, "PNG"); return ph, base64.b64encode(buf.getvalue()).decode()
 ph, _ = load("fr")
 DY = {"fr": 0, "it": 8, "nl": 17, "es": 1, "en": -7}       # décalage vertical du fil selon la langue
