@@ -31,7 +31,7 @@ it(3)[1]["content"] = (P("Décembre approche, et avec lui les fêtes de fin d’
 
 # Au programme (même encadré)
 items = ["Fermé pendant les fêtes" + NB + "? La fermeture temporaire", "Le conseil du mois" + NB + ": vos horaires des fêtes",
-         "Nouveau" + NB + ": les routiers peuvent liker les avis", "Votre fiche des fêtes en 3 points"]
+         "Nouveau" + NB + ": les routiers peuvent liker les avis", "Votre fiche des fêtes en 4 points"]
 h = f'<p><span {BL}><strong>Au programme' + NB + ':' + NB + '</strong></span></p><p><span {BL}><strong><br></strong></span></p>'
 for n, t in enumerate(items, 1):
     h += f'<p><span {BL}><strong>{n}.' + NB + f'</strong><strong>{t}</strong></span></p>' + (f'<p><span {BL}><br></span></p>' if n < 4 else "")
@@ -72,15 +72,16 @@ s[2]["content"] = (f'<p class="default"><span {BLK}>Sur Michelin Truckfly, les r
 
 # 4. Votre fiche des fêtes en 3 points
 s = it(9)
-s[1]["content"] = f'<h2 class="default-heading2"><span style="color:rgb(6, 24, 102);font-size:24px;">Votre fiche des fêtes en 3 points' + NB + ':' + NB + '</span></h2>'
+s[1]["content"] = f'<h2 class="default-heading2"><span style="color:rgb(6, 24, 102);font-size:24px;">Votre fiche des fêtes en 4 points' + NB + ':' + NB + '</span></h2>'
 s[2]["content"] = (f'<p class="default"><span {BLK}>Quelques minutes suffisent pour être prêt avant les fêtes.</span></p><p class="default"><br></p>'
     + P("<strong>Fermé" + NB + "?" + NB + "</strong>déclarez votre fermeture temporaire avec vos dates") + BR
     + P("<strong>Ouvert" + NB + "?" + NB + "</strong>indiquez vos horaires des 24, 25 et 31 décembre et du 1er janvier") + BR
-    + P("<strong>Des photos récentes" + NB + ":" + NB + "</strong>parking, douches, salle, pour inspirer confiance") + BR)
+    + P("<strong>Vos photos de Noël" + NB + ":" + NB + "</strong>vous décorez votre établissement" + NB + "? Montrez-le" + NB + "! Sapin, guirlandes, salle décorée" + NB + ": de belles photos donnent envie aux routiers de faire une pause chez vous") + BR
+    + P("<strong>Votre menu à jour" + NB + ":" + NB + "</strong>vous proposez un repas spécial pour Noël ou le Nouvel An" + NB + "? Ajoutez-le à votre fiche") + BR)
 
 # Mot de fin
 it(10)[1]["content"] = (BR + P("À l’approche des fêtes, nous vous souhaitons, à vous et à vos équipes, une très belle fin d’année" + NB + "!")
-    + BR + P("Et si vous avez des questions sur votre fiche ou envie d’en parler, on est là. N’hésitez pas à nous contacter en répondant à cet e-mail ou à <u>support.truckfly@zendesk.com</u>")
+    + BR + f'<p><span {BLK}>Une question sur votre fiche ou sur la fermeture temporaire&nbsp;? <a href="{FAQ}" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">Notre FAQ propriétaires</a> est faite pour ça. Et si vous ne trouvez pas votre réponse, on est là&nbsp;: répondez simplement à cet e-mail.</span></p>'
     + BR + P("À très vite,") + P("<br><strong>La Team Michelin Truckfly</strong>"))
 
 dump = yaml.dump(src, allow_unicode=True, sort_keys=False, width=10**9)

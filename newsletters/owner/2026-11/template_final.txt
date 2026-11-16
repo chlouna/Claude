@@ -877,7 +877,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><span style="color: rgb(6, 24, 102);"><strong>Au programme&nbsp;:&nbsp;</strong></span></p><p><span {BL}><strong><br></strong></span></p><p><span style="color: rgb(6, 24, 102);"><strong>1.&nbsp;</strong><strong>Fermé pendant les fêtes&nbsp;? La fermeture temporaire</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>2.&nbsp;</strong><strong>Le conseil du mois&nbsp;: vos horaires des fêtes</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>3.&nbsp;</strong><strong>Nouveau&nbsp;: les routiers peuvent liker les avis</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>4.&nbsp;</strong><strong>Votre fiche des fêtes en 3 points</strong></span></p>'
+          content: '<p><span style="color: rgb(6, 24, 102);"><strong>Au programme&nbsp;:&nbsp;</strong></span></p><p><span {BL}><strong><br></strong></span></p><p><span style="color: rgb(6, 24, 102);"><strong>1.&nbsp;</strong><strong>Fermé pendant les fêtes&nbsp;? La fermeture temporaire</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>2.&nbsp;</strong><strong>Le conseil du mois&nbsp;: vos horaires des fêtes</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>3.&nbsp;</strong><strong>Nouveau&nbsp;: les routiers peuvent liker les avis</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>4.&nbsp;</strong><strong>Votre fiche des fêtes en 4 points</strong></span></p>'
     - align: top
       dist: '12'
       gutter: 30px
@@ -1437,7 +1437,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: <h2 class="default-heading2"><span style="color:rgb(6, 24, 102);font-size:24px;">Votre fiche des fêtes en 3 points&nbsp;:&nbsp;</span></h2>
+          content: <h2 class="default-heading2"><span style="color:rgb(6, 24, 102);font-size:24px;">Votre fiche des fêtes en 4 points&nbsp;:&nbsp;</span></h2>
         - id: 2efbbbf1-a059-4bb4-8569-0fefd9c98437
           stylable: false
           title: Paragraph
@@ -1458,7 +1458,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><span style="color: rgb(0, 0, 0);">Quelques minutes suffisent pour être prêt avant les fêtes.</span></p><p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Fermé&nbsp;?&nbsp;</strong>déclarez votre fermeture temporaire avec vos dates</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Ouvert&nbsp;?&nbsp;</strong>indiquez vos horaires des 24, 25 et 31 décembre et du 1er janvier</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Des photos récentes&nbsp;:&nbsp;</strong>parking, douches, salle, pour inspirer confiance</span></p><p><br></p>'
+          content: '<p class="default"><span style="color: rgb(0, 0, 0);">Quelques minutes suffisent pour être prêt avant les fêtes.</span></p><p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Fermé&nbsp;?&nbsp;</strong>déclarez votre fermeture temporaire avec vos dates</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Ouvert&nbsp;?&nbsp;</strong>indiquez vos horaires des 24, 25 et 31 décembre et du 1er janvier</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Vos photos de Noël&nbsp;:&nbsp;</strong>vous décorez votre établissement&nbsp;? Montrez-le&nbsp;! Sapin, guirlandes, salle décorée&nbsp;: de belles photos donnent envie aux routiers de faire une pause chez vous</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Votre menu à jour&nbsp;:&nbsp;</strong>vous proposez un repas spécial pour Noël ou le Nouvel An&nbsp;? Ajoutez-le à votre fiche</span></p><p><br></p>'
         - id: 42d69f57-ee3a-44a1-ab5a-75a13b345531
           text: '<p><span style="color: rgb(255, 255, 255);"><strong>Je complète ma fiche</strong></span></p>'
           thumbnail: /assets/img/editor/element_button.svg
@@ -1548,7 +1548,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><br></p><p><span style="color: rgb(0, 0, 0);">À l’approche des fêtes, nous vous souhaitons, à vous et à vos équipes, une très belle fin d’année&nbsp;!</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Et si vous avez des questions sur votre fiche ou envie d’en parler, on est là. N’hésitez pas à nous contacter en répondant à cet e-mail ou à <u>support.truckfly@zendesk.com</u></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">À très vite,</span></p><p><span style="color: rgb(0, 0, 0);"><br><strong>La Team Michelin Truckfly</strong></span></p>'
+          content: '<p><br></p><p><span style="color: rgb(0, 0, 0);">À l’approche des fêtes, nous vous souhaitons, à vous et à vos équipes, une très belle fin d’année&nbsp;!</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Une question sur votre fiche ou sur la fermeture temporaire&nbsp;? <a href="https://faq.truckfly.com/hc/fr/categories/360006219672-FAQ-pour-les-propri%C3%A9taires-d-%C3%A9tablissement" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">Notre FAQ propriétaires</a> est faite pour ça. Et si vous ne trouvez pas votre réponse, on est là&nbsp;: répondez simplement à cet e-mail.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">À très vite,</span></p><p><span style="color: rgb(0, 0, 0);"><br><strong>La Team Michelin Truckfly</strong></span></p>'
     - align: top
       block_id: 157
       dist: '12'
