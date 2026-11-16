@@ -877,7 +877,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><span style="color: rgb(6, 24, 102);"><strong>Au programme&nbsp;:&nbsp;</strong></span></p><p><span {BL}><strong><br></strong></span></p><p><span style="color: rgb(6, 24, 102);"><strong>1.&nbsp;</strong><strong>Fermé pendant les fêtes&nbsp;? La fermeture temporaire</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>2.&nbsp;</strong><strong>Le conseil du mois&nbsp;: vos horaires des fêtes</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>3.&nbsp;</strong><strong>Nouveau&nbsp;: les routiers peuvent liker les avis</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>4.&nbsp;</strong><strong>Votre fiche des fêtes en 4 points</strong></span></p>'
+          content: '<p><span style="color: rgb(6, 24, 102);"><strong>Au programme&nbsp;:&nbsp;</strong></span></p><p><span {BL}><strong><br></strong></span></p><p><span style="color: rgb(6, 24, 102);"><strong>1.&nbsp;</strong><strong>Fermé pendant les fêtes&nbsp;? La fermeture temporaire</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>2.&nbsp;</strong><strong>Le conseil du mois&nbsp;: vos horaires des fêtes</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>3.&nbsp;</strong><strong>Nouveau&nbsp;: les routiers peuvent liker les avis</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>4.&nbsp;</strong><strong>Votre fiche aux couleurs de Noël</strong></span></p>'
     - align: top
       dist: '12'
       gutter: 30px
@@ -1296,74 +1296,6 @@ body:
             href: https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter
             src: https://img.mailinblue.com/4222425/images/content_library/original/6ad6161b4646ada7d987c593.png
     - align: top
-      condition: ( contact.LANG == "FR" )
-      dist: '12'
-      gutter: 30px
-      id: 7d889352-c518-4141-9aaa-73577c58faa3
-      moduleName: grid-row12
-      stylable: false
-      thumbnail: /assets/img/editor/grid_12.svg
-      title: Yellow Button
-      type: grid-row
-      layout:
-        320px:
-          display: rows
-          padding-left: 15px
-          padding-right: 15px
-          width: 100%
-        default:
-          align: center
-          padding-bottom: 0px
-          padding-top: 0px
-          valign: top
-          width: 100%
-      content:
-      - id: 3cd16b89-d4f0-4c27-8004-696df4a2ea27
-        isEmpty: false
-        stylable: false
-        title: Column
-        type: grid-column
-        layout:
-          320px: {}
-          default:
-            padding-left: 0px
-            padding-right: 0px
-            valign: top
-        content:
-        - id: 52862940-1c41-445d-95e3-09c89f4470a3
-          text: '<p class="default" id="isPasted"><strong><span style="color: rgb(4, 4, 4);">J&#39;accède à mon compte</span></strong></p>'
-          thumbnail: /assets/img/editor/element_button.svg
-          title: Bouton
-          type: text-button
-          layout:
-            320px:
-              border-color: '#ffff1a'
-              width: 100%
-            default:
-              align: center
-              background-color: '#ffff1a'
-              border-color: '#e84c3d'
-              border-radius: 10px
-              border-width: 0px
-              color: '#fff'
-              data-href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
-              data-placeholder-href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
-              font-family: Arial
-              font-size: 16px
-              item-height: 42px
-              margin-bottom: 15px
-              margin-top: 15px
-              padding-bottom: 12px
-              padding-top: 12px
-              text-align: center
-              text-valign: top
-              type: absoluteLink
-              valign: top
-              width: 89%
-          content:
-            href: https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter
-            text: '<p class="default" id="isPasted"><strong><span style="color: rgb(4, 4, 4);">J&#39;accède à mon compte</span></strong></p>'
-    - align: top
       dist: '12'
       gutter: 30px
       id: 57cbf9f8-e793-45aa-b60e-2fac4c64e338
@@ -1437,7 +1369,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: <h2 class="default-heading2"><span style="color:rgb(6, 24, 102);font-size:24px;">Votre fiche des fêtes en 4 points&nbsp;:&nbsp;</span></h2>
+          content: <h2 class="default-heading2"><span style="color:rgb(6, 24, 102);font-size:24px;">Votre fiche aux couleurs de Noël</span></h2>
         - id: 2efbbbf1-a059-4bb4-8569-0fefd9c98437
           stylable: false
           title: Paragraph
@@ -1458,8 +1390,8 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><span style="color: rgb(0, 0, 0);">Quelques minutes suffisent pour être prêt avant les fêtes.</span></p><p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Fermé&nbsp;?&nbsp;</strong>déclarez votre fermeture temporaire avec vos dates</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Ouvert&nbsp;?&nbsp;</strong>indiquez vos horaires des 24, 25 et 31 décembre et du 1er janvier</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Vos photos de Noël&nbsp;:&nbsp;</strong>vous décorez votre établissement&nbsp;? Montrez-le&nbsp;! Sapin, guirlandes, salle décorée&nbsp;: de belles photos donnent envie aux routiers de faire une pause chez vous</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Votre menu à jour&nbsp;:&nbsp;</strong>vous proposez un repas spécial pour Noël ou le Nouvel An&nbsp;? Ajoutez-le à votre fiche</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Comment faire&nbsp;?</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Connectez-vous à votre espace propriétaire, <a href="https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">sur le site</a> ou dans l’appli avec vos identifiants propriétaire. Sur mobile, ouvrez le menu avec les 3 traits en haut à droite, modifiez vos informations puis enregistrez.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Les informations modifiables dépendent de votre offre&nbsp;: retrouvez le détail dans «&nbsp;👑 nos Packs&nbsp;» une fois connecté.</span></p>'
-        - id: e05029df-7227-4a1d-b99a-8bb774090f99
+          content: '<p class="default"><span style="color: rgb(0, 0, 0);">Fermé ou ouvert, c’est réglé. Il reste 2 idées pour donner envie aux routiers de s’arrêter chez vous pendant les fêtes.</span></p><p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Vos photos de Noël&nbsp;:&nbsp;</strong>vous décorez votre établissement&nbsp;? Montrez-le&nbsp;! Sapin, guirlandes, salle décorée&nbsp;: de belles photos donnent envie de faire une pause chez vous.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Votre menu des fêtes&nbsp;:&nbsp;</strong>vous proposez un repas spécial pour Noël ou le Nouvel An&nbsp;? Ajoutez-le à votre fiche.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Les informations modifiables dépendent de votre offre&nbsp;: retrouvez le détail dans «&nbsp;👑 nos Packs&nbsp;» une fois connecté.</span></p>'
+        - id: 64d73061-509c-4819-a36d-978a917a7ba2
           title: Image
           type: image
           layout:

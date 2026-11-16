@@ -31,7 +31,7 @@ it(3)[1]["content"] = (P("Décembre approche, et avec lui les fêtes de fin d’
 
 # Au programme (même encadré)
 items = ["Fermé pendant les fêtes" + NB + "? La fermeture temporaire", "Le conseil du mois" + NB + ": vos horaires des fêtes",
-         "Nouveau" + NB + ": les routiers peuvent liker les avis", "Votre fiche des fêtes en 4 points"]
+         "Nouveau" + NB + ": les routiers peuvent liker les avis", "Votre fiche aux couleurs de Noël"]
 h = f'<p><span {BL}><strong>Au programme' + NB + ':' + NB + '</strong></span></p><p><span {BL}><strong><br></strong></span></p>'
 for n, t in enumerate(items, 1):
     h += f'<p><span {BL}><strong>{n}.' + NB + f'</strong><strong>{t}</strong></span></p>' + (f'<p><span {BL}><br></span></p>' if n < 4 else "")
@@ -77,18 +77,14 @@ s[2]["content"] = (f'<p class="default"><span {BLK}>Sur Michelin Truckfly, les r
 
 # 4. Votre fiche des fêtes en 3 points
 s = it(9)
-s[1]["content"] = f'<h2 class="default-heading2"><span style="color:rgb(6, 24, 102);font-size:24px;">Votre fiche des fêtes en 4 points' + NB + ':' + NB + '</span></h2>'
-s[2]["content"] = (f'<p class="default"><span {BLK}>Quelques minutes suffisent pour être prêt avant les fêtes.</span></p><p class="default"><br></p>'
-    + P("<strong>Fermé" + NB + "?" + NB + "</strong>déclarez votre fermeture temporaire avec vos dates") + BR
-    + P("<strong>Ouvert" + NB + "?" + NB + "</strong>indiquez vos horaires des 24, 25 et 31 décembre et du 1er janvier") + BR
-    + P("<strong>Vos photos de Noël" + NB + ":" + NB + "</strong>vous décorez votre établissement" + NB + "? Montrez-le" + NB + "! Sapin, guirlandes, salle décorée" + NB + ": de belles photos donnent envie aux routiers de faire une pause chez vous") + BR
-    + P("<strong>Votre menu à jour" + NB + ":" + NB + "</strong>vous proposez un repas spécial pour Noël ou le Nouvel An" + NB + "? Ajoutez-le à votre fiche") + BR)
+s[1]["content"] = f'<h2 class="default-heading2"><span style="color:rgb(6, 24, 102);font-size:24px;">Votre fiche aux couleurs de Noël</span></h2>'
+s[2]["content"] = (f'<p class="default"><span {BLK}>Fermé ou ouvert, c’est réglé. Il reste 2 idées pour donner envie aux routiers de s’arrêter chez vous pendant les fêtes.</span></p><p class="default"><br></p>'
+    + P("<strong>Vos photos de Noël" + NB + ":" + NB + "</strong>vous décorez votre établissement" + NB + "? Montrez-le" + NB + "! Sapin, guirlandes, salle décorée" + NB + ": de belles photos donnent envie de faire une pause chez vous.") + BR
+    + P("<strong>Votre menu des fêtes" + NB + ":" + NB + "</strong>vous proposez un repas spécial pour Noël ou le Nouvel An" + NB + "? Ajoutez-le à votre fiche.") + BR)
 
 # 4 bis. Comment faire + visuel tuto (avant le bouton)
 s = it(9)
-s[2]["content"] += (P("<strong>Comment faire" + NB + "?</strong>") + BR
-    + P("Connectez-vous à votre espace propriétaire, <a href=\"" + LOGIN + "\" target=\"_blank\" style=\"color: rgb(0, 146, 255); text-decoration: underline;\">sur le site</a> ou dans l’appli avec vos identifiants propriétaire. Sur mobile, ouvrez le menu avec les 3 traits en haut à droite, modifiez vos informations puis enregistrez.") + BR
-    + P("Les informations modifiables dépendent de votre offre" + NB + ": retrouvez le détail dans «" + NB + "👑 nos Packs" + NB + "» une fois connecté."))
+s[2]["content"] += P("Les informations modifiables dépendent de votre offre" + NB + ": retrouvez le détail dans «" + NB + "👑 nos Packs" + NB + "» une fois connecté.")
 img = copy.deepcopy(it(7)[3]); img["id"] = str(uuid.uuid4())
 img["content"] = {"href": LOGIN, "src": PLACEHOLDER}
 img["layout"]["default"].update({"canvas-height": "450px", "width": "100%"})
@@ -99,6 +95,8 @@ it(10)[1]["content"] = (BR + P("À l’approche des fêtes, nous vous souhaitons
     + BR + f'<p><span {BLK}>Une question sur votre fiche ou sur la fermeture temporaire&nbsp;? <a href="{FAQ}" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">Notre FAQ propriétaires</a> est faite pour ça. Et si vous ne trouvez pas votre réponse, on est là&nbsp;: répondez simplement à cet e-mail.</span></p>'
     + BR + P("À très vite,") + P("<br><strong>La Team Michelin Truckfly</strong>"))
 
+assert R[8]["title"] == "Yellow Button"
+del R[8]   # bouton « J’accède à mon compte » : doublon des boutons de section
 dump = yaml.dump(src, allow_unicode=True, sort_keys=False, width=10**9)
 assert "MICHELIN" not in dump and "octobre" not in dump.lower() and "11 novembre" not in dump
 ids = re.findall(r"^\s*-?\s*id: (\S+)$", dump, re.M); assert len(ids) == len(set(ids))
