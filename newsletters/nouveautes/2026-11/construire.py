@@ -5,7 +5,9 @@ from pathlib import Path
 D = Path(__file__).parent
 src = yaml.safe_load(open(D / "template_user.yaml"))
 R = src["body"]["content"][0]["content"]
-L = ["FR", "IT", "ES"]
+L = ["FR", "IT", "ES", "EN", "NL"]
+EN_COND = '( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )'
+COND = {"EN": EN_COND, "NL": '( "NL" in contact.LANG )'}
 NB = "&nbsp;"
 PH = "https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png"
 APP = "https://truckflyapp.onelink.me/2ysq/r4vkfd60"
@@ -57,11 +59,42 @@ T = {
           ("Los avisos de la comunidad, a tu manera", ["Controles, accidentes, peligros: ahora puedes <strong>activar o desactivar los avisos de la comunidad</strong> en los ajustes."])],
    update="Actualizo la app",
    bf=("⏰ ¡Último día del Black Friday!", "¿Aún no tienes el GPS Michelin Truckfly? Es el momento: <strong>la oferta termina esta noche a medianoche.</strong>", "Lo aprovecho")),
+"EN": dict(
+   subject="New: see your destination before you get there 👀",
+   head='The <span style="color: rgb(6, 24, 102); background-color: rgb(255, 255, 26);">new features</span> coming to your app:',
+   intro=["This month, Michelin Truckfly update <strong>6.5.0</strong> brings <strong>3 new GPS features</strong> to help you drive with peace of mind.", "Here’s everything that’s changing."],
+   gps="What’s new in the Michelin Truckfly GPS",
+   feats=[("See your destination before you get there!", ["Warehouse, loading bay, car park: with the new <strong>StreetView button</strong>, you can see what your destination looks like before you arrive.", "<strong>No more driving round in circles to find the entrance!</strong>"]),
+          ("Smarter rerouting", ["Missed an exit, unexpected detour?", "<strong>The GPS recalculates your route more efficiently</strong> when you go off course."]),
+          ("Community alerts, your way", ["Police checks, accidents, hazards: you can now <strong>turn community alerts on or off</strong> in the settings."])],
+   update="Update my app",
+   bf=("⏰ Last day of Black Friday!", "Don’t have the Michelin Truckfly GPS yet? Now’s the time: <strong>the offer ends tonight at midnight.</strong>", "Grab the offer")),
+ "NL": dict(
+   subject="Nieuw: bekijk je bestemming voordat je er bent 👀",
+   head='De <span style="color: rgb(6, 24, 102); background-color: rgb(255, 255, 26);">nieuwe functies</span> in je app:',
+   intro=["Deze maand brengt update <strong>6.5.0</strong> van Michelin Truckfly <strong>3 nieuwe functies in de GPS</strong>, zodat je met een gerust hart rijdt.", "Dit is alles wat er verandert."],
+   gps="Nieuw in de Michelin Truckfly GPS",
+   feats=[("Bekijk je bestemming voordat je er bent!", ["Magazijn, laadperron, parking: met de nieuwe <strong>StreetView-knop</strong> zie je hoe je bestemming eruitziet voordat je aankomt.", "<strong>Geen rondjes meer rijden om de ingang te vinden!</strong>"]),
+          ("Slimmer je route herberekenen", ["Afslag gemist, onverwachte omleiding?", "<strong>De GPS berekent je route efficiënter opnieuw</strong> als je van je route afwijkt."]),
+          ("Meldingen van de community, zoals jij wilt", ["Controles, ongevallen, gevaren: je kunt de <strong>meldingen van de community nu aan- of uitzetten</strong> in de instellingen."])],
+   update="Ik update de app",
+   bf=("⏰ Laatste dag van Black Friday!", "Heb je de Michelin Truckfly GPS nog niet? Dit is het moment: <strong>de actie eindigt vanavond om middernacht.</strong>", "Ik profiteer ervan")),
 }
 
+# Groupes de rangées par langue (FR, IT, ES dans le template) + clones EN / NL à partir du FR
+BASES = {"banner": 2, "head": 5, "intro": 8, "gps": 21, "f0": 11, "f1": 14, "f2": 17, "bf": 24}
+G = {}
+for key, b in BASES.items():
+    G[key] = {"FR": R[b], "IT": R[b + 1], "ES": R[b + 2]}
+    for lg in ("EN", "NL"):
+        r = copy.deepcopy(R[b]); new_ids(r); r["condition"] = COND[lg]; r["title"] = f"Bannière {lg}"
+        G[key][lg] = r
+# Bannière du haut EN / NL : elle reprend le visuel FR (à remplacer si besoin)
+
 # Objet
-src["subject"] = ('{% if "IT" in contact.LANG %}' + T["IT"]["subject"] + '{% elif "ES" in contact.LANG %}' + T["ES"]["subject"]
-                  + '{% else %}' + T["FR"]["subject"] + '{% endif %}')
+src["subject"] = ('{% if "FR" in contact.LANG %}' + T["FR"]["subject"] + '{% elif "IT" in contact.LANG %}' + T["IT"]["subject"]
+                  + '{% elif "ES" in contact.LANG %}' + T["ES"]["subject"] + '{% elif "NL" in contact.LANG %}' + T["NL"]["subject"]
+                  + '{% else %}' + T["EN"]["subject"] + '{% endif %}')
 
 # Marque : Michelin Truckfly (en-tête et pied de page), pied de page FR au tutoiement
 for r in (R[1], R[27]):
@@ -74,15 +107,15 @@ for r in (R[1], R[27]):
             x["content"] = c
 
 # Titres et intro
-for k, lg in enumerate(L):
-    items(R[5 + k])[0]["content"] = f'<h2 class="default-heading2"><span style="color: rgb(6, 24, 102);">{T[lg]["head"]}</span></h2>'
-    items(R[8 + k])[0]["content"] = P(T[lg]["intro"][0]) + BR + P(T[lg]["intro"][1])
-    items(R[21 + k])[1]["content"] = f'<p><strong>{T[lg]["gps"]}</strong></p>'
+for lg in L:
+    items(G["head"][lg])[0]["content"] = f'<h2 class="default-heading2"><span style="color: rgb(6, 24, 102);">{T[lg]["head"]}</span></h2>'
+    items(G["intro"][lg])[0]["content"] = P(T[lg]["intro"][0]) + BR + P(T[lg]["intro"][1])
+    items(G["gps"][lg])[1]["content"] = f'<p><strong>{T[lg]["gps"]}</strong></p>'
 
 # 3 nouveautés : on reprend les blocs « likes / photo / langue » (même mise en page)
-for f, base in enumerate((11, 14, 17)):
-    for k, lg in enumerate(L):
-        it = items(R[base + k]); title, paras = T[lg]["feats"][f]
+for f in range(3):
+    for lg in L:
+        it = items(G[f"f{f}"][lg]); title, paras = T[lg]["feats"][f]
         it[0]["content"] = f'<h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">{title}</span></h3>'
         it[1]["content"] = BR.join(P(x) for x in paras)
         it[2]["content"] = {"href": APP, "src": PH}
@@ -90,8 +123,8 @@ for f, base in enumerate((11, 14, 17)):
         else: btn(it[3], T[lg]["update"], APP)
 
 # Rappel Black Friday : on reprend le bloc péage, fond bleu, sans image
-for k, lg in enumerate(L):
-    r = R[24 + k]; r["layout"]["default"]["background-color"] = "#061866"
+for lg in L:
+    r = G["bf"][lg]; r["layout"]["default"]["background-color"] = "#061866"
     it = items(r); t, body, b = T[lg]["bf"]
     it[0]["content"] = f'<h3 class="default-heading3" style="text-align: center;"><span style="color: rgb(255, 255, 26);">{t}</span></h3>'
     it[0]["layout"]["default"]["text-align"] = "center"
@@ -101,8 +134,10 @@ for k, lg in enumerate(L):
     btn(it[2], b, LP[lg])
 
 # Nouvel ordre : intro → bandeau GPS → 3 nouveautés → séparateur → Black Friday
-order = list(range(0, 11)) + [21, 22, 23] + list(range(11, 20)) + [20, 24, 25, 26, 27]
-src["body"]["content"][0]["content"] = [R[i] for i in order]
+seq = [R[0], R[1]]
+for key in ("banner", "head", "intro", "gps", "f0", "f1", "f2"): seq += [G[key][lg] for lg in L]
+seq += [R[20]] + [G["bf"][lg] for lg in L] + [R[27]]
+src["body"]["content"][0]["content"] = seq
 
 dump = yaml.dump(src, allow_unicode=True, sort_keys=False, width=10**9)
 assert "MICHELIN" not in dump and "vuestros" not in dump and "péage" not in dump.lower()
