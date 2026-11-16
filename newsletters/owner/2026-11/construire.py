@@ -30,7 +30,7 @@ it(3)[1]["content"] = (P("Décembre approche, et avec lui les fêtes de fin d’
     + BR + P("Ce mois-ci, nous vous montrons comment le faire en quelques minutes."))
 
 # Au programme (même encadré)
-items = ["Fermé pendant les fêtes" + NB + "? La fermeture temporaire", "Le conseil du mois" + NB + ": vos horaires des fêtes",
+items = ["Fermé pendant les fêtes" + NB + "? La fermeture temporaire", "Le conseil du mois" + NB + ": ouvert pendant les fêtes" + NB + "? Dites-le",
          "Nouveau" + NB + ": les routiers peuvent liker les avis", "Votre fiche aux couleurs de Noël"]
 h = f'<p><span {BL}><strong>Au programme' + NB + ':' + NB + '</strong></span></p><p><span {BL}><strong><br></strong></span></p>'
 for n, t in enumerate(items, 1):
@@ -54,16 +54,18 @@ s[4]["content"] = {"href": LOGIN, "src": PLACEHOLDER}
 s[4]["layout"]["default"].update({"canvas-height": "310px", "width": "100%"})
 btn(s[5], "Je déclare ma fermeture", LOGIN); s[5]["content"]["title"] = "Espace Propriétaire Michelin Truckfly"
 
-# 2. Conseil du mois (fond bleu)
+# 2. Conseil du mois (fond bleu) : ouvert ? description
 s = it(6)
-s[1]["content"] = f'<h2 class="default-heading2"><span style="color:rgb(255, 255, 255);font-size:24px">Ouvert pendant les fêtes' + NB + '? Faites-le savoir</span></h2>'
-W = lambda t: f'<p><span {WH}>{t}</span></p>'
-s[2]["content"] = (f'<p class="default"><span {WH}>Si vous restez ouvert pendant les fêtes, c’est un <strong>vrai atout</strong>" + NB + ": les routiers qui cherchent un repas chaud ou une douche le 24 ou le 31 décembre viendront chez vous.</span></p>'.replace('" + NB + "', NB)
-    + '<p class="default"><br></p>' + f'<p class="default"><span {WH}><strong>Quelques réflexes' + NB + ':</strong></span></p><p class="default"><br></p>'
-    + W("<strong>Vos horaires spéciaux" + NB + ":" + NB + "</strong>indiquez-les pour les 24, 25 et 31 décembre et le 1er janvier") + BR
-    + W("<strong>Vos services ouverts" + NB + ":" + NB + "</strong>restaurant, douches, boutique, parking") + BR
-    + W("<strong>Répondez aux avis récents" + NB + ":" + NB + "</strong>les routiers les lisent pour savoir ce qui est ouvert"))
-btn(s[3], "Je mets à jour mes horaires", LOGIN)
+s[1]["content"] = f'<h2 class="default-heading2"><span style="color:rgb(255, 255, 255);font-size:24px">Ouvert pendant les fêtes' + NB + '? Dites-le dans votre description</span></h2>'
+W = lambda t: f'<p class="default"><span {WH}>{t}</span></p>'
+WB = '<p class="default"><br></p>'
+s[2]["content"] = (W("Si vous restez ouvert pendant les fêtes, c’est un <strong>vrai atout</strong>" + NB + ": les routiers qui cherchent un repas chaud ou une douche le 24 ou le 31 décembre viendront chez vous.")
+    + WB + W("Votre <strong>description</strong> est visible par tous les routiers dans l’appli. C’est le bon endroit pour annoncer" + NB + ":")
+    + f'<ul><li {WH}>vos horaires spéciaux des fêtes</li><li {WH}>votre menu de Noël ou du Nouvel An</li><li {WH}>vos services ouverts" + NB + ": douches, parking, boutique</li></ul>'.replace('" + NB + "', NB)
+    + WB + W("<strong>Un exemple à reprendre" + NB + ":</strong>")
+    + W("<em>«" + NB + "Ouvert pendant les fêtes" + NB + "! Le 24 et le 31 décembre" + NB + ": service jusqu’à 22" + NB + "h. Menu de Noël le 25 au midi. Douches et parking accessibles." + NB + "»</em>")
+    + WB + W("Pensez à retirer ce message une fois les fêtes passées."))
+btn(s[3], "Je mets à jour ma description", LOGIN)
 
 # 3. Nouveau : les j'aime (section blanche, ex « Saison »)
 s = it(7)
@@ -75,12 +77,13 @@ s[2]["content"] = (f'<p class="default"><span {BLK}>Sur Michelin Truckfly, les r
     + '<p class="default"><br></p>'
     + f'<p class="default"><span {BLK}><strong>Votre levier' + NB + ':</strong> invitez vos clients routiers satisfaits à laisser un avis avec une photo.</span></p>')
 
-# 4. Votre fiche des fêtes en 3 points
+# 4. Votre fiche aux couleurs de Noël : photos
 s = it(9)
 s[1]["content"] = f'<h2 class="default-heading2"><span style="color:rgb(6, 24, 102);font-size:24px;">Votre fiche aux couleurs de Noël</span></h2>'
-s[2]["content"] = (f'<p class="default"><span {BLK}>Fermé ou ouvert, c’est réglé. Il reste 2 idées pour donner envie aux routiers de s’arrêter chez vous pendant les fêtes.</span></p><p class="default"><br></p>'
-    + P("<strong>Vos photos de Noël" + NB + ":" + NB + "</strong>vous décorez votre établissement" + NB + "? Montrez-le" + NB + "! Sapin, guirlandes, salle décorée" + NB + ": de belles photos donnent envie de faire une pause chez vous.") + BR
-    + P("<strong>Votre menu des fêtes" + NB + ":" + NB + "</strong>vous proposez un repas spécial pour Noël ou le Nouvel An" + NB + "? Ajoutez-le à votre fiche.") + BR)
+s[2]["content"] = (f'<p class="default"><span {BLK}>Avant de choisir où s’arrêter, les routiers regardent les photos. Pendant les fêtes, c’est l’occasion de donner envie.</span></p><p class="default"><br></p>'
+    + P("<strong>Vos décorations de Noël" + NB + ":" + NB + "</strong>sapin, guirlandes, salle décorée" + NB + ": montrez-les" + NB + "!") + BR
+    + P("<strong>Votre parking et vos douches" + NB + ":" + NB + "</strong>des photos récentes rassurent les routiers avant de venir.") + BR)
+btn(s[3], "J’ajoute mes photos", LOGIN, "rgb(255, 255, 255)")
 
 # 4 bis. Comment faire + visuel tuto (avant le bouton)
 s = it(9)

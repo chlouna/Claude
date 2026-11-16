@@ -877,7 +877,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p><span style="color: rgb(6, 24, 102);"><strong>Au programme&nbsp;:&nbsp;</strong></span></p><p><span {BL}><strong><br></strong></span></p><p><span style="color: rgb(6, 24, 102);"><strong>1.&nbsp;</strong><strong>Fermé pendant les fêtes&nbsp;? La fermeture temporaire</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>2.&nbsp;</strong><strong>Le conseil du mois&nbsp;: vos horaires des fêtes</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>3.&nbsp;</strong><strong>Nouveau&nbsp;: les routiers peuvent liker les avis</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>4.&nbsp;</strong><strong>Votre fiche aux couleurs de Noël</strong></span></p>'
+          content: '<p><span style="color: rgb(6, 24, 102);"><strong>Au programme&nbsp;:&nbsp;</strong></span></p><p><span {BL}><strong><br></strong></span></p><p><span style="color: rgb(6, 24, 102);"><strong>1.&nbsp;</strong><strong>Fermé pendant les fêtes&nbsp;? La fermeture temporaire</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>2.&nbsp;</strong><strong>Le conseil du mois&nbsp;: ouvert pendant les fêtes&nbsp;? Dites-le</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>3.&nbsp;</strong><strong>Nouveau&nbsp;: les routiers peuvent liker les avis</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>4.&nbsp;</strong><strong>Votre fiche aux couleurs de Noël</strong></span></p>'
     - align: top
       dist: '12'
       gutter: 30px
@@ -1129,7 +1129,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255);font-size:24px">Ouvert pendant les fêtes&nbsp;? Faites-le savoir</span></h2>
+          content: <h2 class="default-heading2"><span style="color:rgb(255, 255, 255);font-size:24px">Ouvert pendant les fêtes&nbsp;? Dites-le dans votre description</span></h2>
         - id: 0656c3b0-c749-4636-b882-a28e61ffeee1
           stylable: false
           title: Paragraph
@@ -1150,9 +1150,9 @@ body:
               text-valign: top
               valign: top
               width: 96%
-          content: '<p class="default"><span style="color: rgb(255, 255, 255);">Si vous restez ouvert pendant les fêtes, c’est un <strong>vrai atout</strong>&nbsp;: les routiers qui cherchent un repas chaud ou une douche le 24 ou le 31 décembre viendront chez vous.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>Quelques réflexes&nbsp;:</strong></span></p><p class="default"><br></p><p><span style="color: rgb(255, 255, 255);"><strong>Vos horaires spéciaux&nbsp;:&nbsp;</strong>indiquez-les pour les 24, 25 et 31 décembre et le 1er janvier</span></p><p><br></p><p><span style="color: rgb(255, 255, 255);"><strong>Vos services ouverts&nbsp;:&nbsp;</strong>restaurant, douches, boutique, parking</span></p><p><br></p><p><span style="color: rgb(255, 255, 255);"><strong>Répondez aux avis récents&nbsp;:&nbsp;</strong>les routiers les lisent pour savoir ce qui est ouvert</span></p>'
+          content: '<p class="default"><span style="color: rgb(255, 255, 255);">Si vous restez ouvert pendant les fêtes, c’est un <strong>vrai atout</strong>&nbsp;: les routiers qui cherchent un repas chaud ou une douche le 24 ou le 31 décembre viendront chez vous.</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);">Votre <strong>description</strong> est visible par tous les routiers dans l’appli. C’est le bon endroit pour annoncer&nbsp;:</span></p><ul><li style="color: rgb(255, 255, 255);">vos horaires spéciaux des fêtes</li><li style="color: rgb(255, 255, 255);">votre menu de Noël ou du Nouvel An</li><li style="color: rgb(255, 255, 255);">vos services ouverts&nbsp;: douches, parking, boutique</li></ul><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>Un exemple à reprendre&nbsp;:</strong></span></p><p class="default"><span style="color: rgb(255, 255, 255);"><em>«&nbsp;Ouvert pendant les fêtes&nbsp;! Le 24 et le 31 décembre&nbsp;: service jusqu’à 22&nbsp;h. Menu de Noël le 25 au midi. Douches et parking accessibles.&nbsp;»</em></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);">Pensez à retirer ce message une fois les fêtes passées.</span></p>'
         - id: 996e2441-0088-462d-ac74-c661e4883a80
-          text: '<p><span style="color: rgb(0, 0, 0);"><strong>Je mets à jour mes horaires</strong></span></p>'
+          text: '<p><span style="color: rgb(0, 0, 0);"><strong>Je mets à jour ma description</strong></span></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
           type: text-button
@@ -1176,7 +1176,7 @@ body:
               width: 100%
           content:
             href: https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter
-            text: '<p><span style="color: rgb(0, 0, 0);"><strong>Je mets à jour mes horaires</strong></span></p>'
+            text: '<p><span style="color: rgb(0, 0, 0);"><strong>Je mets à jour ma description</strong></span></p>'
             title: Espace Propriétaire Truckfly by Michelin
     - align: top
       dist: '12'
@@ -1390,8 +1390,8 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><span style="color: rgb(0, 0, 0);">Fermé ou ouvert, c’est réglé. Il reste 2 idées pour donner envie aux routiers de s’arrêter chez vous pendant les fêtes.</span></p><p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Vos photos de Noël&nbsp;:&nbsp;</strong>vous décorez votre établissement&nbsp;? Montrez-le&nbsp;! Sapin, guirlandes, salle décorée&nbsp;: de belles photos donnent envie de faire une pause chez vous.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Votre menu des fêtes&nbsp;:&nbsp;</strong>vous proposez un repas spécial pour Noël ou le Nouvel An&nbsp;? Ajoutez-le à votre fiche.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Les informations modifiables dépendent de votre offre&nbsp;: retrouvez le détail dans «&nbsp;👑 nos Packs&nbsp;» une fois connecté.</span></p>'
-        - id: 64d73061-509c-4819-a36d-978a917a7ba2
+          content: '<p class="default"><span style="color: rgb(0, 0, 0);">Avant de choisir où s’arrêter, les routiers regardent les photos. Pendant les fêtes, c’est l’occasion de donner envie.</span></p><p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Vos décorations de Noël&nbsp;:&nbsp;</strong>sapin, guirlandes, salle décorée&nbsp;: montrez-les&nbsp;!</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Votre parking et vos douches&nbsp;:&nbsp;</strong>des photos récentes rassurent les routiers avant de venir.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Les informations modifiables dépendent de votre offre&nbsp;: retrouvez le détail dans «&nbsp;👑 nos Packs&nbsp;» une fois connecté.</span></p>'
+        - id: dfc8b56f-4389-4082-b997-95bd09a9d71b
           title: Image
           type: image
           layout:
@@ -1412,7 +1412,7 @@ body:
             href: https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter
             src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
         - id: 42d69f57-ee3a-44a1-ab5a-75a13b345531
-          text: '<p><span style="color: rgb(255, 255, 255);"><strong>Je complète ma fiche</strong></span></p>'
+          text: '<p><span style="color: rgb(255, 255, 255);"><strong>J’ajoute mes photos</strong></span></p>'
           thumbnail: /assets/img/editor/element_button.svg
           title: Bouton
           type: text-button
@@ -1436,7 +1436,7 @@ body:
               width: 100%
           content:
             href: https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter
-            text: '<p><span style="color: rgb(255, 255, 255);"><strong>Je complète ma fiche</strong></span></p>'
+            text: '<p><span style="color: rgb(255, 255, 255);"><strong>J’ajoute mes photos</strong></span></p>'
             title: Espace Propriétaire Truckfly by Michelin
     - align: top
       block_id: 10941
