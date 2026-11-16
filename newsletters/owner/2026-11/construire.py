@@ -1,6 +1,6 @@
 """Newsletter owners novembre 2026 : même structure et couleurs qu'octobre (template_user.yaml).
 Sujets : fermeture temporaire (fêtes), horaires des fêtes, nouveaux j'aime, fiche des fêtes en 3 points."""
-import re, yaml
+import copy, re, uuid, yaml
 from pathlib import Path
 D = Path(__file__).parent
 src = yaml.safe_load(open(D / "template_user.yaml"))
@@ -78,6 +78,16 @@ s[2]["content"] = (f'<p class="default"><span {BLK}>Quelques minutes suffisent p
     + P("<strong>Ouvert" + NB + "?" + NB + "</strong>indiquez vos horaires des 24, 25 et 31 décembre et du 1er janvier") + BR
     + P("<strong>Vos photos de Noël" + NB + ":" + NB + "</strong>vous décorez votre établissement" + NB + "? Montrez-le" + NB + "! Sapin, guirlandes, salle décorée" + NB + ": de belles photos donnent envie aux routiers de faire une pause chez vous") + BR
     + P("<strong>Votre menu à jour" + NB + ":" + NB + "</strong>vous proposez un repas spécial pour Noël ou le Nouvel An" + NB + "? Ajoutez-le à votre fiche") + BR)
+
+# 4 bis. Comment faire + visuel tuto (avant le bouton)
+s = it(9)
+s[2]["content"] += (P("<strong>Comment faire" + NB + "?</strong>") + BR
+    + P("Connectez-vous à votre espace propriétaire, <a href=\"" + LOGIN + "\" target=\"_blank\" style=\"color: rgb(0, 146, 255); text-decoration: underline;\">sur le site</a> ou dans l’appli avec vos identifiants propriétaire. Sur mobile, ouvrez le menu avec les 3 traits en haut à droite, modifiez vos informations puis enregistrez.") + BR
+    + P("Les informations modifiables dépendent de votre offre" + NB + ": retrouvez le détail dans «" + NB + "👑 nos Packs" + NB + "» une fois connecté."))
+img = copy.deepcopy(it(7)[3]); img["id"] = str(uuid.uuid4())
+img["content"] = {"href": LOGIN, "src": PLACEHOLDER}
+img["layout"]["default"].update({"canvas-height": "450px", "width": "100%"})
+s.insert(3, img)
 
 # Mot de fin
 it(10)[1]["content"] = (BR + P("À l’approche des fêtes, nous vous souhaitons, à vous et à vos équipes, une très belle fin d’année" + NB + "!")

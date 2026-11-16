@@ -1458,7 +1458,27 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<p class="default"><span style="color: rgb(0, 0, 0);">Quelques minutes suffisent pour être prêt avant les fêtes.</span></p><p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Fermé&nbsp;?&nbsp;</strong>déclarez votre fermeture temporaire avec vos dates</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Ouvert&nbsp;?&nbsp;</strong>indiquez vos horaires des 24, 25 et 31 décembre et du 1er janvier</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Vos photos de Noël&nbsp;:&nbsp;</strong>vous décorez votre établissement&nbsp;? Montrez-le&nbsp;! Sapin, guirlandes, salle décorée&nbsp;: de belles photos donnent envie aux routiers de faire une pause chez vous</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Votre menu à jour&nbsp;:&nbsp;</strong>vous proposez un repas spécial pour Noël ou le Nouvel An&nbsp;? Ajoutez-le à votre fiche</span></p><p><br></p>'
+          content: '<p class="default"><span style="color: rgb(0, 0, 0);">Quelques minutes suffisent pour être prêt avant les fêtes.</span></p><p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Fermé&nbsp;?&nbsp;</strong>déclarez votre fermeture temporaire avec vos dates</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Ouvert&nbsp;?&nbsp;</strong>indiquez vos horaires des 24, 25 et 31 décembre et du 1er janvier</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Vos photos de Noël&nbsp;:&nbsp;</strong>vous décorez votre établissement&nbsp;? Montrez-le&nbsp;! Sapin, guirlandes, salle décorée&nbsp;: de belles photos donnent envie aux routiers de faire une pause chez vous</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Votre menu à jour&nbsp;:&nbsp;</strong>vous proposez un repas spécial pour Noël ou le Nouvel An&nbsp;? Ajoutez-le à votre fiche</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Comment faire&nbsp;?</strong></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Connectez-vous à votre espace propriétaire, <a href="https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">sur le site</a> ou dans l’appli avec vos identifiants propriétaire. Sur mobile, ouvrez le menu avec les 3 traits en haut à droite, modifiez vos informations puis enregistrez.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Les informations modifiables dépendent de votre offre&nbsp;: retrouvez le détail dans «&nbsp;👑 nos Packs&nbsp;» une fois connecté.</span></p>'
+        - id: 762fde6a-056a-467c-8094-7751ff573e43
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              canvas-height: 450px
+              padding-bottom: 15px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 15px
+              type: absoluteLink
+              valign: top
+              width: 100%
+          content:
+            href: https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter
+            src: https://creative-assets.mailinblue.com/react-editor/placeholder-images/defaultproduct.png
         - id: 42d69f57-ee3a-44a1-ab5a-75a13b345531
           text: '<p><span style="color: rgb(255, 255, 255);"><strong>Je complète ma fiche</strong></span></p>'
           thumbnail: /assets/img/editor/element_button.svg
