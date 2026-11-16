@@ -8,21 +8,21 @@ buf = io.BytesIO(); ph.save(buf, "PNG"); b64 = base64.b64encode(buf.getvalue()).
 S, OX, OY = 1.2, 60, 60          # échelle et position du téléphone
 def P(x, y): return OX + x * S, OY + y * S
 T = {
- "fr": ("LE BON RÉFLEXE<br>POUR TES ARRÊTS", [
-   ("AVANT", "Regarde les photos, les avis et les j’aime", None),
-   ("PENDANT", "Lis les avis récents&nbsp;: c’est ouvert&nbsp;? il reste de la place&nbsp;?", None),
-   ("APRÈS", "Laisse un avis, ajoute une photo et like", "Tu grimpes dans le top contributeurs&nbsp;!")]),
+ "fr": ("Le bon réflexe pour tes arrêts", [
+   ("Avant", "Regarde les photos, les avis et les j’aime", None),
+   ("Pendant", "Lis les avis récents&nbsp;: c’est ouvert&nbsp;? il reste de la place&nbsp;?", None),
+   ("Après", "Laisse un avis, ajoute une photo et like", "<b>Bonus&nbsp;:</b> tu grimpes dans le top contributeurs&nbsp;!")]),
 }
 ZONES = [((34, 258, 328, 390), (328, 324)), ((38, 488, 326, 550), (326, 519)), ((248, 553, 327, 574), (326, 563))]
 CALL = [165, 420, 660]   # haut de chaque bulle
 CSS = """*{margin:0;box-sizing:border-box}body{width:1200px;height:990px;background:#0c165b;font-family:Inter;color:#fff;position:relative;overflow:hidden}
 .ph{position:absolute;left:%dpx;top:%dpx;width:%dpx}
-.title{position:absolute;left:600px;top:34px;font-weight:900;font-style:italic;font-size:40px;line-height:1.1;color:#ffff1a}
+.title{position:absolute;left:600px;top:70px;font-weight:900;font-style:italic;font-size:35px;line-height:1.1;color:#ffff1a;white-space:nowrap}
 .c{position:absolute;left:600px;width:560px;background:#fff;color:#0c165b;border-radius:28px;padding:22px 30px 24px}
 .h{display:flex;align-items:center;gap:16px;font-weight:900;font-style:italic;font-size:40px}
 .n{width:56px;height:56px;border-radius:50%%;background:#ffff1a;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:32px}
 .b{font-weight:600;font-size:31px;line-height:1.25;margin-top:12px}
-.x{display:inline-block;margin-top:14px;background:#ffff1a;font-weight:800;font-size:28px;padding:8px 14px;border-radius:10px}
+.x{display:inline-block;margin-top:14px;background:#ffff1a;font-weight:600;font-size:28px;padding:8px 14px;border-radius:10px}
 svg{position:absolute;left:0;top:0}""" % (OX, OY, int(ph.width * S))
 for lg, (title, steps) in T.items():
     h = f'<img class="ph" src="data:image/png;base64,{b64}"><div class="title">{title}</div>'
