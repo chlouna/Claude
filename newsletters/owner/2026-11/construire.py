@@ -42,11 +42,16 @@ s = it(5)
 s[0]["content"] = f'<p><span {WH}><strong>Bon à savoir pour les fêtes</strong></span></p>'
 s[1]["content"] = f'<h2 class="default-heading2"><span {BL}>Fermé pendant les fêtes' + NB + '? Utilisez la fermeture temporaire</span></h2>'
 s[2]["content"] = (P("En fin d’année, certains d’entre vous annoncent leurs dates de congés dans la description de leur fiche ou en laissant un commentaire. Mais un routier pressé ne les voit pas toujours… et risque de trouver porte close.")
-    + BR + P("La fonctionnalité <strong>Fermeture temporaire</strong> est faite pour ça" + NB + ": vous indiquez vos dates de fermeture dans votre espace propriétaire, et <strong>les routiers sont prévenus directement sur votre fiche.</strong>")
-    + BR + f'<p><span {BLK}>Pas à pas' + NB + f': <a href="{FAQ}" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">consultez notre FAQ propriétaires</a></span></p>')
+    + BR + P("La fonctionnalité <strong>Fermeture temporaire</strong> est faite pour ça" + NB + ": pendant vos dates de fermeture, <strong>le marqueur de votre établissement devient transparent sur la carte</strong> et <strong>un message en rouge apparaît sur votre fiche.</strong> Tout revient à la normale automatiquement dès votre réouverture.")
+    + BR + P("<strong>Comment faire" + NB + "?</strong>")
+    + '<ol><li ' + BLK + '>Connectez-vous à votre <a href="' + LOGIN + '" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">espace propriétaire</a>.</li>'
+    + '<li ' + BLK + '>Cliquez sur «' + NB + 'Mes horaires d’ouverture' + NB + '» dans le menu à gauche.</li>'
+    + '<li ' + BLK + '>Dans «' + NB + 'Ma fermeture temporaire' + NB + '», indiquez vos dates de début et de fin, puis enregistrez.</li></ol>'
+    + BR + f'<p><span {BLK}>Besoin d’aide' + NB + f'? <a href="{FAQ}" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">Consultez notre FAQ propriétaires</a></span></p>')
 s[3]["content"] = (f'<p><strong><span style="background-color: rgb(228, 234, 242); color: rgb(6, 24, 102);">Votre levier' + NB + ':</span></strong>'
     f'<span style="color: rgb(6, 24, 102); background-color: rgb(228, 234, 242);">' + NB + 'déclarez vos dates dès maintenant, pour que les routiers qui préparent leurs trajets de décembre les voient à temps.</span></p>')
-s[4]["content"] = {"href": FAQ, "src": PLACEHOLDER}
+s[4]["content"] = {"href": LOGIN, "src": PLACEHOLDER}
+s[4]["layout"]["default"].update({"canvas-height": "310px", "width": "100%"})
 btn(s[5], "Je déclare ma fermeture", LOGIN); s[5]["content"]["title"] = "Espace Propriétaire Michelin Truckfly"
 
 # 2. Conseil du mois (fond bleu)
