@@ -17,13 +17,13 @@ CSS = """
 .bf{position:absolute;left:30px;top:150px;width:370px;height:250px;background:#fff;border-radius:60px;display:flex;align-items:center;justify-content:center}
 .bf div{font-weight:900;font-style:italic;font-size:84px;line-height:.92;color:#000;letter-spacing:-2px;text-align:center}
 .dates{position:absolute;left:55px;top:385px;background:#ffff1a;padding:14px 28px;border-radius:14px;transform:rotate(-3deg);font-weight:900;font-style:italic;font-size:34px;color:#000;white-space:nowrap}
-.tag{position:absolute;left:430px;top:95px;background:#ffff1a;padding:16px 34px 16px 46px;transform:rotate(-5deg);font-weight:900;font-style:italic;font-size:42px;color:#000;clip-path:polygon(22px 0,100% 0,100% 100%,22px 100%,0 50%);white-space:nowrap}
+.tag{position:absolute;left:430px;top:170px;background:#ffff1a;padding:16px 34px 16px 46px;transform:rotate(-5deg);font-weight:900;font-style:italic;font-size:42px;color:#000;clip-path:polygon(22px 0,100% 0,100% 100%,22px 100%,0 50%);white-space:nowrap}
 .box{position:absolute;left:430px;top:215px;width:400px;height:150px;background:#fff;border-radius:22px;padding:10px}
 .box .in{border:4px dashed #000;border-radius:14px;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .box .k{font-weight:800;font-style:italic;font-size:26px;letter-spacing:3px;color:#333}
 .box .q{font-weight:900;font-style:italic;font-size:72px;line-height:1;color:#000;letter-spacing:8px}
-.btn{position:absolute;left:430px;top:400px;width:400px;height:84px;background:#ffff1a;border-radius:18px;display:flex;align-items:center;justify-content:center;font-weight:900;font-style:italic;font-size:%BTN%px;color:#000;white-space:nowrap}
-.sub{position:absolute;left:430px;top:500px;width:400px;text-align:center;font-style:italic;font-weight:500;font-size:24px;color:#d9d9d9}
+.btn{position:absolute;left:430px;top:318px;width:400px;height:84px;background:#ffff1a;border-radius:18px;display:flex;align-items:center;justify-content:center;font-weight:900;font-style:italic;font-size:%BTN%px;color:#000;white-space:nowrap}
+.sub{position:absolute;left:430px;top:420px;width:400px;text-align:center;font-style:italic;font-weight:500;font-size:24px;color:#d9d9d9}
 .ph{position:absolute;left:868px;top:75px;height:450px;transform:rotate(5deg)}
 """
 for lg, (dates, tag, k, btn, sub, img) in T.items():
@@ -32,8 +32,7 @@ for lg, (dates, tag, k, btn, sub, img) in T.items():
     html = f"""<html><head><meta charset="utf-8"><style>{css}</style></head><body>
 <div class="line"></div>
 <div class="bf"><div>BLACK<br>FRIDAY</div></div><div class="dates">{dates}</div>
-<div class="tag">⚡ {tag}</div>
-<div class="box"><div class="in"><div class="k">{k}</div><div class="q">???</div></div></div>
+<div class="tag">{tag}</div>
 <div class="btn">{btn}</div><div class="sub">{sub}</div>
 <img class="ph" src="data:image/png;base64,{b64}"></body></html>"""
     (D / f"_{lg}.html").write_text(html)
