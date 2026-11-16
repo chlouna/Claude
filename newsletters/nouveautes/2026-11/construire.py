@@ -38,7 +38,7 @@ T = {
           ("Un recalcul d’itinéraire plus efficace", ["Une sortie ratée, un détour imprévu" + NB + "?", "<strong>Le GPS recalcule ton itinéraire plus efficacement</strong> en cas d’écart de route."]),
           ("Les alertes de la communauté, à ta façon", ["Contrôles, accidents, dangers" + NB + ": tu peux maintenant <strong>activer ou désactiver les alertes communautaires</strong> dans les paramètres."])],
    update="Je mets à jour l’appli",
-   bf=("⏰ Dernier jour du Black Friday" + NB + "!", "Tu n’as pas encore le GPS Michelin Truckfly" + NB + "? C’est le moment" + NB + ": <strong>l’offre se termine ce soir à minuit.</strong>", "J’en profite")),
+   bf=("Dernier jour du Black Friday" + NB + "!", "Tu n’as pas encore le GPS Michelin Truckfly" + NB + "? C’est le moment" + NB + ": <strong>l’offre se termine ce soir à minuit.</strong>", "J’en profite")),
  "IT": dict(
    subject="Novità: guarda la tua destinazione prima di arrivarci 👀",
    head='Le <span style="background-color: rgb(255, 255, 26); color: rgb(6, 24, 102);">nuove funzionalità</span> disponibili sulla tua app:',
@@ -48,7 +48,7 @@ T = {
           ("Un ricalcolo del percorso più efficace", ["Un’uscita mancata, una deviazione imprevista?", "<strong>Il GPS ricalcola il tuo percorso in modo più efficace</strong> quando esci dal tragitto."]),
           ("Gli avvisi della community, come vuoi tu", ["Controlli, incidenti, pericoli: ora puoi <strong>attivare o disattivare gli avvisi della community</strong> nelle impostazioni."])],
    update="Aggiorno l’app",
-   bf=("⏰ Ultimo giorno del Black Friday!", "Non hai ancora il GPS Michelin Truckfly? È il momento: <strong>l’offerta termina stasera a mezzanotte.</strong>", "Ne approfitto")),
+   bf=("Ultimo giorno del Black Friday!", "Non hai ancora il GPS Michelin Truckfly? È il momento: <strong>l’offerta termina stasera a mezzanotte.</strong>", "Ne approfitto")),
  "ES": dict(
    subject="Novedad: mira tu destino antes de llegar 👀",
    head='Las <span style="color: rgb(6, 24, 102); background-color: rgb(255, 255, 26);">nuevas funciones</span> que llegan a tu app:',
@@ -58,7 +58,7 @@ T = {
           ("Un recálculo de ruta más eficaz", ["¿Una salida perdida, un desvío imprevisto?", "<strong>El GPS recalcula tu ruta de forma más eficaz</strong> cuando te sales del trayecto."]),
           ("Los avisos de la comunidad, a tu manera", ["Controles, accidentes, peligros: ahora puedes <strong>activar o desactivar los avisos de la comunidad</strong> en los ajustes."])],
    update="Actualizo la app",
-   bf=("⏰ ¡Último día del Black Friday!", "¿Aún no tienes el GPS Michelin Truckfly? Es el momento: <strong>la oferta termina esta noche a medianoche.</strong>", "Lo aprovecho")),
+   bf=("¡Último día del Black Friday!", "¿Aún no tienes el GPS Michelin Truckfly? Es el momento: <strong>la oferta termina esta noche a medianoche.</strong>", "Lo aprovecho")),
 "EN": dict(
    subject="New: see your destination before you get there 👀",
    head='The <span style="color: rgb(6, 24, 102); background-color: rgb(255, 255, 26);">new features</span> coming to your app:',
@@ -68,7 +68,7 @@ T = {
           ("Smarter rerouting", ["Missed an exit, unexpected detour?", "<strong>The GPS recalculates your route more efficiently</strong> when you go off course."]),
           ("Community alerts, your way", ["Police checks, accidents, hazards: you can now <strong>turn community alerts on or off</strong> in the settings."])],
    update="Update my app",
-   bf=("⏰ Last day of Black Friday!", "Don’t have the Michelin Truckfly GPS yet? Now’s the time: <strong>the offer ends tonight at midnight.</strong>", "Grab the offer")),
+   bf=("Last day of Black Friday!", "Don’t have the Michelin Truckfly GPS yet? Now’s the time: <strong>the offer ends tonight at midnight.</strong>", "Grab the offer")),
  "NL": dict(
    subject="Nieuw: bekijk je bestemming voordat je er bent 👀",
    head='De <span style="color: rgb(6, 24, 102); background-color: rgb(255, 255, 26);">nieuwe functies</span> in je app:',
@@ -78,7 +78,7 @@ T = {
           ("Slimmer je route herberekenen", ["Afslag gemist, onverwachte omleiding?", "<strong>De GPS berekent je route efficiënter opnieuw</strong> als je van je route afwijkt."]),
           ("Meldingen van de community, zoals jij wilt", ["Controles, ongevallen, gevaren: je kunt de <strong>meldingen van de community nu aan- of uitzetten</strong> in de instellingen."])],
    update="Ik update de app",
-   bf=("⏰ Laatste dag van Black Friday!", "Heb je de Michelin Truckfly GPS nog niet? Dit is het moment: <strong>de actie eindigt vanavond om middernacht.</strong>", "Ik profiteer ervan")),
+   bf=("Laatste dag van Black Friday!", "Heb je de Michelin Truckfly GPS nog niet? Dit is het moment: <strong>de actie eindigt vanavond om middernacht.</strong>", "Ik profiteer ervan")),
 }
 
 # Groupes de rangées par langue (FR, IT, ES dans le template) + clones EN / NL à partir du FR
@@ -124,7 +124,7 @@ for f in range(3):
 
 # Rappel Black Friday : on reprend le bloc péage, fond bleu, sans image
 for lg in L:
-    r = G["bf"][lg]; r["layout"]["default"]["background-color"] = "#061866"
+    r = G["bf"][lg]; r["layout"]["default"]["background-color"] = "#000000"
     it = items(r); t, body, b = T[lg]["bf"]
     it[0]["content"] = f'<h3 class="default-heading3" style="text-align: center;"><span style="color: rgb(255, 255, 26);">{t}</span></h3>'
     it[0]["layout"]["default"]["text-align"] = "center"
