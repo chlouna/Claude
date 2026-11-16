@@ -3241,7 +3241,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: '<h2 class="default-heading2" style="font-family:arial, helvetica, sans-serif;font-size:32px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">The top contributors</span></h2><h2 class="default-heading2" style="font-family:arial, helvetica, sans-serif;font-size:32px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">of October!</span></h2>'
+          content: '<h2 class="default-heading2" style="font-family:arial, helvetica, sans-serif;font-size:32px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">The top contributors</span></h2><h2 class="default-heading2" style="font-family:arial, helvetica, sans-serif;font-size:32px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);">of November!</span></h2>'
         - id: 81b1bdbc-73f7-4849-8b12-cec104853995
           thumbnail: /assets/img/editor/element_image.svg
           title: Image

@@ -4,11 +4,12 @@
 3. bannières BF en image : condition EN complète + lien vers la page GPS ;
 4. section 3 EN/NL : on remet les visuels GPS déjà uploadés ;
 5. objet de novembre."""
-import re, yaml
+import re, sys, yaml
 from pathlib import Path
 import section1_v2 as s1
 D = Path(__file__).parent
-src = yaml.safe_load(open(D / "template_user_v4.yaml"))
+V = sys.argv[1] if len(sys.argv) > 1 else "v4"
+src = yaml.safe_load(open(D / f"template_user_{V}.yaml"))
 rows = src["body"]["content"][0]["content"]
 EN_COND = '( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )'
 def lang_of(c): return "EN" if c.startswith('( "EN"') else next(k for k in ("FR", "IT", "ES", "NL") if f'( "{k}"' in c)
@@ -90,6 +91,36 @@ for r in rows:
         if lg in GPS and "placeholder" in it[2]["content"]["src"]:
             it[2]["content"]["src"] = GPS[lg]; it[2]["layout"]["default"]["canvas-height"] = "359px"
 
+# 4b. Meilleurs contributeurs : titres de novembre, ponctuation par langue
+for r in rows:
+    for it in items(r):
+        c = it.get("content")
+        if isinstance(c, str):
+            c = (c.replace("of October!", "of November!").replace("de Noviembre !", "de noviembre!")
+                  .replace("di novembre !", "di novembre!").replace("van november !", "van november!"))
+            it["content"] = c
+
+# 4c. Intro : 3e paragraphe aligné sur le contenu du mois
+NBS = "&nbsp;"
+INTRO = {
+ "FR": ("Ce mois-ci, découvre ", "comment bien choisir tes arrêts pendant les fêtes, comment activer ton code promo en 30" + NBS + "secondes, pourquoi un GPS poids lourds change tout, et les meilleurs contributeurs de novembre" + NBS + "!"),
+ "IT": ("Questo mese scopri ", "come scegliere bene le tue soste durante le feste, come attivare il tuo codice promo in 30 secondi, perché un GPS per camion fa la differenza e i migliori contributori di novembre!"),
+ "ES": ("Este mes descubre ", "cómo elegir bien tus paradas en las fiestas, cómo activar tu código promocional en 30 segundos, por qué un GPS para camiones lo cambia todo y a los mejores colaboradores de noviembre."),
+ "EN": ("This month, find out ", "how to pick the right stops over the holidays, how to activate your promo code in 30 seconds, why a truck GPS makes all the difference, and November’s top contributors!"),
+ "NL": ("Deze maand ontdek je ", "hoe je tijdens de feestdagen de juiste stops kiest, hoe je je promotiecode in 30 seconden activeert, waarom een vrachtwagen-GPS het verschil maakt en de topbijdragers van november!"),
+}
+ni = 0
+for r in rows:
+    if not r.get("condition"): continue
+    it = items(r)
+    c = it[0].get("content")
+    if not isinstance(c, str): continue
+    lg = lang_of(r["condition"]); lead, body = INTRO[lg]
+    pat = re.compile(r'<p><span style="color: rgb\(0, 0, 0\);">' + re.escape(lead) + r'<strong>.*?</strong></span></p>')
+    if pat.search(c):
+        it[0]["content"] = pat.sub(lambda m: f'<p><span style="color: rgb(0, 0, 0);">{lead}<strong>{body}</strong></span></p>', c, count=1); ni += 1
+assert ni == 5, ni
+
 # 5. Objet
 NB = " "
 src["subject"] = ('{% if "FR" in contact.LANG %}Demain, c\'est Black Friday' + NB + '! Et tes trajets de Noël' + NB + '?'
@@ -103,5 +134,5 @@ assert all(s in apres for s in avant if "placeholder" not in s), "image perdue"
 dump = yaml.dump(src, allow_unicode=True, sort_keys=False, width=10**9)
 ids = re.findall(r"^\s*-?\s*id: (\S+)$", dump, re.M)
 assert len(ids) == len(set(ids)) and "MICHELIN" not in dump
-for f in ("template_final_v4.yaml", "template_final_v4.txt"): (D / f).write_text(dump)
+for f in (f"template_final_{V}.yaml", f"template_final_{V}.txt"): (D / f).write_text(dump)
 print("OK", len(ids), "ids")
