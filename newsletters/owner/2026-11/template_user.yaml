@@ -1,0 +1,2175 @@
+author: ""
+campaignType: classic
+fields: []
+fieldsHistory: []
+fonts:
+  - 'https://fonts.googleapis.com/css2?family=S'
+hasAIFeature: true
+id: 9dd70471-2148-445a-befd-2799a7d177e4
+name: ""
+original-campaign-ID: 390
+subject: 'Les routiers recommandent-ils votre adresse ?'
+ui:
+  showDeleteOption: false
+  showMoreOption: false
+user-hash: 0ef7dc2ac2a07cb264f87eeb888750c5
+version: 3.0.1
+body:
+  id: 4efbda8a-f490-42d5-a48c-daa8bf762ea3
+  type: body
+  layout:
+    320px:
+      width: 320px
+    default:
+      background-color: '#FAFAFC'
+      direction: ltr
+      view-in-browser: true
+      wrapper-background-color: '#ffffff'
+      wrapper-width: 590px
+  content:
+    -
+      content-type: wrapper
+      id: 66df70a3-9b63-4147-9eb0-82e09222de3c
+      title: Wrapper
+      type: rows
+      layout:
+        320px:
+          width: 320px
+        default:
+          align: center
+          valign: top
+      content:
+        -
+          align: top
+          block_id: 177
+          dist: '12'
+          gutter: 0px
+          id: 96bc64e6-98fa-4ae7-bb1d-1f7979538696
+          moduleName: viewInBrowser
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: ViewInBrowser
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              width: 100%
+            default:
+              align: center
+              display: block
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 3dc36c83-e34e-4b43-a733-1d4ec4ce96d1
+              imagelabel: 'Sélectionnez un type de contenu'
+              isEmpty: false
+              label: 'Déposer du contenu ici'
+              title: 'column 1'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: e57b88ad-ea63-42fc-8ae0-b930ea577c8f
+                  title: 'Version Web'
+                  type: text
+                  layout:
+                    320px:
+                      padding-left: 10px
+                      padding-right: 10px
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#FAFAFC'
+                      padding-bottom: 10px
+                      padding-left: 30px
+                      padding-right: 30px
+                      padding-top: 10px
+                      text-align: center
+                      width: 100%
+                  content: '<p><a href="{{ mirror }}"><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#666666;text-decoration:underline;">Visualisez en ligne</span></a></p>'
+        -
+          align: top
+          condition: ""
+          dist: '12'
+          gutter: 30px
+          id: 1b82599e-e7b0-406c-a920-0f8b5919e5a8
+          moduleName: grid-row12
+          stylable: false
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: 'B2B Multilingual Header Bib'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 0px
+              padding-right: 0px
+              width: 100%
+            default:
+              align: center
+              background-color: '#f9fafc'
+              background-image: ""
+              background-position: center
+              background-repeat: no-repeat
+              background-size: cover
+              full-width: true
+              padding-bottom: 0px
+              padding-top: 0px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: afd753e3-4935-4091-beef-bd4cc4bd7e3f
+              isEmpty: false
+              stylable: false
+              title: Column
+              type: grid-column
+              layout:
+                320px:
+                  groupPadding: false
+                  margin-bottom: 0px
+                  padding-bottom: 15px
+                default:
+                  background-color: '#0c165b'
+                  item-width: 26px
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: be9507cc-b8a7-4fb4-a5e3-d5f423077175
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 80%
+                    default:
+                      align: center
+                      canvas-height: 49px
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      type: absoluteLink
+                      valign: top
+                      width: 36%
+                  content:
+                    href: 'https://www.truckfly.com/fr/?utm_source=brevo&utm_medium=transactional_emails'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/69a1737b186eb4f458e304ae.png'
+                -
+                  condition: '( contact.LANG == "FR" )'
+                  id: a01e758c-aa11-491b-83db-5a4ee9a2c0d8
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 0px
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="text-align: center; color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="color: rgb(255, 255, 255); font-size: 11px;">MICHELIN Truckfly, des solutions business pour le transport routier.</span></p>'
+                -
+                  condition: '( contact.LANG == "EN" ) or ( !contact.LANG )'
+                  id: d74f19fe-cae6-4be6-aee8-45a7d8f2ebd0
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 0px
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="text-align: center; color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="color: rgb(255, 255, 255); font-size: 11px;">MICHELIN Truckfly, business solutions for road transport.</span></p>'
+                -
+                  condition: '( contact.LANG == "ES" )'
+                  id: 1477ed79-29f0-4f26-a76d-0c1ffbe9bcbd
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 0px
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="text-align: center; color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="color: rgb(255, 255, 255); font-size: 11px;">MICHELIN Truckfly, soluciones profesionales para el transporte por carretera.</span></p>'
+                -
+                  condition: '( contact.LANG == "IT" )'
+                  id: 93ba8f75-992a-48d1-b620-51d2fb1614c9
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 0px
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="text-align: center; color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="color: rgb(255, 255, 255); font-size: 11px;">MICHELIN Truckfly, soluzioni professionali per il trasporto su strada.</span></p>'
+                -
+                  condition: '( contact.LANG == "PT" )'
+                  id: e4273dc4-e9fa-4359-8015-fab45df80a37
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 0px
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="text-align: center; color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="color: rgb(255, 255, 255); font-size: 11px;">MICHELIN Truckfly, soluções profissionais para o transporte rodoviário.</span></p>'
+                -
+                  condition: '( contact.LANG == "NL" )'
+                  id: 6f42c99c-5e69-4d63-b254-a1d21e19eb9a
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 0px
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="text-align: center; color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="color: rgb(255, 255, 255); font-size: 11px;">MICHELIN Truckfly, zakelijke oplossingen voor wegtransport.</span></p>'
+                -
+                  condition: '( contact.LANG == "DE" )'
+                  id: 0875b3dd-6213-4ef2-9495-a2d87135a5c8
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 0px
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="text-align: center; color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="color: rgb(255, 255, 255); font-size: 11px;">MICHELIN Truckfly, Businesslösungen für den Straßentransport.</span></p>'
+                -
+                  condition: '( contact.LANG == "PL" )'
+                  id: 447eba5a-c190-4dfb-b17e-3d742f121039
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 0px
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="text-align: center; color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="color: rgb(255, 255, 255); font-size: 11px;">MICHELIN Truckfly, rozwiązania biznesowe dla transportu drogowego.</span></p>'
+        -
+          align: top
+          condition: ""
+          dist: 4-4-4
+          gutter: 30px
+          id: e00183b7-59b2-4e30-bbb9-3b737abffbb4
+          moduleName: grid-row12
+          sectionName: 'Blank 6'
+          stylable: false
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: 'B2B MENU'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#0c165b'
+              padding-bottom: 0px
+              padding-left: 20px
+              padding-right: 20px
+              padding-top: 0px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: f7078b15-3e45-43ae-9fc3-77bb057f7116
+              imagelabel: 'Select a content type'
+              isEmpty: false
+              label: 'Drop content here'
+              stylable: false
+              title: grid-column
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  condition: '( contact.LANG == "FR" )'
+                  id: 16b6d6ff-9641-4cce-aa9b-2b52ddd963e2
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      padding-bottom: 10px
+                      padding-top: 10px
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/fr/ads?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;"><u>Publicité</u></span></a></p>'
+                -
+                  condition: '( contact.LANG == "EN" ) or ( !contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "DE" ) and ( contact.LANG != "EN" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "PT" ) )'
+                  id: 45e7d6d2-6b31-4e88-9e7f-c6c8ded6e50d
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      padding-bottom: 10px
+                      padding-top: 10px
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/ads?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;"><u>Advertising</u></span></a></p>'
+                -
+                  condition: '( contact.LANG == "ES" )'
+                  id: 54fc8281-8857-4840-9b48-617317e00523
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      padding-bottom: 10px
+                      padding-top: 10px
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/ads?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">Publicidad</span></a></p>'
+                -
+                  condition: '( contact.LANG == "IT" )'
+                  id: 0185d44d-9d07-44b5-b425-03f5148c4afd
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      padding-bottom: 10px
+                      padding-top: 10px
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/ads?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">Pubblicità</span></a></p>'
+                -
+                  condition: '( contact.LANG == "PT" )'
+                  id: 424f1454-cd68-4afe-8dc6-a60b0bb116d5
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      padding-bottom: 10px
+                      padding-top: 10px
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/ads?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">Anúncio</span></a></p>'
+                -
+                  condition: '( contact.LANG == "NL" )'
+                  id: 7a1b268a-a9f7-434e-92c7-8401d9612b70
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      padding-bottom: 10px
+                      padding-top: 10px
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/ads?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">Adverteren</span></a></p>'
+                -
+                  condition: '( contact.LANG == "DE" )'
+                  id: 11c9dae5-6744-40b2-9153-1af0c2d2bb30
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      padding-bottom: 10px
+                      padding-top: 10px
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/ads?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">Werbung</span></a></p>'
+                -
+                  condition: '( contact.LANG == "PL" )'
+                  id: 929be033-7d7e-424e-a651-7befa01ae5ab
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      padding-bottom: 10px
+                      padding-top: 10px
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/ads?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">Reklama</span></a></p>'
+            -
+              id: 03aff049-c3af-44d4-bc3a-9d9fdb32c400
+              imagelabel: 'Select a content type'
+              isEmpty: false
+              label: 'Drop content here'
+              stylable: false
+              title: grid-column
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  condition: '( contact.LANG == "FR" )'
+                  id: f66a05ff-0f5a-4eac-8b27-165ca81f1f61
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/fr/gps-business?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;"><u>GPS pour flottes</u></span></a></p>'
+                -
+                  condition: '( contact.LANG == "EN" ) or ( !contact.LANG )'
+                  id: 6b4527bd-f247-4540-a535-c76645f8df48
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/gps-business?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;"><u>Fleet GPS</u></span></a></p>'
+                -
+                  condition: '( contact.LANG == "ES" )'
+                  id: 24325403-e05e-491c-8ec8-fe686b17a0f0
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/es/gps-business?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;"><u>GPS para flotas&nbsp;</u></span></a></p>'
+                -
+                  condition: '( contact.LANG == "IT" )'
+                  id: cd9daffe-404b-4343-83ab-f6632369aa4b
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/it/gps-business?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;"><u>GPS per flotte</u></span></a></p>'
+                -
+                  condition: '( contact.LANG == "PT" )'
+                  id: a0b4c16f-fa9d-47cf-9750-f176dc81a692
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/gps-business?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">GPS para frotas</span></a></p>'
+                -
+                  condition: '( contact.LANG == "NL" )'
+                  id: 2361363a-2cb6-40a5-ac22-607ce05930f1
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/nl/gps-business?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">GPS voor wagenparken</span></a></p>'
+                -
+                  condition: '( contact.LANG == "DE" )'
+                  id: c417159c-4450-48cd-9973-5395474db752
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/gps-business?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">GPS für Flotten</span></a></p>'
+                -
+                  condition: '( contact.LANG == "PL" )'
+                  id: 5172ef16-54a4-4957-863a-d2f862d996d8
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/gps-business?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">GPS dla flot</span></a></p>'
+            -
+              id: 0ce55e9c-3b33-49a5-906f-9ae4fdcc05df
+              imagelabel: 'Select a content type'
+              isEmpty: false
+              label: 'Drop content here'
+              stylable: false
+              title: 'column 1'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  condition: '( contact.LANG == "FR" )'
+                  id: 6ae1f8a3-12ad-4c07-8a8d-2d2b328f8ef5
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/fr/owner?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;"><u>Gérer mon&nbsp;</u></span><span style="color: rgb(255, 255, 255); font-size: 11px;"><u>établissement</u></span></a></p>'
+                -
+                  condition: '( contact.LANG == "EN" ) or ( !contact.LANG )'
+                  id: d9b4401c-2762-4cba-afec-d632bcd7e339
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/owner?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;"><u>Business pages</u></span></a></p>'
+                -
+                  condition: '( contact.LANG == "ES" )'
+                  id: 23292d52-c71e-4496-af67-0f133cda6a1a
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/owner?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;"><u>Gestionar mi establecimiento&nbsp;</u></span></a></p>'
+                -
+                  condition: '( contact.LANG == "IT" )'
+                  id: d1a7b499-3a2a-42ff-a930-cf0f48a1bfae
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/owner?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">Gestisci la mia struttura</span></a></p>'
+                -
+                  condition: '( contact.LANG == "PT" )'
+                  id: 632c5e0d-fd43-4cbe-a486-c5add0ac7161
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/owner?utm_source=brevo&amp;utm_medium=transactional_emails" target="_blank" id="isPasted" type="absoluteLink" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><u>Gerenciar meu estabelecimento</u></span></a></p>'
+                -
+                  condition: '( contact.LANG == "NL" )'
+                  id: 6359b2bb-0dad-486e-817c-c33bca60f974
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="color: rgb(255, 255, 255); font-size: 11px;"><a href="https://lp.truckfly.com/en/owner?utm_source=truckfly_web&amp;utm_medium=header" target="_blank" style="color: rgb(255, 255, 255);" id="isPasted" type="absoluteLink" rel="noopener noreferrer"><u>Beheer mijn vestiging</u></a></span></p>'
+                -
+                  condition: '( contact.LANG == "DE" )'
+                  id: 164df32b-3e80-4b07-8cec-c83da118d5dd
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/de/owner?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">Mein Unternehmen verwalten</span></a></p>'
+                -
+                  condition: '( contact.LANG == "PL" )'
+                  id: 68bfba95-3bbb-425a-ac74-c1fecb285f96
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://lp.truckfly.com/en/owner?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="color: rgb(255, 255, 255); font-size: 11px;">Strony firm</span></a></p>'
+        -
+          align: top
+          dist: '12'
+          gutter: 30px
+          id: eb060342-d2be-46bd-80ff-1f5ebe1fe51c
+          moduleName: grid-row12
+          stylable: false
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: Section
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 20px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 01aa623e-9a43-45cc-9e79-7b315690e40f
+              isEmpty: false
+              stylable: false
+              title: Column
+              type: grid-column
+              layout:
+                320px: {}
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 9046aa1e-aed1-4920-a0b4-3a6b168719dc
+                  title: Heading
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      line-height: 20px
+                      padding-bottom: 10px
+                      padding-top: 10px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color:#3c4858;font-family:''Roboto'',''Verdana'',Geneva,sans-serif;font-size:24px;"><span style="background-color: transparent; color: rgb(0, 0, 0); font-size: 24px;"><strong>Bonjour </strong></span><span style="color: rgb(0, 0, 0);">{{ contact.PRENOM }}</span><span style="background-color: transparent; color: rgb(0, 0, 0); font-size: 24px;"><strong>,</strong></span></p>'
+                -
+                  id: c45872da-1e68-443b-b076-1d52fc379345
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      line-height: '1.15'
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><span style="color: rgb(0, 0, 0);"><span style="color: rgb(0, 0, 0);">Avec le passage à l’heure d’hiver ce dimanche</span>, la nuit tombe vers 17 h 30. Les routiers choisissent leur arrêt du soir plus tôt dans la journée, et les places de parking poids lourds se remplissent plus vite.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">C&#39;est le moment où <strong>une fiche à jour fait la différence</strong> : horaires d&#39;hiver, places disponibles, douches, repas chaud.&nbsp;</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Ce mois-ci, nous vous donnons les clés pour être le premier choix des routiers cet hiver.</span></p>'
+        -
+          align: top
+          dist: '12'
+          gutter: 30px
+          id: 380cd260-634e-4be5-9328-d4cdb470c32a
+          moduleName: grid-row12
+          stylable: false
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: Section
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 20px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 4986db72-d041-421f-b694-40f9e7a2b0a4
+              isEmpty: false
+              stylable: false
+              title: Column
+              type: grid-column
+              layout:
+                320px: {}
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 2c992a4b-8416-4bef-8f13-6956b4f1fc99
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      text-align: left
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#e4eaf2'
+                      border-color: ""
+                      border-radius: 26px
+                      border-style: ""
+                      border-width: 0px
+                      padding-bottom: 15px
+                      padding-left: 15px
+                      padding-right: 15px
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><span style="color: rgb(6, 24, 102);"><strong>Au programme :&nbsp;</strong></span></p><p><span style="color: rgb(6, 24, 102);"><strong><br></strong></span></p><p><span style="color: rgb(6, 24, 102);"><strong>1.&nbsp;</strong><strong>Nouveau : les routiers se recommandent entre amis</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>2.&nbsp;</strong><strong>Le conseil du mois : répondre aux avis</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>3.&nbsp;</strong><strong>L&#39;hiver arrive : ce que cherchent les routiers</strong></span></p><p><span style="color: rgb(6, 24, 102);"><br></span></p><p><span style="color: rgb(6, 24, 102);"><strong>4.&nbsp;</strong></span><strong><span style="color: rgb(6, 24, 102);">Votre fiche à jour en 3 points</span></strong></p>'
+        -
+          align: top
+          dist: '12'
+          gutter: 30px
+          id: 2b47c5e2-2155-4c9b-932c-17deee42ade4
+          moduleName: image-text
+          thumbnail: /assets/img/editor/element-style-2.svg
+          title: 'Style 2'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#ffffff'
+              padding-bottom: 20px
+              padding-top: 20px
+              valign: middle
+              width: 100%
+          content:
+            -
+              id: c3787ffb-b1d0-4ac0-9981-41e4cd817a91
+              imagelabel: 'Sélectionnez un type de contenu'
+              isEmpty: false
+              label: 'Déposer du contenu ici'
+              title: 'text column'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  item-width: 26px
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: middle
+              content:
+                -
+                  id: 73d5d292-0a9c-457c-9527-b3497ee37b3a
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      padding-left: 15px
+                      padding-right: 15px
+                      text-align: left
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#061866'
+                      border-radius: 20px
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 48%
+                  content: '<p><span style="color: rgb(255, 255, 255);"><strong>Nouveau&nbsp;</strong><strong>sur Michelin Truckfly</strong></span></p>'
+                -
+                  id: 89634c60-cf02-4a2a-b467-09659bd412c1
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      padding-bottom: 10px
+                      padding-left: 10px
+                      padding-right: 10px
+                      padding-top: 10px
+                      width: 100%
+                    default:
+                      align: left
+                      groupPadding: true
+                      padding-bottom: 15px
+                      padding-left: 10px
+                      padding-right: 10px
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2" id="isPasted"><span style="color: rgb(6, 24, 102);">Les routiers se recommandent désormais entre amis</span></h2>'
+                -
+                  id: 2938fc82-1ebe-4376-8fb8-c434c8fb7135
+                  title: Paragraphe
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-left: 10px
+                      padding-right: 10px
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><span style="color: rgb(0, 0, 0);">Avec le <strong>Profil Trucker</strong>, les conducteurs ajoutent leurs collègues en amis. Ils voient où leurs amis se sont arrêtés et les avis qu’ils déposent, mis en avant dans l’app.</span></p><p><span style="color: rgb(0, 0, 0);"><br id="isPasted">Pour vous, c’est le <strong>bouche-à-oreille des routiers, en version numérique</strong> : chaque <strong>visite</strong> et chaque <strong>avis positif</strong> peut donner envie à d’autres conducteurs de s’arrêter chez vous.</span></p>'
+                -
+                  id: f6f9624e-c552-43f2-8c68-d736e518832b
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      text-align: left
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#e4eaf2'
+                      border-color: ""
+                      border-radius: 26px
+                      border-style: ""
+                      border-width: 0px
+                      padding-bottom: 15px
+                      padding-left: 15px
+                      padding-right: 15px
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 95%
+                  content: '<p><strong><span style="background-color: rgb(228, 234, 242); color: rgb(6, 24, 102);">Votre levier :</span></strong><span style="color: rgb(6, 24, 102); font-family: arial, helvetica, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(228, 234, 242); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;">&nbsp;invitez vos clients routiers à laisser un avis sur Michelin Truckfly.</span></p>'
+                -
+                  id: 85ac920a-58ba-4889-aa7e-a30565e1fa39
+                  label: Remplacer
+                  thumbnail: /assets/img/editor/element_image.svg
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 70%
+                    default:
+                      align: center
+                      background-position: center
+                      background-repeat: no-repeat
+                      background-size: auto
+                      canvas-height: 342px
+                      dynamic: false
+                      embed: false
+                      img-border-radius: 0px
+                      imgSize: '525905'
+                      opacity: 1
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      type: absoluteLink
+                      valign: top
+                      width: 31%
+                  content:
+                    href: 'https://www.truckfly.com/blog/fr/navigation-poids-lourds/nouveaut%C3%A9s-fonctionnalit%C3%A9s/ton-profil-%C3%A9volue-et-devient-encore-plus-communautaire/'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/6ad7163a4646ada7d987f44f.png'
+                -
+                  id: efce7939-816d-4035-ba92-8060fc9fd794
+                  text: '<p><span style="color:rgb(0, 0, 0)"><strong>Je découvre le Profil Trucker</strong></span></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter'
+                      data-placeholder-href: 'https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://www.truckfly.com/blog/fr/navigation-poids-lourds/nouveaut%C3%A9s-fonctionnalit%C3%A9s/ton-profil-%C3%A9volue-et-devient-encore-plus-communautaire/'
+                    text: '<p><span style="color:rgb(0, 0, 0)"><strong>Je découvre le Profil Trucker</strong></span></p>'
+                    title: 'Espace Propriétaire Truckfly by Michelin'
+        -
+          align: top
+          dist: '12'
+          gutter: 30px
+          id: 0be566d3-9f57-4680-be5e-0bdf26abeffc
+          moduleName: grid-row12
+          stylable: false
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: Section
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#061866'
+              padding-bottom: 20px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 4f501c01-5345-4ffc-b7f4-91ac93a3c746
+              isEmpty: false
+              stylable: false
+              title: Column
+              type: grid-column
+              layout:
+                320px: {}
+                default:
+                  background-color: '#061866'
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: e54efdec-0721-4ce5-86c3-8acd77f64354
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      align: left
+                      padding-left: 15px
+                      padding-right: 15px
+                      text-align: left
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#002499'
+                      border-radius: 20px
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 34%
+                  content: '<p><span style="color: rgb(255, 255, 255);"><strong>Le conseil du mois</strong></span></p>'
+                -
+                  id: 399fe627-964c-4221-b78f-ac21dd1b69ad
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      groupPadding: true
+                      padding-bottom: 15px
+                      padding-left: 10px
+                      padding-right: 10px
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2"><span style="color:rgb(255, 255, 255);font-size:24px">Répondre aux avis en 2 minutes</span></h2>'
+                -
+                  id: 0656c3b0-c749-4636-b882-a28e61ffeee1
+                  stylable: false
+                  title: Paragraph
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 10px
+                      padding-right: 10px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 96%
+                  content: '<p class="default" id="isPasted"><span style="color: rgb(255, 255, 255);">Un routier qui lit vos réponses voit un <strong>établissement attentif.</strong></span></p><p class="default"><br></p><p class="default"><span style="color: rgb(255, 255, 255);"><strong>Quelques règles simples :</strong></span></p><p class="default"><br></p><p><span style="color: rgb(255, 255, 255);"><strong>Remerciez :&nbsp;</strong></span><span style="color: rgb(255, 255, 255);">même pour un avis court</span></p><p><br></p><p><span style="color: rgb(255, 255, 255);"><strong>Restez factuel :&nbsp;</strong></span><span style="color: rgb(255, 255, 255);">si l’avis est négatif, expliquez ce que vous avez changé</span></p><p><br></p><p><span style="color: rgb(255, 255, 255);"><strong>Invitez à revenir :&nbsp;</strong></span><span style="color: rgb(255, 255, 255);">une phrase suffit : « Au plaisir de vous revoir sur la route ! »</span></p>'
+                -
+                  id: 996e2441-0088-462d-ac74-c661e4883a80
+                  text: '<p><span style="color: rgb(0, 0, 0);"><strong>Je réponds aux avis</strong></span></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      data-href: 'https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter'
+                      data-placeholder-href: 'https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter'
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter'
+                    text: '<p><span style="color: rgb(0, 0, 0);"><strong>Je réponds aux avis</strong></span></p>'
+                    title: 'Espace Propriétaire Truckfly by Michelin'
+        -
+          align: top
+          dist: '12'
+          gutter: 30px
+          id: c77dd2fa-1117-4dac-92fc-fe94a1459b49
+          moduleName: grid-row12
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: section
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#ffffff'
+              padding-bottom: 20px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 421d8459-7650-4f5a-bf98-993ca8c13232
+              imagelabel: 'Sélectionnez un type de contenu'
+              isEmpty: false
+              label: 'Déposer du contenu ici'
+              title: 'column 1'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 27761230-7e9f-4a71-ac76-2790a946088d
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      align: left
+                      padding-left: 15px
+                      padding-right: 15px
+                      text-align: left
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#061866'
+                      border-radius: 20px
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 12%
+                  content: '<p><span style="color: rgb(255, 255, 255);"><strong>Saison</strong></span></p>'
+                -
+                  id: 226ad818-07db-4298-b894-d06eb7e705cb
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      groupPadding: true
+                      padding-bottom: 10px
+                      padding-left: 10px
+                      padding-right: 10px
+                      padding-top: 10px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2" id="isPasted"><span style="color: rgb(6, 24, 102);">L&#39;hiver arrive : ce que cherchent les routiers</span></h2>'
+                -
+                  id: 2074cf7f-ef17-4500-b772-d6666f73a9af
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      groupPadding: true
+                      padding-left: 10px
+                      padding-right: 10px
+                      width: 100%
+                    default:
+                      align: left
+                      groupPadding: true
+                      item-height: 276.40625px
+                      line-height: '1.5'
+                      padding-left: 10px
+                      padding-right: 10px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p class="default" id="isPasted"><span style="color: rgb(0, 0, 0);">Nuits plus longues, routes glissantes, équipements obligatoires en montagne dès le <strong>1er novembre</strong> : en hiver, les routiers planifient davantage leurs arrêts.&nbsp;</span></p><p class="default"><br></p><p class="default"><span style="color: rgb(0, 0, 0);">Ils regardent l&#39;app avant de choisir où dormir et où manger.</span></p><p class="default"><span style="color: rgb(0, 0, 0);"><br></span></p><p class="default"><span style="color: rgb(0, 0, 0);"><strong>Ce qu&#39;ils recherchent en priorité :</strong></span></p><p class="default"><span style="color: rgb(0, 0, 0);"><br></span></p><p class="default"><span style="color: rgb(0, 0, 0);"><strong>Une place de parking poids lourd sûre et éclairée,&nbsp;</strong>dès la fin d’après-midi</span></p><p class="default"><span style="color: rgb(0, 0, 0);"><strong><br id="isPasted">Des douches chaudes et propres,&nbsp;</strong>après une longue journée au froid</span></p><p class="default"><span style="color: rgb(0, 0, 0);"><strong><br>Un repas chaud, même tard :&nbsp;</strong>indiquez vos horaires de service</span></p><p class="default"><span style="color: rgb(0, 0, 0);"><strong><br>Des infos fiables avant de venir :</strong> horaires d’hiver, fermetures, accès</span></p>'
+                -
+                  id: 51d1e848-083c-48ba-832a-08865ff1a26b
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: center
+                      canvas-height: 268px
+                      padding-bottom: 15px
+                      padding-left: 0px
+                      padding-right: 0px
+                      padding-top: 15px
+                      type: absoluteLink
+                      valign: top
+                      width: 84%
+                  content:
+                    href: 'https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/6ad6161b4646ada7d987c593.png'
+        -
+          align: top
+          condition: '( contact.LANG == "FR" )'
+          dist: '12'
+          gutter: 30px
+          id: 7d889352-c518-4141-9aaa-73577c58faa3
+          moduleName: grid-row12
+          stylable: false
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: 'Yellow Button'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              padding-bottom: 0px
+              padding-top: 0px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 3cd16b89-d4f0-4c27-8004-696df4a2ea27
+              isEmpty: false
+              stylable: false
+              title: Column
+              type: grid-column
+              layout:
+                320px: {}
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 52862940-1c41-445d-95e3-09c89f4470a3
+                  text: '<p class="default" id="isPasted"><strong><span style="color: rgb(4, 4, 4);">J&#39;accède à mon compte</span></strong></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      border-color: '#ffff1a'
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#ffff1a'
+                      border-color: '#e84c3d'
+                      border-radius: 10px
+                      border-width: 0px
+                      color: '#fff'
+                      data-href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                      data-placeholder-href: 'https://truckflyapp.onelink.me/2ysq/r4vkfd60'
+                      font-family: Arial
+                      font-size: 16px
+                      item-height: 42px
+                      margin-bottom: 15px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 89%
+                  content:
+                    href: 'https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter'
+                    text: '<p class="default" id="isPasted"><strong><span style="color: rgb(4, 4, 4);">J&#39;accède à mon compte</span></strong></p>'
+        -
+          align: top
+          dist: '12'
+          gutter: 30px
+          id: 57cbf9f8-e793-45aa-b60e-2fac4c64e338
+          moduleName: grid-row12
+          stylable: false
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: Section
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#f5f3f1'
+              padding-bottom: 20px
+              padding-top: 20px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 55a22042-7d63-4d0d-8b1b-038eca3ebc20
+              isEmpty: false
+              stylable: false
+              title: Column
+              type: grid-column
+              layout:
+                320px: {}
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: a759d2ac-8e9c-487c-85dd-dd8b1d098cbc
+                  title: Text
+                  type: text
+                  layout:
+                    320px:
+                      padding-left: 15px
+                      padding-right: 15px
+                      text-align: left
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#061866'
+                      border-radius: 20px
+                      padding-bottom: 15px
+                      padding-top: 15px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 21%
+                  content: '<p><span style="color: rgb(245, 243, 241);"><strong>Votre fiche</strong></span></p>'
+                -
+                  id: f84269b7-0da7-45e0-baa6-c07055e165ad
+                  moduleName: text-title
+                  thumbnail: /assets/img/editor/element-title.svg
+                  title: Titre
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      groupPadding: true
+                      padding-bottom: 15px
+                      padding-left: 10px
+                      padding-right: 10px
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<h2 class="default-heading2"><span style="color:rgb(6, 24, 102);font-size:24px;">Votre fiche à jour en 3 points :&nbsp;</span></h2>'
+                -
+                  id: 2efbbbf1-a059-4bb4-8569-0fefd9c98437
+                  stylable: false
+                  title: Paragraph
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-bottom: 15px
+                      padding-bottom: 0px
+                      padding-left: 10px
+                      padding-right: 10px
+                      padding-top: 0px
+                      removeMargin: true
+                      removePadding: false
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p class="default" id="isPasted"><span style="color: rgb(0, 0, 0);">Une fiche complète inspire confiance et ressort mieux auprès des routiers qui cherchent où s&#39;arrêter.</span></p><p class="default"><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Vos horaires d&#39;hiver :&nbsp;</strong></span><span style="color: rgb(0, 0, 0);">jours fériés compris (1er et 11 novembre, fêtes de fin d&#39;année)</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Des photos récentes :&nbsp;</strong></span><span style="color: rgb(0, 0, 0);">parking, entrée, douches, salle : la nuit aussi, si c&#39;est éclairé</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Vos services poids lourds :&nbsp;</strong></span><span style="color: rgb(0, 0, 0);">nombre de places, douches, Wi-Fi, menu routier, accès 44 t</span></p><p><br></p>'
+                -
+                  id: 42d69f57-ee3a-44a1-ab5a-75a13b345531
+                  text: '<p><span style="color: rgb(255, 255, 255);"><strong>Je complète ma fiche</strong></span></p>'
+                  thumbnail: /assets/img/editor/element_button.svg
+                  title: Bouton
+                  type: text-button
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: '#061866'
+                      data-href: 'https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter'
+                      data-placeholder-href: 'https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter'
+                      item-height: 42px
+                      margin-bottom: 9px
+                      margin-top: 15px
+                      padding-bottom: 12px
+                      padding-top: 12px
+                      text-align: center
+                      text-valign: top
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://truckfly.com/owner/login?utm_source=brevo&utm_medium=newsletter'
+                    text: '<p><span style="color: rgb(255, 255, 255);"><strong>Je complète ma fiche</strong></span></p>'
+                    title: 'Espace Propriétaire Truckfly by Michelin'
+        -
+          align: top
+          block_id: 10941
+          dist: '12'
+          gutter: 0px
+          id: b5dc98b7-ba39-465b-abc7-a086b4b5ab4e
+          thumbnail: /assets/img/editor/element-header.svg
+          title: Séparateur
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              width: 100%
+            default:
+              align: center
+              background-color: '#FAFAFC'
+              full-width: true
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 9e234f52-0166-450c-a571-03ac8455f946
+              imagelabel: 'Sélectionnez un type de contenu'
+              isEmpty: false
+              label: 'Déposer du contenu ici'
+              title: 'colonne de grille'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: b337663b-d678-4423-84d7-aba046113835
+                  title: Séparateur
+                  type: spacer
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: center
+                      background-color: transparent
+                      display: auto
+                      height: 15px
+                      width: 100%
+                      width-wrapper: auto
+                  content: []
+                -
+                  id: 8893bdfd-1d76-49f9-8613-cdc53047b897
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      padding-bottom: 15px
+                      padding-left: 20px
+                      padding-top: 15px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p><br></p><p><span style="color: rgb(0, 0, 0);">À l&#39;approche de l&#39;hiver, nous vous souhaitons une très belle saison, ainsi qu&#39;à vos équipes !</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Et si vous avez des questions sur votre fiche ou envie d&#39;en parler, on est là. N&#39;hésitez pas à nous contacter en répondant à cet e-mail ou à <u>support.truckfly@zendesk.com</u></span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">À très vite,</span></p><p><span style="color: rgb(0, 0, 0);"><br><strong>La Team Michelin Truckfly</strong></span></p>'
+        -
+          align: top
+          block_id: 157
+          dist: '12'
+          gutter: 10px
+          id: 1c916591-832c-472f-80f4-640c889b2a6d
+          thumbnail: /assets/img/editor/element-header.svg
+          title: Socials
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 15px
+              padding-right: 15px
+              width: 100%
+            default:
+              align: center
+              background-color: '#ffffff'
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 46f89379-cdc1-4ff0-ac8b-984f1d58bf15
+              imagelabel: 'Sélectionnez un type de contenu'
+              isEmpty: false
+              label: 'Déposer du contenu ici'
+              title: 'colonne de grille'
+              type: grid-column
+              layout:
+                320px: []
+                default:
+                  padding-left: 0px
+                  padding-right: 0px
+                  valign: top
+              content:
+                -
+                  id: 164486a4-08d9-46fc-a4ea-7c2388441777
+                  title: Social
+                  type: social-media-group
+                  layout:
+                    320px:
+                      align: center
+                      icon-size: 32px
+                      icon-spacing: 8px
+                      width: 100%
+                    default:
+                      align: right
+                      icon-filter: colored
+                      icon-form: squared
+                      icon-size: 32px
+                      icon-spacing: 8px
+                      icons: update
+                      padding-bottom: 2px
+                      width: 100%
+                  content:
+                    -
+                      id: 5a471fb5-5e0d-4ff5-b33a-ef1279491e33
+                      role: facebook
+                      src: 'https://creative-assets.mailinblue.com/editor/social-icons/squared_colored/facebook_32px.png'
+                      title: facebook-media
+                      type: social-media
+                      layout:
+                        320px:
+                          icon-spacing: 8px
+                        default:
+                          padding-bottom: 5px
+                          padding-top: 5px
+                          title: facebook-media
+                      content:
+                        href: 'https://www.facebook.com/michelintruckfly/'
+                        src: 'https://creative-assets.mailinblue.com/editor/social-icons/squared_colored/facebook_32px.png'
+                    -
+                      id: 879c754d-05df-41ae-856b-bb683f04b83d
+                      role: linkedin
+                      src: 'https://creative-assets.mailinblue.com/editor/social-icons/squared_colored/linkedin_32px.png'
+                      title: linkedin-media
+                      type: social-media
+                      layout:
+                        320px:
+                          icon-spacing: 8px
+                        default:
+                          padding-bottom: 5px
+                          padding-top: 5px
+                          title: linkedin-media
+                      content:
+                        href: 'https://www.linkedin.com/company/truckfly/'
+                        src: 'https://creative-assets.mailinblue.com/editor/social-icons/squared_colored/linkedin_32px.png'
+                    -
+                      id: 51910117-e6ec-4ec9-99a3-cf1ae817491a
+                      role: instagram
+                      title: instagram
+                      type: social-media
+                      layout:
+                        320px:
+                          icon-spacing: 8px
+                        default:
+                          padding-bottom: 5px
+                          padding-top: 5px
+                          title: instagram
+                      content:
+                        href: 'https://www.instagram.com/michelintruckfly/'
+                        src: 'https://creative-assets.mailinblue.com/editor/social-icons/squared_colored/instagram_32px.png'
+        -
+          align: top
+          dist: '12'
+          gutter: 0px
+          id: cb7b331d-8564-468a-8453-52b7487fdf66
+          moduleName: grid-row12
+          thumbnail: /assets/img/editor/grid_12.svg
+          title: 'B2B Footer multilangue clementine v2'
+          type: grid-row
+          layout:
+            320px:
+              display: rows
+              padding-left: 0px
+              padding-right: 0px
+              width: 100%
+            default:
+              align: center
+              margin-top: 0px
+              padding-bottom: 0px
+              padding-top: 0px
+              removeMargin: true
+              valign: top
+              width: 100%
+          content:
+            -
+              id: 6b4c77d0-81d6-45e0-9b17-ac8ad830496e
+              imagelabel: 'Sélectionnez un type de contenu'
+              isEmpty: false
+              label: 'Déposer du contenu ici'
+              title: 'column 1'
+              type: grid-column
+              layout:
+                320px: {}
+                default:
+                  groupPadding: false
+                  item-width: 26px
+                  margin-top: 0px
+                  padding-bottom: 0px
+                  padding-left: 0px
+                  padding-right: 0px
+                  padding-top: 0px
+                  removePadding: true
+                  valign: top
+              content:
+                -
+                  condition: '( "FR" in contact.LANG )'
+                  id: 1d7e7e35-1339-438e-a564-13fd83620d8b
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-top: 0px
+                      padding-bottom: 20px
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 20px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>Un problème avec l&#39;application ou notre site web ?</strong></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;">Contactez notre équipe support à cette adresse : <a href="https://faq.truckfly.com/" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com</a></p>'
+                -
+                  condition: '( contact.LANG == "EN" ) or ( !contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "DE" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "PT" ) and ( contact.LANG != "DE" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "NL" ) )'
+                  id: ab40ff11-0839-44e9-b38c-0eccab635c00
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-top: 10px
+                      padding-bottom: 0px
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 0px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>Experimenting an issue with our app or website?</strong></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;">Contact our support team : <a href="https://faq.truckfly.com/" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com</a></p>'
+                -
+                  condition: '( "PT" in contact.LANG )'
+                  id: d673f84c-df96-4cea-a60a-ead454ad2758
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-top: 0px
+                      padding-bottom: 20px
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 20px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>Tem um problema com a aplicação ou com o nosso site ?&nbsp;</strong></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;">Contacte a nossa equipa de suporte neste endereço:&nbsp;<a href="https://faq.truckfly.com/" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com</a></p>'
+                -
+                  condition: '( "PL" in contact.LANG )'
+                  id: 98d25f9a-2b6f-4e2f-a06e-f5dda980b462
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-top: 0px
+                      padding-bottom: 20px
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 20px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>Masz problem z aplikacją lub naszą stroną internetową?</strong></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;">Skontaktuj się z naszym zespołem wsparcia pod tym adresem:&nbsp; <a href="https://faq.truckfly.com/" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com</a></p>'
+                -
+                  condition: '( "ES" in contact.LANG )'
+                  id: ba72385a-419c-4cc2-8e0a-3c72d7d34af4
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-top: 0px
+                      padding-bottom: 20px
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 20px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>¿Tiene algún problema con la aplicación o con nuestro sitio web?</strong></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;">Contacte con nuestro equipo de soporte en esta dirección:</p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://faq.truckfly.com/" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com</a></p>'
+                -
+                  condition: '( "IT" in contact.LANG )'
+                  id: 8f5415c3-664f-4bf9-818e-bd2655f1137f
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-top: 0px
+                      padding-bottom: 20px
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 20px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>Hai un problema con l’applicazione o con il nostro sito web</strong><strong>?</strong></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;">Contatta il nostro team di supporto a questo indirizzo:</p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://faq.truckfly.com/" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com</a></p>'
+                -
+                  condition: '( "NL" in contact.LANG )'
+                  id: 47af4562-7793-435b-b229-95c827bb67e5
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-top: 0px
+                      padding-bottom: 20px
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 20px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>Heeft u een probleem met de app of onze website?</strong></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;">Neem contact op met ons supportteam via dit adres:</p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://faq.truckfly.com/" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com</a></p>'
+                -
+                  condition: '( "DE" in contact.LANG )'
+                  id: ebf32d7d-d508-4121-923a-e936669a5dd2
+                  thumbnail: /assets/img/editor/element_text.svg
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      margin-top: 0px
+                      padding-bottom: 20px
+                      padding-left: 20px
+                      padding-right: 20px
+                      padding-top: 20px
+                      text-align: left
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>Haben Sie ein Problem mit der App oder unserer Website</strong><strong>?</strong></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;">Kontaktieren Sie unser Support-Team unter dieser Adresse:</p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="https://faq.truckfly.com/" target="_blank" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com</a></p>'
+                -
+                  id: 2d0f0fcd-0561-41ba-88d8-a3745881e6d3
+                  label: Remplacer
+                  title: Image
+                  type: image
+                  layout:
+                    320px:
+                      max-width: 320px
+                      width: 100%
+                    default:
+                      align: center
+                      border-radius: 0px
+                      canvas-height: 141px
+                      dynamic: false
+                      embed: false
+                      image-maxWidth: 590px
+                      img-border-radius: 5px
+                      imgSize: '33196'
+                      opacity: 1
+                      padding-bottom: 0px
+                      padding-top: 0px
+                      resizeEnable: false
+                      type: absoluteLink
+                      valign: top
+                      width: 100%
+                  content:
+                    href: 'https://truckfly.com?utm_source=brevo&utm_medium=transactional_emails'
+                    src: 'https://img.mailinblue.com/4222425/images/content_library/original/69a16b265bc926e0109f3ba8.png'
+                -
+                  condition: '( "FR" in contact.LANG )'
+                  id: 4908e78d-5bd4-422d-9a95-c417f7c4a178
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#f9fafc'
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;">Cet e-mail a été envoyé à {{ contact.EMAIL }}.&nbsp;</p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px;">Se désinscrire</span></a></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><br></p>'
+                -
+                  condition: '( "IT" in contact.LANG )'
+                  id: 3b575c24-7865-4cbd-ae95-dcc353a8db0c
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#f9fafc'
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;">Questa e-mail è stata inviata a {{ contact.EMAIL }}.&nbsp;</p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="font-size: 11px;">Annulla</span> l&#39;iscrizione</a></span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><br></p>'
+                -
+                  condition: '( "EN" in contact.LANG )'
+                  id: 528fcbcd-a95f-4643-a20e-3cb179bce629
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#f9fafc'
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;">This email was sent to {{ contact.EMAIL }}.</p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px;">Unsubscribe</span></a><br>&nbsp;</p>'
+                -
+                  condition: '( contact.LANG == "ES" )'
+                  id: 3ead643a-60bb-44cb-9f66-1576d5d6bb7a
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#f9fafc'
+                      groupPadding: false
+                      margin-bottom: 0px
+                      padding-bottom: 20px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;">Este correo electrónico fue enviado a {{ contact.EMAIL }}.</p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px;">Darse de baja</span></a></p>'
+                -
+                  condition: '( contact.LANG == "PT" )'
+                  id: df69d4f8-1230-4318-aba1-a7e96ced2e24
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#f9fafc'
+                      groupPadding: false
+                      margin-bottom: 0px
+                      padding-bottom: 20px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;">Este email foi enviado para {{ contact.EMAIL }}.&nbsp;</p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px;">Cancelar subscrição</span></a></p>'
+                -
+                  condition: '( contact.LANG == "NL" )'
+                  id: 6e206cb7-2d37-4585-980c-5cfcacfa1a5a
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#f9fafc'
+                      groupPadding: false
+                      margin-bottom: 0px
+                      padding-bottom: 20px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;">Deze e-mail is verzonden naar {{ contact.EMAIL }}.&nbsp;</p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px;">Afmelden</span></a></p>'
+                -
+                  condition: '( contact.LANG == "DE" )'
+                  id: d0e9b8dc-b197-454d-8898-4ea0dc652309
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#f9fafc'
+                      groupPadding: false
+                      margin-bottom: 0px
+                      padding-bottom: 20px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;">Diese E-Mail wurde an {{ contact.EMAIL }} gesendet.&nbsp;</p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px;">Abmelden</span></a></p>'
+                -
+                  condition: '( contact.LANG == "PL" )'
+                  id: e7f3abe7-eccc-4927-b705-8fcaab414562
+                  title: Texte
+                  type: text
+                  layout:
+                    320px:
+                      width: 100%
+                    default:
+                      align: left
+                      background-color: '#f9fafc'
+                      groupPadding: false
+                      margin-bottom: 0px
+                      padding-bottom: 20px
+                      text-align: center
+                      text-valign: top
+                      valign: top
+                      width: 100%
+                  content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;">Ta wiadomość e-mail została wysłana na adres {{ contact.EMAIL }}.&nbsp;</p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px;">Wypisz się</span></a></p>'
+media:
+  320px:
+    max-width: 600
+    min-width: 0
+styles:
+  default:
+    properties:
+      color: '#3b3f44'
+      font-family: 'arial,helvetica,sans-serif'
+      font-size: 16px
+      line-height: '1.2'
+    title: Paragraph
+  default-button:
+    properties:
+      background-color: '#0092FF'
+      border-radius: 4px
+      border-width: 0px
+      color: '#ffffff'
+      font-family: 'arial,helvetica,sans-serif'
+      font-size: 16px
+      remove-vml-button: optional
+      width: 50%
+    title: Button
+  default-heading1:
+    properties:
+      color: '#1F2D3D'
+      font-family: 'arial,helvetica,sans-serif'
+      font-size: 36px
+    title: 'Heading 1'
+  default-heading2:
+    properties:
+      color: '#1F2D3D'
+      font-family: 'arial,helvetica,sans-serif'
+      font-size: 32px
+    title: 'Heading 2'
+  default-heading3:
+    properties:
+      color: '#1F2D3D'
+      font-family: 'arial,helvetica,sans-serif'
+      font-size: 24px
+    title: 'Heading 3'
+  default-heading4:
+    properties:
+      color: '#1F2D3D'
+      font-family: 'arial,helvetica,sans-serif'
+      font-size: 18px
+    title: 'Heading 4'
+  default-link:
+    properties:
+      color: '#0092ff'
+      text-decoration: underline
+    title: Link
