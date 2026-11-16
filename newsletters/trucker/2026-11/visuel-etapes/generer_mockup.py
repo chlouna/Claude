@@ -3,8 +3,12 @@ import base64, subprocess, io
 from pathlib import Path
 from PIL import Image
 D = Path(__file__).parent
-ph = Image.open(D / "mockup-fil.png").convert("RGBA")
-buf = io.BytesIO(); ph.save(buf, "PNG"); b64 = base64.b64encode(buf.getvalue()).decode()
+def load(lg):
+    ph = Image.open(D / f"mockup-fil-{lg}.png").convert("RGBA")
+    buf = io.BytesIO(); ph.save(buf, "PNG"); return ph, base64.b64encode(buf.getvalue()).decode()
+ph, _ = load("fr")
+DY = {"fr": 0, "it": 8, "nl": 17, "es": 1, "en": -7}       # décalage vertical du fil selon la langue
+LX = {"fr": 248, "it": 245, "nl": 228, "es": 240, "en": 262}  # début du bouton j'aime
 S, OX, OY = 1.2, 60, 60          # échelle et position du téléphone
 def P(x, y): return OX + x * S, OY + y * S
 T = {
@@ -12,8 +16,26 @@ T = {
    ("Avant", "Regarde les photos, les avis et les j’aime", None),
    ("Pendant", "Lis les avis récents&nbsp;: c’est ouvert&nbsp;? il reste de la place&nbsp;?", None),
    ("Après", "Laisse un avis, ajoute une photo et laisse un like&nbsp;!", "<b style=\"color:#ffff1a\">Bonus&nbsp;:</b> tu grimpes dans le top contributeurs&nbsp;!")]),
+ "en": ("Smart habits for your stops", [
+   ("Before", "Check the photos, the reviews and the likes", None),
+   ("During", "Read the latest reviews: is it open? is there still space?", None),
+   ("After", "Leave a review, add a photo and drop a like!", "<b style=\"color:#ffff1a\">Bonus:</b> you climb the top contributors ranking!")]),
+ "es": ("El buen reflejo para tus paradas", [
+   ("Antes", "Mira las fotos, las opiniones y los me gusta", None),
+   ("Durante", "Lee las opiniones recientes: ¿está abierto? ¿queda sitio?", None),
+   ("Después", "Deja una opinión, añade una foto y da un me gusta", "<b style=\"color:#ffff1a\">Bonus:</b> ¡subes en el top de colaboradores!")]),
+ "it": ("Il riflesso giusto per le tue soste", [
+   ("Prima", "Guarda le foto, le recensioni e i Mi piace", None),
+   ("Durante", "Leggi le recensioni recenti: è aperto? c’è ancora posto?", None),
+   ("Dopo", "Lascia una recensione, aggiungi una foto e metti un Mi piace!", "<b style=\"color:#ffff1a\">Bonus:</b> sali nella classifica dei top contributori!")]),
+ "nl": ("Slim kiezen waar je stopt", [
+   ("Voor", "Bekijk de foto’s, de reviews en de likes", None),
+   ("Tijdens", "Lees de nieuwste reviews: is het open? is er nog plek?", None),
+   ("Na", "Laat een review achter, voeg een foto toe en geef een like!", "<b style=\"color:#ffff1a\">Bonus:</b> je klimt in de top van de bijdragers!")]),
 }
-ZONES = [((34, 258, 328, 390), (328, 324)), ((38, 488, 326, 550), (326, 519)), ((248, 553, 327, 574), (326, 563))]
+def zones(lg):
+    d, lx = DY[lg], LX[lg]
+    return [((34, 258 + d, 328, 390 + d), (328, 324 + d)), ((38, 488 + d, 326, 550 + d), (326, 519 + d)), ((lx, 553 + d, 327, 574 + d), (326, 563 + d))]
 CALL = [165, 420, 660]   # haut de chaque bulle
 CSS = """@font-face{font-family:Bib;font-weight:700;src:url(file:///home/user/Claude/guide-profil/assets/fonts/BIB-Bold.woff2)}
 @font-face{font-family:Noto;font-weight:400;src:url(file://%(D)s/fonts/noto-sans-latin-400-normal.woff2)}
@@ -29,7 +51,9 @@ CSS = """@font-face{font-family:Bib;font-weight:700;src:url(file:///home/user/Cl
 .x{display:inline-block;margin-top:14px;background:#061866;color:#fff;font-weight:600;font-size:28px;padding:8px 14px;border-radius:10px}
 svg{position:absolute;left:0;top:0}""" % dict(D=D, OX=OX, OY=OY, W=int(ph.width * S))
 for lg, (title, steps) in T.items():
-    h = f'<img class="ph" src="data:image/png;base64,{b64}"><div class="title">{title}</div>'
+    _, b64 = load(lg); ZONES = zones(lg)
+    fs = {"es": 31, "it": 32}.get(lg, 35)
+    h = f'<img class="ph" src="data:image/png;base64,{b64}"><div class="title" style="font-size:{fs}px">{title}</div>'
     svg = '<svg width="1200" height="990">'
     for i, ((t, b, extra), ((x1, y1, x2, y2), tgt), top) in enumerate(zip(steps, ZONES, CALL)):
         a, bb = P(x1, y1), P(x2, y2)
