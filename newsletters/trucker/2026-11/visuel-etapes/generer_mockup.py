@@ -11,19 +11,23 @@ T = {
  "fr": ("Le bon réflexe pour tes arrêts", [
    ("Avant", "Regarde les photos, les avis et les j’aime", None),
    ("Pendant", "Lis les avis récents&nbsp;: c’est ouvert&nbsp;? il reste de la place&nbsp;?", None),
-   ("Après", "Laisse un avis, ajoute une photo et like", "<b>Bonus&nbsp;:</b> tu grimpes dans le top contributeurs&nbsp;!")]),
+   ("Après", "Laisse un avis, ajoute une photo et laisse un like&nbsp;!", "<b style=\"color:#ffff1a\">Bonus&nbsp;:</b> tu grimpes dans le top contributeurs&nbsp;!")]),
 }
 ZONES = [((34, 258, 328, 390), (328, 324)), ((38, 488, 326, 550), (326, 519)), ((248, 553, 327, 574), (326, 563))]
 CALL = [165, 420, 660]   # haut de chaque bulle
-CSS = """*{margin:0;box-sizing:border-box}body{width:1200px;height:990px;background:#0c165b;font-family:Inter;color:#fff;position:relative;overflow:hidden}
-.ph{position:absolute;left:%dpx;top:%dpx;width:%dpx}
-.title{position:absolute;left:600px;top:70px;font-weight:900;font-style:italic;font-size:35px;line-height:1.1;color:#ffff1a;white-space:nowrap}
+CSS = """@font-face{font-family:Bib;font-weight:700;src:url(file:///home/user/Claude/guide-profil/assets/fonts/BIB-Bold.woff2)}
+@font-face{font-family:Noto;font-weight:400;src:url(file://%(D)s/fonts/noto-sans-latin-400-normal.woff2)}
+@font-face{font-family:Noto;font-weight:600;src:url(file://%(D)s/fonts/noto-sans-latin-600-normal.woff2)}
+@font-face{font-family:Noto;font-weight:700;src:url(file://%(D)s/fonts/noto-sans-latin-700-normal.woff2)}
+*{margin:0;box-sizing:border-box}body{width:1200px;height:990px;background:#0c165b;font-family:Noto,sans-serif;color:#fff;position:relative;overflow:hidden}
+.ph{position:absolute;left:%(OX)spx;top:%(OY)spx;width:%(W)spx}
+.title{position:absolute;left:600px;top:66px;font-family:Bib;font-weight:700;font-size:35px;line-height:1.1;color:#ffff1a;white-space:nowrap}
 .c{position:absolute;left:600px;width:560px;background:#fff;color:#0c165b;border-radius:28px;padding:22px 30px 24px}
-.h{display:flex;align-items:center;gap:16px;font-weight:900;font-style:italic;font-size:40px}
-.n{width:56px;height:56px;border-radius:50%%;background:#ffff1a;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:32px}
+.h{display:flex;align-items:center;gap:16px;font-family:Bib;font-weight:700;font-size:40px}
+.n{width:56px;height:56px;border-radius:50%%;background:#ffff1a;display:flex;align-items:center;justify-content:center;font-family:Noto;font-weight:700;font-size:30px}
 .b{font-weight:600;font-size:31px;line-height:1.25;margin-top:12px}
-.x{display:inline-block;margin-top:14px;background:#ffff1a;font-weight:600;font-size:28px;padding:8px 14px;border-radius:10px}
-svg{position:absolute;left:0;top:0}""" % (OX, OY, int(ph.width * S))
+.x{display:inline-block;margin-top:14px;background:#061866;color:#fff;font-weight:600;font-size:28px;padding:8px 14px;border-radius:10px}
+svg{position:absolute;left:0;top:0}""" % dict(D=D, OX=OX, OY=OY, W=int(ph.width * S))
 for lg, (title, steps) in T.items():
     h = f'<img class="ph" src="data:image/png;base64,{b64}"><div class="title">{title}</div>'
     svg = '<svg width="1200" height="990">'
@@ -38,7 +42,7 @@ for lg, (title, steps) in T.items():
     h += svg + '</svg>'
     (D / f"_m{lg}.html").write_text(f'<html><head><meta charset="utf-8"><style>{CSS}</style></head><body>{h}</body></html>')
     js = f"""const {{chromium}}=require('playwright');(async()=>{{const b=await chromium.launch();const p=await b.newPage({{viewport:{{width:1200,height:990}}}});
-await p.goto('file://{D}/_m{lg}.html');await p.screenshot({{path:'{D}/_m{lg}.png'}});await b.close();}})();"""
+await p.goto('file://{D}/_m{lg}.html');await p.evaluate(()=>document.fonts.ready);await p.screenshot({{path:'{D}/_m{lg}.png'}});await b.close();}})();"""
     subprocess.run(["node", "-e", js], check=True)
     im = Image.open(D / f"_m{lg}.png").convert("RGB"); out = D / f"etapes-mockup-{lg}.jpg"; q = 88
     while True:
