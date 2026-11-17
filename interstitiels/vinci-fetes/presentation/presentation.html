@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Truckfly x VINCI · Opération fêtes</title>
+<style>
+@font-face { font-family: "Bib"; src: url("../../assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Inter"; src: url("../../assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../../assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("../../assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+:root { --bleu: #061866; --nuit: #000e38; --jaune: #ffff1a; --rouge: #e20025; --clair: #eef2f9; --gris: #5a6072; }
+@page { size: 1280px 720px; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Inter", sans-serif; color: var(--bleu); background: #ccc; }
+.slide { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #fff; page-break-after: always; break-after: page; padding: 64px 80px; display: flex; flex-direction: column; }
+.slide::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: var(--rouge); }
+.nuit { background: radial-gradient(110% 80% at 30% 10%, #10287f 0%, var(--bleu) 50%, var(--nuit) 100%); color: #fff; }
+h1 { font-family: "Bib", sans-serif; font-size: 56px; line-height: 1.08; }
+h2 { font-family: "Bib", sans-serif; font-size: 40px; line-height: 1.1; margin-bottom: 28px; }
+h3 { font-family: "Bib", sans-serif; font-size: 22px; margin-bottom: 8px; }
+p, li { font-size: 19px; line-height: 1.45; }
+.sur { font-weight: 700; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: var(--rouge); margin-bottom: 14px; }
+.nuit .sur { color: var(--jaune); }
+.jaune { color: var(--jaune); }
+.pied { position: absolute; left: 80px; right: 80px; bottom: 26px; display: flex; justify-content: space-between; font-size: 13px; color: var(--gris); }
+.nuit .pied { color: rgba(255,255,255,.6); }
+.logos { display: flex; align-items: center; gap: 22px; }
+.logos .tf { height: 46px; }
+.logos .x { font-size: 28px; opacity: .8; }
+.logos .vinci { background: #fff; border-radius: 12px; padding: 12px 18px; display: flex; }
+.logos .vinci img { height: 52px; }
+.cols { display: flex; gap: 40px; flex: 1; min-height: 0; }
+.carte { background: var(--clair); border-radius: 18px; padding: 24px 26px; }
+.chiffres { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 8px; }
+.chiffre { background: var(--clair); border-radius: 18px; padding: 24px 22px; }
+.chiffre b { display: block; font-family: "Bib", sans-serif; font-size: 44px; line-height: 1; color: var(--bleu); }
+.chiffre span { display: block; margin-top: 10px; font-size: 17px; line-height: 1.35; color: var(--gris); }
+.etapes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.etape { background: var(--clair); border-radius: 18px; padding: 24px 22px; position: relative; }
+.etape .num { width: 40px; height: 40px; border-radius: 50%; background: var(--bleu); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.etape p { font-size: 16.5px; color: var(--gris); }
+.puces li { list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px; }
+.puces li::before { content: ""; position: absolute; left: 0; top: 9px; width: 14px; height: 14px; border-radius: 4px; background: var(--jaune); border: 2px solid var(--bleu); }
+.tels { display: flex; gap: 26px; justify-content: center; align-items: flex-start; flex: 1; }
+.tel { text-align: center; }
+.tel img { height: 430px; border-radius: 26px; box-shadow: 0 14px 34px rgba(6,24,102,.28); display: block; }
+.tel b { display: block; margin-top: 14px; font-size: 18px; }
+.tel span { font-size: 14px; color: var(--gris); }
+.prop { display: flex; gap: 60px; flex: 1; min-height: 0; align-items: center; }
+.prop img.ecran { height: 560px; margin-top: -10px; border-radius: 30px; box-shadow: 0 16px 40px rgba(6,24,102,.3); }
+.prop .txt { flex: 1; }
+.lettre { display: inline-flex; width: 54px; height: 54px; border-radius: 14px; background: var(--bleu); color: var(--jaune); font-family: "Bib", sans-serif; font-size: 30px; align-items: center; justify-content: center; margin-bottom: 18px; }
+.champ { margin-top: 18px; }
+.champ small { display: block; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--gris); margin-bottom: 4px; }
+.champ p { font-size: 20px; }
+.bouton { display: inline-block; margin-top: 6px; padding: 10px 18px; border-radius: 12px; background: var(--jaune); color: #000; font-weight: 700; font-size: 17px; }
+.bouton.bleu { background: var(--bleu); color: #fff; }
+.q { background: var(--clair); border-radius: 18px; padding: 20px 22px; }
+.q h3 { font-family: "Inter", sans-serif; font-size: 17.5px; line-height: 1.35; margin-bottom: 12px; }
+.q li { list-style: none; font-size: 15.5px; line-height: 1.35; padding: 8px 12px; border-radius: 10px; background: #fff; margin-bottom: 7px; color: var(--gris); }
+.q li.ok { background: var(--bleu); color: #fff; font-weight: 600; }
+.astuce { margin-top: 12px; font-size: 13.5px; line-height: 1.4; color: var(--gris); }
+.tableau { width: 100%; border-collapse: collapse; }
+.tableau td { padding: 14px 16px; font-size: 17.5px; line-height: 1.35; border-bottom: 1px solid #d9dfeb; vertical-align: top; }
+.tableau td:first-child { width: 36%; font-weight: 700; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 13px; font-weight: 700; background: var(--jaune); color: #000; }
+.tag.ok { background: #d9f2e1; color: #0b6b2f; }
+</style>
+</head>
+<body>
+
+<!-- 1 · Couverture -->
+<section class="slide nuit" style="justify-content: center;">
+  <div class="logos" style="margin-bottom: 56px;"><img class="tf" src="../assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="vinci"><img src="../assets/vinci-autoroutes.png" alt="VINCI Autoroutes" /></span></div>
+  <p class="sur">Opération fêtes de fin d'année</p>
+  <h1>Nos anges gardiens :<br /><span class="jaune">2 mois de GPS offerts</span><br />aux 1000 premiers</h1>
+  <p style="margin-top: 28px; font-size: 22px; opacity: .85;">Propositions d'interstitiel et quiz sécurité · rendez-vous VINCI Autoroutes</p>
+  <img src="../png/vd-pere-noel-lutins.png" alt="" style="position: absolute; right: 90px; top: 70px; height: 580px; border-radius: 28px; box-shadow: 0 20px 50px rgba(0,0,0,.4);" />
+  <div class="pied"><span>Michelin Truckfly × VINCI Autoroutes</span><span>Document de travail</span></div>
+</section>
+
+<!-- 2 · L'opération en bref -->
+<section class="slide">
+  <p class="sur">L'opération en bref</p>
+  <h2>Un cadeau de fin d'année qui fait passer<br />le message du corridor de sécurité</h2>
+  <div class="chiffres">
+    <div class="chiffre"><b>2 mois</b><span>de GPS Michelin Truckfly offerts</span></div>
+    <div class="chiffre"><b>1000</b><span>premiers participants au quiz</span></div>
+    <div class="chiffre"><b>3</b><span>questions sécurité, environ 1 minute</span></div>
+    <div class="chiffre"><b>4 710 €</b><span>budget de l'opération</span></div>
+  </div>
+  <div class="cols" style="margin-top: 30px;">
+    <div class="carte" style="flex: 1;"><h3>Le message</h3><p>Michelin Truckfly et VINCI Autoroutes s'associent pour les fêtes : les patrouilleurs veillent sur les routiers, protégeons-les en respectant le corridor de sécurité.</p></div>
+    <div class="carte" style="flex: 1;"><h3>La cible</h3><p>Les conducteurs poids lourds qui utilisent l'app Michelin Truckfly, touchés par un interstitiel au lancement de l'app.</p></div>
+  </div>
+  <div class="pied"><span>Michelin Truckfly × VINCI Autoroutes</span><span>2</span></div>
+</section>
+
+<!-- 3 · Le parcours -->
+<section class="slide">
+  <p class="sur">Le parcours</p>
+  <h2>De l'interstitiel à l'activation, en 4 étapes</h2>
+  <div class="etapes">
+    <div class="etape"><div class="num">1</div><h3>L'interstitiel</h3><p>S'affiche dans l'app Michelin Truckfly. Le bouton mène au quiz, « Plus tard » ou la croix le ferment.</p></div>
+    <div class="etape"><div class="num">2</div><h3>Le quiz sécurité</h3><p>3 questions sur le corridor de sécurité, l'amende et les bons réflexes en cas de panne.</p></div>
+    <div class="etape"><div class="num">3</div><h3>Les coordonnées</h3><p>Email et téléphone, pré-remplis depuis l'app, plus le consentement.</p></div>
+    <div class="etape"><div class="num">4</div><h3>L'activation</h3><p>Le code des 2 mois de GPS est envoyé par email et SMS. La page de fin rappelle les règles de sécurité.</p></div>
+  </div>
+  <div class="carte" style="margin-top: 30px;">
+    <ul class="puces">
+      <li>Le formulaire se ferme automatiquement à 1000 réponses, avec un message « offre terminée ».</li>
+      <li>Une seule participation par adresse email.</li>
+      <li>Chaque réponse est rattachée au compte de l'app, ce qui permet d'activer l'offre derrière.</li>
+    </ul>
+  </div>
+  <div class="pied"><span>Michelin Truckfly × VINCI Autoroutes</span><span>3</span></div>
+</section>
+
+<!-- 4 · Les 4 propositions -->
+<section class="slide">
+  <p class="sur">Les propositions</p>
+  <h2 style="margin-bottom: 18px;">4 interstitiels au choix</h2>
+  <div class="tels">
+    <div class="tel"><img src="../png/va-anges-gardiens.png" alt="" /><b>A · Nos anges gardiens</b><span>Les patrouilleurs au bord de l'autoroute</span></div>
+    <div class="tel"><img src="../png/vb-gilet-jaune.png" alt="" /><b>B · Le Père Noël en gilet jaune</b><span>Les anges et l'étiquette cadeau</span></div>
+    <div class="tel"><img src="../png/vc-cadeau-avant-heure.png" alt="" /><b>C · Un cadeau avant l'heure</b><span>Le sapin et le cadeau</span></div>
+    <div class="tel"><img src="../png/vd-pere-noel-lutins.png" alt="" /><b>D · Le Père Noël et ses lutins</b><span>En gilet de patrouilleur</span></div>
+  </div>
+  <div class="pied"><span>Michelin Truckfly × VINCI Autoroutes</span><span>4</span></div>
+</section>
+
+<!-- 5 à 8 · Une proposition par page -->
+<section class="slide">
+  <div class="prop">
+    <img class="ecran" src="../png/va-anges-gardiens.png" alt="" />
+    <div class="txt">
+      <span class="lettre">A</span>
+      <h2>Nos anges gardiens</h2>
+      <p>Deux patrouilleurs en gilet jaune, auréole et ailes, au bord de l'autoroute devant leur fourgon de sécurité. L'idée la plus directe : on remercie ceux qui nous protègent.</p>
+      <div class="champ"><small>Titre</small><p>« Ils veillent sur toi, on t'offre 2 mois de GPS »</p></div>
+      <div class="champ"><small>Badge</small><p>Réservé aux 1000 premiers</p></div>
+      <div class="champ"><small>Bouton</small><span class="bouton">Je veux mes 2 mois de GPS offerts</span></div>
+    </div>
+  </div>
+  <div class="pied"><span>Michelin Truckfly × VINCI Autoroutes</span><span>5</span></div>
+</section>
+
+<section class="slide">
+  <div class="prop">
+    <img class="ecran" src="../png/vb-gilet-jaune.png" alt="" />
+    <div class="txt">
+      <span class="lettre">B</span>
+      <h2>Le Père Noël porte un gilet jaune</h2>
+      <p>Les deux anges gardiens tiennent une étiquette cadeau « 2 mois de GPS offerts ». La partie basse, sur fond blanc, met le texte en avant.</p>
+      <div class="champ"><small>Titre</small><p>« Cette année, le Père Noël porte un gilet jaune »</p></div>
+      <div class="champ"><small>Badge</small><p>1000 accès à gagner</p></div>
+      <div class="champ"><small>Bouton</small><span class="bouton bleu">Je veux gagner 2 mois de GPS</span></div>
+    </div>
+  </div>
+  <div class="pied"><span>Michelin Truckfly × VINCI Autoroutes</span><span>6</span></div>
+</section>
+
+<section class="slide">
+  <div class="prop">
+    <img class="ecran" src="../png/vc-cadeau-avant-heure.png" alt="" />
+    <div class="txt">
+      <span class="lettre">C</span>
+      <h2>Un cadeau avant l'heure</h2>
+      <p>Un sapin décoré d'anges en gilet jaune, avec le cadeau « 2 mois de GPS » au pied. La version la plus festive, et l'offre est dans le titre.</p>
+      <div class="champ"><small>Titre</small><p>« Sous le sapin, 2 mois de GPS offerts »</p></div>
+      <div class="champ"><small>Badge</small><p>Un cadeau avant l'heure</p></div>
+      <div class="champ"><small>Bouton</small><span class="bouton">Je déballe mes 2 mois de GPS</span></div>
+    </div>
+  </div>
+  <div class="pied"><span>Michelin Truckfly × VINCI Autoroutes</span><span>7</span></div>
+</section>
+
+<section class="slide">
+  <div class="prop">
+    <img class="ecran" src="../png/vd-pere-noel-lutins.png" alt="" />
+    <div class="txt">
+      <span class="lettre">D</span>
+      <h2>Le Père Noël et ses lutins</h2>
+      <p>Le Père Noël et deux lutins enfilent le gilet de patrouilleur, devant le fourgon de sécurité et son panneau « RALENTIR ». Le ton le plus ludique.</p>
+      <div class="champ"><small>Titre</small><p>« Le Père Noël et ses lutins t'offrent 2 mois de GPS »</p></div>
+      <div class="champ"><small>Badge</small><p>Réservé aux 1000 premiers</p></div>
+      <div class="champ"><small>Bouton</small><span class="bouton">Je veux mes 2 mois de GPS gratuits</span></div>
+    </div>
+  </div>
+  <div class="pied"><span>Michelin Truckfly × VINCI Autoroutes</span><span>8</span></div>
+</section>
+
+<!-- 9 · Le brief VINCI intégré -->
+<section class="slide">
+  <p class="sur">Votre brief</p>
+  <h2>Ce que vous nous avez demandé, et où on le retrouve</h2>
+  <div class="cols">
+    <div style="flex: 1.15;">
+      <table class="tableau">
+        <tr><td>Phrase d'accroche « anges gardiens »</td><td>En haut de chaque interstitiel et en ouverture du quiz <span class="tag ok">intégré</span></td></tr>
+        <tr><td>Pictogramme + « je ralentis, je change de voie »</td><td>Sous l'accroche, sur chaque interstitiel <span class="tag ok">intégré</span></td></tr>
+        <tr><td>Amende de 135 €</td><td>Question 2 du quiz <span class="tag ok">intégré</span></td></tr>
+        <tr><td>Règles de sécurité sur autoroute</td><td>Question 3 et page de fin du quiz <span class="tag ok">intégré</span></td></tr>
+        <tr><td>Le saviez-vous ?</td><td>2 encadrés dans le quiz (chiffre Ipsos 2024, balisages et aires) <span class="tag ok">intégré</span></td></tr>
+      </table>
+    </div>
+    <div style="flex: 1; display: flex; align-items: center;"><img src="bloc-brief.png" alt="" style="width: 100%; border-radius: 18px;" /></div>
+  </div>
+  <div class="pied"><span>Michelin Truckfly × VINCI Autoroutes</span><span>9</span></div>
+</section>
+
+<!-- 10 · Le quiz -->
+<section class="slide">
+  <p class="sur">Le quiz Tally</p>
+  <h2 style="margin-bottom: 22px;">3 questions sécurité</h2>
+  <div class="cols" style="gap: 20px;">
+    <div class="q" style="flex: 1;"><h3>1. Un véhicule d'intervention est arrêté sur la bande d'arrêt d'urgence, gyrophares allumés. Que fais-tu ?</h3>
+      <ul><li>Je garde ma voie et ma vitesse</li><li class="ok">Je ralentis et je change de voie, ou je m'écarte le plus possible</li><li>Je klaxonne pour signaler ma présence</li></ul>
+      <p class="astuce">💡 Le saviez-vous ? 67 % des conducteurs n'appliquent pas systématiquement le corridor de sécurité (Ipsos pour la Fondation VINCI Autoroutes, 2024).</p></div>
+    <div class="q" style="flex: 1;"><h3>2. Que risques-tu si tu ne respectes pas le corridor de sécurité ?</h3>
+      <ul><li>Rien, c'est une simple recommandation</li><li class="ok">Une amende de 135 €</li><li>Un simple avertissement</li></ul>
+      <p class="astuce">Depuis septembre 2018, article R412-11-1 du code de la route.</p></div>
+    <div class="q" style="flex: 1;"><h3>3. Ton camion tombe en panne sur l'autoroute. Quel est le bon réflexe ?</h3>
+      <ul><li>Je reste dans ma cabine, ceinture attachée, en attendant les secours</li><li class="ok">Feux de détresse, gilet enfilé, je sors et je me mets derrière la glissière</li><li>Je pose mon triangle de pré-signalisation derrière le camion</li></ul>
+      <p class="astuce">Pas de triangle sur autoroute : le poser met en danger.</p></div>
+  </div>
+  <div class="pied"><span>Michelin Truckfly × VINCI Autoroutes</span><span>10</span></div>
+</section>
+
+<!-- 11 · Après le quiz -->
+<section class="slide">
+  <p class="sur">Après le quiz</p>
+  <h2>Les coordonnées, puis les bons réflexes</h2>
+  <div class="cols">
+    <div class="carte" style="flex: 1;"><h3>Page 2 · Recevoir mon accès</h3>
+      <ul class="puces" style="margin-top: 12px;">
+        <li>Email et téléphone, pré-remplis depuis l'app</li>
+        <li>Case de consentement</li>
+        <li>Le saviez-vous ? sur les balisages et les aires tous les 15 km</li>
+        <li>Bouton « Je valide ma participation »</li>
+      </ul></div>
+    <div class="carte" style="flex: 1;"><h3>Page de fin · Merci et bonnes fêtes !</h3>
+      <ul class="puces" style="margin-top: 12px;">
+        <li>Confirmation : code envoyé par email et SMS</li>
+        <li>Les 3 bonnes réponses expliquées</li>
+        <li>Les règles de sécurité sur autoroute de votre dépliant : panne, accident, borne orange, 112</li>
+        <li>Rappel de l'accroche « anges gardiens »</li>
+      </ul></div>
+  </div>
+  <div class="pied"><span>Michelin Truckfly × VINCI Autoroutes</span><span>11</span></div>
+</section>
+
+<!-- 12 · À valider ensemble -->
+<section class="slide">
+  <p class="sur">À valider ensemble</p>
+  <h2>Prochaines étapes</h2>
+  <table class="tableau">
+    <tr><td>Choix de l'interstitiel</td><td>A, B, C ou D. Le code de chaque version est déjà prêt à intégrer.</td></tr>
+    <tr><td>Accroche</td><td>Version tutoyée, comme dans l'app : « Pour leur sécurité et la tienne, protège tes anges gardiens… ». Ou votre version mot pour mot.</td></tr>
+    <tr><td>Pictogramme et logo</td><td>Redessinés d'après votre dépliant : à remplacer par vos fichiers officiels si besoin.</td></tr>
+    <tr><td>Quiz</td><td>Validation des questions, des bonnes réponses et des « Le saviez-vous ? ».</td></tr>
+    <tr><td>Règlement et données personnelles</td><td>Règlement de l'offre et mention RGPD à finaliser avant diffusion.</td></tr>
+    <tr><td>Calendrier</td><td>Date de lancement et durée de diffusion de l'interstitiel.</td></tr>
+  </table>
+  <div class="pied"><span>Michelin Truckfly × VINCI Autoroutes</span><span>12</span></div>
+</section>
+
+</body>
+</html>

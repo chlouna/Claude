@@ -7,22 +7,26 @@
 
 ## Parcours
 
-1. L'interstitiel s'affiche dans l'app (CTA « Je participe au quiz »).
+1. L'interstitiel s'affiche dans l'app (bouton vers le quiz, « Plus tard » ou la croix pour fermer).
 2. Au clic, le conducteur arrive sur une autre page, le formulaire Tally : 3 questions sécurité, puis email + téléphone + consentement.
 3. On récupère les emails et téléphones pour activer les 2 mois.
 4. Le formulaire se ferme seul à 1000 réponses (une seule réponse par email).
 
 Lien d'édition Tally (brouillon, pas encore publié) : https://tally.so/forms/q5L7Y2/edit
 
-Pour savoir d'où vient chaque réponse, ouvrir le lien avec les paramètres `?user_id=…&source=interstitiel`.
+Le lien du quiz reçoit `?user_id=…&source=interstitiel-noel-a|b|c|d&email=…&phone=…` : ce sont des champs cachés du formulaire, et l'email et le téléphone pré-remplissent les champs de la page 2.
+
+Mise en forme du formulaire : couleurs (fond blanc, texte bleu, bouton jaune), police Inter, boutons « Continuer » puis « Je valide ma participation », téléphone en +33 par défaut. La forme des boutons et des champs (mise en forme avancée) ne s'applique au formulaire publié qu'avec Tally Pro.
 
 Boutons (un par proposition) : A « Je veux mes 2 mois de GPS offerts », B « Je veux gagner 2 mois de GPS », C « Je déballe mes 2 mois de GPS », D « Je veux mes 2 mois de GPS gratuits », avec « Plus tard » en dessous.
 
 ## Fichiers
 
-- `index.html` : les 3 propositions au format téléphone (390 × 844), avec de petites animations.
+- `index.html` : les 4 propositions au format téléphone (390 × 844), avec de petites animations.
 - `png/` : un PNG par proposition en 1170 × 2532, plus `planche.png`.
 - Régénérer les PNG : `node interstitiels/vinci-fetes/capturer.mjs`.
+- `onesignal/` : le code HTML de l'in-app message OneSignal de chaque proposition (`noel-a-anges-gardiens.html`, `noel-b-gilet-jaune.html`, `noel-c-cadeau.html`, `noel-d-pere-noel.html`), avec dessins, logos et police intégrés. Régénérer après une modif de `index.html` : `python3 interstitiels/vinci-fetes/onesignal/generer.py`.
+- `presentation/` : le support du rendez-vous VINCI (`Truckfly-VINCI-operation-fetes.pdf`, 12 pages). Régénérer : `node interstitiels/vinci-fetes/presentation/exporter.mjs`.
 
 | # | Proposition | Titre | CTA |
 |---|---|---|---|
@@ -65,5 +69,6 @@ La page de remerciement donne les bonnes réponses et rappelle les règles de s�
 
 - Validation du visuel et du logo par VINCI Autoroutes.
 - Date de fin de l'offre si VINCI en veut une en plus de la limite des 1000 premiers.
-- Mentions légales du jeu (règlement, RGPD) : lien à ajouter dans le formulaire.
-- Publier le formulaire Tally et mettre son lien sur le CTA.
+- Mentions légales du jeu (règlement, RGPD) : une mention courte est en place sous le consentement, le règlement et la politique de confidentialité restent à ajouter.
+- Publier le formulaire Tally (le code OneSignal pointe déjà vers https://tally.so/r/q5L7Y2).
+- Créer le tag `PHONE` côté app pour pré-remplir le téléphone.
