@@ -3345,7 +3345,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Sai sempre in che strada ti trovi</span></h3>
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Basta cercare il cartello della via</span></h3>
         - id: 39b03dce-8fc3-4b6e-987d-2a0ecc1c9664
           stylable: false
           title: Paragraph
@@ -3491,7 +3491,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Sabe siempre por qué calle circulas</span></h3>
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Ya no tienes que buscar el cartel de la calle</span></h3>
         - id: c1862992-db13-428a-913d-aca9cb7bfe1a
           stylable: false
           title: Paragraph
@@ -3637,7 +3637,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Always know which street you’re on</span></h3>
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">No more looking for street signs</span></h3>
         - id: 3b2080de-2b54-40b0-ade2-b85a0fe37706
           stylable: false
           title: Paragraph
@@ -3783,7 +3783,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Weet altijd in welke straat je rijdt</span></h3>
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Nooit meer zoeken naar het straatnaambord</span></h3>
         - id: 44da8250-7142-4984-92d3-0732e1bbac9f
           stylable: false
           title: Paragraph
