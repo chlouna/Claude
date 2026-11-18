@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="UTF-8" /><title>Carrousel 6.5 (5)</title><style>
+@font-face { font-family: "Bib"; src: url("../../ma-video/assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../../ma-video/assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
+:root { --bleu: #061866; --jaune: #FFFF1A; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 360px; height: 450px; overflow: hidden; background: var(--bleu); }
+.v { position: relative; width: 360px; height: 450px; overflow: hidden; color: #fff; font-family: "Inter", sans-serif;
+  background: radial-gradient(120% 80% at 70% 10%, #10287f 0%, var(--bleu) 55%, #000e38 100%); }
+.v > * { position: absolute; }
+.structure { inset: 0; width: 100%; height: 100%; }
+.surtitre { right: 48px; top: 54px; font-weight: 600; font-size: 11px; color: var(--jaune); }
+.texte { left: 46px; right: 46px; top: 96px; }
+h1 { font-family: "Bib", sans-serif; font-weight: 700; font-size: 24px; line-height: 27px; text-wrap: balance; }
+p { margin-top: 8px; font-size: 11.5px; line-height: 15.5px; color: rgba(255,255,255,0.9); text-wrap: balance; }
+/* Téléphone entier en bas, pour que l'élément montré (bouton, nom de rue) reste visible */
+.tels { left: 0; right: 0; bottom: 22px; display: flex; gap: 12px; justify-content: center; }
+.tels img { height: 236px; width: auto; filter: drop-shadow(0 10px 22px rgba(0,0,0,0.45)); }
+/* Couverture et fin : texte centré */
+.seul .texte { top: 150px; text-align: center; }
+.seul h1 { font-size: 34px; line-height: 38px; }
+.seul p { font-size: 14px; line-height: 19px; margin-top: 14px; }
+.couv .texte { text-align: left; }
+.couv h1 { font-size: 30px; line-height: 33px; }
+.cta { margin-top: 26px; display: inline-flex; padding: 0 18px; height: 40px; align-items: center; border-radius: 10px;
+  background: var(--jaune); color: #000; font-weight: 700; font-size: 13px; }
+</style></head>
+<body><main class="v ">
+  <img class="structure" src="structure.png" alt="" />
+  <p class="surtitre">Nouveauté 4/4</p>
+  <div class="texte"><h1>Choisis tes alertes</h1><p>Paramètres → «&nbsp;Alertes en navigation&nbsp;» → coche les alertes à garder.</p></div>
+  <div class="tels deux"><img src="captures/parametres-alertes.png" alt="" /><img src="captures/alertes-navigation.png" alt="" /></div>
+</main></body></html>

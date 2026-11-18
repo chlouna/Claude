@@ -80,6 +80,37 @@ VIDEOS = {
         (45.3, 49.5, "clair", 10, "GPS Premium&nbsp;: l’alerte péage", None, "peage.png", [("zoom", 50, 84, 1.7, 45.8, 49.1)]),
         (49.5, 54, "bleu", None, "Ne roule plus seul&nbsp;!", None, None, []),
     ]),
+    # Nouveautés GPS de la 6.5 (newsletter « Ton GPS a 3 nouveautés »), captures tirées de la newsletter.
+    "recalcul": dict(duree=15, scenes=[
+        (0, 3.6, "bleu", None, "Nouveau&nbsp;: un recalcul d’itinéraire plus efficace", None, "nav-rue.png", []),
+        (3.6, 7.6, "clair", None, "Une sortie ratée, un détour imprévu&nbsp;?", None, "nav-rue.png", []),
+        (7.6, 11.6, "clair", None, "Le GPS recalcule ton itinéraire plus vite", "c’est automatique, rien à faire",
+         "nav-rue.png", [("zoom", 50, 15, 1.6, 7.9, 11.2)]),
+        (11.6, 15, "bleu", None, "Mets ton appli à jour&nbsp;!", None, None, []),
+    ]),
+    "streetview": dict(duree=15.2, scenes=[
+        (0, 3.8, "bleu", None, "Nouveau&nbsp;: vois ta destination avant d’y arriver", None, "streetview.png", []),
+        (3.8, 7.8, "clair", 1, "Appuie sur le drapeau d’arrivée", None, "streetview.png",
+         [("zoom", 87, 38, 1.6, 4.1, 7.4), ("tap", 87, 38, 5.2)]),
+        (7.8, 11.8, "clair", 2, "Appuie sur «&nbsp;Voir dans Street View&nbsp;»", "Google Maps s’ouvre sur ta destination",
+         "streetview.png", [("tap", 50, 77, 8.9)]),
+        (11.8, 15.2, "bleu", None, "Fini les tours pour trouver l’entrée&nbsp;!", None, None, []),
+    ]),
+    "nom-rue": dict(duree=15.2, scenes=[
+        (0, 3.6, "bleu", None, "Nouveau&nbsp;: le nom de ta rue toujours affiché", None, "nav-rue.png", []),
+        (3.6, 7.2, "clair", 1, "Lance ta navigation", None, "nav-rue.png", []),
+        (7.2, 11.6, "clair", 2, "Le nom de la voie s’affiche en bas", "rue, quai, boulevard ou nationale",
+         "nav-rue.png", [("zoom", 50, 78, 1.7, 7.5, 11.2)]),
+        (11.6, 15.2, "bleu", None, "Pratique pour donner ta position&nbsp;!", None, None, []),
+    ]),
+    "alertes": dict(duree=17, scenes=[
+        (0, 3.4, "bleu", None, "Nouveau&nbsp;: choisis tes alertes", None, "alertes-navigation.png", []),
+        (3.4, 6.6, "clair", 1, "Ouvre les Paramètres", None, "profil-charlie.png", [("tap", 85, 11, 4.4)]),
+        (6.6, 10, "clair", 2, "Appuie sur «&nbsp;Alertes en navigation&nbsp;»", None, "parametres-alertes.png", [("tap", 30, 83, 7.7)]),
+        (10, 13.4, "clair", 3, "Coche les alertes que tu veux garder", "contrôles, accidents, dangers…",
+         "alertes-navigation.png", [("tap", 88.4, 72.8, 11.0), ("coche", 88.4, 72.8, 11.3)]),
+        (13.4, 17, "bleu", None, "Les autres n’apparaîtront plus en navigation&nbsp;!", None, None, []),
+    ]),
 }
 
 LANGUES = ["Français", "English", "Deutsch", "Nederlands", "Polski", "Italiano", "Español"]
@@ -101,6 +132,9 @@ def actions_html(actions):
         if a[0] == "tap":
             _, x, y, t = a
             html += f'<i class="tap" style="left:{x}%; top:{y}%; {anim(("tape", 0.9, t))}"></i>'
+        elif a[0] == "coche":  # case cochée qui apparaît (recréée, au style de l'app)
+            _, x, y, t = a
+            html += f'<i class="coche-app" style="left:{x}%; top:{y}%; {anim(("pop", 0.3, t))}">✓</i>'
         elif a[0] == "langues":
             t = a[1]
             lignes = ""
@@ -187,6 +221,8 @@ h1 { font-family: "Bib", sans-serif; font-weight: 700; font-size: var(--titre); 
 .feuille ul { list-style: none; }
 .feuille li { display: flex; justify-content: space-between; align-items: center; height: 7.2cqh; border-bottom: 1px solid #e6e6ea; font-size: 4.4cqw; font-weight: 600; }
 .coche { color: var(--bleu); font-size: 5cqw; }
+.coche-app { position: absolute; width: 5.2cqw; height: 5.2cqw; translate: -50% -50%; border-radius: 1cqw; background: #0a1a6b;
+  color: #fff; font-style: normal; font-weight: 700; font-size: 4cqw; display: flex; align-items: center; justify-content: center; }
 
 
 @keyframes apparait { from { opacity: 0; } to { opacity: 1; } }
