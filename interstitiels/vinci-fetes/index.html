@@ -340,7 +340,7 @@ b.fort { color: #000; }
 </section></div>
 
 <!-- A bis · même scène, patrouilleurs sans ailes ni auréole -->
-<div><div class="cartel">A bis · sans ailes ni auréole</div>
+<div><div class="cartel">A bis · les patrouilleurs</div>
 <section class="ecran nuit" id="va2" data-nom="patrouilleurs">
   <div class="neige">
     <i style="left:8%;top:6%;--t:4px;--d:0s"></i><i style="left:22%;top:14%;--t:3px;--d:1.5s"></i><i style="left:38%;top:4%;--t:5px;--o:.4;--d:3s"></i>
@@ -351,7 +351,7 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci blanc"><img src="assets/vinci-autoroutes-blanc.png" alt="VINCI Autoroutes" /></span></div>
-    <p class="accroche-haut entre" style="--d:.05s">Pour leur sécurité et la tienne, protège celles et ceux qui veillent sur la route pendant les fêtes.</p>
+    <p class="accroche-haut entre" style="--d:.05s">Pour leur sécurité et la tienne, protège les équipes de patrouille pendant les fêtes.</p>
     <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule<br />d'intervention&nbsp;:</p><p class="c-gestes"><span>JE RALENTIS</span><span>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 330" aria-hidden="true">
       <use href="#guirlande" y="6" />
@@ -367,7 +367,7 @@ b.fort { color: #000; }
   <div class="bas">
     <span class="badge entre" style="--d:.4s">Réservé aux 1000 premiers</span>
     <h1 class="entre" style="--d:.5s">On veille sur toi, on t'offre <span class="jaune-txt">2 mois de GPS</span></h1>
-    <p class="texte entre" style="--d:.65s">Pour les fêtes, Michelin Truckfly et VINCI Autoroutes saluent les équipes d'intervention qui veillent sur la route. Réponds à 3 questions sécurité&nbsp;: les 1000 premiers gagnent 2 mois de GPS.</p>
+    <p class="texte entre" style="--d:.65s">Pour les fêtes, Michelin Truckfly et VINCI Autoroutes saluent les équipes de patrouille qui veillent sur la route. Réponds à 3 questions sécurité&nbsp;: les 1000 premiers gagnent 2 mois de GPS.</p>
     <a class="cta jaune">Je veux mes 2 mois de GPS offerts</a>
     <a class="plus-tard">Plus tard</a>
   </div>
@@ -385,7 +385,7 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci blanc"><img src="assets/vinci-autoroutes-blanc.png" alt="VINCI Autoroutes" /></span></div>
-    <p class="accroche-haut entre" style="--d:.05s">Pour leur sécurité et la tienne, protège celles et ceux qui veillent sur la route pendant les fêtes.</p>
+    <p class="accroche-haut entre" style="--d:.05s">Pour leur sécurité et la tienne, protège les équipes de patrouille pendant les fêtes.</p>
     <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule<br />d'intervention&nbsp;:</p><p class="c-gestes"><span>JE RALENTIS</span><span>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 330" aria-hidden="true">
       <!-- route vue du dessus -->
@@ -403,14 +403,17 @@ b.fort { color: #000; }
       <!-- camion qui change de voie -->
       <path d="M180 300 Q180 250 120 215" fill="none" stroke="#fff" stroke-width="4" stroke-dasharray="8 8" opacity=".8" />
       <g transform="translate(160 250)"><rect width="40" height="74" rx="6" fill="#fff" stroke="#061866" stroke-width="3" /><rect x="5" y="4" width="30" height="16" rx="3" fill="#bfd3f2" stroke="#061866" stroke-width="2" /></g>
+      <!-- patrouille au bord de la route -->
+      <use href="#patrouilleur-f" transform="translate(296 150) scale(.36)" />
+      <use href="#patrouilleur-h" transform="translate(0 150) scale(.42)" />
       <!-- étoiles -->
       <path d="M30 60 l4 9 9 4 -9 4 -4 9 -4 -9 -9 -4 9 -4z M325 40 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z M20 220 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z" fill="#ffff1a" />
     </svg>
   </div>
   <div class="bas">
     <span class="badge entre" style="--d:.4s">Réservé aux 1000 premiers</span>
-    <h1 class="entre" style="--d:.5s">Ce Noël, offre-leur <span class="jaune-txt">de la place</span></h1>
-    <p class="texte entre" style="--d:.65s">Le corridor de sécurité, c'est le plus beau cadeau à faire aux équipes d'intervention. Réponds à 3 questions : les 1000 premiers gagnent 2 mois de GPS.</p>
+    <h1 class="entre" style="--d:.5s">Ce Noël, offre de la place <span class="jaune-txt">aux patrouilles</span></h1>
+    <p class="texte entre" style="--d:.65s">Le corridor de sécurité, c'est le plus beau cadeau à faire aux équipes de patrouille. Réponds à 3 questions : les 1000 premiers gagnent 2 mois de GPS.</p>
     <a class="cta jaune">Je participe au quiz</a>
     <a class="plus-tard">Plus tard</a>
   </div>
@@ -428,7 +431,7 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci blanc"><img src="assets/vinci-autoroutes-blanc.png" alt="VINCI Autoroutes" /></span></div>
-    <p class="accroche-haut entre" style="--d:.05s">Pour leur sécurité et la tienne, protège celles et ceux qui veillent sur la route pendant les fêtes.</p>
+    <p class="accroche-haut entre" style="--d:.05s">Pour leur sécurité et la tienne, protège les équipes de patrouille pendant les fêtes.</p>
     <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule<br />d'intervention&nbsp;:</p><p class="c-gestes"><span>JE RALENTIS</span><span>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 330" aria-hidden="true">
       <use href="#guirlande" y="0" />
@@ -454,7 +457,7 @@ b.fort { color: #000; }
   <div class="bas">
     <span class="badge entre" style="--d:.4s">Cadeau de fin d'année</span>
     <h1 class="entre" style="--d:.5s">Pour les fêtes, <span class="jaune-txt">2 mois de GPS</span> offerts</h1>
-    <p class="texte entre" style="--d:.65s">Pendant que tu roules, les équipes d'intervention veillent. Teste tes réflexes en 3 questions : les 1000 premiers gagnent 2 mois de GPS.</p>
+    <p class="texte entre" style="--d:.65s">Pendant que tu roules, les équipes de patrouille veillent. Teste tes réflexes en 3 questions : les 1000 premiers gagnent 2 mois de GPS.</p>
     <a class="cta jaune">Je veux gagner 2 mois de GPS</a>
     <a class="plus-tard">Plus tard</a>
   </div>
@@ -472,20 +475,21 @@ b.fort { color: #000; }
   <button class="fermer" aria-label="Fermer">×</button>
   <div class="v-plein">
     <div class="duo entre" style="--d:0s"><img src="assets/truckfly-blanc-rogne.png" alt="Michelin Truckfly" /><span class="x">×</span><span class="logo-vinci blanc"><img src="assets/vinci-autoroutes-blanc.png" alt="VINCI Autoroutes" /></span></div>
-    <p class="accroche-haut entre" style="--d:.05s">Pour leur sécurité et la tienne, protège celles et ceux qui veillent sur la route pendant les fêtes.</p>
+    <p class="accroche-haut entre" style="--d:.05s">Pour leur sécurité et la tienne, protège les équipes de patrouille pendant les fêtes.</p>
     <div class="corridor entre" style="--d:.1s"><svg class="picto" viewBox="0 0 245 290" aria-hidden="true"><use href="#picto-corridor" /></svg><div><p class="c-titre">À l'approche d'un véhicule<br />d'intervention&nbsp;:</p><p class="c-gestes"><span>JE RALENTIS</span><span>JE CHANGE DE VOIE</span></p></div></div>
     <svg class="scene entre" style="--d:.2s" viewBox="0 0 360 330" aria-hidden="true">
       <use href="#guirlande" y="0" />
       <rect x="44" y="56" width="272" height="236" rx="14" fill="#0b1f5c" stroke="#dce6f7" stroke-width="3" />
       <rect x="58" y="70" width="56" height="64" rx="6" fill="#e20025" stroke="#061866" stroke-width="3" /><text x="86" y="110" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#fff">12</text><rect x="122" y="70" width="56" height="64" rx="6" fill="#1f7a4d" stroke="#061866" stroke-width="3" /><text x="150" y="110" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#fff">3</text><rect x="186" y="70" width="56" height="64" rx="6" fill="#ffff1a" stroke="#061866" stroke-width="3" /><text x="214" y="110" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#061866">17</text><rect x="250" y="70" width="56" height="64" rx="6" fill="#dce6f7" stroke="#061866" stroke-width="3" /><text x="278" y="110" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#061866">8</text><rect x="58" y="142" width="56" height="64" rx="6" fill="#e20025" stroke="#061866" stroke-width="3" /><text x="86" y="182" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#fff">21</text><rect x="122" y="142" width="56" height="64" rx="6" fill="#1f7a4d" stroke="#061866" stroke-width="3" /><text x="150" y="182" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#fff">5</text><rect x="186" y="142" width="56" height="64" rx="6" fill="#ffff1a" stroke="#061866" stroke-width="3" /><text x="214" y="182" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#061866">14</text><rect x="250" y="142" width="56" height="64" rx="6" fill="#fff" stroke="#061866" stroke-width="3" /><path d="M306 142 L326 150 L326 214 L306 206 Z" fill="#e20025" stroke="#061866" stroke-width="2.5" /><text x="278" y="172" text-anchor="middle" font-family="Bib" font-weight="700" font-size="20" fill="#061866">2</text><text x="278" y="188" text-anchor="middle" font-family="Inter" font-weight="700" font-size="9" fill="#061866">MOIS</text><text x="278" y="199" text-anchor="middle" font-family="Inter" font-weight="700" font-size="8" fill="#e20025">DE GPS</text><rect x="58" y="214" width="56" height="64" rx="6" fill="#e20025" stroke="#061866" stroke-width="3" /><text x="86" y="254" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#fff">1</text><rect x="122" y="214" width="56" height="64" rx="6" fill="#1f7a4d" stroke="#061866" stroke-width="3" /><text x="150" y="254" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#fff">19</text><rect x="186" y="214" width="56" height="64" rx="6" fill="#ffff1a" stroke="#061866" stroke-width="3" /><text x="214" y="254" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#061866">10</text><rect x="250" y="214" width="56" height="64" rx="6" fill="#dce6f7" stroke="#061866" stroke-width="3" /><text x="278" y="254" text-anchor="middle" font-family="Bib" font-weight="700" font-size="22" fill="#061866">7</text>
       <circle cx="278" cy="174" r="46" fill="url(#lueur)" />
-      <use href="#fourgon" transform="translate(262 238) scale(.42)" />
+      <use href="#patrouilleur-h" transform="translate(-6 196) scale(.5)" />
+      <use href="#patrouilleur-f" transform="translate(286 200) scale(.46)" />
     </svg>
   </div>
   <div class="bas">
     <span class="badge entre" style="--d:.4s">Réservé aux 1000 premiers</span>
     <h1 class="entre" style="--d:.5s">Une case à ouvrir : <span class="jaune-txt">2 mois de GPS</span></h1>
-    <p class="texte entre" style="--d:.65s">Avec VINCI Autoroutes, Michelin Truckfly glisse un cadeau dans ton calendrier. 3 questions sécurité : les 1000 premiers gagnent.</p>
+    <p class="texte entre" style="--d:.65s">Avec VINCI Autoroutes et ses équipes de patrouille, Michelin Truckfly glisse un cadeau dans ton calendrier. 3 questions sécurité : les 1000 premiers gagnent.</p>
     <a class="cta jaune">J'ouvre ma case</a>
     <a class="plus-tard">Plus tard</a>
   </div>
