@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Truckfly x VINCI · Banque de textes</title>
+<style>
+@font-face { font-family: "Bib"; src: url("../../assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Inter"; src: url("../../assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../../assets/fonts/Inter-SemiBold.otf") format("opentype"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("../../assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+:root { --bleu: #061866; --jaune: #ffff1a; --rouge: #e20025; --clair: #eef2f9; --gris: #5a6072; }
+@page { size: A4; margin: 16mm 15mm 18mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Inter", sans-serif; color: var(--bleu); font-size: 11pt; line-height: 1.45; }
+.page { break-after: page; }
+h1 { font-family: "Bib", sans-serif; font-size: 30pt; line-height: 1.1; }
+h2 { font-family: "Bib", sans-serif; font-size: 18pt; margin: 0 0 4mm; padding-top: 2mm; border-top: 3px solid var(--rouge); padding-top: 4mm; }
+h2 .ecran { display: inline-block; font-family: "Inter", sans-serif; font-size: 9pt; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--bleu); color: #fff; border-radius: 99px; padding: 1.5mm 3mm; margin-right: 2.5mm; vertical-align: 3pt; }
+.sur { font-weight: 700; font-size: 9pt; letter-spacing: .08em; text-transform: uppercase; color: var(--rouge); margin-bottom: 3mm; }
+.regles { background: var(--clair); border-radius: 4mm; padding: 4mm 5mm; margin: 6mm 0; }
+.regles li { margin-left: 5mm; margin-bottom: 1.5mm; }
+.bloc { break-inside: avoid; margin-bottom: 7mm; }
+.bloc h3 { font-size: 12pt; font-weight: 700; margin-bottom: 1.5mm; }
+.bloc .ou { font-size: 9pt; color: var(--gris); margin-bottom: 2.5mm; }
+.actuel { border: 2px solid #e6d800; background: #fffbd1; border-radius: 3mm; padding: 3mm 4mm; margin-bottom: 2.5mm; }
+.actuel small, .alt small { display: block; font-size: 8pt; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--gris); margin-bottom: .8mm; }
+.alt { padding: 0 4mm; }
+.alt ol { margin-left: 5mm; }
+.alt li { margin-bottom: 1.6mm; }
+.fixe { border: 1.5px dashed #b5bdcf; border-radius: 3mm; padding: 3mm 4mm; color: var(--gris); }
+.lignes { margin-top: 2.5mm; padding: 0 4mm; }
+.lignes small { font-size: 8pt; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--gris); }
+.lignes div { border-bottom: 1px solid #c9d1e0; height: 8mm; }
+.visuels { display: flex; gap: 6mm; justify-content: center; margin-top: 6mm; }
+.visuels figure { text-align: center; font-size: 9pt; color: var(--gris); }
+.visuels img { height: 118mm; border-radius: 5mm; box-shadow: 0 2mm 6mm rgba(6,24,102,.2); display: block; margin-bottom: 2mm; }
+.parcours { width: 100%; margin-top: 4mm; }
+.court { font-size: 8.5pt; color: var(--gris); }
+</style>
+</head>
+<body>
+
+<!-- Couverture + règles d'écriture -->
+<section class="page">
+  <p class="sur">Michelin Truckfly × VINCI Autoroutes · opération fêtes</p>
+  <h1>Banque de textes</h1>
+  <p style="margin-top: 4mm; font-size: 12pt;">Tous les textes du parcours, de l'interstitiel à l'écran de fin. Pour chaque élément : la version actuelle (en jaune), d'autres tournures possibles, et de la place pour tes idées.</p>
+  <div class="regles">
+    <p style="font-weight: 700; margin-bottom: 2mm;">Les règles à garder en tête (retours VINCI du 18/11)</p>
+    <ul>
+      <li>Pas de « gilet jaune » ni d'« anges gardiens » dans les textes (le gilet reste dans le visuel).</li>
+      <li>Formulations non genrées : « celles et ceux », « les équipes d'intervention », « elles et ils »…</li>
+      <li>Tutoiement, comme dans l'app Michelin Truckfly.</li>
+      <li>Le bloc « À l'approche d'un véhicule d'intervention : je ralentis, je change de voie » est imposé par VINCI : on n'y touche pas.</li>
+      <li>Longueurs indicatives pour que ça tienne à l'écran : titre ≈ 45 caractères, bouton ≈ 32 caractères, accroche ≈ 2 lignes.</li>
+    </ul>
+  </div>
+  <div class="visuels">
+    <figure><img src="../png/va-anges-gardiens.png" alt="" />Version 1 · avec ailes et auréoles</figure>
+    <figure><img src="../png/va2-patrouilleurs.png" alt="" />Version 2 · patrouilleurs</figure>
+  </div>
+</section>
+
+<!-- Parcours -->
+<section class="page">
+  <p class="sur">Le parcours</p>
+  <h2 style="border: 0; padding-top: 0;">Les 4 écrans</h2>
+  <p>1 · l'interstitiel dans l'app → 2 et 3 · le quiz Tally (une seule page) → 4 · l'écran de confirmation.</p>
+  <img class="parcours" src="../funnel/parcours.png" alt="" />
+</section>
+
+<!-- Écran 1 : l'interstitiel -->
+<section>
+  <h2><span class="ecran">Écran 1</span>L'interstitiel</h2>
+
+  <div class="bloc"><h3>L'accroche</h3><p class="ou">En haut, sous les logos.</p>
+    <div class="actuel"><small>Version actuelle</small>Pour leur sécurité et la tienne, protège celles et ceux qui veillent sur la route pendant les fêtes.</div>
+    <div class="alt"><small>Autres tournures</small><ol>
+      <li>Pendant les fêtes, les équipes d'intervention veillent sur la route. Pour leur sécurité et la tienne, laisse-leur de la place.</li>
+      <li>Elles et ils travaillent pendant que tu roules : pour leur sécurité et la tienne, ralentis et change de voie.</li>
+      <li>Ce Noël, offre de la place à celles et ceux qui interviennent sur l'autoroute.</li>
+      <li>Sur l'autoroute, des équipes veillent sur toi, même à Noël. Pour leur sécurité et la tienne, garde tes distances.</li>
+      <li>Pendant les fêtes aussi, des équipes interviennent sur ta route. Protège-les, protège-toi.</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>Le bloc corridor de sécurité</h3><p class="ou">Sous l'accroche, à côté du pictogramme.</p>
+    <div class="fixe">À l'approche d'un véhicule d'intervention : JE RALENTIS · JE CHANGE DE VOIE<br /><span class="court">Texte imposé par VINCI Autoroutes, à garder tel quel.</span></div>
+  </div>
+
+  <div class="bloc"><h3>Le badge</h3><p class="ou">Pastille rouge au-dessus du titre.</p>
+    <div class="actuel"><small>Version actuelle</small>Réservé aux 1000 premiers</div>
+    <div class="alt"><small>Autres tournures</small><ol>
+      <li>1000 accès à gagner</li>
+      <li>Offre limitée : 1000 places</li>
+      <li>Cadeau de fin d'année</li>
+      <li>Les 1000 premiers seulement</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>Le titre</h3><p class="ou">Le texte le plus visible de l'écran (≈ 45 caractères).</p>
+    <div class="actuel"><small>Version actuelle</small>On veille sur toi, on t'offre 2 mois de GPS</div>
+    <div class="alt"><small>Autres tournures</small><ol>
+      <li>Pour les fêtes, 2 mois de GPS offerts</li>
+      <li>Roule en sécurité, on t'offre 2 mois de GPS</li>
+      <li>Un cadeau pour la route : 2 mois de GPS</li>
+      <li>Laisse-leur de la place, on t'offre ton GPS</li>
+      <li>Joyeuses fêtes : 2 mois de GPS offerts</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>Le texte sous le titre</h3><p class="ou">2 à 4 lignes, juste au-dessus du bouton.</p>
+    <div class="actuel"><small>Version actuelle</small>Pour les fêtes, Michelin Truckfly et VINCI Autoroutes saluent les équipes d'intervention qui veillent sur la route. Réponds à 3 questions sécurité : les 1000 premiers gagnent 2 mois de GPS.</div>
+    <div class="alt"><small>Autres tournures</small><ol>
+      <li>Michelin Truckfly et VINCI Autoroutes s'associent pour les fêtes. Réponds à 3 questions sécurité : les 1000 premiers gagnent 2 mois de GPS.</li>
+      <li>3 questions, 1 minute : les 1000 premiers repartent avec 2 mois de GPS offerts.</li>
+      <li>Teste tes réflexes face aux véhicules d'intervention et gagne 2 mois de GPS. Réservé aux 1000 premiers.</li>
+      <li>Avec VINCI Autoroutes, on fête la sécurité sur la route : réponds au quiz et récupère 2 mois de GPS, dans la limite de 1000 participants.</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>Le bouton</h3><p class="ou">Bouton jaune (≈ 32 caractères), « Plus tard » reste en dessous.</p>
+    <div class="actuel"><small>Version actuelle</small>Je veux mes 2 mois de GPS offerts</div>
+    <div class="alt"><small>Autres tournures</small><ol>
+      <li>Je veux gagner 2 mois de GPS</li>
+      <li>Je réponds au quiz</li>
+      <li>Je participe</li>
+      <li>Je récupère mon GPS</li>
+      <li>C'est parti !</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div></div>
+  </div>
+</section>
+
+<!-- Écrans 2 et 3 : le quiz -->
+<section style="break-before: page;">
+  <h2><span class="ecran">Écrans 2 et 3</span>Le quiz Tally</h2>
+
+  <div class="bloc"><h3>Le titre du formulaire</h3>
+    <div class="actuel"><small>Version actuelle</small>Quiz sécurité · 2 mois de GPS offerts</div>
+    <div class="alt"><small>Autres tournures</small><ol>
+      <li>3 questions pour 2 mois de GPS</li>
+      <li>Le quiz du corridor de sécurité</li>
+      <li>Sur la route des fêtes : le quiz sécurité</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>L'introduction</h3>
+    <div class="actuel"><small>Version actuelle</small><b>Pour leur sécurité et la tienne, protège celles et ceux qui veillent sur la route pendant les fêtes.</b> Michelin Truckfly et VINCI Autoroutes s'associent pour rappeler les bons réflexes face aux équipes d'intervention, présentes jour et nuit sur l'autoroute. Réponds à 3 questions : <b>les 1000 premiers participants gagnent 2 mois de GPS offerts</b>.</div>
+    <div class="alt"><small>Autres tournures</small><ol>
+      <li>Jour et nuit, même pendant les fêtes, des équipes d'intervention travaillent sur l'autoroute. Connais-tu les bons réflexes pour les protéger ? Réponds à 3 questions : les 1000 premiers gagnent 2 mois de GPS.</li>
+      <li>1 minute, 3 questions, 2 mois de GPS offerts aux 1000 premiers. C'est parti !</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>Question 1 · le corridor de sécurité</h3>
+    <div class="actuel"><small>Version actuelle</small>Un véhicule d'intervention est arrêté sur la bande d'arrêt d'urgence, gyrophares allumés. Que fais-tu ?<br /><span class="court">A. Je garde ma voie et ma vitesse · <b>B. Je ralentis et je change de voie, ou je m'écarte le plus possible</b> · C. Je klaxonne pour signaler ma présence</span></div>
+    <div class="alt"><small>Autres tournures de la question</small><ol>
+      <li>Gyrophares allumés sur la bande d'arrêt d'urgence : quel est le bon réflexe ?</li>
+      <li>Tu approches d'un fourgon d'intervention arrêté. Tu fais quoi ?</li>
+      <li>Une équipe intervient sur le bord de l'autoroute. Comment la protèges-tu ?</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>Question 2 · l'amende</h3>
+    <div class="actuel"><small>Version actuelle</small>Que risques-tu si tu ne respectes pas le corridor de sécurité ?<br /><span class="court">A. Rien, c'est une simple recommandation · <b>B. Une amende de 135 €</b> · C. Un simple avertissement</span></div>
+    <div class="alt"><small>Autres tournures de la question</small><ol>
+      <li>Ne pas respecter le corridor de sécurité, ça coûte combien ?</li>
+      <li>Le corridor de sécurité, c'est obligatoire ?</li>
+      <li>Tu ne t'écartes pas d'un véhicule d'intervention : que dit le code de la route ?</li>
+    </ol></div>
+    <div class="alt"><small>Autres réponses possibles</small><ol>
+      <li>A. 35 € · <b>B. 135 €</b> · C. 375 €</li>
+      <li>A. Non, c'est un conseil · <b>B. Oui, sous peine d'une amende de 135 €</b> · C. Seulement la nuit</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>Question 3 · la panne</h3>
+    <div class="actuel"><small>Version actuelle</small>Ton camion tombe en panne sur l'autoroute. Quel est le bon réflexe ?<br /><span class="court">A. Je reste dans ma cabine, ceinture attachée, en attendant les secours · <b>B. Feux de détresse, gilet enfilé, je sors et je me mets derrière la glissière</b> · C. Je pose mon triangle de pré-signalisation derrière le camion</span></div>
+    <div class="alt"><small>Autres tournures de la question</small><ol>
+      <li>Panne sur l'autoroute : quel est ton premier réflexe ?</li>
+      <li>Ton camion s'arrête sur la bande d'arrêt d'urgence. Où te mets-tu à l'abri ?</li>
+      <li>Panne ou accident sur l'autoroute : que fais-tu en premier ?</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>Les « Le saviez-vous ? »</h3><p class="ou">Repris du dépliant VINCI : à garder tels quels ou à faire valider s'ils changent.</p>
+    <div class="fixe">1. 67 % des conducteurs français n'appliquent pas systématiquement la règle du corridor de sécurité, alors que le code de la route oblige à ralentir et à changer de voie, ou à s'écarter le plus possible. (Ipsos pour la Fondation VINCI Autoroutes, 2024)<br />2. Un balisage est une zone d'intervention dont l'accès est strictement interdit. Sur l'autoroute, des aires sont accessibles tous les 15 km environ pour stationner en toute sécurité.</div>
+  </div>
+
+  <div class="bloc"><h3>Le consentement et la mention</h3>
+    <div class="actuel"><small>Version actuelle</small>J'accepte que Michelin Truckfly active mon offre sur mon compte et me contacte à ce sujet.<br /><span class="court">Offre réservée aux 1000 premiers participants, une participation par compte Michelin Truckfly. Tes données servent uniquement à activer ton offre.</span></div>
+    <div class="alt"><small>Autres tournures</small><ol>
+      <li>J'accepte que Michelin Truckfly active mes 2 mois de GPS offerts sur mon compte.</li>
+      <li>Je participe à l'offre et j'accepte que Michelin Truckfly me contacte à ce sujet.</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>Le bouton de validation</h3>
+    <div class="actuel"><small>Version actuelle</small>Je valide ma participation</div>
+    <div class="alt"><small>Autres tournures</small><ol>
+      <li>J'envoie mes réponses</li>
+      <li>Je valide et je récupère mon GPS</li>
+      <li>C'est envoyé !</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div></div>
+  </div>
+</section>
+
+<!-- Écran 4 : la confirmation -->
+<section style="break-before: page;">
+  <h2><span class="ecran">Écran 4</span>La confirmation</h2>
+
+  <div class="bloc"><h3>Le titre</h3>
+    <div class="actuel"><small>Version actuelle</small>On a bien reçu ta participation ! 🎄</div>
+    <div class="alt"><small>Autres tournures</small><ol>
+      <li>C'est validé, merci !</li>
+      <li>Bien joué, ta participation est enregistrée !</li>
+      <li>Merci et bonnes fêtes !</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>La date d'activation</h3><p class="ou">Encadré jaune, juste sous le titre. Date à confirmer avec VINCI.</p>
+    <div class="actuel"><small>Version actuelle</small>Tu fais partie des 1000 premiers : profite de tes 2 mois de GPS dès le [date], directement sur ton compte Michelin Truckfly.</div>
+    <div class="alt"><small>Autres tournures</small><ol>
+      <li>Tes 2 mois de GPS t'attendent dès le [date] sur ton compte Michelin Truckfly.</li>
+      <li>Rendez-vous le [date] : tes 2 mois de GPS seront activés automatiquement.</li>
+      <li>Ton cadeau arrive le [date] : 2 mois de GPS offerts, sans rien faire de plus.</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>Les bonnes réponses et les règles de sécurité</h3><p class="ou">Repris du dépliant VINCI : à garder tels quels.</p>
+    <div class="fixe">Les 3 bonnes réponses expliquées, puis les règles en cas de panne ou d'accident (feux de détresse, bande d'arrêt d'urgence ou refuge, gilet, évacuer, derrière la glissière, borne orange, 112, pas de triangle) et si l'on est témoin d'un accident.</div>
+  </div>
+
+  <div class="bloc"><h3>La phrase de fin</h3>
+    <div class="actuel"><small>Version actuelle</small>Pour leur sécurité et la tienne, laisse de la place aux équipes d'intervention. Bonnes fêtes et bonne route !</div>
+    <div class="alt"><small>Autres tournures</small><ol>
+      <li>Sur la route des fêtes, ralentis et change de voie. Bonne route !</li>
+      <li>Merci de veiller sur celles et ceux qui veillent sur toi. Bonnes fêtes !</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div></div>
+  </div>
+
+  <div class="bloc"><h3>Le message quand l'offre est terminée</h3><p class="ou">S'affiche quand les 1000 places sont prises.</p>
+    <div class="actuel"><small>Version actuelle</small><b>Les 1000 accès ont trouvé preneur 🎄</b><br />Merci pour ta participation ! L'offre est terminée. Les équipes d'intervention veillent toujours sur la route : laisse-leur de la place. Bonnes fêtes et bonne route !</div>
+    <div class="alt"><small>Autres tournures du titre</small><ol>
+      <li>Trop tard, les 1000 GPS sont partis !</li>
+      <li>L'offre est terminée, merci pour ton enthousiasme</li>
+    </ol></div>
+    <div class="lignes"><small>Tes idées</small><div></div></div>
+  </div>
+</section>
+
+</body>
+</html>
