@@ -34,6 +34,11 @@ p, li { font-size: 19px; line-height: 1.45; }
 .chiffres { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 8px; }
 .chiffre { background: var(--clair); border-radius: 18px; padding: 24px 22px; }
 .chiffre b { display: block; font-family: "Bib", sans-serif; font-size: 44px; line-height: 1; color: var(--bleu); }
+.cofi { padding: 18px 22px; }
+.cofi small { display: block; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--rouge); margin-bottom: 8px; }
+.cofi div + div { margin-top: 10px; }
+.cofi b { font-size: 32px !important; }
+.cofi span { margin-top: 4px !important; font-size: 15px !important; }
 .chiffre span { display: block; margin-top: 10px; font-size: 17px; line-height: 1.35; color: var(--gris); }
 .etapes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .etape { background: var(--clair); border-radius: 18px; padding: 24px 22px; position: relative; }
@@ -81,13 +86,15 @@ p, li { font-size: 19px; line-height: 1.45; }
 
 <!-- 2 · L'opération en bref -->
 <section class="slide">
-  <p class="sur">L'opération en bref · opération conjointe</p>
+  <p class="sur">L'opération en bref · opération cofinancée</p>
   <h2>Un cadeau de fin d'année qui fait passer<br />le message du corridor de sécurité</h2>
   <div class="chiffres">
     <div class="chiffre"><b>2 mois</b><span>de GPS Michelin Truckfly offerts</span></div>
     <div class="chiffre"><b>1000</b><span>premiers participants au quiz</span></div>
     <div class="chiffre"><b>3</b><span>questions sécurité, environ 1 minute</span></div>
-    <div class="chiffre"><b>6 922 €</b><span>financés par Michelin Truckfly, pour une participation VINCI Autoroutes de 4&nbsp;710&nbsp;€ (à&nbsp;prix&nbsp;coûtant)</span></div>
+    <div class="chiffre cofi"><small>Opération cofinancée</small>
+      <div><b>6 922 €</b><span>Michelin Truckfly</span></div>
+      <div><b>4 710 €</b><span>VINCI Autoroutes (à&nbsp;prix&nbsp;coûtant)</span></div></div>
   </div>
   <div class="cols" style="margin-top: 30px;">
     <div class="carte" style="flex: 1;"><h3>Le message</h3><p>Michelin Truckfly et VINCI Autoroutes s'associent pour les fêtes : les patrouilleurs veillent sur les routiers, protégeons-les en respectant le corridor de sécurité.</p></div>

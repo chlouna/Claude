@@ -2,7 +2,7 @@
 
 **Offre** : 2 mois de GPS offerts aux **1000 premiers** qui répondent au quiz sécurité.
 **Thème** : nos anges gardiens (les patrouilleurs en jaune, un homme et une femme) veillent sur la route pendant les fêtes.
-**Budget** : opération conjointe. VINCI Autoroutes paie 4 710 € (à prix coûtant), Michelin Truckfly finance 6 922 €.
+**Budget** : opération cofinancée. Michelin Truckfly 6 922 €, VINCI Autoroutes 4 710 € (à prix coûtant).
 **Couleurs** : charte Michelin Truckfly (bleu, jaune) + rouge VINCI Autoroutes `#E20025` (bandeau du haut, badge, écharpes des anges, guirlande, bande du fourgon). Logo officiel : `assets/vinci-autoroutes.png`.
 
 ## Parcours
