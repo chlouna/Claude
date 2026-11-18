@@ -10,7 +10,7 @@ def png_b64(path, h):
     im=im.resize((w,h), Image.LANCZOS); b=io.BytesIO(); im.save(b,'PNG',optimize=True)
     return 'data:image/png;base64,'+base64.b64encode(b.getvalue()).decode()
 logo_tf=png_b64(R+'assets/truckfly-blanc-rogne.png', 90)
-logo_vinci=png_b64(R+'assets/vinci-autoroutes.png', 102)
+logo_vinci=png_b64(R+'assets/vinci-autoroutes-blanc.png', 102)
 bib='data:font/woff2;base64,'+base64.b64encode(open(R+'../assets/fonts/BIB-Bold.woff2','rb').read()).decode()
 
 css=src[src.index('<style>')+7:src.index('</style>')]
@@ -19,7 +19,7 @@ css=re.sub(r'\.entete-planche[^\n]*\n','',css)
 css=re.sub(r'\.planche[^\n]*\n|\.cartel[^\n]*\n|\.capture[^\n]*\n','',css)
 css=re.sub(r'body \{[^}]*\}', '', css, count=1)
 defs=src[src.index('<!-- Personnages réutilisés'):src.index('<div class="entete-planche">')]
-VARIANTES=[('va','a','noel-a-anges-gardiens'),('vb','b','noel-b-gilet-jaune'),('vc','c','noel-c-cadeau'),('vd','d','noel-d-pere-noel')]
+VARIANTES=[('va','a','noel-a-anges-gardiens'),('va2','a-bis','noel-a-bis-patrouilleurs'),('vb','b','noel-b-gilet-jaune'),('vc','c','noel-c-cadeau'),('vd','d','noel-d-pere-noel')]
 for vid, lettre, nom in VARIANTES:
   m=re.search(r'<section class="(ecran[^"]*)" id="'+vid+r'"[^>]*>', src)
   sec=src[m.start():src.index('</section>', m.start())]+'</section>'
@@ -27,7 +27,7 @@ for vid, lettre, nom in VARIANTES:
   sec=sec.replace('<button class="fermer" aria-label="Fermer">×</button>','<button class="fermer" id="close-x" data-onesignal-unique-label="noel-close-x" aria-label="Fermer">×</button>')
   sec=re.sub(r'<a class="(cta[^"]*)">([^<]*)</a>', r'<button class="\1" id="quiz" data-onesignal-unique-label="noel-quiz">\2</button>', sec)
   sec=sec.replace('<a class="plus-tard">Plus tard</a>','<button class="plus-tard" id="later" data-onesignal-unique-label="noel-later">Plus tard</button>')
-  sec=sec.replace('src="assets/truckfly-blanc-rogne.png"','src="'+logo_tf+'"').replace('src="assets/vinci-autoroutes.png"','src="'+logo_vinci+'"')
+  sec=sec.replace('src="assets/truckfly-blanc-rogne.png"','src="'+logo_tf+'"').replace('src="assets/vinci-autoroutes-blanc.png"','src="'+logo_vinci+'"')
   for x in ['id="close-x"','id="quiz"','id="later"','data:image/png']: assert x in sec, x
 
   html=f'''<!DOCTYPE html>
@@ -89,9 +89,7 @@ for vid, lettre, nom in VARIANTES:
         const tags = (typeof liquidPlayerTags !== "undefined" && liquidPlayerTags) || {{}};
         const params = new URLSearchParams({{
           user_id: tags.USER_ID || "",   // champ caché « user_id » du formulaire Tally
-          source:  "interstitiel-noel-{lettre}",   // champ caché « source » du formulaire Tally
-          email:   tags.EMAIL   || "",
-          phone:   tags.PHONE   || ""    // tag à créer côté app (n'existe pas encore)
+          source:  "interstitiel-noel-{lettre}"    // champ caché « source » du formulaire Tally
         }});
         return TALLY_URL + "?" + params.toString();
       }}
