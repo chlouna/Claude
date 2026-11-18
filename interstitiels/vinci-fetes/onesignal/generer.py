@@ -19,7 +19,7 @@ css=re.sub(r'\.entete-planche[^\n]*\n','',css)
 css=re.sub(r'\.planche[^\n]*\n|\.cartel[^\n]*\n|\.capture[^\n]*\n','',css)
 css=re.sub(r'body \{[^}]*\}', '', css, count=1)
 defs=src[src.index('<!-- Personnages réutilisés'):src.index('<div class="entete-planche">')]
-VARIANTES=[('va','a','noel-a-anges-gardiens'),('va2','a-bis','noel-a-bis-patrouilleurs'),('vb','b','noel-b-gilet-jaune'),('vc','c','noel-c-cadeau'),('vd','d','noel-d-pere-noel')]
+VARIANTES=[('va','a','noel-a-anges-gardiens'),('va2','a-bis','noel-a-bis-patrouilleurs'),('vb','b','noel-b-gilet-jaune'),('vc','c','noel-c-cadeau'),('vd','d','noel-d-pere-noel'),('ve','e','noel-e-corridor-lumiere'),('vf','f','noel-f-boule-a-neige'),('vg','g','noel-g-calendrier-avent')]
 for vid, lettre, nom in VARIANTES:
   m=re.search(r'<section class="(ecran[^"]*)" id="'+vid+r'"[^>]*>', src)
   sec=src[m.start():src.index('</section>', m.start())]+'</section>'

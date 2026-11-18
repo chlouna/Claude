@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="UTF-8" /><title>Parcours en 4 écrans</title>
+<style>
+@font-face { font-family: "Bib"; src: url("../../assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Inter"; src: url("../../assets/fonts/Inter-Regular.otf") format("opentype"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../../assets/fonts/Inter-Bold.otf") format("opentype"); font-weight: 700; }
+@page { size: 1280px 720px; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Inter", sans-serif; color: #061866; }
+.p { width: 1280px; height: 720px; padding: 40px 60px; display: flex; flex-direction: column; break-after: page; position: relative; }
+.p::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: #e20025; }
+.sur { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #e20025; }
+h1 { font-family: "Bib", sans-serif; font-size: 34px; margin: 6px 0 14px; }
+.une { display: flex; gap: 60px; align-items: center; flex: 1; }
+.une img { height: 620px; border-radius: 30px; box-shadow: 0 14px 34px rgba(6,24,102,.25); }
+.une p { font-size: 20px; line-height: 1.5; }
+</style></head><body>
+<section class="p"><p class="sur">Michelin Truckfly × VINCI Autoroutes</p><h1>Le parcours en 4 écrans</h1>
+<img src="parcours.png" style="width: 1120px; align-self: center;" /></section>
+<section class="p"><div class="une"><img src="ecran-1-interstitiel.png" /><div><p class="sur">Écran 1</p><h1>L'interstitiel</h1><p>S'affiche au lancement de l'app Michelin Truckfly. Le bouton ouvre le quiz, « Plus tard » ou la croix le ferment.</p></div></div></section>
+<section class="p"><div class="une"><img src="ecran-2-quiz-debut.png" /><div><p class="sur">Écran 2</p><h1>Le quiz (début)</h1><p>Une phrase d'introduction, puis les questions 1 et 2, avec des réponses courtes.</p></div></div></section>
+<section class="p"><div class="une"><img src="ecran-3-quiz-fin.png" /><div><p class="sur">Écran 3</p><h1>Le quiz (fin)</h1><p>Question 3, consentement et validation. Aucune saisie : le compte est reconnu par l'identifiant trucker.</p></div></div></section>
+<section class="p"><div class="une"><img src="ecran-4-confirmation.png" /><div><p class="sur">Écran 4</p><h1>La confirmation</h1><p>« On a bien reçu ta participation », la date d'activation des 2 mois de GPS, les bonnes réponses et les réflexes en cas de panne.</p></div></div></section>
+</body></html>

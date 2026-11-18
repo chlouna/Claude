@@ -39,6 +39,16 @@ body { font-family: "Inter", sans-serif; background: #fff; padding: 40px; color:
 .rep b { display: block; font-size: 15px; margin: 14px 0 6px; }
 .legende { text-align: center; margin-top: 16px; font-weight: 700; font-size: 17px; }
 .legende span { display: block; font-weight: 400; font-size: 14px; color: var(--gris); margin-top: 4px; }
+.leger .titre-form { font-size: 25px; margin-bottom: 10px; }
+.leger .txt { font-size: 16px; }
+.leger .q { font-size: 17px; margin: 18px 0 10px; }
+.leger .opt { font-size: 15.5px; padding: 12px 14px; }
+.leger .info { font-size: 14px; }
+.leger .case { font-size: 15px; }
+.leger .mention { font-size: 13px; }
+.leger .rep { font-size: 15.5px; line-height: 1.6; }
+.leger .rep b { font-size: 16.5px; margin: 20px 0 6px; }
+.leger .date { font-size: 17px; }
 </style>
 </head>
 <body>
@@ -48,62 +58,57 @@ body { font-family: "Inter", sans-serif; background: #fff; padding: 40px; color:
 <p class="legende">1 · L'interstitiel<span>dans l'app Michelin Truckfly</span></p></div>
 <div class="fleche">→</div>
 
-<div><section class="ecran" data-nom="2-quiz-debut">
+<div><section class="ecran leger" data-nom="2-quiz-debut">
   <div class="nav">🔒 <b>tally.so</b></div>
   <div class="page">
     <p class="titre-form">Quiz sécurité · 2 mois de GPS offerts</p>
-    <p class="txt"><b>Pour leur sécurité et la tienne, protège celles et ceux qui veillent sur la route pendant les fêtes.</b><br />Michelin Truckfly et VINCI Autoroutes s'associent pour rappeler les bons réflexes face aux équipes d'intervention, présentes jour et nuit sur l'autoroute.<br />Réponds à 3 questions : <b>les 1000 premiers participants gagnent 2 mois de GPS offerts</b>.</p>
-    <p class="q">1. Un véhicule d'intervention est arrêté sur la bande d'arrêt d'urgence, gyrophares allumés. Que fais-tu ? <span class="req">*</span></p>
-    <div class="opt"><span class="l">A</span>Je garde ma voie et ma vitesse</div>
-    <div class="opt ok"><span class="l">B</span>Je ralentis et je change de voie, ou je m'écarte le plus possible</div>
-    <div class="opt"><span class="l">C</span>Je klaxonne pour signaler ma présence</div>
-    <div class="info">💡 <b>Le saviez-vous ?</b> 67 % des conducteurs français n'appliquent pas systématiquement la règle du corridor de sécurité, alors que le code de la route oblige à ralentir et à changer de voie, ou à s'écarter le plus possible.<br /><i>Source : Baromètre de la conduite responsable, Ipsos pour la Fondation VINCI Autoroutes, 2024</i></div>
-    <p class="q">2. Que risques-tu si tu ne respectes pas le corridor de sécurité ? <span class="req">*</span></p>
-  </div>
-  <div class="coupe"></div>
-</section>
-<p class="legende">2 · Le quiz (début)<span>3 questions sur une seule page</span></p></div>
-<div class="fleche">→</div>
-
-<div><section class="ecran" data-nom="3-quiz-fin">
-  <div class="nav">🔒 <b>tally.so</b></div>
-  <div class="page">
-    <div class="opt"><span class="l">A</span>Rien, c'est une simple recommandation</div>
+    <p class="txt">3 questions, 1 minute : <b>les 1000 premiers gagnent 2 mois de GPS.</b></p>
+    <p class="q">1. Un véhicule d'intervention est arrêté sur la bande d'arrêt d'urgence. Que fais-tu ?</p>
+    <div class="opt"><span class="l">A</span>Je garde ma voie</div>
+    <div class="opt ok"><span class="l">B</span>Je ralentis et je change de voie</div>
+    <div class="opt"><span class="l">C</span>Je klaxonne</div>
+    <div class="info">💡 <b>Le saviez-vous ?</b> 67 % des conducteurs n'appliquent pas toujours le corridor de sécurité.</div>
+    <p class="q">2. Que risques-tu si tu ne respectes pas le corridor de sécurité ?</p>
+    <div class="opt"><span class="l">A</span>Rien</div>
     <div class="opt ok"><span class="l">B</span>Une amende de 135 €</div>
     <div class="opt"><span class="l">C</span>Un simple avertissement</div>
-    <p class="q" style="margin-top: 18px;">3. Ton camion tombe en panne sur l'autoroute. Quel est le bon réflexe ? <span class="req">*</span></p>
-    <div class="opt"><span class="l">A</span>Je reste dans ma cabine, ceinture attachée, en attendant les secours</div>
-    <div class="opt ok"><span class="l">B</span>Feux de détresse, gilet enfilé, je sors et je me mets derrière la glissière</div>
-    <div class="opt"><span class="l">C</span>Je pose mon triangle de pré-signalisation derrière le camion</div>
-    <div class="info">💡 <b>Le saviez-vous ?</b> Un balisage est une zone d'intervention dont l'accès est strictement interdit. Sur l'autoroute, des aires sont accessibles tous les 15 km environ pour stationner en toute sécurité.</div>
-    <p class="q">Consentement <span class="req">*</span></p>
-    <div class="case"><i>✓</i>J'accepte que Michelin Truckfly active mon offre sur mon compte et me contacte à ce sujet.</div>
-    <p class="mention">Offre réservée aux 1000 premiers participants, une participation par compte Michelin Truckfly. Tes données servent uniquement à activer ton offre.</p>
+  </div>
+</section>
+<p class="legende">2 · Le quiz (début)<span>1 phrase d'intro, réponses courtes</span></p></div>
+<div class="fleche">→</div>
+
+<div><section class="ecran leger" data-nom="3-quiz-fin">
+  <div class="nav">🔒 <b>tally.so</b></div>
+  <div class="page">
+    <p class="q" style="margin-top: 8px;">3. Ton camion tombe en panne sur l'autoroute. Le bon réflexe ?</p>
+    <div class="opt"><span class="l">A</span>Je reste dans ma cabine</div>
+    <div class="opt ok"><span class="l">B</span>Gilet enfilé, je passe derrière la glissière</div>
+    <div class="opt"><span class="l">C</span>Je pose mon triangle</div>
+    <div class="case" style="margin-top: 26px;"><i>✓</i>J'accepte que Michelin Truckfly active mon offre sur mon compte.</div>
+    <p class="mention">1000 premiers participants · une participation par compte.</p>
     <div class="bouton">Je valide ma participation</div>
   </div>
 </section>
 <p class="legende">3 · Le quiz (fin)<span>pas de saisie : compte reconnu via l'ID trucker</span></p></div>
 <div class="fleche">→</div>
 
-<div><section class="ecran fin" data-nom="4-confirmation">
+<div><section class="ecran fin leger" data-nom="4-confirmation">
   <div class="nav">🔒 <b>tally.so</b></div>
   <div class="page">
     <h1>On a bien reçu ta participation ! 🎄</h1>
-    <p class="date">Tu fais partie des 1000 premiers : profite de tes 2 mois de GPS dès le [date à confirmer], directement sur ton compte Michelin Truckfly.</p>
+    <p class="date">Profite de tes 2 mois de GPS dès le [date], directement sur ton compte Michelin Truckfly.</p>
     <div class="rep">
       <b>Les bonnes réponses</b>
-      1. À l'approche d'un véhicule d'intervention : je ralentis, je change de voie, ou je m'écarte le plus possible. C'est le corridor de sécurité.<br />
-      2. Depuis septembre 2018, ne pas respecter le corridor de sécurité coûte une amende de 135 € (article R412-11-1 du code de la route).<br />
-      3. En cas de panne : feux de détresse, gilet enfilé, tu sors et tu te mets à l'abri derrière la glissière. Pas de triangle sur autoroute.
-      <b>Les règles de sécurité sur autoroute</b>
-      • Allume tes feux de détresse.<br />
-      • Arrête-toi sur la bande d'arrêt d'urgence et, si possible, dans un refuge.<br />
-      • Enfile ton gilet, sors du véhicule et fais sortir tous les passagers.<br />
-      • Mets-toi derrière la glissière de sécurité.<br />
-      • Rejoins la borne orange d'appel d'urgence la plus proche…
+      1. Je ralentis et je change de voie.<br />
+      2. Une amende de 135 €.<br />
+      3. Gilet enfilé, derrière la glissière.
+      <b>En cas de panne sur l'autoroute</b>
+      • Feux de détresse et gilet<br />
+      • Tout le monde derrière la glissière<br />
+      • Borne orange ou 112
+      <b style="margin-top: 22px;">Bonne route et bonnes fêtes !</b>
     </div>
   </div>
-  <div class="coupe"></div>
 </section>
 <p class="legende">4 · La confirmation<span>participation reçue + date d'activation</span></p></div>
 
