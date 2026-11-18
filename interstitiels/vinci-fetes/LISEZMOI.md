@@ -9,7 +9,7 @@
 
 - **Choix 1** retenu (proposition A). Deux versions : avec ailes et auréoles, ou patrouilleurs sans ailes ni auréole (`va2`, « A bis »).
 - Pas de « gilet jaune » ni d'« anges gardiens » dans les textes (le gilet reste dans le visuel). Formulations non genrées : « celles et ceux qui veillent sur la route », « les équipes d'intervention ». 4 propositions d'accroche dans le PDF.
-- Nouveau logo VINCI Autoroutes blanc : version provisoire (`assets/vinci-autoroutes-blanc.png`, logo actuel passé en blanc) en attendant le PNG officiel.
+- Nouveau logo VINCI Autoroutes blanc : fichier officiel reçu, détouré sur fond transparent (`assets/vinci-autoroutes-blanc.png`).
 - Pas d'email ni de téléphone dans le quiz : le compte est reconnu par l'identifiant trucker (`user_id`). Une participation par compte. À voir côté tech : que le lien Tally reçoive directement l'ID du trucker.
 - Écran de fin : « On a bien reçu ta participation ! », avec « profite de tes 2 mois de GPS dès le [date à confirmer] ».
 - Parcours en 4 écrans pour VINCI : `funnel/` (`parcours.png` et un PNG par écran ; régénérer avec `node interstitiels/vinci-fetes/funnel/capturer.mjs`).
