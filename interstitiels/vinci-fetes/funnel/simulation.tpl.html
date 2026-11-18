@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="UTF-8" /><title>Simulation du parcours</title>
+<style>
+@font-face { font-family: "Bib"; src: url("../../assets/fonts/BIB-Bold.woff2") format("woff2"); font-weight: 700; }
+__CSS__
+body { margin: 0; padding: 0; width: 1920px; height: 1080px; overflow: hidden; background: radial-gradient(120% 120% at 70% 30%, #10287f 0%, #061866 50%, #000e38 100%); font-family: "Inter", sans-serif; }
+.bandeau { position: absolute; left: 0; right: 0; top: 0; height: 10px; background: #e20025; }
+.logos { position: absolute; left: 120px; top: 90px; display: flex; align-items: center; gap: 22px; }
+.logos img { height: 52px; } .logos span { color: #fff; opacity: .7; font-size: 30px; }
+.legendes { position: absolute; left: 120px; top: 300px; width: 760px; }
+.leg { position: absolute; left: 0; top: 0; width: 100%; opacity: 0; }
+.leg .n { display: inline-flex; width: 64px; height: 64px; border-radius: 50%; background: #ffff1a; color: #061866; font-family: "Bib"; font-size: 34px; align-items: center; justify-content: center; margin-bottom: 26px; }
+.leg h2 { font-family: "Bib"; color: #fff; font-size: 56px; line-height: 1.1; margin: 0 0 18px; }
+.leg p { color: rgba(255,255,255,.82); font-size: 28px; line-height: 1.45; margin: 0; }
+.tel { position: absolute; left: 1150px; top: 50px; width: 414px; height: 868px; border-radius: 60px; background: #0d0d12; padding: 12px; transform-origin: top left; transform: scale(1.12); box-shadow: 0 40px 90px rgba(0,0,0,.5); }
+.ecran-tel { position: relative; width: 390px; height: 844px; border-radius: 48px; overflow: hidden; background: #fff; }
+.couche { position: absolute; inset: 0; }
+.couche > img { width: 100%; height: 100%; display: block; }
+#quiz { background: #fff; }
+#quiz .nav { position: absolute; left: 0; right: 0; top: 0; z-index: 2; background: #f3f4f7; }
+#defile { position: absolute; left: 0; right: 0; top: 57px; }
+#defile .page { padding-bottom: 40px; }
+.case i.vide { background: #fff !important; border: 1.5px solid #c9d1e0; color: transparent !important; }
+.doigt { position: absolute; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: rgba(255,255,255,.55); border: 3px solid rgba(6,24,102,.55); box-shadow: 0 4px 14px rgba(0,0,0,.3); z-index: 10; pointer-events: none; }
+.fin { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; background: radial-gradient(120% 120% at 50% 40%, #10287f 0%, #061866 55%, #000e38 100%); }
+.fin .logos { position: static; margin-bottom: 60px; }
+.fin h1 { font-family: "Bib"; color: #fff; font-size: 84px; text-align: center; line-height: 1.1; margin: 0; }
+.fin h1 b { color: #ffff1a; }
+.fin p { color: rgba(255,255,255,.8); font-size: 30px; margin-top: 30px; }
+</style></head><body class="leger">
+<div class="bandeau"></div>
+<div class="logos"><img src="../assets/truckfly-blanc-rogne.png" /><span>×</span><img src="../assets/vinci-autoroutes-blanc.png" /></div>
+<div class="legendes">
+  <div class="leg" id="l1"><span class="n">1</span><h2>L'interstitiel s'affiche dans l'app</h2><p>À l'ouverture de Michelin Truckfly, pendant la période des fêtes.</p></div>
+  <div class="leg" id="l2"><span class="n">2</span><h2>Le quiz s'ouvre</h2><p>3 questions sur le corridor de sécurité, environ 1 minute.</p></div>
+  <div class="leg" id="l3"><span class="n">3</span><h2>Aucune saisie</h2><p>Le compte est reconnu automatiquement : une case à cocher et on valide.</p></div>
+  <div class="leg" id="l4"><span class="n">4</span><h2>Participation confirmée</h2><p>Les 1000 premiers profitent de 2 mois de GPS offerts, avec un rappel des bons réflexes.</p></div>
+</div>
+<div class="tel"><div class="ecran-tel" id="ecran">
+  <div class="couche" style="background: radial-gradient(120% 80% at 50% 20%, #2a3a8f, #0b1150);"></div>
+  <div class="couche" id="inter"><img src="ecran-1-interstitiel.png" /></div>
+  <div class="couche" id="quiz"><div class="nav">🔒 <b>tally.so</b></div><div id="defile"><div class="page">__CONTENU__</div></div></div>
+  <div class="couche" id="conf"><img src="ecran-4-confirmation.png" /></div>
+  <div class="doigt" id="doigt"></div>
+</div></div>
+<div class="fin" id="fin"><div class="logos"><img src="../assets/truckfly-blanc-rogne.png" /><span>×</span><img src="../assets/vinci-autoroutes-blanc.png" /></div>
+<h1>Pour les fêtes,<br /><b>2 mois de GPS offerts</b><br />aux 1000 premiers</h1><p>Pour leur sécurité et la tienne, protège les équipes de patrouille.</p></div>
+<script>
+const $ = (id) => document.getElementById(id);
+const opts = [...document.querySelectorAll('.opt[data-ok]')];
+const qs = [...document.querySelectorAll('#defile .q')];
+const caseI = document.querySelector('#case i');
+const valider = $('valider');
+const defile = $('defile');
+const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+const ease = (x) => { x = clamp(x, 0, 1); return x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; };
+const prog = (t, a, b) => ease((t - a) / (b - a));
+let S, P;
+function haut(el) { let y = 0; while (el && el !== defile) { y += el.offsetTop; el = el.offsetParent; } return y; }
+function pos(el) { // centre de l'élément dans le contenu défilant (sans défilement)
+  const r = el.getBoundingClientRect(), d = defile.getBoundingClientRect();
+  const z = 1.12; return [(r.left - d.left + r.width / 2) / z, (r.top - d.top + r.height / 2) / z]; }
+function init() {
+  defile.style.transform = 'none';
+  const max = Math.max(0, defile.scrollHeight - (844 - 57));
+  const sp = (el) => clamp(pos(el)[1] - 120, 0, max);
+  S = { q2: sp(qs[1]), q3: sp(qs[2]), bas: max };
+  P = { o1: pos(opts[0]), o2: pos(opts[1]), o3: pos(opts[2]), c: pos(caseI), v: pos(valider) };
+}
+function rendu(t) {
+  $('inter').style.transform = `translateY(${(1 - prog(t, .3, 1.1)) * 900}px)`;
+  $('quiz').style.transform = `translateX(${(1 - prog(t, 4.0, 4.6)) * 420}px)`;
+  $('conf').style.transform = `translateX(${(1 - prog(t, 13.4, 14.0)) * 420}px)`;
+  let sc = S.q2 * prog(t, 6.3, 7.1) + (S.q3 - S.q2) * prog(t, 8.6, 9.5) + (S.bas - S.q3) * prog(t, 11.6, 12.2);
+  defile.style.transform = `translateY(${-sc}px)`;
+  const taps = [3.6, 5.6, 7.8, 10.4, 11.4, 12.8];
+  opts.forEach((o, i) => o.classList.toggle('ok', t >= taps[i + 1]));
+  caseI.classList.toggle('vide', t < taps[4]);
+  valider.style.transform = (t >= 12.8 && t < 13.1) ? 'scale(.96)' : 'none';
+  // trajet du doigt, en coordonnées de l'écran du téléphone
+  const enEcran = (p) => [p[0], p[1] + 57 - sc];
+  const pts = [[2.4, [200, 940]], [3.4, [195, 770]], [4.9, [320, 900]], [5.5, enEcran(P.o1)], [7.7, enEcran(P.o2)],
+               [10.3, enEcran(P.o3)], [11.3, enEcran(P.c)], [12.7, enEcran(P.v)]];
+  let x = pts[0][1][0], y = pts[0][1][1];
+  for (let i = 1; i < pts.length; i++) {
+    const [t1, p1] = pts[i], [t0, p0] = pts[i - 1];
+    if (t >= t1) { x = p1[0]; y = p1[1]; continue; }
+    const debut = Math.max(t0, t1 - .7), k = prog(t, debut, t1);
+    x = p0[0] + (p1[0] - p0[0]) * k; y = p0[1] + (p1[1] - p0[1]) * k; break;
+  }
+  const d = $('doigt');
+  d.style.left = x + 'px'; d.style.top = y + 'px';
+  d.style.opacity = (t > 2.4 && t < 13.2) ? Math.min(1, (t - 2.4) / .3) : 0;
+  d.style.transform = taps.some(k => t >= k && t < k + .22) ? 'scale(.75)' : 'scale(1)';
+  for (const [id, a, b] of [['l1', 0.2, 4.0], ['l2', 4.0, 9.0], ['l3', 9.0, 13.4], ['l4', 13.4, 18.5]]) {
+    const e = $(id); e.style.opacity = Math.min(prog(t, a, a + .5), 1 - prog(t, b - .3, b));
+    e.style.transform = `translateY(${(1 - prog(t, a, a + .5)) * 20}px)`; }
+  $('fin').style.opacity = prog(t, 18.3, 19.0);
+}
+window.rendu = rendu; window.init = init;
+</script></body></html>
