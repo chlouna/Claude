@@ -3199,7 +3199,7 @@ body:
               text-valign: top
               valign: top
               width: 100%
-          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Le nom de ta rue, toujours sous les yeux</span></h3>
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Plus besoin de chercher le panneau de rue</span></h3>
         - id: 13701e11-1d50-4a5e-947d-0257d446f1f8
           stylable: false
           title: Paragraph
