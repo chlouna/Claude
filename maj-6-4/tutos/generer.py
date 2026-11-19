@@ -88,13 +88,16 @@ VIDEOS = {
          "nav-rue.png", [("zoom", 50, 15, 1.6, 7.9, 11.2)]),
         (11.6, 15, "bleu", None, "Mets ton appli à jour&nbsp;!", None, None, []),
     ]),
-    "streetview": dict(duree=15.2, scenes=[
+    "streetview": dict(duree=18.8, scenes=[
         (0, 3.8, "bleu", None, "Nouveau&nbsp;: vois ta destination avant d’y arriver", None, "streetview.png", []),
         (3.8, 7.8, "clair", 1, "Appuie sur le drapeau d’arrivée", None, "streetview.png",
          [("zoom", 87, 38, 1.6, 4.1, 7.4), ("tap", 87, 38, 5.2)]),
-        (7.8, 11.8, "clair", 2, "Appuie sur «&nbsp;Voir dans Street View&nbsp;»", "Google Maps s’ouvre sur ta destination",
+        (7.8, 11.4, "clair", 2, "Appuie sur «&nbsp;Voir dans Street View&nbsp;»", None,
          "streetview.png", [("tap", 50, 77, 8.9)]),
-        (11.8, 15.2, "bleu", None, "Fini les tours pour trouver l’entrée&nbsp;!", None, None, []),
+        # Écran recréé (streetview-simu/) : une appli de cartes s'ouvre sur le parking de destination.
+        (11.4, 15.4, "clair", None, "Google Maps s’ouvre sur ta destination", "entrepôt, quai, parking…",
+         "streetview-simu.png", [("tap", 50, 71, 13.2)]),
+        (15.4, 18.8, "bleu", None, "Fini les tours pour trouver l’entrée&nbsp;!", None, None, []),
     ]),
     "nom-rue": dict(duree=15.2, scenes=[
         (0, 3.6, "bleu", None, "Nouveau&nbsp;: le nom de ta rue toujours affiché", None, "nav-rue.png", []),
