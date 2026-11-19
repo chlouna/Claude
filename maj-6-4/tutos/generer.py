@@ -334,7 +334,40 @@ def inter_photos(t):
     ])
 
 
+# Interstitiel Street View (6.5) : même format, 15 s, 7 langues. Libellés des boutons repris des captures traduites.
+INTER_SV = {
+    "fr": ("Vois ta destination avant d’y arriver&nbsp;!", "Appuie sur le drapeau d’arrivée", "Appuie sur «&nbsp;Voir dans Street View&nbsp;»",
+           "Google Maps s’ouvre sur ta destination", "Fini les tours pour trouver l’entrée&nbsp;!", "Lancer mon GPS"),
+    "en": ("See your destination before you arrive!", "Tap the finish flag", "Tap “View in Street View”",
+           "Google Maps opens on your destination", "No more circling to find the entrance!", "Start my GPS"),
+    "de": ("Sieh dein Ziel, bevor du ankommst!", "Tippe auf die Zielflagge", "Tippe auf „In Street View ansehen“",
+           "Google Maps öffnet sich an deinem Ziel", "Kein Suchen mehr nach der Einfahrt!", "GPS starten"),
+    "nl": ("Bekijk je bestemming voordat je aankomt!", "Tik op de finishvlag", "Tik op „Bekijken in Street View”",
+           "Google Maps opent op je bestemming", "Geen rondjes meer om de ingang te vinden!", "Mijn GPS starten"),
+    "pl": ("Zobacz cel, zanim dojedziesz!", "Dotknij flagi mety", "Dotknij „Zobacz w Street View”",
+           "Google Maps otworzy się w miejscu docelowym", "Koniec z szukaniem wjazdu!", "Uruchom GPS"),
+    "it": ("Guarda la destinazione prima di arrivare!", "Tocca la bandiera d’arrivo", "Tocca «&nbsp;Visualizza in Street View&nbsp;»",
+           "Google Maps si apre sulla tua destinazione", "Basta giri per trovare l’ingresso!", "Avvia il mio GPS"),
+    "es": ("¡Mira tu destino antes de llegar!", "Toca la bandera de llegada", "Toca «&nbsp;Ver en Street View&nbsp;»",
+           "Google Maps se abre en tu destino", "¡Se acabaron las vueltas para encontrar la entrada!", "Iniciar mi GPS"),
+}
+
+
+def inter_streetview(t, lang):
+    titre, drapeau, bouton, ouvre, fin, _ = t
+    simu = "streetview-simu.png" if lang == "fr" else f"streetview-simu-{lang}.png"
+    return dict(duree=15, scenes=[
+        (0, 3.2, "bleu", None, titre, None, "streetview.png", []),
+        (3.2, 6.6, "clair", 1, drapeau, None, "streetview.png", [("zoom", 87, 38, 1.6, 3.5, 6.2), ("tap", 87, 38, 4.4)]),
+        (6.6, 9.8, "clair", 2, bouton, None, "streetview.png", [("tap", 50, 77, 7.6)]),
+        (9.8, 13.2, "clair", 3, ouvre, None, simu, [("tap", 50, 77.5, 11.2)]),
+        (13.2, 15, "bleu", None, fin, None, None, []),
+    ])
+
+
 if __name__ == "__main__":
+  for lang, t in INTER_SV.items():
+    (ICI / f"inter-streetview-{lang}-2x3.html").write_text(page(f"inter-streetview-{lang}", inter_streetview(t, lang), "2x3", cta_texte=t[5], lang=lang))
   for lang, t in INTER_TEXTES.items():
     (ICI / f"inter-photos-{lang}-2x3.html").write_text(page(f"inter-photos-{lang}", inter_photos(t), "2x3", cta_texte=t[6], lang=lang))
   for nom, video in VIDEOS.items():

@@ -105,6 +105,32 @@ ZONES = {
         ("bouton", 144, 465),
     ],
 }
+# Écran Street View (6.5) : libellés relevés sur les captures traduites envoyées (EN, NL, ES, IT) ; DE et PL traduits.
+TRAD_SV = {
+    "en": dict(sv_pos="My position", sv_resto="Restaurant", sv_park="Parking", sv_station="Gas station", sv_lieu="Location",
+               sv_voir="View in Street View", sv_annuler="Cancel", sv_tard="Later", sv_demarrer="Start"),
+    "nl": dict(sv_pos="Mijn locatie", sv_resto="Restaurant", sv_park="Parking", sv_station="Tankstation", sv_lieu="Locatie",
+               sv_voir="Bekijken in Street View", sv_annuler="Annuleren", sv_tard="Later", sv_demarrer="Begin"),
+    "es": dict(sv_pos="Mi posición", sv_resto="Restaurante", sv_park="Estacionamiento", sv_station="Estación", sv_lieu="Lugar",
+               sv_voir="Ver en Street View", sv_annuler="Cancelar", sv_tard="Más tarde", sv_demarrer="Comenzar"),
+    "it": dict(sv_pos="La mia posizione", sv_resto="Ristorante", sv_park="Parcheggio", sv_station="Stazione", sv_lieu="Luogo",
+               sv_voir="Visualizza in Street View", sv_annuler="Annulla", sv_tard="Più tardi", sv_demarrer="Avvia"),
+    "de": dict(sv_pos="Mein Standort", sv_resto="Restaurant", sv_park="Parkplatz", sv_station="Tankstelle", sv_lieu="Ort",
+               sv_voir="In Street View ansehen", sv_annuler="Abbrechen", sv_tard="Später", sv_demarrer="Starten"),
+    "pl": dict(sv_pos="Moja pozycja", sv_resto="Restauracja", sv_park="Parking", sv_station="Stacja", sv_lieu="Miejsce",
+               sv_voir="Zobacz w Street View", sv_annuler="Anuluj", sv_tard="Później", sv_demarrer="Start"),
+}
+ZONES["streetview.png"] = [
+    ("sv_pos", 63, 72, 95, 14, "gx", 9.6, 400, "#2a2540"),
+    ("sv_resto", 81, 153, 56, 12, "gx", 9.3, 400, "#2a2540"),
+    ("sv_park", 165, 153, 37, 12, "gx", 9.3, 400, "#2a2540"),
+    ("sv_station", 234, 153, 50, 12, "gx", 9.3, 400, "#2a2540"),
+    ("sv_lieu", 153.5, 386, 46, 14, "c", 10, 700, "#000"),
+    ("sv_voir", 153.5, 462, 150, 15, "c", 9.2, 700, "#fff"),
+    ("<u>{sv_annuler}</u>", 153.5, 501, 56, 13, "c", 8.5, 700, "#9a9aa2"),
+    ("sv_tard", 84, 546, 60, 14, "c", 9, 700, "#2a2a5a"),
+    ("sv_demarrer", 222, 546, 62, 14, "c", 9, 700, "#8f93b5"),
+]
 for _image in ("fil-photo.png", "profil-photos.png"):
     ZONES[_image] += [(cle, x, 519, w, 12, "c", 7.8, gr, coul) for cle, x, w, gr, coul in NAV]
 
@@ -118,7 +144,8 @@ def couleur_fond(nom, x, y, w, h):
     """Couleur dominante de la zone : le fond, le texte n'y occupe qu'une minorité de pixels."""
     im = _image(nom)
     x0, y0 = max(int(x), 0), max(int(y), 0)
-    pixels = [im.getpixel((i, j)) for i in range(x0, min(int(x + w), L)) for j in range(y0, min(int(y + h), H))]
+    lw, lh = im.size
+    pixels = [im.getpixel((i, j)) for i in range(x0, min(int(x + w), lw)) for j in range(y0, min(int(y + h), lh))]
     r, g, b = Counter((p[0] // 8 * 8, p[1] // 8 * 8, p[2] // 8 * 8) for p in pixels).most_common(1)[0][0]
     return f"rgb({r + 4}, {g + 4}, {b + 4})"
 
@@ -131,7 +158,8 @@ def calques(image, lang):
     """HTML des libellés traduits pour une capture, ou chaîne vide (français ou capture sans zone)."""
     if lang not in TRAD or image not in ZONES:
         return ""
-    t = TRAD[lang]
+    t = {**TRAD[lang], **TRAD_SV.get(lang, {})}
+    L, H = _image(image).size
     html = ""
     for zone in ZONES[image]:
         if zone[0] == "bouton":  # bouton « remonter » de l'app, redessiné par-dessus le texte traduit
@@ -149,8 +177,12 @@ def calques(image, lang):
             pos = f"right:{pc(L - x - w, L)}; justify-content:flex-end;"
         else:
             pos = f"left:{pc(x, L)};"
+        if ancre == "gx":  # largeur fixe, texte coupé s'il déborde (puces serrées)
+            pos = f"left:{pc(x, L)}; overflow:hidden;"
         bloc = " bloc" if ancre == "b" else ""
-        largeur = f"width:{pc(w, L)};" if ancre == "b" else f"min-width:{pc(w, L)};"
+        largeur = f"width:{pc(w, L)};" if ancre in ("b", "gx") else f"min-width:{pc(w, L)};"
+        if ancre == "gx":
+            pos += " white-space:nowrap;"
         html += (f'<span class="trad{bloc}" style="{pos} top:{pc(y, H)}; {largeur} min-height:{pc(h, H)}; '
                  f'background:{fond}; color:{couleur}; font-size:{taille / L * 100:.3f}cqw; font-weight:{graisse}"><span>{texte}</span></span>')
     return html
