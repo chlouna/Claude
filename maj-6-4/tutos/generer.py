@@ -114,6 +114,14 @@ VIDEOS = {
          "alertes-navigation.png", [("tap", 88.4, 72.8, 11.0), ("coche", 88.4, 72.8, 11.3)]),
         (13.4, 17, "bleu", None, "Les autres n’apparaîtront plus en navigation&nbsp;!", None, None, []),
     ]),
+    "amis-commun": dict(duree=15.6, scenes=[
+        (0, 3.6, "bleu", None, "Nouveau&nbsp;: les amis en commun", None, "amis-commun-liste-fr.png", []),
+        (3.6, 7.8, "clair", 1, "Ouvre le profil d’un ami", "puis appuie sur «&nbsp;amis en commun&nbsp;»", "amis-commun-profil-fr.png",
+         [("zoom", 52, 34.5, 1.5, 3.9, 7.4), ("tap", 52, 34.5, 5.2)]),
+        (7.8, 12, "clair", 2, "Retrouve les chauffeurs que tu connais", "un collègue croisé sur une aire, un ancien de ta boîte…",
+         "amis-commun-liste-fr.png", [("zoom", 40, 45, 1.35, 8.3, 11.6)]),
+        (12, 15.6, "bleu", None, "Agrandis ton réseau sur la route&nbsp;!", None, None, []),
+    ]),
 }
 
 LANGUES = ["Français", "English", "Deutsch", "Nederlands", "Polski", "Italiano", "Español"]
@@ -394,7 +402,41 @@ def inter_alertes(t):
     ])
 
 
+# Interstitiel Amis en commun : captures envoyées en FR, EN, NL, ES, IT ; DE et PL reprennent les captures anglaises.
+INTER_AC = {
+    "fr": ("Agrandis ton réseau grâce aux amis en commun&nbsp;!", "Ouvre le profil d’un ami", "puis appuie sur «&nbsp;amis en commun&nbsp;»",
+           "Retrouve les chauffeurs que tu connais", "un collègue croisé sur une aire, un ancien de ta boîte…", "Agrandis ton réseau sur la route&nbsp;!", "Voir mes amis"),
+    "en": ("Grow your network with mutual friends!", "Open a friend’s profile", "then tap “mutual friends”",
+           "Find drivers you know", "a colleague met at a rest area, a former coworker…", "Grow your network on the road!", "See my friends"),
+    "de": ("Erweitere dein Netzwerk mit gemeinsamen Freunden!", "Öffne das Profil eines Freundes", "dann tippe auf „gemeinsame Freunde“",
+           "Finde Fahrer, die du kennst", "ein Kollege vom Rastplatz, ein früherer Kollege…", "Erweitere dein Netzwerk unterwegs!", "Meine Freunde ansehen"),
+    "nl": ("Vergroot je netwerk met gemeenschappelijke vrienden!", "Open het profiel van een vriend", "tik dan op „gemeenschappelijke vrienden”",
+           "Vind chauffeurs die je kent", "een collega van een parkeerplaats, een oud-collega…", "Vergroot je netwerk onderweg!", "Mijn vrienden bekijken"),
+    "pl": ("Poszerz sieć dzięki wspólnym znajomym!", "Otwórz profil znajomego", "potem dotknij „wspólni znajomi”",
+           "Znajdź kierowców, których znasz", "kolega z parkingu, były współpracownik…", "Poszerz swoją sieć na trasie!", "Zobacz znajomych"),
+    "it": ("Allarga la tua rete con gli amici in comune!", "Apri il profilo di un amico", "poi tocca «&nbsp;amici in comune&nbsp;»",
+           "Ritrova i camionisti che conosci", "un collega incontrato in un’area di sosta, un ex collega…", "Allarga la tua rete sulla strada!", "Vedi i miei amici"),
+    "es": ("¡Amplía tu red con los amigos en común!", "Abre el perfil de un amigo", "luego toca «&nbsp;amigos en común&nbsp;»",
+           "Encuentra a los conductores que conoces", "un compañero visto en un área, un excompañero…", "¡Amplía tu red en la carretera!", "Ver mis amigos"),
+}
+CAPTURES_AC = {"fr": "fr", "en": "en", "nl": "nl", "es": "es", "it": "it", "de": "en", "pl": "en"}
+
+
+def inter_amis_commun(t, lang):
+    titre, ouvre, puis, retrouve, exemple, fin, _ = t
+    c = CAPTURES_AC[lang]
+    x, y = (60, 33) if c == "nl" else (52, 34.5)  # lien « amis en commun », plus long en néerlandais
+    return dict(duree=15, scenes=[
+        (0, 3.2, "bleu", None, titre, None, f"amis-commun-liste-{c}.png", []),
+        (3.2, 7.4, "clair", 1, ouvre, puis, f"amis-commun-profil-{c}.png", [("zoom", x, y, 1.5, 3.5, 7.0), ("tap", x, y, 4.8)]),
+        (7.4, 11.8, "clair", 2, retrouve, exemple, f"amis-commun-liste-{c}.png", [("zoom", 40, 45, 1.35, 7.9, 11.4)]),
+        (11.8, 15, "bleu", None, fin, None, None, []),
+    ])
+
+
 if __name__ == "__main__":
+  for lang, t in INTER_AC.items():
+    (ICI / f"inter-amis-commun-{lang}-2x3.html").write_text(page(f"inter-amis-commun-{lang}", inter_amis_commun(t, lang), "2x3", cta_texte=t[6], lang=lang))
   for lang, t in INTER_AL.items():
     (ICI / f"inter-alertes-{lang}-2x3.html").write_text(page(f"inter-alertes-{lang}", inter_alertes(t), "2x3", cta_texte=t[6], lang=lang))
   for lang, t in INTER_SV.items():
