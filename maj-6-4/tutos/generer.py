@@ -95,8 +95,8 @@ VIDEOS = {
         (7.8, 11.4, "clair", 2, "Appuie sur «&nbsp;Voir dans Street View&nbsp;»", None,
          "streetview.png", [("tap", 50, 77, 8.9)]),
         # Écran recréé (streetview-simu/) : une appli de cartes s'ouvre sur le parking de destination.
-        (11.4, 15.4, "clair", None, "Google Maps s’ouvre sur ta destination", "entrepôt, quai, parking…",
-         "streetview-simu.png", [("tap", 50, 71, 13.2)]),
+        (11.4, 15.4, "clair", None, "Google Maps s’ouvre sur ta destination", "repère l’entrée avant d’arriver",
+         "streetview-simu.png", [("tap", 50, 77.5, 13.2)]),
         (15.4, 18.8, "bleu", None, "Fini les tours pour trouver l’entrée&nbsp;!", None, None, []),
     ]),
     "nom-rue": dict(duree=15.2, scenes=[
