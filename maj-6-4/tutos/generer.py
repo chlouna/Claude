@@ -365,7 +365,38 @@ def inter_streetview(t, lang):
     ])
 
 
+# Interstitiel Alertes en navigation (6.5) : 15 s, 7 langues. Noms des menus repris des captures traduites.
+INTER_AL = {
+    "fr": ("Choisis tes alertes en navigation&nbsp;!", "Ouvre les Paramètres", "puis «&nbsp;Alertes en navigation&nbsp;»",
+           "Coche les alertes que tu veux garder", "contrôles, accidents, dangers…", "Les autres n’apparaîtront plus&nbsp;!", "Régler mes alertes"),
+    "en": ("Choose your navigation alerts!", "Open Settings", "then “Navigation alerts”",
+           "Tick the alerts you want to keep", "police, accidents, hazards…", "The others won’t show anymore!", "Set my alerts"),
+    "de": ("Wähle deine Navigationswarnungen!", "Öffne die Einstellungen", "dann „Navigationswarnungen“",
+           "Hake die Warnungen an, die du behalten willst", "Kontrollen, Unfälle, Gefahren…", "Die anderen werden nicht mehr angezeigt!", "Warnungen einstellen"),
+    "nl": ("Kies je meldingen tijdens navigatie!", "Open Instellingen", "dan „Meldingen tijdens navigatie”",
+           "Vink de meldingen aan die je wilt houden", "controles, ongevallen, gevaren…", "De andere verschijnen niet meer!", "Mijn meldingen instellen"),
+    "pl": ("Wybierz alerty w nawigacji!", "Otwórz Ustawienia", "potem „Alerty w nawigacji”",
+           "Zaznacz alerty, które chcesz zachować", "kontrole, wypadki, zagrożenia…", "Pozostałe przestaną się wyświetlać!", "Ustaw alerty"),
+    "it": ("Scegli i tuoi avvisi di navigazione!", "Apri le Impostazioni", "poi «&nbsp;Avvisi durante la navigazione&nbsp;»",
+           "Spunta gli avvisi che vuoi tenere", "controlli, incidenti, pericoli…", "Gli altri non appariranno più!", "Imposta i miei avvisi"),
+    "es": ("¡Elige tus alertas de navegación!", "Abre los Ajustes", "luego «&nbsp;Alertas durante la navegación&nbsp;»",
+           "Marca las alertas que quieres mantener", "controles, accidentes, peligros…", "¡Las demás ya no aparecerán!", "Ajustar mis alertas"),
+}
+
+
+def inter_alertes(t):
+    titre, ouvre, puis, coche, exemples, fin, _ = t
+    return dict(duree=15, scenes=[
+        (0, 3.2, "bleu", None, titre, None, "alertes-navigation.png", []),
+        (3.2, 7.4, "clair", 1, ouvre, puis, "parametres-alertes.png", [("tap", 30, 83, 5.0)]),
+        (7.4, 11.8, "clair", 2, coche, exemples, "alertes-navigation.png", [("tap", 88.4, 72.8, 8.6), ("coche", 88.4, 72.8, 8.9)]),
+        (11.8, 15, "bleu", None, fin, None, None, []),
+    ])
+
+
 if __name__ == "__main__":
+  for lang, t in INTER_AL.items():
+    (ICI / f"inter-alertes-{lang}-2x3.html").write_text(page(f"inter-alertes-{lang}", inter_alertes(t), "2x3", cta_texte=t[6], lang=lang))
   for lang, t in INTER_SV.items():
     (ICI / f"inter-streetview-{lang}-2x3.html").write_text(page(f"inter-streetview-{lang}", inter_streetview(t, lang), "2x3", cta_texte=t[5], lang=lang))
   for lang, t in INTER_TEXTES.items():

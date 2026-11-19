@@ -131,6 +131,54 @@ ZONES["streetview.png"] = [
     ("sv_tard", 84, 546, 60, 14, "c", 9, 700, "#2a2a5a"),
     ("sv_demarrer", 222, 546, 62, 14, "c", 9, 700, "#8f93b5"),
 ]
+# Écrans « Paramètres » et « Alertes en navigation » (6.5). Libellés relevés sur les captures traduites
+# envoyées (EN, NL, ES, IT) ; DE et PL traduits. Les alertes gardent l'ordre de l'écran français (icônes).
+TRAD_AL = {
+    "en": dict(al_param="Settings", al_carte="Map display", al_r=["Night mode", "Map view", "Keep north at the top of the map", "Automatic zoom",
+               "Satellite View", "Traffic View", "Truck constraints view", "Traffic info management", "Navigation alerts", "Display the speed limit"],
+               al_titre="Navigation alerts", al_a=["Accident", "Hazard", "Traffic Jam", "Frequent harsh braking", "Object on road", "Police",
+               "Roadworks", "Stopped vehicle", "Emergency Vehicle", "Unsafe area"]),
+    "nl": dict(al_param="Instellingen", al_carte="Kaartweergave", al_r=["Nachtmodus", "Kaartweergave", "Houd het noorden bovenaan de kaart",
+               "Automatische zoom", "Satellietweergave", "Verkeersweergave", "Weergave van vrachtwagenbeperkingen", "Beheer van verkeersinformatie",
+               "Meldingen tijdens navigatie", "Toon de snelheidslimiet"],
+               al_titre="Meldingen tijdens navigatie", al_a=["Ongeval", "Gevaar", "Traffic Jam", "Frequente harde remacties", "Voorwerp op de weg",
+               "Politie", "Wegwerkzaamheden", "Gestopt voertuig", "Hulpdiensten", "Unsafe area"]),
+    "es": dict(al_param="Ajustes", al_carte="Visualización del mapa", al_r=["Modo nocturno", "Vista de mapa", "Mantén el norte en la parte superior del mapa.",
+               "Zoom automático", "Vista por satélite", "Vista de tráfico", "Vista de restricciones del camión",
+               "Gestión de las informaciones sobre el tráfico", "Alertas durante la navegación", "Mostrar el límite de velocidad"],
+               al_titre="Alertas durante la navegación", al_a=["Accidente", "Peligro", "Traffic Jam", "Frenadas bruscas frecuentes",
+               "Objeto en la carretera", "Policía", "Obras", "Vehículo detenido", "Vehículo de emergencia", "Unsafe area"]),
+    "it": dict(al_param="Impostazioni", al_carte="Visualizzazione della mappa", al_r=["Modalità notturna", "Vista mappa",
+               "Mantieni il nord nella parte superiore della mappa", "Zoom automatico", "Vista satellitare", "Vista del traffico",
+               "Visualizzazione dei vincoli del camion", "Gestione delle informazioni sul traffico", "Avvisi durante la navigazione",
+               "Visualizza il limite di velocità"],
+               al_titre="Avvisi durante la navigazione", al_a=["Incidente", "Pericolo", "Traffic Jam", "Frenate brusche frequenti",
+               "Oggetto sulla strada", "Polizia", "Lavori in corso", "Veicolo fermo", "Veicolo di emergenza", "Unsafe area"]),
+    "de": dict(al_param="Einstellungen", al_carte="Kartenanzeige", al_r=["Nachtmodus", "Kartenansicht", "Norden oben auf der Karte halten",
+               "Automatischer Zoom", "Satellitenansicht", "Verkehrsansicht", "Lkw-Einschränkungen anzeigen", "Verkehrsinfos verwalten",
+               "Navigationswarnungen", "Tempolimit anzeigen"],
+               al_titre="Navigationswarnungen", al_a=["Unfall", "Gefahr", "Traffic Jam", "Häufiges starkes Bremsen", "Gegenstand auf der Straße",
+               "Polizei", "Baustelle", "Liegengebliebenes Fahrzeug", "Einsatzfahrzeug", "Unsafe area"]),
+    "pl": dict(al_param="Ustawienia", al_carte="Wyświetlanie mapy", al_r=["Tryb nocny", "Widok mapy", "Północ u góry mapy",
+               "Automatyczne powiększenie", "Widok satelitarny", "Widok ruchu", "Ograniczenia dla ciężarówek", "Informacje o ruchu",
+               "Alerty w nawigacji", "Pokaż ograniczenie prędkości"],
+               al_titre="Alerty w nawigacji", al_a=["Wypadek", "Niebezpieczeństwo", "Traffic Jam", "Częste gwałtowne hamowanie",
+               "Przedmiot na drodze", "Policja", "Roboty drogowe", "Zatrzymany pojazd", "Pojazd uprzywilejowany", "Unsafe area"]),
+}
+for _l, _t in TRAD_AL.items():
+    for _i, _v in enumerate(_t.pop("al_r")):
+        _t[f"al_r{_i}"] = _v
+    for _i, _v in enumerate(_t.pop("al_a")):
+        _t[f"al_a{_i}"] = _v
+# Largeurs : on s'arrête avant les boutons (lignes 1-2), les interrupteurs, et la flèche dessinée (lignes 8-10).
+_LARG_R = [168, 168, 236, 236, 236, 236, 236, 165, 165, 268]
+_RANGS = [200, 256, 309, 358, 408, 457, 507, 553, 594, 635]  # centres des lignes, écran Paramètres
+ZONES["parametres-alertes.png"] = [("al_param", 180, 74, 110, 14, "c", 9.5, 400, "#fff"),
+                                   ("al_carte", 37, 140, 250, 19, "g", 13.5, 700, "#000")] + [
+    (f"al_r{i}", 37, y - 13, _LARG_R[i], 26, "bc", 10.4, 700, "#000") for i, y in enumerate(_RANGS)]
+_LIGNES = [122, 172, 222, 271, 321, 371, 421, 471, 521, 570]  # centres des lignes, écran Alertes
+ZONES["alertes-navigation.png"] = [("al_titre", 180, 73, 200, 15, "c", 9.5, 400, "#fff")] + [
+    (f"al_a{i}", 68, y - 12, 232 if i < 8 else 150, 24 if i < 8 else 30, "bc", 10.6, 600, "#000") for i, y in enumerate(_LIGNES)]
 for _image in ("fil-photo.png", "profil-photos.png"):
     ZONES[_image] += [(cle, x, 519, w, 12, "c", 7.8, gr, coul) for cle, x, w, gr, coul in NAV]
 
@@ -146,8 +194,10 @@ def couleur_fond(nom, x, y, w, h):
     x0, y0 = max(int(x), 0), max(int(y), 0)
     lw, lh = im.size
     pixels = [im.getpixel((i, j)) for i in range(x0, min(int(x + w), lw)) for j in range(y0, min(int(y + h), lh))]
-    r, g, b = Counter((p[0] // 8 * 8, p[1] // 8 * 8, p[2] // 8 * 8) for p in pixels).most_common(1)[0][0]
-    return f"rgb({r + 4}, {g + 4}, {b + 4})"
+    # Couleur exacte la plus fréquente parmi les pixels du groupe dominant (évite de griser un fond blanc).
+    groupe = Counter((p[0] // 8, p[1] // 8, p[2] // 8) for p in pixels).most_common(1)[0][0]
+    r, g, b = Counter(p for p in pixels if (p[0] // 8, p[1] // 8, p[2] // 8) == groupe).most_common(1)[0][0]
+    return f"rgb({r}, {g}, {b})"
 
 
 def pc(v, total):
@@ -158,7 +208,7 @@ def calques(image, lang):
     """HTML des libellés traduits pour une capture, ou chaîne vide (français ou capture sans zone)."""
     if lang not in TRAD or image not in ZONES:
         return ""
-    t = {**TRAD[lang], **TRAD_SV.get(lang, {})}
+    t = {**TRAD[lang], **TRAD_SV.get(lang, {}), **TRAD_AL.get(lang, {})}
     L, H = _image(image).size
     html = ""
     for zone in ZONES[image]:
@@ -177,10 +227,12 @@ def calques(image, lang):
             pos = f"right:{pc(L - x - w, L)}; justify-content:flex-end;"
         else:
             pos = f"left:{pc(x, L)};"
+        if ancre == "bc":  # bloc de largeur et hauteur fixes, texte centré verticalement, sur une ou deux lignes
+            pos = f"left:{pc(x, L)}; height:{pc(h, H)}; white-space:normal; line-height:1.15;"
         if ancre == "gx":  # largeur fixe, texte coupé s'il déborde (puces serrées)
             pos = f"left:{pc(x, L)}; overflow:hidden;"
         bloc = " bloc" if ancre == "b" else ""
-        largeur = f"width:{pc(w, L)};" if ancre in ("b", "gx") else f"min-width:{pc(w, L)};"
+        largeur = f"width:{pc(w, L)};" if ancre in ("b", "gx", "bc") else f"min-width:{pc(w, L)};"
         if ancre == "gx":
             pos += " white-space:nowrap;"
         html += (f'<span class="trad{bloc}" style="{pos} top:{pc(y, H)}; {largeur} min-height:{pc(h, H)}; '
