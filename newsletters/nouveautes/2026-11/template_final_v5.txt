@@ -1,0 +1,4030 @@
+author: ''
+brandUpdateTime: '2025-12-16T13:36:38.66Z'
+campaignType: classic
+colors:
+- '#e84c3d'
+- '#f46b66'
+fields: []
+fieldsHistory: []
+firstLoadSocialIcons: false
+fonts:
+- https://fonts.googleapis.com/css2?family=Arial black
+hasAIFeature: true
+id: 20fa225e-3811-4f9e-8b04-eef5f759d6ea
+name: ''
+subject: '[FR/IT/ES/EN/NL] Newsletters Nouveautés Truckers 11/26'
+ui:
+  showDeleteOption: false
+  showMoreOption: false
+user-hash: 0ef7dc2ac2a07cb264f87eeb888750c5
+version: 3.0.1
+body:
+  id: 522f38ee-007c-43b1-9cac-def9fbfc086c
+  type: body
+  layout:
+    320px:
+      width: 320px
+    default:
+      direction: ltr
+      wrapper-width: 600px
+  content:
+  - content-type: wrapper
+    id: 8350cf7d-bddb-449e-b74c-9ddcf15265eb
+    title: Wrapper
+    type: rows
+    layout:
+      320px:
+        width: 320px
+      default:
+        align: center
+        valign: top
+    content:
+    - align: top
+      dist: '12'
+      gutter: 0px
+      id: 7bb5e0dd-8d30-44d8-96c1-15983fb82a61
+      moduleName: viewInBrowser
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: section
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          width: 100%
+        default:
+          align: center
+          background-color: transparent
+          display: none
+          full-width: true
+          padding-bottom: 5px
+          padding-top: 5px
+          valign: top
+          width: 100%
+      content:
+      - id: 2276647f-8d01-4bea-b626-d209a7de9c1a
+        isEmpty: false
+        label: Drop content here
+        title: column 1
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: 828c79b4-6572-4d72-a451-514fe3cd423e
+          title: Webversion
+          type: text
+          layout:
+            320px:
+              padding-left: 10px
+              padding-right: 10px
+              width: 100%
+            default:
+              align: center
+              line-height: 16px
+              padding-left: 30px
+              padding-right: 30px
+              text-align: center
+              width: 100%
+          content: "<p><a href=\"{{ mirror }}\">\n                      <span style=\"font-family: arial,helvetica,sans-serif;color:#858588;font-size: 12px; text-decoration: underline;\">\n                      Afficher dans le navigateur</span></a></p>"
+    - align: top
+      contentUpdatedAt: 1773077448
+      customBlockId: 69af03c847b3ca43ac35d05b
+      dist: '12'
+      gutter: 0px
+      id: b56fc71c-c220-4df9-8178-2064e767a8ac
+      isCustomBlock: true
+      isSynced: true
+      moduleName: grid-row12
+      stylable: false
+      sync-module-id: 69af03c847b3ca43ac35d05b
+      sync-module-update-time: 1773077448
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: B2C Multilingual Header
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 0px
+          padding-right: 0px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 0px
+          padding-top: 0px
+          valign: top
+          width: 100%
+      content:
+      - id: a0ae938e-65b1-4393-80c2-e0b24a7ceb96
+        isEmpty: false
+        stylable: false
+        title: Column
+        type: grid-column
+        layout:
+          320px: {}
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: 8174df02-fa16-45a2-9913-acd0200a74ad
+          title: Image
+          type: image
+          layout:
+            320px:
+              display: rows
+              max-width: 320px
+              width: 100%
+            default:
+              align: left
+              canvas-height: 100px
+              display: none
+              padding-bottom: 0px
+              padding-top: 0px
+              showHide: true
+              showOnDesktopMobile: mobile
+              type: absoluteLink
+              valign: top
+              width: 100%
+          content:
+            href: https://truckfly.onelink.me/rNAz/63cbde2v
+            src: https://img.mailinblue.com/4222425/images/content_library/original/69af01d384372f83fe862852.jpg
+        - id: 7936ec17-86d0-4674-87b6-69e0d42f16cd
+          title: Image
+          type: image
+          layout:
+            320px:
+              display: none
+              max-width: 320px
+              width: 100%
+            default:
+              align: left
+              canvas-height: 90px
+              display: rows
+              padding-bottom: 0px
+              padding-top: 0px
+              showHide: true
+              showOnDesktopMobile: desktop
+              type: absoluteLink
+              valign: top
+              width: 100%
+          content:
+            href: https://www.truckfly.com/?utm_source=brevo&utm_medium=transactional_emails
+            src: https://img.mailinblue.com/4222425/images/content_library/original/69af01d084372f83fe862850.jpg
+        - condition: ( "FR" in contact.LANG )
+          id: cacf8149-8b09-4985-b14f-fe8f5d241b28
+          title: Text
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#0c165b'
+              groupPadding: false
+              line-height: '1'
+              padding-bottom: 20px
+              padding-left: 0px
+              padding-top: 0px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Michelin Truckfly, l&#39;appli gratuite préférée des chauffeurs routiers en Europe.&nbsp;<br>Et pour ceux qui en veulent plus :<strong>&nbsp;</strong></span><a href="https://lp.truckfly.com/fr/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="font-size: 11px; color: rgb(0, 146, 255);"><strong>Un&nbsp;</strong></span></a><a href="https://lp.truckfly.com/fr/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="font-size: 11px; color: rgb(0, 146, 255);"><strong>GPS en option !</strong></span></a></p>'
+        - condition: ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "PT" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "DE" ) ) or ( contact.LANG == "EN" ) or ( !contact.LANG )
+          id: 5566ff83-724e-4c0e-a883-98cfcfbdc737
+          title: Text
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#0c165b'
+              groupPadding: false
+              line-height: '1'
+              padding-bottom: 20px
+              padding-left: 0px
+              padding-top: 0px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Michelin Truckfly, the free app preferred by truck drivers across Europe.&nbsp;</span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">And for those who want more:&nbsp;<a href="https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>a GPS option!</strong></a></span></p>'
+        - condition: ( contact.LANG == "ES" )
+          id: 77636f0f-a67c-486e-9dd1-0b2017917129
+          title: Text
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#0c165b'
+              groupPadding: false
+              line-height: '1'
+              padding-bottom: 20px
+              padding-left: 0px
+              padding-top: 0px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Michelin Truckfly, la app gratuita preferida por los camioneros en Europa.&nbsp;</span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Y para quienes quieren más:&nbsp;<a href="https://lp.truckfly.com/es/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>¡GPS disponible como opción!</strong></a></span></p>'
+        - condition: ( contact.LANG == "PL" )
+          id: 42f391dc-033a-4aac-8c1f-443e40fc3565
+          title: Text
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#0c165b'
+              groupPadding: false
+              line-height: '1'
+              padding-bottom: 20px
+              padding-left: 0px
+              padding-top: 0px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Michelin Truckfly, darmowa aplikacja najchętniej wybierana przez kierowców ciężarówek w Europie.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">A dla tych, którzy chcą więcej: <a href="https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>opcjonalny GPS!</strong></a></span></p>'
+        - condition: ( contact.LANG == "IT" )
+          id: 100d5851-f38b-4c29-ae1e-ff847493c51a
+          title: Text
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#0c165b'
+              groupPadding: false
+              line-height: '1'
+              padding-bottom: 20px
+              padding-left: 0px
+              padding-top: 0px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Michelin Truckfly, l&#39;app gratuita preferita dagli autisti di camion in Europa.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">E per chi vuole di più:&nbsp;<a href="https://lp.truckfly.com/it/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>GPS disponibile come opzione!</strong></a></span></p>'
+        - condition: ( contact.LANG == "PT" )
+          id: 095690a1-81d9-4c64-a046-ae4cd22c30f2
+          title: Text
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#0c165b'
+              groupPadding: false
+              line-height: '1'
+              padding-bottom: 20px
+              padding-left: 0px
+              padding-top: 0px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Michelin Truckfly, a aplicação gratuita preferida dos camionistas na Europa.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">E para quem quer mais:&nbsp;<a href="https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>GPS disponível como opção!</strong></a></span></p>'
+        - condition: ( contact.LANG == "NL" )
+          id: 68f8badf-fc8d-4de3-9bcf-4ad859dc5653
+          title: Text
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#0c165b'
+              groupPadding: false
+              line-height: '1'
+              padding-bottom: 20px
+              padding-left: 0px
+              padding-top: 0px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Michelin Truckfly, de gratis app die favoriet is bij vrachtwagenchauffeurs in Europa.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">En voor wie meer wil:<strong>&nbsp;</strong><a href="https://lp.truckfly.com/nl/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>een GPS-optie!</strong></a></span></p>'
+        - condition: ( contact.LANG == "DE" )
+          id: ca2addf1-aad2-4c29-b4fe-df26c7474631
+          title: Text
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#0c165b'
+              groupPadding: false
+              line-height: '1'
+              padding-bottom: 20px
+              padding-left: 0px
+              padding-top: 0px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Michelin Truckfly, die kostenlose App, die bei Lkw-Fahrern in Europa besonders beliebt ist.&nbsp;</span><br><span style="font-size: 11px; color: rgb(255, 255, 255);">Und für alle, die mehr wollen:&nbsp;<a href="https://lp.truckfly.com/en/gps-premium?utm_source=brevo&amp;utm_medium=transactional_emails" type="absoluteLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><strong>GPS als Option!</strong></a></span></p>'
+        - id: 59e80053-2b04-47ca-a7ef-cd78c0738c0a
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              canvas-height: 22px
+              padding-bottom: 0px
+              padding-top: 0px
+              valign: top
+              width: 100%
+          content:
+            src: https://img.mailinblue.com/4222425/images/content_library/original/69a1600b6f5610296e741162.jpg
+    - align: top
+      condition: ( "FR" in contact.LANG )
+      dist: 6-6
+      gutter: 20px
+      id: eed3ecc5-fcf1-4a03-9bf5-e088aa316627
+      moduleName: columns-article
+      thumbnail: /assets/img/editor/element-style-1.svg
+      title: Bannière
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 0px
+          padding-left: 0px
+          padding-right: 0px
+          padding-top: 0px
+          removePadding: false
+          valign: middle
+          width: 100%
+      content:
+      - id: c63cc3de-dceb-4859-843d-a4e8838e5ee5
+        isEmpty: false
+        label: Drop content here
+        title: colonne de grille
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: middle
+        content:
+        - id: dfbbd864-b61b-4c55-a5d7-8cac288374d0
+          thumbnail: /assets/img/editor/element_text.svg
+          title: Titre
+          type: text
+          layout:
+            320px:
+              align: left
+              text-align: left
+              width: 100%
+            default:
+              align: left
+              groupPadding: true
+              line-height: '1'
+              padding-bottom: 15px
+              padding-left: 10px
+              padding-right: 10px
+              padding-top: 15px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<h1 class="default-heading1" style="-webkit-text-stroke-width:0px;background- text-decoration-thickness:initial;font-family:arial, helvetica, sans-serif;font-size:36px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:normal;margin:0px;orphans:2;text-align:left;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-break:break-word;word-spacing:0px;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 32px; color: rgb(13, 13, 13);">Les nouveautés de l’app&nbsp;</span></h1><h1 class="default-heading1" style="-webkit-text-stroke-width:0px;background- text-decoration-thickness:initial;font-family:arial, helvetica, sans-serif;font-size:36px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:normal;margin:0px;orphans:2;text-align:left;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-break:break-word;word-spacing:0px;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 32px; color: rgb(13, 13, 13);">ce mois-ci !</span></h1>'
+      - id: 634f3633-b0f9-4c88-a73f-b361b6e233de
+        isEmpty: false
+        title: colonne de grille
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            item-width: 26px
+            padding-left: 0px
+            padding-right: 0px
+            valign: middle
+        content:
+        - id: 89236430-7146-453c-914f-72d2ed0a5a5f
+          thumbnail: /assets/img/editor/element_image.svg
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 70%
+            default:
+              align: center
+              background-position: center
+              background-repeat: no-repeat
+              background-size: auto
+              canvas-height: 267px
+              dynamic: false
+              embed: false
+              img-border-radius: 0px
+              imgSize: '802237'
+              padding-bottom: 15px
+              padding-top: 15px
+              type: absoluteLink
+              valign: top
+              width: 62%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6ad732fd164c970a1d77f0ba.png
+    - align: top
+      condition: ( "IT" in contact.LANG )
+      dist: 6-6
+      gutter: 20px
+      id: 430fd5b1-7b75-4223-a456-14fe7d3c73c3
+      moduleName: columns-article
+      thumbnail: /assets/img/editor/element-style-1.svg
+      title: Bannière
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 0px
+          padding-left: 0px
+          padding-right: 0px
+          padding-top: 0px
+          removePadding: false
+          valign: middle
+          width: 100%
+      content:
+      - id: 251c48a9-d15b-4924-be57-1c080de7bc76
+        isEmpty: false
+        label: Drop content here
+        title: colonne de grille
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: middle
+        content:
+        - id: a9adaa44-86ef-4046-865f-ba1b0dad9932
+          thumbnail: /assets/img/editor/element_text.svg
+          title: Titre
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              groupPadding: true
+              line-height: '1'
+              padding-bottom: 15px
+              padding-left: 10px
+              padding-right: 10px
+              padding-top: 15px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<h1 class="default-heading1" style="-webkit-text-stroke-width:0px;background- text-decoration-thickness:initial;font-family:arial, helvetica, sans-serif;font-size:36px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:normal;margin:0px;orphans:2;text-align:left;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-break:break-word;word-spacing:0px;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 32px; color: rgb(13, 13, 13);">Le novità dell’app di questo mese!</span></h1>'
+      - id: da041829-dd3c-47ae-8522-8b94c66873e0
+        isEmpty: false
+        title: colonne de grille
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            item-width: 26px
+            padding-left: 0px
+            padding-right: 0px
+            valign: middle
+        content:
+        - id: 9b4ae3a5-3e67-47c3-8710-f83525e94b68
+          thumbnail: /assets/img/editor/element_image.svg
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 70%
+            default:
+              align: center
+              background-position: center
+              background-repeat: no-repeat
+              background-size: auto
+              canvas-height: 276px
+              dynamic: false
+              embed: false
+              img-border-radius: 0px
+              imgSize: '802237'
+              padding-bottom: 15px
+              padding-top: 15px
+              type: absoluteLink
+              valign: top
+              width: 64%
+          content:
+            href: https://www.truckfly.com/it/
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6ad733154646ada7d98802e8.png
+    - align: top
+      condition: ( "ES" in contact.LANG )
+      dist: 6-6
+      gutter: 20px
+      id: bb442fb2-3a20-4d03-82dd-ee1837f21039
+      moduleName: columns-article
+      thumbnail: /assets/img/editor/element-style-1.svg
+      title: Bannière ES
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 0px
+          padding-left: 0px
+          padding-right: 0px
+          padding-top: 0px
+          removePadding: false
+          valign: middle
+          width: 100%
+      content:
+      - id: bf6c77a4-d772-479d-b554-ce086f1a3d1c
+        isEmpty: false
+        label: Drop content here
+        title: colonne de grille
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: middle
+        content:
+        - id: 792f83cc-0436-4887-a79b-54656adb0bc7
+          thumbnail: /assets/img/editor/element_text.svg
+          title: Titre
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              groupPadding: true
+              line-height: '1'
+              padding-bottom: 15px
+              padding-left: 10px
+              padding-right: 10px
+              padding-top: 15px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<h1 class="default-heading1" style="font-family:arial, helvetica, sans-serif;font-size:36px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 32px; color: rgb(13, 13, 13);">¡Las novedades de la app&nbsp;</span></h1><h1 class="default-heading1" style="font-family:arial, helvetica, sans-serif;font-size:36px;margin:0px;text-align:left;word-break:break-word;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 32px; color: rgb(13, 13, 13);">este mes!</span></h1>'
+      - id: 0231a835-d307-42e1-bd16-07b9b9986120
+        isEmpty: false
+        title: colonne de grille
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            item-width: 26px
+            padding-left: 0px
+            padding-right: 0px
+            valign: middle
+        content:
+        - id: 109bb641-4f9f-4682-9c67-f8796aa37b12
+          thumbnail: /assets/img/editor/element_image.svg
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 70%
+            default:
+              align: center
+              background-position: center
+              background-repeat: no-repeat
+              background-size: auto
+              canvas-height: 284px
+              dynamic: false
+              embed: false
+              img-border-radius: 0px
+              imgSize: '802237'
+              padding-bottom: 15px
+              padding-top: 15px
+              type: absoluteLink
+              valign: top
+              width: 66%
+          content:
+            href: https://www.truckfly.com/es/
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6ad73341ece7c767d93a19e2.png
+    - align: top
+      condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
+      dist: 6-6
+      gutter: 20px
+      id: 9f3a13c1-ffb7-44d5-a11d-a91c8cf31553
+      moduleName: columns-article
+      thumbnail: /assets/img/editor/element-style-1.svg
+      title: Bannière EN
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 0px
+          padding-left: 0px
+          padding-right: 0px
+          padding-top: 0px
+          removePadding: false
+          valign: middle
+          width: 100%
+      content:
+      - id: c268706a-9034-4331-a752-41c4dceb2a3b
+        isEmpty: false
+        label: Drop content here
+        title: colonne de grille
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: middle
+        content:
+        - id: 3336b381-7e3d-4833-bbdd-14536f5d28c9
+          thumbnail: /assets/img/editor/element_text.svg
+          title: Titre
+          type: text
+          layout:
+            320px:
+              align: left
+              text-align: left
+              width: 100%
+            default:
+              align: left
+              groupPadding: true
+              line-height: '1'
+              padding-bottom: 15px
+              padding-left: 10px
+              padding-right: 10px
+              padding-top: 15px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<h1 class="default-heading1"><span style="color: rgb(0, 0, 0);">What&#39;s New in the App This Month!</span></h1>'
+      - id: 85ee5868-d8b0-4ab7-ad68-b61fe8e4b8a3
+        isEmpty: false
+        title: colonne de grille
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            item-width: 26px
+            padding-left: 0px
+            padding-right: 0px
+            valign: middle
+        content:
+        - id: d1cb2ba1-da7f-42f5-804f-2ff8be8cf395
+          thumbnail: /assets/img/editor/element_image.svg
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 70%
+            default:
+              align: center
+              background-position: center
+              background-repeat: no-repeat
+              background-size: auto
+              canvas-height: 267px
+              dynamic: false
+              embed: false
+              img-border-radius: 0px
+              imgSize: '802237'
+              padding-bottom: 15px
+              padding-top: 15px
+              type: absoluteLink
+              valign: top
+              width: 62%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6afc6afbcc2c27351fa155f7.png
+    - align: top
+      condition: ( "NL" in contact.LANG )
+      dist: 6-6
+      gutter: 20px
+      id: fc94d6ec-db88-4139-836b-cfd0f0e26062
+      moduleName: columns-article
+      thumbnail: /assets/img/editor/element-style-1.svg
+      title: Bannière NL
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 0px
+          padding-left: 0px
+          padding-right: 0px
+          padding-top: 0px
+          removePadding: false
+          valign: middle
+          width: 100%
+      content:
+      - id: c6e006ce-f31d-48ea-9e0d-65d48e2d0408
+        isEmpty: false
+        label: Drop content here
+        title: colonne de grille
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: middle
+        content:
+        - id: d87ef933-a76c-47f4-984d-d95ce6bd0289
+          thumbnail: /assets/img/editor/element_text.svg
+          title: Titre
+          type: text
+          layout:
+            320px:
+              align: left
+              text-align: left
+              width: 100%
+            default:
+              align: left
+              groupPadding: true
+              line-height: '1'
+              padding-bottom: 15px
+              padding-left: 10px
+              padding-right: 10px
+              padding-top: 15px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<h1 class="default-heading1"><span style="color: rgb(0, 0, 0);">Wat is er deze maand nieuw in de app!</span></h1>'
+      - id: 4f999135-20ae-4a23-95d6-d1030e658fcd
+        isEmpty: false
+        title: colonne de grille
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            item-width: 26px
+            padding-left: 0px
+            padding-right: 0px
+            valign: middle
+        content:
+        - id: f64796e4-3de0-4367-ae97-35a3b37fe38c
+          thumbnail: /assets/img/editor/element_image.svg
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 70%
+            default:
+              align: center
+              background-position: center
+              background-repeat: no-repeat
+              background-size: auto
+              canvas-height: 267px
+              dynamic: false
+              embed: false
+              img-border-radius: 0px
+              imgSize: '802237'
+              padding-bottom: 15px
+              padding-top: 15px
+              type: absoluteLink
+              valign: top
+              width: 62%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6afc6b19cc2c27351fa15608.png
+    - align: top
+      condition: ( "FR" in contact.LANG )
+      dist: '12'
+      gutter: 20px
+      id: e3a99270-e00c-4490-bfca-7c72bc8a5ccf
+      moduleName: grid-row12
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Texte
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-left: 6px
+          padding-right: 6px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 8dc01603-f8ae-4df7-bbec-904c3e88b694
+        isEmpty: false
+        label: Drop content here
+        title: column 1
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: ef91be0e-c85f-4111-9696-c7cbd5b476ad
+          thumbnail: /assets/img/editor/element_text.svg
+          title: Titre
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              padding-top: 15px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 96%
+          content: '<h2 class="default-heading2"><span style="color: rgb(6, 24, 102);">Les <span style="color: rgb(6, 24, 102); background-color: rgb(255, 255, 26);">nouvelles fonctionnalités</span> qui arrivent sur ton appli&nbsp;:</span></h2>'
+    - align: top
+      condition: ( "IT" in contact.LANG )
+      dist: '12'
+      gutter: 20px
+      id: f361c394-8617-46e7-8c2f-e7ec75184af1
+      moduleName: grid-row12
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Texte
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-left: 6px
+          padding-right: 6px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 653c3c58-2e68-4b8d-9a04-6c1887cfd9e9
+        isEmpty: false
+        label: Drop content here
+        title: column 1
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: 4e605889-6da4-4157-a8c3-44a23d0f0357
+          thumbnail: /assets/img/editor/element_text.svg
+          title: Titre
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              padding-top: 15px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 96%
+          content: '<h2 class="default-heading2"><span style="color: rgb(6, 24, 102);">Le <span style="background-color: rgb(255, 255, 26); color: rgb(6, 24, 102);">nuove funzionalità</span> disponibili sulla tua app:</span></h2>'
+    - align: top
+      condition: ( "ES" in contact.LANG )
+      dist: '12'
+      gutter: 20px
+      id: 19a5812f-265d-4254-95fe-2a6daaa0bd50
+      moduleName: grid-row12
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière ES
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-left: 6px
+          padding-right: 6px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: cd233509-48d7-4c5d-8b02-04e500c2523d
+        isEmpty: false
+        label: Drop content here
+        title: column 1
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: f24691d0-eee2-4b68-bf6c-c53b948abdaa
+          thumbnail: /assets/img/editor/element_text.svg
+          title: Titre
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              padding-top: 15px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 96%
+          content: '<h2 class="default-heading2"><span style="color: rgb(6, 24, 102);">Las <span style="color: rgb(6, 24, 102); background-color: rgb(255, 255, 26);">nuevas funciones</span> que llegan a tu app:</span></h2>'
+    - align: top
+      condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
+      dist: '12'
+      gutter: 20px
+      id: d09f6a27-4d1b-423b-86ec-58400aad888f
+      moduleName: grid-row12
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière EN
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-left: 6px
+          padding-right: 6px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: fbff9ec3-b3d0-4fb7-b6ef-e9bad6848cf8
+        isEmpty: false
+        label: Drop content here
+        title: column 1
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: c666adea-c970-4c00-b732-df832a0f46bf
+          thumbnail: /assets/img/editor/element_text.svg
+          title: Titre
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              padding-top: 15px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 96%
+          content: '<h2 class="default-heading2"><span style="color: rgb(6, 24, 102);">The <span style="color: rgb(6, 24, 102); background-color: rgb(255, 255, 26);">new features</span> coming to your app:</span></h2>'
+    - align: top
+      condition: ( "NL" in contact.LANG )
+      dist: '12'
+      gutter: 20px
+      id: ac68bc3f-f06b-4fc4-9d75-88e75ee8db03
+      moduleName: grid-row12
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière NL
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-left: 6px
+          padding-right: 6px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: f526133c-45d3-465a-a778-150de931e217
+        isEmpty: false
+        label: Drop content here
+        title: column 1
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: 8511bcbb-f5fb-4d4a-ae0c-d9be3f4c2341
+          thumbnail: /assets/img/editor/element_text.svg
+          title: Titre
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              padding-top: 15px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 96%
+          content: '<h2 class="default-heading2"><span style="color: rgb(6, 24, 102);">De <span style="color: rgb(6, 24, 102); background-color: rgb(255, 255, 26);">nieuwe functies</span> in je app:</span></h2>'
+    - align: top
+      condition: ( "FR" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 2f951aa8-5a0f-4f17-ba1f-b5ad96bab2b3
+      moduleName: grid-row12
+      stylable: false
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Section
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 716aff1d-6ce2-4a97-9f9c-b4735529f3a7
+        isEmpty: false
+        stylable: false
+        title: Column
+        type: grid-column
+        layout:
+          320px: {}
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: 9b2bca86-44e9-4c78-a20c-5b938226c280
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Ce mois-ci, la mise à jour <strong>6.5.0</strong> de Michelin Truckfly arrive avec <strong>3 nouveautés dans le GPS</strong> pour rouler plus serein.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Un itinéraire recalculé plus vite après une sortie ratée, ta destination visible avant d’y arriver, et des alertes que tu choisis toi-même&nbsp;: des petits changements qui te font gagner du temps au quotidien.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Pour en profiter, pense juste à <strong>mettre ton appli à jour</strong>.&nbsp;</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Voici tout ce qui change&nbsp;:</span></p>'
+    - align: top
+      condition: ( "IT" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 776eddf5-258d-42c9-b2a6-b58ca710576b
+      moduleName: grid-row12
+      stylable: false
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière IT
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 03df4bfb-1a49-43a1-89b9-22b07e8d1ead
+        isEmpty: false
+        stylable: false
+        title: Column
+        type: grid-column
+        layout:
+          320px: {}
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: 44a5baeb-1ebb-45c1-ae77-8d2a0d732996
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Questo mese l’aggiornamento <strong>6.5.0</strong> di Michelin Truckfly porta <strong>3 novità nel GPS</strong> per guidare più tranquillo.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Un percorso ricalcolato più in fretta dopo un’uscita mancata, la tua destinazione visibile prima di arrivarci e avvisi che scegli tu: piccoli cambiamenti che ti fanno risparmiare tempo ogni giorno.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Per approfittarne, ricordati solo di <strong>aggiornare la tua app</strong>.&nbsp;</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Ecco tutto quello che cambia:</span></p>'
+    - align: top
+      condition: ( "ES" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 5258a269-14a0-41ee-a51c-b7cb6f5e0b25
+      moduleName: grid-row12
+      stylable: false
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière ES
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 44990eaf-4bf4-4d1e-ac01-ee031d40f6d2
+        isEmpty: false
+        stylable: false
+        title: Column
+        type: grid-column
+        layout:
+          320px: {}
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: 6737cbd2-0d5e-4ee1-ade9-597c255d7ff4
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Este mes, la actualización <strong>6.5.0</strong> de Michelin Truckfly llega con <strong>3 novedades en el GPS</strong> para que circules más tranquilo.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Una ruta recalculada más rápido tras una salida perdida, tu destino visible antes de llegar y avisos que eliges tú: pequeños cambios que te ahorran tiempo cada día.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Para aprovecharlos, solo tienes que <strong>actualizar tu app</strong>.&nbsp;</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Esto es todo lo que cambia:</span></p>'
+    - align: top
+      condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
+      dist: '12'
+      gutter: 30px
+      id: 83a88dec-8ac2-4dc1-8fe8-c4f6f975a0f9
+      moduleName: grid-row12
+      stylable: false
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière EN
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 5263e67a-bcef-4269-ae77-5b90bff81b81
+        isEmpty: false
+        stylable: false
+        title: Column
+        type: grid-column
+        layout:
+          320px: {}
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: f3663c69-f704-4607-9eca-5d3443f1c625
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">This month, Michelin Truckfly update <strong>6.5.0</strong> brings <strong>3 new GPS features</strong> to help you drive with peace of mind.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Faster rerouting after a missed exit, a look at your destination before you get there, and alerts you choose yourself: small changes that save you time every day.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">To enjoy them, just <strong>update your app</strong>.&nbsp;</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Here’s everything that’s changing:</span></p>'
+    - align: top
+      condition: ( "NL" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: de8a7fa8-d8f4-49d9-ab2b-4d15d8f6d4d7
+      moduleName: grid-row12
+      stylable: false
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière NL
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: ea2e40e0-29f3-49ee-92c4-285847678f16
+        isEmpty: false
+        stylable: false
+        title: Column
+        type: grid-column
+        layout:
+          320px: {}
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: cdd73d34-5378-4bba-b33e-f72dd5964b95
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Deze maand brengt update <strong>6.5.0</strong> van Michelin Truckfly <strong>3 nieuwe functies in de GPS</strong>, zodat je met een gerust hart rijdt.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Sneller een nieuwe route na een gemiste afslag, je bestemming zien voordat je er bent en meldingen die je zelf kiest: kleine veranderingen die je elke dag tijd besparen.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Om ervan te profiteren, hoef je alleen <strong>je app te updaten</strong>.&nbsp;</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Dit is alles wat er verandert:</span></p>'
+    - align: top
+      condition: ( "FR" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 4eb3d737-5e8f-4c6e-880a-ca68009b1d37
+      moduleName: grid-row12
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: section
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          background-color: '#ffce00'
+          padding-bottom: 20px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 87e456dd-1b0a-4543-85a3-89c4d95e01e8
+        isEmpty: false
+        title: column 1
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: b37dc2ac-7b71-4cb2-adf4-887aff2c0c08
+          thumbnail: /assets/img/editor/element_image.svg
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              background-position: center
+              background-repeat: no-repeat
+              background-size: auto
+              canvas-height: 63px
+              dynamic: false
+              embed: false
+              img-border-radius: 0px
+              imgSize: '83292'
+              opacity: 1
+              padding-bottom: 15px
+              padding-top: 15px
+              type: absoluteLink
+              valign: top
+              width: 63%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6a3297f15cc9d7cb70e8e74d.png
+        - id: 092dca48-7410-4876-bc2b-25c1b3da070a
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removeMargin: true
+              removePadding: false
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <p><strong>Les nouveautés du GPS Michelin Truckfly</strong></p>
+    - align: top
+      condition: ( "IT" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: dc828a8e-3046-4d9e-90e7-4c6b22b75369
+      moduleName: grid-row12
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: section
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          background-color: '#ffce00'
+          padding-bottom: 20px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 91d25040-8cf1-4dd0-8dd0-5436545b10dd
+        isEmpty: false
+        title: column 1
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: 483d1f7f-a0af-4b01-99e6-b60d0b17d199
+          thumbnail: /assets/img/editor/element_image.svg
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              background-position: center
+              background-repeat: no-repeat
+              background-size: auto
+              canvas-height: 63px
+              dynamic: false
+              embed: false
+              img-border-radius: 0px
+              imgSize: '83292'
+              opacity: 1
+              padding-bottom: 15px
+              padding-top: 15px
+              type: absoluteLink
+              valign: top
+              width: 63%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6a3297f15cc9d7cb70e8e74d.png
+        - id: 783033ae-e39f-4ad7-abe6-4fa5b9e50e12
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removeMargin: true
+              removePadding: false
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <p><strong>Le novità del GPS Michelin Truckfly</strong></p>
+    - align: top
+      condition: ( "ES" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 23aef00b-e235-4b2b-95c4-f7244ff3ec05
+      moduleName: grid-row12
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière ES
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          background-color: '#ffce00'
+          padding-bottom: 20px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: c86342b6-4d10-4397-a120-9ae804a59dc5
+        isEmpty: false
+        title: column 1
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: 6edaff9a-44e0-456e-89ce-a3c556169ad8
+          thumbnail: /assets/img/editor/element_image.svg
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              background-position: center
+              background-repeat: no-repeat
+              background-size: auto
+              canvas-height: 63px
+              dynamic: false
+              embed: false
+              img-border-radius: 0px
+              imgSize: '83292'
+              opacity: 1
+              padding-bottom: 15px
+              padding-top: 15px
+              type: absoluteLink
+              valign: top
+              width: 63%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6a3297f15cc9d7cb70e8e74d.png
+        - id: bd676cef-63e0-4c16-9338-2b729f34f4a8
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removeMargin: true
+              removePadding: false
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <p><strong>Las novedades del GPS Michelin Truckfly</strong></p>
+    - align: top
+      condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
+      dist: '12'
+      gutter: 30px
+      id: ffa2ec44-2957-4eaf-8b35-d65dcf8e7e14
+      moduleName: grid-row12
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière EN
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          background-color: '#ffce00'
+          padding-bottom: 20px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 49d97d49-49a1-4b2a-9075-cd01d5a71daf
+        isEmpty: false
+        title: column 1
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: 8f6543c7-0ee2-49fa-92cc-8b61238cfd6c
+          thumbnail: /assets/img/editor/element_image.svg
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              background-position: center
+              background-repeat: no-repeat
+              background-size: auto
+              canvas-height: 63px
+              dynamic: false
+              embed: false
+              img-border-radius: 0px
+              imgSize: '83292'
+              opacity: 1
+              padding-bottom: 15px
+              padding-top: 15px
+              type: absoluteLink
+              valign: top
+              width: 63%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6a3297f15cc9d7cb70e8e74d.png
+        - id: 337dc1a4-3bc6-4a91-b222-22db7831047f
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removeMargin: true
+              removePadding: false
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <p><strong>What’s new in the Michelin Truckfly GPS</strong></p>
+    - align: top
+      condition: ( "NL" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: e78e1d4c-705a-4967-84c0-5e5414565e2f
+      moduleName: grid-row12
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière NL
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          background-color: '#ffce00'
+          padding-bottom: 20px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: bd828a04-f09b-44fb-b728-9fb5c30d290f
+        isEmpty: false
+        title: column 1
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: e9ca4a32-7c0e-4911-8729-912bca4e95ba
+          thumbnail: /assets/img/editor/element_image.svg
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              background-position: center
+              background-repeat: no-repeat
+              background-size: auto
+              canvas-height: 63px
+              dynamic: false
+              embed: false
+              img-border-radius: 0px
+              imgSize: '83292'
+              opacity: 1
+              padding-bottom: 15px
+              padding-top: 15px
+              type: absoluteLink
+              valign: top
+              width: 63%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6a3297f15cc9d7cb70e8e74d.png
+        - id: f41d09cc-9383-4d0a-b19a-9fffb16a764f
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removeMargin: true
+              removePadding: false
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <p><strong>Nieuw in de Michelin Truckfly GPS</strong></p>
+    - align: top
+      condition: ( "FR" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 8d1039fc-da7e-404a-a08e-f7b95098490b
+      moduleName: image-text
+      sectionName: Text and Image 2
+      stylable: false
+      thumbnail: /assets/img/editor/element-style-2.svg
+      title: Style 2
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          groupPadding: true
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 6cda6377-df23-4cda-9cfd-5e75c67a7895
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: 026fe9ce-ad62-4849-af54-0ba42950000d
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Un recalcul d’itinéraire plus efficace</span></h3>
+        - id: 70922a08-cf20-43e7-aed1-54ef19dca939
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Une sortie ratée, un détour imprévu&nbsp;?</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Le GPS recalcule ton itinéraire plus efficacement</strong> en cas d’écart de route.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Rien à faire&nbsp;: c’est automatique dès que ton appli est à jour.</span></p>'
+    - align: top
+      condition: ( "IT" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 45c99785-0b65-43ae-8113-611e8429c3f7
+      moduleName: image-text
+      sectionName: Text and Image 2
+      stylable: false
+      thumbnail: /assets/img/editor/element-style-2.svg
+      title: Bannière IT
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-right: 0px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 690177d3-c186-4aaa-b2ea-0043ce152737
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: d769e4f8-0fb2-4484-9e1b-538391f04061
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Un ricalcolo del percorso più efficace</span></h3>
+        - id: a4f15f49-bc05-488e-890a-3dd378cc661f
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Un’uscita mancata, una deviazione imprevista?</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Il GPS ricalcola il tuo percorso in modo più efficace</strong> quando esci dal tragitto.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Non devi fare nulla: è automatico, basta avere l’app aggiornata.</span></p>'
+    - align: top
+      condition: ( "ES" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: d4fbe523-0435-48d7-a660-3dc7c3022036
+      moduleName: image-text
+      sectionName: Text and Image 2
+      stylable: false
+      thumbnail: /assets/img/editor/element-style-2.svg
+      title: Bannière ES
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-right: 0px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: a8711bd6-7128-4e85-9914-b61e4359be40
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: 07cd8294-e3c9-40f3-8866-fc4a32fd68d3
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Un recálculo de ruta más eficaz</span></h3>
+        - id: 2bb879cb-67a6-4e5a-953d-9b000f59a12d
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">¿Una salida perdida, un desvío imprevisto?</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>El GPS recalcula tu ruta de forma más eficaz</strong> cuando te sales del trayecto.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">No tienes que hacer nada: es automático en cuanto tu app está actualizada.</span></p>'
+    - align: top
+      condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
+      dist: '12'
+      gutter: 30px
+      id: 2c33d1b2-4859-4f5f-a10f-9f9a8ec12429
+      moduleName: image-text
+      sectionName: Text and Image 2
+      stylable: false
+      thumbnail: /assets/img/editor/element-style-2.svg
+      title: Bannière EN
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          groupPadding: true
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 9e76c6b6-7114-45ac-b0c3-ce731e6c4568
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: fda0bdef-cd17-4210-b83a-efa1b9fffde4
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Smarter rerouting</span></h3>
+        - id: 7c44c6c3-9356-49fa-9d86-622003cb8ef4
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Missed an exit, unexpected detour?</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>The GPS recalculates your route more efficiently</strong> when you go off course.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Nothing to do: it’s automatic once your app is up to date.</span></p>'
+    - align: top
+      condition: ( "NL" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 13a5cb01-26e6-4692-bdd1-e54593b54476
+      moduleName: image-text
+      sectionName: Text and Image 2
+      stylable: false
+      thumbnail: /assets/img/editor/element-style-2.svg
+      title: Bannière NL
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          groupPadding: true
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 37a0f413-3312-4dde-8084-0092e4d82983
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: d12e6959-3a43-4c04-9b09-03b7f0be3f61
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Slimmer je route herberekenen</span></h3>
+        - id: d63d4122-2be7-415d-9f20-56f9632d7464
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Afslag gemist, onverwachte omleiding?</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>De GPS berekent je route efficiënter opnieuw</strong> als je van je route afwijkt.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Je hoeft niets te doen: het gaat automatisch zodra je app up-to-date is.</span></p>'
+    - align: top
+      condition: ( "FR" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 13e878f5-0954-4e51-9195-a8fc71fa263c
+      moduleName: image-text
+      sectionName: Text and Image 2
+      stylable: false
+      thumbnail: /assets/img/editor/element-style-2.svg
+      title: Style 2
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          groupPadding: true
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: c294e525-b3e0-4f47-90c5-7eb4b543e7b0
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: bcd8e8fb-4b6b-45db-b3d0-8482c101c94d
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Vois ta destination avant d’y arriver&nbsp;!</span></h3>
+        - id: 3cea5df1-6cbd-4e6a-ab73-7ccf1173855a
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Entrepôt, quai de livraison, parking&nbsp;: avec le nouveau <strong>bouton StreetView</strong>, tu vois à quoi ressemble ta destination avant d’arriver.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Comment faire&nbsp;?</strong></span></p><ol><li style="color: rgb(0, 0, 0);">Appuie sur le <strong>drapeau d’arrivée</strong> de ton itinéraire.</li><li style="color: rgb(0, 0, 0);">Appuie sur <strong>«&nbsp;Voir en Street View&nbsp;»</strong>.</li><li style="color: rgb(0, 0, 0);"><strong>Google Maps s’ouvre directement</strong> sur ta destination.</li></ol><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Fini les tours pour trouver l’entrée&nbsp;!</strong></span></p>'
+        - id: 8011a8a8-4736-44eb-9a2a-390ea1636686
+          label: Replace
+          stylable: false
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 70%
+            default:
+              align: center
+              border-radius: 8px
+              canvas-height: 358px
+              dynamic: false
+              embed: false
+              imgSize: '144215'
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              type: absoluteLink
+              valign: top
+              width: 33%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6afc6784492ee872f8d07fe9.png
+    - align: top
+      condition: ( "IT" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 686015cb-eb26-44fd-ab58-091ce9adde11
+      moduleName: image-text
+      sectionName: Text and Image 2
+      stylable: false
+      thumbnail: /assets/img/editor/element-style-2.svg
+      title: Bannière IT
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          groupPadding: true
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: e6408253-3c03-4c47-87c1-8fda1eed9727
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: e4070ffe-f228-4c00-b231-336582f392b2
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Guarda la tua destinazione prima di arrivarci!</span></h3>
+        - id: ae36ca75-eb4e-4796-8345-c533d0a5b8bb
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Magazzino, banchina di carico, parcheggio: con il nuovo <strong>pulsante StreetView</strong> vedi com’è la tua destinazione prima di arrivare.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Come fare?</strong></span></p><ol><li style="color: rgb(0, 0, 0);">Tocca la <strong>bandierina di arrivo</strong> del tuo percorso.</li><li style="color: rgb(0, 0, 0);">Tocca <strong>«Vedi in Street View»</strong>.</li><li style="color: rgb(0, 0, 0);"><strong>Google Maps si apre direttamente</strong> sulla tua destinazione.</li></ol><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Niente più giri a vuoto per trovare l’ingresso!</strong></span></p>'
+        - id: 4de42ade-4466-40de-83fb-e72e14d1ca1f
+          label: Replace
+          stylable: false
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 70%
+            default:
+              align: center
+              border-radius: 8px
+              canvas-height: 314px
+              dynamic: false
+              embed: false
+              imgSize: '144215'
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              type: absoluteLink
+              valign: top
+              width: 29%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6afc67a711292047602149c7.png
+    - align: top
+      condition: ( "ES" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 6ae5247f-854e-4c44-a518-c67c84c80796
+      moduleName: image-text
+      sectionName: Text and Image 2
+      stylable: false
+      thumbnail: /assets/img/editor/element-style-2.svg
+      title: Bannière ES
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          groupPadding: true
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: e876cf00-035b-415a-a59d-da078eccb2b8
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: dcb1d635-a344-4769-80a3-50cd4cddcfc3
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">¡Mira tu destino antes de llegar!</span></h3>
+        - id: 56427250-64f4-47a6-988f-70079ae7c90d
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Almacén, muelle de carga, parking: con el nuevo <strong>botón StreetView</strong> ves cómo es tu destino antes de llegar.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>¿Cómo se hace?</strong></span></p><ol><li style="color: rgb(0, 0, 0);">Pulsa la <strong>bandera de llegada</strong> de tu ruta.</li><li style="color: rgb(0, 0, 0);">Pulsa <strong>«Ver en Street View»</strong>.</li><li style="color: rgb(0, 0, 0);"><strong>Google Maps se abre directamente</strong> en tu destino.</li></ol><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>¡Se acabaron las vueltas para encontrar la entrada!</strong></span></p>'
+        - id: 38e550c4-5aeb-4ebe-894d-ec70ccfd5235
+          label: Replace
+          stylable: false
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 70%
+            default:
+              align: center
+              border-radius: 8px
+              canvas-height: 314px
+              dynamic: false
+              embed: false
+              imgSize: '144215'
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              type: absoluteLink
+              valign: top
+              width: 29%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6afc67c98e97cff1806d6e76.png
+    - align: top
+      condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
+      dist: '12'
+      gutter: 30px
+      id: 6c48fdc2-6c5e-4701-b38a-1801c9181989
+      moduleName: image-text
+      sectionName: Text and Image 2
+      stylable: false
+      thumbnail: /assets/img/editor/element-style-2.svg
+      title: Bannière EN
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          groupPadding: true
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: e9c26764-bafd-4e5f-bc2f-eff9c924214c
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: 7edd8de0-7524-4ffa-9f7e-a998474947c0
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">See your destination before you get there!</span></h3>
+        - id: 1dce9504-4634-49b4-9ad4-79b4e93175a5
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Warehouse, loading bay, car park: with the new <strong>StreetView button</strong>, you can see what your destination looks like before you arrive.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>How does it work?</strong></span></p><ol><li style="color: rgb(0, 0, 0);">Tap the <strong>finish flag</strong> on your route.</li><li style="color: rgb(0, 0, 0);">Tap <strong>“View in Street View”</strong>.</li><li style="color: rgb(0, 0, 0);"><strong>Google Maps opens straight</strong> on your destination.</li></ol><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>No more driving round in circles to find the entrance!</strong></span></p>'
+        - id: c9ebda37-c5f3-470b-b363-51cce53c20ac
+          label: Replace
+          stylable: false
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 70%
+            default:
+              align: center
+              border-radius: 8px
+              canvas-height: 314px
+              dynamic: false
+              embed: false
+              imgSize: '144215'
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              type: absoluteLink
+              valign: top
+              width: 29%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6afc67e5cc2c27351fa153aa.png
+    - align: top
+      condition: ( "NL" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 017bcf3d-8a5f-4c1c-b537-4633c27251b6
+      moduleName: image-text
+      sectionName: Text and Image 2
+      stylable: false
+      thumbnail: /assets/img/editor/element-style-2.svg
+      title: Bannière NL
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          groupPadding: true
+          padding-bottom: 20px
+          padding-left: 10px
+          padding-right: 10px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 938821c9-8e2c-47e3-aa6f-3cd9d91f144d
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: 7adb1746-6d92-4727-94c1-5c120a78fec8
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Bekijk je bestemming voordat je er bent!</span></h3>
+        - id: 8c21c6fd-b745-4e22-82b0-9b3cdd4d65f6
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Magazijn, laadperron, parking: met de nieuwe <strong>StreetView-knop</strong> zie je hoe je bestemming eruitziet voordat je aankomt.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Hoe werkt het?</strong></span></p><ol><li style="color: rgb(0, 0, 0);">Tik op de <strong>finishvlag</strong> van je route.</li><li style="color: rgb(0, 0, 0);">Tik op <strong>‘Bekijk in Street View’</strong>.</li><li style="color: rgb(0, 0, 0);"><strong>Google Maps opent direct</strong> op je bestemming.</li></ol><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Geen rondjes meer rijden om de ingang te vinden!</strong></span></p>'
+        - id: 2f2af8ed-7db1-4863-976b-a6456834e2c9
+          label: Replace
+          stylable: false
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 70%
+            default:
+              align: center
+              border-radius: 8px
+              canvas-height: 314px
+              dynamic: false
+              embed: false
+              imgSize: '144215'
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              type: absoluteLink
+              valign: top
+              width: 29%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6afc68058e97cff1806d6ea0.png
+    - align: top
+      condition: ( "FR" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 46429af0-ba1a-4ee4-aeb4-20352a9601a8
+      moduleName: grid-row12
+      stylable: false
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Section
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: ecfb6ff0-f4b0-460c-8d9f-ffb9b9bc002b
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: c5f5678f-e8f6-43eb-bcaf-3cf67cc90f3c
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Les alertes de la communauté, à ta façon</span></h3>
+        - id: a8be64e1-2aec-4db5-92c4-cd30183e0c13
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Contrôles, accidents, dangers&nbsp;: choisis les alertes que tu veux voir pendant ta navigation.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Comment faire&nbsp;?</strong></span></p><ol><li style="color: rgb(0, 0, 0);">Va dans les <strong>paramètres</strong> de l’appli.</li><li style="color: rgb(0, 0, 0);">Va dans <strong>«&nbsp;Alertes en navigation&nbsp;»</strong>.</li><li style="color: rgb(0, 0, 0);"><strong>Coche les alertes que tu veux garder.</strong></li></ol><p><br></p><p><span style="color: rgb(0, 0, 0);">Les alertes décochées n’apparaîtront plus pendant ta navigation.</span></p>'
+        - id: 7cb1d612-18f4-4b66-8205-ac8e658218d9
+          label: Replace
+          stylable: false
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              border-radius: 8px
+              canvas-height: 380px
+              dynamic: false
+              embed: false
+              imgSize: '144215'
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              type: absoluteLink
+              valign: top
+              width: 69%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6afc685821e3f9596858336b.png
+        - id: 558d7605-f7a6-43d6-9199-33981b914b5f
+          text: '<p><span style="color: rgb(0, 0, 0);"><strong>Je mets à jour l’appli</strong></span></p>'
+          thumbnail: /assets/img/editor/element_button.svg
+          title: Bouton
+          type: text-button
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: center
+              background-color: '#ffff1a'
+              data-href: https://www.truckfly.com/purchase-gps
+              data-placeholder-href: https://www.truckfly.com/purchase-gps
+              item-height: 42px
+              margin-bottom: 15px
+              margin-top: 15px
+              padding-bottom: 12px
+              padding-top: 12px
+              text-align: center
+              text-valign: top
+              type: absoluteLink
+              valign: top
+              width: 52%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            text: '<p><span style="color: rgb(0, 0, 0);"><strong>Je mets à jour l’appli</strong></span></p>'
+    - align: top
+      condition: ( "IT" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 6531e453-23de-4050-a4cc-f836a6d7830d
+      moduleName: grid-row12
+      stylable: false
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière IT
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 437913e2-4fde-487c-bf5b-cd67a543e6b4
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: e390af5e-adff-4f01-bbc3-d4d3e954af64
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Gli avvisi della community, come vuoi tu</span></h3>
+        - id: a1aa7c9f-58eb-46db-90ad-f4ec53118031
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Controlli, incidenti, pericoli: scegli gli avvisi che vuoi vedere durante la navigazione.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Come fare?</strong></span></p><ol><li style="color: rgb(0, 0, 0);">Vai nelle <strong>impostazioni</strong> dell’app.</li><li style="color: rgb(0, 0, 0);">Vai in <strong>«Avvisi in navigazione»</strong>.</li><li style="color: rgb(0, 0, 0);"><strong>Seleziona gli avvisi che vuoi tenere.</strong></li></ol><p><br></p><p><span style="color: rgb(0, 0, 0);">Gli avvisi non selezionati non compariranno più durante la navigazione.</span></p>'
+        - id: 0ca5b3e9-473e-40ca-9453-31121fa5e1e8
+          label: Replace
+          stylable: false
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              border-radius: 8px
+              canvas-height: 398px
+              dynamic: false
+              embed: false
+              imgSize: '144215'
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              type: absoluteLink
+              valign: top
+              width: 72%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6afc6936cc2c27351fa154c6.png
+        - id: 231f26ab-7572-402d-a689-929b010b1c89
+          text: '<p><span style="color: rgb(0, 0, 0);"><strong>Aggiorno l’app</strong></span></p>'
+          thumbnail: /assets/img/editor/element_button.svg
+          title: Bouton
+          type: text-button
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: center
+              background-color: '#ffff1a'
+              data-href: https://www.truckfly.com/purchase-gps
+              data-placeholder-href: https://www.truckfly.com/purchase-gps
+              item-height: 42px
+              margin-bottom: 15px
+              margin-top: 15px
+              padding-bottom: 12px
+              padding-top: 12px
+              text-align: center
+              text-valign: top
+              type: absoluteLink
+              valign: top
+              width: 52%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            text: '<p><span style="color: rgb(0, 0, 0);"><strong>Aggiorno l’app</strong></span></p>'
+    - align: top
+      condition: ( "ES" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: 9b0b4bfd-fad8-4a31-be74-ad581e53d59f
+      moduleName: grid-row12
+      stylable: false
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière ES
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 78cf0264-6ec0-4582-bf68-a42b759fcd14
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: aa1bcd23-0e08-45e6-be17-bf3ff9d854bb
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Los avisos de la comunidad, a tu manera</span></h3>
+        - id: c92f20f9-5c06-48fa-b026-09c5622b408d
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Controles, accidentes, peligros: elige los avisos que quieres ver durante la navegación.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>¿Cómo se hace?</strong></span></p><ol><li style="color: rgb(0, 0, 0);">Ve a los <strong>ajustes</strong> de la app.</li><li style="color: rgb(0, 0, 0);">Ve a <strong>«Alertas en navegación»</strong>.</li><li style="color: rgb(0, 0, 0);"><strong>Marca los avisos que quieres mantener.</strong></li></ol><p><br></p><p><span style="color: rgb(0, 0, 0);">Los avisos desmarcados ya no aparecerán durante tu navegación.</span></p>'
+        - id: 9bdb49f6-4061-481b-8e68-48c6e348bbf5
+          label: Replace
+          stylable: false
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              border-radius: 8px
+              canvas-height: 376px
+              dynamic: false
+              embed: false
+              imgSize: '144215'
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              type: absoluteLink
+              valign: top
+              width: 68%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6afc699421e3f95968583455.png
+        - id: 48b7d206-4c1f-442c-a734-cf942b81dc26
+          text: '<p><span style="color: rgb(0, 0, 0);"><strong>Actualizo la app</strong></span></p>'
+          thumbnail: /assets/img/editor/element_button.svg
+          title: Bouton
+          type: text-button
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: center
+              background-color: '#ffff1a'
+              data-href: https://www.truckfly.com/purchase-gps
+              data-placeholder-href: https://www.truckfly.com/purchase-gps
+              item-height: 42px
+              margin-bottom: 15px
+              margin-top: 15px
+              padding-bottom: 12px
+              padding-top: 12px
+              text-align: center
+              text-valign: top
+              type: absoluteLink
+              valign: top
+              width: 52%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            text: '<p><span style="color: rgb(0, 0, 0);"><strong>Actualizo la app</strong></span></p>'
+    - align: top
+      condition: ( "EN" in contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "IT" ) )
+      dist: '12'
+      gutter: 30px
+      id: d39d3086-e341-42ed-8444-e3e9cb0f0be7
+      moduleName: grid-row12
+      stylable: false
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière EN
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: a679af82-0ab3-475b-a76e-5ea972341787
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: dff2c5be-e6d3-4008-a1d1-6ea81938d697
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Community alerts, your way</span></h3>
+        - id: 14ac32b0-02bc-4a45-aafa-29093ca06863
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Police checks, accidents, hazards: choose which alerts you want to see while navigating.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>How does it work?</strong></span></p><ol><li style="color: rgb(0, 0, 0);">Go to the app <strong>settings</strong>.</li><li style="color: rgb(0, 0, 0);">Go to <strong>“Navigation alerts”</strong>.</li><li style="color: rgb(0, 0, 0);"><strong>Tick the alerts you want to keep.</strong></li></ol><p><br></p><p><span style="color: rgb(0, 0, 0);">Unticked alerts will no longer appear while you navigate.</span></p>'
+        - id: d2289f72-558d-4e0d-947a-679aef11ef22
+          label: Replace
+          stylable: false
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              border-radius: 8px
+              canvas-height: 358px
+              dynamic: false
+              embed: false
+              imgSize: '144215'
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              type: absoluteLink
+              valign: top
+              width: 65%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6afc68c88e97cff1806d6f32.png
+        - id: 193554ef-bd29-4635-b3df-3f02351695e1
+          text: '<p><span style="color: rgb(0, 0, 0);"><strong>Update my app</strong></span></p>'
+          thumbnail: /assets/img/editor/element_button.svg
+          title: Bouton
+          type: text-button
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: center
+              background-color: '#ffff1a'
+              data-href: https://www.truckfly.com/purchase-gps
+              data-placeholder-href: https://www.truckfly.com/purchase-gps
+              item-height: 42px
+              margin-bottom: 15px
+              margin-top: 15px
+              padding-bottom: 12px
+              padding-top: 12px
+              text-align: center
+              text-valign: top
+              type: absoluteLink
+              valign: top
+              width: 52%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            text: '<p><span style="color: rgb(0, 0, 0);"><strong>Update my app</strong></span></p>'
+    - align: top
+      condition: ( "NL" in contact.LANG )
+      dist: '12'
+      gutter: 30px
+      id: bc75b491-e692-4db5-9cb8-5d2777ec916a
+      moduleName: grid-row12
+      stylable: false
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: Bannière NL
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 98a549c7-c6e9-4d72-ba92-7c95daca0807
+        imagelabel: Select a content type
+        isEmpty: false
+        label: Drop content here
+        stylable: false
+        title: image column
+        type: grid-column
+        layout:
+          320px:
+            padding-bottom: 20px
+          default:
+            item-width: 26px
+            padding-bottom: 0px
+            padding-left: 0px
+            padding-right: 0px
+            padding-top: 0px
+            removePadding: false
+            valign: top
+        content:
+        - id: a07c7b13-0454-4abb-ae94-6775a39c9355
+          moduleName: text-title
+          stylable: false
+          thumbnail: /assets/img/editor/element-title.svg
+          title: Title
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              applyAllBorder: false
+              border-bottom-style: solid
+              border-bottom-width: 0px
+              border-left-style: solid
+              border-left-width: 0px
+              border-right-style: solid
+              border-right-width: 0px
+              border-top-style: solid
+              border-top-width: 0px
+              line-height: '1'
+              margin-bottom: 5px
+              margin-top: 0px
+              padding-top: 0px
+              removeMargin: true
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: <h3 class="default-heading3"><span style="font-style:normal;text-decoration:none;font-weight:700;color:rgb(6, 24, 102);">Meldingen van de community, zoals jij wilt</span></h3>
+        - id: 6e43628e-0fac-4bc5-a6e2-07b32b241ad4
+          stylable: false
+          title: Paragraph
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 15px
+              padding-bottom: 10px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 10px
+              removeMargin: true
+              removePadding: false
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p><span style="color: rgb(0, 0, 0);">Controles, ongevallen, gevaren: kies welke meldingen je tijdens het navigeren wilt zien.</span></p><p><br></p><p><span style="color: rgb(0, 0, 0);"><strong>Hoe werkt het?</strong></span></p><ol><li style="color: rgb(0, 0, 0);">Ga naar de <strong>instellingen</strong> van de app.</li><li style="color: rgb(0, 0, 0);">Ga naar <strong>‘Meldingen tijdens navigatie’</strong>.</li><li style="color: rgb(0, 0, 0);"><strong>Vink de meldingen aan die je wilt houden.</strong></li></ol><p><br></p><p><span style="color: rgb(0, 0, 0);">Uitgevinkte meldingen verschijnen niet meer tijdens het navigeren.</span></p>'
+        - id: 56060af3-fb33-4a5e-b947-1d0ad741ad67
+          label: Replace
+          stylable: false
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              border-radius: 8px
+              canvas-height: 353px
+              dynamic: false
+              embed: false
+              imgSize: '144215'
+              padding-bottom: 0px
+              padding-left: 0px
+              padding-right: 0px
+              padding-top: 0px
+              removePadding: false
+              type: absoluteLink
+              valign: top
+              width: 64%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            src: https://img.mailinblue.com/4222425/images/content_library/original/6afc69ce21e3f95968583481.png
+        - id: c61cfcca-87cd-45b9-a00e-2e2bf3838709
+          text: '<p><span style="color: rgb(0, 0, 0);"><strong>Ik update de app</strong></span></p>'
+          thumbnail: /assets/img/editor/element_button.svg
+          title: Bouton
+          type: text-button
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: center
+              background-color: '#ffff1a'
+              data-href: https://www.truckfly.com/purchase-gps
+              data-placeholder-href: https://www.truckfly.com/purchase-gps
+              item-height: 42px
+              margin-bottom: 15px
+              margin-top: 15px
+              padding-bottom: 12px
+              padding-top: 12px
+              text-align: center
+              text-valign: top
+              type: absoluteLink
+              valign: top
+              width: 52%
+          content:
+            href: https://truckflyapp.onelink.me/2ysq/r4vkfd60
+            text: '<p><span style="color: rgb(0, 0, 0);"><strong>Ik update de app</strong></span></p>'
+    - align: top
+      dist: '12'
+      gutter: 30px
+      id: a0ae090f-429b-431b-8f8a-d364b256d8bb
+      moduleName: grid-row12
+      thumbnail: /assets/img/editor/grid_12.svg
+      title: section
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          padding-bottom: 20px
+          padding-top: 20px
+          valign: top
+          width: 100%
+      content:
+      - id: 379ad556-292e-4fc9-b559-dd551b8cd204
+        isEmpty: false
+        title: column 1
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - id: 6fc440e9-68ec-401c-8499-696f92bb24f4
+          thumbnail: /assets/img/editor/element_divider.svg
+          title: Diviseur
+          type: divider
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: center
+              border-color: '#ffce00'
+              border-style: solid
+              border-width: 3px
+              display: auto
+              padding-bottom: 30px
+              padding-top: 30px
+              width: 100%
+    - align: top
+      block_id: 37
+      condition: ''
+      dist: '12'
+      gutter: 0px
+      id: dac754da-05ef-477e-b23d-170953029410
+      moduleName: grid-template
+      title: B2C Multilingual Footer Clementine
+      type: grid-row
+      layout:
+        320px:
+          display: rows
+          padding-left: 15px
+          padding-right: 15px
+          width: 100%
+        default:
+          align: center
+          background-color: '#0c165b'
+          full-width: false
+          padding-bottom: 0px
+          padding-left: 0px
+          padding-right: 0px
+          padding-top: 0px
+          valign: top
+          width: 100%
+      content:
+      - id: 393dfb65-1724-4719-91ca-6cecf8b31356
+        imagelabel: Sélectionnez un type de contenu
+        isEmpty: false
+        label: Déposer du contenu ici
+        title: colonne de grille
+        type: grid-column
+        layout:
+          320px: []
+          default:
+            padding-left: 0px
+            padding-right: 0px
+            valign: top
+        content:
+        - condition: ( contact.LANG == "FR" )
+          id: 84bfc883-cb67-4ee7-8601-e758d2c800ad
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#ffffff'
+              groupPadding: false
+              padding-left: 20px
+              padding-right: 20px
+              padding-top: 10px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p class="default" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>Une question ? Un problème ?</strong></span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Consulte notre FAQ ou contacte-nous :&nbsp;<a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+        - condition: ( contact.LANG == "EN" ) or ( !contact.LANG ) or ( ( contact.LANG != "FR" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "PT" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "DE" ) )
+          id: 95f03eed-dab1-438c-ac85-c7e4cd8f755a
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#ffffff'
+              groupPadding: false
+              padding-left: 20px
+              padding-right: 20px
+              padding-top: 10px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>A question? A problem?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Check our FAQ or contact us:&nbsp;<a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+        - condition: ( contact.LANG == "ES" )
+          id: c60e0b37-a90f-4a9b-bf44-d96f25dee22d
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#ffffff'
+              groupPadding: false
+              padding-left: 20px
+              padding-right: 20px
+              padding-top: 10px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>¿Una pregunta? ¿Un problema?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Consulta nuestra FAQ o contáctanos:&nbsp;</span><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);"><a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+        - condition: ( contact.LANG == "IT" )
+          id: 2c9823fd-6c6e-4194-ae5a-e56ec15e0c2e
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#ffffff'
+              groupPadding: false
+              padding-left: 20px
+              padding-right: 20px
+              padding-top: 10px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>Una domanda? Un problema?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Consulta le nostre FAQ o contattaci:</span><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">&nbsp;<a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+        - condition: ( contact.LANG == "PT" )
+          id: 5a60894d-0286-4ba4-9ddc-e0bf8e86744b
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#ffffff'
+              groupPadding: false
+              padding-left: 20px
+              padding-right: 20px
+              padding-top: 10px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>Uma pergunta? Um problema?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Consulte a nossa FAQ ou contacte-nos:&nbsp;</span><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);"><a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+        - condition: ( contact.LANG == "NL" )
+          id: 2eaea352-229c-4b54-8572-6a0e6de9686e
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#ffffff'
+              groupPadding: false
+              padding-left: 20px
+              padding-right: 20px
+              padding-top: 10px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p class="default" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>Een vraag? Een probleem?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Bekijk onze FAQ of neem contact met ons op:</span><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">&nbsp;<a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+        - condition: ( contact.LANG == "DE" )
+          id: 96ff00c4-41e1-4db8-b1c6-a398fc380d47
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#ffffff'
+              groupPadding: false
+              padding-left: 20px
+              padding-right: 20px
+              padding-top: 10px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>Eine Frage? Ein Problem?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Besuchen Sie unsere FAQ oder kontaktieren Sie uns:</span><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);"><a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+        - condition: ( contact.LANG == "PL" )
+          id: e199b60c-1b0e-42c3-be50-f12d9cc07856
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              background-color: '#ffffff'
+              groupPadding: false
+              padding-left: 20px
+              padding-right: 20px
+              padding-top: 10px
+              text-align: left
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 24px; color: rgb(13, 13, 13);"><strong>Masz pytanie? Problem?</strong></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">Sprawdź nasze FAQ lub skontaktuj się z nami:</span><span style="font-family: Arial; font-size: 15px; color: rgb(13, 13, 13);">&nbsp;<a data-fr-linked="true" href="https://faq.truckfly.com/" id="isPasted" style="color: rgb(0, 146, 255); text-decoration: underline;">https://faq.truckfly.com/</a></span></p>'
+        - id: 7577feb7-d99b-4527-bc05-6a131c38c06f
+          title: Image
+          type: image
+          layout:
+            320px:
+              max-width: 320px
+              width: 100%
+            default:
+              align: center
+              canvas-height: 145px
+              padding-bottom: 0px
+              padding-top: 0px
+              type: absoluteLink
+              valign: top
+              width: 100%
+          content:
+            href: http://truckfly.com/?utm_source=brevo&utm_medium=transactional_emails
+            src: https://img.mailinblue.com/4222425/images/content_library/original/69a5b2e8c25a39a73aa3cea5.jpg
+            title: Truckfly.com
+        - condition: ( "FR" in contact.LANG )
+          id: d090d321-5dbd-4a16-bddb-cc9ba60782a0
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 10px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Cet e-mail a été envoyé à {{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Tu reçois cet e-mail car tu es inscrit sur l&#39;appli mobile <strong>Michelin Truckfly</strong>.</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><u>Se désinscrire</u></span></a><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p>'
+        - condition: ( ( contact.LANG != "FR" ) and ( contact.LANG != "IT" ) and ( contact.LANG != "ES" ) and ( contact.LANG != "NL" ) and ( contact.LANG != "DE" ) and ( contact.LANG != "PL" ) and ( contact.LANG != "PT" ) )
+          id: d0df6049-2de4-4443-bace-4c9747a8bd0d
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 10px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">This email was sent to&nbsp;{{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">You are receiving this email because you registered on the <strong>Michelin</strong> <strong data-start="525" data-end="548" id="isPasted">Truckfly mobile app.</strong></span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><u>Unsubscribe</u></span></a><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p>'
+        - condition: ( "ES" in contact.LANG )
+          id: 1dd46943-e3e8-4ca0-9c94-9cb78146ce10
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 10px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Este correo electrónico fue enviado a&nbsp;{{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Recibes este correo porque estás registrado en la aplicación móvil Michelin <strong id="isPasted">Truckfly</strong>.&nbsp;</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><u>Darse de baja</u></span></a><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p>'
+        - condition: ( "IT" in contact.LANG )
+          id: a8a526d1-0f04-4abd-bcc2-9369b37152ff
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 10px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Questa email è stata inviata a {{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Ricevi questa email perché sei registrato sull&#39;app mobile&nbsp;Michelin <strong id="isPasted">Truckfly</strong>.&nbsp;</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="font-size: 11px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><u>Annulla l&#39;iscrizione</u></span></a><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p>'
+        - condition: ( "PT" in contact.LANG )
+          id: bd349144-aa7c-4bf5-84ec-17bab96f7cdd
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 10px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Este e-mail foi enviado para {{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Está a receber este e-mail porque está registado na aplicação móvel&nbsp;Michelin&nbsp;Truckfly.&nbsp;</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="text-decoration:underline;font-size:11px;color:rgb(255, 255, 255)"><strong data-start="1014" data-end="1037"><u>Cancelar subscriçao</u></strong></span></a></p>'
+        - condition: ( "NL" in contact.LANG )
+          id: 8965bd49-d0bb-48bb-8d5b-a29d3e18b9d1
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 10px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Deze e-mail is verzonden naar&nbsp;{{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Je ontvangt deze e-mail omdat je geregistreerd bent in de&nbsp;Michelin&nbsp;Truckfly.</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="color: rgb(255, 255, 255);"><span style="color: rgb(255, 255, 255); font-size: 11px;"><u>Uitschrijven</u></span></a><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p>'
+        - condition: ( "DE" in contact.LANG )
+          id: 695ddb61-a1c1-46ce-a72d-0c7ef7ea551f
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              margin-bottom: 10px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Diese E-Mail wurde an {{ contact.EMAIL }}&nbsp;gesendet.</span></p><p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Sie erhalten diese E-Mail, weil Sie sich in der <strong>Michelin</strong> <strong data-start="1296" data-end="1319" id="isPasted">Truckfly Mobile-App</strong> registriert haben.</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="text-decoration: underline; color: rgb(255, 255, 255); font-size: 11px;">Abmelden</span></a></p>'
+        - condition: ( "PL" in contact.LANG )
+          id: 1c55a884-8384-4804-9f85-24c1d519eb9d
+          title: Texte
+          type: text
+          layout:
+            320px:
+              width: 100%
+            default:
+              align: left
+              groupPadding: false
+              margin-bottom: 10px
+              text-align: center
+              text-valign: top
+              valign: top
+              width: 100%
+          content: '<p style="color: rgb(136, 136, 136); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Ta wiadomość e-mail została wysłana na adres&nbsp;{{ contact.EMAIL }}.&nbsp;</span></p><p style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><span style="font-size: 11px; color: rgb(255, 255, 255);">Otrzymujesz tę wiadomość, ponieważ jesteś zarejestrowany w aplikacji mobilnej Michelin&nbsp;Truckfly.&nbsp;</span></p><p class="default" id="isPasted" style="color: rgb(59, 63, 68); font-family: arial, helvetica, sans-serif; font-size: 16px;"><a href="{{ unsubscribe }}" type="unsubscribeLink" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 146, 255); text-decoration: underline;"><span style="font-size: 11px; color: rgb(255, 255, 255);"><u>Wypisz się</u></span></a><span style="font-size: 11px; color: rgb(255, 255, 255);"><br></span></p>'
+media:
+  320px:
+    max-width: 600
+    min-width: 0
+styles:
+  default:
+    properties:
+      color: '#3b3f44'
+      font-family: arial,helvetica,sans-serif
+      font-size: 16px
+      line-height: '1.5'
+    title: Paragraph
+  default-button:
+    properties:
+      background-color: '#e84c3d'
+      border-color: '#e84c3d'
+      border-radius: 4px
+      border-width: 0px
+      color: '#fff'
+      font-family: arial,helvetica,sans-serif
+      font-size: 16px
+      remove-vml-button: optional
+      width: 50%
+    title: Button
+  default-heading1:
+    properties:
+      color: '#1F2D3D'
+      font-family: arial,helvetica,sans-serif
+      font-size: 36px
+    title: Heading 1
+  default-heading2:
+    properties:
+      color: '#1F2D3D'
+      font-family: arial,helvetica,sans-serif
+      font-size: 32px
+    title: Heading 2
+  default-heading3:
+    properties:
+      color: '#1F2D3D'
+      font-family: arial,helvetica,sans-serif
+      font-size: 24px
+    title: Heading 3
+  default-heading4:
+    properties:
+      color: '#1F2D3D'
+      font-family: arial,helvetica,sans-serif
+      font-size: 18px
+    title: Heading 4
+  default-link:
+    properties:
+      color: '#e84c3d'
+      text-decoration: underline
+    title: Link
