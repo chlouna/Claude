@@ -16,6 +16,8 @@
 
 **Rétroplanning** : vendredi 20/11 envoi de la proposition à VINCI · d'ici le 27/11 retour VINCI (validation ou modifications) · facturation · programmation de l'interstitiel du 10 au 15 décembre.
 
+**Mise en forme du Tally (20/11)** : réponses choisies et case cochée en bleu Michelin (le rouge faisait « mauvaise réponse »), touches de rouge VINCI : ligne en haut, trait sous le titre, liseré du « Le saviez-vous ? », intertitres de l'écran de fin. Les touches CSS ne s'appliquent au formulaire publié qu'avec Tally Pro.
+
 ## Parcours
 
 1. L'interstitiel s'affiche dans l'app (bouton vers le quiz, « Plus tard » ou la croix pour fermer).
