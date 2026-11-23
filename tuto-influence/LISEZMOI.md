@@ -9,7 +9,7 @@ Vidéo 16:9, 1920 × 1080, 30 i/s, 78 s, sans son : `mp4/tuto-marketing-influenc
 
 ## Vidéos verticales façon « histoire racontée face caméra » (`true-story/`)
 
-- `hugo.html` : Hugo, 29 ans, explique le métier de responsable marketing d'influence (1080 × 1920, 62 s, voix off + musique) → `true-story/mp4/hugo-9x16.mp4`.
+- `hugo.html` : Hugo, 29 ans, explique le métier de responsable marketing d'influence (1080 × 1920, 76 s, voix off + musique) → `true-story/mp4/hugo-9x16.mp4`.
 - `story.html` : variante où Léa raconte comment elle est devenue responsable marketing d'influence (histoire fictive).
 - Le texte se modifie dans le tableau `SCRIPT` en haut du script : une ligne = un sous-titre, `*mots*` = surlignés en jaune, `#` = carte titre. Le minutage se recalcule tout seul.
 - Rendre : `node tuto-influence/true-story/rendre.mjs hugo` (ou `story`). Aperçus : `node tuto-influence/true-story/rendre.mjs hugo 5,20,40`.
@@ -17,10 +17,10 @@ Vidéo 16:9, 1920 × 1080, 30 i/s, 78 s, sans son : `mp4/tuto-marketing-influenc
 
 ### Voix off et musique (Hugo)
 
-- Voix : synthèse locale Kokoro (40 % voix française « siwis » + 60 % voix masculine « nicola »), une piste par sous-titre dans `audio/voix-hugo/`. Les sous-titres et la bouche de Hugo se calent sur la durée de chaque phrase (`hugo-voix.js`).
+- Voix : synthèse locale Piper, voix masculine française « fr_FR-tom-medium » (44,1 kHz), nettoyée par FFmpeg (dé-essage, présence, compression légère) ; une piste par sous-titre dans `audio/voix-hugo/`. Les sous-titres et la bouche de Hugo se calent sur la durée de chaque phrase (`hugo-voix.js`).
 - Musique : composée et synthétisée par `audio/mixer.py` (pop douce, 104 bpm), donc sans droits tiers ; elle baisse automatiquement sous la voix. Mixage final à -14 LUFS.
 - Chaîne complète après un changement de texte :
-  1. `python audio/voix.py <dossier des modèles Kokoro> hugo` (python avec `kokoro-onnx` ; modèles `kokoro-v1.0.int8.onnx` renommé `kokoro.onnx` et `voices-v1.0.bin` renommé `voices.bin`, sur les releases GitHub de kokoro-onnx)
+  1. `python audio/voix.py <chemin/fr_FR-tom-medium.onnx> hugo` (python avec `piper-tts` ; modèle dans l'archive `vits-piper-fr_FR-tom-medium.tar.bz2` des releases GitHub de k2-fsa/sherpa-onnx, tag `tts-models`)
   2. `node rendre.mjs hugo` (vidéo muette + minutage)
   3. `python audio/mixer.py hugo` (musique, mixage, MP4 final)
 - La prononciation de certains mots se corrige dans le dictionnaire `DIRE` de `audio/voix.py`.

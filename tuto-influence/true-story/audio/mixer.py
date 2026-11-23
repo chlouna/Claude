@@ -79,7 +79,7 @@ voix /= np.max(np.abs(voix)) + 1e-9
 # ---------- Mixage : la musique descend sous la voix (enveloppe lissée) ----------
 lisse = int(0.25 * SR)
 env = np.convolve(actif, np.ones(lisse) / lisse, mode="same")
-gain_mus = 0.30 - 0.20 * np.clip(env, 0, 1)    # 0,30 seule, 0,10 sous la voix
+gain_mus = 0.28 - 0.21 * np.clip(env, 0, 1)    # 0,28 seule, 0,07 sous la voix
 mix = mus * gain_mus[:, None] + (0.85 * voix)[:, None]
 mix /= max(1.0, np.max(np.abs(mix)) / 0.97)
 wav = racine / "mp4" / f"{page}-son.wav"
