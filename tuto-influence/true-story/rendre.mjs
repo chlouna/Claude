@@ -1,9 +1,9 @@
 // Rend une vidéo verticale 1080 × 1920, 30 i/s, à partir d'une page du dossier (story = Léa, hugo = Hugo).
-// Usage : node tuto-influence/true-story/rendre.mjs hugo            → mp4/hugo-9x16.mp4
+// Usage : node tuto-influence/true-story/rendre.mjs hugo            → mp4/hugo-9x16-muet.mp4 (+ mp4/hugo-temps.json pour le son)
 //         node tuto-influence/true-story/rendre.mjs hugo 1,8,20     → aperçus PNG dans apercus/
 import { createRequire } from "node:module";
 import { execFileSync } from "node:child_process";
-import { mkdirSync, rmSync } from "node:fs";
+import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
@@ -37,8 +37,10 @@ if (apercus) {
   }
   execFileSync("ffmpeg", ["-y", "-v", "error", "-framerate", String(ips), "-i", path.join(tmp, "%05d.png"),
     "-vf", "format=yuv420p", "-c:v", "libx264", "-crf", "18", "-preset", "slow", "-movflags", "+faststart",
-    path.join(ici, "mp4", `${nom}-9x16.mp4`)]);
+    path.join(ici, "mp4", `${nom}-9x16-muet.mp4`)]);
   rmSync(tmp, { recursive: true, force: true });
-  console.log(`mp4/${nom}-9x16.mp4`, duree, "s");
+  const debuts = await page.evaluate(() => window.DEBUTS_VOIX || null);
+  if (debuts) writeFileSync(path.join(ici, "mp4", `${nom}-temps.json`), JSON.stringify({ duree, debuts_voix: debuts }));
+  console.log(`mp4/${nom}-9x16-muet.mp4`, duree, "s", debuts ? "— lancer ensuite audio/mixer.py " + nom : "");
 }
 await navigateur.close();

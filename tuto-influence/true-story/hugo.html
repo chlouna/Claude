@@ -65,6 +65,7 @@ body { font-family: "Nunito", sans-serif; }
   <div id="legendes"></div>
   <div class="fin-note" id="fin-note">Personnages fictifs</div>
 </div>
+<script src="hugo-voix.js"></script>
 <script src="../perso.js"></script>
 <script>
 // ---------- Script : une ligne = un sous-titre. *mots* = surlignés en jaune ----------
@@ -95,16 +96,18 @@ const FONDS = { encre: "#1E1B3A", violet: "#5B3DF5", orange: "#F2762E", corail: 
 
 // Minutage : 1,3 s + 0,3 s par mot, au moins 2,2 s ; la carte titre tient 3,4 s.
 let t = 0.3;
-const TL = SCRIPT.map(([txt, fond, illu, geste]) => {
+const TL = SCRIPT.map(([txt, fond, illu, geste], i) => {
+  const v = window.VOIX ? window.VOIX[i] : 0; // durée de la voix off de cette ligne
   const titre = txt.startsWith("#");
   const n = txt.replace(/[#*«»:…]/g, " ").split(/\s+/).filter(Boolean).length;
-  const d = titre ? 3.4 : Math.max(2.2, 1.3 + 0.3 * n);
-  const c = { txt: txt.replace(/^#/, ""), fond, illu, geste, titre, t0: t, t1: t + d };
+  const d = v ? (titre ? Math.max(3.4, v + 0.6) : Math.max(v + 0.55, 0.9 + 0.22 * n)) : (titre ? 3.4 : Math.max(2.2, 1.3 + 0.3 * n));
+  const c = { txt: txt.replace(/^#/, ""), fond, illu, geste, titre, t0: t, t1: t + d, voix: v };
   t += d;
   return c;
 });
 const T = Math.round((t + 2.2) * 10) / 10; // fin posée
 window.DUREE = T;
+window.DEBUTS_VOIX = TL.map((c) => +(c.t0 + 0.1).toFixed(3)); // la voix démarre 0,1 s après le sous-titre
 
 // ---------- Outils de ligne de temps (Web Animations, pilotables image par image) ----------
 const $ = (id) => (typeof id === "string" ? document.getElementById(id) : id);
@@ -134,7 +137,7 @@ document.querySelectorAll(".perso").forEach((el, i) => {
 // La bouche de Hugo parle pendant chaque sous-titre
 const bouche = [[0, "scaleY(1)"]];
 TL.forEach((c) => {
-  const fin = c.t1 - 0.35;
+  const fin = c.voix ? c.t0 + 0.1 + c.voix : c.t1 - 0.35;
   for (let t = c.t0 + 0.05, i = 0; t < fin; t += 0.15, i++) bouche.push([t, `scaleY(${[0.4, 1.12, 0.65, 1, 0.5, 0.9][i % 6]})`]);
   bouche.push([fin, "scaleY(1)"]);
 });
