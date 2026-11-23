@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=960, height=540" />
+<title>Tuto métier marketing d'influence</title>
+<style>
+@font-face { font-family: "Fredoka"; src: url("assets/fonts/fredoka-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "Fredoka"; src: url("assets/fonts/fredoka-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Nunito"; src: url("assets/fonts/nunito-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Nunito"; src: url("assets/fonts/nunito-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Nunito"; src: url("assets/fonts/nunito-latin-800-normal.woff2") format("woff2"); font-weight: 800; }
+:root {
+  --creme: #FFF6E9; --violet: #5B3DF5; --corail: #FF5A5F; --encre: #1E1B3A; --gris: #6F6A8A;
+  --moutarde: #F4B63F; --menthe: #2EC4A6; --ciel: #3FA9F5;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 960px; height: 540px; overflow: hidden; background: var(--creme); }
+body { font-family: "Nunito", sans-serif; color: var(--encre); }
+.ecran { position: relative; width: 960px; height: 540px; overflow: hidden;
+  background: radial-gradient(90% 80% at 50% 25%, #FFFBF4 0%, var(--creme) 60%, #FBE9D2 100%); }
+.ecran > *, .scene > * { position: absolute; }
+.scene { inset: 0; opacity: 0; }
+.sol { left: -40px; right: -40px; top: 488px; height: 120px; border-radius: 50% 50% 0 0 / 40px 40px 0 0;
+  background: linear-gradient(#F7DDBD, #F1CFA6); }
+.blob { border-radius: 50%; filter: blur(2px); }
+.progression { left: 0; bottom: 0; height: 5px; width: 960px; background: var(--violet); transform-origin: 0 50%; }
+
+/* Personnages */
+.perso { filter: drop-shadow(0 10px 14px rgba(30, 27, 58, 0.18)); }
+.perso svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* Entête des étapes */
+.entete { left: 48px; top: 34px; display: flex; align-items: center; gap: 16px; }
+.pastille { font-family: "Fredoka"; font-weight: 600; font-size: 20px; color: #fff; background: var(--corail);
+  padding: 6px 16px 7px; border-radius: 999px; box-shadow: 0 4px 0 #D9434A; }
+.entete h2 { font-family: "Fredoka"; font-weight: 700; font-size: 40px; line-height: 1; color: var(--encre); }
+.points { right: 48px; top: 46px; display: flex; gap: 10px; }
+.points i { width: 14px; height: 14px; border-radius: 50%; background: #E9DDF8; }
+.points i.on { background: var(--violet); }
+
+.carte { background: #fff; border-radius: 26px; box-shadow: 0 16px 40px rgba(30, 27, 58, 0.12), 0 3px 0 rgba(30, 27, 58, 0.05); }
+
+/* Scène 1 */
+.s1-tag { left: 64px; top: 110px; font-family: "Fredoka"; font-weight: 600; font-size: 20px; color: var(--violet);
+  background: #ECE6FF; padding: 6px 16px; border-radius: 999px; }
+.s1-titre { left: 60px; top: 158px; width: 560px; font-family: "Fredoka"; font-weight: 700; font-size: 64px; line-height: 1.02; color: var(--violet); }
+.s1-titre span { display: inline-block; }
+.s1-sous { left: 64px; top: 388px; font-family: "Nunito"; font-weight: 800; font-size: 28px; color: var(--encre); }
+.s1-sous b { color: var(--corail); }
+
+/* Scène 2 */
+.tableau { left: 56px; top: 118px; width: 560px; height: 352px; padding: 34px 38px; }
+.ligne { display: flex; align-items: center; gap: 20px; height: 94px; }
+.ligne .ico { flex: none; width: 66px; height: 66px; border-radius: 20px; display: grid; place-items: center; }
+.ligne b { display: block; font-family: "Fredoka"; font-weight: 700; font-size: 32px; line-height: 1.05; }
+.ligne span { display: block; font-size: 19px; color: var(--gris); font-weight: 700; margin-top: 2px; }
+
+/* Scène 3 */
+.ecran-tv { left: 236px; top: 112px; width: 676px; height: 320px; border-radius: 28px; background: var(--encre);
+  padding: 18px; box-shadow: 0 18px 40px rgba(30, 27, 58, 0.25); overflow: hidden; }
+.ecran-tv .vitre { position: relative; width: 100%; height: 100%; border-radius: 16px; background: #2D2852; overflow: hidden; }
+.bande { position: absolute; left: 0; top: 24px; display: flex; gap: 22px; }
+.profil { width: 160px; height: 236px; border-radius: 20px; background: #fff; padding: 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; position: relative; }
+.profil .av { width: 88px; height: 88px; border-radius: 50%; overflow: hidden; }
+.profil .nom { font-family: "Fredoka"; font-weight: 600; font-size: 20px; }
+.profil .barre { width: 100%; height: 9px; border-radius: 9px; background: #EEE9F7; overflow: hidden; }
+.profil .barre i { display: block; height: 100%; border-radius: 9px; }
+.profil .reseaux { display: flex; gap: 6px; }
+.profil .reseaux i { width: 22px; height: 22px; border-radius: 7px; }
+.profil.max { outline: 0 solid var(--corail); }
+.loupe { left: 0; top: 0; }
+.selection { font-family: "Fredoka"; font-weight: 600; font-size: 17px; color: #fff; background: var(--corail); padding: 4px 12px; border-radius: 999px; white-space: nowrap; }
+.chips { left: 236px; top: 452px; display: flex; gap: 14px; }
+.chip { font-family: "Fredoka"; font-weight: 600; font-size: 22px; background: #fff; border-radius: 999px; padding: 7px 18px 8px 10px;
+  display: flex; align-items: center; gap: 10px; box-shadow: 0 6px 16px rgba(30, 27, 58, 0.1); }
+.coche { width: 28px; height: 28px; border-radius: 50%; background: var(--menthe); display: grid; place-items: center; }
+
+/* Scène 4 */
+.brief { left: 318px; top: 122px; width: 324px; height: 356px; padding: 26px 28px; }
+.brief h3 { font-family: "Fredoka"; font-weight: 700; font-size: 30px; display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.case { display: flex; align-items: center; gap: 14px; height: 58px; font-family: "Fredoka"; font-weight: 600; font-size: 24px; border-top: 2px dashed #EEE7F7; }
+.case .boite { width: 32px; height: 32px; border-radius: 10px; border: 3px solid #D8CEEE; position: relative; flex: none; }
+.case .boite .coche { position: absolute; inset: -3px; width: 32px; height: 32px; border-radius: 10px; }
+.tampon { left: 470px; top: 132px; font-family: "Fredoka"; font-weight: 700; font-size: 30px; color: var(--corail);
+  border: 4px solid var(--corail); border-radius: 14px; padding: 4px 16px; background: rgba(255, 255, 255, 0.9); white-space: nowrap; }
+.bulle { font-family: "Fredoka"; font-weight: 600; font-size: 24px; background: #fff; padding: 12px 20px; border-radius: 22px;
+  box-shadow: 0 8px 20px rgba(30, 27, 58, 0.12); white-space: nowrap; }
+.bulle::after { content: ""; position: absolute; bottom: -12px; width: 24px; height: 24px; background: #fff; transform: rotate(45deg); border-radius: 4px; }
+.bulle.g::after { left: 34px; } .bulle.d::after { right: 34px; }
+
+/* Scène 5 */
+.anneau { border-radius: 50%; border: 18px solid #FFE7A8; box-shadow: 0 0 40px rgba(255, 214, 120, 0.8), inset 0 0 30px rgba(255, 214, 120, 0.7); }
+.tel { left: 520px; top: 96px; width: 226px; height: 420px; border-radius: 36px; background: var(--encre); padding: 12px; box-shadow: 0 20px 40px rgba(30, 27, 58, 0.25); }
+.tel .vitre { position: relative; width: 100%; height: 100%; border-radius: 26px; overflow: hidden;
+  background: linear-gradient(160deg, #8B6CFF 0%, var(--violet) 45%, #FF7A7E 100%); }
+.tel .vitre > * { position: absolute; }
+.rec { left: 14px; top: 14px; font-family: "Fredoka"; font-weight: 600; font-size: 16px; color: #fff; display: flex; align-items: center; gap: 6px;
+  background: rgba(30, 27, 58, 0.45); padding: 3px 10px; border-radius: 999px; }
+.rec i { width: 10px; height: 10px; border-radius: 50%; background: var(--corail); }
+.enligne { left: 50%; top: 14px; translate: -50% 0; font-family: "Fredoka"; font-weight: 600; font-size: 16px; color: var(--encre); background: #fff; padding: 3px 12px; border-radius: 999px; white-space: nowrap; }
+.valide { left: 452px; top: 372px; font-family: "Fredoka"; font-weight: 700; font-size: 24px; color: #fff; background: var(--menthe);
+  padding: 8px 16px 9px 10px; border-radius: 999px; display: flex; align-items: center; gap: 8px; box-shadow: 0 5px 0 #219E86; white-space: nowrap; }
+.coeur { width: 34px; height: 34px; }
+.compteurs { left: 14px; right: 14px; bottom: 16px; display: flex; justify-content: space-around; }
+.compteurs span { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.compteurs span i { display: block; width: 34px; height: 34px; border-radius: 50%; background: rgba(255, 255, 255, 0.9); display: grid; place-items: center; }
+
+/* Scène 6 */
+.tdb { left: 56px; top: 114px; width: 600px; height: 362px; padding: 24px 30px; }
+.tdb h3 { font-family: "Fredoka"; font-weight: 600; font-size: 22px; color: var(--gris); display: flex; justify-content: space-between; align-items: center; }
+.colonnes { position: absolute; left: 30px; right: 30px; bottom: 64px; top: 80px; display: flex; justify-content: space-around; align-items: flex-end;
+  border-bottom: 3px solid #EEE7F7; }
+.col { width: 82px; border-radius: 16px 16px 6px 6px; transform-origin: 50% 100%; }
+.etiquettes { position: absolute; left: 30px; right: 30px; bottom: 22px; display: flex; justify-content: space-around; }
+.etiquettes b { width: 120px; text-align: center; font-family: "Fredoka"; font-weight: 600; font-size: 20px; }
+.courbe { left: 56px; top: 114px; }
+
+/* Scène 7 */
+.s7-titre { left: 0; right: 0; top: 40px; text-align: center; font-family: "Fredoka"; font-weight: 700; font-size: 44px; }
+.badges { left: 40px; right: 40px; top: 116px; display: flex; justify-content: space-around; }
+.badge { width: 160px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.badge .rond { width: 104px; height: 104px; border-radius: 50%; display: grid; place-items: center; box-shadow: inset 0 -8px 0 rgba(0, 0, 0, 0.12), 0 10px 20px rgba(30, 27, 58, 0.14); }
+.badge b { font-family: "Fredoka"; font-weight: 600; font-size: 22px; }
+.etoile { width: 120px; height: 120px; }
+
+/* Scène 8 */
+.citation { left: 80px; right: 80px; top: 58px; text-align: center; font-family: "Fredoka"; font-weight: 700; font-size: 50px; line-height: 1.1; color: var(--violet); text-wrap: balance; }
+.citation .guil { color: var(--corail); }
+.bouton { left: 50%; top: 300px; translate: -50% 0; font-family: "Fredoka"; font-weight: 700; font-size: 34px; color: #fff; background: var(--corail);
+  padding: 14px 34px 16px; border-radius: 999px; box-shadow: 0 7px 0 #D9434A; white-space: nowrap; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <radialGradient id="peau" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#FFE1C7"/><stop offset=".6" stop-color="#F7BF96"/><stop offset="1" stop-color="#E39A72"/></radialGradient>
+    <radialGradient id="peau2" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#E9B48C"/><stop offset=".6" stop-color="#C98B62"/><stop offset="1" stop-color="#A86C46"/></radialGradient>
+    <linearGradient id="cyl-peau" x1="0" x2="1"><stop offset="0" stop-color="#E39A72"/><stop offset=".4" stop-color="#FFD4B3"/><stop offset="1" stop-color="#E0966D"/></linearGradient>
+    <linearGradient id="cyl-moutarde" x1="0" x2="1"><stop offset="0" stop-color="#D38E1E"/><stop offset=".38" stop-color="#FFCB5C"/><stop offset="1" stop-color="#C9841A"/></linearGradient>
+    <linearGradient id="cyl-corail" x1="0" x2="1"><stop offset="0" stop-color="#D9434A"/><stop offset=".38" stop-color="#FF8286"/><stop offset="1" stop-color="#CF3B42"/></linearGradient>
+    <linearGradient id="cyl-marine" x1="0" x2="1"><stop offset="0" stop-color="#1D1F45"/><stop offset=".4" stop-color="#3D4080"/><stop offset="1" stop-color="#1A1C40"/></linearGradient>
+    <linearGradient id="cyl-jean" x1="0" x2="1"><stop offset="0" stop-color="#2D4682"/><stop offset=".4" stop-color="#5677C2"/><stop offset="1" stop-color="#28407A"/></linearGradient>
+    <radialGradient id="brun" cx="40%" cy="30%" r="75%"><stop offset="0" stop-color="#8A5536"/><stop offset=".7" stop-color="#5E3520"/><stop offset="1" stop-color="#432414"/></radialGradient>
+    <radialGradient id="bleu" cx="40%" cy="30%" r="75%"><stop offset="0" stop-color="#8FD3FF"/><stop offset=".6" stop-color="#3FA9F5"/><stop offset="1" stop-color="#1E7BC8"/></radialGradient>
+    <radialGradient id="casq" cx="40%" cy="25%" r="80%"><stop offset="0" stop-color="#9A86FF"/><stop offset=".6" stop-color="#5B3DF5"/><stop offset="1" stop-color="#3B22C4"/></radialGradient>
+    <radialGradient id="chaus" cx="40%" cy="30%" r="80%"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#C9C3DE"/></radialGradient>
+    <radialGradient id="noir" cx="40%" cy="30%" r="80%"><stop offset="0" stop-color="#4A4570"/><stop offset="1" stop-color="#14122A"/></radialGradient>
+  </defs>
+</svg>
+
+<div class="ecran" id="ecran">
+  <div class="blob" style="left:-80px;top:-90px;width:320px;height:320px;background:rgba(91,61,245,.08)"></div>
+  <div class="blob" style="left:760px;top:-60px;width:300px;height:300px;background:rgba(255,90,95,.08)"></div>
+  <div class="sol"></div>
+
+  <!-- 1. Intro -->
+  <section class="scene" id="s1">
+    <div class="s1-tag" id="s1-tag">Tuto métier</div>
+    <h1 class="s1-titre" id="s1-titre"><span>Responsable</span> <span>marketing</span> <span>d'influence</span></h1>
+    <p class="s1-sous" id="s1-sous">Le métier en <b>5 étapes</b></p>
+    <div class="deco" id="s1-d1" style="left:600px;top:120px"></div>
+    <div class="deco" id="s1-d2" style="left:880px;top:180px"></div>
+    <div class="deco" id="s1-d3" style="left:620px;top:300px"></div>
+    <div class="perso" data-qui="lea" id="s1-lea" style="left:680px;top:150px;width:190px"></div>
+  </section>
+
+  <!-- 2. Stratégie -->
+  <section class="scene" id="s2">
+    <div class="entete"><span class="pastille">Étape 1</span><h2>La stratégie</h2></div>
+    <div class="points" data-n="1"></div>
+    <div class="carte tableau">
+      <div class="ligne" id="s2-l1"><div class="ico" style="background:#ECE6FF" data-ico="cible"></div><div><b>Objectifs</b><span>Notoriété ou ventes ?</span></div></div>
+      <div class="ligne" id="s2-l2"><div class="ico" style="background:#FFE3E4" data-ico="gens"></div><div><b>Cible</b><span>Qui veut-on toucher ?</span></div></div>
+      <div class="ligne" id="s2-l3"><div class="ico" style="background:#FFF0CC" data-ico="piece"></div><div><b>Budget</b><span>Combien investir ?</span></div></div>
+    </div>
+    <div class="perso" data-qui="lea" id="s2-lea" style="left:700px;top:150px;width:190px"></div>
+  </section>
+
+  <!-- 3. Trouver les créateurs -->
+  <section class="scene" id="s3">
+    <div class="entete"><span class="pastille">Étape 2</span><h2>Trouver les créateurs</h2></div>
+    <div class="points" data-n="2"></div>
+    <div class="perso" data-qui="lea" id="s3-lea" style="left:40px;top:186px;width:170px"></div>
+    <div class="ecran-tv"><div class="vitre">
+      <div class="bande" id="s3-bande"></div>
+      <div class="loupe" id="s3-loupe"></div>
+    </div></div>
+    <div class="chips">
+      <div class="chip" id="s3-c1"><span class="coche" data-ico="check"></span>Audience</div>
+      <div class="chip" id="s3-c2"><span class="coche" data-ico="check"></span>Engagement</div>
+      <div class="chip" id="s3-c3"><span class="coche" data-ico="check"></span>Valeurs</div>
+    </div>
+  </section>
+
+  <!-- 4. Négocier et briefer -->
+  <section class="scene" id="s4">
+    <div class="entete"><span class="pastille">Étape 3</span><h2>Négocier et briefer</h2></div>
+    <div class="points" data-n="3"></div>
+    <div class="perso" data-qui="lea" id="s4-lea" style="left:76px;top:150px;width:190px"></div>
+    <div class="perso" data-qui="max" id="s4-max" style="left:694px;top:150px;width:190px"></div>
+    <div class="carte brief">
+      <h3><span data-ico="doc"></span>Le brief</h3>
+      <div class="case" id="s4-k1"><span class="boite"><span class="coche" data-ico="check"></span></span>Livrables</div>
+      <div class="case" id="s4-k2"><span class="boite"><span class="coche" data-ico="check"></span></span>Rémunération</div>
+      <div class="case" id="s4-k3"><span class="boite"><span class="coche" data-ico="check"></span></span>Délais</div>
+      <div class="case" id="s4-k4"><span class="boite"><span class="coche" data-ico="check"></span></span>Liberté créative</div>
+    </div>
+    <div class="bulle g" id="s4-b1" style="left:64px;top:92px">On fait le point ?</div>
+    <div class="bulle d" id="s4-b2" style="left:690px;top:92px">Carrément !</div>
+    <div class="tampon" id="s4-tampon">Brief validé</div>
+  </section>
+
+  <!-- 5. Créer et lancer -->
+  <section class="scene" id="s5">
+    <div class="entete"><span class="pastille">Étape 4</span><h2>Créer et lancer</h2></div>
+    <div class="points" data-n="4"></div>
+    <div class="anneau" id="s5-anneau" style="left:150px;top:150px;width:250px;height:250px"></div>
+    <div class="perso" data-qui="max" data-tel="1" id="s5-max" style="left:180px;top:150px;width:190px"></div>
+    <div class="tel"><div class="vitre">
+      <div class="rec" id="s5-rec"><i></i>REC</div>
+      <div class="enligne" id="s5-enligne">En ligne</div>
+      <div id="s5-mini" style="left:23px;top:70px;width:156px"></div>
+      <div id="s5-play" style="left:76px;top:150px"></div>
+      <div class="compteurs" id="s5-compteurs">
+        <span><i data-ico="coeur-p"></i></span><span><i data-ico="bulle-p"></i></span><span><i data-ico="partage-p"></i></span>
+      </div>
+      <div id="s5-coeurs" style="left:0;top:0;width:100%;height:100%"></div>
+    </div></div>
+    <div class="valide" id="s5-valide"><span class="coche" data-ico="check" style="background:#fff"></span>Validé par Léa</div>
+    <div class="perso" data-qui="lea" id="s5-lea" style="left:790px;top:220px;width:150px"></div>
+  </section>
+
+  <!-- 6. Mesurer -->
+  <section class="scene" id="s6">
+    <div class="entete"><span class="pastille">Étape 5</span><h2>Mesurer les résultats</h2></div>
+    <div class="points" data-n="5"></div>
+    <div class="carte tdb">
+      <h3><span>Bilan de la campagne</span><span data-ico="fleche"></span></h3>
+      <div class="colonnes">
+        <div class="col" id="s6-c1" style="height:46%;background:linear-gradient(#9A86FF,#5B3DF5)"></div>
+        <div class="col" id="s6-c2" style="height:64%;background:linear-gradient(#FF9A9D,#FF5A5F)"></div>
+        <div class="col" id="s6-c3" style="height:78%;background:linear-gradient(#FFD77F,#F4B63F)"></div>
+        <div class="col" id="s6-c4" style="height:92%;background:linear-gradient(#6FE3CB,#2EC4A6)"></div>
+      </div>
+      <div class="etiquettes"><b>Portée</b><b>Engagement</b><b>Ventes</b><b>ROI</b></div>
+    </div>
+    <svg class="courbe" width="600" height="362" viewBox="0 0 600 362">
+      <path id="s6-ligne" d="M97 176 L232 136 L367 106 L502 72" fill="none" stroke="#1E1B3A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="440" stroke-dashoffset="440"/>
+      <circle id="s6-pt" cx="502" cy="72" r="10" fill="#1E1B3A" stroke="#fff" stroke-width="4"/>
+    </svg>
+    <div class="perso" data-qui="lea" id="s6-lea" style="left:710px;top:150px;width:190px"></div>
+  </section>
+
+  <!-- 7. Compétences -->
+  <section class="scene" id="s7">
+    <h2 class="s7-titre">Les compétences clés</h2>
+    <div class="badges">
+      <div class="badge" id="s7-b1"><div class="rond" style="background:#ECE6FF" data-ico="bulles"></div><b>Communication</b></div>
+      <div class="badge" id="s7-b2"><div class="rond" style="background:#FFE3E4" data-ico="ampoule"></div><b>Créativité</b></div>
+      <div class="badge" id="s7-b3"><div class="rond" style="background:#FFF0CC" data-ico="poignee"></div><b>Négociation</b></div>
+      <div class="badge" id="s7-b4"><div class="rond" style="background:#D9F6EF" data-ico="graph"></div><b>Analyse</b></div>
+      <div class="badge" id="s7-b5"><div class="rond" style="background:#DDF0FF" data-ico="oeil"></div><b>Veille</b></div>
+    </div>
+    <div class="etoile" id="s7-etoile" style="left:420px;top:276px"></div>
+    <div class="perso" data-qui="lea" id="s7-lea" style="left:300px;top:292px;width:122px"></div>
+    <div class="perso" data-qui="max" id="s7-max" style="left:538px;top:292px;width:122px"></div>
+  </section>
+
+  <!-- 8. Conclusion -->
+  <section class="scene" id="s8">
+    <p class="citation" id="s8-cit"><span class="guil">«&nbsp;</span>L'influence, c'est créer des relations authentiques.<span class="guil">&nbsp;»</span></p>
+    <div class="bouton" id="s8-btn">Et toi, tu te lances ?</div>
+    <div class="perso" data-qui="lea" id="s8-lea" style="left:100px;top:190px;width:170px"></div>
+    <div class="perso" data-qui="max" id="s8-max" style="left:690px;top:190px;width:170px"></div>
+  </section>
+
+  <div class="progression" id="progression"></div>
+</div>
+
+<script>
+// ---------- Personnages 3D cartoon (SVG ombré) ----------
+const BRAS_G = "transform-box:view-box;transform-origin:56px 188px";
+const BRAS_D = "transform-box:view-box;transform-origin:144px 188px";
+function perso(qui, opts = {}) {
+  const lea = qui === "lea";
+  const haut = lea ? "url(#cyl-moutarde)" : "url(#cyl-corail)";
+  const bas = lea ? "url(#cyl-marine)" : "url(#cyl-jean)";
+  const peau = lea ? "url(#peau)" : "url(#peau2)";
+  const tel = opts.tel ? `<g transform="translate(144 268) rotate(-12)"><rect x="-13" y="-24" width="26" height="44" rx="6" fill="url(#noir)"/><rect x="-9" y="-19" width="18" height="32" rx="3" fill="#8B6CFF"/></g>` : "";
+  const cheveuxArriere = lea
+    ? `<circle cx="100" cy="38" r="26" fill="url(#brun)"/><circle cx="100" cy="102" r="63" fill="url(#brun)"/>`
+    : `<path d="M38 86 Q30 132 50 146 Q46 118 58 100Z M162 86 Q170 132 150 146 Q154 118 142 100Z" fill="url(#bleu)"/>`;
+  const cheveuxAvant = lea
+    ? `<path d="M42 104 Q44 44 100 42 Q156 44 158 104 Q148 76 118 70 Q110 84 92 74 Q62 76 42 104Z" fill="url(#brun)"/>
+       <path d="M64 62 Q80 50 96 54" stroke="#9A6646" stroke-width="5" fill="none" stroke-linecap="round" opacity=".7"/>`
+    : `<path d="M44 86 Q48 124 60 104 Q66 116 74 100 Q86 112 96 98 Q110 112 120 98 Q132 112 140 100 Q150 120 156 86Z" fill="url(#bleu)"/>
+       <path d="M42 86 Q44 34 100 32 Q156 34 158 86Z" fill="url(#casq)"/>
+       <path d="M60 46 Q78 36 98 38" stroke="#B9AAFF" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>
+       <circle cx="100" cy="33" r="6" fill="#3B22C4"/>
+       <path d="M36 88 Q100 72 164 88 Q170 100 100 98 Q30 100 36 88Z" fill="#3B22C4"/>`;
+  const lunettes = lea
+    ? `<g fill="rgba(255,255,255,.18)" stroke="#1E1B3A" stroke-width="4"><circle cx="79" cy="112" r="18"/><circle cx="121" cy="112" r="18"/><path d="M97 110 Q100 106 103 110" fill="none"/></g>`
+    : "";
+  const col = lea
+    ? `<path d="M86 172 L114 172 L100 214Z" fill="#fff"/><path d="M80 172 L100 214 L92 176Z M120 172 L100 214 L108 176Z" fill="#C9841A" opacity=".55"/>`
+    : `<path d="M72 168 Q100 196 128 168 Q128 160 100 160 Q72 160 72 168Z" fill="#CF3B42"/><path d="M92 182 L90 214 M108 182 L110 214" stroke="#fff" stroke-width="3" stroke-linecap="round"/>`;
+  return `<svg viewBox="0 0 200 390">
+    <ellipse cx="100" cy="374" rx="60" ry="10" fill="rgba(30,27,58,.16)"/>
+    <g class="corps">
+      <g class="jambe-g" style="transform-box:view-box;transform-origin:87px 280px"><rect x="77" y="270" width="21" height="92" rx="10" fill="${bas}"/><ellipse cx="84" cy="364" rx="18" ry="10" fill="url(#chaus)"/></g>
+      <g class="jambe-d" style="transform-box:view-box;transform-origin:113px 280px"><rect x="102" y="270" width="21" height="92" rx="10" fill="${bas}"/><ellipse cx="116" cy="364" rx="18" ry="10" fill="url(#chaus)"/></g>
+      <g class="bras-g" style="${BRAS_G}"><rect x="45" y="176" width="22" height="88" rx="11" fill="${haut}"/><circle cx="56" cy="268" r="12" fill="${peau}"/></g>
+      <g class="bras-d" style="${BRAS_D}"><rect x="133" y="176" width="22" height="88" rx="11" fill="${haut}"/><circle cx="144" cy="268" r="12" fill="${peau}"/>${tel}</g>
+      <rect x="56" y="166" width="88" height="118" rx="38" fill="${haut}"/>
+      ${col}
+      <g class="tete" style="transform-box:view-box;transform-origin:100px 160px">
+        ${cheveuxArriere}
+        <rect x="90" y="146" width="20" height="26" rx="8" fill="url(#cyl-peau)"/>
+        <circle cx="42" cy="114" r="12" fill="${peau}"/><circle cx="158" cy="114" r="12" fill="${peau}"/>
+        <circle cx="100" cy="106" r="58" fill="${peau}"/>
+        <ellipse cx="70" cy="134" rx="10" ry="6" fill="#FF5A5F" opacity=".28"/><ellipse cx="130" cy="134" rx="10" ry="6" fill="#FF5A5F" opacity=".28"/>
+        <g class="yeux" style="transform-box:view-box;transform-origin:100px 112px">
+          <ellipse cx="79" cy="112" rx="11" ry="13" fill="#fff"/><ellipse cx="121" cy="112" rx="11" ry="13" fill="#fff"/>
+          <circle cx="81" cy="114" r="7.5" fill="#1E1B3A"/><circle cx="123" cy="114" r="7.5" fill="#1E1B3A"/>
+          <circle cx="84" cy="110" r="2.6" fill="#fff"/><circle cx="126" cy="110" r="2.6" fill="#fff"/>
+        </g>
+        <path d="M66 ${lea ? 90 : 96} Q78 ${lea ? 84 : 90} 90 ${lea ? 90 : 96} M110 ${lea ? 90 : 96} Q122 ${lea ? 84 : 90} 134 ${lea ? 90 : 96}" stroke="${lea ? "#5E3520" : "#1E7BC8"}" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="100" cy="126" rx="5" ry="4" fill="#000" opacity=".1"/>
+        <g class="bouche" style="transform-box:view-box;transform-origin:100px 136px"><path d="M86 134 Q100 152 114 134Z" fill="#8E2F3F"/><path d="M92 141 Q100 146 108 141" stroke="#FF8B92" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+        ${lunettes}
+        ${cheveuxAvant}
+      </g>
+    </g>
+  </svg>`;
+}
+function tete(peau, cheveux, casquette) {
+  return `<svg viewBox="30 30 140 140" style="width:100%;height:100%;background:#F2ECFF">
+    <circle cx="100" cy="106" r="58" fill="${peau}"/>
+    <path d="M42 104 Q44 44 100 42 Q156 44 158 104 Q140 72 100 72 Q60 72 42 104Z" fill="${cheveux}"/>
+    ${casquette ? `<path d="M42 86 Q44 34 100 32 Q156 34 158 86Z" fill="${casquette}"/>` : ""}
+    <circle cx="81" cy="114" r="7" fill="#1E1B3A"/><circle cx="121" cy="114" r="7" fill="#1E1B3A"/>
+    <path d="M86 134 Q100 150 114 134Z" fill="#8E2F3F"/>
+  </svg>`;
+}
+
+// ---------- Icônes ----------
+const ICO = {
+  check: `<svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5 L6.5 12 L13 4.5" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  cible: `<svg width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="#5B3DF5"/><circle cx="20" cy="20" r="10" fill="#fff"/><circle cx="20" cy="20" r="5" fill="#FF5A5F"/></svg>`,
+  gens: `<svg width="44" height="40" viewBox="0 0 44 40"><circle cx="14" cy="13" r="7" fill="#FF5A5F"/><circle cx="30" cy="13" r="7" fill="#FF8286"/><path d="M2 36 Q14 18 26 36Z M18 36 Q30 18 42 36Z" fill="#FF5A5F"/></svg>`,
+  piece: `<svg width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="#F4B63F"/><circle cx="20" cy="20" r="11" fill="#FFD77F"/><text x="20" y="26" font-family="Fredoka" font-weight="700" font-size="17" text-anchor="middle" fill="#B07510">€</text></svg>`,
+  doc: `<svg width="30" height="34" viewBox="0 0 30 34"><rect x="2" y="2" width="26" height="30" rx="6" fill="#5B3DF5"/><path d="M8 11 H22 M8 17 H22 M8 23 H17" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>`,
+  fleche: `<svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="16" fill="#D9F6EF"/><path d="M10 22 L17 12 L24 22" stroke="#2EC4A6" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  "coeur-p": `<svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 21 C5 15 2 12 2 8 A5 5 0 0 1 12 6 A5 5 0 0 1 22 8 C22 12 19 15 12 21Z" fill="#FF5A5F"/></svg>`,
+  "bulle-p": `<svg width="18" height="18" viewBox="0 0 24 24"><path d="M4 4 H20 Q22 4 22 6 V15 Q22 17 20 17 H10 L5 21 V17 H4 Q2 17 2 15 V6 Q2 4 4 4Z" fill="#5B3DF5"/></svg>`,
+  "partage-p": `<svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 12 L21 3 L14 21 L11 13Z" fill="#2EC4A6"/></svg>`,
+  bulles: `<svg width="58" height="52" viewBox="0 0 58 52"><path d="M6 4 H38 Q44 4 44 10 V26 Q44 32 38 32 H18 L8 40 V32 H6 Q0 32 0 26 V10 Q0 4 6 4Z" fill="#5B3DF5"/><path d="M28 22 H52 Q58 22 58 28 V40 Q58 46 52 46 H50 V52 L42 46 H28 Q22 46 22 40 V28 Q22 22 28 22Z" fill="#9A86FF"/></svg>`,
+  ampoule: `<svg width="46" height="58" viewBox="0 0 46 58"><circle cx="23" cy="22" r="20" fill="#FF5A5F"/><rect x="14" y="38" width="18" height="14" rx="4" fill="#1E1B3A"/><path d="M16 22 Q23 12 30 22" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/></svg>`,
+  poignee: `<svg width="60" height="44" viewBox="0 0 60 44"><path d="M2 14 L16 6 L30 14 L44 6 L58 14 L58 26 L40 40 Q34 44 28 40 L2 24Z" fill="#F4B63F"/><path d="M18 22 L30 32 M24 18 L36 28 M30 14 L42 24" stroke="#B07510" stroke-width="3.5" stroke-linecap="round"/></svg>`,
+  graph: `<svg width="54" height="50" viewBox="0 0 54 50"><rect x="4" y="28" width="10" height="20" rx="3" fill="#2EC4A6"/><rect x="20" y="18" width="10" height="30" rx="3" fill="#2EC4A6"/><rect x="36" y="6" width="10" height="42" rx="3" fill="#2EC4A6"/><path d="M4 20 L22 10 L46 2" stroke="#1E1B3A" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg>`,
+  oeil: `<svg width="60" height="40" viewBox="0 0 60 40"><path d="M2 20 Q30 -8 58 20 Q30 48 2 20Z" fill="#fff" stroke="#3FA9F5" stroke-width="4"/><circle cx="30" cy="20" r="11" fill="#3FA9F5"/><circle cx="30" cy="20" r="5" fill="#1E1B3A"/><circle cx="34" cy="16" r="2.5" fill="#fff"/></svg>`,
+};
+document.querySelectorAll("[data-ico]").forEach((el) => { el.innerHTML = ICO[el.dataset.ico]; if (el.classList.contains("coche")) el.style.color = el.style.background ? "#2EC4A6" : "#fff"; });
+document.querySelectorAll(".perso").forEach((el) => { el.innerHTML = perso(el.dataset.qui, { tel: el.dataset.tel }); });
+document.querySelectorAll(".points").forEach((el) => { for (let i = 1; i <= 5; i++) el.insertAdjacentHTML("beforeend", `<i class="${i == el.dataset.n ? "on" : ""}"></i>`); });
+const COEUR = (c, w = 34) => `<svg width="${w}" height="${w}" viewBox="0 0 24 24"><path d="M12 21 C5 15 2 12 2 8 A5 5 0 0 1 12 6 A5 5 0 0 1 22 8 C22 12 19 15 12 21Z" fill="${c}"/><ellipse cx="7.5" cy="8" rx="2.2" ry="1.4" fill="#fff" opacity=".6"/></svg>`;
+[["s1-d1", COEUR("#FF5A5F", 46)], ["s1-d2", `<svg width="52" height="52" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="#5B3DF5"/><text x="26" y="35" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="26" fill="#fff">@</text></svg>`],
+ ["s1-d3", `<svg width="56" height="44" viewBox="0 0 56 44"><rect x="2" y="8" width="52" height="34" rx="10" fill="#F4B63F"/><rect x="18" y="2" width="20" height="10" rx="4" fill="#F4B63F"/><circle cx="28" cy="25" r="11" fill="#fff"/><circle cx="28" cy="25" r="6" fill="#1E1B3A"/></svg>`]]
+  .forEach(([id, h]) => { document.getElementById(id).innerHTML = h; });
+document.getElementById("s3-loupe").innerHTML = `<svg width="110" height="110" viewBox="0 0 110 110"><circle cx="44" cy="44" r="34" fill="rgba(255,255,255,.22)" stroke="#FFCB5C" stroke-width="10"/><path d="M70 70 L100 100" stroke="#FFCB5C" stroke-width="14" stroke-linecap="round"/></svg>`;
+document.getElementById("s5-play").innerHTML = `<svg width="56" height="56" viewBox="0 0 56 56"><circle cx="28" cy="28" r="27" fill="rgba(255,255,255,.9)"/><path d="M22 17 L40 28 L22 39Z" fill="#5B3DF5"/></svg>`;
+document.getElementById("s5-mini").innerHTML = perso("max").replace('viewBox="0 0 200 390"', 'viewBox="20 20 160 240"');
+document.getElementById("s7-etoile").innerHTML = `<svg viewBox="0 0 120 120" width="120" height="120"><path d="M60 4 L72 44 L114 44 L80 68 L92 110 L60 84 L28 110 L40 68 L6 44 L48 44Z" fill="#FFCB5C" stroke="#F4B63F" stroke-width="4" stroke-linejoin="round"/></svg>`;
+
+// Cartes de profils (scène 3)
+const profils = [
+  ["#F7BF96", "#1E1B3A", null, "Profil A", ["#C9C3DE", 40], "#C9C3DE"],
+  ["#C98B62", "#E86A3A", null, "Profil B", ["#C9C3DE", 55], "#C9C3DE"],
+  ["#F7BF96", "#F4B63F", null, "Profil C", ["#C9C3DE", 35], "#C9C3DE"],
+  ["#C98B62", "#3FA9F5", "#5B3DF5", "Max", ["#2EC4A6", 92], "#FF5A5F"],
+  ["#F7BF96", "#8B6CFF", null, "Profil D", ["#C9C3DE", 50], "#C9C3DE"],
+];
+document.getElementById("s3-bande").innerHTML = profils.map(([p, c, k, n, [bc, bw], r], i) => `
+  <div class="profil${n === "Max" ? " max" : ""}" id="s3-p${i}">
+    <div class="av">${n === "Max" ? perso("max").replace('viewBox="0 0 200 390"', 'viewBox="30 24 140 140" style="background:#F2ECFF"') : tete(p, c, k)}</div>
+    <div class="nom">${n}</div>
+    <div class="barre"><i style="width:${bw}%;background:${bc}"></i></div>
+    <div class="barre"><i style="width:${Math.max(20, bw - 18)}%;background:${bc}"></i></div>
+    <div class="reseaux"><i style="background:${r}"></i><i style="background:${n === "Max" ? "#5B3DF5" : "#C9C3DE"}"></i><i style="background:${n === "Max" ? "#2EC4A6" : "#C9C3DE"}"></i></div>
+    ${n === "Max" ? '<div class="selection" id="s3-sel" style="position:absolute;top:-14px;left:50%;translate:-50% 0">Sélectionné ✓</div>' : ""}
+  </div>`).join("");
+
+// ---------- Ligne de temps (Web Animations, pilotable image par image) ----------
+const T = 78;
+const DOUX = "cubic-bezier(.25,.8,.3,1)";
+const $ = (id) => (typeof id === "string" ? document.getElementById(id) : id);
+const q = (id, sel) => $(id).querySelector(sel);
+// k : une seule animation par propriété, couvrant toute la vidéo, à partir de couples [temps, valeur].
+function k(el, prop, pts, easing = DOUX) {
+  el = $(el);
+  const f = [];
+  if (pts[0][0] > 0) f.push({ offset: 0, [prop]: pts[0][1] });
+  pts.forEach(([t, v]) => f.push({ offset: t / T, [prop]: v, easing }));
+  if (pts.at(-1)[0] < T) f.push({ offset: 1, [prop]: pts.at(-1)[1] });
+  el.animate(f, { duration: T * 1000, fill: "both" });
+}
+function boucle(el, frames, dur, opts = {}) { $(el).animate(frames, { duration: dur * 1000, iterations: Infinity, easing: "ease-in-out", ...opts }); }
+function scene(id, a, b) { k(id, "opacity", [[a, 0], [a + 0.45, 1], [b - 0.45, 1], [b, 0]], "ease-in-out"); }
+function entre(el, t, de = "0 24px", sortie) {
+  const o = [[t, 0], [t + 0.45, 1]], tr = [[t, de], [t + 0.55, "0 0"]];
+  if (sortie) { o.push([sortie, 1], [sortie + 0.3, 0]); }
+  k(el, "opacity", o); k(el, "translate", tr);
+}
+function pop(el, t, fin) {
+  const s = [[t, 0], [t + 0.28, 1.12], [t + 0.45, 1]];
+  if (fin) s.push([fin, 1], [fin + 0.25, 0]);
+  k(el, "scale", s, "ease-out");
+  k(el, "opacity", fin ? [[t, 0], [t + 0.1, 1], [fin + 0.1, 1], [fin + 0.25, 0]] : [[t, 0], [t + 0.1, 1]]);
+}
+// Gestes des personnages
+function bras(id, cote, pts) { k(q(id, cote === "g" ? ".bras-g" : ".bras-d"), "transform", pts.map(([t, a]) => [t, `rotate(${a}deg)`]), "ease-in-out"); }
+function salut(id, cote, t0, t1, haut = 150) {
+  const s = cote === "g" ? 1 : -1, pts = [[t0, 0], [t0 + 0.35, s * haut]];
+  for (let t = t0 + 0.35, i = 0; t + 0.3 < t1 - 0.35; t += 0.3, i++) pts.push([t + 0.3, s * (haut - (i % 2 ? 0 : 28))]);
+  pts.push([t1 - 0.05, s * haut], [t1 + 0.3, 0]);
+  return pts;
+}
+function marche(id, de, a, t0, t1) {
+  k(id, "translate", [[t0, de], [t1, a]], "ease-out");
+  const pg = [], pd = [];
+  for (let t = t0, i = 0; t < t1; t += 0.22, i++) { const v = i % 2 ? 14 : -14; pg.push([t, `rotate(${v}deg)`]); pd.push([t, `rotate(${-v}deg)`]); }
+  pg.push([t1, "rotate(0deg)"]); pd.push([t1, "rotate(0deg)"]);
+  k(q(id, ".jambe-g"), "transform", pg, "ease-in-out"); k(q(id, ".jambe-d"), "transform", pd, "ease-in-out");
+}
+// Vie de base : respiration, clignements, tête qui bouge
+document.querySelectorAll(".perso").forEach((el, i) => {
+  boucle(q(el, ".corps"), [{ transform: "translateY(0)" }, { transform: "translateY(-5px)" }, { transform: "translateY(0)" }], 1.6, { delay: -i * 300 });
+  boucle(q(el, ".yeux"), [{ transform: "scaleY(1)", offset: 0 }, { transform: "scaleY(1)", offset: 0.92 }, { transform: "scaleY(.1)", offset: 0.96 }, { transform: "scaleY(1)", offset: 1 }], 3.4 + (i % 3) * 0.5, { easing: "linear", delay: -i * 700 });
+  boucle(q(el, ".tete"), [{ transform: "rotate(-3deg)" }, { transform: "rotate(3deg)" }, { transform: "rotate(-3deg)" }], 3.2, { delay: -i * 500 });
+});
+function parle(id, t0, t1) {
+  const pts = [[t0, "scaleY(1)"]];
+  for (let t = t0, i = 0; t < t1; t += 0.16, i++) pts.push([t, `scaleY(${[0.45, 1.1, 0.7, 1, 0.5][i % 5]})`]);
+  pts.push([t1, "scaleY(1)"]);
+  k(q(id, ".bouche"), "transform", pts, "ease-in-out");
+}
+
+// Scène 1 : 0–8 s
+scene("s1", 0, 8);
+entre("s1-tag", 0.4);
+[...$("s1-titre").children].forEach((sp, i) => { k(sp, "opacity", [[0.7 + i * 0.3, 0], [1.1 + i * 0.3, 1]]); k(sp, "translate", [[0.7 + i * 0.3, "0 40px"], [1.25 + i * 0.3, "0 0"]], "cubic-bezier(.3,1.6,.5,1)"); });
+entre("s1-sous", 2.0);
+marche("s1-lea", "330px 0", "0 0", 0.2, 2.0);
+bras("s1-lea", "d", salut("s1-lea", "d", 2.2, 5.0));
+parle("s1-lea", 2.4, 4.8);
+["s1-d1", "s1-d2", "s1-d3"].forEach((d, i) => { pop(d, 2.4 + i * 0.35); boucle(d, [{ transform: "translateY(0)" }, { transform: "translateY(-12px)" }, { transform: "translateY(0)" }], 2 + i * 0.4); });
+
+// Scène 2 : 8–18 s
+scene("s2", 8, 18);
+entre("s2-l1", 9.2, "-30px 0"); entre("s2-l2", 11.4, "-30px 0"); entre("s2-l3", 13.6, "-30px 0");
+bras("s2-lea", "g", [[8.8, 0], [9.3, 78], [11.2, 78], [11.4, 92], [13.4, 92], [13.6, 104], [16.8, 104], [17.3, 0]]);
+parle("s2-lea", 9.3, 15.6);
+
+// Scène 3 : 18–28 s
+scene("s3", 18, 28);
+k("s3-bande", "translate", [[18.6, "30px 0"], [22.4, "-480px 0"]], "cubic-bezier(.45,0,.2,1)");
+k("s3-loupe", "translate", [[18.6, "60px 150px"], [20, "250px 90px"], [21.3, "120px 120px"], [22.6, "210px 80px"], [23.2, "200px 70px"]], "ease-in-out");
+k("s3-loupe", "opacity", [[18.4, 0], [18.8, 1], [23.4, 1], [23.8, 0]]);
+k("s3-p3", "outline-width", [[23.3, "0px"], [23.6, "6px"]]);
+k("s3-p3", "scale", [[23.3, 1], [23.6, 1.08], [23.8, 1.05]]);
+pop("s3-sel", 23.7);
+pop("s3-c1", 19.3); pop("s3-c2", 20.5); pop("s3-c3", 21.7);
+bras("s3-lea", "d", [[18.6, 0], [19, -60], [23.4, -60], [23.8, -150], [24.2, -125], [24.6, -150], [25, -125], [25.4, 0]]);
+parle("s3-lea", 19, 22.6);
+
+// Scène 4 : 28–38 s
+scene("s4", 28, 38);
+pop("s4-b1", 29.0, 31.4); pop("s4-b2", 31.6, 34.0);
+parle("s4-lea", 29.1, 31.2); parle("s4-max", 31.7, 33.6);
+entre("s4-k1", 30.0, "-20px 0"); entre("s4-k2", 31.6, "-20px 0"); entre("s4-k3", 33.0, "-20px 0"); entre("s4-k4", 34.3, "-20px 0");
+["s4-k1", "s4-k2", "s4-k3", "s4-k4"].forEach((id, i) => pop(q(id, ".coche"), [30.6, 32.2, 33.6, 34.9][i]));
+k("s4-tampon", "scale", [[35.6, 2.2], [35.95, 0.92], [36.15, 1]], "ease-in"); k("s4-tampon", "opacity", [[35.6, 0], [35.8, 1]]); k("s4-tampon", "rotate", [[35.6, "-20deg"], [35.95, "-8deg"]]);
+bras("s4-lea", "d", [[28.6, 0], [29.1, -40], [31.0, -40], [31.4, 0], [36.0, 0], [36.4, -150], [37.6, -150], [37.9, 0]]);
+bras("s4-max", "g", [[31.4, 0], [31.8, 40], [33.6, 40], [34, 0], [36.0, 0], [36.4, 150], [37.6, 150], [37.9, 0]]);
+
+// Scène 5 : 38–48 s
+scene("s5", 38, 48);
+boucle("s5-anneau", [{ opacity: 0.75 }, { opacity: 1 }, { opacity: 0.75 }], 1.4);
+bras("s5-max", "d", [[38.4, 0], [38.9, -62], [42.8, -62], [43.2, 0], [44.6, 0], [45, -150], [45.4, -125], [45.8, -150], [46.2, -125], [46.6, 0]]);
+parle("s5-max", 39.2, 42.4);
+k("s5-rec", "opacity", [[38.9, 0], [39.1, 1], [42.7, 1], [42.9, 0]]);
+boucle(q("s5-rec", "i"), [{ opacity: 1 }, { opacity: 0.2 }, { opacity: 1 }], 0.9);
+k("s5-mini", "translate", [[38.6, "0 20px"], [39.2, "0 0"]]);
+k("s5-play", "opacity", [[38, 0], [43, 0], [43.3, 1], [44.4, 1], [44.7, 0]]);
+pop("s5-valide", 43.0);
+bras("s5-lea", "g", [[42.6, 0], [43.0, 150], [44.6, 150], [45, 0]]);
+pop("s5-enligne", 44.8);
+k("s5-compteurs", "opacity", [[44.6, 0], [45, 1]]);
+const coeurs = $("s5-coeurs");
+for (let i = 0; i < 12; i++) {
+  const c = document.createElement("div"); c.style.cssText = `position:absolute;left:${20 + ((i * 53) % 150)}px;top:330px`;
+  c.innerHTML = COEUR(["#FF5A5F", "#fff", "#FFCB5C"][i % 3], 26 + (i % 3) * 6); coeurs.appendChild(c);
+  const t = 45 + i * 0.22;
+  k(c, "translate", [[t, "0 0"], [t + 2, `${(i % 2 ? 1 : -1) * 20}px -300px`]], "ease-out");
+  k(c, "opacity", [[t, 0], [t + 0.2, 1], [t + 1.6, 1], [t + 2, 0]]);
+}
+
+// Scène 6 : 48–58 s
+scene("s6", 48, 58);
+["s6-c1", "s6-c2", "s6-c3", "s6-c4"].forEach((id, i) => k(id, "scale", [[49.3 + i * 0.9, "1 0"], [50.1 + i * 0.9, "1 1.06"], [50.35 + i * 0.9, "1 1"]]));
+k("s6-ligne", "strokeDashoffset", [[53.2, "440"], [55, "0"]], "ease-in-out");
+pop("s6-pt", 54.9);
+bras("s6-lea", "g", [[48.8, 0], [49.3, 92], [53, 92], [53.5, 120], [56.6, 120], [57.1, 0]]);
+parle("s6-lea", 49.4, 55.4);
+
+// Scène 7 : 58–70 s
+scene("s7", 58, 70);
+entre(document.querySelector(".s7-titre"), 58.4);
+["s7-b1", "s7-b2", "s7-b3", "s7-b4", "s7-b5"].forEach((id, i) => pop(id, 59.4 + i * 1.2));
+k("s7-lea", "translate", [[65, "0 0"], [66, "70px 0"], [67.6, "70px 0"], [68.4, "0 0"]], "ease-in-out");
+k("s7-max", "translate", [[65, "0 0"], [66, "-70px 0"], [67.6, "-70px 0"], [68.4, "0 0"]], "ease-in-out");
+bras("s7-lea", "d", [[65, 0], [65.8, -140], [66.2, -128], [67.6, -128], [68.2, 0]]);
+bras("s7-max", "g", [[65, 0], [65.8, 140], [66.2, 128], [67.6, 128], [68.2, 0]]);
+k("s7-etoile", "scale", [[66.1, 0], [66.4, 1.15], [66.6, 1], [67.6, 1], [67.9, 0]], "ease-out");
+k("s7-etoile", "rotate", [[66.1, "-30deg"], [67.9, "20deg"]]);
+k("s7-etoile", "opacity", [[66.1, 0], [66.2, 1], [67.8, 1], [67.9, 0]]);
+
+// Scène 8 : 70–78 s
+k("s8", "opacity", [[70, 0], [70.45, 1]], "ease-in-out");
+entre("s8-cit", 70.5, "0 30px");
+pop("s8-btn", 72.6);
+boucle("s8-btn", [{ transform: "scale(1)" }, { transform: "scale(1.06)" }, { transform: "scale(1)" }], 1.1, { delay: 73.3 * 1000 });
+bras("s8-lea", "d", salut("s8-lea", "d", 72.4, 77.4));
+bras("s8-max", "g", salut("s8-max", "g", 72.6, 77.4));
+parle("s8-lea", 70.8, 72.6);
+
+// Barre de progression
+k("progression", "scale", [[0, "0 1"], [T, "1 1"]], "linear");
+window.PRET = true;
+</script>
+</body>
+</html>
