@@ -168,9 +168,9 @@ TL.forEach((c, i) => {
   const div = document.createElement("div");
   div.className = "legende" + (c.titre ? " titre-carte" : "");
   let html = "", inHl = false;
-  c.txt.split(/(\*)/).forEach((part) => {
+  c.txt.replace(/\*( ?[:?!;.,…»]+)/g, "$1*").split(/(\*)/).forEach((part) => {
     if (part === "*") { html += inHl ? "</span>" : '<span class="hl">'; inHl = !inHl; return; }
-    html += part.split(/(\s+)/).map((w) => (w.trim() ? `<span class="mot">${w}</span>` : w)).join("");
+    html += part.replace(/ ([:?!»;])/g, "\u00a0$1").replace(/« /g, "«\u00a0").split(/( +)/).map((w) => (w.trim() ? `<span class="mot">${w}</span>` : w)).join("");
   });
   div.innerHTML = `<p>${c.titre ? '<span class="sur">Léa raconte</span>' : ""}${html}</p>`;
   zone.appendChild(div);

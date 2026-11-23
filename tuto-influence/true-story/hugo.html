@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=540, height=960" />
+<title>Hugo raconte son métier</title>
+<style>
+@font-face { font-family: "Fredoka"; src: url("../assets/fonts/fredoka-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "Fredoka"; src: url("../assets/fonts/fredoka-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Nunito"; src: url("../assets/fonts/nunito-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Nunito"; src: url("../assets/fonts/nunito-latin-800-normal.woff2") format("woff2"); font-weight: 800; }
+:root { --encre: #1E1B3A; --jaune: #FFE14D; --corail: #FF5A5F; --violet: #5B3DF5; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 540px; height: 960px; overflow: hidden; background: var(--encre); }
+body { font-family: "Nunito", sans-serif; }
+.ecran { position: relative; width: 540px; height: 960px; overflow: hidden; }
+.ecran > * { position: absolute; }
+#legendes, #illus { inset: 0; }
+#legendes > *, #illus > * { position: absolute; }
+#fond { inset: 0; background: var(--encre); }
+.vignette { inset: 0; background: radial-gradient(80% 60% at 50% 62%, rgba(255,255,255,.14), rgba(0,0,0,.28) 100%); }
+.motif { inset: -40px; opacity: .08; background-image: radial-gradient(#fff 2px, transparent 2.5px); background-size: 28px 28px; }
+
+/* Personnages en plan poitrine */
+.perso { filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.3)); }
+.perso svg { display: block; width: 100%; height: auto; overflow: visible; }
+#lea-cadre { left: 50px; top: 388px; width: 440px; transform-origin: 50% 45%; }
+#max-cadre { left: 296px; top: 566px; width: 300px; }
+
+/* Sous-titres */
+.legende { left: 26px; right: 26px; top: 112px; height: 270px; display: flex; align-items: center; justify-content: center; text-align: center;
+  font-family: "Fredoka"; font-weight: 700; font-size: 45px; line-height: 1.16; color: #fff; text-wrap: balance;
+  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.32); }
+.legende p { width: 100%; }
+.mot { display: inline-block; }
+.hl { background: var(--jaune); color: var(--encre); text-shadow: none; border-radius: 10px; padding: 0 8px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.titre-carte { font-size: 50px; }
+.titre-carte .sur { display: block; font-size: 24px; color: var(--jaune); letter-spacing: .04em; margin-bottom: 12px; text-transform: uppercase; }
+
+/* Bandeau nom */
+#nom { left: 28px; top: 760px; background: #fff; border-radius: 18px; padding: 10px 18px 12px; box-shadow: 0 10px 24px rgba(0,0,0,.25); }
+#nom b { display: block; font-family: "Fredoka"; font-weight: 700; font-size: 26px; color: var(--encre); }
+#nom span { display: block; font-weight: 800; font-size: 16px; color: var(--violet); }
+#etiquette-max { left: 318px; top: 528px; font-family: "Fredoka"; font-weight: 600; font-size: 19px; color: var(--encre); background: #fff; padding: 5px 14px; border-radius: 999px; white-space: nowrap; box-shadow: 0 6px 14px rgba(0,0,0,.25); }
+
+/* Illustrations */
+.illu { width: 150px; height: 150px; display: grid; place-items: center; }
+.illu.g { left: 8px; top: 430px; } .illu.d { left: 382px; top: 430px; }
+.sticker { filter: drop-shadow(0 8px 12px rgba(0,0,0,.28)); }
+#rupture { left: 60px; top: 770px; font-family: "Fredoka"; font-weight: 700; font-size: 40px; color: var(--corail); background: #fff; border: 6px solid var(--corail);
+  border-radius: 18px; padding: 6px 20px; white-space: nowrap; }
+.fin-note { left: 0; right: 0; bottom: 26px; text-align: center; font-weight: 700; font-size: 14px; color: rgba(255,255,255,.7); }
+</style>
+</head>
+<body>
+<div class="ecran">
+  <div id="fond"></div>
+  <div class="motif"></div>
+  <div class="vignette"></div>
+  <div class="perso" id="max-cadre" data-qui="max"></div>
+  <div id="lea-cadre"><div class="perso" id="lea" data-qui="hugo"></div></div>
+  <div id="etiquette-max">Max, créateur</div>
+  <div id="illus"></div>
+    <div id="nom"><b>Hugo, 29 ans</b><span>Responsable marketing d'influence</span></div>
+  <div id="legendes"></div>
+  <div class="fin-note" id="fin-note">Personnages fictifs</div>
+</div>
+<script src="../perso.js"></script>
+<script>
+// ---------- Script : une ligne = un sous-titre. *mots* = surlignés en jaune ----------
+// [texte, fond, illustration (côté g/d), geste]
+const SCRIPT = [
+  ["Mon métier ? Je fais *parler des marques* sur les réseaux.", "encre", "tel:d"],
+  ["Mais pas avec des pubs : avec des *créateurs de contenu*.", "encre", "rec:g"],
+  ["#Je suis *responsable marketing d'influence*", "encre"],
+  ["Concrètement, tout commence par une *stratégie*.", "violet", "cible:d"],
+  ["On veut quoi ? Se faire *connaître* ? *Vendre* ?", "violet", "cible:d"],
+  ["Ensuite, je cherche les *bons créateurs*.", "orange", "loupe:d"],
+  ["Pas forcément ceux qui ont *le plus d'abonnés*…", "orange", "barre:d"],
+  ["… mais ceux à qui leur communauté fait *vraiment confiance*.", "orange", "coeur:d"],
+  ["Puis je *négocie* : le contenu, la rémunération, les délais.", "corail", "contrat:g"],
+  ["Et j'écris le *brief*, sans brider leur créativité.", "corail", "contrat:g"],
+  ["Comme avec Max, un créateur avec qui je *bosse souvent*.", "corail", "max"],
+  ["Avant la publication, je *valide* chaque contenu.", "menthe", "valide:d"],
+  ["Et après, je *mesure tout* :", "menthe", "graph:d"],
+  ["les vues, l'engagement, les clics, les ventes.", "menthe", "graph:d"],
+  ["Le meilleur ? Chaque campagne est *différente*.", "violet", "fusee:d", "bras"],
+  ["Le plus dur ? Gérer *l'imprévu*, souvent en direct.", "violet", "vibre:d"],
+  ["Pour ce métier, il faut être *curieux* et *organisé*…", "encre", "ampoule:d"],
+  ["… et adorer les *réseaux sociaux*.", "encre", "tel:d"],
+  ["Mon conseil : commence par *analyser les comptes* que tu suis.", "orange", "loupe:g"],
+  ["Et toi, tu te lances ?", "violet", "max:fin", "bras"],
+];
+const FONDS = { encre: "#1E1B3A", violet: "#5B3DF5", orange: "#F2762E", corail: "#E9424A", menthe: "#16A085" };
+
+// Minutage : 1,3 s + 0,3 s par mot, au moins 2,2 s ; la carte titre tient 3,4 s.
+let t = 0.3;
+const TL = SCRIPT.map(([txt, fond, illu, geste]) => {
+  const titre = txt.startsWith("#");
+  const n = txt.replace(/[#*«»:…]/g, " ").split(/\s+/).filter(Boolean).length;
+  const d = titre ? 3.4 : Math.max(2.2, 1.3 + 0.3 * n);
+  const c = { txt: txt.replace(/^#/, ""), fond, illu, geste, titre, t0: t, t1: t + d };
+  t += d;
+  return c;
+});
+const T = Math.round((t + 2.2) * 10) / 10; // fin posée
+window.DUREE = T;
+
+// ---------- Outils de ligne de temps (Web Animations, pilotables image par image) ----------
+const $ = (id) => (typeof id === "string" ? document.getElementById(id) : id);
+const q = (el, sel) => $(el).querySelector(sel);
+function k(el, prop, pts, easing = "cubic-bezier(.25,.8,.3,1)") {
+  el = $(el);
+  const f = [];
+  if (pts[0][0] > 0) f.push({ offset: 0, [prop]: pts[0][1] });
+  pts.forEach(([t, v]) => f.push({ offset: Math.min(1, t / T), [prop]: v, easing }));
+  if (pts.at(-1)[0] < T) f.push({ offset: 1, [prop]: pts.at(-1)[1] });
+  el.animate(f, { duration: T * 1000, fill: "both" });
+}
+function boucle(el, frames, dur, opts = {}) { $(el).animate(frames, { duration: dur * 1000, iterations: Infinity, easing: "ease-in-out", ...opts }); }
+// Visible entre a et b, avec entrée « pop »
+function fenetre(el, a, b, de = 0.6) {
+  k(el, "opacity", [[a, 0], [a + 0.12, 1], [b - 0.12, 1], [b, 0]], "linear");
+  k(el, "scale", [[a, de], [a + 0.25, 1.08], [a + 0.4, 1], [b - 0.12, 1], [b, 0.9]], "ease-out");
+}
+
+// ---------- Personnages ----------
+document.querySelectorAll(".perso").forEach((el) => { el.innerHTML = perso(el.dataset.qui); });
+document.querySelectorAll(".perso").forEach((el, i) => {
+  boucle(q(el, ".corps"), [{ transform: "translateY(0)" }, { transform: "translateY(-3px)" }, { transform: "translateY(0)" }], 1.8, { delay: -i * 400 });
+  boucle(q(el, ".yeux"), [{ transform: "scaleY(1)", offset: 0 }, { transform: "scaleY(1)", offset: 0.93 }, { transform: "scaleY(.1)", offset: 0.965 }, { transform: "scaleY(1)", offset: 1 }], 3.6 + i * 0.7, { easing: "linear", delay: -i * 900 });
+  boucle(q(el, ".tete"), [{ transform: "rotate(-2.5deg)" }, { transform: "rotate(2.5deg)" }, { transform: "rotate(-2.5deg)" }], 3.4, { delay: -i * 600 });
+});
+// La bouche de Hugo parle pendant chaque sous-titre
+const bouche = [[0, "scaleY(1)"]];
+TL.forEach((c) => {
+  const fin = c.t1 - 0.35;
+  for (let t = c.t0 + 0.05, i = 0; t < fin; t += 0.15, i++) bouche.push([t, `scaleY(${[0.4, 1.12, 0.65, 1, 0.5, 0.9][i % 6]})`]);
+  bouche.push([fin, "scaleY(1)"]);
+});
+k(q("lea", ".bouche"), "transform", bouche, "ease-in-out");
+
+// Sauts de zoom « jump cut » à chaque sous-titre + couleur de fond
+const zoom = [], fond = [], decal = [];
+let z = 1, prevF = FONDS[TL[0].fond], dx = "0px 0px";
+TL.forEach((c, i) => {
+  const nz = c.titre ? 0.94 : (i % 2 ? 1.09 : 1);
+  zoom.push([c.t0, `${z}`], [c.t0, `${nz}`]); z = nz;
+  const f = FONDS[c.fond];
+  fond.push([c.t0, prevF], [c.t0 + 0.18, f]); prevF = f;
+  const ndx = c.illu && c.illu.startsWith("max") ? "-64px 0px" : "0px 0px";
+  decal.push([c.t0, dx], [c.t0 + 0.35, ndx]); dx = ndx;
+});
+k("lea-cadre", "scale", zoom, "linear");
+k("fond", "backgroundColor", fond, "linear");
+k("lea-cadre", "translate", decal, "ease-in-out");
+
+// Gestes : bras levé sur les moments forts
+const brasD = [[0, "rotate(0deg)"]];
+TL.forEach((c) => { if (c.geste === "bras") brasD.push([c.t0, "rotate(0deg)"], [c.t0 + 0.3, "rotate(145deg)"], [c.t0 + 0.6, "rotate(125deg)"], [c.t0 + 0.9, "rotate(145deg)"], [c.t1 - 0.4, "rotate(140deg)"], [c.t1, "rotate(0deg)"]); });
+k(q("lea", ".bras-g"), "transform", brasD, "ease-in-out");
+
+// ---------- Sous-titres ----------
+const zone = $("legendes");
+TL.forEach((c, i) => {
+  const div = document.createElement("div");
+  div.className = "legende" + (c.titre ? " titre-carte" : "");
+  let html = "", inHl = false;
+  c.txt.replace(/\*( ?[:?!;.,…»]+)/g, "$1*").split(/(\*)/).forEach((part) => {
+    if (part === "*") { html += inHl ? "</span>" : '<span class="hl">'; inHl = !inHl; return; }
+    html += part.replace(/ ([:?!»;])/g, "\u00a0$1").replace(/« /g, "«\u00a0").split(/( +)/).map((w) => (w.trim() ? `<span class="mot">${w}</span>` : w)).join("");
+  });
+  div.innerHTML = `<p>${c.titre ? '<span class="sur">Hugo, 29 ans</span>' : ""}${html}</p>`;
+  zone.appendChild(div);
+  const fin = i === TL.length - 1 ? T : c.t1;
+  k(div, "opacity", [[c.t0, 0], [c.t0 + 0.01, 1], [fin - 0.06, 1], [fin, 0]], "linear");
+  div.querySelectorAll(".mot").forEach((m, j) => {
+    const a = c.t0 + j * 0.06;
+    k(m, "opacity", [[a, 0], [a + 0.08, 1]], "linear");
+    k(m, "translate", [[a, "0 14px"], [a + 0.22, "0 0"]], "cubic-bezier(.3,1.7,.5,1)");
+  });
+});
+
+// ---------- Illustrations ----------
+const COEUR = (c, w) => `<svg width="${w}" height="${w}" viewBox="0 0 24 24"><path d="M12 21 C5 15 2 12 2 8 A5 5 0 0 1 12 6 A5 5 0 0 1 22 8 C22 12 19 15 12 21Z" fill="${c}"/><ellipse cx="7.5" cy="8" rx="2.2" ry="1.4" fill="#fff" opacity=".6"/></svg>`;
+const ENV = `<svg width="92" height="64" viewBox="0 0 92 64"><rect x="2" y="2" width="88" height="60" rx="10" fill="#fff"/><path d="M6 8 L46 38 L86 8" stroke="#C9C3DE" stroke-width="5" fill="none" stroke-linejoin="round"/></svg>`;
+const ILLU = {
+  enveloppes: `<div style="position:relative;width:150px;height:150px">
+      <div class="env" style="position:absolute;left:30px;top:60px">${ENV}</div><div class="env" style="position:absolute;left:30px;top:60px">${ENV}</div><div class="env" style="position:absolute;left:30px;top:60px">${ENV}</div>
+      <div style="position:absolute;left:96px;top:36px;font-family:Fredoka;font-weight:700;font-size:26px;color:#fff;background:#FF5A5F;border:4px solid #fff;border-radius:999px;padding:2px 12px">200</div></div>`,
+  notif: `<div style="background:#fff;border-radius:22px;padding:12px 14px;display:flex;gap:10px;align-items:center;width:150px">
+      <div style="width:44px;height:44px;border-radius:50%;overflow:hidden;flex:none">${perso("max").replace('viewBox="0 0 200 390"', 'viewBox="30 24 140 140" style="background:#F2ECFF"')}</div>
+      <div style="font-family:Fredoka;font-weight:600;font-size:16px;color:#1E1B3A;line-height:1.1">1 nouveau<br>message</div></div>`,
+  sac: `<svg width="130" height="140" viewBox="0 0 130 140"><path d="M42 40 Q42 10 65 10 Q88 10 88 40" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round"/><rect x="14" y="36" width="102" height="100" rx="18" fill="#FFB4C9"/><rect x="14" y="36" width="102" height="22" rx="10" fill="#FF8FB0"/><rect x="54" y="72" width="22" height="46" rx="6" fill="#1E1B3A"/><path d="M56 72 L56 56 Q65 46 74 56 L74 72Z" fill="#E9424A"/></svg>`,
+  tel: `<svg width="110" height="170" viewBox="0 0 110 170"><rect x="4" y="4" width="102" height="162" rx="20" fill="#1E1B3A"/><rect x="12" y="16" width="86" height="138" rx="10" fill="#fff"/>
+      <g>${[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => `<rect x="${16 + (i % 3) * 27}" y="${40 + Math.floor(i / 3) * 27}" width="24" height="24" rx="5" fill="${["#FF8FB0", "#FFD77F", "#9A86FF", "#6FE3CB", "#FF9A9D", "#8FD3FF", "#FFD77F", "#9A86FF", "#FF8FB0"][i]}"/>`).join("")}</g>
+      <circle cx="30" cy="27" r="7" fill="#F2762E"/><rect x="42" y="23" width="40" height="7" rx="3" fill="#E9E4F5"/></svg>`,
+  loupe: `<svg width="150" height="150" viewBox="0 0 150 150"><circle cx="40" cy="50" r="18" fill="#FFB4C9"/><circle cx="80" cy="34" r="18" fill="#FFD77F"/><circle cx="104" cy="74" r="18" fill="#8FD3FF"/>
+      <circle cx="68" cy="68" r="40" fill="rgba(255,255,255,.25)" stroke="#FFE14D" stroke-width="11"/><path d="M98 98 L134 134" stroke="#FFE14D" stroke-width="16" stroke-linecap="round"/></svg>`,
+  ampoule: `<svg width="150" height="150" viewBox="0 0 150 150"><g class="rayons" style="transform-box:view-box;transform-origin:75px 62px" stroke="#FFE14D" stroke-width="7" stroke-linecap="round">
+      <path d="M75 4 V16 M75 108 V120 M17 62 H29 M121 62 H133 M34 21 L42 29 M108 95 L116 103 M116 21 L108 29 M42 95 L34 103"/></g>
+      <circle cx="75" cy="62" r="34" fill="#FFE14D"/><rect x="60" y="94" width="30" height="24" rx="6" fill="#fff"/><path d="M62 60 Q75 44 88 60" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/></svg>`,
+  fusee: `<svg width="140" height="150" viewBox="0 0 140 150"><path d="M70 6 Q104 34 98 96 H42 Q36 34 70 6Z" fill="#fff"/><circle cx="70" cy="56" r="15" fill="#8FD3FF" stroke="#1E1B3A" stroke-width="5"/>
+      <path d="M42 70 L18 104 L42 98Z M98 70 L122 104 L98 98Z" fill="#E9424A"/><path class="flamme" d="M52 100 Q70 150 88 100Z" fill="#FFE14D" style="transform-box:fill-box;transform-origin:50% 0"/></svg>`,
+  gouttes: `<svg width="110" height="110" viewBox="0 0 110 110"><path d="M30 10 Q46 36 46 48 A16 16 0 0 1 14 48 Q14 36 30 10Z" fill="#8FD3FF" stroke="#fff" stroke-width="4"/><path d="M78 40 Q90 60 90 68 A12 12 0 0 1 66 68 Q66 60 78 40Z" fill="#8FD3FF" stroke="#fff" stroke-width="4"/></svg>`,
+  rec: `<svg width="150" height="120" viewBox="0 0 150 120"><rect x="4" y="20" width="110" height="86" rx="18" fill="#1E1B3A"/><path d="M114 50 L146 32 V94 L114 76Z" fill="#1E1B3A"/><circle cx="59" cy="63" r="26" fill="#fff"/><circle cx="59" cy="63" r="14" fill="#5B3DF5"/>
+      <circle class="point-rec" cx="24" cy="38" r="8" fill="#FF5A5F"/></svg>`,
+  vibre: `<div class="tel-vibre" style="position:relative;width:110px;height:170px"><svg width="110" height="170" viewBox="0 0 110 170"><rect x="4" y="4" width="102" height="162" rx="20" fill="#1E1B3A"/><rect x="12" y="16" width="86" height="138" rx="10" fill="#2D2852"/></svg>
+      ${[0, 1, 2, 3].map((i) => `<div class="notif-${i}" style="position:absolute;left:16px;top:${28 + i * 32}px;width:78px;height:26px;border-radius:8px;background:#fff;display:flex;align-items:center;gap:4px;padding:0 6px">${COEUR(["#FF5A5F", "#5B3DF5", "#FF5A5F", "#16A085"][i], 15)}<i style="flex:1;height:6px;border-radius:3px;background:#E9E4F5"></i></div>`).join("")}</div>`,
+  barre: `<div style="position:relative;font-family:Fredoka;font-weight:700;font-size:30px;color:#1E1B3A;background:#fff;border-radius:18px;padding:10px 16px;white-space:nowrap">Abonnés
+      <div class="rature" style="position:absolute;left:-6px;right:-6px;top:50%;height:8px;border-radius:4px;background:#FF5A5F;rotate:-12deg;transform-origin:0 50%"></div></div>`,
+  cible: `<svg width="140" height="140" viewBox="0 0 140 140"><circle cx="70" cy="70" r="60" fill="#fff"/><circle cx="70" cy="70" r="42" fill="#FF5A5F"/><circle cx="70" cy="70" r="24" fill="#fff"/><circle cx="70" cy="70" r="10" fill="#FF5A5F"/>
+      <g class="fleche-cible"><path d="M70 70 L128 18" stroke="#1E1B3A" stroke-width="7" stroke-linecap="round"/><path d="M118 10 L136 6 L132 24Z" fill="#FFE14D"/></g></svg>`,
+  contrat: `<svg width="130" height="150" viewBox="0 0 130 150"><rect x="8" y="6" width="112" height="140" rx="14" fill="#fff"/><rect x="24" y="24" width="60" height="10" rx="5" fill="#5B3DF5"/>
+      ${[0, 1, 2].map((i) => `<rect x="24" y="${50 + i * 26}" width="18" height="18" rx="5" fill="#16A085"/><path d="M28 ${59 + i * 26} L32 ${63 + i * 26} L38 ${55 + i * 26}" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="50" y="${55 + i * 26}" width="54" height="8" rx="4" fill="#E9E4F5"/>`).join("")}
+      <path d="M30 132 Q44 116 54 130 T80 126" stroke="#1E1B3A" stroke-width="4" fill="none" stroke-linecap="round"/></svg>`,
+  valide: `<svg width="140" height="140" viewBox="0 0 140 140"><circle cx="70" cy="70" r="60" fill="#fff"/><circle cx="70" cy="70" r="48" fill="#16A085"/><path d="M46 72 L63 89 L96 54" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  graph: `<svg width="150" height="140" viewBox="0 0 150 140"><rect x="4" y="4" width="142" height="132" rx="18" fill="#fff"/>
+      ${[0, 1, 2, 3].map((i) => `<rect class="barre-g" style="transform-box:fill-box;transform-origin:50% 100%" x="${20 + i * 30}" y="${96 - i * 18}" width="20" height="${24 + i * 18}" rx="5" fill="${["#9A86FF", "#FF9A9D", "#FFD77F", "#6FE3CB"][i]}"/>`).join("")}
+      <path d="M24 84 L54 70 L84 50 L118 28" stroke="#1E1B3A" stroke-width="4" fill="none" stroke-linecap="round"/></svg>`,
+  coeur: `<div class="gros-coeur">${COEUR("#FF5A5F", 140)}</div>`,
+  badge: `<svg width="130" height="160" viewBox="0 0 130 160"><path d="M50 4 L65 34 L80 4" stroke="#FFE14D" stroke-width="8" fill="none"/><rect x="10" y="30" width="110" height="126" rx="16" fill="#fff"/><rect x="10" y="30" width="110" height="30" rx="14" fill="#FFE14D"/>
+      <circle cx="65" cy="92" r="20" fill="#F7BF96"/><circle cx="65" cy="70" r="8" fill="#5E3520"/><rect x="30" y="122" width="70" height="9" rx="4" fill="#5B3DF5"/><rect x="40" y="138" width="50" height="7" rx="3" fill="#C9C3DE"/></svg>`,
+};
+const zoneI = $("illus");
+// Regroupe les sous-titres consécutifs qui gardent la même illustration
+const groupes = [];
+TL.forEach((c) => {
+  if (!c.illu) return;
+  const last = groupes.at(-1);
+  if (last && last.illu === c.illu && Math.abs(last.t1 - c.t0) < 0.01) last.t1 = c.t1; else groupes.push({ illu: c.illu, t0: c.t0, t1: c.t1 });
+});
+let maxDebut = null;
+groupes.forEach((g) => {
+  const [nom, cote] = g.illu.split(":");
+  if (nom === "rupture" && $("rupture")) {
+    k("rupture", "opacity", [[g.t0 + 0.5, 0], [g.t0 + 0.6, 1], [g.t1 - 0.1, 1], [g.t1, 0]], "linear");
+    k("rupture", "scale", [[g.t0 + 0.5, 2.4], [g.t0 + 0.8, 0.94], [g.t0 + 0.95, 1]], "ease-in");
+    k("rupture", "rotate", [[g.t0 + 0.5, "-24deg"], [g.t0 + 0.8, "-9deg"]]);
+    return;
+  }
+  if (nom === "max") return;
+  const el = document.createElement("div");
+  el.className = `illu sticker ${cote || "d"}`;
+  el.innerHTML = ILLU[nom];
+  zoneI.appendChild(el);
+  fenetre(el, g.t0 + 0.15, g.t1);
+  boucle(el, [{ transform: "translateY(0) rotate(-3deg)" }, { transform: "translateY(-10px) rotate(3deg)" }, { transform: "translateY(0) rotate(-3deg)" }], 2.2);
+  el.querySelectorAll(".env").forEach((e, i) => {
+    const a = g.t0 + 0.4 + i * 0.35;
+    k(e, "translate", [[a, "0 0"], [a + 0.6, `${50 - i * 30}px -90px`]], "ease-in");
+    k(e, "opacity", [[a, 1], [a + 0.45, 1], [a + 0.6, 0]], "linear");
+  });
+  el.querySelectorAll(".rayons").forEach((r) => boucle(r, [{ transform: "scale(.85)" }, { transform: "scale(1.1)" }, { transform: "scale(.85)" }], 0.9));
+  el.querySelectorAll(".flamme").forEach((r) => boucle(r, [{ transform: "scaleY(.7)" }, { transform: "scaleY(1.2)" }, { transform: "scaleY(.7)" }], 0.3));
+  el.querySelectorAll(".point-rec").forEach((r) => boucle(r, [{ opacity: 1 }, { opacity: 0.15 }, { opacity: 1 }], 0.9));
+  el.querySelectorAll(".tel-vibre").forEach((r) => boucle(r, [{ transform: "rotate(-6deg)" }, { transform: "rotate(6deg)" }, { transform: "rotate(-6deg)" }], 0.12));
+  el.querySelectorAll("[class^=notif-]").forEach((n, i) => { const a = g.t0 + 0.4 + i * 0.35; k(n, "opacity", [[a, 0], [a + 0.1, 1]], "linear"); k(n, "translate", [[a, "0 -16px"], [a + 0.25, "0 0"]]); });
+  el.querySelectorAll(".rature").forEach((r) => k(r, "scale", [[g.t0 + 1.4, "0 1"], [g.t0 + 1.8, "1 1"]], "ease-out"));
+  el.querySelectorAll(".barre-g").forEach((r, i) => k(r, "scale", [[g.t0 + 0.3 + i * 0.2, "1 0"], [g.t0 + 0.6 + i * 0.2, "1 1"]], "ease-out"));
+  el.querySelectorAll(".fleche-cible").forEach((r) => { k(r, "translate", [[g.t0 + 0.3, "40px -40px"], [g.t0 + 0.6, "0 0"]], "ease-in"); });
+  el.querySelectorAll(".gros-coeur").forEach((r) => boucle(r, [{ transform: "scale(1)" }, { transform: "scale(1.12)" }, { transform: "scale(1)" }], 0.8));
+});
+
+// Max entre par la droite quand il apparaît dans l'histoire
+const maxC = TL.filter((c) => c.illu && c.illu.startsWith("max"));
+const segs = [];
+maxC.forEach((c) => { const l = segs.at(-1); if (l && Math.abs(l[1] - c.t0) < 0.01) l[1] = c.t1; else segs.push([c.t0, c.t1]); });
+const mx = [[0, "260px 0"]], mo = [[0, 0]], et = [[0, 0]];
+segs.forEach(([a, b], i) => {
+  const fin = i === segs.length - 1 ? T : b;
+  mx.push([a, "260px 0"], [a + 0.45, "0 0"]); mo.push([a, 0], [a + 0.05, 1]);
+  if (fin < T) { mx.push([fin - 0.35, "0 0"], [fin, "260px 0"]); mo.push([fin - 0.05, 1], [fin, 0]); }
+  et.push([a + 0.5, 0], [a + 0.65, 1]); if (fin < T) et.push([fin - 0.3, 1], [fin - 0.2, 0]); else et.push([a + 1.2, 1], [a + 1.4, 0]);
+});
+k("max-cadre", "translate", mx, "ease-out"); k("max-cadre", "opacity", mo, "linear");
+k("etiquette-max", "opacity", et, "linear");
+// Max lève le bras à la fin ; cœurs autour de lui quand on parle de confiance
+const fin = TL.at(-1), conf = TL.find((c) => c.illu === "coeur:d");
+k(q("max-cadre", ".bras-g"), "transform", [[fin.t0 + 0.2, "rotate(0deg)"], [fin.t0 + 0.5, "rotate(145deg)"], [fin.t0 + 0.8, "rotate(125deg)"], [fin.t0 + 1.1, "rotate(145deg)"]], "ease-in-out");
+for (let i = 0; i < 8; i++) {
+  const c = document.createElement("div");
+  c.style.cssText = `left:${360 + (i * 31) % 150}px;top:600px`;
+  c.innerHTML = COEUR(["#FFE14D", "#fff", "#FF9A9D"][i % 3], 26 + (i % 3) * 8);
+  document.querySelector(".ecran").insertBefore(c, $("legendes"));
+  const a = conf.t0 + 0.3 + i * 0.3;
+  k(c, "translate", [[a, "0 0"], [a + 1.8, `${(i % 2 ? 1 : -1) * 24}px -300px`]], "ease-out");
+  k(c, "opacity", [[a, 0], [a + 0.15, 1], [a + 1.4, 1], [a + 1.8, 0]], "linear");
+}
+
+// Bandeau nom (après la carte titre) et mention de fin
+const carte = TL.find((c) => c.titre);
+k("nom", "opacity", [[carte.t1 + 0.2, 0], [carte.t1 + 0.35, 1], [carte.t1 + 3.4, 1], [carte.t1 + 3.6, 0]], "linear");
+k("nom", "translate", [[carte.t1 + 0.2, "-40px 0"], [carte.t1 + 0.55, "0 0"]]);
+k("fin-note", "opacity", [[fin.t0, 0], [fin.t0 + 0.4, 1]], "linear");
+window.PRET = true;
+</script>
+</body>
+</html>
