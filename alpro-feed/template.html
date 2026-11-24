@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feed Alpro Avent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Nunito:wght@400;600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1d2a7a; --green:#0d5a3a; --green2:#2f8a4a; --cream:#f6efe3; --gold:#c9a24a; --red:#c0392b;
+  --bg:#ffffff; --fg:#111; --muted:#737373; --line:#dbdbdb; --chip:#efefef; --blue:#4a5df9;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#000; --fg:#f5f5f5; --muted:#a8a8a8; --line:#262626; --chip:#262626; } }
+:root[data-theme="dark"]{ --bg:#000; --fg:#f5f5f5; --muted:#a8a8a8; --line:#262626; --chip:#262626; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#e9e6e0;font-family:Inter,system-ui,sans-serif;color:var(--fg)}
+.wrap{display:flex;gap:40px;justify-content:center;align-items:flex-start;padding:32px 16px;flex-wrap:wrap}
+.phone{width:430px;max-width:100%;background:var(--bg);border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,.25),0 0 0 10px #111;overflow:hidden}
+.status{display:flex;justify-content:space-between;padding:16px 30px 6px;font-weight:600;font-size:15px}
+.top{display:flex;align-items:center;gap:14px;padding:8px 18px}
+.top h1{font-size:22px;font-weight:700;display:flex;align-items:center;gap:6px}
+.top .dots{margin-left:auto;font-size:22px;letter-spacing:1px}
+.verif{width:18px;height:18px}
+.head{display:flex;align-items:center;gap:22px;padding:10px 18px}
+.avatar{width:86px;height:86px;border-radius:50%;padding:3px;background:conic-gradient(var(--gold),var(--red),var(--green2),var(--gold));flex:none}
+.avatar img{width:100%;height:100%;border-radius:50%;border:3px solid var(--bg);object-fit:cover;display:block}
+.stats{flex:1}
+.stats .name{font-weight:600;font-size:15px;margin-bottom:6px}
+.stats .nums{display:flex;justify-content:space-between}
+.stats b{display:block;font-size:17px}
+.stats span{font-size:13px}
+.bio{padding:4px 18px 10px;font-size:14px;line-height:1.38}
+.bio .cat{color:var(--muted)}
+.bio a{color:#3b5bdb;text-decoration:none;font-weight:500}
+.btns{display:flex;gap:6px;padding:0 18px 12px}
+.btns div{flex:1;text-align:center;padding:8px;border-radius:9px;font-weight:600;font-size:14px;background:var(--chip)}
+.btns .follow{background:var(--blue);color:#fff}
+.btns .sq{flex:none;width:36px}
+.hl{display:flex;gap:16px;padding:4px 18px 14px;overflow-x:auto}
+.hl figure{text-align:center;font-size:12px;flex:none}
+.hl .ring{width:64px;height:64px;border-radius:50%;border:1px solid var(--line);padding:3px;margin-bottom:4px}
+.hl .ring div{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;font-size:24px;background-size:cover;background-position:center}
+.tabs{display:flex;border-top:1px solid var(--line)}
+.tabs div{flex:1;text-align:center;padding:10px 0;color:var(--muted)}
+.tabs .on{color:var(--fg);border-bottom:2px solid var(--fg)}
+.tabs svg{width:24px;height:24px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.tile{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer;background:var(--cream)}
+.tile img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile:hover{filter:brightness(.92)}
+.badge{position:absolute;top:7px;right:7px;width:20px;height:20px;z-index:3;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+.ov{position:absolute;left:0;right:0;z-index:2;text-align:center;font-family:Anton,sans-serif;text-transform:uppercase;color:#fff;line-height:1.02;letter-spacing:.2px;padding:0 6px;
+  -webkit-text-stroke:.6px #0b1240;text-shadow:0 2px 0 #0b1240,0 0 6px rgba(0,0,0,.35)}
+.ov.y{color:#ffe9a8}
+.ov.s{font-size:15px}.ov.m{font-size:19px}.ov.l{font-size:26px}
+.cv{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;font-family:Nunito,sans-serif}
+.hand{font-family:Caveat,cursive}
+.door{background:#fff;border:2px solid #d9d2c3;border-radius:8px;display:grid;place-items:center;font-family:Nunito;font-weight:800;color:var(--green)}
+.snow{position:absolute;inset:0;background-image:radial-gradient(#fff 1.2px,transparent 1.6px),radial-gradient(#fff 1px,transparent 1.4px);background-size:28px 28px,17px 17px;background-position:0 0,9px 13px;opacity:.35}
+/* side panel */
+.side{width:440px;max-width:100%;background:#fff;color:#111;border-radius:18px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.side h2{font-family:Nunito;font-weight:900;color:var(--navy);font-size:22px}
+.side p.sub{color:#666;font-size:13px;margin:4px 0 14px}
+.plan{width:100%;border-collapse:collapse;font-size:12.5px}
+.plan th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:#888;padding:6px 4px;border-bottom:1px solid #eee}
+.plan td{padding:7px 4px;border-bottom:1px solid #f2f2f2;vertical-align:top}
+.plan tr{cursor:pointer}.plan tr:hover td{background:#faf7f0}
+.fmt{display:inline-block;padding:2px 7px;border-radius:20px;font-size:11px;font-weight:600;background:#eef2ff;color:var(--navy)}
+.fmt.reel{background:#fde8e6;color:#a1271b}.fmt.car{background:#e5f3ea;color:var(--green)}
+.phase{font-weight:700;color:var(--green);font-size:11px;text-transform:uppercase;letter-spacing:.6px;padding-top:12px!important}
+.note{font-size:11.5px;color:#888;margin-top:14px}
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.modal.open{display:flex}
+.card{background:var(--bg);color:var(--fg);width:880px;max-width:100%;max-height:92vh;border-radius:6px;display:flex;overflow:hidden}
+.card .media{flex:1.1;position:relative;background:#000;min-height:420px}
+.card .media .tile{position:absolute;inset:0;aspect-ratio:auto;cursor:default}
+.card .txt{flex:1;display:flex;flex-direction:column;min-width:0}
+.card .who{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line);font-weight:600;font-size:14px}
+.card .who img{width:32px;height:32px;border-radius:50%}
+.card .cap{padding:14px;font-size:14px;line-height:1.45;overflow:auto;flex:1;white-space:pre-line}
+.card .cap .tags{color:#3b5bdb}
+.card .meta{border-top:1px solid var(--line);padding:12px 14px;font-size:13px}
+.card .meta b{display:block;margin-bottom:3px}
+.card .obj{margin-top:8px;font-size:12px;color:var(--muted)}
+.x{position:fixed;top:14px;right:20px;color:#fff;font-size:34px;cursor:pointer;z-index:60;line-height:1}
+@media (max-width:720px){.card{flex-direction:column}.card .media{min-height:0;aspect-ratio:3/4;flex:none;max-height:50vh}}
+@media (max-width:480px){.wrap{padding:16px 0}.phone{border-radius:0;box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="phone">
+  <div class="status"><span>9:41</span><span>●●● ᯤ ▮</span></div>
+  <div class="top">
+    <span style="font-size:26px">‹</span>
+    <h1>alpro <svg class="verif" viewBox="0 0 24 24"><path fill="#0095f6" d="M12 1l2.6 2.2 3.4-.3.9 3.3 3 1.7-1.3 3.1 1.3 3.1-3 1.7-.9 3.3-3.4-.3L12 23l-2.6-2.2-3.4.3-.9-3.3-3-1.7L3.4 13 2.1 9.9l3-1.7.9-3.3 3.4.3z"/><path d="M7.5 12.2l3 3 6-6.2" stroke="#fff" stroke-width="2.2" fill="none"/></svg></h1>
+    <span class="dots">···</span>
+  </div>
+  <div class="head">
+    <div class="avatar"><img src="{{avatar}}" alt="Alpro"></div>
+    <div class="stats">
+      <div class="name">Alpro</div>
+      <div class="nums">
+        <div><b>1 492</b><span>publications</span></div>
+        <div><b>346 K</b><span>followers</span></div>
+        <div><b>494</b><span>suivi(e)s</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="bio">
+    <div class="cat">Alimentation et boissons</div>
+    Making plant-based delicious since the 1980's. Damn we're getting old. 🧑‍🔬🌱<br>
+    🎄 Le calendrier de l'Avent est là : 24 cases, 24 mini-saveurs + 1 surprise dans le bouchon 👇<br>
+    <a>www.alpro.com/avent</a>
+  </div>
+  <div class="btns"><div class="follow">Suivre</div><div>Envoyer un message</div><div class="sq">+👤</div></div>
+  <div class="hl">
+    <figure><div class="ring"><div style="background-image:url({{cal}});background-position:center 30%"></div></div>Avent 🎄</figure>
+    <figure><div class="ring"><div style="background-image:url({{recipe}})"></div></div>Recettes</figure>
+    <figure><div class="ring"><div style="background:var(--green);color:#fff">🎁</div></div>Concours</figure>
+    <figure><div class="ring"><div style="background-image:url({{phone}})"></div></div>Où l'acheter</figure>
+    <figure><div class="ring"><div style="background:var(--navy);color:#fff;font-family:Anton;font-size:20px">25</div></div>Le bouchon</figure>
+  </div>
+  <div class="tabs">
+    <div class="on"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="9.5" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="3" y="9.5" width="5" height="5" rx="1"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><rect x="16" y="9.5" width="5" height="5" rx="1"/><rect x="3" y="16" width="5" height="5" rx="1"/><rect x="9.5" y="16" width="5" height="5" rx="1"/><rect x="16" y="16" width="5" height="5" rx="1"/></svg></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M10 8.5v7l6-3.5z" fill="currentColor"/></svg></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10a6 6 0 016-6h8l-3-3M20 14a6 6 0 01-6 6H6l3 3"/></svg></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="10" r="3"/><path d="M6 20c1-3 3.5-4.5 6-4.5s5 1.5 6 4.5"/></svg></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="side">
+  <h2>Plan de publication — Avent</h2>
+  <p class="sub">15 posts du teasing (17 nov.) au jour 25. Le plus récent est en haut à gauche du feed. Cliquez une ligne ou une vignette pour voir le post et sa légende.</p>
+  <table class="plan" id="plan"></table>
+  <p class="note">Maquette de concept, non officielle. Visuels : les rendus fournis + vignettes graphiques. Chiffres et dates à valider.</p>
+</div>
+</div>
+
+<div class="modal" id="modal"><span class="x" id="x">×</span>
+  <div class="card">
+    <div class="media" id="mMedia"></div>
+    <div class="txt">
+      <div class="who"><img src="{{avatar}}" alt="">alpro <svg class="verif" viewBox="0 0 24 24" style="width:14px"><path fill="#0095f6" d="M12 1l2.6 2.2 3.4-.3.9 3.3 3 1.7-1.3 3.1 1.3 3.1-3 1.7-.9 3.3-3.4-.3L12 23l-2.6-2.2-3.4.3-.9-3.3-3-1.7L3.4 13 2.1 9.9l3-1.7.9-3.3 3.4.3z"/></svg></div>
+      <div class="cap" id="mCap"></div>
+      <div class="meta" id="mMeta"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}"};
+const ICON={
+ reel:'<svg class="badge" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#fff"/><path d="M10 8v8l6-4z" fill="#111"/></svg>',
+ car:'<svg class="badge" viewBox="0 0 24 24" fill="#fff"><rect x="7" y="2" width="15" height="15" rx="3"/><path d="M4 7v12a3 3 0 003 3h12" stroke="#fff" stroke-width="2.2" fill="none"/></svg>',
+ photo:''
+};
+const leaf='<svg width="34" height="18" viewBox="0 0 34 18"><path d="M2 14C8 2 24 0 32 3 26 12 14 18 2 14z" fill="#7cc242"/><path d="M4 13C12 9 20 6 30 4" stroke="#3d8b2a" stroke-width="1.4" fill="none"/></svg>';
+const logo=(c='#1d2a7a',s=34)=>`<div style="font-family:Nunito;font-weight:900;color:${c};font-size:${s}px;letter-spacing:-1px;line-height:.9;position:relative">${'<span style="position:absolute;left:52%;top:-14px">'+leaf+'</span>'}alpro</div>`;
+
+const posts=[
+ {id:15,date:"Mer. 24 déc.",phase:"Jour J",fmt:"reel",obj:"Engagement · clôture",
+  html:`<img class="bg" src="${IMG.cap}" style="object-position:50% 70%"><div class="ov l y" style="top:12%">On a gardé<br>le meilleur<br>pour la fin</div><div class="ov s" style="bottom:9%">Case 25 = le bouchon 🤫</div>`,
+  cap:`Vous pensiez avoir tout ouvert ? 👀\nLa case 25, elle est… dans le bouchon. Dévissez, découvrez, savourez.\n\nJoyeux Noël végétal de toute l'équipe Alpro 💚🎄\nDites-nous en commentaire : c'était quoi votre case préférée ?`,
+  tags:"#AlproAvent #Case25 #NoelVegetal #PlantBased"},
+ {id:14,date:"Dim. 21 déc.",phase:"Pendant l'Avent",fmt:"car",obj:"Considération · recette",
+  html:`<img class="bg" src="${IMG.recipe}"><div class="ov m" style="top:5%">Case 17 ☕</div>`,
+  cap:`Case 17 : Cinnamon Roll Latte 🥐☕\n\n1️⃣ Verse 200 ml de boisson Alpro Cinnamon Roll\n2️⃣ Ajoute un espresso (ou du café)\n3️⃣ Saupoudre de cannelle… et savoure !\n\nSwipe ➡️ pour la version glacée (oui, même en décembre).\nEnregistre ce post pour ton prochain goûter 📌`,
+  tags:"#AlproAvent #CinnamonRollLatte #RecetteVegetale #CoffeeTime"},
+ {id:13,date:"Jeu. 18 déc.",phase:"Pendant l'Avent",fmt:"photo",obj:"Engagement · quiz",
+  html:`<div class="cv" style="background:var(--navy);color:#fff"><div class="snow"></div>
+   <div style="font-size:13px;font-weight:800;letter-spacing:2px;opacity:.8">QUIZ</div>
+   <div class="door" style="width:62px;height:62px;font-size:32px;margin:6px 0;transform:rotate(-4deg)">18</div>
+   <div style="font-weight:900;font-size:14px;line-height:1.1">Quelle saveur se cache derrière la case 18 ?</div>
+   <div class="hand" style="font-size:20px;color:#ffe9a8;margin-top:6px">réponse en story 👀</div></div>`,
+  cap:`Petit jeu du jeudi 🕵️\nDerrière la case 18 se cache une saveur que vous adorez…\n\n🥜 A. Noisette\n🥥 B. Coco\n🍫 C. Chocolat noir\n\nRéponse demain en story. Les plus rapides en commentaire gagnent… notre respect éternel 🫡`,
+  tags:"#AlproAvent #Quiz #DevineLaSaveur"},
+ {id:12,date:"Lun. 15 déc.",phase:"Pendant l'Avent",fmt:"reel",obj:"Notoriété · UGC",
+  html:`<img class="bg" src="${IMG.abri}" style="object-position:30% 50%"><div class="ov m" style="top:7%">POV : tu croises<br>ta case du matin<br>à l'arrêt de bus</div>`,
+  cap:`On vous voit nous prendre en photo à l'arrêt de bus 📸😏\n\nPostez votre plus beau spot avec #AlproAvent : on reposte nos préférés chaque vendredi en story.`,
+  tags:"#AlproAvent #RepereDansLaRue #Paris"},
+ {id:11,date:"Ven. 12 déc.",phase:"Pendant l'Avent",fmt:"photo",obj:"Engagement · humour",
+  html:`<div class="cv" style="background:var(--cream);color:var(--navy)">
+   <div style="font-weight:900;font-size:13px;line-height:1.15">Moi qui ouvre UNE case<br>le matin</div>
+   <div style="font-size:24px;margin:2px 0">😇</div>
+   <div style="height:2px;width:60%;background:#d9cdb5;margin:2px 0 5px"></div>
+   <div style="font-weight:900;font-size:13px;line-height:1.15">Moi à 23h qui « vérifie juste » la case suivante</div>
+   <div style="font-size:24px;margin-top:2px">🫣</div></div>`,
+  cap:`On ne juge pas. On a fait pareil en testant le calendrier 🙈\n\nTague la personne qui ouvrirait les 24 cases le 1er décembre 👇`,
+  tags:"#AlproAvent #TeamGourmand #Relatable"},
+ {id:10,date:"Mar. 9 déc.",phase:"Pendant l'Avent",fmt:"car",obj:"Considération · produit",
+  html:`<img class="bg" src="${IMG.bottle}"><div class="ov m" style="top:6%">1 case<br>= 1 mini-bouteille</div><div class="ov s y" style="bottom:7%">+ 1 recette au dos</div>`,
+  cap:`Comment ça marche ? 🎁\n\n🥛 Chaque case cache une mini-bouteille Alpro\n📝 Au dos de la porte : une recette rapide pour la déguster\n🔄 Swipe pour voir les 6 saveurs de la semaine\n\nQuelle case vous a le plus surpris pour l'instant ?`,
+  tags:"#AlproAvent #MiniBouteille #DecouverteVegetale"},
+ {id:9,date:"Sam. 6 déc.",phase:"Pendant l'Avent",fmt:"reel",obj:"Conversion · point de vente",
+  html:`<img class="bg" src="${IMG.phone}" style="object-position:50% 40%"><div class="ov m" style="bottom:6%">Où le trouver ?<br>on vous dit tout 📍</div>`,
+  cap:`Vous êtes nombreux à nous demander où le trouver 🙌\n\n📍 En magasins bio et sur alpro.com, dans la limite des stocks.\nLien en bio pour trouver le point de vente le plus proche de chez vous.`,
+  tags:"#AlproAvent #OuLAcheter #Bio"},
+ {id:8,date:"Mer. 3 déc.",phase:"Pendant l'Avent",fmt:"photo",obj:"Engagement · concours",
+  html:`<div class="cv" style="background:var(--green);color:#fff"><div class="snow"></div>
+   <div style="font-family:Anton;font-size:18px;letter-spacing:.5px;line-height:1">CONCOURS</div>
+   <div style="font-family:Anton;font-size:50px;line-height:1;color:#ffe9a8;margin:4px 0">25</div>
+   <div style="font-weight:900;font-size:13px;line-height:1.15">calendriers de l'Avent<br>à gagner 🎁</div>
+   <div style="margin-top:8px;background:#fff;color:var(--green);font-weight:800;font-size:10px;padding:4px 8px;white-space:nowrap;border-radius:20px">Like · Follow · Tag</div></div>`,
+  cap:`🎁 CONCOURS 🎁\nOn vous offre 25 calendriers de l'Avent Alpro !\n\nPour participer :\n1️⃣ Like ce post\n2️⃣ Follow @alpro\n3️⃣ Tague 2 ami·es qui méritent un Noël végétal\n\nTirage au sort le 8 décembre. Règlement en bio.`,
+  tags:"#AlproAvent #Concours #Giveaway #Noel2026"},
+ {id:7,date:"Lun. 1er déc.",phase:"Lancement",fmt:"reel",obj:"Notoriété · lancement",
+  html:`<img class="bg" src="${IMG.doors}" style="object-position:50% 30%"><div class="ov l" style="top:28%">Case 1<br>c'est<br>aujourd'hui !</div>`,
+  cap:`C'EST PARTI 🎄\nCase n°1 ouverte : boisson végétale Amande 🌰\n\nEt vous, vous l'ouvrez au petit-déj ou au goûter ?`,
+  tags:"#AlproAvent #Case1 #CalendrierDeLAvent #PlantBased"},
+ {id:6,date:"Dim. 30 nov.",phase:"Lancement",fmt:"car",obj:"Notoriété · reveal produit",
+  html:`<img class="bg" src="${IMG.cal}" style="object-position:50% 20%"><div class="ov m" style="bottom:5%">Le voilà 💚</div>`,
+  cap:`Le calendrier de l'Avent Alpro est arrivé ! 🎄\n\n24 cases, 24 mini-saveurs végétales, 24 recettes… et une 25ᵉ surprise cachée dans le bouchon 🤫\nSwipe pour faire le tour du carton ➡️`,
+  tags:"#AlproAvent #CalendrierDeLAvent #PlaisirVegetal #EspritNoel"},
+ {id:5,date:"Sam. 29 nov.",phase:"Teasing",fmt:"photo",obj:"Notoriété · teasing",
+  html:`<div class="cv" style="background:var(--navy);color:#fff"><div class="snow"></div>
+   <div style="font-family:Anton;font-size:72px;line-height:.9;color:#ffe9a8">J-2</div>
+   <div class="hand" style="font-size:20px;margin-top:6px">On vous prépare<br>quelque chose ♡</div></div>`,
+  cap:`J-2 ⏳\nPréparez vos matinées de décembre. Activez les notifs 🔔 pour ne rien rater lundi.`,
+  tags:"#AlproAvent #Bientot"},
+ {id:4,date:"Jeu. 27 nov.",phase:"Teasing",fmt:"reel",obj:"Notoriété · teasing",
+  html:`<img class="bg" src="${IMG.cap}" style="object-position:50% 72%;filter:blur(5px) brightness(.85)"><div class="ov l" style="top:34%">Pourquoi<br>ce bouchon<br>a un « 25 » ?</div>`,
+  cap:`Indice n°2 🔍\nCe bouchon n'est pas comme les autres… Vos théories en commentaire 👇`,
+  tags:"#AlproAvent #Indice #Mystere"},
+ {id:3,date:"Mar. 25 nov.",phase:"Teasing",fmt:"photo",obj:"Notoriété · teasing",
+  html:`<div class="cv" style="background:var(--cream)">
+   <div style="display:grid;grid-template-columns:repeat(3,38px);gap:6px">
+    ${[4,5,6,7,'?',9,10,11,12].map(n=>`<div class="door" style="height:38px;font-size:16px;${n==='?'?'background:var(--navy);color:#fff;border-color:var(--navy)':''}">${n}</div>`).join('')}
+   </div>
+   <div class="hand" style="font-size:22px;color:var(--navy);margin-top:12px">Indice n°1</div></div>`,
+  cap:`Indice n°1 🧩\nDes petites portes, des chiffres… vous voyez où on veut en venir ? 👀`,
+  tags:"#AlproAvent #Indice"},
+ {id:2,date:"Dim. 23 nov.",phase:"Teasing",fmt:"photo",obj:"Notoriété · teasing",
+  html:`<div class="cv" style="background:linear-gradient(#0d5a3a,#0a3f29);color:#fff"><div class="snow"></div>
+   <div style="width:56px;height:84px;background:#091f16;border-radius:6px 6px 4px 4px;position:relative;box-shadow:0 0 30px rgba(255,233,168,.35)">
+    <div style="position:absolute;top:-12px;left:15px;width:26px;height:12px;background:#091f16;border-radius:3px"></div>
+    <div style="position:absolute;inset:0;display:grid;place-items:center;font-family:Anton;font-size:44px;color:#ffe9a8">?</div></div>
+   <div style="font-weight:900;font-size:13px;margin-top:12px">Quelque chose arrive<br>le 1er décembre…</div></div>`,
+  cap:`Shhh 🤫\nOn ne peut rien dire. Mais vous allez adorer vos matins de décembre.`,
+  tags:"#AlproAvent #ComingSoon"},
+ {id:1,date:"Lun. 17 nov.",phase:"Teasing",fmt:"photo",obj:"Notoriété · transition",
+  html:`<div class="cv" style="background:#fff">${logo()}<div class="hand" style="font-size:22px;color:var(--green);margin-top:18px">Plaisir végétal,<br>esprit Noël ♡</div></div>`,
+  cap:`Le feed passe en mode Noël 🎄 Restez dans le coin, il va se passer des choses.`,
+  tags:"#Alpro #PlaisirVegetal"},
+];
+
+const grid=document.getElementById('grid'), plan=document.getElementById('plan');
+posts.forEach((p,i)=>{
+  const t=document.createElement('div'); t.className='tile'; t.innerHTML=p.html+ICON[p.fmt]; t.onclick=()=>openPost(i); grid.appendChild(t);
+});
+const FN={reel:['Reel','reel'],car:['Carrousel','car'],photo:['Post','']};
+let html='<tr><th>Date</th><th>Format</th><th>Sujet</th></tr>', last='';
+[...posts].reverse().forEach(p=>{
+  const i=posts.indexOf(p);
+  if(p.phase!==last){html+=`<tr><td colspan=3 class="phase">${p.phase}</td></tr>`;last=p.phase}
+  html+=`<tr onclick="openPost(${i})"><td style="white-space:nowrap">${p.date}</td><td><span class="fmt ${FN[p.fmt][1]}">${FN[p.fmt][0]}</span></td><td>${p.cap.split('\n')[0]}<div style="color:#999;font-size:11px">${p.obj}</div></td></tr>`;
+});
+plan.innerHTML=html;
+
+const modal=document.getElementById('modal');
+function openPost(i){
+  const p=posts[i];
+  document.getElementById('mMedia').innerHTML=`<div class="tile">${p.html}${ICON[p.fmt]}</div>`;
+  document.getElementById('mCap').innerHTML=`<b>alpro</b> ${p.cap.replace(/</g,'&lt;')}\n\n<span class="tags">${p.tags}</span>`;
+  document.getElementById('mMeta').innerHTML=`<b>♡ ◯ ➤</b>${p.date} · ${FN[p.fmt][0]}<div class="obj">Objectif : ${p.obj}</div>`;
+  modal.classList.add('open');
+}
+
+modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open')};
+document.getElementById('x').onclick=()=>modal.classList.remove('open');
+document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
+</script>
+</body>
+</html>
