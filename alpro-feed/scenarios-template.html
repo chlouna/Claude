@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<title>Scénarios de contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Nunito:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1d2a7a;--green:#0d5a3a;--leaf:#7cc242;--cream:#f7f0e4;--gold:#c9a24a;--yel:#ffe36e;--muted:#5d6280}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:Inter,sans-serif}
+.board{width:1920px;height:1080px;background:var(--cream);position:relative;overflow:hidden;margin-bottom:20px}
+.board .dots{position:absolute;inset:0;background-image:radial-gradient(#e6dac3 2px,transparent 2.5px);background-size:60px 60px;opacity:.6}
+.hd{position:absolute;top:0;left:0;right:0;height:150px;display:flex;align-items:center;gap:28px;padding:0 70px}
+.hd .av{width:96px;height:96px;border-radius:50%;background:#fff;display:grid;place-items:center;font:900 48px Nunito;flex:none;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+.hd h1{font:900 46px Nunito;color:var(--navy);line-height:1.05}
+.hd p{font:700 22px Nunito;color:var(--muted);margin-top:6px}
+.hd .logo{margin-left:auto;height:70px}
+.row{position:absolute;top:175px;left:70px;right:70px;display:flex;justify-content:space-between;align-items:flex-start}
+.col{width:380px;display:flex;flex-direction:column;align-items:center}
+.arrow{width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:900 28px Nunito;margin-top:290px;flex:none}
+.num{font:900 20px Nunito;color:#fff;background:var(--navy);border-radius:30px;padding:4px 14px;margin-top:18px}
+.lab{font:800 22px Nunito;color:var(--navy);text-align:center;margin-top:8px;line-height:1.2;min-height:54px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:8px}
+.chip{font:800 15px Inter;padding:5px 12px;border-radius:20px;color:#fff}
+.c-rar{background:#c0392b}.c-rec{background:#b8891f}.c-eng{background:#1d2a7a}.c-soc{background:#0d5a3a}.c-aut{background:#4a5a8c}.c-sym{background:#d24f80}.c-coh{background:#6b4fa0}
+.why{font:500 15px Inter;color:#4a4f6b;text-align:center;margin-top:8px;line-height:1.35;padding:0 6px}
+.ft{position:absolute;bottom:22px;left:70px;right:70px;display:flex;justify-content:space-between;font:600 15px Inter;color:#8a8fa8}
+/* phone */
+.ph{width:300px;height:600px;border-radius:40px;background:#111;padding:10px;box-shadow:0 18px 40px rgba(0,0,0,.25);position:relative;flex:none}
+.scr{width:100%;height:100%;border-radius:31px;overflow:hidden;position:relative;background:#fff;font-family:Inter}
+.scr .sb{position:absolute;top:0;left:0;right:0;height:30px;display:flex;justify-content:space-between;align-items:center;padding:0 20px;font:700 12px Inter;z-index:5}
+.cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shade{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.35),transparent 25%,transparent 55%,rgba(0,0,0,.65))}
+.av-s{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:800 13px Inter;color:#fff;flex:none;overflow:hidden}
+.av-s img{width:100%;height:100%;object-fit:cover;background:#fff}
+/* ig story */
+.bars{position:absolute;top:34px;left:10px;right:10px;display:flex;gap:3px;z-index:4}.bars i{flex:1;height:2px;background:rgba(255,255,255,.4);border-radius:2px}.bars i.on{background:#fff}
+.sh{position:absolute;top:44px;left:12px;right:12px;display:flex;align-items:center;gap:8px;color:#fff;font:700 13px Inter;z-index:4;text-shadow:0 1px 3px rgba(0,0,0,.4)}
+.sh small{font-weight:500;opacity:.8}
+.stk{position:absolute;left:16px;right:16px;z-index:4;text-align:center}
+.tx{display:inline;background:#fff;color:#111;font:800 17px Inter;line-height:1.7;padding:3px 8px;box-decoration-break:clone;-webkit-box-decoration-break:clone;border-radius:6px}
+.ment{display:inline-block;background:#fff;color:#c13584;font:800 14px Inter;padding:6px 12px;border-radius:8px;margin-top:8px}
+.reply{position:absolute;bottom:14px;left:12px;right:12px;height:38px;border:1.5px solid rgba(255,255,255,.7);border-radius:20px;color:#fff;font:500 12px Inter;display:flex;align-items:center;padding:0 14px;z-index:4}
+.collab{position:absolute;top:80px;left:14px;font:600 11px Inter;color:#fff;z-index:4;opacity:.9}
+/* tiktok */
+.tt-top{position:absolute;top:36px;left:0;right:0;text-align:center;color:#fff;font:700 14px Inter;z-index:4}.tt-top b{border-bottom:2px solid #fff;padding-bottom:3px;margin-left:14px}
+.tt-side{position:absolute;right:10px;bottom:120px;display:flex;flex-direction:column;gap:16px;align-items:center;color:#fff;font:700 11px Inter;z-index:4;text-align:center}
+.tt-side div{font-size:24px;line-height:1}
+.tt-cap{position:absolute;left:12px;right:60px;bottom:22px;color:#fff;z-index:4;font:500 12px Inter;line-height:1.35}
+.tt-cap b{font-size:14px;display:block;margin-bottom:4px}
+.cmt{position:absolute;left:12px;z-index:4;background:rgba(255,255,255,.94);border-radius:14px;padding:7px 10px;font:600 12px Inter;color:#111;max-width:210px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.cmt span{color:#888;font-weight:700}
+/* ig post / dm / web / app */
+.igh{position:absolute;top:30px;left:0;right:0;height:44px;display:flex;align-items:center;gap:8px;padding:0 12px;font:700 13px Inter;border-bottom:1px solid #eee;background:#fff;z-index:3}
+.body{position:absolute;top:74px;left:0;right:0;bottom:0;overflow:hidden}
+.bub{max-width:78%;padding:10px 13px;border-radius:18px;font:500 13px Inter;line-height:1.4;margin:8px 12px}
+.bub.l{background:#efefef;color:#111;border-bottom-left-radius:4px}
+.bub.r{background:#3797f0;color:#fff;margin-left:auto;border-bottom-right-radius:4px}
+.url{position:absolute;top:30px;left:10px;right:10px;height:34px;border-radius:10px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font:600 12px Inter;color:#333;z-index:3}
+.btn{display:block;text-align:center;border-radius:30px;font:800 14px Nunito;padding:11px;margin:10px 14px}
+.badge{display:inline-block;font:800 11px Inter;padding:3px 8px;border-radius:12px}
+.rowi{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1px solid #f0f0f0;font:600 12px Inter;color:#333}
+/* scene card */
+.scene{width:330px;height:600px;border-radius:30px;overflow:hidden;position:relative;box-shadow:0 18px 40px rgba(0,0,0,.22);flex:none;background:#fff}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font:800 17px Nunito;z-index:3}
+.qr{display:grid;grid-template-columns:repeat(21,1fr);background:#fff;padding:6px}
+.qr i{aspect-ratio:1}.qr i.b{background:#111}
+.hand{font-family:Caveat,cursive}
+</style></head><body>
+<div id="root"></div>
+<script>
+const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",logo:"{{logo}}",avatar:"{{avatar}}"};
+
+const bias={rar:'Rareté',rec:'Réciprocité',eng:'Engagement',soc:'Preuve sociale',aut:'Autorité',sym:'Sympathie',coh:'Cohérence'};
+const chips=b=>`<div class="chips">${b.map(k=>`<span class="chip c-${k}">${bias[k]}</span>`).join('')}</div>`;
+const sb=(dark)=>`<div class="sb" style="color:${dark?'#fff':'#111'}"><span>9:41</span><span>●●● ▮</span></div>`;
+const avs=(t,c,img)=>`<div class="av-s" style="background:${c}">${img?`<img src="${img}">`:t}</div>`;
+const phone=inner=>`<div class="ph"><div class="scr">${inner}</div></div>`;
+
+function qr(n=21,seed=7){let s=seed,h='';const r=()=>(s=(s*9301+49297)%233280)/233280;
+ const fin=(x,y)=>{for(const[a,b]of[[0,0],[n-7,0],[0,n-7]]){const dx=x-a,dy=y-b;if(dx>=0&&dx<7&&dy>=0&&dy<7)return (dx==0||dx==6||dy==0||dy==6||(dx>1&&dx<5&&dy>1&&dy<5))?1:0}return -1};
+ for(let y=0;y<n;y++)for(let x=0;x<n;x++){const f=fin(x,y);h+=`<i class="${(f==1||(f==-1&&r()>.5))?'b':''}"></i>`}return `<div class="qr">${h}</div>`}
+
+// ---------- screen renderers ----------
+const R={
+ story:o=>phone(`${sb(1)}<img class="cover" src="${o.img}" style="object-position:${o.pos||'50% 50%'}"><div class="shade"></div>
+  <div class="bars">${'<i class="on"></i>'.repeat(o.bar||1)}${'<i></i>'.repeat(4-(o.bar||1))}</div>
+  <div class="sh">${avs(o.ini,o.c,o.av)}<span>${o.user}</span><small>${o.t||'2 h'}</small></div>
+  ${o.collab?`<div class="collab">Collaboration commerciale avec <b>alpro</b></div>`:''}
+  <div class="stk" style="top:${o.top||'360px'}"><span class="tx">${o.text}</span>${o.ment?`<br><span class="ment">${o.ment}</span>`:''}</div>
+  ${o.link?`<div class="stk" style="top:${o.linkTop||'470px'}"><span class="ment" style="color:#111">🔗 ${o.link}</span></div>`:''}
+  <div class="reply">Envoyer un message…</div>`),
+ tiktok:o=>phone(`${sb(1)}<img class="cover" src="${o.img}" style="object-position:${o.pos||'50% 50%'}"><div class="shade"></div>
+  <div class="tt-top">Abonnements <b>Pour toi</b></div>
+  ${o.cmts.map((c,i)=>`<div class="cmt" style="top:${120+i*62}px"><span>${c[0]}</span><br>${c[1]}</div>`).join('')}
+  <div class="tt-side"><div>${avs(o.ini,o.c)}</div><div>♥</div>${o.likes}<div>💬</div>${o.com}<div>🔖</div>${o.saves}<div>↗</div>Partager</div>
+  <div class="tt-cap"><b>${o.user}</b>${o.cap}<br>♫ son original · ${o.user}</div>`),
+ post:o=>phone(`${sb()}<div class="igh">${avs(o.ini,o.c,o.av)}<span>${o.user}</span><span style="margin-left:auto">···</span></div>
+  <div class="body"><img src="${o.img}" style="width:100%;height:290px;object-fit:cover;object-position:${o.pos||'50% 50%'}">
+  <div style="padding:8px 12px;font:600 18px Inter">♡ &nbsp;💬 &nbsp;➤<span style="float:right">🔖</span></div>
+  <div style="padding:0 12px;font:700 12px Inter">${o.likes} J'aime</div>
+  <div style="padding:4px 12px;font:500 12px Inter;line-height:1.4"><b>${o.user}</b> ${o.cap}</div>
+  ${o.cmts.map(c=>`<div style="padding:2px 12px;font:500 11.5px Inter;color:#333"><b>${c[0]}</b> ${c[1]}</div>`).join('')}</div>`),
+ dm:o=>phone(`${sb()}<div class="igh">${avs('',o.c,IMG.avatar)}<span>alpro <span style="color:#0095f6">✔</span></span><span style="margin-left:auto;font-size:18px">📞 ⓘ</span></div>
+  <div class="body" style="padding-top:10px;background:#fff"><div style="text-align:center;font:600 11px Inter;color:#999;margin:6px">Lun. 14:02</div>
+  ${o.msgs.map(m=>`<div class="bub ${m[0]}">${m[1]}</div>`).join('')}</div>
+  <div class="reply" style="border-color:#ddd;color:#999">Votre message…</div>`),
+ web:o=>phone(`${sb()}<div class="url">🔒 ${o.url}</div><div class="body" style="top:70px;background:${o.bg||'#fffdf8'}">${o.html}</div>`),
+ app:o=>phone(`${sb(1)}<div style="position:absolute;top:0;left:0;right:0;height:80px;background:${o.c};z-index:2"></div>
+  <div style="position:absolute;top:34px;left:14px;right:14px;color:#fff;font:800 16px Inter;z-index:3;display:flex;justify-content:space-between">${o.name}<span>🛒 ${o.cart||''}</span></div>
+  <div class="body" style="top:80px">${o.html}</div>`),
+ scene:o=>`<div class="scene" style="${o.style||''}">${o.html}</div>`
+};
+
+// ---------- data ----------
+const P=[
+{key:'chiara',name:'Chiara, 25 ans',role:'Influenceuse lifestyle · Lyon',c:'#e3b54a',
+ path:'Message privé d\'Alpro → colis en avant-première → unboxing en story → recette en reel → sa communauté découvre le calendrier',
+ steps:[
+ {lab:'Alpro la contacte en message privé',b:['sym','rec'],why:'Message personnalisé qui valorise son univers « cozy » : elle se sent choisie, pas démarchée.',
+  r:R.dm({c:'#fff',msgs:[['l','Bonjour Chiara ! 🌿 On adore ton univers cozy et tes recettes d\'hiver.'],['l','On lance notre 1er calendrier de l\'Avent 100 % végétal et on aimerait te l\'offrir <b>en avant-première</b>, avant tout le monde 🎁'],['l','Ça te dirait d\'en faire partie ?'],['r','Oh avec grand plaisir !! 😍 J\'adore le concept'],['l','Génial ! Il part demain chez toi ✨']]})},
+ {lab:'Elle reçoit le colis en avant-première',b:['rec','rar'],why:'Un cadeau soigné avec un mot écrit à la main : elle a envie de rendre la pareille en parlant du produit.',
+  r:R.scene({style:'background:#e9dcc3',html:`<div style="position:absolute;left:28px;right:28px;top:60px;height:330px;background:#c9a476;border-radius:10px;box-shadow:inset 0 -18px 0 rgba(0,0,0,.08)"></div>
+   <div style="position:absolute;left:28px;right:28px;top:40px;height:40px;background:#b48c5c;border-radius:8px"></div>
+   <img src="${IMG.cal}" style="position:absolute;left:70px;top:70px;width:190px;height:300px;object-fit:cover;object-position:50% 20%;border-radius:10px;transform:rotate(-4deg);box-shadow:0 10px 24px rgba(0,0,0,.3)">
+   <div style="position:absolute;left:150px;top:300px;width:160px;background:#fffdf6;padding:12px;transform:rotate(6deg);box-shadow:0 8px 18px rgba(0,0,0,.2);border-radius:4px"><div class="hand" style="font-size:22px;color:#1d2a7a;line-height:1.05">Pour Chiara,<br>en avant-première ✨<br>— L'équipe Alpro</div></div>
+   <div style="position:absolute;left:24px;right:24px;bottom:110px;text-align:center;font:900 19px Nunito;color:#1d2a7a">📦 Colis avant-première</div>
+   <div class="cap" style="background:#1d2a7a;text-align:center">Calendrier + mot manuscrit + recettes exclusives</div>`})},
+ {lab:'Unboxing en story pour sa communauté',b:['soc','sym'],why:'Mention « collaboration commerciale » (obligatoire) + lien direct : ses abonnés voient le produit chez quelqu\'un qu\'ils aiment.',
+  r:R.story({img:IMG.cal,pos:'50% 25%',ini:'C',c:'#e3b54a',user:'chiara.cozy',collab:1,text:'Je l\'ai reçu avant tout le monde 😱🎄',ment:'@alpro',link:'alpro.com/avent',top:'380px',linkTop:'480px',bar:2})},
+ {lab:'Recette en reel : le latte de la case 17',b:['soc','aut'],why:'Créatrice crédible + commentaires enthousiastes : la preuve sociale déclenche la découverte chez ses abonnés.',
+  r:R.post({img:IMG.recipe,ini:'C',c:'#e3b54a',user:'chiara.cozy',likes:'8 412',cap:'Mon latte cannelle de la case 17 ☕✨ recette en 3 étapes ! #VotreAlpro #partenariat',cmts:[['lou.cocoon','il me le faut 😍'],['emma_lyon','il est dispo où ??'],['chiara.cozy','@emma_lyon lien en bio 💚']]})}
+ ]},
+{key:'jade',name:'Jade, 22 ans',role:'Étudiante en alternance · intolérante au lactose',c:'#e8cf6e',
+ path:'Unboxing sur TikTok le soir → vérifie prix et composition sur mobile → réserve en drive → partage sa 1re case en story le 1er décembre',
+ steps:[
+ {lab:'Le soir, elle tombe sur un unboxing TikTok',b:['soc','sym'],why:'12 K likes et des commentaires d\'intolérants comme elle : « si eux l\'adorent, je vais aimer aussi ».',
+  r:R.tiktok({img:IMG.doors,pos:'50% 30%',ini:'L',c:'#e86f9a',user:'@lea.foodie',cap:'Un calendrier de l\'Avent SANS lactose ?! 🎄😱 #alpro #sanslactose #calendrierdelavent',likes:'12,4 K',com:'842',saves:'2 103',cmts:[['@manon.ssl','ENFIN pour les intolérants 😭'],['@julie_22','je file en drive demain']]})},
+ {lab:'Elle vérifie prix et composition sur mobile',b:['aut','coh'],why:'« 100 % végétal · sans lactose » en vert et FAQ claire : elle n\'a plus à décrypter l\'étiquette.',
+  r:R.web({url:'alpro.com/avent',html:`<img src="${IMG.cal}" style="width:100%;height:170px;object-fit:cover;object-position:50% 25%">
+   <div style="padding:12px 14px"><div style="font:900 20px Nunito;color:#1d2a7a;line-height:1.1">Le calendrier de l'Avent 100 % végétal</div>
+   <div style="margin-top:8px"><span class="badge" style="background:#e3f4e8;color:#0d5a3a">✓ Sans lactose</span> <span class="badge" style="background:#e3f4e8;color:#0d5a3a">✓ 100 % végétal</span></div>
+   <div style="font:900 22px Nunito;color:#1d2a7a;margin-top:10px">XX,XX € <span style="font:600 12px Inter;color:#5d6280">soit moins de 1 € / jour</span></div></div>
+   <div style="margin:0 14px;border:1.5px solid #f0e7d6;border-radius:12px;padding:10px 12px;font:600 12px Inter;color:#333"><b style="color:#1d2a7a">Contient-il du lactose ? –</b><br>Non : les 24 cases sont 100 % végétales.</div>
+   <a class="btn" style="background:#1d2a7a;color:#fff">📍 Le trouver près de chez moi</a>`})},
+ {lab:'Elle réserve en drive dans son supermarché',b:['rar'],why:'« Plus que 4 en stock » en rouge : elle valide tout de suite pour ne pas le rater avant le 1er décembre.',
+  r:R.app({name:'Mon Drive Courses',c:'#2e7d4f',cart:'3',html:`<img src="${IMG.cal}" style="width:100%;height:200px;object-fit:cover;object-position:50% 25%">
+   <div style="padding:12px 14px"><div style="font:800 16px Inter;color:#111">Calendrier de l'Avent Alpro – 24 mini-produits végétaux</div>
+   <div style="font:900 24px Inter;color:#111;margin-top:6px">XX,XX €</div>
+   <div style="margin-top:8px"><span class="badge" style="background:#c0392b;color:#fff">⚠ Plus que 4 en stock dans votre drive</span></div></div>
+   <div class="rowi">Retrait <b>Sam. 29 nov · 10h-11h</b></div>
+   <a class="btn" style="background:#2e7d4f;color:#fff">✓ Ajouté au panier</a>`})},
+ {lab:'Le 1er décembre, elle partage sa 1re case',b:['eng','soc'],why:'Elle tague la marque : son achat devient un rituel affiché… et une découverte pour ses amies.',
+  r:R.story({img:IMG.doors,pos:'50% 30%',ini:'J',c:'#e8cf6e',user:'jade.mlt',t:'1 h',text:'Case 1 🎄 enfin un calendrier sans lactose !!',ment:'@alpro',top:'390px'})}
+ ]},
+{key:'catharina',name:'Catharina, 28 ans',role:'Cheffe de projet · Pilates plusieurs fois par semaine',c:'#b385cc',
+ path:'Affiche au studio recommandée par les coachs → présentoir au shop du club → QR « découvrir les 24 saveurs » pour lever son doute → achat sur place',
+ steps:[
+ {lab:'Après son cours, elle voit l\'affiche du club',b:['aut','sym'],why:'« Le coup de cœur de vos coachs » : la recommandation vient d\'experts du bien-être en qui elle a confiance.',
+  r:R.scene({style:'background:#ebe3f2',html:`<div style="position:absolute;inset:0;background:linear-gradient(#efe8f5 0 62%,#d8c7b0 62%)"></div>
+   <div style="position:absolute;left:45px;right:45px;top:50px;background:#fff;border-radius:8px;padding:18px;box-shadow:0 12px 26px rgba(0,0,0,.18);text-align:center">
+   <div style="font:700 13px Inter;letter-spacing:2px;color:#8b63a8">STUDIO PILATES</div>
+   <div class="hand" style="font-size:32px;color:#1d2a7a;line-height:1;margin-top:6px">Le coup de cœur<br>de vos coachs 💜</div>
+   <img src="${IMG.cal}" style="width:150px;height:190px;object-fit:cover;object-position:50% 20%;border-radius:8px;margin:10px auto 6px;display:block">
+   <div style="font:900 17px Nunito;color:#1d2a7a">Le calendrier de l'Avent Alpro</div>
+   <div style="font:700 13px Inter;color:#5d6280;margin-top:4px">24 petits plaisirs végétaux<br>Dispo au shop de l'accueil →</div></div>
+   <div class="cap" style="background:#8b63a8">Affiche dans le studio, à la sortie du cours</div>`})},
+ {lab:'Au shop, le calendrier est vendu sur place',b:['rec','aut'],why:'Achat sans effort au moment où elle est motivée ; l\'avantage membre ressemble à un cadeau du club.',
+  r:R.scene({style:'background:#f3ece2',html:`<div style="position:absolute;left:0;right:0;top:0;height:330px;background:linear-gradient(#e9dfee,#f6f0f8)"></div>
+   <div style="position:absolute;left:30px;right:30px;top:300px;height:16px;background:#a77d55;border-radius:4px"></div>
+   <img src="${IMG.cal}" style="position:absolute;left:40px;top:110px;width:120px;height:190px;object-fit:cover;object-position:50% 20%;border-radius:6px;box-shadow:0 8px 16px rgba(0,0,0,.2)">
+   <img src="${IMG.cal}" style="position:absolute;left:170px;top:110px;width:120px;height:190px;object-fit:cover;object-position:50% 20%;border-radius:6px;box-shadow:0 8px 16px rgba(0,0,0,.2)">
+   <div style="position:absolute;left:30px;top:40px;background:#8b63a8;color:#fff;font:800 15px Nunito;padding:8px 14px;border-radius:20px">💜 Recommandé par le club</div>
+   <div style="position:absolute;right:26px;top:270px;background:#fff;border:2px dashed #8b63a8;color:#1d2a7a;font:900 15px Nunito;padding:6px 10px;border-radius:10px;transform:rotate(6deg)">−10 % membres</div>
+   <div style="position:absolute;left:30px;right:30px;top:350px;font:800 16px Nunito;color:#1d2a7a;text-align:center">Shop de l'accueil · paiement sur place</div>
+   <div class="cap" style="background:#8b63a8">Présentoir au comptoir du club</div>`})},
+ {lab:'« Pas sûre d\'aimer tous les goûts » : elle scanne',b:['aut','eng'],why:'Le QR montre les 24 saveurs et leurs recettes : la transparence lève sa peur de ne pas tout aimer.',
+  r:R.web({url:'alpro.com/avent/saveurs',html:`<div style="padding:12px 14px"><div style="font:900 19px Nunito;color:#1d2a7a">Les 24 saveurs, case par case</div>
+   <div style="font:600 12px Inter;color:#5d6280;margin-top:4px">Chaque case a sa recette pour l'adapter à vos goûts.</div></div>
+   ${[['1','Amande 🌰','Latte doux'],['5','Avoine 🌾','Porridge cannelle'],['12','Coco 🥥','Smoothie bowl'],['17','Cinnamon Roll ☕','Latte épicé'],['20','Soja Nature 🥛','Shake post-Pilates']].map(r=>`<div class="rowi"><span><b style="color:#8b63a8">Case ${r[0]}</b> · ${r[1]}</span><span style="color:#5d6280">${r[2]}</span></div>`).join('')}
+   <div style="margin:12px 14px;background:#f3ecf8;border-radius:12px;padding:10px;font:700 12px Inter;color:#6b4f88">💡 Une saveur ne vous plaît pas ? Chaque recette propose une variante.</div>`})},
+ {lab:'Rassurée, elle l\'achète au shop du club',b:['coh','sym'],why:'L\'achat est cohérent avec sa routine saine et avec sa communauté du club.',
+  r:R.scene({style:'background:#efe8f5',html:`<div style="position:absolute;left:40px;right:40px;top:40px;background:#fff;padding:22px 20px 30px;box-shadow:0 12px 26px rgba(0,0,0,.15);font:500 14px 'Courier New',monospace;color:#222;line-height:1.6">
+   <div style="text-align:center;font-weight:700">STUDIO PILATES · SHOP</div><div style="text-align:center;font-size:12px">Ticket n° 0482</div><hr style="border:0;border-top:1px dashed #999;margin:10px 0">
+   Calendrier Avent Alpro<br><span style="float:right">XX,XX €</span><br>Remise membre −10 %<br><hr style="border:0;border-top:1px dashed #999;margin:10px 0"><b>TOTAL <span style="float:right">XX,XX €</span></b><br><br><div style="text-align:center">Merci Catharina 💜<br>Bon Avent !</div></div>
+   <div class="cap" style="background:#8b63a8">Achat immédiat, sans détour</div>`})}
+ ]},
+{key:'chris',name:'Chris, 26 ans',role:'Chargé de projet junior · musculation 4 à 5 fois par semaine',c:'#b0623f',
+ path:'Story d\'un pote de salle → vérifie protéines et prix dans l\'appli du supermarché → achat pendant ses courses → partage son shaker en story',
+ steps:[
+ {lab:'Le soir, la story d\'un pote de salle',b:['soc','sym'],why:'Un sportif comme lui, pas une pub : il fait confiance à quelqu\'un de sa salle.',
+  r:R.story({img:IMG.bottle,ini:'T',c:'#b0623f',user:'tom.lifts',t:'3 h',text:'Case du jour 💪 shaker protéiné post-séance',ment:'@alpro',top:'380px',link:'Sondage : tu testes ? 🔥 Oui / Non',linkTop:'480px'})},
+ {lab:'Il vérifie protéines et prix dans l\'appli',b:['aut','coh'],why:'Des chiffres concrets pour un public exigeant : il vérifie que c\'est cohérent avec ses objectifs.',
+  r:R.app({name:'Appli du supermarché',c:'#c0392b',html:`<img src="${IMG.cal}" style="width:100%;height:170px;object-fit:cover;object-position:50% 25%">
+   <div style="padding:10px 14px"><div style="font:800 15px Inter;color:#111">Calendrier de l'Avent Alpro</div><div style="font:900 22px Inter;color:#111;margin-top:4px">XX,XX €</div></div>
+   <div style="margin:0 14px;border-radius:12px;background:#f7f1ec;padding:10px 12px">
+   <div style="font:800 13px Inter;color:#b0623f;margin-bottom:6px">💪 Infos nutrition</div>
+   <div class="rowi" style="padding:5px 0">Cases riches en protéines végétales<b>✓</b></div>
+   <div class="rowi" style="padding:5px 0">Protéines par portion<b>affichées case par case</b></div>
+   <div class="rowi" style="padding:5px 0;border:0">Sans lactose<b>✓</b></div></div>
+   <div style="margin:10px 14px 0"><span class="badge" style="background:#e3f4e8;color:#0d5a3a">✓ En stock dans votre magasin</span></div>`})},
+ {lab:'Il l\'achète pendant ses courses',b:['soc','rar'],why:'Présentoir bien visible en magasin, d\'autres clients se servent : il l\'ajoute à son panier habituel.',
+  r:R.scene({html:`<img class="cover" src="${IMG.rayon}" style="object-position:40% 50%"><div class="cap">En magasin : le présentoir Alpro, à portée de main</div>`})},
+ {lab:'Le 1er décembre, il partage son shaker',b:['eng','soc'],why:'Il s\'affiche avec la marque : le calendrier devient son rituel post-entraînement.',
+  r:R.story({img:IMG.recipe,ini:'C',c:'#b0623f',user:'chris.trains',t:'40 min',text:'Case 1 → mon shaker protéiné 100 % végétal 💪',ment:'@alpro',top:'390px'})}
+ ]},
+{key:'sam',name:'Sam, 33 ans',role:'Consultant freelance · Paris 11e',c:'#8dc63f',
+ path:'Post d\'une créatrice healthy un dimanche matin → vérifie les ingrédients dans une appli de scan → achat dans son épicerie bio → story minimaliste de son latte',
+ steps:[
+ {lab:'Dimanche matin, le post d\'une créatrice healthy',b:['sym','aut'],why:'Une créatrice qu\'il suit pour ses recettes bio : la recommandation vient d\'une source de confiance.',
+  r:R.post({img:IMG.cal,pos:'50% 20%',ini:'C',c:'#8dc63f',user:'clara.greenbowl',likes:'5 207',cap:'Le calendrier de l\'Avent que j\'attendais : 100 % végétal, 24 recettes 🌿 @alpro',cmts:[['sam.reset','la compo est clean ?'],['clara.greenbowl','@sam.reset tout est détaillé sur le site 👌']]})},
+ {lab:'Il scanne la composition dans une appli',b:['aut','coh'],why:'Il vérifie lui-même : la transparence lève son scepticisme face au greenwashing.',
+  r:R.app({name:'Appli de scan',c:'#3f8f5a',html:`<div style="display:flex;gap:12px;padding:14px;align-items:center"><img src="${IMG.cal}" style="width:90px;height:110px;object-fit:cover;object-position:50% 20%;border-radius:10px"><div><div style="font:800 14px Inter;color:#111">Calendrier de l'Avent Alpro</div><div style="font:600 12px Inter;color:#666">24 mini-produits végétaux</div></div></div>
+   <div style="margin:0 14px;border-radius:14px;background:#e9f6ec;padding:14px;display:flex;align-items:center;gap:12px"><div style="width:54px;height:54px;border-radius:50%;background:#3f8f5a;color:#fff;display:grid;place-items:center;font:900 15px Inter">✓</div><div style="font:800 16px Inter;color:#2b6b41">Composition<br>transparente</div></div>
+   <div class="rowi" style="margin-top:6px">100 % végétal<b style="color:#3f8f5a">✓</b></div><div class="rowi">Ingrédients détaillés case par case<b style="color:#3f8f5a">✓</b></div><div class="rowi">Emballage carton recyclable<b style="color:#3f8f5a">✓</b></div>
+   <div style="font:500 10px Inter;color:#999;padding:8px 14px">Écran d'illustration, valeurs à vérifier sur le produit réel.</div>`})},
+ {lab:'Il l\'achète dans son épicerie bio de quartier',b:['rar','coh'],why:'L\'épicerie qu\'il fréquente déjà, et le badge « plus que 3 » le fait valider sans attendre.',
+  r:R.scene({style:'background:#eef5e4',html:`<div style="position:absolute;left:0;right:0;top:0;height:120px;background:#2f6b3f;color:#fff;display:grid;place-items:center;text-align:center"><div><div style="font:800 13px Inter;letter-spacing:3px;opacity:.8">PARIS 11e</div><div class="hand" style="font-size:40px">Épicerie bio du quartier</div></div></div>
+   <div style="position:absolute;left:24px;right:24px;top:150px;height:230px;background:#fff;border-radius:16px;box-shadow:0 10px 24px rgba(0,0,0,.12)"></div>
+   <img src="${IMG.cal}" style="position:absolute;left:45px;top:170px;width:115px;height:190px;object-fit:cover;object-position:50% 20%;border-radius:8px">
+   <img src="${IMG.cal}" style="position:absolute;left:170px;top:170px;width:115px;height:190px;object-fit:cover;object-position:50% 20%;border-radius:8px;opacity:.95">
+   <div style="position:absolute;right:30px;top:160px;background:#c0392b;color:#fff;font:800 14px Inter;padding:6px 12px;border-radius:16px;transform:rotate(5deg)">Plus que 3 !</div>
+   <div style="position:absolute;left:24px;right:24px;top:400px;text-align:center;font:800 16px Nunito;color:#2f6b3f">Rayon « Noël végétal »</div>
+   <div class="cap" style="background:#2f6b3f">Achat dans son épicerie habituelle</div>`})},
+ {lab:'Le 3 décembre, une story minimaliste',b:['eng','soc'],why:'Esthète, il partage à sa façon, marque taguée discrètement : une recommandation crédible pour ses abonnés.',
+  r:R.story({img:IMG.recipe,ini:'S',c:'#8dc63f',user:'sam.reset',t:'5 h',text:'latte châtaigne · case 3',ment:'@alpro',top:'470px'})}
+ ]},
+{key:'camille',name:'Camille, 38 ans',role:'Responsable communication · maman de deux enfants',c:'#f06a8a',
+ path:'Story Instagram d\'Alpro → à vélo, l\'affiche abribus avec QR code → trouve un magasin et vérifie la composition → ouvre la 1re case en famille',
+ steps:[
+ {lab:'Elle voit la story Alpro qui présente le calendrier',b:['aut','eng'],why:'Compte officiel vérifié + bouton « En savoir plus » : un premier contact rassurant et un clic facile.',
+  r:R.story({img:IMG.story,ini:'',c:'#fff',av:IMG.avatar,user:'alpro ✔',t:'2 h',text:'',top:'900px'})},
+ {lab:'À vélo, elle remarque l\'affiche abribus',b:['sym','rar','eng'],why:'Répétition du message vu en story ; ambiance chaleureuse et QR code pour agir tout de suite.',
+  r:R.scene({html:`<img class="cover" src="${IMG.abri}" style="object-position:55% 50%">
+   <div style="position:absolute;right:22px;top:300px;width:118px;background:#fff;border-radius:12px;padding:8px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.35);z-index:3">${qr()}<div style="font:800 11px Nunito;color:#1d2a7a;margin-top:4px;line-height:1.15">Scannez :<br>trouver un magasin</div></div>
+   <div class="cap">Affiche street marketing + QR code vers la landing page</div>`})},
+ {lab:'Elle trouve un magasin et vérifie la composition',b:['rar','aut'],why:'Magasins proches avec stock en temps réel, et composition détaillée : ses deux freins (prix, transparence) sont levés.',
+  r:R.web({url:'alpro.com/avent',html:`<div style="padding:12px 14px"><div style="font:900 19px Nunito;color:#1d2a7a">Foncez en magasin, il part vite !</div></div>
+   <div style="margin:0 14px;border:1.5px solid #e3d8c2;border-radius:20px;padding:8px 14px;font:600 13px Inter;color:#333">📍 Près de moi</div>
+   ${[['🛒','Supermarché · 0,8 km','Plus que 3 unités !','#c0392b','#fff'],['🌿','Magasin bio · 1,2 km','Plus que 7 en stock','#fdeedd','#a85a00'],['🏙️','Supérette · 1,5 km','En stock','#e3f4e8','#0d5a3a']].map(r=>`<div style="margin:8px 14px;border:1.5px solid #f0e7d6;border-radius:12px;padding:9px 10px;display:flex;justify-content:space-between;align-items:center;font:700 12px Inter;color:#1d2a7a"><span>${r[0]} ${r[1]}</span><span class="badge" style="background:${r[3]};color:${r[4]}">${r[2]}</span></div>`).join('')}
+   <div style="margin:10px 14px;background:#fdeef2;border-radius:12px;padding:10px;font:700 12px Inter;color:#a83a5e">👨‍👩‍👧 Composition détaillée case par case · Prix : moins de 1 € par jour</div>`})},
+ {lab:'Elle ouvre la 1re case avec ses enfants',b:['soc','sym'],why:'Moment familial partagé en story : d\'autres parents découvrent le calendrier par elle.',
+  r:R.story({img:IMG.doors,pos:'50% 30%',ini:'C',c:'#f06a8a',user:'camille.verte',t:'1 h',text:'Case 1 ouverte avec les enfants 🎄 on a fait le latte ensemble !',ment:'@alpro',top:'380px'})}
+ ]}
+];
+
+// ---------- render ----------
+const root=document.getElementById('root');
+P.forEach(p=>{
+  let cols=p.steps.map((s,i)=>`<div class="col">${s.r}<div class="num" style="background:${p.c}">Étape ${i+1}</div><div class="lab">${s.lab}</div>${chips(s.b)}<div class="why">${s.why}</div></div>`);
+  let row=cols.reduce((a,c,i)=>a+(i?'<div class="arrow" style="background:'+p.c+'">→</div>':'')+c,'');
+  root.insertAdjacentHTML('beforeend',`<div class="board" id="${p.key}"><div class="dots"></div>
+   <div class="hd" style="border-bottom:8px solid ${p.c}"><div class="av" style="color:${p.c}">${p.name[0]}</div>
+   <div><h1>Scénario de contact · ${p.name}</h1><p>${p.role} — ${p.path}</p></div><img class="logo" src="${IMG.logo}"></div>
+   <div class="row">${row}</div>
+   <div class="ft"><span>Calendrier de l'Avent Alpro · Plan de stratégie digitale</span><span>Biais d'influence de Cialdini · maquettes d'illustration (prix à compléter)</span></div></div>`);
+});
+</script>
+</body></html>
