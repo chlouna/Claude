@@ -80,7 +80,10 @@ h2{font-size:clamp(28px,3.6vw,42px);color:var(--navy);font-weight:900;line-heigh
 .r .ic{width:44px;height:44px;border-radius:12px;background:var(--cream);display:grid;place-items:center;font-size:22px;flex:none}
 .r .t{flex:1}.r .t b{display:block;color:var(--navy)}.r .t span{font-size:14px;color:var(--muted)}
 .stock{font-size:12px;font-weight:800;padding:4px 10px;border-radius:20px;white-space:nowrap}
-.stock.ok{background:#e3f4e8;color:var(--green)}.stock.low{background:#fdeedd;color:#a85a00}
+.stock.ok{background:#e3f4e8;color:var(--green)}.stock.low{background:#fdeedd;color:#a85a00}.stock.crit{background:#c0392b;color:#fff;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.gauge{margin-top:18px;max-width:460px}.gauge .lbl{display:flex;justify-content:space-between;font-weight:800;font-size:14px;color:#a1271b}.gauge .track{height:12px;border-radius:12px;background:#eadfca;margin-top:6px;overflow:hidden}.gauge .fill{height:100%;width:82%;border-radius:12px;background:linear-gradient(90deg,#e67e22,#c0392b)}
+.urgent{display:inline-flex;align-items:center;gap:8px;background:#fdeedd;color:#a1271b;border:2px solid #f3c9a8;font-weight:800;font-size:15px;padding:8px 14px;border-radius:30px;margin:4px 0 14px}
 .demo{font-size:12px;color:#9a8f78;margin-top:10px}
 .retail{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-weight:800;color:var(--navy);font-size:15px}
 .retail span{display:flex;align-items:center;gap:6px}
@@ -119,7 +122,7 @@ footer .in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div class="links"><a href="#calendrier">Le calendrier</a><a href="#cases">Les 24 cases</a><a href="#magasin">Où l'acheter</a><a href="#faq">FAQ</a></div>
   <a class="btn p" href="#magasin">📍 Trouver un magasin</a>
 </div></nav>
-<div class="bar">🎄 Édition limitée · En magasin dès maintenant, dans la limite des stocks</div>
+<div class="bar">🔥 Édition limitée · Plus que <b>1 200 calendriers</b> disponibles en France · Dans la limite des stocks</div>
 
 <header class="hero" id="calendrier"><div class="snow"></div><div class="in">
   <div>
@@ -131,10 +134,12 @@ footer .in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <a class="btn o" href="#cases">Voir ce qu'il y a dedans</a>
     </div>
     <div class="mini"><span>🥛 24 mini-saveurs</span><span>📝 24 recettes</span><span>🎁 1 surprise</span></div>
+    <div class="gauge"><div class="lbl"><span>🔥 82 % du stock déjà parti</span><span>Plus que 1 200 !</span></div><div class="track"><div class="fill"></div></div></div>
   </div>
   <div class="pic">
     <img src="{{cal}}" alt="Le calendrier de l'Avent Alpro en forme de brique">
     <div class="sticker" style="left:-22px;bottom:40px">Dispo en<b>magasin</b></div>
+    <div class="sticker" style="right:-18px;top:30px;background:#c0392b;transform:rotate(10deg)">Édition<b>limitée</b></div>
   </div>
 </div></header>
 
@@ -162,6 +167,7 @@ footer .in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div>
     <div class="kicker">Où l'acheter</div>
     <h2>Foncez en magasin, il part vite !</h2>
+    <div class="urgent">⏳ Dans certains magasins, il ne reste <u>plus que 3 unités</u></div>
     <p class="sub">Le calendrier de l'Avent Alpro est disponible en édition limitée dans les magasins bio et enseignes participantes.</p>
     <div class="retail"><span>🌿 Magasins bio</span><span>🛒 Grandes surfaces</span><span>🏙️ Magasins de proximité</span></div>
     <div class="finder">
@@ -201,7 +207,7 @@ footer .in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <section class="final"><div class="snow" style="opacity:.15"></div><div class="in" style="position:relative">
   <div class="hand" style="font-size:30px;color:#ffe9a8">Plaisir végétal, esprit Noël ♡</div>
   <h2>Le calendrier vous attend en magasin</h2>
-  <p class="sub">Édition limitée, alors on n'attend pas le 30 novembre !</p>
+  <p class="sub">Plus que 1 200 calendriers en France : on n'attend pas le 30 novembre !</p>
   <a class="btn" href="#magasin">📍 Trouver un magasin</a>
 </div></section>
 
@@ -226,18 +232,18 @@ doors.appendChild(c25);
 
 // Store finder (demo data)
 const stores=[
- {k:"bio",ic:"🌿",n:"Magasin bio partenaire",a:"Centre-ville",d:"0,6 km",s:"ok"},
- {k:"gs",ic:"🛒",n:"Hypermarché participant",a:"Zone commerciale",d:"2,3 km",s:"low"},
- {k:"prox",ic:"🏙️",n:"Supérette de quartier",a:"Rue principale",d:"0,9 km",s:"ok"},
- {k:"bio",ic:"🌿",n:"Épicerie bio",a:"Quartier gare",d:"1,4 km",s:"low"},
- {k:"gs",ic:"🛒",n:"Supermarché participant",a:"Avenue de la République",d:"3,1 km",s:"ok"},
+ {k:"bio",ic:"🌿",n:"Magasin bio partenaire",a:"Centre-ville",d:"0,6 km",q:3},
+ {k:"gs",ic:"🛒",n:"Hypermarché participant",a:"Zone commerciale",d:"2,3 km",q:7},
+ {k:"prox",ic:"🏙️",n:"Supérette de quartier",a:"Rue principale",d:"0,9 km",q:2},
+ {k:"bio",ic:"🌿",n:"Épicerie bio",a:"Quartier gare",d:"1,4 km",q:1},
+ {k:"gs",ic:"🛒",n:"Supermarché participant",a:"Avenue de la République",d:"3,1 km",q:12},
 ];
 let filt='all', cp='';
 const res=document.getElementById('res');
 function render(){
   if(!cp){res.innerHTML='<div class="r"><div class="ic">📍</div><div class="t"><b>Entrez votre code postal</b><span>pour voir les magasins qui ont le calendrier en rayon.</span></div></div>';return}
   const l=stores.filter(s=>filt==='all'||s.k===filt);
-  res.innerHTML=l.map(s=>`<div class="r"><div class="ic">${s.ic}</div><div class="t"><b>${s.n}</b><span>${s.a}, ${cp} · ${s.d}</span></div><span class="stock ${s.s}">${s.s==='ok'?'En stock':'Stock limité'}</span></div>`).join('')||'<p>Aucun magasin de ce type à proximité.</p>';
+  res.innerHTML=l.map(s=>`<div class="r"><div class="ic">${s.ic}</div><div class="t"><b>${s.n}</b><span>${s.a}, ${cp} · ${s.d}</span></div><span class="stock ${s.q<=3?'crit':s.q<=8?'low':'ok'}">${s.q===1?'Dernière unité !':s.q<=3?'Plus que '+s.q+' unités !':s.q<=8?'Plus que '+s.q+' en stock':'En stock'}</span></div>`).join('')||'<p>Aucun magasin de ce type à proximité.</p>';
 }
 document.getElementById('f').onsubmit=e=>{e.preventDefault();const v=document.getElementById('cp').value.trim();if(!/^\d{5}$/.test(v)){res.innerHTML='<p style="color:#a1271b;font-weight:700">Entrez un code postal à 5 chiffres.</p>';return}cp=v;render()};
 document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');filt=c.dataset.k;render()});
