@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendrier de l'Avent Alpro</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1d2a7a;--navy2:#141e5c;--green:#0d5a3a;--leaf:#7cc242;--cream:#f7f0e4;--cream2:#efe5d3;--gold:#c9a24a;--red:#c0392b;--ink:#1b1f3b;--muted:#5d6280;--card:#fff;--bg:#fffdf8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+img{display:block;max-width:100%}
+a{color:inherit}
+.hand{font-family:Caveat,cursive}
+.in{max-width:1140px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:40px;font-weight:800;text-decoration:none;font-size:16px;border:2px solid var(--navy);cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--navy);color:#fff}
+.btn.g{background:var(--green);border-color:var(--green);color:#fff}
+.btn.o{background:transparent;color:var(--navy)}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(255,253,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid #eee3cf}
+nav .in{display:flex;align-items:center;gap:28px;height:68px}
+.logo{height:40px}
+nav .links{display:flex;gap:22px;font-weight:700;font-size:15px;margin-left:auto}
+nav .links a{text-decoration:none;color:var(--navy)}
+nav .btn{padding:10px 18px;font-size:14px}
+/* promo bar */
+.bar{background:var(--green);color:#fff;text-align:center;font-weight:700;font-size:14px;padding:8px 16px}
+/* hero */
+.hero{position:relative;background:radial-gradient(circle at 75% 40%,#fff6df 0,var(--cream) 55%);overflow:hidden}
+.snow{position:absolute;inset:0;background-image:radial-gradient(#d8c9a8 1.2px,transparent 1.6px);background-size:34px 34px;opacity:.45;pointer-events:none}
+.hero .in{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:56px;position:relative}
+.tag{display:inline-block;background:#fff;border:2px solid var(--gold);color:#8a6a1f;font-weight:800;font-size:13px;letter-spacing:.6px;text-transform:uppercase;padding:5px 12px;border-radius:30px}
+.hero h1{font-size:clamp(36px,5vw,60px);line-height:1.02;color:var(--navy);font-weight:900;margin:18px 0 14px;letter-spacing:-1px}
+.hero h1 .hand{color:var(--green);font-size:1.1em;font-weight:700;display:block;letter-spacing:0}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:520px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 22px}
+.mini{display:flex;gap:22px;flex-wrap:wrap;font-weight:700;font-size:14px;color:var(--navy)}
+.hero .pic{position:relative}
+.hero .pic img{border-radius:28px;box-shadow:0 30px 60px rgba(29,42,122,.22);transform:rotate(1.5deg)}
+.sticker{position:absolute;background:var(--green);color:#fff;width:128px;height:128px;border-radius:50%;display:grid;place-items:center;text-align:center;font-weight:800;font-size:15px;line-height:1.15;box-shadow:0 10px 24px rgba(0,0,0,.2);transform:rotate(-10deg)}
+.sticker b{font-size:30px;display:block}
+/* sections */
+section{padding:80px 0}
+.kicker{font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--green);font-size:13px}
+h2{font-size:clamp(28px,3.6vw,42px);color:var(--navy);font-weight:900;line-height:1.1;margin:8px 0 14px;letter-spacing:-.5px}
+.sub{color:var(--muted);font-size:18px;max-width:640px}
+.center{text-align:center}.center .sub{margin:0 auto}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.step{background:var(--card);border-radius:24px;overflow:hidden;box-shadow:0 8px 30px rgba(29,42,122,.08);border:1px solid #f0e7d6}
+.step img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.step div{padding:20px 22px 24px}
+.step .n{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900;margin-bottom:8px}
+.step h3{font-size:20px;color:var(--navy);margin-bottom:4px}
+.step p{color:var(--muted)}
+/* doors */
+.doors-sec{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.doors-sec h2{color:#fff}.doors-sec .sub{color:#c7cdf0}.doors-sec .kicker{color:var(--leaf)}
+.doors{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin-top:40px}
+.d{aspect-ratio:1;border-radius:14px;background:#fff;color:var(--green);font-weight:900;font-size:24px;display:grid;place-items:center;cursor:pointer;position:relative;border:none;font-family:inherit;transition:transform .2s,background .2s}
+.d:hover{transform:translateY(-3px) rotate(-2deg)}
+.d.open{background:#ffe9a8;color:var(--navy);font-size:13px;line-height:1.15;padding:6px;font-weight:800}
+.d.b25{background:var(--gold);color:#fff}
+.reveal{min-height:28px;margin-top:22px;text-align:center;font-weight:700;color:#ffe9a8;font-size:17px}
+/* store */
+.store{background:var(--cream)}
+.store .in{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.store .pic img{border-radius:28px;box-shadow:0 20px 50px rgba(0,0,0,.15)}
+.finder{background:#fff;border-radius:24px;padding:26px;box-shadow:0 10px 30px rgba(29,42,122,.08);margin-top:22px}
+.finder form{display:flex;gap:10px;flex-wrap:wrap}
+.finder input{flex:1;min-width:180px;padding:14px 18px;border-radius:40px;border:2px solid #e3d8c2;font:inherit;font-size:16px}
+.finder input:focus{outline:none;border-color:var(--navy)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.chip{padding:6px 12px;border-radius:30px;border:1.5px solid #e3d8c2;font-size:13px;font-weight:700;cursor:pointer;background:#fff;font-family:inherit;color:var(--ink)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.res{margin-top:18px;display:grid;gap:10px}
+.r{display:flex;gap:14px;align-items:center;padding:14px;border:1.5px solid #f0e7d6;border-radius:16px}
+.r .ic{width:44px;height:44px;border-radius:12px;background:var(--cream);display:grid;place-items:center;font-size:22px;flex:none}
+.r .t{flex:1}.r .t b{display:block;color:var(--navy)}.r .t span{font-size:14px;color:var(--muted)}
+.stock{font-size:12px;font-weight:800;padding:4px 10px;border-radius:20px;white-space:nowrap}
+.stock.ok{background:#e3f4e8;color:var(--green)}.stock.low{background:#fdeedd;color:#a85a00}
+.demo{font-size:12px;color:#9a8f78;margin-top:10px}
+.retail{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-weight:800;color:var(--navy);font-size:15px}
+.retail span{display:flex;align-items:center;gap:6px}
+/* street */
+.street .in{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.street img{border-radius:28px}
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:22px}
+.ig img{aspect-ratio:1;object-fit:cover;border-radius:10px;width:100%}
+/* faq */
+.faq{max-width:760px;margin:36px auto 0}
+details{background:#fff;border:1.5px solid #f0e7d6;border-radius:16px;padding:18px 22px;margin-bottom:10px}
+summary{font-weight:800;color:var(--navy);cursor:pointer;font-size:17px;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:"+";font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted)}
+/* final cta */
+.final{background:var(--green);color:#fff;text-align:center;position:relative;overflow:hidden}
+.final h2{color:#fff}.final .sub{color:#d5ecdf;margin:0 auto 28px}
+.final .btn{background:#fff;color:var(--green);border-color:#fff}
+footer{background:var(--navy2);color:#aab2e0;font-size:13px;padding:30px 0}
+footer .in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media (max-width:860px){
+  nav .links{display:none}nav .btn{margin-left:auto}
+  .hero .in,.store .in,.street .in{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .doors{grid-template-columns:repeat(5,1fr)}
+  section{padding:56px 0}
+  .sticker{width:100px;height:100px;font-size:13px}.sticker b{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="in">
+  <img class="logo" src="{{logo}}" alt="alpro">
+  <div class="links"><a href="#calendrier">Le calendrier</a><a href="#cases">Les 24 cases</a><a href="#magasin">Où l'acheter</a><a href="#faq">FAQ</a></div>
+  <a class="btn p" href="#magasin">📍 Trouver un magasin</a>
+</div></nav>
+<div class="bar">🎄 Édition limitée · En magasin dès maintenant, dans la limite des stocks</div>
+
+<header class="hero" id="calendrier"><div class="snow"></div><div class="in">
+  <div>
+    <span class="tag">✨ Nouveau · Édition Noël</span>
+    <h1>Le calendrier de l'Avent <span class="hand">100 % végétal ♡</span></h1>
+    <p class="lead">24 mini-bouteilles Alpro à découvrir, une recette derrière chaque porte… et une 25ᵉ surprise cachée dans le bouchon. Il vous attend en magasin.</p>
+    <div class="ctas">
+      <a class="btn p" href="#magasin">📍 Le trouver près de chez moi</a>
+      <a class="btn o" href="#cases">Voir ce qu'il y a dedans</a>
+    </div>
+    <div class="mini"><span>🥛 24 mini-saveurs</span><span>📝 24 recettes</span><span>🎁 1 surprise</span></div>
+  </div>
+  <div class="pic">
+    <img src="{{cal}}" alt="Le calendrier de l'Avent Alpro en forme de brique">
+    <div class="sticker" style="left:-22px;bottom:40px">Dispo en<b>magasin</b></div>
+  </div>
+</div></header>
+
+<section><div class="in center">
+  <div class="kicker">Comment ça marche</div>
+  <h2>Une case par jour, un petit plaisir végétal</h2>
+  <p class="sub">Ouvrez, découvrez, savourez. Chaque matin de décembre devient un peu plus gourmand.</p>
+  <div class="steps" style="text-align:left">
+    <div class="step"><img src="{{bottle}}" alt=""><div><span class="n">1</span><h3>Ouvrez la case du jour</h3><p>Une mini-bouteille Alpro vous attend : amande, soja, saveurs de saison…</p></div></div>
+    <div class="step"><img src="{{recipe}}" alt=""><div><span class="n">2</span><h3>Suivez la recette</h3><p>Au dos de chaque porte, une idée express : latte, chocolat chaud, smoothie…</p></div></div>
+    <div class="step"><img src="{{cap}}" alt="" style="object-position:50% 70%"><div><span class="n">3</span><h3>Le 25, dévissez !</h3><p>La dernière case est cachée dans le bouchon. On ne vous en dit pas plus 🤫</p></div></div>
+  </div>
+</div></section>
+
+<section class="doors-sec" id="cases"><div class="snow" style="opacity:.12"></div><div class="in center" style="position:relative">
+  <div class="kicker">Les 24 cases</div>
+  <h2>Qu'est-ce qui se cache derrière ?</h2>
+  <p class="sub">Cliquez sur une case pour jeter un œil. Certaines restent secrètes jusqu'au jour J…</p>
+  <div class="doors" id="doors"></div>
+  <div class="reveal" id="reveal"></div>
+</div></section>
+
+<section class="store" id="magasin"><div class="in">
+  <div class="pic"><img src="{{phone}}" alt="Le calendrier repéré en magasin bio"></div>
+  <div>
+    <div class="kicker">Où l'acheter</div>
+    <h2>Foncez en magasin, il part vite !</h2>
+    <p class="sub">Le calendrier de l'Avent Alpro est disponible en édition limitée dans les magasins bio et enseignes participantes.</p>
+    <div class="retail"><span>🌿 Magasins bio</span><span>🛒 Grandes surfaces</span><span>🏙️ Magasins de proximité</span></div>
+    <div class="finder">
+      <form id="f"><input id="cp" inputmode="numeric" maxlength="5" placeholder="Votre code postal (ex. 75011)" aria-label="Code postal"><button class="btn p" type="submit">Rechercher</button></form>
+      <div class="chips" id="chips"><button class="chip on" data-k="all">Tous</button><button class="chip" data-k="bio">Magasins bio</button><button class="chip" data-k="gs">Grandes surfaces</button><button class="chip" data-k="prox">Proximité</button></div>
+      <div class="res" id="res"></div>
+      <p class="demo">Démo : résultats fictifs, à brancher sur le store locator réel.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="street"><div class="in">
+  <div>
+    <div class="kicker">#AlproAvent</div>
+    <h2>Vous l'avez peut-être croisé à l'arrêt de bus…</h2>
+    <p class="sub">Partagez votre case du jour sur Instagram avec #AlproAvent : on reposte nos préférées chaque vendredi. Et jusqu'au 8 décembre, tentez de gagner l'un des 25 calendriers mis en jeu.</p>
+    <div class="ig">
+      <img src="{{doors}}" alt=""><img src="{{bottle}}" alt=""><img src="{{cap}}" alt="">
+    </div>
+    <div style="margin-top:22px"><a class="btn o" href="alpro-feed-avent.html">Voir le feed @alpro →</a></div>
+  </div>
+  <img src="{{abri}}" alt="Affiche du calendrier de l'Avent Alpro sur un abribus">
+</div></section>
+
+<section id="faq" style="padding-top:20px"><div class="in center">
+  <div class="kicker">FAQ</div>
+  <h2>Vos questions</h2>
+  <div class="faq" style="text-align:left">
+    <details open><summary>Où acheter le calendrier de l'Avent Alpro ?</summary><p>En magasins bio et dans les enseignes participantes. Utilisez la recherche par code postal ci-dessus pour trouver le point de vente le plus proche.</p></details>
+    <details><summary>Jusqu'à quand est-il disponible ?</summary><p>C'est une édition limitée : il est en rayon jusqu'à épuisement des stocks. Conseil : ne tardez pas pour l'avoir dès le 1er décembre.</p></details>
+    <details><summary>Que contient-il exactement ?</summary><p>24 mini-bouteilles de boissons végétales Alpro, une recette au dos de chaque porte, et une surprise dans le bouchon pour le 25.</p></details>
+    <details><summary>Faut-il le garder au frais ?</summary><p>Les mini-bouteilles se conservent à température ambiante avant ouverture. Une fois ouvertes, au réfrigérateur et à consommer rapidement.</p></details>
+    <details><summary>L'emballage est-il recyclable ?</summary><p>Le carton se trie avec les emballages. Pensez à séparer le bouchon et les mini-bouteilles selon les consignes de votre commune.</p></details>
+  </div>
+</div></section>
+
+<section class="final"><div class="snow" style="opacity:.15"></div><div class="in" style="position:relative">
+  <div class="hand" style="font-size:30px;color:#ffe9a8">Plaisir végétal, esprit Noël ♡</div>
+  <h2>Le calendrier vous attend en magasin</h2>
+  <p class="sub">Édition limitée, alors on n'attend pas le 30 novembre !</p>
+  <a class="btn" href="#magasin">📍 Trouver un magasin</a>
+</div></section>
+
+<footer><div class="in"><span>Maquette de concept, non officielle. Informations produit, points de vente et dates à valider.</span><span>© alpro · Plaisir végétal, esprit Noël</span></div></footer>
+
+<script>
+// Doors (only flavours visible on the product visual are named; the rest stay secret)
+const known={1:"Boisson Amande 🌰",17:"Cinnamon Roll ☕",20:"Soja Nature 🥛"};
+const today=new Date(), dec=today.getMonth()===11?today.getDate():0;
+const doors=document.getElementById('doors'), rv=document.getElementById('reveal');
+for(let i=1;i<=24;i++){
+  const b=document.createElement('button'); b.className='d'; b.textContent=i; b.setAttribute('aria-label','Case '+i);
+  b.onclick=()=>{
+    if(known[i]){b.classList.add('open');b.textContent=known[i];rv.textContent=`Case ${i} : ${known[i]}, avec sa recette au dos !`;}
+    else rv.textContent=`Case ${i} : patience… on la découvre le ${i} décembre 🤫`;
+  };
+  doors.appendChild(b);
+}
+const c25=document.createElement('button');c25.className='d b25';c25.textContent='25';
+c25.onclick=()=>rv.textContent='La case 25 ? Elle est dans le bouchon. Dévissez le 25 décembre 🎁';
+doors.appendChild(c25);
+
+// Store finder (demo data)
+const stores=[
+ {k:"bio",ic:"🌿",n:"Magasin bio partenaire",a:"Centre-ville",d:"0,6 km",s:"ok"},
+ {k:"gs",ic:"🛒",n:"Hypermarché participant",a:"Zone commerciale",d:"2,3 km",s:"low"},
+ {k:"prox",ic:"🏙️",n:"Supérette de quartier",a:"Rue principale",d:"0,9 km",s:"ok"},
+ {k:"bio",ic:"🌿",n:"Épicerie bio",a:"Quartier gare",d:"1,4 km",s:"low"},
+ {k:"gs",ic:"🛒",n:"Supermarché participant",a:"Avenue de la République",d:"3,1 km",s:"ok"},
+];
+let filt='all', cp='';
+const res=document.getElementById('res');
+function render(){
+  if(!cp){res.innerHTML='<div class="r"><div class="ic">📍</div><div class="t"><b>Entrez votre code postal</b><span>pour voir les magasins qui ont le calendrier en rayon.</span></div></div>';return}
+  const l=stores.filter(s=>filt==='all'||s.k===filt);
+  res.innerHTML=l.map(s=>`<div class="r"><div class="ic">${s.ic}</div><div class="t"><b>${s.n}</b><span>${s.a}, ${cp} · ${s.d}</span></div><span class="stock ${s.s}">${s.s==='ok'?'En stock':'Stock limité'}</span></div>`).join('')||'<p>Aucun magasin de ce type à proximité.</p>';
+}
+document.getElementById('f').onsubmit=e=>{e.preventDefault();const v=document.getElementById('cp').value.trim();if(!/^\d{5}$/.test(v)){res.innerHTML='<p style="color:#a1271b;font-weight:700">Entrez un code postal à 5 chiffres.</p>';return}cp=v;render()};
+document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');filt=c.dataset.k;render()});
+render();
+</script>
+</body>
+</html>
