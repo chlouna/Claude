@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<title>Concours Alpro</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@700&family=Nunito:wght@600;800;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1d2a7a;--green:#0d5a3a;--leaf:#7cc242;--cream:#f7f0e4;--gold:#c9a24a;--yel:#ffe36e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ddd;font-family:Nunito,sans-serif}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;margin-bottom:20px}
+.snow{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.55) 2.5px,transparent 3px),radial-gradient(rgba(255,255,255,.35) 2px,transparent 2.5px);background-size:70px 70px,43px 43px;background-position:0 0,20px 30px}
+.logo{position:absolute;top:56px;left:50%;transform:translateX(-50%);height:96px;border-radius:18px}
+.anton{font-family:Anton,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.hand{font-family:Caveat,cursive}
+.badge{position:absolute;border-radius:50%;display:grid;place-items:center;text-align:center;transform:rotate(-12deg);box-shadow:0 14px 30px rgba(0,0,0,.25)}
+.step{display:flex;gap:34px;align-items:center;background:#fff;border-radius:36px;padding:34px 40px;margin-bottom:26px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.num{flex:none;width:104px;height:104px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:900 54px Nunito}
+.step h3{font:900 42px Nunito;color:var(--navy);line-height:1.1}
+.step p{font:600 30px Nunito;color:#5d6280;margin-top:6px;line-height:1.25}
+.swipe{position:absolute;bottom:46px;right:56px;font:800 30px Nunito;color:#fff;opacity:.9}
+.mention{position:absolute;bottom:34px;left:0;right:0;text-align:center;font:600 20px Inter;color:rgba(255,255,255,.75)}
+</style></head><body>
+
+<!-- SLIDE 1 -->
+<div class="s" id="s1" style="background:radial-gradient(circle at 50% 70%,#17703f,#0b4a2f 70%)">
+  <div class="snow"></div>
+  <img class="logo" src="{{logo}}" alt="">
+  <div class="anton" style="position:absolute;top:196px;left:0;right:0;text-align:center;color:#fff;font-size:118px;line-height:1;-webkit-text-stroke:2px #072a1b;text-shadow:0 6px 0 #072a1b">Gagne ton<br><span style="color:var(--yel)">calendrier</span><br>Alpro</div>
+  <img src="{{cal}}" alt="" style="position:absolute;left:50%;bottom:-70px;transform:translateX(-50%) rotate(-3deg);width:610px;border-radius:30px;box-shadow:0 30px 60px rgba(0,0,0,.4)">
+  <div class="badge" style="width:270px;height:270px;background:var(--yel);right:58px;top:610px;color:var(--navy)"><div><div class="anton" style="font-size:118px;line-height:.9">50</div><div style="font:900 32px Nunito;line-height:1">à gagner !</div></div></div>
+  <div class="badge" style="width:200px;height:200px;background:#fff;left:52px;top:700px;color:var(--green);transform:rotate(10deg)"><div class="hand" style="font-size:46px;line-height:.95">Concours<br>🎁</div></div>
+  <div class="swipe" style="text-shadow:0 2px 8px rgba(0,0,0,.5)">Swipe ➜</div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="s" id="s2" style="background:var(--cream)">
+  <div class="snow" style="background-image:radial-gradient(#e2d4b8 2.5px,transparent 3px);background-size:70px 70px"></div>
+  <div style="position:relative;padding:90px 70px 0">
+    <div class="hand" style="font-size:64px;color:var(--green);text-align:center">Comment participer ?</div>
+    <div class="anton" style="font-size:92px;color:var(--navy);text-align:center;line-height:1;margin:6px 0 54px">3 étapes, c'est tout</div>
+    <div class="step"><div class="num">1</div><div><h3>Abonne-toi à @alpro</h3><p>Pour ne rien rater de décembre 🎄</p></div></div>
+    <div class="step"><div class="num">2</div><div><h3>Tague 2 ami·es gourmand·es</h3><p>En commentaire de ce post 👇</p></div></div>
+    <div class="step"><div class="num">3</div><div><h3>Valide ta participation</h3><p>Sur la page du concours (lien en bio), avec ton e-mail</p></div></div>
+    <div style="margin-top:40px;background:var(--navy);color:#fff;border-radius:36px;padding:30px 40px;display:flex;align-items:center;gap:28px">
+      <div class="anton" style="font-size:88px;color:var(--yel);line-height:1;flex:none">x2</div>
+      <div><div style="font:900 38px Nunito">BONUS : partage ce post en story</div><div style="font:600 28px Nunito;opacity:.85;margin-top:4px">et double tes chances de gagner ✨</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="s" id="s3" style="background:var(--navy)">
+  <div class="snow" style="opacity:.5"></div>
+  <img src="{{bottle}}" alt="" style="position:absolute;top:110px;left:50%;transform:translateX(-50%) rotate(3deg);width:500px;height:500px;object-fit:cover;border-radius:50%;border:14px solid #fff;box-shadow:0 20px 50px rgba(0,0,0,.35)">
+  <div style="position:absolute;top:660px;left:70px;right:70px;text-align:center;color:#fff">
+    <div class="anton" style="font-size:84px;line-height:1.02">24 cases.<br>24 mini-saveurs.<br><span style="color:var(--yel)">1 surprise dans le bouchon.</span></div>
+    <div style="font:700 34px Nunito;margin-top:34px;opacity:.9">Tirage au sort le 24 novembre :<br>de quoi l'avoir chez toi avant le 1er décembre 🎁</div>
+    <div style="display:inline-block;margin-top:40px;background:#fff;color:var(--navy);font:900 36px Nunito;padding:22px 46px;border-radius:60px">🔗 Je valide ma participation</div>
+  </div>
+  <div class="mention">Règlement complet sur la page du concours. Concours non associé à Instagram.</div>
+</div>
+
+</body></html>
