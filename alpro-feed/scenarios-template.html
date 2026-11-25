@@ -122,6 +122,7 @@ R.profile=o=>phone(`${sb()}<div class="igh"><span>‹</span><span>alpro <span st
   <div style="display:flex;gap:6px;padding:8px 12px"><div style="flex:1;background:#4a5df9;color:#fff;border-radius:7px;text-align:center;font:700 12px Inter;padding:6px">${o.follow||'Suivre'}</div><div style="flex:1;background:#efefef;border-radius:7px;text-align:center;font:700 12px Inter;padding:6px">Message</div></div>
   <div style="display:flex;gap:12px;padding:4px 12px 8px;font:500 10px Inter;text-align:center"><div><div style="width:48px;height:48px;border-radius:50%;padding:2px;background:conic-gradient(#c9a24a,#c0392b,#0d5a3a,#c9a24a)"><img src="${IMG.cal}" style="width:100%;height:100%;border-radius:50%;border:2px solid #fff;object-fit:cover;object-position:50% 20%"></div>Avent 🎄</div></div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">${[IMG.c1,IMG.cal,IMG.recipe,IMG.doors,IMG.bottle,IMG.cap].map((im,i)=>`<div style="position:relative;aspect-ratio:3/4;overflow:hidden">${i==0?'<div style="position:absolute;inset:0;border:3px solid #f06a8a;z-index:2"></div>':''}<img src="${im}" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%"></div>`).join('')}</div></div>`);
+const DISPO=`<div style="margin:8px 14px 0;background:#f4f6fb;border-radius:12px;padding:8px 10px"><div style="font:800 11px Inter;color:#1d2a7a;margin-bottom:6px">🛒 Disponible dans tous les supermarchés</div><div style="display:flex;flex-wrap:wrap;gap:4px">${['E.Leclerc','Auchan','Carrefour','Intermarché','Monoprix','Super U'].map(n=>`<span style="background:#fff;border:1px solid #dde2ef;border-radius:6px;padding:3px 6px;font:800 10px Inter;color:#333">${n}</span>`).join('')}</div></div>`;
 const P=[
 {key:'chiara',name:'Chiara, 25 ans',role:'Influenceuse lifestyle · Lyon',c:'#e3b54a',
  path:'Message privé d\'Alpro → colis en avant-première → unboxing en story → recette en reel → sa communauté découvre le calendrier',
@@ -151,13 +152,13 @@ const P=[
    <div style="margin-top:8px"><span class="badge" style="background:#e3f4e8;color:#0d5a3a">✓ Sans lactose</span> <span class="badge" style="background:#e3f4e8;color:#0d5a3a">✓ 100 % végétal</span></div>
    <div style="font:900 22px Nunito;color:#1d2a7a;margin-top:10px">XX,XX € <span style="font:600 12px Inter;color:#5d6280">soit moins de 1 € / jour</span></div></div>
    <div style="margin:0 14px;border:1.5px solid #f0e7d6;border-radius:12px;padding:10px 12px;font:600 12px Inter;color:#333"><b style="color:#1d2a7a">Contient-il du lactose ? –</b><br>Non : les 24 cases sont 100 % végétales.</div>
-   <a class="btn" style="background:#1d2a7a;color:#fff">📍 Le trouver près de chez moi</a>`})},
+   ${DISPO}<a class="btn" style="background:#1d2a7a;color:#fff">📍 Le trouver près de chez moi</a>`})},
  {lab:'Elle réserve en drive dans son supermarché',b:['rar'],why:'« Plus que 4 en stock » en rouge : elle valide tout de suite pour ne pas le rater avant le 1er décembre.',
-  r:R.app({name:'Mon Drive Courses',c:'#2e7d4f',cart:'3',html:`<img src="${IMG.cal}" style="width:100%;height:200px;object-fit:cover;object-position:50% 25%">
+  r:R.app({name:'Drive · dispo dans tous les supermarchés',c:'#2e7d4f',cart:'',html:`<img src="${IMG.cal}" style="width:100%;height:200px;object-fit:cover;object-position:50% 25%">
    <div style="padding:12px 14px"><div style="font:800 16px Inter;color:#111">Calendrier de l'Avent Alpro – 24 mini-produits végétaux</div>
    <div style="font:900 24px Inter;color:#111;margin-top:6px">XX,XX €</div>
    <div style="margin-top:8px"><span class="badge" style="background:#c0392b;color:#fff">⚠ Plus que 4 en stock dans votre drive</span></div></div>
-   <div class="rowi">Retrait <b>Sam. 29 nov · 10h-11h</b></div>
+   ${DISPO}<div class="rowi">Retrait drive <b>Sam. 29 nov · 10h-11h</b></div>
    <a class="btn" style="background:#2e7d4f;color:#fff">✓ Ajouté au panier</a>`})},
  {lab:'Le 1er décembre, elle partage sa 1re case',b:['eng','soc'],why:'Elle tague la marque : son achat devient un rituel affiché… et une découverte pour ses amies.',
   r:R.story({img:IMG.doors,pos:'50% 30%',ini:'J',c:'#e8cf6e',user:'jade.mlt',t:'1 h',text:'Case 1 🎄 enfin un calendrier sans lactose !!',ment:'@alpro',top:'390px'})}
@@ -200,16 +201,16 @@ const P=[
  {lab:'Le soir, la story d\'un pote de salle',b:['soc','sym'],why:'Un sportif comme lui, pas une pub : il fait confiance à quelqu\'un de sa salle.',
   r:R.story({img:IMG.bottle,ini:'T',c:'#b0623f',user:'tom.lifts',t:'3 h',text:'Case du jour 💪 shaker protéiné post-séance',ment:'@alpro',top:'380px',link:'Sondage : tu testes ? 🔥 Oui / Non',linkTop:'480px'})},
  {lab:'Il vérifie protéines et prix dans l\'appli',b:['aut','coh'],why:'Des chiffres concrets pour un public exigeant : il vérifie que c\'est cohérent avec ses objectifs.',
-  r:R.app({name:'Appli du supermarché',c:'#c0392b',html:`<img src="${IMG.cal}" style="width:100%;height:170px;object-fit:cover;object-position:50% 25%">
+  r:R.app({name:'Dispo dans tous les supermarchés',c:'#c0392b',html:`<img src="${IMG.cal}" style="width:100%;height:170px;object-fit:cover;object-position:50% 25%">
    <div style="padding:10px 14px"><div style="font:800 15px Inter;color:#111">Calendrier de l'Avent Alpro</div><div style="font:900 22px Inter;color:#111;margin-top:4px">XX,XX €</div></div>
    <div style="margin:0 14px;border-radius:12px;background:#f7f1ec;padding:10px 12px">
    <div style="font:800 13px Inter;color:#b0623f;margin-bottom:6px">💪 Infos nutrition</div>
    <div class="rowi" style="padding:5px 0">Cases riches en protéines végétales<b>✓</b></div>
    <div class="rowi" style="padding:5px 0">Protéines par portion<b>affichées case par case</b></div>
    <div class="rowi" style="padding:5px 0;border:0">Sans lactose<b>✓</b></div></div>
-   <div style="margin:10px 14px 0"><span class="badge" style="background:#e3f4e8;color:#0d5a3a">✓ En stock dans votre magasin</span></div>`})},
+   ${DISPO}`})},
  {lab:'Il l\'achète pendant ses courses',b:['soc','rar'],why:'Présentoir bien visible en magasin, déjà entamé par d\'autres clients : il l\'ajoute à son panier habituel.',
-  r:R.scene({html:`<img class="cover" src="${IMG.rayon2}" style="object-position:50% 40%"><div style="position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:8px;background:#fff;border-radius:30px;padding:4px 12px 4px 4px;z-index:4;box-shadow:0 6px 14px rgba(0,0,0,.3)"><img src="${IMG.chris}" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 15%"><span style="font:800 14px Nunito;color:#b0623f">Chris</span></div><div class="cap">En magasin : le présentoir Alpro, à portée de main</div>`})},
+  r:R.scene({html:`<img class="cover" src="${IMG.rayon2}" style="object-position:50% 40%"><div style="position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:8px;background:#fff;border-radius:30px;padding:4px 12px 4px 4px;z-index:4;box-shadow:0 6px 14px rgba(0,0,0,.3)"><img src="${IMG.chris}" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 15%"><span style="font:800 14px Nunito;color:#b0623f">Chris</span></div><div class="cap">En magasin (Leclerc, Auchan, Carrefour…) : le présentoir Alpro</div>`})},
  {lab:'Le 1er décembre, il partage son shaker',b:['eng','soc'],why:'Il s\'affiche avec la marque : le calendrier devient son rituel post-entraînement.',
   r:R.story({img:IMG.recipe,ini:'C',c:'#b0623f',av:IMG.chris,user:'chris.trains',t:'40 min',text:'Case 1 → mon shaker protéiné 100 % végétal 💪',ment:'@alpro',top:'390px'})}
  ]},
