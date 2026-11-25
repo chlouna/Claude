@@ -1,0 +1,36 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Feed justifié</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#ccc}
+.board{width:1920px;height:1080px;background:#f7f0e4;position:relative;overflow:hidden;font-family:Inter}
+.dots{position:absolute;inset:0;background-image:radial-gradient(#e6dac3 2px,transparent 2.5px);background-size:60px 60px;opacity:.6}
+.hd{position:absolute;top:0;left:0;right:0;height:150px;display:flex;align-items:center;gap:24px;padding:0 70px;border-bottom:8px solid #1d2a7a}
+.hd h1{font:900 44px Nunito;color:#1d2a7a}.hd p{font:700 19px Nunito;color:#5d6280;margin-top:6px;max-width:1500px}.hd p b{color:#0d5a3a}.hd img{margin-left:auto;height:66px}
+.grid{position:absolute;top:175px;left:60px;right:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px 22px}
+.c{display:flex;gap:16px;background:#fff;border-radius:20px;padding:12px;box-shadow:0 8px 20px rgba(0,0,0,.07);height:278px}
+.c img{height:254px;border-radius:10px;flex:none}
+.c h3{font:900 18px Nunito;color:#1d2a7a;line-height:1.15}
+.n{display:inline-block;background:#1d2a7a;color:#fff;font:900 13px Nunito;border-radius:12px;padding:2px 9px;margin-bottom:5px}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0}
+.chip{font:800 11.5px Inter;padding:3px 9px;border-radius:12px;color:#fff}
+.t{font:500 12.5px Inter;color:#3b4060;line-height:1.35}.t b{color:#1d2a7a}
+.m{display:inline-block;margin-top:6px;font:800 11.5px Inter;padding:3px 9px;border-radius:12px;background:#e3f1e6;color:#0d5a3a}
+.c-rar{background:#c0392b}.c-rec{background:#b8891f}.c-eng{background:#1d2a7a}.c-soc{background:#0d5a3a}.c-aut{background:#4a5a8c}.c-sym{background:#d24f80}.c-coh{background:#6b4fa0}
+</style></head><body><div class="board" id="fb"><div class="dots"></div>
+<div class="hd"><div><h1>Le feed Instagram : justification des 9 posts</h1><p>Mission : <b>« Offrir aux végétariens, aux sportifs et aux intolérants au lactose un Noël gourmand sans compromis, et leur faire adopter le végétal au quotidien. »</b></p></div><img src="{{logo}}"></div>
+<div class="grid" id="g"></div></div>
+<script>
+const FP={1:"{{fp1}}",2:"{{fp2}}",3:"{{fp3}}",4:"{{fp4}}",5:"{{fp5}}",6:"{{fp6}}",7:"{{fp7}}",8:"{{fp8}}",9:"{{fp9}}"};
+const B={rar:'Rareté',rec:'Réciprocité',eng:'Engagement',soc:'Preuve sociale',aut:'Autorité',sym:'Sympathie',coh:'Cohérence'};
+const D=[
+[1,"Le calendrier de l'Avent est arrivé !",['rar'],"<b>Bleu marine</b> (confiance) + <b>jaune</b> sur « est arrivé » : l'événement daté saute aux yeux. Sous-titre « 100 % végétal · sans lactose ».","Végétariens + intolérants"],
+[2,"Ton Cinnamon Roll latte en 3 étapes",['aut','eng'],"<b>Fond crème</b> cocooning. « 3 étapes » = simple : lève le frein « je ne sais pas l'utiliser ». Post à enregistrer.","Végétal au quotidien"],
+[3,"Warning : la case 25 est dans le bouchon",['rar','eng'],"<b>Vert sapin</b> + <b>or</b> du « 25 » : un secret exclusif. « Warning » reprend le ton décalé d'Alpro.","Noël gourmand"],
+[4,"Case 1 : on l'ouvre ensemble ?",['eng','sym'],"La <b>question</b> appelle un commentaire, « ensemble » crée la proximité. Le rituel quotidien commence.","Végétal au quotidien"],
+[5,"Ta recette du goûter de Noël",['sym','aut'],"<b>Crème</b> + tutoiement : un moment doux, « prendre soin de soi ». Une recette concrète pour chaque case.","Noël gourmand"],
+[6,"Il t'attend en magasin",['soc','rar'],"Le produit <b>en rayon</b> : il existe vraiment. <b>Vert</b> = passage à l'action. « Lien en bio » vers la landing page.","Conversion"],
+[7,"Végé, sportif ou intolérant au lactose ?",['coh','sym'],"Les <b>3 cibles nommées</b>, une carte chacune : chacun se reconnaît. « Un Noël gourmand, sans compromis » = la mission mot pour mot.","Les 3 cibles"],
+[8,"Ton shaker post-séance de Noël",['aut','coh'],"<b>Vert</b> énergie, 💪 : un usage sportif concret. « Riche en protéines végétales · zéro ballonnement » répond aux freins de Chris.","Sportifs"],
+[9,"Sans lactose. Sans compromis.",['aut','coh'],"<b>Brun chocolat</b> = gourmandise. Phrase courte et affirmée, « composition transparente » : rassure Jade sur sa digestion.","Intolérants au lactose"]];
+document.getElementById('g').innerHTML=D.map(d=>`<div class="c"><img src="${FP[d[0]]}"><div><span class="n">Post ${d[0]}</span><h3>${d[1]}</h3><div class="chips">${d[2].map(k=>`<span class="chip c-${k}">${B[k]}</span>`).join('')}</div><div class="t">${d[3]}</div><span class="m">🎯 ${d[4]}</span></div></div>`).join('');
+</script></body></html>
