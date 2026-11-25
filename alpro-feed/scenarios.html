@@ -207,23 +207,23 @@ const P=[
   r:R.scene({html:`<img class="cover" src="${IMG.cv5}"><div class="cap">Story « Rituel post-entraînement » @alpro</div>`})}
  ]},
 {key:'sam',photo:IMG.samP,name:'Sam, 33 ans',role:'Consultant freelance · Paris 11e',c:'#8dc63f',
- path:'Post d\'une créatrice healthy un dimanche matin → vérifie les ingrédients dans une appli de scan → achat dans son épicerie bio → story minimaliste de son latte',
+ path:'Post d\'une créatrice healthy un dimanche matin → vérifie les ingrédients sur Yuka → achat chez Naturalia, son épicerie bio → story minimaliste de son latte',
  steps:[
  {lab:'Dimanche matin, le post d\'une créatrice healthy',b:['sym','aut'],why:'Une créatrice qu\'il suit pour ses recettes bio : la recommandation vient d\'une source de confiance.',
   r:R.post({img:IMG.cal,pos:'50% 20%',ini:'C',c:'#8dc63f',user:'clara.greenbowl',likes:'5 207',cap:'Le calendrier de l\'Avent que j\'attendais : 100 % végétal, 24 recettes 🌿 @alpro',cmts:[['sam.reset','la compo est clean ?'],['clara.greenbowl','@sam.reset tout est détaillé sur le site 👌']]})},
- {lab:'Il scanne la composition dans une appli',b:['aut','coh'],why:'Il vérifie lui-même : la transparence lève son scepticisme face au greenwashing.',
-  r:R.app({name:'Appli de scan',c:'#3f8f5a',html:`<div style="display:flex;gap:12px;padding:14px;align-items:center"><img src="${IMG.cal}" style="width:90px;height:110px;object-fit:cover;object-position:50% 20%;border-radius:10px"><div><div style="font:800 14px Inter;color:#111">Calendrier de l'Avent Alpro</div><div style="font:600 12px Inter;color:#666">24 mini-produits végétaux</div></div></div>
+ {lab:'Il scanne la composition sur Yuka',b:['aut','coh'],why:'Il vérifie lui-même : la transparence lève son scepticisme face au greenwashing.',
+  r:R.app({name:'Yuka',c:'#3f8f5a',html:`<div style="display:flex;gap:12px;padding:14px;align-items:center"><img src="${IMG.cal}" style="width:90px;height:110px;object-fit:cover;object-position:50% 20%;border-radius:10px"><div><div style="font:800 14px Inter;color:#111">Calendrier de l'Avent Alpro</div><div style="font:600 12px Inter;color:#666">24 mini-produits végétaux</div></div></div>
    <div style="margin:0 14px;border-radius:14px;background:#e9f6ec;padding:14px;display:flex;align-items:center;gap:12px"><div style="width:54px;height:54px;border-radius:50%;background:#3f8f5a;color:#fff;display:grid;place-items:center;font:900 15px Inter">✓</div><div style="font:800 16px Inter;color:#2b6b41">Composition<br>transparente</div></div>
    <div class="rowi" style="margin-top:6px">100 % végétal<b style="color:#3f8f5a">✓</b></div><div class="rowi">Ingrédients détaillés case par case<b style="color:#3f8f5a">✓</b></div><div class="rowi">Emballage carton recyclable<b style="color:#3f8f5a">✓</b></div>
    <div style="font:500 10px Inter;color:#999;padding:8px 14px">Écran d'illustration, valeurs à vérifier sur le produit réel.</div>`})},
- {lab:'Il l\'achète dans son épicerie bio de quartier',b:['rar','coh'],why:'L\'épicerie qu\'il fréquente déjà, et le badge « plus que 3 » le fait valider sans attendre.',
-  r:R.scene({style:'background:#eef5e4',html:`<div style="position:absolute;left:0;right:0;top:0;height:120px;background:#2f6b3f;color:#fff;display:grid;place-items:center;text-align:center"><div><div style="font:800 13px Inter;letter-spacing:3px;opacity:.8">PARIS 11e</div><div class="hand" style="font-size:40px">Épicerie bio du quartier</div></div></div>
+ {lab:'Il l\'achète chez Naturalia, son épicerie de quartier',b:['rar','coh'],why:'Naturalia, l\'épicerie qu\'il fréquente déjà, et le badge « plus que 3 » le fait valider sans attendre.',
+  r:R.scene({style:'background:#eef5e4',html:`<div style="position:absolute;left:0;right:0;top:0;height:120px;background:#2f6b3f;color:#fff;display:grid;place-items:center;text-align:center"><div><div style="font:800 13px Inter;letter-spacing:3px;opacity:.8">PARIS 11e</div><div class="hand" style="font-size:40px">Naturalia</div></div></div>
    <div style="position:absolute;left:24px;right:24px;top:150px;height:230px;background:#fff;border-radius:16px;box-shadow:0 10px 24px rgba(0,0,0,.12)"></div>
    <img src="${IMG.cal}" style="position:absolute;left:45px;top:170px;width:115px;height:190px;object-fit:cover;object-position:50% 20%;border-radius:8px">
    <img src="${IMG.cal}" style="position:absolute;left:170px;top:170px;width:115px;height:190px;object-fit:cover;object-position:50% 20%;border-radius:8px;opacity:.95">
    <div style="position:absolute;right:30px;top:160px;background:#c0392b;color:#fff;font:800 14px Inter;padding:6px 12px;border-radius:16px;transform:rotate(5deg)">Plus que 3 !</div>
    <div style="position:absolute;left:24px;right:24px;top:400px;text-align:center;font:800 16px Nunito;color:#2f6b3f">Rayon « Noël végétal »</div>
-   <div class="cap" style="background:#2f6b3f">Achat dans son épicerie habituelle</div>`})},
+   <div class="cap" style="background:#2f6b3f">Achat chez Naturalia, son épicerie habituelle</div>`})},
  {lab:'Le 3 décembre, une story minimaliste',b:['eng','soc'],why:'Esthète, il partage à sa façon, marque taguée discrètement : une recommandation crédible pour ses abonnés.',
   r:R.story({img:IMG.recipe,ini:'S',c:'#8dc63f',av:IMG.samP,user:'sam.reset',t:'5 h',text:'latte châtaigne · case 3',ment:'@alpro',top:'470px'})}
  ]},
