@@ -1,0 +1,23 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Contenus Alpro</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#ccc}
+.board{width:1920px;height:1080px;background:#f7f0e4;position:relative;overflow:hidden;font-family:Inter}
+.dots{position:absolute;inset:0;background-image:radial-gradient(#e6dac3 2px,transparent 2.5px);background-size:60px 60px;opacity:.6}
+.hd{position:absolute;top:0;left:0;right:0;height:130px;display:flex;align-items:center;gap:24px;padding:0 70px;border-bottom:8px solid #1d2a7a}
+.hd h1{font:900 46px Nunito;color:#1d2a7a}.hd p{font:700 21px Nunito;color:#5d6280;margin-top:4px}.hd img{margin-left:auto;height:66px}
+.it{position:absolute}.it img{display:block;box-shadow:0 14px 30px rgba(0,0,0,.18)}
+.tag{display:inline-block;font:800 17px Nunito;color:#fff;background:#1d2a7a;border-radius:20px;padding:4px 14px;margin-bottom:10px}
+.row{display:flex;gap:14px}.row img{border-radius:12px}
+.ft{position:absolute;bottom:18px;left:70px;right:70px;display:flex;justify-content:space-between;font:600 15px Inter;color:#8a8fa8}
+</style></head><body>
+<div class="board" id="pub"><div class="dots"></div>
+<div class="hd"><div><h1>Les contenus publiés par Alpro</h1><p>Instagram, stories, concours, site internet : ce que la marque diffuse pendant la campagne de l'Avent</p></div><img src="{{logo}}"></div>
+<div class="it" style="left:70px;top:160px"><span class="tag">Feed Instagram @alpro</span><img src="{{pub_insta}}" style="height:815px;border-radius:18px"></div>
+<div class="it" style="left:490px;top:160px"><span class="tag" style="background:#c0392b">Story compte à rebours</span><img src="{{pub_story}}" style="height:440px;border-radius:26px"></div>
+<div class="it" style="left:760px;top:160px"><span class="tag" style="background:#0d5a3a">Post concours (carrousel)</span><div class="row"><img src="{{cs1}}" style="height:290px"><img src="{{cs2}}" style="height:290px"><img src="{{cs3}}" style="height:290px"></div></div>
+<div class="it" style="left:760px;top:505px"><span class="tag" style="background:#b8891f">Premiers contenus</span><div class="row"><img src="{{pc1}}" style="height:250px"><img src="{{pc2}}" style="height:250px"><img src="{{pc3}}" style="height:250px"><img src="{{pc4}}" style="height:250px"></div></div>
+<div class="it" style="left:490px;top:820px"><span class="tag" style="background:#4a5a8c">Site alpro.fr : page spéciale hiver</span><img src="{{pub_site}}" style="width:1060px;border-radius:12px"></div>
+<div class="it" style="left:1640px;top:160px"><span class="tag" style="background:#6b4fa0">Landing page</span><img src="{{pub_landing}}" style="height:815px;border-radius:12px"></div>
+
+</div></body></html>
