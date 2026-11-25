@@ -67,7 +67,7 @@ body{background:#ccc;font-family:Inter,sans-serif}
 </style></head><body>
 <div id="root"></div>
 <script>
-const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",logo:"{{logo}}",avatar:"{{avatar}}"};
+const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
 
 const bias={rar:'Rareté',rec:'Réciprocité',eng:'Engagement',soc:'Preuve sociale',aut:'Autorité',sym:'Sympathie',coh:'Cohérence'};
 const chips=b=>`<div class="chips">${b.map(k=>`<span class="chip c-${k}">${bias[k]}</span>`).join('')}</div>`;
@@ -81,7 +81,7 @@ function qr(n=21,seed=7){let s=seed,h='';const r=()=>(s=(s*9301+49297)%233280)/2
 
 // ---------- screen renderers ----------
 const R={
- story:o=>phone(`${sb(1)}<img class="cover" src="${o.img}" style="object-position:${o.pos||'50% 50%'}"><div class="shade"></div>
+ story:o=>phone(`${sb(1)}${o.card?`<div class="cover" style="background:linear-gradient(160deg,#0d5a3a,#1d2a7a)"></div><img src="${o.img}" style="position:absolute;left:40px;right:40px;top:110px;width:200px;margin:0 auto;border-radius:14px;box-shadow:0 14px 30px rgba(0,0,0,.4)">`:`<img class="cover" src="${o.img}" style="object-position:${o.pos||'50% 50%'}">`}<div class="shade"></div>
   <div class="bars">${'<i class="on"></i>'.repeat(o.bar||1)}${'<i></i>'.repeat(4-(o.bar||1))}</div>
   <div class="sh">${avs(o.ini,o.c,o.av)}<span>${o.user}</span><small>${o.t||'2 h'}</small></div>
   ${o.collab?`<div class="collab">Collaboration commerciale avec <b>alpro</b></div>`:''}
@@ -111,6 +111,10 @@ const R={
 };
 
 // ---------- data ----------
+R.carousel=o=>phone(`${sb()}<div class="igh">${avs('',o.c||'#fff',IMG.avatar)}<span>alpro <span style="color:#0095f6">✔</span></span><span style="margin-left:auto;font:600 12px Inter;color:#666">${o.n}/3</span></div>
+  <div class="body"><img src="${o.img}" style="width:100%;height:350px;object-fit:cover;object-position:50% 0">
+  <div style="display:flex;justify-content:center;gap:5px;margin:8px 0">${[1,2,3].map(i=>`<i style="width:6px;height:6px;border-radius:50%;background:${i==o.n?'#3797f0':'#ccc'}"></i>`).join('')}</div>
+  ${o.extra||''}</div>`);
 const P=[
 {key:'chiara',name:'Chiara, 25 ans',role:'Influenceuse lifestyle · Lyon',c:'#e3b54a',
  path:'Message privé d\'Alpro → colis en avant-première → unboxing en story → recette en reel → sa communauté découvre le calendrier',
@@ -239,7 +243,43 @@ const P=[
    <div style="margin:10px 14px;background:#fdeef2;border-radius:12px;padding:10px;font:700 12px Inter;color:#a83a5e">👨‍👩‍👧 Composition détaillée case par case · Prix : moins de 1 € par jour</div>`})},
  {lab:'Elle ouvre la 1re case avec ses enfants',b:['soc','sym'],why:'Moment familial partagé en story : d\'autres parents découvrent le calendrier par elle.',
   r:R.story({img:IMG.doors,pos:'50% 30%',ini:'C',c:'#f06a8a',user:'camille.verte',t:'1 h',text:'Case 1 ouverte avec les enfants 🎄 on a fait le latte ensemble !',ment:'@alpro',top:'380px'})}
- ]}
+ ]},
+{key:'act1',title:'Activation 1 · Concours « Gagne ton calendrier Alpro »',name:'Jade',role:'Mi-novembre · vécu par Jade, 22 ans',c:'#0d5a3a',
+ path:'Objectifs : gagner des abonnés, toucher une cible qui ne suit pas encore la marque, recruter des contacts newsletter',
+ steps:[
+ {lab:'Une amie la tague sous le post concours',b:['soc','sym'],why:'Jade ne suit pas encore Alpro : c\'est le tag d\'une amie qui lui fait découvrir le concours (nouvelle cible touchée).',
+  r:R.post({img:IMG.c1,pos:'50% 0',ini:'',c:'#fff',av:IMG.avatar,user:'alpro ✔',likes:'18 950',cap:'🎁 CONCOURS : GAGNE TON CALENDRIER ALPRO 🎁 On met en jeu 50 calendriers…',cmts:[['manon.ssl','@jade.mlt @lucie.b toi qui es intolérante 👀🎄'],['jade.mlt','@manon.ssl ENFIN un calendrier pour moi 😍']]})},
+ {lab:'Elle lit la mécanique : 3 étapes, c\'est tout',b:['eng','rec'],why:'Simple et rapide : elle s\'abonne et tague à son tour 2 amies. Le cadeau donne envie de rendre la pareille.',
+  r:R.carousel({img:IMG.c2,n:2,extra:`<div style="margin:6px 12px;font:700 12px Inter;color:#111">✓ Abonnée à @alpro</div><div style="margin:0 12px;font:600 12px Inter;color:#333"><b>jade.mlt</b> @lea.foodie @clara_22 on tente ? 🍫</div>`})},
+ {lab:'Elle valide sa participation avec son e-mail',b:['eng','coh'],why:'Page dédiée : e-mail + case newsletter non pré-cochée (RGPD). Un champ caché enregistre la source : « post Instagram ».',
+  r:R.web({url:'alpro.com/concours',html:`<img src="${IMG.c1}" style="width:100%;height:120px;object-fit:cover;object-position:50% 20%">
+   <div style="padding:12px 14px"><div style="font:900 18px Nunito;color:#1d2a7a">Valide ta participation 🎁</div>
+   <div style="margin-top:10px;border:1.5px solid #e3d8c2;border-radius:12px;padding:10px 12px;font:600 13px Inter;color:#333">jade.mlt@mail.fr</div>
+   <div style="margin-top:8px;border:1.5px solid #e3d8c2;border-radius:12px;padding:10px 12px;font:600 13px Inter;color:#333">@jade.mlt</div>
+   <div style="margin-top:10px;font:600 12px Inter;color:#333;display:flex;gap:8px;align-items:flex-start"><span style="width:16px;height:16px;border-radius:4px;background:#1d2a7a;color:#fff;display:grid;place-items:center;font-size:11px;flex:none">✓</span>Je souhaite recevoir la newsletter Alpro (recettes, nouveautés)</div>
+   <div style="margin-top:6px;font:500 10px Inter;color:#999">Case non pré-cochée · source : post Instagram</div></div>
+   <a class="btn" style="background:#0d5a3a;color:#fff">✓ Participation validée !</a>`})},
+ {lab:'Bonus : elle partage le post en story (x2)',b:['soc','eng'],why:'Mention @alpro obligatoire : sa story montre le concours à tous ses abonnés. La portée se multiplie.',
+  r:R.story({img:IMG.c1,card:1,ini:'J',c:'#e8cf6e',user:'jade.mlt',t:'12 min',text:'Je tente ma chance 🤞🎄',ment:'@alpro',top:'400px'})}
+ ]},
+{key:'act2',title:'Activation 2 · Le Bar de Noël Alpro en magasin',name:'Chris',role:'Week-ends de novembre · vécu par Chris, 26 ans',c:'#b0623f',
+ path:'Objectifs : lever la peur de la déception gustative, déclencher l\'achat d\'impulsion, relier le magasin aux contacts',
+ steps:[
+ {lab:'Samedi, pendant ses courses, il repère le stand',b:['sym','aut'],why:'Une ambiance marché de Noël au milieu des rayons, et le logo Alpro visible de loin : il s\'arrête.',
+  r:R.scene({html:`<img class="cover" src="${IMG.stand}" style="object-position:8% 50%"><div class="cap">Le Bar de Noël Alpro, dans l\'allée de l\'hypermarché</div>`})},
+ {lab:'On lui fait goûter le chocolat chaud végétal',b:['rec','eng'],why:'Dégustation offerte avec le sourire : il goûte, il est surpris… « le végétal, c\'est fade » tombe.',
+  r:R.scene({html:`<img class="cover" src="${IMG.degust}" style="object-position:50% 50%;transform:scale(1.55);transform-origin:52% 45%"><div class="cap">Dégustation offerte : latte avoine, chocolat chaud, mini-chocolats</div>`})},
+ {lab:'Il scanne le QR code du stand',b:['rec','eng'],why:'La recette du jour à refaire chez soi, et l\'inscription newsletter : le visiteur anonyme devient un contact.',
+  r:R.web({url:'alpro.com/bar-de-noel',html:`<div style="padding:12px 14px"><div style="font:800 12px Inter;color:#b0623f;letter-spacing:1px">RECETTE DU JOUR</div><div style="font:900 19px Nunito;color:#1d2a7a;line-height:1.1;margin-top:4px">Le chocolat chaud de Noël végétal en 2 min ☕</div></div>
+   <div class="rowi">🥛 250 ml de boisson Alpro Avoine</div><div class="rowi">🍫 2 c. à soupe de cacao</div><div class="rowi">🍁 1 c. à soupe de sirop d\'érable</div>
+   <div style="margin:12px 14px 0;background:#f7f1ec;border-radius:12px;padding:10px 12px"><div style="font:800 13px Inter;color:#1d2a7a">📬 Une recette par semaine jusqu\'à Noël</div>
+   <div style="margin-top:8px;border:1.5px solid #e3d8c2;background:#fff;border-radius:10px;padding:8px 10px;font:600 12px Inter;color:#333">chris.trains@mail.fr</div>
+   <div style="margin-top:6px;font:500 10px Inter;color:#999">Case newsletter non pré-cochée · source : Bar de Noël</div></div>
+   <a class="btn" style="background:#b0623f;color:#fff">Je m\'inscris</a>`})},
+ {lab:'Convaincu, il prend un calendrier au présentoir',b:['soc','rar'],why:'Le présentoir est juste à côté : l\'achat d\'impulsion se fait au moment où l\'envie est la plus forte.',
+  r:R.scene({html:`<img class="cover" src="${IMG.rayon}" style="object-position:45% 50%"><div class="cap">Présentoir sur le stand : achat immédiat</div>`})}
+ ]},
+
 ];
 
 // ---------- render ----------
@@ -249,7 +289,7 @@ P.forEach(p=>{
   let row=cols.reduce((a,c,i)=>a+(i?'<div class="arrow" style="background:'+p.c+'">→</div>':'')+c,'');
   root.insertAdjacentHTML('beforeend',`<div class="board" id="${p.key}"><div class="dots"></div>
    <div class="hd" style="border-bottom:8px solid ${p.c}"><div class="av" style="color:${p.c}">${p.name[0]}</div>
-   <div><h1>Scénario de contact · ${p.name}</h1><p>${p.role} — ${p.path}</p></div><img class="logo" src="${IMG.logo}"></div>
+   <div><h1>${p.title||("Scénario de contact · "+p.name)}</h1><p>${p.role} — ${p.path}</p></div><img class="logo" src="${IMG.logo}"></div>
    <div class="row">${row}</div>
    <div class="ft"><span>Calendrier de l'Avent Alpro · Plan de stratégie digitale</span><span>Biais d'influence de Cialdini · maquettes d'illustration (prix à compléter)</span></div></div>`);
 });
