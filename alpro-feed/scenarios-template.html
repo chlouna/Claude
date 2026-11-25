@@ -68,7 +68,7 @@ body{background:#ccc;font-family:Inter,sans-serif}
 </style></head><body>
 <div id="root"></div>
 <script>
-const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",cvelo:"{{camille_velo}}",cv1:"{{chris_s1}}",cv2:"{{chris_s2}}",cv3:"{{chris_s3}}",cv4:"{{chris_s4}}",cv5:"{{chris_s5}}",cmail:"{{chiara_mail}}",jtt:"{{jade_tiktok}}",jsite:"{{jade_site}}",jdrive:"{{jade_drive}}",jstory:"{{jade_story}}",chiaraP:"{{p_chiara}}",jadeP:"{{p_jade}}",cathP:"{{p_catharina}}",samP:"{{p_sam}}",camP:"{{p_camille}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
+const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",cgrab:"{{chris_grab}}",cvelo:"{{camille_velo}}",cv1:"{{chris_s1}}",cv2:"{{chris_s2}}",cv3:"{{chris_s3}}",cv4:"{{chris_s4}}",cv5:"{{chris_s5}}",cmail:"{{chiara_mail}}",jtt:"{{jade_tiktok}}",jsite:"{{jade_site}}",jdrive:"{{jade_drive}}",jstory:"{{jade_story}}",chiaraP:"{{p_chiara}}",jadeP:"{{p_jade}}",cathP:"{{p_catharina}}",samP:"{{p_sam}}",camP:"{{p_camille}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
 
 const bias={rar:'Rareté',rec:'Réciprocité',eng:'Engagement',soc:'Preuve sociale',aut:'Autorité',sym:'Sympathie',coh:'Cohérence'};
 const chips=b=>`<div class="chips">${b.map(k=>`<span class="chip c-${k}">${bias[k]}</span>`).join('')}</div>`;
@@ -270,8 +270,10 @@ const P=[
    <div style="margin-top:8px;border:1.5px solid #e3d8c2;background:#fff;border-radius:10px;padding:8px 10px;font:600 12px Inter;color:#333">chris.trains@mail.fr</div>
    <div style="margin-top:6px;font:500 10px Inter;color:#999">Case newsletter non pré-cochée · source : Bar de Noël</div></div>
    <a class="btn" style="background:#b0623f;color:#fff">Je m\'inscris</a>`})},
- {lab:'Convaincu, il prend un calendrier au présentoir',b:['soc','rar'],why:'Le présentoir est juste à côté : l\'achat d\'impulsion se fait au moment où l\'envie est la plus forte.',
-  r:R.scene({html:`<img class="cover" src="${IMG.rayon2}" style="object-position:50% 40%"><div style="position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:8px;background:#fff;border-radius:30px;padding:4px 12px 4px 4px;z-index:4;box-shadow:0 6px 14px rgba(0,0,0,.3)"><img src="${IMG.chris}" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 15%"><span style="font:800 14px Nunito;color:#b0623f">Chris</span></div><div class="cap">Présentoir sur le stand : achat immédiat</div>`})}
+ {lab:'Convaincu, il prend un calendrier juste à côté',b:['soc','rar'],why:'Présentoir et rayon à deux pas du stand : l\'achat d\'impulsion se fait au moment où l\'envie est la plus forte.',
+  r:R.scene({html:`<img class="cover" src="${IMG.cgrab}"><div class="cap">Il attrape le calendrier en rayon, juste après la dégustation</div>`})},
+ {lab:'Chez lui, il refait la recette en shaker',b:['coh','eng'],why:'La recette reçue par QR code passe dans sa routine post-entraînement : la dégustation devient une habitude.',
+  r:R.scene({html:`<img class="cover" src="${IMG.cv4}"><div class="cap">Le soir, son shaker avec la case du jour</div>`})}
  ]},
 
 ];
