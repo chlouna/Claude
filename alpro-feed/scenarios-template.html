@@ -67,7 +67,7 @@ body{background:#ccc;font-family:Inter,sans-serif}
 </style></head><body>
 <div id="root"></div>
 <script>
-const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
+const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
 
 const bias={rar:'Rareté',rec:'Réciprocité',eng:'Engagement',soc:'Preuve sociale',aut:'Autorité',sym:'Sympathie',coh:'Cohérence'};
 const chips=b=>`<div class="chips">${b.map(k=>`<span class="chip c-${k}">${bias[k]}</span>`).join('')}</div>`;
@@ -194,7 +194,7 @@ const P=[
    Calendrier Avent Alpro<br><span style="float:right">XX,XX €</span><br>Remise membre −10 %<br><hr style="border:0;border-top:1px dashed #999;margin:10px 0"><b>TOTAL <span style="float:right">XX,XX €</span></b><br><br><div style="text-align:center">Merci Catharina 💜<br>Bon Avent !</div></div>
    <div class="cap" style="background:#8b63a8">Achat immédiat, sans détour</div>`})}
  ]},
-{key:'chris',name:'Chris, 26 ans',role:'Chargé de projet junior · musculation 4 à 5 fois par semaine',c:'#b0623f',
+{key:'chris',photo:IMG.chris,name:'Chris, 26 ans',role:'Chargé de projet junior · musculation 4 à 5 fois par semaine',c:'#b0623f',
  path:'Story d\'un pote de salle → vérifie protéines et prix dans l\'appli du supermarché → achat pendant ses courses → partage son shaker en story',
  steps:[
  {lab:'Le soir, la story d\'un pote de salle',b:['soc','sym'],why:'Un sportif comme lui, pas une pub : il fait confiance à quelqu\'un de sa salle.',
@@ -208,10 +208,10 @@ const P=[
    <div class="rowi" style="padding:5px 0">Protéines par portion<b>affichées case par case</b></div>
    <div class="rowi" style="padding:5px 0;border:0">Sans lactose<b>✓</b></div></div>
    <div style="margin:10px 14px 0"><span class="badge" style="background:#e3f4e8;color:#0d5a3a">✓ En stock dans votre magasin</span></div>`})},
- {lab:'Il l\'achète pendant ses courses',b:['soc','rar'],why:'Présentoir bien visible en magasin, d\'autres clients se servent : il l\'ajoute à son panier habituel.',
-  r:R.scene({html:`<img class="cover" src="${IMG.rayon}" style="object-position:40% 50%"><div class="cap">En magasin : le présentoir Alpro, à portée de main</div>`})},
+ {lab:'Il l\'achète pendant ses courses',b:['soc','rar'],why:'Présentoir bien visible en magasin, déjà entamé par d\'autres clients : il l\'ajoute à son panier habituel.',
+  r:R.scene({html:`<img class="cover" src="${IMG.rayon2}" style="object-position:50% 40%"><div style="position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:8px;background:#fff;border-radius:30px;padding:4px 12px 4px 4px;z-index:4;box-shadow:0 6px 14px rgba(0,0,0,.3)"><img src="${IMG.chris}" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 15%"><span style="font:800 14px Nunito;color:#b0623f">Chris</span></div><div class="cap">En magasin : le présentoir Alpro, à portée de main</div>`})},
  {lab:'Le 1er décembre, il partage son shaker',b:['eng','soc'],why:'Il s\'affiche avec la marque : le calendrier devient son rituel post-entraînement.',
-  r:R.story({img:IMG.recipe,ini:'C',c:'#b0623f',user:'chris.trains',t:'40 min',text:'Case 1 → mon shaker protéiné 100 % végétal 💪',ment:'@alpro',top:'390px'})}
+  r:R.story({img:IMG.recipe,ini:'C',c:'#b0623f',av:IMG.chris,user:'chris.trains',t:'40 min',text:'Case 1 → mon shaker protéiné 100 % végétal 💪',ment:'@alpro',top:'390px'})}
  ]},
 {key:'sam',name:'Sam, 33 ans',role:'Consultant freelance · Paris 11e',c:'#8dc63f',
  path:'Post d\'une créatrice healthy un dimanche matin → vérifie les ingrédients dans une appli de scan → achat dans son épicerie bio → story minimaliste de son latte',
@@ -260,13 +260,13 @@ const P=[
  {lab:'Sa story est en ligne : ses abonnés découvrent le concours',b:['soc','eng'],why:'Mention @alpro : sa story montre le concours à son entourage (parents, collègues). La portée se multiplie.',
   r:R.story({img:IMG.c1,card:1,ini:'C',c:'#f06a8a',user:'camille.verte',t:'12 min',text:'Je tente ma chance pour mes loulous 🤞🎄',ment:'@alpro',top:'400px'})}
  ]},
-{key:'act2',title:'Activation 2 · Le Bar de Noël Alpro en magasin',name:'Chris',role:'Week-ends de novembre · vécu par Chris, 26 ans',c:'#b0623f',
+{key:'act2',photo:IMG.chris,title:'Activation 2 · Le Bar de Noël Alpro en magasin',name:'Chris',role:'Week-ends de novembre · vécu par Chris, 26 ans',c:'#b0623f',
  path:'Objectifs : lever la peur de la déception gustative, déclencher l\'achat d\'impulsion, relier le magasin aux contacts',
  steps:[
  {lab:'Samedi, pendant ses courses, il repère le stand',b:['sym','aut'],why:'Une ambiance marché de Noël au milieu des rayons, et le logo Alpro visible de loin : il s\'arrête.',
   r:R.scene({html:`<img class="cover" src="${IMG.stand}" style="object-position:8% 50%"><div class="cap">Le Bar de Noël Alpro, dans l\'allée de l\'hypermarché</div>`})},
  {lab:'On lui fait goûter le chocolat chaud végétal',b:['rec','eng'],why:'Dégustation offerte avec le sourire : il goûte, il est surpris… « le végétal, c\'est fade » tombe.',
-  r:R.scene({html:`<img class="cover" src="${IMG.degust}" style="object-position:50% 50%;transform:scale(1.55);transform-origin:52% 45%"><div class="cap">Dégustation offerte : latte avoine, chocolat chaud, mini-chocolats</div>`})},
+  r:R.scene({html:`<img class="cover" src="${IMG.degust}" style="object-position:50% 50%"><div style="position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:8px;background:#fff;border-radius:30px;padding:4px 12px 4px 4px;z-index:4;box-shadow:0 6px 14px rgba(0,0,0,.3)"><img src="${IMG.chris}" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 15%"><span style="font:800 14px Nunito;color:#b0623f">Chris</span></div><div class="cap">Dégustation offerte : latte avoine, chocolat chaud, mini-chocolats</div>`})},
  {lab:'Il scanne le QR code du stand',b:['rec','eng'],why:'La recette du jour à refaire chez soi, et l\'inscription newsletter : le visiteur anonyme devient un contact.',
   r:R.web({url:'alpro.com/bar-de-noel',html:`<div style="padding:12px 14px"><div style="font:800 12px Inter;color:#b0623f;letter-spacing:1px">RECETTE DU JOUR</div><div style="font:900 19px Nunito;color:#1d2a7a;line-height:1.1;margin-top:4px">Le chocolat chaud de Noël végétal en 2 min ☕</div></div>
    <div class="rowi">🥛 250 ml de boisson Alpro Avoine</div><div class="rowi">🍫 2 c. à soupe de cacao</div><div class="rowi">🍁 1 c. à soupe de sirop d\'érable</div>
@@ -275,7 +275,7 @@ const P=[
    <div style="margin-top:6px;font:500 10px Inter;color:#999">Case newsletter non pré-cochée · source : Bar de Noël</div></div>
    <a class="btn" style="background:#b0623f;color:#fff">Je m\'inscris</a>`})},
  {lab:'Convaincu, il prend un calendrier au présentoir',b:['soc','rar'],why:'Le présentoir est juste à côté : l\'achat d\'impulsion se fait au moment où l\'envie est la plus forte.',
-  r:R.scene({html:`<img class="cover" src="${IMG.rayon}" style="object-position:45% 50%"><div class="cap">Présentoir sur le stand : achat immédiat</div>`})}
+  r:R.scene({html:`<img class="cover" src="${IMG.rayon2}" style="object-position:50% 40%"><div style="position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:8px;background:#fff;border-radius:30px;padding:4px 12px 4px 4px;z-index:4;box-shadow:0 6px 14px rgba(0,0,0,.3)"><img src="${IMG.chris}" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 15%"><span style="font:800 14px Nunito;color:#b0623f">Chris</span></div><div class="cap">Présentoir sur le stand : achat immédiat</div>`})}
  ]},
 
 ];
@@ -286,7 +286,7 @@ P.forEach(p=>{
   let cols=p.steps.map((s,i)=>`<div class="col">${s.r}<div class="num" style="background:${p.c}">Étape ${i+1}</div><div class="lab">${s.lab}</div>${chips(s.b)}<div class="why">${s.why}</div></div>`);
   let row=cols.reduce((a,c,i)=>a+(i?'<div class="arrow" style="background:'+p.c+'">→</div>':'')+c,'');
   root.insertAdjacentHTML('beforeend',`<div class="board" id="${p.key}"><div class="dots"></div>
-   <div class="hd" style="border-bottom:8px solid ${p.c}"><div class="av" style="color:${p.c}">${p.name[0]}</div>
+   <div class="hd" style="border-bottom:8px solid ${p.c}"><div class="av" style="color:${p.c};overflow:hidden">${p.photo?`<img src="${p.photo}" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%">`:p.name[0]}</div>
    <div><h1>${p.title||("Scénario de contact · "+p.name)}</h1><p>${p.role} — ${p.path}</p></div><img class="logo" src="${IMG.logo}"></div>
    <div class="row">${row}</div>
    <div class="ft"><span>Calendrier de l'Avent Alpro · Plan de stratégie digitale</span><span>Biais d'influence de Cialdini · maquettes d'illustration (prix à compléter)</span></div></div>`);
