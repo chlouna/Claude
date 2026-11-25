@@ -115,6 +115,13 @@ R.carousel=o=>phone(`${sb()}<div class="igh">${avs('',o.c||'#fff',IMG.avatar)}<s
   <div class="body"><img src="${o.img}" style="width:100%;height:350px;object-fit:cover;object-position:50% 0">
   <div style="display:flex;justify-content:center;gap:5px;margin:8px 0">${[1,2,3].map(i=>`<i style="width:6px;height:6px;border-radius:50%;background:${i==o.n?'#3797f0':'#ccc'}"></i>`).join('')}</div>
   ${o.extra||''}</div>`);
+R.profile=o=>phone(`${sb()}<div class="igh"><span>‹</span><span>alpro <span style="color:#0095f6">✔</span></span><span style="margin-left:auto">···</span></div>
+  <div class="body"><div style="display:flex;align-items:center;gap:14px;padding:12px 12px 6px"><div style="width:62px;height:62px;border-radius:50%;padding:2px;background:conic-gradient(#c9a24a,#c0392b,#0d5a3a,#c9a24a)"><img src="${IMG.avatar}" style="width:100%;height:100%;border-radius:50%;border:2px solid #fff;object-fit:cover"></div>
+  <div style="display:flex;gap:14px;font:600 11px Inter;color:#111;text-align:center"><div><b style="font-size:14px;display:block">1 492</b>publications</div><div><b style="font-size:14px;display:block">346 K</b>followers</div><div><b style="font-size:14px;display:block">494</b>suivi(e)s</div></div></div>
+  <div style="padding:0 12px;font:500 11px Inter;color:#111;line-height:1.35"><b>Alpro</b><br>Making plant-based delicious since the 1980's 🌱</div>
+  <div style="display:flex;gap:6px;padding:8px 12px"><div style="flex:1;background:#4a5df9;color:#fff;border-radius:7px;text-align:center;font:700 12px Inter;padding:6px">${o.follow||'Suivre'}</div><div style="flex:1;background:#efefef;border-radius:7px;text-align:center;font:700 12px Inter;padding:6px">Message</div></div>
+  <div style="display:flex;gap:12px;padding:4px 12px 8px;font:500 10px Inter;text-align:center"><div><div style="width:48px;height:48px;border-radius:50%;padding:2px;background:conic-gradient(#c9a24a,#c0392b,#0d5a3a,#c9a24a)"><img src="${IMG.cal}" style="width:100%;height:100%;border-radius:50%;border:2px solid #fff;object-fit:cover;object-position:50% 20%"></div>Avent 🎄</div></div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">${[IMG.c1,IMG.cal,IMG.recipe,IMG.doors,IMG.bottle,IMG.cap].map((im,i)=>`<div style="position:relative;aspect-ratio:3/4;overflow:hidden">${i==0?'<div style="position:absolute;inset:0;border:3px solid #f06a8a;z-index:2"></div>':''}<img src="${im}" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%"></div>`).join('')}</div></div>`);
 const P=[
 {key:'chiara',name:'Chiara, 25 ans',role:'Influenceuse lifestyle · Lyon',c:'#e3b54a',
  path:'Message privé d\'Alpro → colis en avant-première → unboxing en story → recette en reel → sa communauté découvre le calendrier',
@@ -228,33 +235,30 @@ const P=[
   r:R.story({img:IMG.recipe,ini:'S',c:'#8dc63f',user:'sam.reset',t:'5 h',text:'latte châtaigne · case 3',ment:'@alpro',top:'470px'})}
  ]},
 {key:'camille',name:'Camille, 38 ans',role:'Responsable communication · maman de deux enfants',c:'#f06a8a',
- path:'Story Instagram d\'Alpro → à vélo, l\'affiche abribus avec QR code → trouve un magasin et vérifie la composition → ouvre la 1re case en famille',
+ path:'Posts et stories Alpro → à vélo, l\'affiche street marketing → va sur le compte Instagram d\'Alpro → découvre le concours et tente sa chance',
  steps:[
  {lab:'Elle voit la story Alpro qui présente le calendrier',b:['aut','eng'],why:'Compte officiel vérifié + bouton « En savoir plus » : un premier contact rassurant et un clic facile.',
   r:R.story({img:IMG.story,ini:'',c:'#fff',av:IMG.avatar,user:'alpro ✔',t:'2 h',text:'',top:'900px'})},
- {lab:'À vélo, elle remarque l\'affiche abribus',b:['sym','rar','eng'],why:'Répétition du message vu en story ; ambiance chaleureuse et QR code pour agir tout de suite.',
+ {lab:'À vélo, elle remarque l\'affiche street marketing',b:['sym','rar','eng'],why:'Nouvelle exposition au message vu sur Instagram : sa curiosité grandit, le QR code l\'emmène sur le compte Alpro.',
   r:R.scene({html:`<img class="cover" src="${IMG.abri}" style="object-position:55% 50%">
-   <div style="position:absolute;right:22px;top:300px;width:118px;background:#fff;border-radius:12px;padding:8px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.35);z-index:3">${qr()}<div style="font:800 11px Nunito;color:#1d2a7a;margin-top:4px;line-height:1.15">Scannez :<br>trouver un magasin</div></div>
-   <div class="cap">Affiche street marketing + QR code vers la landing page</div>`})},
- {lab:'Elle trouve un magasin et vérifie la composition',b:['rar','aut'],why:'Magasins proches avec stock en temps réel, et composition détaillée : ses deux freins (prix, transparence) sont levés.',
-  r:R.web({url:'alpro.com/avent',html:`<div style="padding:12px 14px"><div style="font:900 19px Nunito;color:#1d2a7a">Foncez en magasin, il part vite !</div></div>
-   <div style="margin:0 14px;border:1.5px solid #e3d8c2;border-radius:20px;padding:8px 14px;font:600 13px Inter;color:#333">📍 Près de moi</div>
-   ${[['🛒','Supermarché · 0,8 km','Plus que 3 unités !','#c0392b','#fff'],['🌿','Magasin bio · 1,2 km','Plus que 7 en stock','#fdeedd','#a85a00'],['🏙️','Supérette · 1,5 km','En stock','#e3f4e8','#0d5a3a']].map(r=>`<div style="margin:8px 14px;border:1.5px solid #f0e7d6;border-radius:12px;padding:9px 10px;display:flex;justify-content:space-between;align-items:center;font:700 12px Inter;color:#1d2a7a"><span>${r[0]} ${r[1]}</span><span class="badge" style="background:${r[3]};color:${r[4]}">${r[2]}</span></div>`).join('')}
-   <div style="margin:10px 14px;background:#fdeef2;border-radius:12px;padding:10px;font:700 12px Inter;color:#a83a5e">👨‍👩‍👧 Composition détaillée case par case · Prix : moins de 1 € par jour</div>`})},
- {lab:'Elle ouvre la 1re case avec ses enfants',b:['soc','sym'],why:'Moment familial partagé en story : d\'autres parents découvrent le calendrier par elle.',
-  r:R.story({img:IMG.doors,pos:'50% 30%',ini:'C',c:'#f06a8a',user:'camille.verte',t:'1 h',text:'Case 1 ouverte avec les enfants 🎄 on a fait le latte ensemble !',ment:'@alpro',top:'380px'})}
+   <div style="position:absolute;right:22px;top:300px;width:118px;background:#fff;border-radius:12px;padding:8px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.35);z-index:3">${qr()}<div style="font:800 11px Nunito;color:#1d2a7a;margin-top:4px;line-height:1.15">Scannez :<br>@alpro sur Instagram</div></div>
+   <div class="cap">Affiche street marketing + QR code vers le compte Instagram</div>`})},
+ {lab:'Elle va sur le compte Instagram d\'Alpro',b:['aut','soc'],why:'Compte vérifié, 346 K abonnés, feed de Noël : elle cherche plus d\'infos et tombe sur le post concours, en 1re position.',
+  r:R.profile({})},
+ {lab:'Elle découvre le concours et tente sa chance',b:['rec','rar','eng'],why:'Habituée des concours Instagram : 50 calendriers à gagner, une date limite… elle participe tout de suite.',
+  r:R.post({img:IMG.c1,pos:'50% 0',ini:'',c:'#fff',av:IMG.avatar,user:'alpro ✔',likes:'18 950',cap:'🎁 CONCOURS : GAGNE TON CALENDRIER ALPRO 🎁 On met en jeu 50 calendriers…',cmts:[['camille.verte','@sophie.d @marine_l on tente pour les enfants ? 🎄🤞'],['sophie.d','@camille.verte carrément 😍']]})}
  ]},
-{key:'act1',title:'Activation 1 · Concours « Gagne ton calendrier Alpro »',name:'Jade',role:'Mi-novembre · vécu par Jade, 22 ans',c:'#0d5a3a',
- path:'Objectifs : gagner des abonnés, toucher une cible qui ne suit pas encore la marque, recruter des contacts newsletter',
+{key:'act1',title:'Activation 1 · Concours « Gagne ton calendrier Alpro »',name:'Camille',role:'Mi-novembre · vécu par Camille, 38 ans',c:'#f06a8a',
+ path:'Objectifs : gagner des abonnés et faire découvrir le calendrier à une cible qui ne suit pas encore la marque',
  steps:[
- {lab:'Une amie la tague sous le post concours',b:['soc','sym'],why:'Jade ne suit pas encore Alpro : c\'est le tag d\'une amie qui lui fait découvrir le concours (nouvelle cible touchée).',
-  r:R.post({img:IMG.c1,pos:'50% 0',ini:'',c:'#fff',av:IMG.avatar,user:'alpro ✔',likes:'18 950',cap:'🎁 CONCOURS : GAGNE TON CALENDRIER ALPRO 🎁 On met en jeu 50 calendriers…',cmts:[['manon.ssl','@jade.mlt @lucie.b toi qui es intolérante 👀🎄'],['jade.mlt','@manon.ssl ENFIN un calendrier pour moi 😍']]})},
- {lab:'Elle lit la mécanique : 3 étapes, c\'est tout',b:['eng','rec'],why:'Simple et rapide : elle s\'abonne, tague 2 amies et sait qu\'un partage en story augmente ses chances. Le cadeau donne envie de rendre la pareille.',
-  r:R.carousel({img:IMG.c2,n:2,extra:`<div style="margin:6px 12px;font:700 12px Inter;color:#111">✓ Abonnée à @alpro</div><div style="margin:0 12px;font:600 12px Inter;color:#333"><b>jade.mlt</b> @lea.foodie @clara_22 on tente ? 🍫</div>`})},
- {lab:'Partage en story pour avoir plus de chances de gagner !',b:['eng','rar'],why:'Le 3e visuel du carrousel donne envie (24 cases, 1 surprise dans le bouchon) et fixe la date limite : elle partage pour doubler ses chances.',
-  r:R.carousel({img:IMG.c3,n:3,extra:`<div style="margin:6px 12px;font:700 12px Inter;color:#111">♡ 💬 ➤ <span style="color:#3797f0">Partager en story</span></div><div style="margin:0 12px;font:600 12px Inter;color:#333"><b>jade.mlt</b> je partage pour doubler mes chances 🤞</div>`})},
- {lab:'Sa story est en ligne : ses abonnés découvrent le concours',b:['soc','eng'],why:'Mention @alpro obligatoire : sa story montre le concours à tous ses abonnés. La portée se multiplie.',
-  r:R.story({img:IMG.c1,card:1,ini:'J',c:'#e8cf6e',user:'jade.mlt',t:'12 min',text:'Je tente ma chance 🤞🎄',ment:'@alpro',top:'400px'})}
+ {lab:'Intriguée par l\'affiche, elle va sur le compte @alpro',b:['aut','soc'],why:'Le post concours est en 1re position du feed : c\'est la première chose qu\'elle voit en arrivant.',
+  r:R.profile({})},
+ {lab:'Elle s\'abonne et tague 2 amies',b:['eng','soc'],why:'« 3 étapes, c\'est tout » : participer est simple. Ses 2 tags font découvrir la marque à des mamans comme elle.',
+  r:R.carousel({img:IMG.c2,n:2,extra:`<div style="margin:6px 12px;font:700 12px Inter;color:#111">✓ Abonnée à @alpro</div><div style="margin:0 12px;font:600 12px Inter;color:#333"><b>camille.verte</b> @sophie.d @marine_l on tente pour les enfants ? 🎄</div>`})},
+ {lab:'Partage en story pour avoir plus de chances de gagner !',b:['eng','rar'],why:'Le 3e visuel donne envie (24 cases, 1 surprise dans le bouchon) et fixe la date limite : elle partage pour augmenter ses chances.',
+  r:R.carousel({img:IMG.c3,n:3,extra:`<div style="margin:6px 12px;font:700 12px Inter;color:#111">♡ 💬 ➤ <span style="color:#3797f0">Partager en story</span></div><div style="margin:0 12px;font:600 12px Inter;color:#333"><b>camille.verte</b> je partage pour avoir plus de chances 🤞</div>`})},
+ {lab:'Sa story est en ligne : ses abonnés découvrent le concours',b:['soc','eng'],why:'Mention @alpro : sa story montre le concours à son entourage (parents, collègues). La portée se multiplie.',
+  r:R.story({img:IMG.c1,card:1,ini:'C',c:'#f06a8a',user:'camille.verte',t:'12 min',text:'Je tente ma chance pour mes loulous 🤞🎄',ment:'@alpro',top:'400px'})}
  ]},
 {key:'act2',title:'Activation 2 · Le Bar de Noël Alpro en magasin',name:'Chris',role:'Week-ends de novembre · vécu par Chris, 26 ans',c:'#b0623f',
  path:'Objectifs : lever la peur de la déception gustative, déclencher l\'achat d\'impulsion, relier le magasin aux contacts',
