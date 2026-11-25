@@ -15,6 +15,7 @@ body{background:#ccc;font-family:Inter,sans-serif}
 .hd .logo{margin-left:auto;height:70px}
 .row{position:absolute;top:175px;left:70px;right:70px;display:flex;justify-content:space-between;align-items:flex-start}
 .col{width:380px;display:flex;flex-direction:column;align-items:center}
+.row.five .col{width:310px}.row.five .col>:first-child{zoom:.9}.row.five .arrow{margin-top:260px;width:46px;height:46px}
 .arrow{width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:900 28px Nunito;margin-top:290px;flex:none}
 .num{font:900 20px Nunito;color:#fff;background:var(--navy);border-radius:30px;padding:4px 14px;margin-top:18px}
 .lab{font:800 22px Nunito;color:var(--navy);text-align:center;margin-top:8px;line-height:1.2;min-height:54px}
@@ -67,7 +68,7 @@ body{background:#ccc;font-family:Inter,sans-serif}
 </style></head><body>
 <div id="root"></div>
 <script>
-const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",chiaraP:"{{p_chiara}}",jadeP:"{{p_jade}}",cathP:"{{p_catharina}}",samP:"{{p_sam}}",camP:"{{p_camille}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
+const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",cmail:"{{chiara_mail}}",jtt:"{{jade_tiktok}}",jsite:"{{jade_site}}",jdrive:"{{jade_drive}}",jstory:"{{jade_story}}",chiaraP:"{{p_chiara}}",jadeP:"{{p_jade}}",cathP:"{{p_catharina}}",samP:"{{p_sam}}",camP:"{{p_camille}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
 
 const bias={rar:'Rareté',rec:'Réciprocité',eng:'Engagement',soc:'Preuve sociale',aut:'Autorité',sym:'Sympathie',coh:'Cohérence'};
 const chips=b=>`<div class="chips">${b.map(k=>`<span class="chip c-${k}">${bias[k]}</span>`).join('')}</div>`;
@@ -125,10 +126,10 @@ R.profile=o=>phone(`${sb()}<div class="igh"><span>‹</span><span>alpro <span st
 const DISPO=`<div style="margin:8px 14px 0;background:#f4f6fb;border-radius:12px;padding:8px 10px"><div style="font:800 11px Inter;color:#1d2a7a;margin-bottom:6px">🛒 Disponible dans tous les supermarchés</div><div style="display:flex;flex-wrap:wrap;gap:4px">${['E.Leclerc','Auchan','Carrefour','Intermarché','Monoprix','Super U'].map(n=>`<span style="background:#fff;border:1px solid #dde2ef;border-radius:6px;padding:3px 6px;font:800 10px Inter;color:#333">${n}</span>`).join('')}</div></div>`;
 const P=[
 {key:'chiara',photo:IMG.chiaraP,name:'Chiara, 25 ans',role:'Influenceuse lifestyle · Lyon',c:'#e3b54a',
- path:'Message privé d\'Alpro → colis en avant-première → unboxing en story → recette en reel → sa communauté découvre le calendrier',
+ path:'E-mail d\'Alpro → colis en avant-première → unboxing en story → recette en reel → sa communauté découvre le calendrier',
  steps:[
- {lab:'Alpro la contacte en message privé',b:['sym','rec'],why:'Message personnalisé qui valorise son univers « cozy » : elle se sent choisie, pas démarchée.',
-  r:R.dm({c:'#fff',msgs:[['l','Bonjour Chiara ! 🌿 On adore ton univers cozy et tes recettes d\'hiver.'],['l','On lance notre 1er calendrier de l\'Avent 100 % végétal et on aimerait te l\'offrir <b>en avant-première</b>, avant tout le monde 🎁'],['l','Ça te dirait d\'en faire partie ?'],['r','Oh avec grand plaisir !! 😍 J\'adore le concept'],['l','Génial ! Il part demain chez toi ✨']]})},
+ {lab:'Alpro lui écrit pour devenir ambassadrice',b:['sym','rec','rar'],why:'E-mail personnalisé (« Bonjour Chiara ») : elle se sent choisie. Avant-première et programme clair donnent envie de rejoindre l\'aventure.',
+  r:phone(`${sb()}<div class="igh" style="gap:10px"><span>‹ Boîte de réception</span></div><div class="body"><div style="padding:8px 12px;border-bottom:1px solid #eee;font:600 11px Inter;color:#333"><b>Alpro</b> &lt;partenariats&gt;<br><span style="color:#888">Objet : Devenez notre ambassadrice de Noël ✨</span></div><img src="${IMG.cmail}" style="width:100%;display:block"></div>`)},
  {lab:'Elle reçoit le colis en avant-première',b:['rec','rar'],why:'Un cadeau soigné avec un mot écrit à la main : elle a envie de rendre la pareille en parlant du produit.',
   r:R.scene({style:'background:#e9dcc3',html:`<div style="position:absolute;left:28px;right:28px;top:60px;height:330px;background:#c9a476;border-radius:10px;box-shadow:inset 0 -18px 0 rgba(0,0,0,.08)"></div>
    <div style="position:absolute;left:28px;right:28px;top:40px;height:40px;background:#b48c5c;border-radius:8px"></div>
@@ -142,26 +143,22 @@ const P=[
   r:R.post({img:IMG.recipe,ini:'C',c:'#e3b54a',av:IMG.chiaraP,user:'chiara.cozy',likes:'8 412',cap:'Mon latte cannelle de la case 17 ☕✨ recette en 3 étapes ! #VotreAlpro #partenariat',cmts:[['lou.cocoon','il me le faut 😍'],['emma_lyon','il est dispo où ??'],['chiara.cozy','@emma_lyon lien en bio 💚']]})}
  ]},
 {key:'jade',photo:IMG.jadeP,name:'Jade, 22 ans',role:'Étudiante en alternance · intolérante au lactose',c:'#e8cf6e',
- path:'Unboxing sur TikTok le soir → vérifie la composition sur mobile → réserve en drive → partage sa 1re case en story le 1er décembre',
+ path:'TikTok d\'unboxing → recherches sur le site Alpro → filtre « Super U près de chez moi » → commande en drive → story le 1er décembre',
  steps:[
- {lab:'Le soir, elle tombe sur un unboxing TikTok',b:['soc','sym'],why:'12 K likes et des commentaires d\'intolérants comme elle : « si eux l\'adorent, je vais aimer aussi ».',
-  r:R.tiktok({img:IMG.doors,pos:'50% 30%',ini:'L',c:'#e86f9a',user:'@lea.foodie',cap:'Un calendrier de l\'Avent SANS lactose ?! 🎄😱 #alpro #sanslactose #calendrierdelavent',likes:'12,4 K',com:'842',saves:'2 103',cmts:[['@manon.ssl','ENFIN pour les intolérants 😭'],['@julie_22','je file en drive demain']]})},
- {lab:'Elle vérifie la composition sur mobile',b:['aut','coh'],why:'« 100 % végétal · sans lactose » en vert et FAQ claire : elle n\'a plus à décrypter l\'étiquette.',
-  r:R.web({url:'alpro.com/avent',html:`<img src="${IMG.cal}" style="width:100%;height:170px;object-fit:cover;object-position:50% 25%">
-   <div style="padding:12px 14px"><div style="font:900 20px Nunito;color:#1d2a7a;line-height:1.1">Le calendrier de l'Avent 100 % végétal</div>
-   <div style="margin-top:8px"><span class="badge" style="background:#e3f4e8;color:#0d5a3a">✓ Sans lactose</span> <span class="badge" style="background:#e3f4e8;color:#0d5a3a">✓ 100 % végétal</span></div>
-   </div>
-   <div style="margin:0 14px;border:1.5px solid #f0e7d6;border-radius:12px;padding:10px 12px;font:600 12px Inter;color:#333"><b style="color:#1d2a7a">Contient-il du lactose ? –</b><br>Non : les 24 cases sont 100 % végétales.</div>
-   ${DISPO}<a class="btn" style="background:#1d2a7a;color:#fff">📍 Le trouver près de chez moi</a>`})},
- {lab:'Elle réserve en drive dans son supermarché',b:['rar'],why:'« Plus que 4 en stock » en rouge : elle valide tout de suite pour ne pas le rater avant le 1er décembre.',
-  r:R.app({name:'Drive · dispo dans tous les supermarchés',c:'#2e7d4f',cart:'',html:`<img src="${IMG.cal}" style="width:100%;height:200px;object-fit:cover;object-position:50% 25%">
-   <div style="padding:12px 14px"><div style="font:800 16px Inter;color:#111">Calendrier de l'Avent Alpro – 24 mini-produits végétaux</div>
-   
-   <div style="margin-top:8px"><span class="badge" style="background:#c0392b;color:#fff">⚠ Plus que 4 en stock dans votre drive</span></div></div>
-   ${DISPO}<div class="rowi">Retrait drive <b>Sam. 29 nov · 10h-11h</b></div>
-   <a class="btn" style="background:#2e7d4f;color:#fff">✓ Ajouté au panier</a>`})},
- {lab:'Le 1er décembre, elle partage sa 1re case',b:['eng','soc'],why:'Elle tague la marque : son achat devient un rituel affiché… et une découverte pour ses amies.',
-  r:R.story({img:IMG.doors,pos:'50% 30%',ini:'J',c:'#e8cf6e',av:IMG.jadeP,user:'jade.mlt',t:'1 h',text:'Case 1 🎄 enfin un calendrier sans lactose !!',ment:'@alpro',top:'390px'})}
+ {lab:'En scrollant, elle tombe sur un TikTok',b:['soc','sym'],why:'12,4 K likes et 124 commentaires enthousiastes : la preuve sociale la pousse à se renseigner.',
+  r:R.scene({style:'background:#111',html:`<img class="cover" src="${IMG.jtt}" style="object-fit:contain"><div class="cap">Podcast TikTok : « On teste le tout premier calendrier Alpro »</div>`})},
+ {lab:'Elle fait ses recherches sur le site Alpro',b:['aut','coh'],why:'Conditions d\'achat et composition détaillée : sans lactose, 100 % végétal. Son frein principal est levé.',
+  r:R.scene({html:`<img class="cover" src="${IMG.jsite}" style="object-position:45% 50%"><div class="cap">Fiche produit : sans lactose, composition, dispo en magasin</div>`})},
+ {lab:'Le filtre lui montre son Super U : plus que 3 !',b:['rar','aut'],why:'Disponible dans son supermarché, mais quelques unités seulement : elle doit agir vite.',
+  r:R.web({url:'alpro.com/avent',html:`<div style="padding:12px 14px"><div style="font:900 18px Nunito;color:#1d2a7a">Où l'acheter près de chez vous ?</div></div>
+   <div style="margin:0 14px;border:1.5px solid #e3d8c2;border-radius:20px;padding:8px 14px;font:600 13px Inter;color:#333">📍 Près de chez moi</div>
+   <div style="display:flex;gap:6px;flex-wrap:wrap;margin:10px 14px">${['Tous','E.Leclerc','Super U','Auchan','Carrefour'].map(n=>`<span style="font:800 11px Inter;padding:5px 10px;border-radius:14px;${n=='Super U'?'background:#1d2a7a;color:#fff':'border:1.5px solid #e3d8c2;color:#333'}">${n}</span>`).join('')}</div>
+   ${[['Super U · 0,9 km','Plus que 3 unités !','#c0392b','#fff'],['Super U · 2,4 km','Plus que 2 unités !','#c0392b','#fff'],['Super U · 4,1 km','Plus que 6 en stock','#fdeedd','#a85a00']].map(r=>`<div style="margin:8px 14px;border:1.5px solid #f0e7d6;border-radius:12px;padding:10px;display:flex;justify-content:space-between;align-items:center;font:700 12px Inter;color:#1d2a7a"><span>🛒 ${r[0]}</span><span class="badge" style="background:${r[2]};color:${r[3]}">${r[1]}</span></div>`).join('')}
+   <a class="btn" style="background:#1d2a7a;color:#fff">Commander en drive</a>`})},
+ {lab:'Elle commande en drive et le récupère le lendemain',b:['rar','coh'],why:'Commande passée vite sur le site de son supermarché habituel : simple, rapide, sans risque de rupture.',
+  r:R.scene({html:`<img class="cover" src="${IMG.jdrive}" style="object-position:40% 50%"><div class="cap">Retrait au drive de son Super U</div>`})},
+ {lab:'Le 1er décembre, elle poste sa case en story',b:['eng','soc'],why:'Satisfaite, elle partage sa 1re case : son expérience devient une recommandation pour ses amies.',
+  r:R.scene({html:`<img class="cover" src="${IMG.jstory}" style="object-position:50% 40%"><div class="cap">Story du 1er décembre, @alpro tagué</div>`})}
  ]},
 {key:'catharina',photo:IMG.cathP,name:'Catharina, 28 ans',role:'Cheffe de projet · Pilates plusieurs fois par semaine',c:'#b385cc',
  path:'Affiche au studio recommandée par les coachs → présentoir au shop du club → QR « découvrir les 24 saveurs » pour lever son doute → achat sur place',
@@ -289,7 +286,7 @@ P.forEach(p=>{
   root.insertAdjacentHTML('beforeend',`<div class="board" id="${p.key}"><div class="dots"></div>
    <div class="hd" style="border-bottom:8px solid ${p.c}"><div class="av" style="color:${p.c};overflow:hidden">${p.photo?`<img src="${p.photo}" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%">`:p.name[0]}</div>
    <div><h1>${p.title||("Scénario de contact · "+p.name)}</h1><p>${p.role} — ${p.path}</p></div><img class="logo" src="${IMG.logo}"></div>
-   <div class="row">${row}</div>
+   <div class="row${p.steps.length>4?' five':''}">${row}</div>
    <div class="ft"><span>Calendrier de l'Avent Alpro · Plan de stratégie digitale</span><span>Biais d'influence de Cialdini · maquettes d'illustration</span></div></div>`);
 });
 </script>
