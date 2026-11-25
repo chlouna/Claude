@@ -68,7 +68,7 @@ body{background:#ccc;font-family:Inter,sans-serif}
 </style></head><body>
 <div id="root"></div>
 <script>
-const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",cmail:"{{chiara_mail}}",jtt:"{{jade_tiktok}}",jsite:"{{jade_site}}",jdrive:"{{jade_drive}}",jstory:"{{jade_story}}",chiaraP:"{{p_chiara}}",jadeP:"{{p_jade}}",cathP:"{{p_catharina}}",samP:"{{p_sam}}",camP:"{{p_camille}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
+const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",cv1:"{{chris_s1}}",cv2:"{{chris_s2}}",cv3:"{{chris_s3}}",cv4:"{{chris_s4}}",cv5:"{{chris_s5}}",cmail:"{{chiara_mail}}",jtt:"{{jade_tiktok}}",jsite:"{{jade_site}}",jdrive:"{{jade_drive}}",jstory:"{{jade_story}}",chiaraP:"{{p_chiara}}",jadeP:"{{p_jade}}",cathP:"{{p_catharina}}",samP:"{{p_sam}}",camP:"{{p_camille}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
 
 const bias={rar:'Rareté',rec:'Réciprocité',eng:'Engagement',soc:'Preuve sociale',aut:'Autorité',sym:'Sympathie',coh:'Cohérence'};
 const chips=b=>`<div class="chips">${b.map(k=>`<span class="chip c-${k}">${bias[k]}</span>`).join('')}</div>`;
@@ -193,23 +193,18 @@ const P=[
    <div class="cap" style="background:#8b63a8">Achat immédiat, sans détour</div>`})}
  ]},
 {key:'chris',photo:IMG.chris,name:'Chris, 26 ans',role:'Chargé de projet junior · musculation 4 à 5 fois par semaine',c:'#b0623f',
- path:'Story d\'un pote de salle → vérifie les protéines dans l\'appli du supermarché → achat pendant ses courses → partage son shaker en story',
+ path:'Story d\'un pote de salle → vérifie les protéines dans l\'appli → achat pendant ses courses → shaker avec la case du jour → story à la salle',
  steps:[
- {lab:'Le soir, la story d\'un pote de salle',b:['soc','sym'],why:'Un sportif comme lui, pas une pub : il fait confiance à quelqu\'un de sa salle.',
-  r:R.story({img:IMG.bottle,ini:'T',c:'#b0623f',user:'tom.lifts',t:'3 h',text:'Case du jour 💪 shaker protéiné post-séance',ment:'@alpro',top:'380px',link:'Sondage : tu testes ? 🔥 Oui / Non',linkTop:'480px'})},
- {lab:'Il vérifie les protéines dans l\'appli',b:['aut','coh'],why:'Des chiffres concrets pour un public exigeant : il vérifie que c\'est cohérent avec ses objectifs.',
-  r:R.app({name:'Dispo dans tous les supermarchés',c:'#c0392b',html:`<img src="${IMG.cal}" style="width:100%;height:170px;object-fit:cover;object-position:50% 25%">
-   <div style="padding:10px 14px"><div style="font:800 15px Inter;color:#111">Calendrier de l'Avent Alpro</div></div>
-   <div style="margin:0 14px;border-radius:12px;background:#f7f1ec;padding:10px 12px">
-   <div style="font:800 13px Inter;color:#b0623f;margin-bottom:6px">💪 Infos nutrition</div>
-   <div class="rowi" style="padding:5px 0">Cases riches en protéines végétales<b>✓</b></div>
-   <div class="rowi" style="padding:5px 0">Protéines par portion<b>affichées case par case</b></div>
-   <div class="rowi" style="padding:5px 0;border:0">Sans lactose<b>✓</b></div></div>
-   ${DISPO}`})},
- {lab:'Il l\'achète pendant ses courses',b:['soc','rar'],why:'Présentoir bien visible en magasin, déjà entamé par d\'autres clients : il l\'ajoute à son panier habituel.',
-  r:R.scene({html:`<img class="cover" src="${IMG.rayon2}" style="object-position:50% 40%"><div style="position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:8px;background:#fff;border-radius:30px;padding:4px 12px 4px 4px;z-index:4;box-shadow:0 6px 14px rgba(0,0,0,.3)"><img src="${IMG.chris}" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 15%"><span style="font:800 14px Nunito;color:#b0623f">Chris</span></div><div class="cap">En magasin (Leclerc, Auchan, Carrefour…) : le présentoir Alpro</div>`})},
- {lab:'Le 1er décembre, il partage son shaker',b:['eng','soc'],why:'Il s\'affiche avec la marque : le calendrier devient son rituel post-entraînement.',
-  r:R.story({img:IMG.recipe,ini:'C',c:'#b0623f',av:IMG.chris,user:'chris.trains',t:'40 min',text:'Case 1 → mon shaker protéiné 100 % végétal 💪',ment:'@alpro',top:'390px'})}
+ {lab:'Le soir, la story d\'un pote de salle',b:['soc','sym'],why:'« Case #1 dévoilée » : un sportif comme lui, pas une pub. Il fait confiance à quelqu\'un de sa salle.',
+  r:R.scene({html:`<img class="cover" src="${IMG.cv1}"><div class="cap">Story d\'un pote : « Case #1 dévoilée ! »</div>`})},
+ {lab:'Il vérifie les protéines dans l\'appli',b:['aut','coh'],why:'« Riche en protéines végétales », label bio : des infos concrètes, cohérentes avec ses objectifs sportifs.',
+  r:R.scene({html:`<img class="cover" src="${IMG.cv2}"><div class="cap">Fiche produit : riche en protéines végétales</div>`})},
+ {lab:'Il l\'achète pendant ses courses',b:['soc','rar'],why:'Disponible dans tous les supermarchés : il l\'ajoute à son panier habituel, sans détour.',
+  r:R.scene({html:`<img class="cover" src="${IMG.cv3}"><div class="cap">En rayon, pendant ses courses</div>`})},
+ {lab:'Il prépare son shaker avec la case du jour',b:['coh','eng'],why:'Le calendrier s\'intègre à sa routine post-entraînement : il l\'utilise vraiment, chaque jour.',
+  r:R.scene({html:`<img class="cover" src="${IMG.cv4}"><div class="cap">Shaker du jour, dans sa cuisine</div>`})},
+ {lab:'À la salle, il partage son rituel en story',b:['eng','soc'],why:'« Rituel post-entraînement @alpro » : il s\'affiche avec la marque et la fait découvrir à ses potes de salle.',
+  r:R.scene({html:`<img class="cover" src="${IMG.cv5}"><div class="cap">Story « Rituel post-entraînement » @alpro</div>`})}
  ]},
 {key:'sam',photo:IMG.samP,name:'Sam, 33 ans',role:'Consultant freelance · Paris 11e',c:'#8dc63f',
  path:'Post d\'une créatrice healthy un dimanche matin → vérifie les ingrédients dans une appli de scan → achat dans son épicerie bio → story minimaliste de son latte',
