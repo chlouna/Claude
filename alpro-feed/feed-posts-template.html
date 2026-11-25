@@ -1,0 +1,80 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Feed Alpro</title><link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@700&family=Nunito:wght@600;700;800;900&family=Inter:wght@400;600&display=swap" rel="stylesheet"><style>
+:root{--navy:#1d2a7a;--navy2:#111a52;--green:#0d5a3a;--leaf:#7cc242;--cream:#f7f0e4;--gold:#c9a24a;--yel:#ffe36e;--choc:#5b3423}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ddd;font-family:Nunito,sans-serif}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;margin-bottom:20px}
+.snow{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.5) 2.5px,transparent 3px),radial-gradient(rgba(255,255,255,.3) 2px,transparent 2.5px);background-size:70px 70px,43px 43px;background-position:0 0,20px 30px}
+.snow.dark{background-image:radial-gradient(#e2d4b8 2.5px,transparent 3px);background-size:70px 70px}
+.logo{position:absolute;top:56px;left:50%;transform:translateX(-50%);height:90px;border-radius:18px}
+.anton{font-family:Anton,sans-serif;text-transform:uppercase;letter-spacing:1px;line-height:1}
+.hand{font-family:Caveat,cursive}
+.ctr{position:absolute;left:0;right:0;text-align:center}
+.pill{display:inline-block;border-radius:60px;font:900 32px Nunito;padding:18px 40px}
+.mention{position:absolute;bottom:34px;left:0;right:0;text-align:center;font:600 20px Inter}
+/* countdown */
+.cd{display:flex;gap:22px;justify-content:center}
+.cd div{width:190px;height:200px;border-radius:30px;background:rgba(255,255,255,.1);border:3px solid rgba(255,255,255,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
+.cd b{font-family:Anton;font-size:104px;line-height:1;color:var(--yel)}
+.cd span{font:800 24px Nunito;text-transform:uppercase;letter-spacing:2px;opacity:.85;margin-top:6px}
+/* recipe */
+.card{background:#fff;border-radius:36px;box-shadow:0 12px 30px rgba(0,0,0,.1)}
+.step{display:flex;gap:26px;align-items:center;margin-bottom:22px}
+.num{flex:none;width:76px;height:76px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:900 40px Nunito}
+.step p{font:700 32px Nunito;color:#1b1f3b;line-height:1.2}
+.ing{font:700 28px Nunito;color:#5d6280;line-height:1.55}
+.ing b{color:var(--navy)}
+/* vote */
+.opt{width:430px;height:520px;border-radius:40px;background:#fff;position:relative;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.25)}
+.opt .top{height:300px;display:grid;place-items:center;font-size:150px}
+.opt .lab{position:absolute;top:24px;left:24px;width:78px;height:78px;border-radius:50%;display:grid;place-items:center;font:900 44px Nunito;color:#fff}
+.opt h3{font:900 46px Nunito;color:var(--navy);text-align:center;margin-top:28px;line-height:1.05}
+.opt p{font:700 26px Nunito;color:#5d6280;text-align:center;margin-top:10px}
+/* hashtag */
+.pola{position:absolute;background:#fff;padding:16px 16px 60px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.pola img{width:250px;height:250px;object-fit:cover;display:block}
+.pola span{position:absolute;bottom:12px;left:0;right:0;text-align:center;font:700 30px Caveat;color:var(--navy)}
+</style>
+<style>.ph{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%;overflow:hidden;border:12px solid #fff;box-shadow:0 20px 50px rgba(0,0,0,.3)}.ph img{width:100%;height:100%;object-fit:cover}
+.sub{font:800 30px Nunito}</style></head><body><div class="s" id="f1" style="background:radial-gradient(circle at 50% 45%,#2a3a9a,#111a52 72%)"><div class="snow"></div>
+<img class="logo" src="{{logo}}" style="top:46px;height:80px">
+<div class="ctr hand" style="top:150px;color:var(--leaf);font-size:58px">C'est le grand jour !</div>
+<div class="ctr anton" style="top:230px;color:#fff;font-size:92px">Le calendrier de l'Avent<br><span style="color:var(--yel)">est arrivé !</span></div>
+<div class="ph" style="top:560px;width:560px;height:560px"><img src="{{cal}}" style="object-position:50% 22%"></div>
+
+<div class="ctr sub" style="top:1185px;color:#d5e0f5">🎄 24 cases · 24 mini-saveurs · 1 surprise</div></div>
+<div class="s" id="f2" style="background:var(--cream)"><div class="snow dark"></div>
+<img class="logo" src="{{logo}}" style="top:46px;height:80px">
+<div class="ctr hand" style="top:150px;color:var(--green);font-size:58px">La recette du jour</div>
+<div class="ctr anton" style="top:230px;color:var(--navy);font-size:92px">Ton <span style="color:var(--choc)">Cinnamon Roll</span><br>latte en 3 étapes</div>
+<div class="ph" style="top:560px;width:560px;height:560px"><img src="{{recipe}}" style="object-position:50% 50%"></div>
+
+<div class="ctr sub" style="top:1185px;color:var(--navy)">📌 Enregistre la recette pour ton goûter</div></div>
+<div class="s" id="f3" style="background:radial-gradient(circle at 50% 50%,#17703f,#0b4a2f 72%)"><div class="snow"></div>
+<img class="logo" src="{{logo}}" style="top:46px;height:80px">
+<div class="ctr hand" style="top:150px;color:var(--leaf);font-size:58px">Psst… un secret bien gardé</div>
+<div class="ctr anton" style="top:230px;color:#fff;font-size:80px">Warning : la case 25<br>est cachée <span style="color:var(--yel)">dans le bouchon</span></div>
+<div class="ph" style="top:560px;width:560px;height:560px"><img src="{{cap}}" style="object-position:50% 78%"></div>
+
+<div class="ctr sub" style="top:1185px;color:#d5e0f5">🤫 Rendez-vous le 25 décembre</div></div>
+<div class="s" id="f4" style="background:var(--navy)"><div class="snow"></div>
+<img class="logo" src="{{logo}}" style="top:46px;height:80px">
+<div class="ctr hand" style="top:150px;color:var(--leaf);font-size:58px">Le rituel commence</div>
+<div class="ctr anton" style="top:230px;color:#fff;font-size:92px">Case 1 :<br><span style="color:var(--yel)">on l'ouvre ensemble ?</span></div>
+<div class="ph" style="top:560px;width:560px;height:560px"><img src="{{doors}}" style="object-position:50% 25%"></div>
+
+<div class="ctr sub" style="top:1185px;color:#d5e0f5">💬 Dis-nous ta case préférée en commentaire</div></div>
+<div class="s" id="f5" style="background:var(--cream)"><div class="snow dark"></div>
+<img class="logo" src="{{logo}}" style="top:46px;height:80px">
+<div class="ctr hand" style="top:150px;color:var(--green);font-size:58px">Pause cocooning</div>
+<div class="ctr anton" style="top:230px;color:var(--navy);font-size:92px">Ta recette<br>du goûter <span style="color:var(--choc)">de Noël</span></div>
+<div class="ph" style="top:560px;width:560px;height:560px"><img src="{{bottle}}" style="object-position:50% 50%"></div>
+
+<div class="ctr sub" style="top:1185px;color:var(--navy)">☕ Une mini-bouteille à découvrir…</div></div>
+<div class="s" id="f6" style="background:radial-gradient(circle at 50% 50%,#17703f,#0b4a2f 72%)"><div class="snow"></div>
+<img class="logo" src="{{logo}}" style="top:46px;height:80px">
+<div class="ctr hand" style="top:150px;color:var(--leaf);font-size:58px">Dispo dès maintenant</div>
+<div class="ctr anton" style="top:230px;color:#fff;font-size:92px">Il t'attend<br><span style="color:var(--yel)">en magasin</span> 🎁</div>
+<div class="ph" style="top:560px;width:560px;height:560px"><img src="{{phone}}" style="object-position:50% 40%"></div>
+
+<div class="ctr sub" style="top:1185px;color:#d5e0f5">📍 Lien en bio pour trouver un magasin</div></div>
+</body></html>
