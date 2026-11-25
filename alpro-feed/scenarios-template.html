@@ -68,7 +68,7 @@ body{background:#ccc;font-family:Inter,sans-serif}
 </style></head><body>
 <div id="root"></div>
 <script>
-const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",cv1:"{{chris_s1}}",cv2:"{{chris_s2}}",cv3:"{{chris_s3}}",cv4:"{{chris_s4}}",cv5:"{{chris_s5}}",cmail:"{{chiara_mail}}",jtt:"{{jade_tiktok}}",jsite:"{{jade_site}}",jdrive:"{{jade_drive}}",jstory:"{{jade_story}}",chiaraP:"{{p_chiara}}",jadeP:"{{p_jade}}",cathP:"{{p_catharina}}",samP:"{{p_sam}}",camP:"{{p_camille}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
+const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",cvelo:"{{camille_velo}}",cv1:"{{chris_s1}}",cv2:"{{chris_s2}}",cv3:"{{chris_s3}}",cv4:"{{chris_s4}}",cv5:"{{chris_s5}}",cmail:"{{chiara_mail}}",jtt:"{{jade_tiktok}}",jsite:"{{jade_site}}",jdrive:"{{jade_drive}}",jstory:"{{jade_story}}",chiaraP:"{{p_chiara}}",jadeP:"{{p_jade}}",cathP:"{{p_catharina}}",samP:"{{p_sam}}",camP:"{{p_camille}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
 
 const bias={rar:'Rareté',rec:'Réciprocité',eng:'Engagement',soc:'Preuve sociale',aut:'Autorité',sym:'Sympathie',coh:'Cohérence'};
 const chips=b=>`<div class="chips">${b.map(k=>`<span class="chip c-${k}">${bias[k]}</span>`).join('')}</div>`;
@@ -233,9 +233,9 @@ const P=[
  {lab:'Elle voit la story Alpro qui présente le calendrier',b:['aut','eng'],why:'Compte officiel vérifié + bouton « En savoir plus » : un premier contact rassurant et un clic facile.',
   r:R.story({img:IMG.story,ini:'',c:'#fff',av:IMG.avatar,user:'alpro ✔',t:'2 h',text:'',top:'900px'})},
  {lab:'À vélo, elle remarque l\'affiche street marketing',b:['sym','rar','eng'],why:'Nouvelle exposition au message vu sur Instagram : sa curiosité grandit, le QR code l\'emmène sur le compte Alpro.',
-  r:R.scene({html:`<img class="cover" src="${IMG.abri}" style="object-position:55% 50%">
-   <div style="position:absolute;right:22px;top:300px;width:118px;background:#fff;border-radius:12px;padding:8px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.35);z-index:3">${qr()}<div style="font:800 11px Nunito;color:#1d2a7a;margin-top:4px;line-height:1.15">Scannez :<br>@alpro sur Instagram</div></div>
-   <div class="cap">Affiche street marketing + QR code vers le compte Instagram</div>`})},
+  r:R.scene({html:`<img class="cover" src="${IMG.cvelo}" style="object-position:42% 50%">
+   <div style="position:absolute;right:12px;top:400px;width:86px;background:#fff;border-radius:12px;padding:8px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.35);z-index:3">${qr()}<div style="font:800 11px Nunito;color:#1d2a7a;margin-top:4px;line-height:1.15">Scannez :<br>@alpro sur Instagram</div></div>
+   <div class="cap">En allant au travail à vélo : l'affiche Alpro + QR code vers Instagram</div>`})},
  {lab:'Elle va sur le compte Instagram d\'Alpro',b:['aut','soc'],why:'Compte vérifié, 346 K abonnés, feed de Noël : elle cherche plus d\'infos et tombe sur le post concours, en 1re position.',
   r:R.profile({})},
  {lab:'Elle découvre le concours et tente sa chance',b:['rec','rar','eng'],why:'Habituée des concours Instagram : 50 calendriers à gagner, une date limite… elle participe tout de suite.',
