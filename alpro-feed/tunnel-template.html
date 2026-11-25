@@ -1,0 +1,75 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Tunnel de conversion</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#fff}
+#t{width:1920px;padding:24px;background:#fff;font-family:Inter}
+.g{display:grid;grid-template-columns:230px 250px 1fr 300px 300px 320px;gap:6px}
+.h{background:#1b5e57;color:#fff;font:800 21px Nunito;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px 10px;border-radius:8px;min-height:74px;line-height:1.15}
+.c{padding:16px 16px;font:500 15.5px Inter;color:#1f2937;line-height:1.38;border-radius:8px;display:flex;align-items:center}
+.c ul{padding-left:18px}.c li{margin:3px 0}
+.p{flex-direction:column;justify-content:center;text-align:center;font:900 22px Nunito}
+.p small{display:block;font:800 18px Nunito;opacity:.85;margin-top:2px}
+.ic{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;margin:0 auto 10px}
+.ic svg{width:44px;height:44px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.foot{margin-top:10px;background:#1b5e57;color:#fff;border-radius:8px;padding:14px 20px;font:600 16px Inter}
+.foot b{font:800 17px Nunito}
+.r1{background:#e7f3ea}.r2{background:#e3f1f8}.r3{background:#fdf3d8}.r4{background:#fbe4e6}.r5{background:#e0f3f1}.r6{background:#ece8f8}
+</style></head><body><div id="t">
+<div class="g">
+<div class="h">Phase</div><div class="h">Caractéristique</div><div class="h">Moyens de transformation (leviers)</div><div class="h">Informations pertinentes requises</div><div class="h">Freins potentiels</div><div class="h">Indicateurs clés (KPIs)</div>
+</div>
+<div id="rows"></div>
+<div class="foot"><b>Nos pages de vente :</b> la landing page Alpro et son store locator · les fiches produit des drives des enseignes partenaires (E.Leclerc, Super U, Auchan, Carrefour…) · les présentoirs en magasin, sur le Bar de Noël, dans les magasins bio et les shops des clubs de Pilates</div>
+</div>
+<script>
+const I={
+ mega:'<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/>',
+ search:'<circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/>',
+ pin:'<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+ bag:'<path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
+ heart:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+ people:'<circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5M15 14.5c3 0 5 1.4 5 4.5"/>'
+};
+const R=[
+['r1','#1f7a45','mega','1. Sensibilisation','(Notoriété)',
+ 'Le prospect découvre l\'existence du calendrier de l\'Avent 100 % végétal Alpro.',
+ ['Teaser mystère et compte à rebours en story','Calendrier offert en avant-première aux ambassadeurs (Chiara) : vague d\'unboxing sur Instagram et TikTok','Concours « Gagne ton calendrier » : s\'abonner, taguer 2 amis, partager en story','Affichage street marketing (abribus)','Paid social ciblé (Meta Ads, TikTok Ads)'],
+ ['Existence du calendrier','Univers festif, cozy et gourmand','Date de mise en vente'],
+ ['Méconnaissance d\'une offre végétale festive','Désintérêt si le prospect n\'est ni végétarien ni intolérant au lactose'],
+ ['Impressions et vues','Portée unique','Nouveaux abonnés et participations au concours','Visiteurs uniques sur la landing page','Taux de clic (CTR) des publicités']],
+['r2','#1d78b0','search','2. Évaluation','(Considération)',
+ 'Le prospect sait que l\'offre répond à ses besoins (sans lactose, bien-être, plaisir) et la compare aux autres calendriers.',
+ ['Landing page : « Comment ça marche », grille des 24 cases, FAQ','Bar de Noël Alpro : dégustation en hypermarchés et magasins bio','Reels et carrousels recettes (« 3 étapes », « 2 min »)','Avis de micro-influenceurs lifestyle et sportifs','Recommandation des coachs dans les clubs de Pilates'],
+ ['Composition des 24 cases (exclusivités ube, pain d\'épices)','Apports nutritionnels (protéines, sans lactose)','Emballage en carton recyclable'],
+ ['Crainte du mauvais goût (Jade, Camille)','Peur du greenwashing (Sam)','Doute sur les protéines (Chris)','Peur de ne pas aimer toutes les saveurs (Catharina)'],
+ ['Taux de revisite de la landing page','Temps passé sur la page','Consultations de la FAQ et de la page « 24 saveurs »','Dégustations et scans du QR code au Bar de Noël']],
+['r3','#c98a12','pin','3. Intention','(Activation)',
+ 'Le prospect est convaincu et cherche où l\'acheter près de chez lui.',
+ ['Bouton « Trouver un magasin » répété 4 fois sur la landing page','Store locator avec filtre par enseigne (E.Leclerc, Super U, Auchan, Carrefour…)','Alerte de stock en temps réel : «&nbsp;Plus que 3 unités&nbsp;!&nbsp;»','Lien direct vers le drive de l\'enseigne','Présentoir placé juste à côté du Bar de Noël'],
+ ['Points de vente et disponibilité près de chez soi','Achat en magasin ou retrait en drive','Édition limitée'],
+ ['Produit indisponible à proximité','Peur de la rupture avant le 1er&nbsp;décembre'],
+ ['Taux d\'utilisation du store locator','Clics sur « Trouver un magasin »','Clics vers les drives des enseignes']],
+['r4','#c93b4c','bag','4. Conversion','(Achat)',
+ 'Le prospect achète le calendrier en magasin, en drive ou au shop de son club.',
+ ['Présentoirs visibles en rayon et sur le Bar de Noël (achat d\'impulsion)','Commande en drive, retrait dès le lendemain','Message de rareté « édition limitée », sans promotion agressive','Vente dans les clubs de Pilates et les magasins bio partenaires'],
+ ['Retrait possible avant le 1er&nbsp;décembre','Emplacement du calendrier en rayon'],
+ ['Rupture de stock locale','Calendrier difficile à trouver en rayon'],
+ ['Calendriers vendus (objectif : 10&nbsp;000 au 24 décembre)','Ventes par enseigne et en drive (données distributeurs)','Taux de passage de la landing page vers les drives','Ventes réalisées sur le Bar de Noël']],
+['r5','#178f84','heart','5. Loyauté','(Expérience)',
+ 'Le client vit l\'expérience du 1er au 24 décembre et découvre de nouveaux usages Alpro.',
+ ['« Case du jour » quotidienne en reel et TikTok, avec sa recette','QR code recette sur chaque case','Newsletter hebdomadaire (inscrits via le QR code du Bar de Noël et le site)','Défi Veganuary et questionnaire de suivi en janvier'],
+ ['Recettes faciles, sucrées et salées','Astuces d\'utilisation au quotidien'],
+ ['Déception sur le contenu d\'une case','Difficulté à réaliser une recette'],
+ ['Scans des QR codes (objectif : 30&nbsp;000)','Inscrits à la newsletter (objectif : 8&nbsp;000) et taux d\'ouverture','Engagement sur la « Case du jour »','20 % des acheteurs adoptent un nouvel usage (questionnaire)']],
+['r6','#5b45b5','people','6. Recommandation','(Advocacy)',
+ 'Le client satisfait partage son expérience et recommande le calendrier à son entourage.',
+ ['Hashtag #VotreAlpro et repost des meilleures stories chaque soir','Stories des acheteurs avec @alpro (Jade, Chris, Sam, Camille)','Templates de story faciles à utiliser','Parrainage en janvier : « Offre 5 € à un proche sur les gammes Alpro »'],
+ ['Hashtags officiels (#VotreAlpro, #AlproAvent) et @alpro','Templates de story'],
+ ['Timidité à publier','Manque d\'incitation au partage'],
+ ['Publications avec le hashtag (objectif : 1&nbsp;000)','Mentions et tags @alpro','Interactions (objectif : 10&nbsp;000)','Score de satisfaction (NPS)']]
+];
+const ul=a=>'<ul>'+a.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+document.getElementById('rows').innerHTML=R.map(r=>`<div class="g" style="margin-top:6px">
+<div class="c p ${r[0]}" style="color:${r[1]}"><div class="ic" style="background:${r[1]}"><svg viewBox="0 0 24 24">${I[r[2]]}</svg></div>${r[3]}<small>${r[4]}</small></div>
+<div class="c ${r[0]}">${r[5]}</div><div class="c ${r[0]}">${ul(r[6])}</div><div class="c ${r[0]}">${ul(r[7])}</div><div class="c ${r[0]}">${ul(r[8])}</div><div class="c ${r[0]}">${ul(r[9])}</div></div>`).join('');
+</script></body></html>
