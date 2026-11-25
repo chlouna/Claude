@@ -68,7 +68,7 @@ body{background:#ccc;font-family:Inter,sans-serif}
 </style></head><body>
 <div id="root"></div>
 <script>
-const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",cgrab:"{{chris_grab}}",cvelo:"{{camille_velo}}",cv1:"{{chris_s1}}",cv2:"{{chris_s2}}",cv3:"{{chris_s3}}",cv4:"{{chris_s4}}",cv5:"{{chris_s5}}",cmail:"{{chiara_mail}}",jtt:"{{jade_tiktok}}",jsite:"{{jade_site}}",jdrive:"{{jade_drive}}",jstory:"{{jade_story}}",chiaraP:"{{p_chiara}}",jadeP:"{{p_jade}}",cathP:"{{p_catharina}}",samP:"{{p_sam}}",camP:"{{p_camille}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
+const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",samM:"{{sam_macchiato}}",cgrab:"{{chris_grab}}",cvelo:"{{camille_velo}}",cv1:"{{chris_s1}}",cv2:"{{chris_s2}}",cv3:"{{chris_s3}}",cv4:"{{chris_s4}}",cv5:"{{chris_s5}}",cmail:"{{chiara_mail}}",jtt:"{{jade_tiktok}}",jsite:"{{jade_site}}",jdrive:"{{jade_drive}}",jstory:"{{jade_story}}",chiaraP:"{{p_chiara}}",jadeP:"{{p_jade}}",cathP:"{{p_catharina}}",samP:"{{p_sam}}",camP:"{{p_camille}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
 
 const bias={rar:'Rareté',rec:'Réciprocité',eng:'Engagement',soc:'Preuve sociale',aut:'Autorité',sym:'Sympathie',coh:'Cohérence'};
 const chips=b=>`<div class="chips">${b.map(k=>`<span class="chip c-${k}">${bias[k]}</span>`).join('')}</div>`;
@@ -207,7 +207,7 @@ const P=[
   r:R.scene({html:`<img class="cover" src="${IMG.cv5}"><div class="cap">Story « Rituel post-entraînement » @alpro</div>`})}
  ]},
 {key:'sam',photo:IMG.samP,name:'Sam, 33 ans',role:'Consultant freelance · Paris 11e',c:'#8dc63f',
- path:'Post d\'une créatrice healthy un dimanche matin → vérifie les ingrédients sur Yuka → achat chez Naturalia, son épicerie bio → story minimaliste de son latte',
+ path:'Post d\'une créatrice healthy un dimanche matin → vérifie les ingrédients sur Yuka → achat chez Naturalia, son épicerie bio → story minimaliste de son macchiato',
  steps:[
  {lab:'Dimanche matin, le post d\'une créatrice healthy',b:['sym','aut'],why:'Une créatrice qu\'il suit pour ses recettes bio : la recommandation vient d\'une source de confiance.',
   r:R.post({img:IMG.cal,pos:'50% 20%',ini:'C',c:'#8dc63f',user:'clara.greenbowl',likes:'5 207',cap:'Le calendrier de l\'Avent que j\'attendais : 100 % végétal, 24 recettes 🌿 @alpro',cmts:[['sam.reset','la compo est clean ?'],['clara.greenbowl','@sam.reset tout est détaillé sur le site 👌']]})},
@@ -225,15 +225,10 @@ const P=[
    <div style="position:absolute;left:24px;right:24px;top:400px;text-align:center;font:800 16px Nunito;color:#2f6b3f">Rayon « Noël végétal »</div>
    <div class="cap" style="background:#2f6b3f">Achat chez Naturalia, son épicerie habituelle</div>`})},
  {lab:'Le 3 décembre, une story minimaliste',b:['eng','soc'],why:'Esthète, il partage à sa façon, marque taguée discrètement : une recommandation crédible pour ses abonnés.',
-  r:phone(`${sb(1)}<div class="cover" style="background:linear-gradient(170deg,#d9c2a3,#a9805a)"></div>
-   <svg style="position:absolute;left:30px;top:150px" width="220" height="220" viewBox="0 0 220 220"><ellipse cx="110" cy="200" rx="95" ry="12" fill="rgba(0,0,0,.15)"/><circle cx="110" cy="110" r="96" fill="#fbf6ee"/><circle cx="110" cy="110" r="74" fill="#b07a4a"/><circle cx="110" cy="110" r="66" fill="#c89462"/>
-   <path d="M110 62c-22 18-26 40-12 58 8 10 20 12 24 2 4-10-8-14-12-6M110 62c22 18 26 40 12 58" stroke="#f6ead8" stroke-width="7" fill="none" stroke-linecap="round"/><ellipse cx="110" cy="150" rx="16" ry="8" fill="#f6ead8"/>
-   <path d="M196 92h10a18 18 0 0 1 0 36h-10" stroke="#fbf6ee" stroke-width="12" fill="none"/></svg>
-   <div style="position:absolute;left:36px;top:400px;width:34px;height:28px;border-radius:50% 50% 45% 45%;background:#6b3b1f"></div><div style="position:absolute;left:78px;top:412px;width:28px;height:24px;border-radius:50% 50% 45% 45%;background:#7a4526"></div>
-   <div class="shade" style="background:linear-gradient(rgba(0,0,0,.25),transparent 25%)"></div>
+  r:phone(`${sb(1)}<img class="cover" src="${IMG.samM}" style="object-position:50% 50%"><div class="shade" style="background:linear-gradient(rgba(0,0,0,.25),transparent 25%)"></div>
    <div class="bars"><i class="on"></i><i></i><i></i><i></i></div>
    <div class="sh">${avs('S','#8dc63f',IMG.samP)}<span>sam.reset</span><small>5 h</small></div>
-   <div class="stk" style="top:470px"><span class="tx">latte châtaigne · case 3</span><br><span class="ment">@alpro</span></div>
+   <div class="stk" style="top:200px;left:100px;right:6px"><span class="tx" style="white-space:nowrap">macchiato · case 3</span><br><span class="ment">@alpro</span></div>
    <div class="reply">Envoyer un message…</div>`)}
  ]},
 {key:'camille',photo:IMG.camP,name:'Camille, 38 ans',role:'Responsable communication · maman de deux enfants',c:'#f06a8a',
