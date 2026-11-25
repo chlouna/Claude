@@ -68,7 +68,7 @@ body{background:#ccc;font-family:Inter,sans-serif}
 </style></head><body>
 <div id="root"></div>
 <script>
-const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",fp1:"{{fp1}}",fp2:"{{fp2}}",fp3:"{{fp3}}",fp4:"{{fp4}}",fp5:"{{fp5}}",samM:"{{sam_macchiato}}",cgrab:"{{chris_grab}}",cvelo:"{{camille_velo}}",cv1:"{{chris_s1}}",cv2:"{{chris_s2}}",cv3:"{{chris_s3}}",cv4:"{{chris_s4}}",cv5:"{{chris_s5}}",cmail:"{{chiara_mail}}",jtt:"{{jade_tiktok}}",jsite:"{{jade_site}}",jdrive:"{{jade_drive}}",jstory:"{{jade_story}}",chiaraP:"{{p_chiara}}",jadeP:"{{p_jade}}",cathP:"{{p_catharina}}",samP:"{{p_sam}}",camP:"{{p_camille}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
+const IMG={cal:"{{cal}}",cap:"{{cap}}",bottle:"{{bottle}}",recipe:"{{recipe}}",phone:"{{phone}}",abri:"{{abri}}",doors:"{{doors}}",story:"{{storyscreen}}",rayon:"{{rayon}}",c1:"{{concours_1}}",c2:"{{concours_2}}",c3:"{{concours_3}}",stand:"{{bar_stand}}",chris:"{{chris}}",cathS:"{{cath_split}}",fp1:"{{fp1}}",fp2:"{{fp2}}",fp3:"{{fp3}}",fp4:"{{fp4}}",fp5:"{{fp5}}",samM:"{{sam_macchiato}}",cgrab:"{{chris_grab}}",cvelo:"{{camille_velo}}",cv1:"{{chris_s1}}",cv2:"{{chris_s2}}",cv3:"{{chris_s3}}",cv4:"{{chris_s4}}",cv5:"{{chris_s5}}",cmail:"{{chiara_mail}}",jtt:"{{jade_tiktok}}",jsite:"{{jade_site}}",jdrive:"{{jade_drive}}",jstory:"{{jade_story}}",chiaraP:"{{p_chiara}}",jadeP:"{{p_jade}}",cathP:"{{p_catharina}}",samP:"{{p_sam}}",camP:"{{p_camille}}",rayon2:"{{rayon_seul}}",degust:"{{bar_degust}}",logo:"{{logo}}",avatar:"{{avatar}}"};
 
 const bias={rar:'Rareté',rec:'Réciprocité',eng:'Engagement',soc:'Preuve sociale',aut:'Autorité',sym:'Sympathie',coh:'Cohérence'};
 const chips=b=>`<div class="chips">${b.map(k=>`<span class="chip c-${k}">${bias[k]}</span>`).join('')}</div>`;
@@ -172,15 +172,8 @@ const P=[
    <div style="font:900 17px Nunito;color:#1d2a7a">Le calendrier de l'Avent Alpro</div>
    <div style="font:700 13px Inter;color:#5d6280;margin-top:4px">24 petits plaisirs végétaux<br>Dispo au shop de l'accueil →</div></div>
    <div class="cap" style="background:#8b63a8">Affiche dans le studio, à la sortie du cours</div>`})},
- {lab:'Au shop, le calendrier est vendu sur place',b:['aut','sym'],why:'Achat sans effort, sur place, au moment où elle est motivée : la recommandation du club suffit à attirer son attention.',
-  r:R.scene({style:'background:#f3ece2',html:`<div style="position:absolute;left:0;right:0;top:0;height:330px;background:linear-gradient(#e9dfee,#f6f0f8)"></div>
-   <div style="position:absolute;left:30px;right:30px;top:300px;height:16px;background:#a77d55;border-radius:4px"></div>
-   <img src="${IMG.cal}" style="position:absolute;left:40px;top:110px;width:120px;height:190px;object-fit:cover;object-position:50% 20%;border-radius:6px;box-shadow:0 8px 16px rgba(0,0,0,.2)">
-   <img src="${IMG.cal}" style="position:absolute;left:170px;top:110px;width:120px;height:190px;object-fit:cover;object-position:50% 20%;border-radius:6px;box-shadow:0 8px 16px rgba(0,0,0,.2)">
-   <div style="position:absolute;left:30px;top:40px;background:#8b63a8;color:#fff;font:800 15px Nunito;padding:8px 14px;border-radius:20px">💜 Recommandé par le club</div>
-   
-   <div style="position:absolute;left:30px;right:30px;top:350px;font:800 16px Nunito;color:#1d2a7a;text-align:center">Shop de l'accueil · paiement sur place</div>
-   <div class="cap" style="background:#8b63a8">Présentoir au comptoir du club</div>`})},
+ {lab:'Au shop, le calendrier est vendu sur place',b:['aut','sym'],why:'En sortant du cours, tapis sous le bras, elle tombe sur le présentoir et la carte « recommandation du club » : achat sans effort, au moment où elle est motivée.',
+  r:R.scene({html:`<img class="cover" src="${IMG.cathS}"><div style="position:absolute;left:0;right:0;top:298px;height:4px;background:#fff;z-index:2"></div><div class="cap" style="background:#8b63a8">Présentoir au shop du club + carte « recommandé par le club »</div>`})},
  {lab:'« Pas sûre d\'aimer tous les goûts » : elle scanne',b:['aut','eng'],why:'Le QR montre les 24 saveurs et leurs recettes : la transparence lève sa peur de ne pas tout aimer.',
   r:R.web({url:'alpro.com/avent/saveurs',html:`<div style="padding:12px 14px"><div style="font:900 19px Nunito;color:#1d2a7a">Les 24 saveurs, case par case</div>
    <div style="font:600 12px Inter;color:#5d6280;margin-top:4px">Chaque case a sa recette pour l'adapter à vos goûts.</div></div>
