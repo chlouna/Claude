@@ -228,7 +228,7 @@ const P=[
   r:R.story({img:IMG.recipe,ini:'S',c:'#8dc63f',av:IMG.samP,user:'sam.reset',t:'5 h',text:'latte châtaigne · case 3',ment:'@alpro',top:'470px'})}
  ]},
 {key:'camille',photo:IMG.camP,name:'Camille, 38 ans',role:'Responsable communication · maman de deux enfants',c:'#f06a8a',
- path:'Posts et stories Alpro → à vélo, l\'affiche street marketing → va sur le compte Instagram d\'Alpro → découvre le concours et tente sa chance',
+ path:'Posts et stories Alpro → à vélo, l\'affiche street marketing → va sur le compte Instagram d\'Alpro → découvre le concours et tente sa chance → elle gagne !',
  steps:[
  {lab:'Elle voit la story Alpro qui présente le calendrier',b:['aut','eng'],why:'Compte officiel vérifié + bouton « En savoir plus » : un premier contact rassurant et un clic facile.',
   r:R.story({img:IMG.story,ini:'',c:'#fff',av:IMG.avatar,user:'alpro ✔',t:'2 h',text:'',top:'900px'})},
@@ -238,7 +238,9 @@ const P=[
  {lab:'Elle va sur le compte Instagram d\'Alpro',b:['aut','soc'],why:'Elle cherche d\'elle-même le compte Alpro : vérifié, 346 K abonnés, feed de Noël. Le post concours est en 1re position.',
   r:R.profile({})},
  {lab:'Elle découvre le concours et tente sa chance',b:['rec','rar','eng'],why:'Habituée des concours Instagram : 50 calendriers à gagner, une date limite… elle participe tout de suite.',
-  r:R.post({img:IMG.c1,pos:'50% 0',ini:'',c:'#fff',av:IMG.avatar,user:'alpro ✔',likes:'18 950',cap:'🎁 CONCOURS : GAGNE TON CALENDRIER ALPRO 🎁 On met en jeu 50 calendriers…',cmts:[['camille.verte','@sophie.d @marine_l on tente pour les enfants ? 🎄🤞'],['sophie.d','@camille.verte carrément 😍']]})}
+  r:R.post({img:IMG.c1,pos:'50% 0',ini:'',c:'#fff',av:IMG.avatar,user:'alpro ✔',likes:'18 950',cap:'🎁 CONCOURS : GAGNE TON CALENDRIER ALPRO 🎁 On met en jeu 50 calendriers…',cmts:[['camille.verte','@sophie.d @marine_l on tente pour les enfants ? 🎄🤞'],['sophie.d','@camille.verte carrément 😍']]})},
+ {lab:'Le 24 novembre, elle gagne le concours !',b:['rec','sym'],why:'Lien avec l\'activation 1 : tirée au sort parmi les participants, elle est contactée par @alpro uniquement et reçoit son calendrier avant le 1er décembre.',
+  r:R.dm({c:'#fff',msgs:[['l','🎉 Félicitations Camille ! Tu fais partie des <b>50 gagnant·es</b> du concours « Gagne ton calendrier Alpro » 🎄'],['l','Ton calendrier part cette semaine : tu l\'auras chez toi <b>avant le 1er décembre</b> 🎁'],['r','Oh génial, merci !! 😍 Les enfants vont être fous'],['l','Partage-nous l\'ouverture de la case 1 avec @alpro 💚']]})}
  ]},
 {key:'act1',photo:IMG.camP,title:'Activation 1 · Concours « Gagne ton calendrier Alpro »',name:'Camille',role:'Mi-novembre · vécu par Camille, 38 ans',c:'#f06a8a',
  path:'Objectifs : gagner des abonnés et faire découvrir le calendrier à une cible qui ne suit pas encore la marque',
@@ -250,7 +252,9 @@ const P=[
  {lab:'Partage en story pour avoir plus de chances de gagner !',b:['eng','rar'],why:'Le 3e visuel donne envie (24 cases, 1 surprise dans le bouchon) et fixe la date limite : elle partage pour augmenter ses chances.',
   r:R.carousel({img:IMG.c3,n:3,extra:`<div style="margin:6px 12px;font:700 12px Inter;color:#111">♡ 💬 ➤ <span style="color:#3797f0">Partager en story</span></div><div style="margin:0 12px;font:600 12px Inter;color:#333"><b>camille.verte</b> je partage pour avoir plus de chances 🤞</div>`})},
  {lab:'Sa story est en ligne : ses abonnés découvrent le concours',b:['soc','eng'],why:'Mention @alpro : sa story montre le concours à son entourage (parents, collègues). La portée se multiplie.',
-  r:R.story({img:IMG.c1,card:1,ini:'C',c:'#f06a8a',av:IMG.camP,user:'camille.verte',t:'12 min',text:'Je tente ma chance pour mes loulous 🤞🎄',ment:'@alpro',top:'400px'})}
+  r:R.story({img:IMG.c1,card:1,ini:'C',c:'#f06a8a',av:IMG.camP,user:'camille.verte',t:'12 min',text:'Je tente ma chance pour mes loulous 🤞🎄',ment:'@alpro',top:'400px'})},
+ {lab:'Le 24 novembre, elle gagne le concours !',b:['rec','sym'],why:'Tirée au sort parmi les participants, elle est contactée par @alpro uniquement et reçoit son calendrier avant le 1er décembre.',
+  r:R.dm({c:'#fff',msgs:[['l','🎉 Félicitations Camille ! Tu fais partie des <b>50 gagnant·es</b> du concours « Gagne ton calendrier Alpro » 🎄'],['l','Ton calendrier part cette semaine : tu l\'auras chez toi <b>avant le 1er décembre</b> 🎁'],['r','Oh génial, merci !! 😍 Les enfants vont être fous'],['l','Partage-nous l\'ouverture de la case 1 avec @alpro 💚']]})}
  ]},
 {key:'act2',photo:IMG.chris,title:'Activation 2 · Le Bar de Noël Alpro en magasin',name:'Chris',role:'Week-ends de novembre · vécu par Chris, 26 ans',c:'#b0623f',
  path:'Objectifs : lever la peur de la déception gustative, déclencher l\'achat d\'impulsion, relier le magasin aux contacts',
