@@ -128,7 +128,7 @@ const P=[
 {key:'chiara',photo:IMG.chiaraP,name:'Chiara, 25 ans',role:'Influenceuse lifestyle · Lyon',c:'#e3b54a',
  path:'E-mail d\'Alpro → colis en avant-première → unboxing en story → recette en reel → sa communauté découvre le calendrier',
  steps:[
- {lab:'Alpro lui écrit pour devenir ambassadrice',b:['sym','rec','rar'],why:'E-mail personnalisé (« Bonjour Chiara ») : elle se sent choisie. Avant-première et programme clair donnent envie de rejoindre l\'aventure.',
+ {lab:'Alpro lui écrit pour devenir ambassadrice',b:['sym','rec','rar'],why:'E-mail personnalisé (« Bonjour Chiara ») : elle se sent choisie. Avant-première et code promo exclusif CHIARA10 à partager : elle a envie de rejoindre l\'aventure.',
   r:phone(`${sb()}<div class="igh" style="gap:10px"><span>‹ Boîte de réception</span></div><div class="body"><div style="padding:8px 12px;border-bottom:1px solid #eee;font:600 11px Inter;color:#333"><b>Alpro</b> &lt;partenariats&gt;<br><span style="color:#888">Objet : Devenez notre ambassadrice de Noël ✨</span></div><img src="${IMG.cmail}" style="width:100%;display:block"></div>`)},
  {lab:'Elle reçoit le colis en avant-première',b:['rec','rar'],why:'Un cadeau soigné avec un mot écrit à la main : elle a envie de rendre la pareille en parlant du produit.',
   r:R.scene({style:'background:#e9dcc3',html:`<div style="position:absolute;left:28px;right:28px;top:60px;height:330px;background:#c9a476;border-radius:10px;box-shadow:inset 0 -18px 0 rgba(0,0,0,.08)"></div>
@@ -139,8 +139,8 @@ const P=[
    <div class="cap" style="background:#1d2a7a;text-align:center">Calendrier + mot manuscrit + recettes exclusives</div>`})},
  {lab:'Unboxing en story pour sa communauté',b:['soc','sym'],why:'Mention « collaboration commerciale » (obligatoire) + lien direct : ses abonnés voient le produit chez quelqu\'un qu\'ils aiment.',
   r:R.story({img:IMG.cal,pos:'50% 25%',ini:'C',c:'#e3b54a',av:IMG.chiaraP,user:'chiara.cozy',collab:1,text:'Je l\'ai reçu avant tout le monde 😱🎄',ment:'@alpro',link:'alpro.com/avent',top:'380px',linkTop:'480px',bar:2})},
- {lab:'Recette en reel : le latte de la case 17',b:['soc','aut'],why:'Créatrice crédible + commentaires enthousiastes : la preuve sociale déclenche la découverte chez ses abonnés.',
-  r:R.post({img:IMG.recipe,ini:'C',c:'#e3b54a',av:IMG.chiaraP,user:'chiara.cozy',likes:'8 412',cap:'Mon latte cannelle de la case 17 ☕✨ recette en 3 étapes ! #VotreAlpro #partenariat',cmts:[['lou.cocoon','il me le faut 😍'],['emma_lyon','il est dispo où ??'],['chiara.cozy','@emma_lyon lien en bio 💚']]})}
+ {lab:'Recette en vidéo + code CHIARA10',b:['soc','aut'],why:'Créatrice crédible + commentaires enthousiastes (preuve sociale). Le code CHIARA10 donne une raison d\'acheter tout de suite et mesure ses ventes.',
+  r:R.post({img:IMG.recipe,ini:'C',c:'#e3b54a',av:IMG.chiaraP,user:'chiara.cozy',likes:'8 412',cap:'Mon latte cannelle de la case 17 ☕✨ et -10 % avec mon code CHIARA10 jusqu\'au 1er décembre ! #partenariat',cmts:[['lou.cocoon','il me le faut 😍'],['emma_lyon','il est dispo où ??'],['chiara.cozy','@emma_lyon lien en bio 💚']]})}
  ]},
 {key:'jade',photo:IMG.jadeP,name:'Jade, 22 ans',role:'Étudiante en alternance · intolérante au lactose',c:'#e8cf6e',
  path:'TikTok d\'unboxing → recherches sur le site Alpro → filtre « Super U près de chez moi » → commande en drive → story le 1er décembre',
