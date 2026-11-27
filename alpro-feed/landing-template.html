@@ -92,6 +92,22 @@ h2{font-size:clamp(28px,3.6vw,42px);color:var(--navy);font-weight:900;line-heigh
 .street img{border-radius:28px}
 .ig{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:22px}
 .ig img{aspect-ratio:1;object-fit:cover;border-radius:10px;width:100%}
+/* newsletter */
+.nl{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.nl .in{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative}
+.nl h2{color:#fff}.nl .sub{color:#c7cdf0}.nl .kicker{color:var(--leaf)}
+.perks{margin-top:18px;display:grid;gap:10px;font-weight:700;font-size:16px}
+.nlf{background:#fff;color:var(--ink);border-radius:24px;padding:28px;box-shadow:0 20px 40px rgba(0,0,0,.25)}
+.nlf label{display:block;font-weight:800;font-size:14px;color:var(--navy);margin:12px 0 6px}
+.nlf input[type=email],.nlf input[type=text]{width:100%;padding:13px 16px;border-radius:14px;border:2px solid #e3d8c2;font:inherit;font-size:15px}
+.nlf .pf{display:flex;gap:8px;flex-wrap:wrap}
+.nlf .pf span{padding:7px 12px;border-radius:20px;border:1.5px solid #e3d8c2;font-size:13px;font-weight:700;cursor:pointer}
+.nlf .pf span.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.nlf .ck{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);margin-top:16px;line-height:1.4}
+.nlf .ck input{margin-top:3px;width:18px;height:18px;flex:none}
+.nlf .btn{width:100%;justify-content:center;margin-top:16px}
+.nlf .ok{display:none;margin-top:14px;font-weight:800;color:var(--green);text-align:center}
+@media (max-width:860px){.nl .in{grid-template-columns:1fr}}
 /* faq */
 .faq{max-width:760px;margin:36px auto 0}
 details{background:#fff;border:1.5px solid #f0e7d6;border-radius:16px;padding:18px 22px;margin-bottom:10px}
@@ -119,7 +135,7 @@ footer .in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <nav><div class="in">
   <img class="logo" src="{{logo}}" alt="alpro">
-  <div class="links"><a href="#calendrier">Le calendrier</a><a href="#cases">Les 24 cases</a><a href="#magasin">Où l'acheter</a><a href="#faq">FAQ</a></div>
+  <div class="links"><a href="#calendrier">Le calendrier</a><a href="#cases">Les 24 cases</a><a href="#magasin">Où l'acheter</a><a href="#newsletter">Newsletter</a><a href="#faq">FAQ</a></div>
   <a class="btn p" href="#magasin">📍 Trouver un magasin</a>
 </div></nav>
 <div class="bar">🔥 Édition limitée · Plus que <b>1 200 calendriers</b> disponibles en France · Dans la limite des stocks</div>
@@ -192,6 +208,24 @@ footer .in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <img src="{{abri}}" alt="Affiche du calendrier de l'Avent Alpro sur un abribus">
 </div></section>
 
+<section class="nl" id="newsletter"><div class="snow" style="opacity:.12"></div><div class="in">
+  <div>
+    <div class="kicker">La newsletter Alpro</div>
+    <h2>Une recette par semaine jusqu'à Noël</h2>
+    <p class="sub">Inscrivez-vous pour ne rien rater : la recette de la semaine, les saveurs révélées en avant-première et une alerte quand le calendrier est de nouveau en stock près de chez vous.</p>
+    <div class="perks"><span>☕ La recette de la semaine</span><span>✨ Les saveurs exclusives en avant-première</span><span>📍 Alerte disponibilité près de chez vous</span></div>
+  </div>
+  <form class="nlf" id="nlf">
+    <label for="nlmail">Votre e-mail</label>
+    <input type="email" id="nlmail" placeholder="prenom@exemple.fr" required>
+    <label>Vous êtes plutôt…</label>
+    <div class="pf" id="pf"><span>🌱 Végétal</span><span>💪 Sportif</span><span>🥛 Sans lactose</span><span>👨‍👩‍👧 Famille</span></div>
+    <label class="ck"><input type="checkbox" id="nlok" required> J'accepte de recevoir la newsletter Alpro. Désinscription possible à tout moment, en un clic.</label>
+    <button class="btn p" type="submit">Je m'inscris</button>
+    <div class="ok" id="nlmsg">✓ C'est noté ! Première recette dans votre boîte mail lundi.</div>
+  </form>
+</div></section>
+
 <section id="faq" style="padding-top:20px"><div class="in center">
   <div class="kicker">FAQ</div>
   <h2>Vos questions</h2>
@@ -248,6 +282,8 @@ function render(){
 document.getElementById('f').onsubmit=e=>{e.preventDefault();const v=document.getElementById('cp').value.trim();if(!/^\d{5}$/.test(v)){res.innerHTML='<p style="color:#a1271b;font-weight:700">Entrez un code postal à 5 chiffres.</p>';return}cp=v;render()};
 document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');filt=c.dataset.k;render()});
 render();
+document.querySelectorAll('#pf span').forEach(x=>x.onclick=()=>x.classList.toggle('on'));
+document.getElementById('nlf').onsubmit=e=>{e.preventDefault();document.getElementById('nlmsg').style.display='block'};
 </script>
 </body>
 </html>
