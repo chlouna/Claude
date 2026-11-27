@@ -153,18 +153,21 @@ box(s,120,600,140,10,fill=LEAF,radius=0.5)
 text(s,120,640,920,60,"Notre plan de communication pour le lancement",size=22,color=RGBColor(0xD7,0xE6,0xD0))
 text(s,120,710,920,60,"« Votre Noël. Vos envies. Votre Alpro. »",size=30,color=GOLD,italic=True,bold=True)
 
-# 2 CONTEXTE
-s=frame(1,"Le contexte : une place à prendre à Noël")
-text(s,120,240,1680,80,"Le végétal progresse, mais Noël reste le moment du chocolat au lait. Vos consommateurs n'ont pas de calendrier pensé pour eux.",size=24,color=MUTED)
-for i,(big,small,f) in enumerate([("+ 11 %","de croissance du marché français des alternatives végétales en 2025",NAVY),("572 M€","de marché en France en 2025",GREEN),("5,5 %","seulement des volumes de lait : le végétal reste perçu comme un substitut",WHITE)]):
-    x=120+i*580; c=WHITE if f!=WHITE else NAVY
-    box(s,x,370,530,400,fill=f,radius=0.1)
-    text(s,x+40,410,450,150,big,size=80,color=c,bold=True)
-    box(s,x+40,570,80,8,fill=LEAF if f!=WHITE else GOLD,radius=0.5)
-    text(s,x+40,605,450,140,small,size=21,color=c if f!=WHITE else MUTED)
-box(s,120,810,1680,120,fill=PALE_G,radius=0.3)
-text(s,160,810,1600,120,[[("L'opportunité : ",{'bold':True,'color':GREEN}),("faire passer Alpro du rayon « alternative » au rayon « plaisir », sur le moment le plus gourmand de l'année.",{})]],size=22,color=INK,anchor=MSO_ANCHOR.MIDDLE)
-text(s,120,950,900,40,"Source : GFI Europe, 2026.",size=14,color=MUTED)
+# 2 OPPORTUNITE
+s=frame(1,"L'opportunité : un Noël pensé pour vos clients")
+O=[("1","Le végétal grandit, mais reste un substitut","Le marché progresse (+11 % en 2025), mais les boissons végétales ne pèsent que 5,5 % des volumes de lait : elles restent cantonnées au café.",NAVY),
+   ("2","Noël est dominé par le chocolat au lait","Les calendriers de l'Avent excluent les intolérants au lactose, les végétariens et ceux qui veulent manger plus sain.",GREEN),
+   ("3","Aucune grande marque du végétal n'y est","Pas de calendrier de l'Avent 100 % végétal d'une marque de confiance : la place est libre pour Alpro.",NAVY)]
+for i,(n,t,d,c) in enumerate(O):
+    x=120+i*570
+    box(s,x,260,530,560,fill=WHITE,radius=0.08)
+    dot(s,x+40,300,80,c)
+    text(s,x+40,300,80,80,n,size=32,color=WHITE,bold=True,align=PP_ALIGN.CENTER,anchor=MSO_ANCHOR.MIDDLE)
+    text(s,x+40,405,450,130,t,size=23,color=c,bold=True)
+    text(s,x+40,575,450,230,d,size=19,color=INK,spacing=1.2)
+box(s,120,850,1680,100,fill=PALE_G,radius=0.3)
+text(s,160,850,1600,100,[[("Notre ambition : ",{'bold':True,'color':GREEN}),("faire passer Alpro du rayon « alternative » au rayon « plaisir », sur le moment le plus gourmand de l'année.",{})]],size=21,color=INK,anchor=MSO_ANCHOR.MIDDLE)
+text(s,120,965,900,30,"Chiffres : GFI Europe, 2026.",size=13,color=MUTED)
 
 # 3 PROPOSITION
 s=frame(2,"Notre proposition : votre premier calendrier de l'Avent")
@@ -196,22 +199,26 @@ for i,(c,v) in enumerate([("Instagram",6),("TikTok",4),("Magasin",4),("Site Alpr
     if v: box(s,1200,y+11,460*v/6,24,fill=LEAF,radius=0.5)
     text(s,1680,y,90,46,f"{v}/6",size=19,color=WHITE,bold=True,anchor=MSO_ANCHOR.MIDDLE)
 
-# 5 PLAN EN 4 TEMPS
-s=frame(4,"Le plan de communication en 4 temps")
-ph=[("Mi-sept. à oct.","Teasing","« Quelque chose se prépare » : teaser mystère, compte à rebours, vote sur les saveurs, #VotreAlpro",NAVY),
-    ("Novembre","Lancement","Mise en vente, influenceurs, concours Instagram, Bar de Noël en magasin, affichage urbain",GREEN),
-    ("1er au 24 déc.","Rituel quotidien","La case du jour et sa recette, unboxing simultané, repost des stories clients",NAVY),
-    ("Janvier","Fidélisation","Newsletter bilan, recettes pour continuer, Veganuary, questionnaire",GREEN)]
-box(s,200,400,1520,8,fill=LEAF,radius=0.5)
-for i,(d,t,b,c) in enumerate(ph):
-    x=120+i*430
-    text(s,x,270,400,50,d,size=20,color=MUTED,bold=True,align=PP_ALIGN.CENTER)
-    dot(s,x+160,360,88,c)
-    text(s,x+160,360,88,88,str(i+1),size=32,color=WHITE,bold=True,align=PP_ALIGN.CENTER,anchor=MSO_ANCHOR.MIDDLE)
-    box(s,x,490,400,400,fill=WHITE,radius=0.1)
-    text(s,x+30,515,340,60,t,size=28,color=c,bold=True)
-    text(s,x+30,590,340,290,b,size=20,color=INK,spacing=1.2)
-text(s,120,920,1680,60,[[("Canaux : ",{'bold':True,'color':NAVY}),("Instagram en cœur de stratégie, puis TikTok, influence, YouTube, site et e-mailing, publicité ciblée.",{})]],size=19,color=INK)
+# 5 CALENDRIER EDITORIAL
+s=frame(4,"Le calendrier de la campagne")
+ph=[("Mi-sept. à oct.","Faire connaître","Teaser mystère, compte à rebours, vote sur les saveurs, lancement de #VotreAlpro","Instagram, TikTok, articles SEO",NAVY),
+    ("Début nov.","Lancer la vente","Mise en vente, 1re vague d'influence, Bar de Noël en magasin, affichage urbain","Tous les canaux + publicité ciblée",GREEN),
+    ("Mi à fin nov.","Convertir","Concours Instagram, FAQ et avis, rappel de l'édition limitée, relais Black Friday sans promotion","Instagram, site, newsletter",NAVY),
+    ("1er au 7 déc.","Créer l'habitude","Unboxing simultané des ambassadeurs, case du jour, stories des clients","Instagram, TikTok, influence",GREEN),
+    ("8 au 24 déc.","Maintenir","Recette du jour, challenges, meilleures découvertes de la communauté","Instagram, TikTok, YouTube, newsletter",NAVY),
+    ("Janvier","Fidéliser","Newsletter bilan, recettes pour continuer, Veganuary, questionnaire","Newsletter, Instagram",GREEN)]
+box(s,180,345,1560,6,fill=LEAF,radius=0.5)
+for i,(d,t,b,c,col) in enumerate(ph):
+    x=120+i*285
+    text(s,x,250,265,40,d,size=17,color=MUTED,bold=True,align=PP_ALIGN.CENTER)
+    dot(s,x+102,312,64,col)
+    text(s,x+102,312,64,64,str(i+1),size=26,color=WHITE,bold=True,align=PP_ALIGN.CENTER,anchor=MSO_ANCHOR.MIDDLE)
+    box(s,x,410,265,450,fill=WHITE,radius=0.1)
+    text(s,x+22,428,225,80,t,size=19,color=col,bold=True)
+    text(s,x+22,525,225,225,b,size=15,color=INK,spacing=1.15)
+    box(s,x+16,760,233,85,fill=PALE_N,radius=0.2)
+    text(s,x+26,760,213,85,c,size=13,color=NAVY,bold=True,anchor=MSO_ANCHOR.MIDDLE,align=PP_ALIGN.CENTER)
+text(s,120,890,1680,80,[[("Dates clés : ",{'bold':True,'color':GREEN}),("mise en vente début novembre · concours mi-novembre · Black Friday fin novembre · 1re case le 1er décembre · dernière case le 24 · Veganuary en janvier · Chandeleur le 2 février",{})]],size=17,color=INK)
 
 # 6 CONTENUS
 s=frame(5,"Ce que vos clients verront")
